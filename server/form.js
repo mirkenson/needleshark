@@ -32,7 +32,7 @@ form.addEventListener('submit', async event => {
     return;
   }
   submissionId ||= crypto.randomUUID();
-  const payload = {id: submissionId, name: form.elements.name.value, contact: form.elements.contact.value, question: form.elements.question.value, website: form.elements.website?.value || ''};
+  const payload = {id: submissionId, name: form.elements.name.value, contact: form.elements.contact.value, question: form.elements.question.value, consent: form.elements.consent.checked, website: form.elements.website?.value || ''};
   sending = true;
   const controls = [...form.querySelectorAll('input,textarea,button')];
   controls.forEach(control => { control.disabled = true; });

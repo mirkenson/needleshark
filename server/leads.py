@@ -39,9 +39,12 @@ def initialize():
 def validate(data):
     if not isinstance(data, dict):
         raise ValueError('Некорректные данные заявки.')
+    if data.get('consent') is not True:
+        raise ValueError('Необходимо согласие с документами и обработкой данных.')
     if data.get('website'):
         raise ValueError('Не удалось отправить заявку.')
-    result = {'id': str(uuid.UUID(str(data.get('id', ''))))}
+    result = {'id': str(uuid.UUID(str(data.get('id', '')))), 'consent': True,
+              'consent_documents': ['https://needle-shark.ru/user-agreement', 'https://needle-shark.ru/privacy-policy']}
     for key, limit in [('name', 120), ('contact', 254), ('question', 5000)]:
         value = data.get(key)
         if not isinstance(value, str) or not value.strip() or len(value) > limit:

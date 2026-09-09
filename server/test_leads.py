@@ -19,7 +19,7 @@ class LeadQueueTests(unittest.TestCase):
         leads.SECRET = 'test-only-' * 4
         leads.HOOK = 'https://script.google.com/macros/s/test/exec'
         leads.initialize()
-        self.data = {'id': '12345678-1234-4234-8234-123456789abc', 'name': 'Тест', 'contact': 'test@example.com', 'question': 'Тестовая заявка'}
+        self.data = {'id': '12345678-1234-4234-8234-123456789abc', 'name': 'Тест', 'contact': 'test@example.com', 'question': 'Тестовая заявка', 'consent': True}
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -37,6 +37,16 @@ class LeadQueueTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 leads.validate(dict(self.data, **changes))
         self.assertEqual(leads.validate(dict(self.data, contact='+7 (999) 123-45-67'))['name'], 'Тест')
+
+    def test_consent_requires_explicit_boolean_true(self):
+        for value in [False, None, 'true', 1]:
+            with self.assertRaises(ValueError):
+                leads.validate(dict(self.data, consent=value))
+        missing = dict(self.data)
+        del missing['consent']
+        with self.assertRaises(ValueError):
+            leads.validate(missing)
+        self.assertIs(leads.validate(self.data)['consent'], True)
 
     def test_failed_delivery_is_persisted_and_retried(self):
         leads.enqueue(copy.deepcopy(self.data), 'test-ip')
