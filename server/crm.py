@@ -1,4 +1,5 @@
 """Persistent PostgreSQL customer/order registry, separate from delivery queue."""
+from contextlib import closing
 import os
 import re
 import json
@@ -10,7 +11,7 @@ def archive(lead):
     import psycopg2
     contact = lead['contact'].strip()
     key = contact.casefold() if '@' in contact else re.sub(r'\D', '', contact)
-    with psycopg2.connect(dsn, connect_timeout=5) as conn:
+    with closing(psycopg2.connect(dsn, connect_timeout=5)) as conn, conn:
         with conn.cursor() as cur:
             # A retry must not change the customer/order snapshot or create a duplicate.
             cur.execute('SELECT customer_name,contact,description FROM orders WHERE submission_id=%s', (lead['id'],))

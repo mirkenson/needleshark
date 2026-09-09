@@ -50,6 +50,13 @@ class LeadQueueTests(unittest.TestCase):
             leads.validate(missing)
         self.assertIs(leads.validate(self.data)['consent'], True)
 
+    def test_database_failure_does_not_acknowledge_or_enqueue(self):
+        with patch.object(leads, 'archive', side_effect=RuntimeError('database unavailable')):
+            with self.assertRaises(RuntimeError):
+                leads.enqueue(copy.deepcopy(self.data), 'test-ip')
+        with leads.connect() as db:
+            self.assertEqual(db.execute('SELECT count(*) FROM leads').fetchone()[0], 0)
+
     def test_failed_delivery_is_persisted_and_retried(self):
         leads.enqueue(copy.deepcopy(self.data), 'test-ip')
         with patch.object(leads, 'urlopen', side_effect=TimeoutError):

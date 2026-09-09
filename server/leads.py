@@ -1,4 +1,5 @@
 """Private durable lead queue; expose only /api/leads through Nginx."""
+from contextlib import contextmanager
 import base64
 import hashlib
 import json
@@ -20,10 +21,15 @@ MAX_BODY = 3 * 1024 * 1024
 ORIGINS = {'https://needleshark.ru', 'https://www.needleshark.ru'}
 
 
+@contextmanager
 def connect():
     connection = sqlite3.connect(DB, timeout=10)
     connection.execute('PRAGMA busy_timeout=10000')
-    return connection
+    try:
+        with connection:
+            yield connection
+    finally:
+        connection.close()
 
 
 def initialize():
