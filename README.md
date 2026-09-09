@@ -18,6 +18,6 @@ Run `python3 -m http.server 4173 --directory dist` and open http://localhost:417
 
 Run `bash ops/deploy.sh` from a computer with the authorized SSH key. It uploads a new release and atomically switches the live symlink, preserving a reference to the previous release. See `ops/README.md`.
 
-The request form is a demonstration and does not submit data. Product and review placeholders still need real content. Search indexing is currently discouraged using Nginx noindex headers.
+The request form is a demonstration and does not submit data. Product category images are AI-generated visualizations. Marketplace totals are supplied by the owner; invented customer testimonials are not published. Search indexing is currently discouraged using Nginx noindex headers.
 
 Private SSH keys, TLS keys and credentials are not part of this repository. GitHub stores source history; it does not back up the server's private keys or future application data.
