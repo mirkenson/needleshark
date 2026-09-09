@@ -1,0 +1,4 @@
+document.querySelectorAll('[data-product]').forEach(button=>button.addEventListener('click',()=>{document.querySelector('textarea').value='Интересует: '+button.dataset.product+'. ';document.querySelector('#contact').scrollIntoView({behavior:'smooth'});}));
+document.querySelector('#catalog').addEventListener('click',()=>{document.querySelector('#catalog-note').hidden=false;});
+document.querySelector('#attachment').addEventListener('change',event=>{document.querySelector('#filename').textContent=event.target.files[0]?.name || '';});
+document.querySelector('#request-form').addEventListener('submit',event=>{event.preventDefault();const status=document.querySelector('#form-status');status.hidden=false;status.textContent='Так будет выглядеть подтверждение заявки. Это прототип: данные не отправлены. В рабочей версии подключим отправку обращений.';});
