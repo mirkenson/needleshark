@@ -43,6 +43,7 @@ form.addEventListener('submit', async event => {
     const result = await response.json().catch(() => ({}));
     if (!response.ok || !result.ok) throw new Error(result.error || 'Не удалось отправить заявку. Попробуйте ещё раз или напишите на info@neesha.ru.');
     status.textContent = 'Заявка получена. Мы свяжемся с вами по указанному контакту.';
+    document.dispatchEvent(new Event('lead-saved'));
     form.reset();
     document.querySelector('#filename').textContent = '';
     submissionId = null;
