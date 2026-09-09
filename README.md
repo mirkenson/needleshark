@@ -1,5 +1,7 @@
 # Needle Shark
 
+Правила работы: [AGENTS.md](AGENTS.md). Текущее состояние и следующие шаги: [docs/PROJECT_CONTEXT.md](docs/PROJECT_CONTEXT.md).
+
 Static homepage prototype for Needle Shark technical sewing production.
 
 Live VPS site: https://needleshark.ru/
