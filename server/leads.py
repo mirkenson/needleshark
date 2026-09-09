@@ -8,6 +8,7 @@ import sqlite3
 import threading
 import time
 import uuid
+from crm import archive
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.request import Request, urlopen
 
@@ -44,7 +45,7 @@ def validate(data):
     if data.get('website'):
         raise ValueError('Не удалось отправить заявку.')
     result = {'id': str(uuid.UUID(str(data.get('id', '')))), 'consent': True,
-              'consent_documents': ['https://needle-shark.ru/user-agreement', 'https://needle-shark.ru/privacy-policy']}
+              'consent_documents': ['https://needleshark.ru/user-agreement', 'https://needleshark.ru/privacy-policy']}
     for key, limit in [('name', 120), ('contact', 254), ('question', 5000)]:
         value = data.get(key)
         if not isinstance(value, str) or not value.strip() or len(value) > limit:
@@ -90,6 +91,7 @@ def enqueue(data, ip):
         if recent >= 10 or pending >= 500:
             return 429, {'ok': False, 'error': 'Слишком много заявок. Попробуйте позже или напишите на info@neesha.ru.'}
         data['created_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(now))
+        archive(data)
         db.execute('INSERT INTO leads(id,payload,fingerprint,created,ip_hash) VALUES(?,?,?,?,?)',
                    (data['id'], json.dumps(data, ensure_ascii=False), fingerprint, now, ip_hash))
     return 202, {'ok': True, 'id': data['id']}
