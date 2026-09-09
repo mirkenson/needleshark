@@ -1,0 +1,76 @@
+import copy
+import importlib.util
+import json
+import tempfile
+import time
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+spec = importlib.util.spec_from_file_location('leads', Path(__file__).with_name('leads.py'))
+leads = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(leads)
+
+
+class LeadQueueTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        leads.DB = self.tmp.name + '/queue.sqlite3'
+        leads.SECRET = 'test-only-' * 4
+        leads.HOOK = 'https://script.google.com/macros/s/test/exec'
+        leads.initialize()
+        self.data = {'id': '12345678-1234-4234-8234-123456789abc', 'name': 'Тест', 'contact': 'test@example.com', 'question': 'Тестовая заявка'}
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_duplicate_has_one_row_and_rejects_changed_content(self):
+        self.assertEqual(leads.enqueue(copy.deepcopy(self.data), 'test-ip')[0], 202)
+        self.assertEqual(leads.enqueue(copy.deepcopy(self.data), 'test-ip')[0], 200)
+        changed = dict(self.data, question='Другая задача')
+        self.assertEqual(leads.enqueue(changed, 'test-ip')[0], 409)
+        with leads.connect() as db:
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM leads').fetchone()[0], 1)
+
+    def test_validation_rejects_spam_bad_contact_and_bad_attachment(self):
+        for changes in [{'website': 'spam'}, {'contact': 'not a contact'}, {'attachment': {'name': 'bad.png', 'type': 'image/png', 'data': 'aGVsbG8='}}]:
+            with self.assertRaises(ValueError):
+                leads.validate(dict(self.data, **changes))
+        self.assertEqual(leads.validate(dict(self.data, contact='+7 (999) 123-45-67'))['name'], 'Тест')
+
+    def test_failed_delivery_is_persisted_and_retried(self):
+        leads.enqueue(copy.deepcopy(self.data), 'test-ip')
+        with patch.object(leads, 'urlopen', side_effect=TimeoutError):
+            leads.deliver_once()
+        with leads.connect() as db:
+            delivered, attempts, retry = db.execute('SELECT delivered,attempts,retry_at FROM leads').fetchone()
+        self.assertIsNone(delivered)
+        self.assertEqual(attempts, 1)
+        self.assertGreater(retry, time.time())
+
+    def test_acknowledgement_must_match_lead(self):
+        leads.enqueue(copy.deepcopy(self.data), 'test-ip')
+        class Reply:
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def read(self, *args): return json.dumps({'ok': True, 'id': 'wrong'}).encode()
+        with patch.object(leads, 'urlopen', return_value=Reply()):
+            leads.deliver_once()
+        with leads.connect() as db:
+            self.assertIsNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
+
+    def test_successful_delivery_marks_queue(self):
+        leads.enqueue(copy.deepcopy(self.data), 'test-ip')
+        lead_id = self.data['id']
+        class Reply:
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def read(self, *args): return json.dumps({'ok': True, 'id': lead_id}).encode()
+        with patch.object(leads, 'urlopen', return_value=Reply()):
+            leads.deliver_once()
+        with leads.connect() as db:
+            self.assertIsNotNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
+
+
+if __name__ == '__main__':
+    unittest.main()

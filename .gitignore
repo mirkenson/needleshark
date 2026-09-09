@@ -9,3 +9,9 @@
 .ssh/
 node_modules/
 *.tar.gz
+
+__pycache__/
+*.pyc
+*.sqlite3
+*.sqlite3-*
+*.env

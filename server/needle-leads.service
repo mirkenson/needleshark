@@ -1,0 +1,24 @@
+[Unit]
+Description=Needle Shark lead queue
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=needleleads
+Group=needleleads
+EnvironmentFile=/etc/needle-shark/leads.env
+ExecStart=/usr/bin/python3 /opt/needle-shark/leads.py
+Restart=on-failure
+RestartSec=5
+StateDirectory=needle-shark
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+MemoryMax=96M
+TasksMax=32
+
+[Install]
+WantedBy=multi-user.target
