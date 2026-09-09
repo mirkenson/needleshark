@@ -4,7 +4,7 @@ const RECIPIENT = 'info@neesha.ru';
 const HEADERS = ['ID заявки', 'Дата UTC', 'Имя', 'Телефон / email', 'Задача', 'Файл в письме', 'Статус заявки', 'Уведомление'];
 
 function sheet_() {
-  const id = PropertiesService.getScriptProperties().getProperty('SPREADSHEET_ID');
+  const id = '18ZR-07EYR7zBuULvTD_qVIz2IzlIMDAGk0yHeFtquvU';
   if (!id) throw new Error('SPREADSHEET_ID is missing');
   const book = SpreadsheetApp.openById(id);
   const sheet = book.getSheetByName('Заявки');
