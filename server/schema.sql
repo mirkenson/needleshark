@@ -24,3 +24,12 @@ CREATE TABLE IF NOT EXISTS orders (
 );
 CREATE INDEX IF NOT EXISTS orders_customer_date ON orders(customer_id,created_at DESC);
 CREATE INDEX IF NOT EXISTS orders_date ON orders(created_at DESC);
+
+-- Nullable catalogue context keeps earlier homepage requests compatible.
+ALTER TABLE orders
+ ADD COLUMN IF NOT EXISTS product_slug TEXT,
+ ADD COLUMN IF NOT EXISTS product_name TEXT,
+ ADD COLUMN IF NOT EXISTS product_size TEXT,
+ ADD COLUMN IF NOT EXISTS inquiry_type TEXT,
+ ADD COLUMN IF NOT EXISTS quantity INTEGER CHECK (quantity BETWEEN 1 AND 1000000),
+ ADD COLUMN IF NOT EXISTS source_path TEXT;

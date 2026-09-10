@@ -23,3 +23,13 @@ Apps Script: https://script.google.com/home/projects/1J2O8GOLm7KbrU2n9TTs-baMjG2
 Deployment: https://script.google.com/macros/s/AKfycby-E311mZp6MKBZLqoRrwv70PSMG1M63UKwf--JBi3Xf9aMZ4OA3CV9E2gajc4cRGYqVA/exec
 
 Setup completed. Browser version embeds the spreadsheet ID and validates existing headers without restyling them. Deployment created; anonymous POST successfully verified. SHARED_SECRET configured by owner. VPS service installed and active; API test delivered with matching Google acknowledgment. Public form activation: 2026-09-09.
+
+## Catalogue request context
+
+The same `/api/leads` endpoint accepts optional `product_slug`, `product_name`, `product_size`, `inquiry_type` (`direct`, `sizing`, `wholesale`), integer `quantity` (1–1000000) and relative `source_path`. Older homepage requests omit these fields and remain compatible. The product size currently uses `Д × Ш × В` in centimetres. These are visitor-submitted enquiry details, not a trusted price or confirmed order.
+
+`lead_context.py` validates context and prepares Google delivery. PostgreSQL `orders` stores each field in its own nullable column. Apply `migrations/20260910_catalog_context.sql` before installing the new backend. No existing data is rewritten. The queue keeps the original comment and context; during Google delivery the fields are added to the existing `Задача` text, so all information also appears in the existing email. Apps Script and its eight-column sheet need no change. Validation checks the complete Google task against its 5000-character limit before acceptance.
+
+Retry IDs cover the context as well as the comment, both in the queue and in the permanent registry. A changed size or quantity under the same ID is rejected. `ops/install-leads.sh` installs the backend separately from the site, creates a private VPS database dump and code backup, applies the additive migration and restarts the existing service. No Nginx or systemd configuration changes are required. Listing a dump is not a restore test or an external backup policy.
+
+Local preview: `python3 server/preview.py --port 4173` serves static pages with submission disabled. Add `--live-api` explicitly to proxy real submissions to the production API; use clearly labelled test data when verifying. The proxy listens only on loopback, accepts only local Host/Origin values, forwards only `/api/leads` to the fixed production address, and never reads server secrets. Do not deploy this preview server.

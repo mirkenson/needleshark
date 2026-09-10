@@ -3,6 +3,7 @@ from contextlib import closing
 import os
 import re
 import json
+from lead_context import CONTEXT_FIELDS
 
 def archive(lead):
     dsn = os.environ.get('CRM_DSN')
@@ -14,10 +15,11 @@ def archive(lead):
     with closing(psycopg2.connect(dsn, connect_timeout=5)) as conn, conn:
         with conn.cursor() as cur:
             # A retry must not change the customer/order snapshot or create a duplicate.
-            cur.execute('SELECT customer_name,contact,description FROM orders WHERE submission_id=%s', (lead['id'],))
+            cur.execute('''SELECT customer_name,contact,description,product_slug,product_name,
+                product_size,inquiry_type,quantity,source_path FROM orders WHERE submission_id=%s''', (lead['id'],))
             old = cur.fetchone()
             if old:
-                if old != (lead['name'],contact,lead['question']):
+                if old != (lead['name'],contact,lead['question'], *(lead.get(key) for key in CONTEXT_FIELDS)):
                     raise ValueError('Submission ID already belongs to another request')
                 return
             cur.execute('''INSERT INTO customers(name,contact,contact_key,first_inquiry_at,last_inquiry_at)
@@ -26,7 +28,8 @@ def archive(lead):
                 RETURNING id''', (lead['name'],contact,key,lead['created_at'],lead['created_at']))
             customer_id = cur.fetchone()[0]
             cur.execute('''INSERT INTO orders(submission_id,customer_id,created_at,customer_name,contact,description,
-                attachment_name,consent,consent_documents) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s::jsonb)
+                attachment_name,consent,consent_documents,product_slug,product_name,product_size,
+                inquiry_type,quantity,source_path) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s::jsonb,%s,%s,%s,%s,%s,%s)
                 ON CONFLICT(submission_id) DO NOTHING''', (lead['id'],customer_id,lead['created_at'],lead['name'],contact,
                 lead['question'],(lead.get('attachment') or {}).get('name'),lead.get('consent',False),
-                json.dumps(lead.get('consent_documents',[]))))
+                json.dumps(lead.get('consent_documents',[])), *(lead.get(key) for key in CONTEXT_FIELDS)))

@@ -10,6 +10,7 @@ import threading
 import time
 import uuid
 from crm import archive
+from lead_context import validate_context, google_payload
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.request import Request, urlopen
 
@@ -63,6 +64,9 @@ def validate(data):
     if not re.fullmatch(r'[^\s@]+@[^\s@]+\.[^\s@]+', contact):
         if not re.fullmatch(r'[+\d()\s.-]+', contact) or not 7 <= len(re.sub(r'\D', '', contact)) <= 15:
             raise ValueError('Укажите корректный телефон или email.')
+    result.update(validate_context(data))
+    if len(google_payload(result)['question']) > 5000:
+        raise ValueError('Сократите описание задачи с учётом сведений о товаре.')
     attachment = data.get('attachment')
     if attachment is not None:
         if not isinstance(attachment, dict):
@@ -110,7 +114,7 @@ def deliver_once():
         rows = db.execute('SELECT id,payload,attempts FROM leads WHERE delivered IS NULL AND retry_at<=? ORDER BY created LIMIT 5', (time.time(),)).fetchall()
     for lead_id, payload, attempts in rows:
         try:
-            body = json.dumps({'token': SECRET, 'lead': json.loads(payload)}).encode()
+            body = json.dumps({'token': SECRET, 'lead': google_payload(json.loads(payload))}).encode()
             request = Request(HOOK, data=body, headers={'Content-Type': 'application/json'}, method='POST')
             with urlopen(request, timeout=40) as response:
                 result = json.loads(response.read(4096))

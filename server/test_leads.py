@@ -90,6 +90,63 @@ class LeadQueueTests(unittest.TestCase):
         with leads.connect() as db:
             self.assertIsNotNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
 
+    def product_data(self):
+        return dict(self.data, product_slug='chehol-na-kvadrocikl', product_name='Чехол на квадроцикл',
+                    product_size='220 × 98 × 106', inquiry_type='wholesale', quantity=12,
+                    source_path='/catalog/chehol-na-kvadrocikl/')
+
+    def test_catalogue_fields_reach_archive_queue_and_google_task(self):
+        data = leads.validate(self.product_data())
+        with patch.object(leads, 'archive') as archive:
+            self.assertEqual(leads.enqueue(copy.deepcopy(data), 'test-ip')[0], 202)
+            self.assertEqual(archive.call_args.args[0]['quantity'], 12)
+        sent = []
+        class Reply:
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def read(self, *args): return json.dumps({'ok': True, 'id': data['id']}).encode()
+        def send(request, **kwargs):
+            sent.append(json.loads(request.data)['lead'])
+            return Reply()
+        with patch.object(leads, 'urlopen', side_effect=send):
+            leads.deliver_once()
+        self.assertIn('Количество, шт.: 12', sent[0]['question'])
+        self.assertIn('Размер, см: 220 × 98 × 106', sent[0]['question'])
+        self.assertIn('Тип обращения: Партия для бизнеса', sent[0]['question'])
+        with leads.connect() as db:
+            payload = json.loads(db.execute('SELECT payload FROM leads').fetchone()[0])
+            self.assertEqual(payload['question'], self.data['question'])
+            self.assertEqual(payload['source_path'], '/catalog/chehol-na-kvadrocikl/')
+
+    def test_catalogue_retry_rejects_changed_quantity_and_size(self):
+        data = leads.validate(self.product_data())
+        self.assertEqual(leads.enqueue(copy.deepcopy(data), 'test-ip')[0], 202)
+        self.assertEqual(leads.enqueue(copy.deepcopy(data), 'test-ip')[0], 200)
+        for update in [{'quantity': 13}, {'product_size': '255 × 140 × 120'}]:
+            self.assertEqual(leads.enqueue(dict(data, **update), 'test-ip')[0], 409)
+
+    def test_invalid_catalogue_metadata_and_oversized_google_task(self):
+        for update in [{'quantity': True}, {'quantity': 0}, {'quantity': 1.5}, {'quantity': '12'},
+                       {'quantity': 1000001}, {'product_slug': '../test'}, {'inquiry_type': 'unknown'},
+                       {'product_size': 'not a size'}, {'product_name': ''},
+                       {'source_path': 'https://other.example/'}, {'source_path': '/catalog/?contact=private'},
+                       {'question': 'x' * 4900}]:
+            with self.subTest(update=list(update)), self.assertRaises(ValueError):
+                leads.validate(dict(self.product_data(), **update))
+
+    def test_legacy_request_keeps_its_payload_shape(self):
+        data = leads.validate(self.data)
+        self.assertNotIn('quantity', data)
+        self.assertEqual(leads.google_payload(data), data)
+
+    def test_valid_file_and_oversized_file(self):
+        import base64
+        attachment = {'name': 'test.pdf', 'type': 'application/pdf', 'data': base64.b64encode(b'%PDF-test').decode()}
+        self.assertEqual(leads.validate(dict(self.data, attachment=attachment))['attachment']['name'], 'test.pdf')
+        attachment['data'] = base64.b64encode(b'%PDF-' + b'x' * leads.MAX_FILE).decode()
+        with self.assertRaises(ValueError):
+            leads.validate(dict(self.data, attachment=attachment))
+
 
 if __name__ == '__main__':
     unittest.main()
