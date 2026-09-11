@@ -45,15 +45,15 @@ def markets(product, compact=False):
     return f'<div class="marketplaces{" compact" if compact else ""}">{"".join(links)}</div>'
 
 
-def shell(content, title, description, product_name='', catalog_current='false'):
+def shell(content, title, description, product_name='', catalog_current='false', product_slug=''):
     return BASE.substitute(content=content, title=e(title), description=e(description),
-                           product_name=e(product_name), catalog_current=catalog_current, dialogs=dialogs())
+                           product_name=e(product_name), product_slug=e(product_slug), catalog_current=catalog_current, dialogs=dialogs())
 
 
 def dialogs():
     return '''<dialog class="catalog-dialog market-dialog" id="market-dialog" aria-labelledby="market-title"><button class="dialog-close" data-close aria-label="Закрыть окно">×</button><p class="eyebrow">ПОКУПКА НА МАРКЕТПЛЕЙСЕ</p><h2 id="market-title">Переход на площадку</h2><p id="market-message"></p><p class="prototype-explanation">В готовой версии эта кнопка откроет карточку товара на маркетплейсе. Сейчас это ссылка-заглушка для согласования макета.</p><button class="button accent" data-close>Понятно <span aria-hidden="true">→</span></button></dialog>
-    <dialog class="catalog-dialog request-dialog" id="request-dialog" aria-labelledby="request-title"><button class="dialog-close" data-close aria-label="Закрыть заявку">×</button><p class="eyebrow">НАПРЯМУЮ С ПРОИЗВОДСТВОМ</p><h2 id="request-title">Обсудим ваш заказ<span class="title-dot">.</span></h2><p class="request-context" id="request-context"></p><p class="prototype-explanation">Это пример формы. Данные никуда не отправляются.</p>
-      <form id="catalog-request" class="ym-hide-content"><label>Ваше имя<input name="name" autocomplete="name" placeholder="Как к вам обращаться" required maxlength="100"></label><label>Телефон или email<input name="contact" autocomplete="off" placeholder="+7 или example@mail.ru" required maxlength="150" aria-describedby="contact-error"></label><p class="field-error" id="contact-error" hidden></p><div class="request-fields"><label>Тип обращения<select name="intent"><option>Заказ напрямую</option><option>Подбор размера</option><option>Партия для бизнеса</option></select></label><label>Количество, шт.<input name="quantity" type="number" min="1" step="1" placeholder="Например, 10"></label></div><label>Расскажите о задаче<textarea name="question" rows="3" maxlength="2000" placeholder="Модель техники, габариты, нужные размеры и ваши вопросы"></textarea></label><label class="consent"><input type="checkbox" name="consent" required><span>Принимаю <a href="/user-agreement.html" target="_blank" rel="noopener">Пользовательское соглашение</a> и даю согласие на обработку данных согласно <a href="/privacy-policy.html" target="_blank" rel="noopener">Политике</a>.</span></label><button class="button accent" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button><p class="prototype-result" id="request-result" role="status" hidden></p></form>
+    <dialog class="catalog-dialog request-dialog" id="request-dialog" aria-labelledby="request-title"><button class="dialog-close" data-close aria-label="Закрыть заявку">×</button><p class="eyebrow">НАПРЯМУЮ С ПРОИЗВОДСТВОМ</p><h2 id="request-title">Обсудим ваш заказ<span class="title-dot">.</span></h2><p class="request-context" id="request-context"></p><p class="request-description">Оставьте контакт — обсудим размер, количество и условия заказа.</p>
+      <form id="catalog-request" class="ym-hide-content"><input name="website" tabindex="-1" autocomplete="off" hidden aria-hidden="true"><label>Ваше имя<input name="name" autocomplete="name" placeholder="Как к вам обращаться" required maxlength="100"></label><label>Телефон или email<input name="contact" autocomplete="off" placeholder="+7 или example@mail.ru" required maxlength="150" aria-describedby="contact-error"></label><p class="field-error" id="contact-error" hidden></p><div class="request-fields"><label>Тип обращения<select name="intent"><option value="direct">Заказ напрямую</option><option value="sizing">Подбор размера</option><option value="wholesale">Партия для бизнеса</option></select></label><label>Количество, шт.<input name="quantity" type="number" min="1" max="1000000" step="1" placeholder="Например, 10"></label></div><label>Расскажите о задаче<textarea name="question" rows="3" maxlength="2000" placeholder="Модель техники, габариты, нужные размеры и ваши вопросы"></textarea></label><label class="consent"><input type="checkbox" name="consent" required><span>Принимаю <a href="/user-agreement.html" target="_blank" rel="noopener">Пользовательское соглашение</a> и даю согласие на обработку данных согласно <a href="/privacy-policy.html" target="_blank" rel="noopener">Политике</a>.</span></label><button class="button accent" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button><p class="request-result" id="request-result" role="status" hidden></p></form>
     </dialog>'''
 
 
@@ -82,7 +82,13 @@ def hero(product):
 def detail_sections(product):
     copy = product['copy']
     scenarios = ''.join(f'<article class="scenario"><span class="scenario-number">0{i+1}</span><p class="scenario-tag">{e(s["tag"])}</p><h3>{e(s["title"])}</h3><p>{e(s["text"])}</p></article>' for i, s in enumerate(product['scenarios']))
-    size_rows = ''.join(f'<tr><td>{i+1:02d}</td>{"".join(f"<td>{n}</td>" for n in s)}<td><button data-select-size="{size_label(s)}" aria-label="Выбрать размер {size_label(s)} см">Выбрать <span aria-hidden="true">↗</span></button></td></tr>' for i, s in enumerate(product['sizes']))
+    hints = {size_label(item['size']): item for item in product.get('sizeGuidance', [])}
+    size_rows = ''
+    for i, size in enumerate(product['sizes']):
+        size_rows += f'<tr class="size-values"><td>{i+1:02d}</td>{"".join(f"<td>{n}</td>" for n in size)}<td><button data-select-size="{size_label(size)}" aria-label="Выбрать размер {size_label(size)} см">Выбрать <span aria-hidden="true">↗</span></button></td></tr>'
+        if hint := hints.get(size_label(size)):
+            size_rows += f'<tr class="size-guidance"><td colspan="5"><strong>{e(hint["label"])}</strong><span>{e(hint["note"])}</span></td></tr>'
+    fastenings = ''.join(f'<article><span>0{i+1}</span><div><h3>{e(item["title"])}</h3><p>{e(item["text"])}</p></div></article>' for i, item in enumerate(product.get('fastenings', [])))
     faqs = ''.join(f'<details><summary>{e(item["question"])}<span aria-hidden="true">+</span></summary><p>{e(item["answer"])}</p></details>' for item in product['faq'])
     kit = ''.join(f'<li><span>0{i+1}</span>{e(item)}</li>' for i, item in enumerate(product['kit']))
     sections = {
@@ -94,6 +100,8 @@ def detail_sections(product):
         'wholesale': f'''<section class="wholesale-section" id="wholesale"><div class="wrap wholesale-layout"><div><p class="eyebrow">ДЛЯ БИЗНЕСА</p><h2>{lines(copy['wholesaleTitle'])}</h2></div><div><p>{e(copy['wholesaleDescription'])}</p><button class="button accent" data-request="Партия для бизнеса">Обсудить партию <span aria-hidden="true">↗</span></button><a href="/#about">Узнать о производстве →</a></div></div></section>'''
     }
     labels = dict(zip(sections, ['Когда пригодится', 'Материал', 'Размеры', 'Комплектация', 'Вопросы', 'Для бизнеса']))
+    if fastenings:
+        sections['material'] = sections['material'].replace('</section>', f'<div class="wrap fastening-details"><h3>Детали, которые держат.</h3><div>{fastenings}</div></div></section>')
     enabled = product['sections']
     if len(enabled) != len(set(enabled)) or any(key not in sections for key in enabled):
         raise ValueError('Unknown or duplicate product section')
@@ -125,7 +133,7 @@ def render():
                 raise ValueError(f'Missing image: {img["src"]}')
         page_dir = DIST / 'catalog' / slug
         page_dir.mkdir(parents=True, exist_ok=True)
-        html = shell(hero(product) + detail_sections(product), f'{product["name"]} — {product["material"]}, {len(product["sizes"])} размеров | Needle Shark', product['seoDescription'], product['name'])
+        html = shell(hero(product) + detail_sections(product), f'{product["name"]} — {product["material"]}, {len(product["sizes"])} размеров | Needle Shark', product['seoDescription'], product['name'], product_slug=slug)
         (page_dir / 'index.html').write_text(html)
     (DIST / 'catalog/index.html').write_text(shell(catalogue(products), 'Каталог изделий из технических тканей | Needle Shark', 'Готовые изделия Needle Shark: чехлы для техники из Oxford. Выбор размера, покупка на маркетплейсах и заказ партии у производителя.', catalog_current='page'))
     print(f'Rendered catalogue and {len(products)} product page(s). Homepage unchanged.')

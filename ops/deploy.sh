@@ -8,6 +8,6 @@ remote_release="/var/www/needle-shark/releases/$release"
 ssh_options=(-i "$ssh_key" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15)
 test -f "$project_dir/dist/index.html"
 ssh "${ssh_options[@]}" "$remote_host" "mkdir -p '$remote_release'"
-scp "${ssh_options[@]}" "$project_dir"/dist/* "$remote_host:$remote_release/"
+scp -r "${ssh_options[@]}" "$project_dir"/dist/* "$remote_host:$remote_release/"
 ssh "${ssh_options[@]}" "$remote_host" "set -eu; test -s '$remote_release/index.html'; chmod -R u=rwX,go=rX '$remote_release'; cd /var/www/needle-shark; if test -L current; then ln -sfn \"\$(readlink current)\" previous; fi; ln -s '$remote_release' 'next-$release'; mv -Tf 'next-$release' current"
 printf 'Published: https://needleshark.ru/ (release %s)\n' "$release"

@@ -1,5 +1,5 @@
 'use strict';
-// Prototype-only interactions. No analytics, network requests or persisted input.
+// Catalogue UI and submissions to the existing durable lead endpoint.
 const menuButton = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('#mobile-menu');
 menuButton?.addEventListener('click', () => {
@@ -62,12 +62,17 @@ const requestDialog = document.querySelector('#request-dialog');
 const requestForm = document.querySelector('#catalog-request');
 const requestResult = document.querySelector('#request-result');
 const contactError = document.querySelector('#contact-error');
+const intentValues = {'Заказ напрямую': 'direct', 'Подбор размера': 'sizing', 'Партия для бизнеса': 'wholesale'};
+let sending = false;
+let submissionId = null;
+let submissionContent = null;
 document.querySelectorAll('[data-request]').forEach(button => button.addEventListener('click', () => {
+  if (sending) return;
   const selected = sizeInputs.find(input => input.checked)?.value;
   const product = document.body.dataset.productName;
   const context = product ? `${product} · ${selected ? `${selected} см` : 'размер пока не выбран'}` : 'Готовые изделия и пошив партии';
   document.querySelector('#request-context').textContent = context;
-  requestForm.elements.intent.value = button.dataset.request;
+  requestForm.elements.intent.value = intentValues[button.dataset.request] || 'direct';
   requestResult.hidden = true;
   openDialog(requestDialog, button);
 }));
@@ -77,8 +82,9 @@ requestForm?.elements.contact.addEventListener('input', () => {
   contactError.hidden = true;
 });
 requestForm?.addEventListener('input', () => { requestResult.hidden = true; });
-requestForm?.addEventListener('submit', event => {
+requestForm?.addEventListener('submit', async event => {
   event.preventDefault();
+  if (sending) return;
   const contact = requestForm.elements.contact;
   const value = contact.value.trim();
   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -92,8 +98,57 @@ requestForm?.addEventListener('submit', event => {
     return;
   }
   if (!requestForm.reportValidity()) return;
-  requestResult.textContent = 'Форма заполнена. Это прототип: заявка не отправлена и данные не сохранены. В готовой версии здесь появится подтверждение после получения заявки сервером.';
+  const payload = {
+    name: requestForm.elements.name.value.trim(),
+    contact: value,
+    question: requestForm.elements.question.value.trim() || 'Обращение по каталогу.',
+    consent: requestForm.elements.consent.checked,
+    website: requestForm.elements.website.value,
+    product_slug: document.body.dataset.productSlug || '',
+    product_name: document.body.dataset.productName || '',
+    product_size: sizeInputs.find(input => input.checked)?.value || '',
+    inquiry_type: requestForm.elements.intent.value,
+    quantity: requestForm.elements.quantity.value === '' ? null : Number(requestForm.elements.quantity.value),
+    source_path: location.pathname
+  };
+  // Reuse the ID after a lost response; a changed request gets its own ID.
+  const content = JSON.stringify(payload);
+  if (!submissionId || content !== submissionContent) {
+    submissionId = crypto.randomUUID();
+    submissionContent = content;
+  }
+  payload.id = submissionId;
+  sending = true;
+  const controls = [...requestForm.querySelectorAll('input,textarea,select,button')];
+  controls.forEach(control => { control.disabled = true; });
   requestResult.hidden = false;
+  requestResult.dataset.state = 'pending';
+  requestResult.textContent = 'Отправляем заявку…';
+  try {
+    const response = await fetch('/api/leads', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(25000)
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || result.ok !== true || result.id !== payload.id) {
+      if (response.status === 409) submissionId = null;
+      throw new Error(result.error || 'Не удалось получить подтверждение. Повторите отправку или напишите на info@neesha.ru.');
+    }
+    requestResult.dataset.state = 'success';
+    requestResult.textContent = 'Заявка получена. Свяжемся с вами по указанному контакту, чтобы обсудить заказ.';
+    document.dispatchEvent(new Event('lead-saved'));
+    requestForm.reset();
+    submissionId = null;
+    submissionContent = null;
+  } catch (error) {
+    requestResult.dataset.state = 'error';
+    requestResult.textContent = error.name === 'TimeoutError' || error.name === 'TypeError'
+      ? 'Не удалось получить подтверждение. Повторите отправку — повторная заявка не создастся.'
+      : error.message;
+  } finally {
+    sending = false;
+    controls.forEach(control => { control.disabled = false; });
+  }
 });
 mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   mobileMenu.hidden = true;
