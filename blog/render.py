@@ -10,9 +10,8 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from site_utils import prepare_html
+from site_utils import prepare_html, ORIGIN
 BASE = Template((ROOT / 'blog/base.html').read_text())
-ORIGIN = 'https://needleshark.ru'
 
 
 def e(value):

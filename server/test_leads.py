@@ -15,6 +15,31 @@ spec.loader.exec_module(leads)
 
 
 class LeadQueueTests(unittest.TestCase):
+    def test_http_origin_gate_allows_owned_domains_only(self):
+        # Exercise the real HTTP handler with an invalid payload so no lead is saved.
+        from http.server import ThreadingHTTPServer
+        from http.client import HTTPConnection
+        import threading
+        server = ThreadingHTTPServer(('127.0.0.1', 0), leads.Handler)
+        worker = threading.Thread(target=server.serve_forever, daemon=True)
+        worker.start()
+        try:
+            for origin in ('https://needle-shark.ru', 'https://www.needle-shark.ru',
+                           'https://needleshark.ru', 'https://www.needleshark.ru',
+                           'https://needle-shark.ru.evil.example', 'http://needle-shark.ru'):
+                conn = HTTPConnection(*server.server_address)
+                conn.request('POST', '/api/leads', '{}', {'Origin': origin, 'Content-Type': 'application/json'})
+                response = conn.getresponse()
+                self.assertEqual(response.status, 403 if origin in ('https://needle-shark.ru.evil.example', 'http://needle-shark.ru') else 400)
+                response.read()
+                conn.close()
+            self.assertEqual(leads.validate(self.data)['consent_documents'],
+                             ['https://needle-shark.ru/user-agreement', 'https://needle-shark.ru/privacy-policy'])
+        finally:
+            server.shutdown()
+            server.server_close()
+            worker.join()
+
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         leads.DB = self.tmp.name + '/queue.sqlite3'

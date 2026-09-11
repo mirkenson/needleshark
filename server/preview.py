@@ -40,8 +40,8 @@ class PreviewHandler(SimpleHTTPRequestHandler):
             if len(body) != length:
                 return self.reply(400, b'{"ok":false}')
             # Fixed destination, no credentials and no configurable external proxy.
-            request = Request('https://needleshark.ru/api/leads', data=body, method='POST',
-                              headers={'Content-Type': 'application/json', 'Origin': 'https://needleshark.ru'})
+            request = Request('https://needle-shark.ru/api/leads', data=body, method='POST',
+                              headers={'Content-Type': 'application/json', 'Origin': 'https://needle-shark.ru'})
             with urlopen(request, timeout=30) as response:
                 return self.reply(response.status, response.read(65536))
         except HTTPError as error:

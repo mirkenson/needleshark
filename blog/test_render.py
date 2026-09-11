@@ -79,7 +79,7 @@ class BlogTests(unittest.TestCase):
             self.assertLess(html.index('Перед CTA'), html.index('class="article-cta"'))
             self.assertLess(html.index('class="article-cta"'), html.index('После CTA'))
             self.assertIn('data-blog-cta="selection" data-article="test"', html)
-            self.assertIn('<link rel="canonical" href="https://needleshark.ru/blog/test/">', html)
+            self.assertIn('<link rel="canonical" href="https://needle-shark.ru/blog/test/">', html)
             self.assertIn('<title>SEO title</title>', html)
             self.assertEqual(html.count('<h1>'), 1)
             self.assertIn('<h3>Вопрос?</h3>', html)

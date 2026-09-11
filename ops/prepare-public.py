@@ -16,4 +16,4 @@ for path in paths:
     if not (DIST/path).is_file():
         raise ValueError('Missing public page: ' + path)
 (DIST/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{escape(ORIGIN + public_path(p))}</loc></url>\n' for p in paths) + '</urlset>\n')
-(DIST/'robots.txt').write_text('User-agent: *\nAllow: /\n\nSitemap: https://needleshark.ru/sitemap.xml\n')
+(DIST/'robots.txt').write_text(f'User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n')

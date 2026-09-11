@@ -4,8 +4,8 @@ import re
 from html import escape, unescape
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-ORIGIN = 'https://needleshark.ru'
-HOSTS = {'needleshark.ru', 'www.needleshark.ru'}
+ORIGIN = 'https://needle-shark.ru'
+HOSTS = {'needle-shark.ru', 'www.needle-shark.ru', 'needleshark.ru', 'www.needleshark.ru'}
 
 def public_path(path):
     path = '/' + str(path).lstrip('/')
@@ -13,8 +13,11 @@ def public_path(path):
 
 def prepare_html(html, path):
     canonical = ORIGIN + public_path(path)
-    if not re.search(r'<link\b[^>]*rel="canonical"', html):
-        html = html.replace('</head>', f'<link rel="canonical" href="{canonical}"></head>')
+    canonical_tag = f'<link rel="canonical" href="{canonical}">'
+    if re.search(r'<link\b[^>]*rel="canonical"[^>]*>', html):
+        html = re.sub(r'<link\b[^>]*rel="canonical"[^>]*>', lambda _: canonical_tag, html)
+    else:
+        html = html.replace('</head>', canonical_tag + '</head>')
     def anchor(match):
         tag = match.group()
         href = re.search(r'\bhref="([^"]*)"', tag)
@@ -28,7 +31,7 @@ def prepare_html(html, path):
         keys = {key for key, value in query}
         track = re.search(r'\bdata-track="([^"]+)"', tag)
         content = track.group(1) if track else public_path(path).strip('/').replace('/', '_') + '_' + hashlib.sha256((parsed.hostname + parsed.path).encode()).hexdigest()[:8]
-        for key, value in [('utm_source','needleshark.ru'),('utm_medium','referral'),('utm_campaign','website'),('utm_content',content)]:
+        for key, value in [('utm_source',urlsplit(ORIGIN).hostname),('utm_medium','referral'),('utm_campaign','website'),('utm_content',content)]:
             if key not in keys:
                 query.append((key, value))
         updated = urlunsplit((parsed.scheme,parsed.netloc,parsed.path,urlencode(query),parsed.fragment))

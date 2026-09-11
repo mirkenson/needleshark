@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://needleshark.ru/sitemap.xml
+Sitemap: https://needle-shark.ru/sitemap.xml
