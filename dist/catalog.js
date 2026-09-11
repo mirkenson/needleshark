@@ -51,13 +51,6 @@ document.querySelectorAll('dialog').forEach(dialog => {
     dialogOpener?.focus();
   });
 });
-const marketDialog = document.querySelector('#market-dialog');
-document.querySelectorAll('[data-market]').forEach(button => button.addEventListener('click', () => {
-  document.querySelector('#market-title').textContent = button.dataset.market;
-  document.querySelector('#market-message').textContent = `Ссылка на товар в ${button.dataset.market} будет добавлена перед публикацией.`;
-  openDialog(marketDialog, button);
-}));
-
 const requestDialog = document.querySelector('#request-dialog');
 const requestForm = document.querySelector('#catalog-request');
 const requestResult = document.querySelector('#request-result');

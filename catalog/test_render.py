@@ -46,13 +46,13 @@ class CatalogueTests(unittest.TestCase):
         self.assertNotIn('id="sizes"', html)
         self.assertIn('data-request="Подбор размера"', html)
 
-    def test_real_market_link_replaces_only_its_placeholder(self):
+    def test_real_market_link_enables_only_its_marketplace(self):
         product = copy.deepcopy(PRODUCT)
         product['marketplaces'][0]['url'] = 'https://www.ozon.ru/product/example/'
         html = render.markets(product)
         self.assertIn('href="https://www.ozon.ru/product/example/"', html)
-        self.assertNotIn('data-market="Ozon"', html)
-        self.assertIn('data-market="Wildberries"', html)
+        self.assertNotIn('aria-label="Ozon: покупка пока недоступна"', html)
+        self.assertIn('disabled aria-label="Wildberries: покупка пока недоступна"', html)
 
 
 if __name__ == '__main__':

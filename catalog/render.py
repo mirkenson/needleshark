@@ -41,7 +41,7 @@ def markets(product, compact=False):
                 raise ValueError('Marketplace links must use HTTPS')
             links.append(f'<a class="market-button" href="{e(market["url"])}" target="_blank" rel="noopener noreferrer">{content}</a>')
         else:
-            links.append(f'<button class="market-button" data-market="{name}">{content}</button>')
+            links.append(f'<button class="market-button" type="button" disabled aria-label="{name}: покупка пока недоступна">{name}<small>Пока недоступно</small></button>')
     return f'<div class="marketplaces{" compact" if compact else ""}">{"".join(links)}</div>'
 
 
@@ -51,8 +51,7 @@ def shell(content, title, description, product_name='', catalog_current='false',
 
 
 def dialogs():
-    return '''<dialog class="catalog-dialog market-dialog" id="market-dialog" aria-labelledby="market-title"><button class="dialog-close" data-close aria-label="Закрыть окно">×</button><p class="eyebrow">ПОКУПКА НА МАРКЕТПЛЕЙСЕ</p><h2 id="market-title">Переход на площадку</h2><p id="market-message"></p><p class="prototype-explanation">В готовой версии эта кнопка откроет карточку товара на маркетплейсе. Сейчас это ссылка-заглушка для согласования макета.</p><button class="button accent" data-close>Понятно <span aria-hidden="true">→</span></button></dialog>
-    <dialog class="catalog-dialog request-dialog" id="request-dialog" aria-labelledby="request-title"><button class="dialog-close" data-close aria-label="Закрыть заявку">×</button><p class="eyebrow">НАПРЯМУЮ С ПРОИЗВОДСТВОМ</p><h2 id="request-title">Обсудим ваш заказ<span class="title-dot">.</span></h2><p class="request-context" id="request-context"></p><p class="request-description">Оставьте контакт — обсудим размер, количество и условия заказа.</p>
+    return '''<dialog class="catalog-dialog request-dialog" id="request-dialog" aria-labelledby="request-title"><button class="dialog-close" data-close aria-label="Закрыть заявку">×</button><p class="eyebrow">НАПРЯМУЮ С ПРОИЗВОДСТВОМ</p><h2 id="request-title">Обсудим ваш заказ<span class="title-dot">.</span></h2><p class="request-context" id="request-context"></p><p class="request-description">Оставьте контакт — обсудим размер, количество и условия заказа.</p>
       <form id="catalog-request" class="ym-hide-content"><input name="website" tabindex="-1" autocomplete="off" hidden aria-hidden="true"><label>Ваше имя<input name="name" autocomplete="name" placeholder="Как к вам обращаться" required maxlength="100"></label><label>Телефон или email<input name="contact" autocomplete="off" placeholder="+7 или example@mail.ru" required maxlength="150" aria-describedby="contact-error"></label><p class="field-error" id="contact-error" hidden></p><div class="request-fields"><label>Тип обращения<select name="intent"><option value="direct">Заказ напрямую</option><option value="sizing">Подбор размера</option><option value="wholesale">Партия для бизнеса</option></select></label><label>Количество, шт.<input name="quantity" type="number" min="1" max="1000000" step="1" placeholder="Например, 10"></label></div><label>Расскажите о задаче<textarea name="question" rows="3" maxlength="2000" placeholder="Модель техники, габариты, нужные размеры и ваши вопросы"></textarea></label><label class="consent"><input type="checkbox" name="consent" required><span>Принимаю <a href="/user-agreement.html" target="_blank" rel="noopener">Пользовательское соглашение</a> и даю согласие на обработку данных согласно <a href="/privacy-policy.html" target="_blank" rel="noopener">Политике</a>.</span></label><button class="button accent" type="submit">Отправить заявку <span aria-hidden="true">↗</span></button><p class="request-result" id="request-result" role="status" hidden></p></form>
     </dialog>'''
 
@@ -63,6 +62,7 @@ def hero(product):
     sizes = ''.join(f'<label class="size-option"><input type="radio" name="product-size" value="{size_label(s)}"><span>{size_label(s)}</span></label>' for s in product['sizes'])
     note = f'<p class="seasonal-note">{e(product["seasonalNote"])}</p>' if product['seasonalNote'] else ''
     size_help = '<a class="size-help" href="#sizes">Как подобрать размер <span aria-hidden="true">↙</span></a>' if 'sizes' in product['sections'] else '<button class="text-link size-help" data-request="Подбор размера">Помогите подобрать размер ↗</button>'
+    purchase_note = "Цена и доставка — на выбранном маркетплейсе." if any(m["url"] for m in product["marketplaces"]) else "Переходы на маркетплейсы временно недоступны. Заказать можно напрямую — оставьте заявку ниже."
     return f'''
     <div class="wrap breadcrumbs"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/catalog/">Каталог</a><span aria-hidden="true">/</span><span>{e(product['name'])}</span></div>
     <section class="wrap detail-hero" aria-labelledby="product-title">
@@ -74,7 +74,7 @@ def hero(product):
         <div class="hero-specs"><div><span>Материал</span><strong>{e(product['material'])}</strong></div><div><span>Влагозащитная пропитка</span><strong>{e(product['coating'])}</strong></div></div>
         <fieldset class="size-picker"><legend>Размер, см <span>Д × Ш × В</span></legend><div class="size-options">{sizes}</div></fieldset>
         {size_help}
-        <div class="buy-block"><p class="buy-label">Купить на удобной площадке</p>{markets(product)}<p class="price-note">Цена и доставка — на выбранном маркетплейсе.</p><button class="button accent request-primary" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button><p class="direct-note">Заказ напрямую · подбор размера · партии для бизнеса</p></div>
+        <div class="buy-block"><p class="buy-label">Способы заказа</p>{markets(product)}<p class="price-note">{purchase_note}</p><button class="button accent request-primary" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button><p class="direct-note">Заказ напрямую · подбор размера · партии для бизнеса</p></div>
       </div>
     </section>'''
 
@@ -116,7 +116,7 @@ def catalogue(products):
         if not product['visible']:
             continue
         url = f'/catalog/{product["slug"]}/'
-        cards.append(f'''<article class="catalog-card"><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], True)}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(product['material'])} / {e(product['coating'])}</span><span>{len(product['sizes'])} размеров</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a><div class="card-buy"><span>Сразу к покупке</span>{markets(product, True)}</div></article>''')
+        cards.append(f'''<article class="catalog-card"><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], True)}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(product['material'])} / {e(product['coating'])}</span><span>{len(product['sizes'])} размеров</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a><div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div></article>''')
     return f'''<div class="wrap breadcrumbs"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></div><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span>{len(cards):02d} / {"изделие" if len(cards) == 1 else "изделий"}</span></div><div class="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой техники нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
 
 
