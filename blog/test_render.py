@@ -61,7 +61,7 @@ class BlogTests(unittest.TestCase):
             html = (Path(tmp) / 'test/index.html').read_text()
             self.assertEqual(html.count('src="/metrika.js?v=20260911"'), 1)
             self.assertIn('https://mc.yandex.ru/watch/112428810', html)
-            self.assertIn('src="/analytics.js?v=20260911-publish"', html)
+            self.assertIn('src="/analytics.js?v=20260911-events2"', html)
             self.assertIn('href="/blog/"', html.split('</header>')[0])
 
     def test_cta_metadata_and_optional_faq(self):

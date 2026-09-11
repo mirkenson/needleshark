@@ -1,7 +1,20 @@
 (() => {
   const counter = 112428810;
-  const goal = (name, params = {}) => {
-    if (typeof window.ym === 'function') window.ym(counter, 'reachGoal', name, params);
+  const goal = (name, params = {}, callback) => {
+    if (typeof window.ym === 'function') window.ym(counter, 'reachGoal', name, params, callback);
+    else callback?.();
+  };
+  const navigationGoal = (event, el, name, params) => {
+    const sameTab = el.tagName === 'A' && (!el.target || el.target === '_self') && !el.hasAttribute('download');
+    if (!sameTab || event.type !== 'click' || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.defaultPrevented) {
+      goal(name, params);
+      return;
+    }
+    event.preventDefault();
+    let followed = false;
+    const follow = () => { if (!followed) { followed = true; clearTimeout(timer); location.assign(el.href); } };
+    const timer = setTimeout(follow, 800);
+    goal(name, params, follow);
   };
   const localHosts = new Set(['needleshark.ru', 'www.needleshark.ru', location.hostname]);
   function trackClick(event) {
@@ -10,7 +23,7 @@
     if (!el || el.disabled) return;
     const params = {page: location.pathname};
     if (el.dataset.blogCta) {
-      goal('blog_cta_click', {...params, article: el.dataset.article, cta: el.dataset.blogCta});
+      navigationGoal(event, el, 'blog_cta_click', {...params, article: el.dataset.article, cta: el.dataset.blogCta});
       return;
     }
     const href = el.getAttribute('href') || '';
@@ -21,7 +34,7 @@
     if (el.tagName === 'A' && href) {
       const url = new URL(href, location.href);
       if (['http:', 'https:'].includes(url.protocol) && !localHosts.has(url.hostname)) {
-        goal('outbound_click', {...params, host: url.hostname, element: el.dataset.track || 'external_link'});
+        navigationGoal(event, el, 'outbound_click', {...params, host: url.hostname, element: el.dataset.track || 'external_link'});
         return;
       }
     }
@@ -29,7 +42,7 @@
       goal('request_open', {...params, product: document.body.dataset.productSlug || 'catalog'});
       return;
     }
-    if (el.dataset.track || el.tagName === 'A') goal('ui_click', {...params, element: el.dataset.track || 'internal_link'});
+    if (el.dataset.track || el.tagName === 'A') navigationGoal(event, el, 'ui_click', {...params, element: el.dataset.track || 'internal_link'});
   }
   document.addEventListener('click', trackClick);
   document.addEventListener('auxclick', trackClick);
