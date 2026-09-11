@@ -53,6 +53,9 @@ def validate(posts):
             elif block['type'] == 'list':
                 if not block['items'] or not all(isinstance(item, str) and item.strip() for item in block['items']):
                     raise ValueError('Empty list')
+            elif block['type'] == 'sources':
+                if not block['items'] or not all(isinstance(item.get('title'), str) and item['title'].strip() and isinstance(item.get('url'), str) and safe_url(item['url']) for item in block['items']):
+                    raise ValueError('Sources require a title and safe URL')
             elif block['type'] == 'cta':
                 for key in ('id', 'lead', 'text', 'label', 'url'):
                     if not isinstance(block[key], str) or not block[key].strip():
@@ -94,6 +97,8 @@ def render(posts, output):
         for block in post['blocks']:
             if block['type'] == 'list':
                 blocks.append('<ul>' + ''.join(f'<li>{e(item)}</li>' for item in block['items']) + '</ul>')
+            elif block['type'] == 'sources':
+                blocks.append('<p class="article-sources">Источники: ' + '; '.join(f'<a href="{e(item["url"])}" rel="noopener noreferrer">{e(item["title"])}</a>' for item in block['items']) + '.</p>')
             elif block['type'] == 'cta':
                 external = ' rel="noopener noreferrer"' if block['url'].startswith('https://') else ''
                 blocks.append(f'<aside class="article-cta" aria-label="{e(block["lead"])}"><p class="cta-lead">{e(block["lead"])}</p><p>{e(block["text"])}</p><a class="button accent" href="{e(block["url"])}" data-blog-cta="{e(block["id"])}" data-article="{e(post["slug"])}"{external}>{e(block["label"])} <span aria-hidden="true">↗</span></a></aside>')

@@ -93,3 +93,13 @@ class BlogTests(unittest.TestCase):
             post = {**POST, 'blocks': [dict(type='cta', id='link', lead='a', text='b', label='c', url=url)]}
             with tempfile.TemporaryDirectory() as tmp, self.assertRaises(ValueError):
                 render([post], Path(tmp))
+
+    def test_sources_escape_text_and_reject_unsafe_links(self):
+        post = {**POST, 'blocks': [dict(type='sources', items=[dict(title='<b>Manual</b>', url='https://example.com/manual')])]}
+        with tempfile.TemporaryDirectory() as tmp:
+            render([post], Path(tmp))
+            html = (Path(tmp) / 'test/index.html').read_text()
+            self.assertIn('&lt;b&gt;Manual&lt;/b&gt;', html)
+            post['blocks'][0]['items'][0]['url'] = 'javascript:alert(1)'
+            with self.assertRaises(ValueError):
+                render([post], Path(tmp))
