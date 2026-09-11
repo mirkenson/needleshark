@@ -1,0 +1,262 @@
+{
+  "/textile-hero.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2612271,
+    "sha256": "8f35da8b0398e114ce586a40853fb1e2c5c9f2bf4351eda12e1a3c77c5fe4380",
+    "variants": [
+      {
+        "src": "/images/textile-hero-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1452
+      },
+      {
+        "src": "/images/textile-hero-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 23730
+      },
+      {
+        "src": "/images/textile-hero-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 69916
+      },
+      {
+        "src": "/images/textile-hero-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 142780
+      },
+      {
+        "src": "/images/textile-hero-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 206222
+      }
+    ]
+  },
+  "/atv-cover.png": {
+    "width": 900,
+    "height": 1124,
+    "originalBytes": 1214738,
+    "sha256": "e000badce016f4e4fdeb0aeb1522bcb3ea6f4d5d493935ac87845bcb29f4339c",
+    "variants": [
+      {
+        "src": "/images/atv-cover-160.webp",
+        "width": 160,
+        "height": 200,
+        "bytes": 1774
+      },
+      {
+        "src": "/images/atv-cover-480.webp",
+        "width": 480,
+        "height": 599,
+        "bytes": 8088
+      },
+      {
+        "src": "/images/atv-cover-800.webp",
+        "width": 800,
+        "height": 999,
+        "bytes": 16978
+      },
+      {
+        "src": "/images/atv-cover-900.webp",
+        "width": 900,
+        "height": 1124,
+        "bytes": 20080
+      }
+    ]
+  },
+  "/pocket-organizer.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2087530,
+    "sha256": "fbd79ff3f4bcaf2df650c5401083ad02302ca5739782d3b82b4ab0dae1b2131f",
+    "variants": [
+      {
+        "src": "/images/pocket-organizer-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1098
+      },
+      {
+        "src": "/images/pocket-organizer-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 5304
+      },
+      {
+        "src": "/images/pocket-organizer-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 14724
+      },
+      {
+        "src": "/images/pocket-organizer-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 37148
+      },
+      {
+        "src": "/images/pocket-organizer-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 73074
+      }
+    ]
+  },
+  "/black-fabric-rolls.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2590204,
+    "sha256": "517493441901184faf432434dce81fdd08aa01c6e5589d2ad84dacb5910318e5",
+    "variants": [
+      {
+        "src": "/images/black-fabric-rolls-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1456
+      },
+      {
+        "src": "/images/black-fabric-rolls-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 10242
+      },
+      {
+        "src": "/images/black-fabric-rolls-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 37660
+      },
+      {
+        "src": "/images/black-fabric-rolls-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 99390
+      },
+      {
+        "src": "/images/black-fabric-rolls-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 160526
+      }
+    ]
+  },
+  "/catalog-assets/atv-studio.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 298863,
+    "sha256": "73c79db1ee4e08101f22874ec11fe7fdb8ba916a67e8a633767029a01f82cb7f",
+    "variants": [
+      {
+        "src": "/images/atv-studio-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2514
+      },
+      {
+        "src": "/images/atv-studio-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12520
+      },
+      {
+        "src": "/images/atv-studio-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 26586
+      },
+      {
+        "src": "/images/atv-studio-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 48728
+      },
+      {
+        "src": "/images/atv-studio-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 69342
+      }
+    ]
+  },
+  "/catalog-assets/atv-side.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 269259,
+    "sha256": "90b03d60f9eb8801dfeba588ba84924184c7a9b03f42279d2bc2ed32797acfbb",
+    "variants": [
+      {
+        "src": "/images/atv-side-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2040
+      },
+      {
+        "src": "/images/atv-side-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 10740
+      },
+      {
+        "src": "/images/atv-side-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 23202
+      },
+      {
+        "src": "/images/atv-side-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 41216
+      },
+      {
+        "src": "/images/atv-side-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 57744
+      }
+    ]
+  },
+  "/catalog-assets/oxford-detail.jpg": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 528251,
+    "sha256": "d84ebcc494dc9bb0b9962684af38ed83c02bf72d07d7928728941fd43450e916",
+    "variants": [
+      {
+        "src": "/images/oxford-detail-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 3998
+      },
+      {
+        "src": "/images/oxford-detail-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 34248
+      },
+      {
+        "src": "/images/oxford-detail-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 78978
+      },
+      {
+        "src": "/images/oxford-detail-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 141334
+      },
+      {
+        "src": "/images/oxford-detail-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 199702
+      }
+    ]
+  }
+}

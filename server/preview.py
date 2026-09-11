@@ -9,6 +9,14 @@ from urllib.request import Request, urlopen
 
 
 class PreviewHandler(SimpleHTTPRequestHandler):
+    def translate_path(self, path):
+        # Match the production `try_files $uri $uri.html $uri/` for legal pages.
+        translated = super().translate_path(path)
+        candidate = Path(translated)
+        if not candidate.exists() and not candidate.suffix and candidate.with_suffix('.html').is_file():
+            return str(candidate.with_suffix('.html'))
+        return translated
+
     def log_message(self, *args):
         pass
 

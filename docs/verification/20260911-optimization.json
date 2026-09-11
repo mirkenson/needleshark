@@ -1,0 +1,887 @@
+{
+  "date": "2026-09-11",
+  "stage": "local; not deployed",
+  "viewports": [
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "pages": 7,
+  "browser": "Local installed Chrome via Playwright; DPR 1",
+  "layout": [
+    {
+      "name": "home",
+      "path": "/",
+      "width": 360,
+      "status": 200,
+      "viewport": 360,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "catalog",
+      "path": "/catalog/",
+      "width": 360,
+      "status": 200,
+      "viewport": 360,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "product",
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 360,
+      "status": 200,
+      "viewport": 360,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "blog",
+      "path": "/blog/",
+      "width": 360,
+      "status": 200,
+      "viewport": 360,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "article",
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 360,
+      "status": 200,
+      "viewport": 360,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy-policy",
+      "width": 360,
+      "status": 200,
+      "viewport": 360,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "agreement",
+      "path": "/user-agreement",
+      "width": 360,
+      "status": 200,
+      "viewport": 360,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "width": 390,
+      "status": 200,
+      "viewport": 390,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "catalog",
+      "path": "/catalog/",
+      "width": 390,
+      "status": 200,
+      "viewport": 390,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "product",
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 390,
+      "status": 200,
+      "viewport": 390,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "blog",
+      "path": "/blog/",
+      "width": 390,
+      "status": 200,
+      "viewport": 390,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "article",
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 390,
+      "status": 200,
+      "viewport": 390,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy-policy",
+      "width": 390,
+      "status": 200,
+      "viewport": 390,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "agreement",
+      "path": "/user-agreement",
+      "width": 390,
+      "status": 200,
+      "viewport": 390,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "width": 768,
+      "status": 200,
+      "viewport": 768,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "catalog",
+      "path": "/catalog/",
+      "width": 768,
+      "status": 200,
+      "viewport": 768,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "product",
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 768,
+      "status": 200,
+      "viewport": 768,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "blog",
+      "path": "/blog/",
+      "width": 768,
+      "status": 200,
+      "viewport": 768,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "article",
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 768,
+      "status": 200,
+      "viewport": 768,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy-policy",
+      "width": 768,
+      "status": 200,
+      "viewport": 768,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "agreement",
+      "path": "/user-agreement",
+      "width": 768,
+      "status": 200,
+      "viewport": 768,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "width": 1024,
+      "status": 200,
+      "viewport": 1024,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "catalog",
+      "path": "/catalog/",
+      "width": 1024,
+      "status": 200,
+      "viewport": 1024,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "product",
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 1024,
+      "status": 200,
+      "viewport": 1024,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "blog",
+      "path": "/blog/",
+      "width": 1024,
+      "status": 200,
+      "viewport": 1024,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "article",
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 1024,
+      "status": 200,
+      "viewport": 1024,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy-policy",
+      "width": 1024,
+      "status": 200,
+      "viewport": 1024,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "agreement",
+      "path": "/user-agreement",
+      "width": 1024,
+      "status": 200,
+      "viewport": 1024,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "viewport": 1440,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "catalog",
+      "path": "/catalog/",
+      "width": 1440,
+      "status": 200,
+      "viewport": 1440,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "product",
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 1440,
+      "status": 200,
+      "viewport": 1440,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "blog",
+      "path": "/blog/",
+      "width": 1440,
+      "status": 200,
+      "viewport": 1440,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "article",
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 1440,
+      "status": 200,
+      "viewport": 1440,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "privacy",
+      "path": "/privacy-policy",
+      "width": 1440,
+      "status": 200,
+      "viewport": 1440,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    },
+    {
+      "name": "agreement",
+      "path": "/user-agreement",
+      "width": 1440,
+      "status": 200,
+      "viewport": 1440,
+      "h1": 1,
+      "broken": [],
+      "overflow": [],
+      "errors": [],
+      "badResponses": []
+    }
+  ],
+  "interactions": {
+    "results": [
+      "mobile menu: open, Escape, focus return",
+      "three gallery images: src/srcset/pressed state",
+      "catalogue form: required, invalid contact, network error, one retry UUID, double click blocked, success only after mock acknowledgment",
+      "FAQ, long error wraps in dialog",
+      "homepage form: required, server contact error, >2 MB rejected, allowed PDF, network retry UUID, duplicate blocked, mock success",
+      "article CTA navigates to the product"
+    ],
+    "zoom": [
+      {
+        "url": "/",
+        "width": 1440
+      },
+      {
+        "url": "/catalog/",
+        "width": 1440
+      },
+      {
+        "url": "/catalog/chehol-na-kvadrocikl/",
+        "width": 1440
+      },
+      {
+        "url": "/blog/",
+        "width": 1440
+      },
+      {
+        "url": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 1440
+      },
+      {
+        "url": "/privacy-policy",
+        "width": 1440
+      },
+      {
+        "url": "/user-agreement",
+        "width": 1440
+      }
+    ]
+  },
+  "images": {
+    "originalBytes": 9601116,
+    "largestWebpBytes": 786690,
+    "count": 7,
+    "derivatives": 34
+  },
+  "resourceComparison": [
+    {
+      "port": 4174,
+      "name": "home",
+      "bytes": 8532554,
+      "imageBytes": 8504743,
+      "entries": [
+        {
+          "name": "style.css?v=20260911-blog",
+          "bytes": 14166
+        },
+        {
+          "name": "logo.svg",
+          "bytes": 6261
+        },
+        {
+          "name": "metrika.js?v=20260911",
+          "bytes": 607
+        },
+        {
+          "name": "script.js",
+          "bytes": 3327
+        },
+        {
+          "name": "analytics.js?v=20260911-events2",
+          "bytes": 3450
+        },
+        {
+          "name": "textile-hero.png",
+          "bytes": 2612271
+        },
+        {
+          "name": "atv-cover.png",
+          "bytes": 1214738
+        },
+        {
+          "name": "pocket-organizer.png",
+          "bytes": 2087530
+        },
+        {
+          "name": "favicon.ico",
+          "bytes": 0
+        },
+        {
+          "name": "black-fabric-rolls.png",
+          "bytes": 2590204
+        }
+      ]
+    },
+    {
+      "port": 4174,
+      "name": "product",
+      "bytes": 1156481,
+      "imageBytes": 1096373,
+      "entries": [
+        {
+          "name": "style.css?v=20260911-blog",
+          "bytes": 14166
+        },
+        {
+          "name": "catalog.css?v=20260911-publish",
+          "bytes": 21572
+        },
+        {
+          "name": "metrika.js?v=20260911",
+          "bytes": 607
+        },
+        {
+          "name": "catalog.js?v=20260911-publish",
+          "bytes": 7791
+        },
+        {
+          "name": "analytics.js?v=20260911-events2",
+          "bytes": 3450
+        },
+        {
+          "name": "logo.svg",
+          "bytes": 6261
+        },
+        {
+          "name": "atv-studio.jpg",
+          "bytes": 298863
+        },
+        {
+          "name": "atv-side.jpg",
+          "bytes": 269259
+        },
+        {
+          "name": "oxford-detail.jpg",
+          "bytes": 528251
+        },
+        {
+          "name": "logo.svg",
+          "bytes": 6261
+        }
+      ]
+    },
+    {
+      "port": 4173,
+      "name": "home",
+      "bytes": 179135,
+      "imageBytes": 93550,
+      "entries": [
+        {
+          "name": "theme.css?v=20260911-opt1",
+          "bytes": 3115
+        },
+        {
+          "name": "style.css?v=20260911-opt1",
+          "bytes": 12939
+        },
+        {
+          "name": "metrika.js?v=20260911",
+          "bytes": 607
+        },
+        {
+          "name": "analytics.js?v=20260911-events2",
+          "bytes": 3450
+        },
+        {
+          "name": "typography.css?v=20260911-opt1",
+          "bytes": 16097
+        },
+        {
+          "name": "logo.svg",
+          "bytes": 6261
+        },
+        {
+          "name": "textile-hero-800.webp",
+          "bytes": 69916
+        },
+        {
+          "name": "script.js",
+          "bytes": 3327
+        },
+        {
+          "name": "manrope-cyrillic.woff2",
+          "bytes": 14544
+        },
+        {
+          "name": "manrope-latin.woff2",
+          "bytes": 24576
+        },
+        {
+          "name": "atv-cover-480.webp",
+          "bytes": 8088
+        },
+        {
+          "name": "pocket-organizer-480.webp",
+          "bytes": 5304
+        },
+        {
+          "name": "favicon.svg",
+          "bytes": 669
+        },
+        {
+          "name": "favicon.ico",
+          "bytes": 0
+        },
+        {
+          "name": "black-fabric-rolls-480.webp",
+          "bytes": 10242
+        }
+      ]
+    },
+    {
+      "port": 4173,
+      "name": "product",
+      "bytes": 174178,
+      "imageBytes": 66060,
+      "entries": [
+        {
+          "name": "theme.css?v=20260911-opt1",
+          "bytes": 3115
+        },
+        {
+          "name": "typography.css?v=20260911-opt1",
+          "bytes": 16097
+        },
+        {
+          "name": "style.css?v=20260911-opt1",
+          "bytes": 12939
+        },
+        {
+          "name": "navigation.css?v=20260911-opt1",
+          "bytes": 1194
+        },
+        {
+          "name": "catalog.css?v=20260911-opt1",
+          "bytes": 16644
+        },
+        {
+          "name": "menu.js?v=20260911-opt1",
+          "bytes": 686
+        },
+        {
+          "name": "atv-studio-480.webp",
+          "bytes": 12520
+        },
+        {
+          "name": "logo.svg",
+          "bytes": 6261
+        },
+        {
+          "name": "catalog.js?v=20260911-opt1",
+          "bytes": 7336
+        },
+        {
+          "name": "metrika.js?v=20260911",
+          "bytes": 607
+        },
+        {
+          "name": "analytics.js?v=20260911-events2",
+          "bytes": 3450
+        },
+        {
+          "name": "manrope-cyrillic.woff2",
+          "bytes": 14544
+        },
+        {
+          "name": "manrope-latin.woff2",
+          "bytes": 24576
+        },
+        {
+          "name": "atv-side-160.webp",
+          "bytes": 2040
+        },
+        {
+          "name": "atv-studio-160.webp",
+          "bytes": 2514
+        },
+        {
+          "name": "oxford-detail-160.webp",
+          "bytes": 3998
+        },
+        {
+          "name": "favicon.svg",
+          "bytes": 669
+        },
+        {
+          "name": "favicon.ico",
+          "bytes": 0
+        },
+        {
+          "name": "oxford-detail-480.webp",
+          "bytes": 34248
+        },
+        {
+          "name": "atv-side-480.webp",
+          "bytes": 10740
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "blog": 8,
+    "catalog": 6,
+    "public": 6,
+    "server": 16,
+    "static_checker": "passed"
+  },
+  "limits": [
+    "Metrika blocked/mocked in local UI tests; real analytics not verified",
+    "Form responses mocked locally; no real lead/Google/email delivery tested",
+    "Not published, no search-console submissions or index guarantees",
+    "Local byte sizes are not field Core Web Vitals"
+  ],
+  "sha256": {
+    "analytics.js": "4f4c86c3b83eba1e7a5e5e15ecf0418d5781a361acdc4d4b1f2dce724a4736d4",
+    "apple-touch-icon.png": "f773819d11d5c28d7bbbcdf1e37a6790b9ef8b7de1f0c58d7341453b98a0e94c",
+    "atv-cover.png": "e000badce016f4e4fdeb0aeb1522bcb3ea6f4d5d493935ac87845bcb29f4339c",
+    "black-fabric-rolls.png": "517493441901184faf432434dce81fdd08aa01c6e5589d2ad84dacb5910318e5",
+    "blog/index.html": "f67fe8a0aed703782620da4f5db3c31661adb78c180a38ea9d8a0339a728705a",
+    "blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html": "f63319e532ff69c50ff3ae3c037e67158f81096e96ec6b671654c4a785704b53",
+    "blog.css": "6c3cac0453c02dc4b0b46f35d36007a51fc8393bd3c09cc555bb8e4900693da0",
+    "brand-preview.png": "de765b20f3260e440dad360844b3a5d38c7e6ce0ee73192253124e9c79561ef1",
+    "catalog/chehol-na-kvadrocikl/index.html": "d93644fa55f2c13b83f41c61dafd66020f000baf98192e1f1e79b133895dd78d",
+    "catalog/index.html": "d9074b3a23c0ea462207bd4b02f94c2fb4d5dcf03c962d0ad6ab4ff646ecac23",
+    "catalog-assets/atv-side.jpg": "90b03d60f9eb8801dfeba588ba84924184c7a9b03f42279d2bc2ed32797acfbb",
+    "catalog-assets/atv-studio.jpg": "73c79db1ee4e08101f22874ec11fe7fdb8ba916a67e8a633767029a01f82cb7f",
+    "catalog-assets/oxford-detail.jpg": "d84ebcc494dc9bb0b9962684af38ed83c02bf72d07d7928728941fd43450e916",
+    "catalog.css": "afca13c98005d8abf57c76d2b8ec00f09fc310d61c2f70b2f4f9343386d84173",
+    "catalog.js": "2db2ed1264d52dc6e55b036dbdcc6962aa2727591aeefa7c9ad0508275b388ad",
+    "favicon-96.png": "86c9ae938c63eeaafd32b43fef15496607a9e7219580f6e0a36b91cdcd48cbf5",
+    "favicon.ico": "815f5dd90f1182fcdac8cee7ba710239a68737177f7e0375366e6a2638c7ba78",
+    "favicon.svg": "3c2a51065e750d3b9008c5de3210e3981b9bc2869cb734bdbd4fee8f30379843",
+    "fonts/OFL.txt": "f612090fb72b6dca3e807e66fa0d2b5def163cef86f1a3209b5c897cba5ee4b7",
+    "fonts/manrope-cyrillic.woff2": "95a493061fe0a8d0d027c2892747134ba747141112d3be4d5022e70ab7d3a1a6",
+    "fonts/manrope-latin.woff2": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f",
+    "icon-192.png": "76fa79e86823b4ed6d8387013b69af14b810faffa1c1438ce90ebdcd4da2699c",
+    "icon-512.png": "077f1ebe988d69c3104bad07795115f9346be7922cad95a4854bbe6b49988c62",
+    "images/atv-cover-160.webp": "b840a74ace4854ebdc30154b829ee7d3760e3152f26c39eefb5df6e28b058fcf",
+    "images/atv-cover-480.webp": "dc6b17c7fb23142e2d9c0ee21a6d570f4bde6ae896a5a5aaf67baa94f903006e",
+    "images/atv-cover-800.webp": "d003b0d48cea07a26f703e4c6a05b09d788c184f81ff3021f2a5bd646c963ad9",
+    "images/atv-cover-900.webp": "73342cabd2e8dd0328e3c4ce5283ea4ddad2fe2bea07f2e0379211a76c918e3f",
+    "images/atv-side-1200.webp": "7b43c650d190cb1898fcaf2e293ad239a7277f97b5f22972858a4f37b5a6b597",
+    "images/atv-side-1536.webp": "b287ce9232111e6fe48e4d4ffcd16ce332bef7f0163392fe5da93a7b1069531a",
+    "images/atv-side-160.webp": "1ff4f9dd85e0bb9e7660daacf6e9dead7c7042b0ebe3e3aba4232b7621e4f988",
+    "images/atv-side-480.webp": "325ad29fcff8133289f72333f742a620f8302ba63d24c1e9bf25625890af0f5e",
+    "images/atv-side-800.webp": "3315e2830cf71a0246977425ccb2dd57117e6532cdd20ead5d4aa593dc4d67dc",
+    "images/atv-studio-1200.webp": "488821c5d82f937e5846c8312aef9a8eb38dff6edd805beb50a594b5b9a51f3f",
+    "images/atv-studio-1536.webp": "72bd711e30d8c002171094911b900682af3b256e784fc98b2589e57fd6bfdc64",
+    "images/atv-studio-160.webp": "917e3acb091e284e1e7c45b61ab95160a10d3969838a75b8a17c4991b571d70a",
+    "images/atv-studio-480.webp": "cc58d504d497ae84a9205fb34ca423df5a9e5d18c00b257cdf1ee8f7e215fe28",
+    "images/atv-studio-800.webp": "57098c595ff6de1a2aff7ea7b6a97bdc6083a19ff0860f90a7be32cddc1d9536",
+    "images/black-fabric-rolls-1200.webp": "80d8148d44345dde9c84ae6ae0c02dd5a436e5a573a4ec2de818025204c6f528",
+    "images/black-fabric-rolls-1536.webp": "a340bcbedb0ecaee183f117c71d540711ea468012cbc77fa6df75fefab9c689e",
+    "images/black-fabric-rolls-160.webp": "b21f6f86fc0227ea916b8976a7aaa68144eeca9df18e49bd896bc7d1df250d0b",
+    "images/black-fabric-rolls-480.webp": "fd6b528e774be2e2a573057cfcc543e43693f05441312ff41e8df09d54398b4c",
+    "images/black-fabric-rolls-800.webp": "b549885b8258641aed0e0588e0487ef89a008792adc63aed6a1dfe94123f27aa",
+    "images/oxford-detail-1200.webp": "6dbc30d4f1a3ed59dbea7417c838131cdb5d9bc63d7444c7ce301373a679bdf8",
+    "images/oxford-detail-1536.webp": "be7849d79982a798b56bf4920edc0dde6fa067c204af8116944d469b1c0c1a61",
+    "images/oxford-detail-160.webp": "bb3d7ee99fdb816e921118f38a803770c6c77a4ec70a9f44fbd0993778980d5c",
+    "images/oxford-detail-480.webp": "0f770062b7f900d4861337c9de433a4bc9608a33a5d7df7895330e994b72dfd0",
+    "images/oxford-detail-800.webp": "1a145e4e1d8f0a74991e282126eabb4c37bcda48dbcf5ec54e457db96033d367",
+    "images/pocket-organizer-1200.webp": "cd269cc0f0228a627e952d7d17313bd4345c90f32fe774b7fc3b150b52ce60a6",
+    "images/pocket-organizer-1536.webp": "b51ec7b7e84204d2b7ab2d72048f8b3708c74de692f845fa1cd0778eb583300c",
+    "images/pocket-organizer-160.webp": "8a3278dd95517569f056777d25493174fbefb9796d3b6303ae68d12a2963763f",
+    "images/pocket-organizer-480.webp": "e62b8820ec82665b6408518e5cc909143d0ff1c5d87ae7b4c93dde03d4842186",
+    "images/pocket-organizer-800.webp": "58b43d1b44b7befed57bc76f7f62518d1533b7dbcbe3afd944e5164ad5e09ef9",
+    "images/textile-hero-1200.webp": "67437a9f79f5d55ebd792b1da6a04960d50c070f3cacf87bac21761cb5ad80eb",
+    "images/textile-hero-1536.webp": "6bc0f8385f786c82771bfe208195578a60a72e9642c51e508bd90649112bfbf0",
+    "images/textile-hero-160.webp": "d33d5e94ad093c9db4718d4d4f34900cb396e1c209a7fd137811b92021f772da",
+    "images/textile-hero-480.webp": "d2c8f27a1c728e2bb6f105138b8e0e213d58ed8028d01e8156a75ab6fe662e1a",
+    "images/textile-hero-800.webp": "e033446ae0ef46158e59c0229175df36cd8682607f78112ef9d950d196ad46b8",
+    "index.html": "6ec24958bed118e2e359bb5713b91d14eb46890a8a3f8abe048e8ceeaa704cd6",
+    "logo.svg": "510043ccae85e0240f88827fadc6b8674be41120fa4b10e893858dfdef1bbc93",
+    "menu.js": "aadabdb2c26c4d06b7268bcd11f1be07e2bb1f01a887c9ab8c3fa8f12afc038c",
+    "metrika.js": "922a6dbb67485561d41dc61acb6ce884cb0792932977c906adde10dce6574aff",
+    "navigation.css": "f035924594f210400c371ef84f58f1a1faa189f6d6af5f254058a6dc609da459",
+    "pocket-organizer.png": "fbd79ff3f4bcaf2df650c5401083ad02302ca5739782d3b82b4ab0dae1b2131f",
+    "privacy-policy.html": "233d0991751b716d3fc443696bb803a83a39414adfdce5d5cfbecbd48cb7cb57",
+    "robots.txt": "1b654eb5770f21019b5aa2c8293773abf3a0177082a5370b84b8dcabca597311",
+    "script.js": "58c3c070b22a0429e580028baab27aee513f5723de0560773981d8e08bd244df",
+    "site.webmanifest": "c324969d366d920e408fe5327ae6a01b2b70eedd17d42418a58da674f6c4338d",
+    "sitemap.xml": "94a217a167f47da67bee665f86defbcd381953a44ef2f25fc6e9675935c1df79",
+    "style.css": "00712ff6dd2524f9818bda2d0978103ece4de7423e5e8b14eab887430e533b37",
+    "textile-hero.png": "8f35da8b0398e114ce586a40853fb1e2c5c9f2bf4351eda12e1a3c77c5fe4380",
+    "theme.css": "567d42990937d176d4ac7dcd5773a7ce2b69ed505bacbf316f3b632b22e33766",
+    "typography.css": "92781d2d1ad74e37d0fa98a3a84b95fb8ba99d081774aeb9b5fbb73e2009b50a",
+    "user-agreement.html": "e0aa473e2e06c13d214f98d2979860920d0ccd39a6dc94aafd8c9558a18112c6"
+  },
+  "finalChecks": [
+    {
+      "path": "/",
+      "width": 360
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 360
+    },
+    {
+      "path": "/user-agreement",
+      "width": 360
+    },
+    {
+      "path": "/",
+      "width": 390
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 390
+    },
+    {
+      "path": "/user-agreement",
+      "width": 390
+    },
+    {
+      "path": "/",
+      "width": 768
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 768
+    },
+    {
+      "path": "/user-agreement",
+      "width": 768
+    },
+    {
+      "path": "/",
+      "width": 1024
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1024
+    },
+    {
+      "path": "/user-agreement",
+      "width": 1024
+    },
+    {
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1440
+    },
+    {
+      "path": "/user-agreement",
+      "width": 1440
+    },
+    "catalog mobile request: modal/Escape/focus/Escape",
+    "cookie notice: display/dismiss/persistence"
+  ]
+}

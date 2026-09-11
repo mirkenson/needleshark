@@ -1,0 +1,26 @@
+/* Shared catalogue/blog navigation; typography is in typography.css. */
+.catalog-header{height:106px;border-bottom:var(--rule-width) solid var(--line)}
+.catalog-header nav a[aria-current=page]{color:var(--accent)}
+.catalog-header .header-cta{background:none;border:0;border-bottom:var(--rule-width) solid var(--accent)}
+.menu-toggle{display:none}
+.mobile-menu{padding-block:16px}
+.catalog-footer{border-top:var(--rule-width) solid var(--line)}
+@media(max-width:800px){
+.catalog-header{height:88px}
+.catalog-header nav{display:none}
+.catalog-header .header-cta{margin-left:auto}
+.menu-toggle{display:flex;gap:12px;border:0;background:transparent;padding:10px 0}
+.mobile-menu:not([hidden]){display:flex;flex-direction:column;border-bottom:var(--rule-width) solid var(--line);gap:8px}
+.mobile-menu a,.mobile-menu button{padding:10px 0;text-align:left;background:none;border:0}
+}
+@media(max-width:540px){
+.catalog-header{gap:16px;height:80px}
+.catalog-header .brand img{width:125px}
+.catalog-header .header-cta{display:none}
+.menu-toggle{margin-left:auto}
+.catalog-footer{gap:24px}
+.catalog-footer .brand img{width:140px}
+}
+@media(max-width:800px){
+.assortment .catalog-header nav{display:none}
+}

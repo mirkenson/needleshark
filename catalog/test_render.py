@@ -12,6 +12,24 @@ PRODUCT = json.loads((render.ROOT / 'catalog/products.json').read_text())['produ
 
 
 class CatalogueTests(unittest.TestCase):
+    def test_social_image_comes_from_this_product(self):
+        product = copy.deepcopy(PRODUCT)
+        product['images'].reverse()
+        schema = render.product_schema(product)
+        html = render.shell('', product['name'], product['description'], product['name'],
+                            product_slug=product['slug'], structured=schema)
+        self.assertIn(f'property="og:image" content="{schema["image"][0]}"', html)
+        self.assertIn(f'property="og:image:alt" content="{product["name"]}"', html)
+
+    def test_schema_matches_visible_facts_without_invented_offer(self):
+        schema = render.product_schema(PRODUCT)
+        self.assertEqual(schema['name'], PRODUCT['name'])
+        self.assertEqual(schema['material'], PRODUCT['material'])
+        self.assertEqual(len(schema['size']), len(PRODUCT['sizes']))
+        self.assertNotIn('offers', schema)
+        self.assertNotIn('aggregateRating', schema)
+        self.assertNotIn('review', schema)
+
     def test_hidden_product_keeps_page_and_homepage(self):
         product = copy.deepcopy(PRODUCT)
         product['visible'] = False

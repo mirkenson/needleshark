@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from site_utils import prepare_html, ORIGIN
+from site_utils import prepare_html, ORIGIN, json_ld, breadcrumbs
 BASE = Template((ROOT / 'blog/base.html').read_text())
 
 
@@ -75,11 +75,13 @@ def validate(posts):
 
 
 def shell(content, title, description, current='false', slug=None, structured=None):
-    canonical = ORIGIN + '/blog/' + (slug + '/' if slug else '')
-    metadata = f'<link rel="canonical" href="{e(canonical)}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(description)}"><meta property="og:url" content="{e(canonical)}"><meta property="og:type" content="{"article" if slug else "website"}">'
+    metadata = ''  # Common canonical/social/icon metadata comes from prepare_html.
     if structured:
-        payload = json.dumps(structured, ensure_ascii=False).replace('<', '\\u003c')
-        metadata += f'<script type="application/ld+json">{payload}</script>'
+        metadata += json_ld(structured)
+    trail = [('Главная', '/'), ('Блог', '/blog/')]
+    if slug:
+        trail.append((structured['headline'], '/blog/' + slug + '/'))
+    metadata += json_ld(breadcrumbs(trail))
     return BASE.substitute(content=content, title=e(title), description=e(description), blog_current=current, metadata=metadata)
 
 
@@ -93,7 +95,11 @@ def render(posts, output):
     intro = '<section class="wrap blog-intro"><p class="eyebrow">NEEDLE SHARK / БЛОГ</p><h1>Блог<span class="title-dot">.</span></h1><p>О материалах, изделиях и работе производства.</p></section>'
     cards = ''.join(f'<article class="blog-card"><time datetime="{e(p["date"])}">{date_label(p["date"])}</time><div><h2><a href="/blog/{p["slug"]}/">{e(p["title"])} <span aria-hidden="true">↗</span></a></h2><p>{e(p["description"])}</p></div></article>' for p in published)
     collection = f'<section class="wrap blog-list" aria-label="Статьи">{cards}</section>' if cards else '<section class="wrap blog-empty" aria-labelledby="empty-title"><h2 id="empty-title">Здесь появятся<br>первые статьи.</h2><div><p>Публикаций пока нет. А познакомиться с нашими изделиями можно уже сейчас.</p><a href="/catalog/">Перейти в каталог <span aria-hidden="true">↗</span></a></div></section>'
-    pages = {'index.html': shell(intro + collection, 'Блог — Needle Shark', 'Блог Needle Shark: материалы, изделия и работа производства.', 'page')}
+    blog_schema = {'@context': 'https://schema.org', '@type': 'CollectionPage', '@id': ORIGIN + '/blog/#webpage',
+                   'name': 'Блог Needle Shark', 'mainEntity': {'@type': 'ItemList', 'itemListElement': [
+                       {'@type': 'ListItem', 'position': i + 1, 'name': post['title'],
+                        'url': ORIGIN + '/blog/' + post['slug'] + '/'} for i, post in enumerate(published)]}}
+    pages = {'index.html': shell(intro + collection, 'Блог о чехлах, материалах и хранении техники | Needle Shark', 'Статьи Needle Shark о защитных чехлах, технических тканях и уходе за техникой. Подготовка мотоцикла и квадроцикла к зимнему хранению.', 'page', structured=blog_schema)}
     for post in published:
         blocks = []
         for block in post['blocks']:
@@ -113,6 +119,11 @@ def render(posts, output):
         updated = f'<p class="article-updated">Обновлено: <time datetime="{e(post["updated"])}">{date_label(post["updated"])}</time></p>' if post.get('updated') else ''
         body = f'<article class="wrap blog-article"><a class="blog-back" href="/blog/">← Все статьи</a><h1>{e(post["title"])}</h1><time datetime="{e(post["date"])}">{date_label(post["date"])}</time>{byline}{updated}<p class="article-lead">{e(post["description"])}</p>{"".join(blocks)}<a class="blog-back" href="/blog/">← Вернуться в блог</a></article>'
         structured = {'@context': 'https://schema.org', '@type': 'BlogPosting', 'headline': post['title'], 'description': post['description'], 'datePublished': post['date'], 'inLanguage': 'ru-RU', 'mainEntityOfPage': ORIGIN + '/blog/' + post['slug'] + '/', 'publisher': {'@type': 'Organization', 'name': 'Needle Shark', 'url': ORIGIN + '/'}}
+        structured['@id'] = ORIGIN + '/blog/' + post['slug'] + '/#article'
+        structured['url'] = ORIGIN + '/blog/' + post['slug'] + '/'
+        structured['publisher']['@id'] = ORIGIN + '/#organization'
+        structured['publisher']['logo'] = ORIGIN + '/logo.svg'
+        structured['citation'] = [item['url'] for block in post['blocks'] if block['type'] == 'sources' for item in block['items']]
         if post.get('author'):
             structured['author'] = {'@type': 'Person', 'name': post['author']}
         if post.get('updated'):

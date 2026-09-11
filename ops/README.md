@@ -26,3 +26,26 @@ The owner changed the two A records for needle-shark.ru (@ and www) to 194.87.99
 Install ops/needle-shark-leads.nginx.conf as /etc/nginx/snippets/needle-shark-leads.conf before using ops/needle-shark.nginx.conf. The API location is shared by the main HTTPS server and redirect aliases so already-open forms can still submit. Page redirects preserve the path and query. Unknown HTTP hosts retain 404. Prepare and test Nginx configuration before reload; the prior configuration is /etc/nginx/sites-available/needle-shark.pre-domain-20260911.
 
 Publication source uses site_utils.ORIGIN for canonical, sitemap, robots and blog metadata. The backend accepts only the four owned HTTPS origins; new consent records name needle-shark.ru. Existing customer records are unchanged. Update the existing Metrika counter's primary/additional domain settings alongside the migration; do not replace the counter or its goals.
+
+## Typography, images and SEO (11 September 2026)
+
+Shared values: `dist/theme.css`; all typography: `dist/typography.css`; shared catalogue/blog navigation: `dist/navigation.css` + `dist/menu.js`. Instructions for future edits: `docs/TYPOGRAPHY.md` and `docs/SEO.md`. Existing page classes and design remain intact.
+
+After adding/replacing an image, first run `python3 ops/optimize-images.py` with a local Python environment containing Pillow. It reads homepage originals and product images from `catalog/products.json`, creates responsive WebP derivatives and records dimensions/hashes in `ops/image-manifest.json`. The static site and server do not need Pillow. Originals are retained. For unchanged images do not recompress before each release.
+
+Prepare and check a static change:
+
+```sh
+python3 blog/render.py
+python3 catalog/render.py
+python3 ops/prepare-public.py
+python3 ops/check-site.py
+python3 -m unittest discover -s blog -p 'test_*.py'
+python3 -m unittest discover -s catalog -p 'test_*.py'
+python3 -m unittest discover -s ops -p 'test_*.py'
+python3 server/preview.py --port 4173
+```
+
+`check-site.py` is local and read-only. It validates page metadata/JSON-LD, sitemap, links, anchors, assets, image hashes and CSS tokens. Browser checks on the five documented widths are still required. The preview now resolves extensionless legal URLs like production. It does not send real submissions unless explicitly started with `--live-api`.
+
+The optimization changes have not been installed on the VPS. Save/push the checked commit before publishing with `ops/deploy.sh`; the local browser tests do not count as a production or Google/email delivery check.

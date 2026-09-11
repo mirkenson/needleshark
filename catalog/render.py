@@ -8,7 +8,7 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from site_utils import prepare_html
+from site_utils import prepare_html, image_attributes, json_ld, breadcrumbs, ORIGIN
 DIST = ROOT / 'dist'
 BASE = Template((ROOT / 'catalog/templates/base.html').read_text())
 
@@ -29,9 +29,10 @@ def image_for(product, role):
     return next((img for img in product['images'] if img.get('role') == role), product['images'][0])
 
 
-def picture(image, eager=False, **attrs):
+def picture(image, eager=False, sizes='(max-width:800px) 90vw, 48vw', thumbnail=False, **attrs):
+    attrs = {**image_attributes(image['src'], sizes, thumbnail), **attrs}
     extra = ' '.join(f'{e(k)}="{e(v)}"' for k, v in attrs.items())
-    return f'<img src="{e(image["src"])}" alt="{e(image["alt"])}" width="1536" height="1024" loading="{"eager" if eager else "lazy"}" {extra}>'
+    return f'<img alt="{e(image["alt"])}" loading="{"eager" if eager else "lazy"}" decoding="async" {extra}>'
 
 
 def markets(product, compact=False):
@@ -48,7 +49,13 @@ def markets(product, compact=False):
     return f'<div class="marketplaces{" compact" if compact else ""}">{"".join(links)}</div>'
 
 
-def shell(content, title, description, product_name='', catalog_current='false', product_slug=''):
+def shell(content, title, description, product_name='', catalog_current='false', product_slug='', structured=None):
+    if structured:
+        content += json_ld(structured)
+    trail = [('Главная', '/'), ('Каталог', '/catalog/')]
+    if product_slug:
+        trail.append((product_name, f'/catalog/{product_slug}/'))
+    content += json_ld(breadcrumbs(trail))
     return prepare_html(BASE.substitute(content=content, title=e(title), description=e(description),
                            product_name=e(product_name), product_slug=e(product_slug), catalog_current=catalog_current, dialogs=dialogs()), 'catalog/' + (product_slug + '/' if product_slug else '') + 'index.html')
 
@@ -61,13 +68,13 @@ def dialogs():
 
 def hero(product):
     gallery = product['images']
-    thumbnails = ''.join(f'<button class="gallery-thumb" data-gallery-src="{e(img["src"])}" data-gallery-alt="{e(img["alt"])}" data-gallery-label="{e(img["label"])}" aria-pressed="{"true" if i == 0 else "false"}" aria-label="{e(img["label"])}">{picture(img)}</button>' for i, img in enumerate(gallery))
+    thumbnails = ''.join(f'<button class="gallery-thumb" data-gallery-src="{e(image_attributes(img["src"])["src"])}" data-gallery-srcset="{e(image_attributes(img["src"]).get("srcset", ""))}" data-gallery-alt="{e(img["alt"])}" data-gallery-label="{e(img["label"])}" aria-pressed="{"true" if i == 0 else "false"}" aria-label="{e(img["label"])}">{picture(img, sizes="76px", thumbnail=True)}</button>' for i, img in enumerate(gallery))
     sizes = ''.join(f'<label class="size-option"><input type="radio" name="product-size" value="{size_label(s)}"><span>{size_label(s)}</span></label>' for s in product['sizes'])
     note = f'<p class="seasonal-note">{e(product["seasonalNote"])}</p>' if product['seasonalNote'] else ''
     size_help = '<a class="size-help" href="#sizes">Как подобрать размер <span aria-hidden="true">↙</span></a>' if 'sizes' in product['sections'] else '<button class="text-link size-help" data-request="Подбор размера">Помогите подобрать размер ↗</button>'
     purchase_note = "Цена и доставка — на выбранном маркетплейсе." if any(m["url"] for m in product["marketplaces"]) else "Переходы на маркетплейсы временно недоступны. Заказать можно напрямую — оставьте заявку ниже."
     return f'''
-    <div class="wrap breadcrumbs"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/catalog/">Каталог</a><span aria-hidden="true">/</span><span>{e(product['name'])}</span></div>
+    <nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/catalog/">Каталог</a><span aria-hidden="true">/</span><span>{e(product['name'])}</span></nav>
     <section class="wrap detail-hero" aria-labelledby="product-title">
       <div class="gallery">
         <div class="gallery-stage"><span class="product-badge">{e(product['badge'])}</span>{picture(gallery[0], True, id='gallery-image', fetchpriority='high')}<span class="photo-index" id="photo-index">01 / {len(gallery):02d}</span></div>
@@ -119,8 +126,23 @@ def catalogue(products):
         if not product['visible']:
             continue
         url = f'/catalog/{product["slug"]}/'
-        cards.append(f'''<article class="catalog-card"><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], True)}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(product['material'])} / {e(product['coating'])}</span><span>{len(product['sizes'])} размеров</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a><div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div></article>''')
-    return f'''<div class="wrap breadcrumbs"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></div><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span>{len(cards):02d} / {"изделие" if len(cards) == 1 else "изделий"}</span></div><div class="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой техники нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
+        cards.append(f'''<article class="catalog-card"><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) == 0, sizes='(max-width:540px) 90vw, (max-width:1150px) 44vw, 29vw')}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(product['material'])} / {e(product['coating'])}</span><span>{len(product['sizes'])} размеров</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a><div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div></article>''')
+    return f'''<nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span>{len(cards):02d} / {"изделие" if len(cards) == 1 else "изделий"}</span></div><div class="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой техники нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
+
+
+def product_schema(product):
+    url = ORIGIN + '/catalog/' + product['slug'] + '/'
+    # Descriptive Product only. No invented price, availability, SKU or borrowed shop rating.
+    return {'@context': 'https://schema.org', '@type': 'Product', '@id': url + '#product',
+            'url': url, 'name': product['name'], 'description': product['description'],
+            'image': [ORIGIN + image_attributes(img['src'])['src'] for img in product['images']],
+            'brand': {'@type': 'Brand', 'name': 'Needle Shark'},
+            'manufacturer': {'@id': ORIGIN + '/#organization'},
+            'mainEntityOfPage': {'@id': url + '#webpage'},
+            'material': product['material'], 'color': product['color'],
+            'category': product['category'],
+            'size': [size_label(size) + ' см (Д × Ш × В)' for size in product['sizes']],
+            'additionalProperty': [{'@type': 'PropertyValue', 'name': 'Влагозащитная пропитка', 'value': product['coating']}]}
 
 
 def render():
@@ -136,9 +158,15 @@ def render():
                 raise ValueError(f'Missing image: {img["src"]}')
         page_dir = DIST / 'catalog' / slug
         page_dir.mkdir(parents=True, exist_ok=True)
-        html = shell(hero(product) + detail_sections(product), f'{product["name"]} — {product["material"]}, {len(product["sizes"])} размеров | Needle Shark', product['seoDescription'], product['name'], product_slug=slug)
+        html = shell(hero(product) + detail_sections(product), f'{product["name"]} — {product["material"]}, {len(product["sizes"])} размеров | Needle Shark', product['seoDescription'], product['name'], product_slug=slug, structured=product_schema(product))
         (page_dir / 'index.html').write_text(html)
-    (DIST / 'catalog/index.html').write_text(shell(catalogue(products), 'Каталог изделий из технических тканей | Needle Shark', 'Готовые изделия Needle Shark: чехлы для техники из Oxford. Выбор размера, покупка на маркетплейсах и заказ партии у производителя.', catalog_current='page'))
+    visible = sorted((p for p in products if p['visible']), key=lambda p: p['order'])
+    collection = {'@context': 'https://schema.org', '@type': 'CollectionPage',
+                  '@id': ORIGIN + '/catalog/#webpage', 'name': 'Каталог изделий Needle Shark',
+                  'mainEntity': {'@type': 'ItemList', 'itemListElement': [
+                      {'@type': 'ListItem', 'position': i + 1, 'name': p['name'],
+                       'url': ORIGIN + '/catalog/' + p['slug'] + '/'} for i, p in enumerate(visible)]}}
+    (DIST / 'catalog/index.html').write_text(shell(catalogue(products), 'Каталог чехлов и изделий из технических тканей | Needle Shark', 'Готовые изделия Needle Shark из технических тканей: чехлы для квадроциклов, размеры и характеристики. Подбор изделия и заказ партии у производства.', catalog_current='page', structured=collection))
     print(f'Rendered catalogue and {len(products)} product page(s). Homepage unchanged.')
 
 

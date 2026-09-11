@@ -1,15 +1,9 @@
 'use strict';
 // Catalogue UI and submissions to the existing durable lead endpoint.
-const menuButton = document.querySelector('.menu-toggle');
-const mobileMenu = document.querySelector('#mobile-menu');
-menuButton?.addEventListener('click', () => {
-  const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!expanded));
-  mobileMenu.hidden = expanded;
-});
 document.querySelectorAll('[data-gallery-src]').forEach((button, index, buttons) => {
   button.addEventListener('click', () => {
     const photo = document.querySelector('#gallery-image');
+    photo.srcset = button.dataset.gallerySrcset || '';
     photo.src = button.dataset.gallerySrc;
     photo.alt = button.dataset.galleryAlt;
     buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
@@ -143,7 +137,3 @@ requestForm?.addEventListener('submit', async event => {
     controls.forEach(control => { control.disabled = false; });
   }
 });
-mobileMenu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-  mobileMenu.hidden = true;
-  menuButton.setAttribute('aria-expanded', 'false');
-}));
