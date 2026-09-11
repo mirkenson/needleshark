@@ -1,0 +1,959 @@
+{
+  "date": "2026-09-11",
+  "site": "https://needle-shark.ru/",
+  "optimization_commit": "1318f3b",
+  "verification_metadata_commit": "2fad52d",
+  "browser": "Google Chrome via Playwright; Yandex analytics stubbed for repeat QA; no lead submission",
+  "widths": [
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "layout": [
+    {
+      "path": "/",
+      "width": 360,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/",
+      "width": 360,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 360,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/",
+      "width": 360,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 360,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 360,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/user-agreement",
+      "width": 360,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/",
+      "width": 390,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 390,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/",
+      "width": 390,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 390,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 390,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/user-agreement",
+      "width": 390,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/",
+      "width": 768,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 768,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/",
+      "width": 768,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 768,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 768,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/user-agreement",
+      "width": 768,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/",
+      "width": 1024,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/",
+      "width": 1024,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 1024,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/",
+      "width": 1024,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 1024,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1024,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/user-agreement",
+      "width": 1024,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/",
+      "width": 1440,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 1440,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/",
+      "width": 1440,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 1440,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1440,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    },
+    {
+      "path": "/user-agreement",
+      "width": 1440,
+      "status": 200,
+      "horizontal_overflow": false,
+      "javascript_errors": [],
+      "broken_images": [],
+      "failed_resources": []
+    }
+  ],
+  "interface_checks": [
+    {
+      "path": "/",
+      "width": 360
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 360
+    },
+    {
+      "path": "/user-agreement",
+      "width": 360
+    },
+    {
+      "path": "/",
+      "width": 390
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 390
+    },
+    {
+      "path": "/user-agreement",
+      "width": 390
+    },
+    {
+      "path": "/",
+      "width": 768
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 768
+    },
+    {
+      "path": "/user-agreement",
+      "width": 768
+    },
+    {
+      "path": "/",
+      "width": 1024
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1024
+    },
+    {
+      "path": "/user-agreement",
+      "width": 1024
+    },
+    {
+      "path": "/",
+      "width": 1440
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1440
+    },
+    {
+      "path": "/user-agreement",
+      "width": 1440
+    },
+    "catalog mobile request: modal/Escape/focus/Escape",
+    "cookie notice: display/dismiss/persistence",
+    "gallery srcset changes for all three images",
+    "selected size passed to request dialog; Escape closes",
+    "FAQ expands",
+    "article CTA navigates to product",
+    "first Tab skip link; Enter moves sequential keyboard navigation into main"
+  ],
+  "yandex": {
+    "indexed_urls_before_recrawl": 11,
+    "indexed_home_last_visit": "2026-09-07",
+    "sitemap_recrawl_requested": "2026-09-11 20:40 Europe/Moscow",
+    "current_urls_recrawl_queued": 7,
+    "live_page_check": "Service temporarily unavailable",
+    "old_index_contains_previous_site_urls": true
+  },
+  "legacy_url": {
+    "path": "/motocover-landing",
+    "public_status": 404
+  },
+  "old_domain_redirect": {
+    "from": "https://needleshark.ru/catalog/chehol-na-kvadrocikl/?check=redirect",
+    "to": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/?check=redirect",
+    "status": 301
+  },
+  "release": "20260911T174008Z-5491",
+  "previous_release": "20260911T173249Z-5222",
+  "services": {
+    "nginx": "active",
+    "needle-leads": "active"
+  },
+  "https_files": [
+    {
+      "path": "/textile-hero.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/typography.css",
+      "status": 200,
+      "same": true,
+      "type": "text/css",
+      "xrobots": null
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 200,
+      "same": true,
+      "type": "image/x-icon",
+      "xrobots": null
+    },
+    {
+      "path": "/theme.css",
+      "status": 200,
+      "same": true,
+      "type": "text/css",
+      "xrobots": null
+    },
+    {
+      "path": "/index.html",
+      "status": 200,
+      "same": true,
+      "type": "text/html; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/apple-touch-icon.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/user-agreement.html",
+      "status": 200,
+      "same": true,
+      "type": "text/html; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/privacy-policy.html",
+      "status": 200,
+      "same": true,
+      "type": "text/html; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/icon-192.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/catalog.css",
+      "status": 200,
+      "same": true,
+      "type": "text/css",
+      "xrobots": null
+    },
+    {
+      "path": "/catalog.js",
+      "status": 200,
+      "same": true,
+      "type": "application/javascript; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/script.js",
+      "status": 200,
+      "same": true,
+      "type": "application/javascript; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/site.webmanifest",
+      "status": 200,
+      "same": true,
+      "type": "application/octet-stream",
+      "xrobots": null
+    },
+    {
+      "path": "/analytics.js",
+      "status": 200,
+      "same": true,
+      "type": "application/javascript; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/brand-preview.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/style.css",
+      "status": 200,
+      "same": true,
+      "type": "text/css",
+      "xrobots": null
+    },
+    {
+      "path": "/navigation.css",
+      "status": 200,
+      "same": true,
+      "type": "text/css",
+      "xrobots": null
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "same": true,
+      "type": "text/xml; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/black-fabric-rolls.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/favicon-96.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/metrika.js",
+      "status": 200,
+      "same": true,
+      "type": "application/javascript; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "same": true,
+      "type": "text/plain; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/menu.js",
+      "status": 200,
+      "same": true,
+      "type": "application/javascript; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/pocket-organizer.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/logo.svg",
+      "status": 200,
+      "same": true,
+      "type": "image/svg+xml",
+      "xrobots": null
+    },
+    {
+      "path": "/blog.css",
+      "status": 200,
+      "same": true,
+      "type": "text/css",
+      "xrobots": null
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "same": true,
+      "type": "image/svg+xml",
+      "xrobots": null
+    },
+    {
+      "path": "/icon-512.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/atv-cover.png",
+      "status": 200,
+      "same": true,
+      "type": "image/png",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-side-1200.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/textile-hero-1536.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/oxford-detail-160.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-studio-1200.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-cover-800.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/oxford-detail-480.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-side-160.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/pocket-organizer-480.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-side-480.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/black-fabric-rolls-1536.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/pocket-organizer-160.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-studio-160.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/black-fabric-rolls-800.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-studio-480.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/oxford-detail-1200.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/textile-hero-800.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/pocket-organizer-1536.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/pocket-organizer-800.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/black-fabric-rolls-1200.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-side-800.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/oxford-detail-1536.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/black-fabric-rolls-160.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/pocket-organizer-1200.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/textile-hero-160.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/black-fabric-rolls-480.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-studio-800.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-cover-900.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/textile-hero-480.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/textile-hero-1200.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-side-1536.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-cover-480.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-cover-160.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/oxford-detail-800.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/images/atv-studio-1536.webp",
+      "status": 200,
+      "same": true,
+      "type": "image/webp",
+      "xrobots": null
+    },
+    {
+      "path": "/catalog/index.html",
+      "status": 200,
+      "same": true,
+      "type": "text/html; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/blog/index.html",
+      "status": 200,
+      "same": true,
+      "type": "text/html; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/catalog-assets/atv-side.jpg",
+      "status": 200,
+      "same": true,
+      "type": "image/jpeg",
+      "xrobots": null
+    },
+    {
+      "path": "/catalog-assets/atv-studio.jpg",
+      "status": 200,
+      "same": true,
+      "type": "image/jpeg",
+      "xrobots": null
+    },
+    {
+      "path": "/catalog-assets/oxford-detail.jpg",
+      "status": 200,
+      "same": true,
+      "type": "image/jpeg",
+      "xrobots": null
+    },
+    {
+      "path": "/fonts/manrope-latin.woff2",
+      "status": 200,
+      "same": true,
+      "type": "font/woff2",
+      "xrobots": null
+    },
+    {
+      "path": "/fonts/manrope-cyrillic.woff2",
+      "status": 200,
+      "same": true,
+      "type": "font/woff2",
+      "xrobots": null
+    },
+    {
+      "path": "/fonts/OFL.txt",
+      "status": 200,
+      "same": true,
+      "type": "text/plain; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html",
+      "status": 200,
+      "same": true,
+      "type": "text/html; charset=utf-8",
+      "xrobots": null
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/index.html",
+      "status": 200,
+      "same": true,
+      "type": "text/html; charset=utf-8",
+      "xrobots": null
+    }
+  ],
+  "robots": "Allow /; Disallow /api/; sitemap HTTPS",
+  "sitemap_pages": 7,
+  "tls": "validated with system CA store, no verification bypass",
+  "google": {
+    "https_property": "verified",
+    "overview": "data processing; console asks to retry approximately in a day",
+    "sitemap_submitted": true,
+    "sitemap_initial_status": "Not fetched; processing not yet confirmed",
+    "homepage_indexed": true,
+    "homepage_last_crawl": "2026-08-29 13:32:26 (Search Console display)",
+    "homepage_selected_canonical": "https://needle-shark.ru/",
+    "homepage_reindex_request": "accepted; priority crawl queue",
+    "product_indexed": false,
+    "product_index_reason": "URL unknown to Google",
+    "product_reindex_request": "accepted; priority crawl queue",
+    "article_indexed": false,
+    "article_index_reason": "URL unknown to Google",
+    "article_reindex_request": "accepted; priority crawl queue",
+    "sitemap_final_status": "Could not process sitemap / Not fetched; 0 discovered pages",
+    "sitemap_server_log": "2026-09-11 17:48:42 UTC: request with Google User-Agent returned 200, 597 bytes; origin IP not independently verified",
+    "dns": "System resolver and 8.8.8.8 A: 194.87.99.98; no AAAA",
+    "remaining": "Recheck sitemap processing and indexing reports after Google updates; cause of sitemap status undetermined"
+  }
+}
