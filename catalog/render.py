@@ -1,11 +1,14 @@
 """Render the catalogue as static HTML; stdlib only, homepage never touched."""
 import json
+import sys
 import re
 from html import escape
 from pathlib import Path
 from string import Template
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from site_utils import prepare_html
 DIST = ROOT / 'dist'
 BASE = Template((ROOT / 'catalog/templates/base.html').read_text())
 
@@ -46,8 +49,8 @@ def markets(product, compact=False):
 
 
 def shell(content, title, description, product_name='', catalog_current='false', product_slug=''):
-    return BASE.substitute(content=content, title=e(title), description=e(description),
-                           product_name=e(product_name), product_slug=e(product_slug), catalog_current=catalog_current, dialogs=dialogs())
+    return prepare_html(BASE.substitute(content=content, title=e(title), description=e(description),
+                           product_name=e(product_name), product_slug=e(product_slug), catalog_current=catalog_current, dialogs=dialogs()), 'catalog/' + (product_slug + '/' if product_slug else '') + 'index.html')
 
 
 def dialogs():

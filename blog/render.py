@@ -1,5 +1,6 @@
 """Build the blog from approved structured text, using only Python's stdlib."""
 import json
+import sys
 import re
 from datetime import date
 from html import escape
@@ -8,6 +9,8 @@ from string import Template
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+from site_utils import prepare_html
 BASE = Template((ROOT / 'blog/base.html').read_text())
 ORIGIN = 'https://needleshark.ru'
 
@@ -125,7 +128,7 @@ def render(posts, output):
     for name, html in pages.items():
         path = output / name
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(marker + '\n' + html)
+        path.write_text(prepare_html(marker + '\n' + html, 'blog/' + name))
 
 
 def render_featured(posts, homepage):
