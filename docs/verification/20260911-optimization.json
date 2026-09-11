@@ -803,7 +803,7 @@
     "images/textile-hero-160.webp": "d33d5e94ad093c9db4718d4d4f34900cb396e1c209a7fd137811b92021f772da",
     "images/textile-hero-480.webp": "d2c8f27a1c728e2bb6f105138b8e0e213d58ed8028d01e8156a75ab6fe662e1a",
     "images/textile-hero-800.webp": "e033446ae0ef46158e59c0229175df36cd8682607f78112ef9d950d196ad46b8",
-    "index.html": "6ec24958bed118e2e359bb5713b91d14eb46890a8a3f8abe048e8ceeaa704cd6",
+    "index.html": "f79ff965b70edb3ce1aaccdbc750cad3014bf4b1fcfe5afa6bcd15e155d05bf4",
     "logo.svg": "510043ccae85e0240f88827fadc6b8674be41120fa4b10e893858dfdef1bbc93",
     "menu.js": "aadabdb2c26c4d06b7268bcd11f1be07e2bb1f01a887c9ab8c3fa8f12afc038c",
     "metrika.js": "922a6dbb67485561d41dc61acb6ce884cb0792932977c906adde10dce6574aff",
@@ -882,6 +882,7 @@
       "width": 1440
     },
     "catalog mobile request: modal/Escape/focus/Escape",
-    "cookie notice: display/dismiss/persistence"
+    "cookie notice: display/dismiss/persistence",
+    "homepage skip link: first Tab, Enter navigates to #main"
   ]
 }
