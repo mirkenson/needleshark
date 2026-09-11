@@ -54,3 +54,42 @@ class BlogTests(unittest.TestCase):
             self.assertTrue(result.startswith('BEFORE') and result.endswith('AFTER'))
             self.assertEqual(result.count('<article>'), 3)
             self.assertNotIn('/blog/draft/', result)
+
+    def test_article_inherits_counter_and_navigation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            render([POST], Path(tmp))
+            html = (Path(tmp) / 'test/index.html').read_text()
+            self.assertEqual(html.count('src="/metrika.js?v=20260911"'), 1)
+            self.assertIn('https://mc.yandex.ru/watch/112428810', html)
+            self.assertIn('src="/analytics.js?v=20260911-cta"', html)
+            self.assertIn('href="/blog/"', html.split('</header>')[0])
+
+    def test_cta_metadata_and_optional_faq(self):
+        import json
+        import re
+        post = {**POST, 'author': 'Тестовый автор', 'updated': '2026-09-12', 'seoTitle': 'SEO title', 'blocks': [
+            dict(type='paragraph', text='Перед CTA'),
+            dict(type='cta', id='selection', lead='Подводка', text='Предложение', label='Каталог', url='/catalog/'),
+            dict(type='paragraph', text='После CTA'),
+            dict(type='faq', items=[dict(question='Вопрос?', answer='Ответ.')])
+        ]}
+        with tempfile.TemporaryDirectory() as tmp:
+            render([post], Path(tmp))
+            html = (Path(tmp) / 'test/index.html').read_text()
+            self.assertLess(html.index('Перед CTA'), html.index('class="article-cta"'))
+            self.assertLess(html.index('class="article-cta"'), html.index('После CTA'))
+            self.assertIn('data-blog-cta="selection" data-article="test"', html)
+            self.assertIn('<link rel="canonical" href="https://needleshark.ru/blog/test/">', html)
+            self.assertIn('<title>SEO title</title>', html)
+            self.assertEqual(html.count('<h1>'), 1)
+            self.assertIn('<h3>Вопрос?</h3>', html)
+            data = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', html).group(1))
+            self.assertEqual(data['headline'], POST['title'])
+            self.assertEqual(data['author']['name'], post['author'])
+            self.assertNotIn('image', data)
+
+    def test_reject_unsafe_cta_urls(self):
+        for url in ['javascript:alert(1)', '//evil.example', '/\\evil.example', 'https://user:pass@example.com', 'https://example.com/ bad']:
+            post = {**POST, 'blocks': [dict(type='cta', id='link', lead='a', text='b', label='c', url=url)]}
+            with tempfile.TemporaryDirectory() as tmp, self.assertRaises(ValueError):
+                render([post], Path(tmp))

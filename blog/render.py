@@ -5,13 +5,22 @@ from datetime import date
 from html import escape
 from pathlib import Path
 from string import Template
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = Template((ROOT / 'blog/base.html').read_text())
+ORIGIN = 'https://needleshark.ru'
 
 
 def e(value):
     return escape(str(value), quote=True)
+
+
+def safe_url(value):
+    parts = urlsplit(value)
+    return (not re.search(r'[\s\\]', value) and
+            ((value.startswith('/') and not value.startswith('//')) or
+             (parts.scheme == 'https' and bool(parts.hostname) and not parts.username and not parts.password)))
 
 
 def validate(posts):
@@ -26,11 +35,17 @@ def validate(posts):
         if 'featured' in post and not isinstance(post['featured'], bool):
             raise ValueError('featured must be boolean')
         date.fromisoformat(post['date'])
+        if post.get('updated') and date.fromisoformat(post['updated']) < date.fromisoformat(post['date']):
+            raise ValueError('Update cannot precede publication')
+        for key in ('seoTitle', 'seoDescription', 'author'):
+            if key in post and (not isinstance(post[key], str) or not post[key].strip()):
+                raise ValueError(f'Invalid {key}')
         for key in ('title', 'description'):
             if not isinstance(post[key], str) or not post[key].strip():
                 raise ValueError(f'Missing {key}')
         if not post['blocks']:
             raise ValueError('Article body is empty')
+        cta_ids = set()
         for block in post['blocks']:
             if block['type'] in ('paragraph', 'heading'):
                 if not isinstance(block['text'], str) or not block['text'].strip():
@@ -38,12 +53,29 @@ def validate(posts):
             elif block['type'] == 'list':
                 if not block['items'] or not all(isinstance(item, str) and item.strip() for item in block['items']):
                     raise ValueError('Empty list')
+            elif block['type'] == 'cta':
+                for key in ('id', 'lead', 'text', 'label', 'url'):
+                    if not isinstance(block[key], str) or not block[key].strip():
+                        raise ValueError(f'Missing CTA {key}')
+                if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', block['id']) or block['id'] in cta_ids:
+                    raise ValueError('CTA ids must be unique stable URL segments')
+                cta_ids.add(block['id'])
+                if not safe_url(block['url']):
+                    raise ValueError('CTA requires a local path or HTTPS URL')
+            elif block['type'] == 'faq':
+                if not block['items'] or not all(isinstance(item.get(key), str) and item[key].strip() for item in block['items'] for key in ('question', 'answer')):
+                    raise ValueError('FAQ requires questions and answers')
             else:
                 raise ValueError('Unknown content block')
 
 
-def shell(content, title, description, current='false'):
-    return BASE.substitute(content=content, title=e(title), description=e(description), blog_current=current)
+def shell(content, title, description, current='false', slug=None, structured=None):
+    canonical = ORIGIN + '/blog/' + (slug + '/' if slug else '')
+    metadata = f'<link rel="canonical" href="{e(canonical)}"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(description)}"><meta property="og:url" content="{e(canonical)}"><meta property="og:type" content="{"article" if slug else "website"}">'
+    if structured:
+        payload = json.dumps(structured, ensure_ascii=False).replace('<', '\\u003c')
+        metadata += f'<script type="application/ld+json">{payload}</script>'
+    return BASE.substitute(content=content, title=e(title), description=e(description), blog_current=current, metadata=metadata)
 
 
 def date_label(value):
@@ -62,11 +94,23 @@ def render(posts, output):
         for block in post['blocks']:
             if block['type'] == 'list':
                 blocks.append('<ul>' + ''.join(f'<li>{e(item)}</li>' for item in block['items']) + '</ul>')
+            elif block['type'] == 'cta':
+                external = ' rel="noopener noreferrer"' if block['url'].startswith('https://') else ''
+                blocks.append(f'<aside class="article-cta" aria-label="{e(block["lead"])}"><p class="cta-lead">{e(block["lead"])}</p><p>{e(block["text"])}</p><a class="button accent" href="{e(block["url"])}" data-blog-cta="{e(block["id"])}" data-article="{e(post["slug"])}"{external}>{e(block["label"])} <span aria-hidden="true">↗</span></a></aside>')
+            elif block['type'] == 'faq':
+                blocks.append('<section class="article-faq"><h2>Вопросы и ответы</h2>' + ''.join(f'<h3>{e(item["question"])}</h3><p>{e(item["answer"])}</p>' for item in block['items']) + '</section>')
             else:
                 tag = 'h2' if block['type'] == 'heading' else 'p'
                 blocks.append(f'<{tag}>{e(block["text"])}</{tag}>')
-        body = f'<article class="wrap blog-article"><a class="blog-back" href="/blog/">← Все статьи</a><h1>{e(post["title"])}</h1><time datetime="{e(post["date"])}">{date_label(post["date"])}</time><p class="article-lead">{e(post["description"])}</p>{"".join(blocks)}<a class="blog-back" href="/blog/">← Вернуться в блог</a></article>'
-        pages[f'{post["slug"]}/index.html'] = shell(body, post['title'] + ' — Needle Shark', post['description'])
+        byline = f'<p class="article-author">Автор: {e(post["author"])}</p>' if post.get('author') else ''
+        updated = f'<p class="article-updated">Обновлено: <time datetime="{e(post["updated"])}">{date_label(post["updated"])}</time></p>' if post.get('updated') else ''
+        body = f'<article class="wrap blog-article"><a class="blog-back" href="/blog/">← Все статьи</a><h1>{e(post["title"])}</h1><time datetime="{e(post["date"])}">{date_label(post["date"])}</time>{byline}{updated}<p class="article-lead">{e(post["description"])}</p>{"".join(blocks)}<a class="blog-back" href="/blog/">← Вернуться в блог</a></article>'
+        structured = {'@context': 'https://schema.org', '@type': 'BlogPosting', 'headline': post['title'], 'description': post['description'], 'datePublished': post['date'], 'inLanguage': 'ru-RU', 'mainEntityOfPage': ORIGIN + '/blog/' + post['slug'] + '/', 'publisher': {'@type': 'Organization', 'name': 'Needle Shark', 'url': ORIGIN + '/'}}
+        if post.get('author'):
+            structured['author'] = {'@type': 'Person', 'name': post['author']}
+        if post.get('updated'):
+            structured['dateModified'] = post['updated']
+        pages[f'{post["slug"]}/index.html'] = shell(body, post.get('seoTitle', post['title'] + ' — Needle Shark'), post.get('seoDescription', post['description']), slug=post['slug'], structured=structured)
     output.mkdir(parents=True, exist_ok=True)
     # Remove only obsolete HTML carrying this generator's ownership marker.
     marker = '<!-- Generated by blog/render.py -->'

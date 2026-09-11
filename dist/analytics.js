@@ -5,6 +5,7 @@
   };
   document.addEventListener('click', event => {
     const el = event.target.closest('a,button,input[type=checkbox],input[type=file]');
+    if (el?.dataset.blogCta) goal('blog_cta_click', {article: el.dataset.article, cta: el.dataset.blogCta, page: location.pathname});
     if (!el || !el.dataset.track) return;
     goal('ui_click', {element: el.dataset.track, page: location.pathname});
   });
