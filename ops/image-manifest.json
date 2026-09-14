@@ -452,38 +452,38 @@
   "/catalog-assets/moto-elastic.png": {
     "width": 1536,
     "height": 1024,
-    "originalBytes": 2917452,
-    "sha256": "c84826ec0439eb7886cee79cd23e371c8167d3ca43107c3a64b649868a5227fd",
+    "originalBytes": 2875989,
+    "sha256": "7664a1cdd13c486d695d9dc044d48833c834419ec5d85f7ebda76037f74edf9c",
     "variants": [
       {
         "src": "/images/moto-elastic-160.webp",
         "width": 160,
         "height": 107,
-        "bytes": 2212
+        "bytes": 2196
       },
       {
         "src": "/images/moto-elastic-480.webp",
         "width": 480,
         "height": 320,
-        "bytes": 30322
+        "bytes": 16784
       },
       {
         "src": "/images/moto-elastic-800.webp",
         "width": 800,
         "height": 533,
-        "bytes": 86684
+        "bytes": 59168
       },
       {
         "src": "/images/moto-elastic-1200.webp",
         "width": 1200,
         "height": 800,
-        "bytes": 172918
+        "bytes": 144598
       },
       {
         "src": "/images/moto-elastic-1536.webp",
         "width": 1536,
         "height": 1024,
-        "bytes": 247332
+        "bytes": 222942
       }
     ]
   },

@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-14",
+  "tool": "Built-in ImageGen",
+  "prompt": "Use case: precise-object-edit. Asset type: Needle Shark motorcycle cover construction detail. Input 1 is the edit target; input 2 is the owner's approved elastic hem construction reference from an ATV cover. Replace the exposed thick braided elastic edging in input 1 with EXACTLY the sewn fabric casing construction shown in input 2: black smooth lightweight Oxford folded over concealed elastic, with a neat straight black stitch line above regular small gathers; the elastic itself is entirely enclosed inside the same black fabric. The owner confirms both covers use this same hem construction. Preserve the close-up diagonal framing, black cloth, light neutral studio backdrop and natural soft lighting of input 1. Make the textile fine smooth technical Oxford like input 2, not coarse canvas. Only show the motorcycle cover fabric and the sewn gathered casing; do not include the ATV, a tyre, wheel, hands, logos, letters, arrows or labels. Landscape 1536x1024. No exposed ribbed or braided elastic band, no rope, no metal eyelets.",
+  "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-07027702-8501-4203-9134-dc5101f53e66.png",
+  "outputPath": "dist/catalog-assets/moto-elastic.png",
+  "ownerCorrection": "Резинка по низу моточехла имеет ту же конструкцию, что у чехла квадроцикла: внутри подогнутого края ткани.",
+  "replaces": "moto-elastic image from commit 33d6ca9"
+}
