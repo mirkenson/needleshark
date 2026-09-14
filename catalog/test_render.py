@@ -12,6 +12,39 @@ PRODUCT = json.loads((render.ROOT / 'catalog/products.json').read_text())['produ
 
 
 class CatalogueTests(unittest.TestCase):
+    def test_each_configuration_contains_only_its_general_view_and_details(self):
+        products = json.loads((render.ROOT / 'catalog/products.json').read_text())['products']
+        for product in products:
+            render.validate_galleries(product)
+        moto, wheel = products[1:]
+        self.assertNotIn('moto-heat', moto['galleries']['standard']['images'])
+        self.assertNotIn('moto-standard', moto['galleries']['heat']['images'])
+        special = {'moto-canvas-insert', 'moto-vent', 'moto-reflector'}
+        self.assertFalse(special & set(moto['galleries']['standard']['images']))
+        self.assertTrue(special <= set(moto['galleries']['heat']['images']))
+        self.assertNotIn('wheel-set', wheel['galleries']['one']['images'])
+        self.assertNotIn('wheel-single', wheel['galleries']['four']['images'])
+        # The initial server-rendered thumbnails match the default variant even without JavaScript.
+        for product in (moto, wheel):
+            html = render.hero(product)
+            thumbnails = html.split('<div class="gallery-thumbs"', 1)[1].split('</div>', 1)[0]
+            selected = render.gallery_images(product)
+            self.assertEqual(thumbnails.count('class="gallery-thumb"'), len(selected))
+            for image in selected:
+                self.assertIn(render.e(image['alt']), thumbnails)
+
+    def test_gallery_rejects_missing_photos_and_details_from_another_configuration(self):
+        product = copy.deepcopy(json.loads((render.ROOT / 'catalog/products.json').read_text())['products'][1])
+        product['galleries']['standard']['kit'] = 'moto-heat'
+        with self.assertRaises(ValueError):
+            render.validate_galleries(product)
+        product['galleries']['standard']['kit'] = 'missing-photo'
+        with self.assertRaises(ValueError):
+            render.validate_galleries(product)
+        product['variants'][0]['galleryId'] = 'missing-gallery'
+        with self.assertRaises(ValueError):
+            render.validate_variants(product)
+
     def test_variants_have_only_confirmed_combinations_and_distinct_links(self):
         products = json.loads((render.ROOT / 'catalog/products.json').read_text())['products']
         self.assertEqual(len(products), 3)

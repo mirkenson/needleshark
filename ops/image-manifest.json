@@ -259,6 +259,120 @@
       }
     ]
   },
+  "/catalog-assets/atv-elastic.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2512966,
+    "sha256": "705f5f8ab9cecd7b2c5a4c07b4649ae40d01b45813b52fab97bbf577d782b949",
+    "variants": [
+      {
+        "src": "/images/atv-elastic-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2648
+      },
+      {
+        "src": "/images/atv-elastic-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 10982
+      },
+      {
+        "src": "/images/atv-elastic-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 22092
+      },
+      {
+        "src": "/images/atv-elastic-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 71726
+      },
+      {
+        "src": "/images/atv-elastic-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 144338
+      }
+    ]
+  },
+  "/catalog-assets/atv-seam.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 3306640,
+    "sha256": "42bd8e7e5c6cb2aba67b32cbf91a46fe300ef2de0fba9274a988d8c010f8dca3",
+    "variants": [
+      {
+        "src": "/images/atv-seam-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1502
+      },
+      {
+        "src": "/images/atv-seam-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 26588
+      },
+      {
+        "src": "/images/atv-seam-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 92204
+      },
+      {
+        "src": "/images/atv-seam-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 191702
+      },
+      {
+        "src": "/images/atv-seam-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 276282
+      }
+    ]
+  },
+  "/catalog-assets/atv-strap.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2369283,
+    "sha256": "0f5eee597d295dcdce6558000b33b5be2cf75b1f34964416a4c3700b50adb8a3",
+    "variants": [
+      {
+        "src": "/images/atv-strap-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2290
+      },
+      {
+        "src": "/images/atv-strap-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 10718
+      },
+      {
+        "src": "/images/atv-strap-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 24738
+      },
+      {
+        "src": "/images/atv-strap-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 73232
+      },
+      {
+        "src": "/images/atv-strap-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 132196
+      }
+    ]
+  },
   "/catalog-assets/moto-standard.png": {
     "width": 1536,
     "height": 1024,
@@ -335,6 +449,272 @@
       }
     ]
   },
+  "/catalog-assets/moto-elastic.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2917452,
+    "sha256": "c84826ec0439eb7886cee79cd23e371c8167d3ca43107c3a64b649868a5227fd",
+    "variants": [
+      {
+        "src": "/images/moto-elastic-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2212
+      },
+      {
+        "src": "/images/moto-elastic-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 30322
+      },
+      {
+        "src": "/images/moto-elastic-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 86684
+      },
+      {
+        "src": "/images/moto-elastic-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 172918
+      },
+      {
+        "src": "/images/moto-elastic-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 247332
+      }
+    ]
+  },
+  "/catalog-assets/moto-seam.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 3037044,
+    "sha256": "8b81e4ad3a1364d1b9b689664f0d1ff1b8a53eca964c5e391ebbf8396d38024e",
+    "variants": [
+      {
+        "src": "/images/moto-seam-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1956
+      },
+      {
+        "src": "/images/moto-seam-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 43248
+      },
+      {
+        "src": "/images/moto-seam-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 103018
+      },
+      {
+        "src": "/images/moto-seam-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 184526
+      },
+      {
+        "src": "/images/moto-seam-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 259232
+      }
+    ]
+  },
+  "/catalog-assets/moto-strap.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2710401,
+    "sha256": "46157f74ee4458ac5575ecc4f348686b2b5be7310614cf21a9617fb739f402d6",
+    "variants": [
+      {
+        "src": "/images/moto-strap-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2262
+      },
+      {
+        "src": "/images/moto-strap-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 19908
+      },
+      {
+        "src": "/images/moto-strap-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 66694
+      },
+      {
+        "src": "/images/moto-strap-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 140430
+      },
+      {
+        "src": "/images/moto-strap-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 206216
+      }
+    ]
+  },
+  "/catalog-assets/moto-fabric.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2629963,
+    "sha256": "6a6436fd1a2ba740fbe8fb050bcf04be2b7aa02188e705725a09d238753e9a3c",
+    "variants": [
+      {
+        "src": "/images/moto-fabric-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 3342
+      },
+      {
+        "src": "/images/moto-fabric-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 33688
+      },
+      {
+        "src": "/images/moto-fabric-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 82562
+      },
+      {
+        "src": "/images/moto-fabric-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 148888
+      },
+      {
+        "src": "/images/moto-fabric-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 205558
+      }
+    ]
+  },
+  "/catalog-assets/moto-canvas-insert.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 3423618,
+    "sha256": "0cc69fa707c21c707dadc930f8805895b1bbebb12a08ff2533659e5dcf9e0e80",
+    "variants": [
+      {
+        "src": "/images/moto-canvas-insert-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1962
+      },
+      {
+        "src": "/images/moto-canvas-insert-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 46856
+      },
+      {
+        "src": "/images/moto-canvas-insert-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 121048
+      },
+      {
+        "src": "/images/moto-canvas-insert-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 219900
+      },
+      {
+        "src": "/images/moto-canvas-insert-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 314760
+      }
+    ]
+  },
+  "/catalog-assets/moto-vent.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 3128459,
+    "sha256": "14f32886f4f9256d250984753992600ea10a9d4195376e4b54b16da997f1c77f",
+    "variants": [
+      {
+        "src": "/images/moto-vent-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1712
+      },
+      {
+        "src": "/images/moto-vent-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14404
+      },
+      {
+        "src": "/images/moto-vent-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 65002
+      },
+      {
+        "src": "/images/moto-vent-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 160682
+      },
+      {
+        "src": "/images/moto-vent-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 255070
+      }
+    ]
+  },
+  "/catalog-assets/moto-reflector.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2822385,
+    "sha256": "3cd3f21bede63573181b981927aa01ba505dc832bf19bcc3dd49819220bc635d",
+    "variants": [
+      {
+        "src": "/images/moto-reflector-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1744
+      },
+      {
+        "src": "/images/moto-reflector-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 22948
+      },
+      {
+        "src": "/images/moto-reflector-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 69458
+      },
+      {
+        "src": "/images/moto-reflector-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 146830
+      },
+      {
+        "src": "/images/moto-reflector-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 217578
+      }
+    ]
+  },
   "/catalog-assets/wheel-set.png": {
     "width": 1536,
     "height": 1024,
@@ -408,6 +788,158 @@
         "width": 1536,
         "height": 1024,
         "bytes": 69622
+      }
+    ]
+  },
+  "/catalog-assets/wheel-drawstring.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 3004867,
+    "sha256": "7af84d7a6103617aba90450a56f0f6d83cff5eba79b6cdadaf88808c4f81fe6e",
+    "variants": [
+      {
+        "src": "/images/wheel-drawstring-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 3530
+      },
+      {
+        "src": "/images/wheel-drawstring-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 23982
+      },
+      {
+        "src": "/images/wheel-drawstring-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 79416
+      },
+      {
+        "src": "/images/wheel-drawstring-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 167440
+      },
+      {
+        "src": "/images/wheel-drawstring-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 244310
+      }
+    ]
+  },
+  "/catalog-assets/wheel-seam.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 3427862,
+    "sha256": "dd86e349732a5027a3f8c56053727122586436cc7a926710f03a1d85e13dd5c2",
+    "variants": [
+      {
+        "src": "/images/wheel-seam-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1772
+      },
+      {
+        "src": "/images/wheel-seam-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 25372
+      },
+      {
+        "src": "/images/wheel-seam-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 97604
+      },
+      {
+        "src": "/images/wheel-seam-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 213302
+      },
+      {
+        "src": "/images/wheel-seam-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 318384
+      }
+    ]
+  },
+  "/catalog-assets/wheel-handle-pocket.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2081871,
+    "sha256": "e1d55d03a910b9708b58c5dde88661e76066e678741f1b32f26ec126f1930924",
+    "variants": [
+      {
+        "src": "/images/wheel-handle-pocket-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1828
+      },
+      {
+        "src": "/images/wheel-handle-pocket-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8522
+      },
+      {
+        "src": "/images/wheel-handle-pocket-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 18304
+      },
+      {
+        "src": "/images/wheel-handle-pocket-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 38120
+      },
+      {
+        "src": "/images/wheel-handle-pocket-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 60446
+      }
+    ]
+  },
+  "/catalog-assets/wheel-fabric.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2691870,
+    "sha256": "0d15d97395852c9a23406c8ceb30d88e1987fa93afe70182cfdfb5ef0b6e2353",
+    "variants": [
+      {
+        "src": "/images/wheel-fabric-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 3410
+      },
+      {
+        "src": "/images/wheel-fabric-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 34112
+      },
+      {
+        "src": "/images/wheel-fabric-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 83624
+      },
+      {
+        "src": "/images/wheel-fabric-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 152470
+      },
+      {
+        "src": "/images/wheel-fabric-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 208976
       }
     ]
   }

@@ -1,16 +1,67 @@
 'use strict';
 // Catalogue UI and submissions to the existing durable lead endpoint.
-document.querySelectorAll('[data-gallery-src]').forEach((button, index, buttons) => {
-  button.addEventListener('click', () => {
+const galleriesElement = document.querySelector('#product-galleries');
+const galleries = JSON.parse(galleriesElement?.textContent || '{}');
+let activeGallery = null;
+function showGalleryPhoto(button) {
+    const buttons = [...document.querySelectorAll('.gallery-thumbs [data-gallery-src]')];
+    const index = buttons.indexOf(button);
+    if (index < 0) return;
     const photo = document.querySelector('#gallery-image');
+    if (button.dataset.galleryWidth) photo.width = Number(button.dataset.galleryWidth);
+    if (button.dataset.galleryHeight) photo.height = Number(button.dataset.galleryHeight);
     photo.srcset = button.dataset.gallerySrcset || '';
     photo.src = button.dataset.gallerySrc;
     photo.alt = button.dataset.galleryAlt;
     buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     document.querySelector('#photo-index').textContent = `${String(index + 1).padStart(2, '0')} / ${String(buttons.length).padStart(2, '0')}`;
     document.querySelector('#gallery-caption').textContent = button.dataset.galleryLabel;
-  });
+}
+document.querySelector('.gallery-thumbs')?.addEventListener('click', event => {
+  const button = event.target.closest('[data-gallery-src]');
+  if (button) showGalleryPhoto(button);
 });
+function setPhoto(photo, image) {
+  photo.width = image.photo.width;
+  photo.height = image.photo.height;
+  photo.srcset = image.photo.srcset || '';
+  photo.src = image.photo.src;
+  photo.alt = image.alt;
+}
+function setGalleryText(selector, text) {
+  const node = document.querySelector(selector);
+  if (node) node.textContent = text;
+}
+function activateGallery(key) {
+  if (key === activeGallery || !galleries[key]) return;
+  const gallery = galleries[key];
+  activeGallery = key;
+  document.querySelector('.gallery').dataset.galleryId = key;
+  const buttons = gallery.images.map(image => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'gallery-thumb';
+    Object.assign(button.dataset, {gallerySrc: image.photo.src, gallerySrcset: image.photo.srcset || '',
+      galleryAlt: image.alt, galleryLabel: image.label, galleryWidth: image.photo.width, galleryHeight: image.photo.height});
+    button.setAttribute('aria-label', image.label);
+    const thumbnail = document.createElement('img');
+    Object.entries(image.thumbnail).forEach(([name, value]) => thumbnail.setAttribute(name, value));
+    thumbnail.alt = image.alt;
+    thumbnail.decoding = 'async';
+    button.append(thumbnail);
+    return button;
+  });
+  document.querySelector('.gallery-thumbs').replaceChildren(...buttons);
+  showGalleryPhoto(buttons[0]);
+  setGalleryText('#gallery-model', gallery.label);
+  document.querySelectorAll('[data-product-photo]').forEach(photo => setPhoto(photo, gallery.photos[photo.dataset.productPhoto]));
+  setGalleryText('#material-description', gallery.materialText);
+  setGalleryText('#material-caption', gallery.materialCaption);
+  setGalleryText('#construction-label', gallery.label);
+  const template = [...document.querySelectorAll('[data-gallery-features]')].find(item => item.dataset.galleryFeatures === key);
+  if (template) document.querySelector('#construction-content').replaceChildren(template.content.cloneNode(true));
+}
+activateGallery(galleriesElement?.dataset.defaultGallery);
 
 const sizeInputs = [...document.querySelectorAll('[name="product-size"]')];
 function updateSize() {
@@ -38,7 +89,7 @@ const optionInputs = [...document.querySelectorAll('[data-option]')];
 const optionGroups = [...new Set(optionInputs.map(input => input.dataset.option))];
 const packProduct = variants.some(variant => variant.unitsPerPack > 1);
 let selectedVariant = variants[0] || null;
-function updateVariant(variant, changeImage = true) {
+function updateVariant(variant) {
   selectedVariant = variant;
   optionInputs.forEach(input => {
     const group = input.dataset.option;
@@ -52,14 +103,8 @@ function updateVariant(variant, changeImage = true) {
     link.href = variant.ozonUrl;
     link.setAttribute('aria-label', `Купить на Ozon: ${variant.summary} · ${variant.sizeLabel}`);
   });
-  const galleryButton = document.querySelectorAll('[data-gallery-src]')[variant.imageIndex];
-  if (changeImage) galleryButton?.click();
-  const kitPhoto = document.querySelector('#variant-kit-photo img');
-  if (kitPhoto && galleryButton) {
-    kitPhoto.srcset = galleryButton.dataset.gallerySrcset || '';
-    kitPhoto.src = galleryButton.dataset.gallerySrc;
-    kitPhoto.alt = galleryButton.dataset.galleryAlt;
-  }
+  activateGallery(variant.galleryId);
+  setGalleryText('#kit-configuration', `${variant.summary} · ${variant.sizeLabel}`);
   const kit = document.querySelector('#variant-kit');
   if (kit) kit.replaceChildren(...variant.kit.map((text, index) => {
     const item = document.createElement('li');
@@ -90,7 +135,7 @@ document.querySelectorAll('[data-select-variant]').forEach(button => button.addE
   const variant = variants.find(item => item.id === button.dataset.selectVariant);
   if (variant) updateVariant(variant);
 }));
-if (selectedVariant) updateVariant(selectedVariant, false);
+if (selectedVariant) updateVariant(selectedVariant);
 
 let dialogOpener = null;
 function openDialog(dialog, opener) {

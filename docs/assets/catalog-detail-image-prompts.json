@@ -1,0 +1,137 @@
+{
+  "date": "2026-09-14",
+  "note": "Изображения деталей сгенерированы по исходным карточкам владельца. Это визуализации конструкции, а не независимое подтверждение свойств или фотографическая фиксация реального изделия.",
+  "images": [
+    {
+      "id": "atv-elastic",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-side.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a close-up product photograph of the gathered elastic LOWER HEM on the black ATV cover in the reference. Crop close to the bottom edge on the SIDE of the ATV, preserving black lightweight Oxford 240D drape and a small out-of-focus portion of its rugged tire behind. Make the stitched elastic casing and regular gathers clearly readable; elastic itself stays inside the sewn casing. Do not show the whole ATV. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-18eaf34d-1c9d-4ca4-8a37-0c2e37c5a099.png",
+      "outputPath": "dist/catalog-assets/atv-elastic.png"
+    },
+    {
+      "id": "atv-seam",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-side.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a close-up of a sewn panel seam on the black Oxford 240D ATV cover in the reference. Show two black fabric panels joined by neat black stitching, shallow diagonal fold following the seam. Textile and seam fill most of the photo with pale neutral studio edge. Do not add reinforcement patches or decorative stitching. No full ATV. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-1c820830-5e1e-4847-a3a7-30ade20a38de.png",
+      "outputPath": "dist/catalog-assets/atv-seam.png"
+    },
+    {
+      "id": "atv-strap",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-side.jpg",
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/10066796800.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a close-up photograph of the confirmed fastening on a black ATV cover: black woven webbing and a fastened black plastic side-release buckle, positioned at its lower fabric edge. Input 1 defines the ATV and its black Oxford fabric; input 2 is the reference for ordinary black buckle and strap construction only. Show actual threaded continuous strap and buckle, natural fabric attachment, small blurred rugged ATV tire in background. No complete vehicle and no motorcycle-specific feature. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-ccdfd417-48bf-4d47-9d00-be17b6303696.png",
+      "outputPath": "dist/catalog-assets/atv-strap.png"
+    },
+    {
+      "id": "moto-elastic",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/12075395291.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Transform the reference detail of a motorcycle cover's elastic lower hem into a clean website photograph. Preserve actual gathered black Oxford fabric, sewn black elastic casing and visible black stitching. Show a curved hem and its natural folds resting near a pale studio surface. Remove all original graphics. Elastic detail only, no motorcycle, no reflective strip, no heat insert, no vent. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-ddb7cf8c-58e5-4480-a62d-7c3fdd4f3a61.png",
+      "outputPath": "dist/catalog-assets/moto-elastic.png"
+    },
+    {
+      "id": "moto-seam",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/10066796497.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a clean studio macro based on the exact DOUBLE SEAM shown in the reference black Oxford 210D motorcycle cover. Preserve the black woven texture and two neat parallel rows of black stitching with the folded fabric edge. Angled diagonal composition in which thread and weave are in focus. Remove graphics. No extra features or whole vehicle. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-fb592900-3374-4114-86f9-291f9f01ffad.png",
+      "outputPath": "dist/catalog-assets/moto-seam.png"
+    },
+    {
+      "id": "moto-strap",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/10066796800.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a clean studio close-up of the black plastic side-release buckle and black webbing fastener on the motorcycle cover in the reference. Preserve buckle shape and actual continuous threaded strap, attachment to the black Oxford fabric. Crop so the buckle, ribbed strap and fabric edge are in clear focus; only a subtle blurred hint of motorcycle wheel behind. Remove original graphics. No reflective strips, vents or heat inserts. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-ec17fe24-3b78-44ce-bb5d-093d98642bbc.png",
+      "outputPath": "dist/catalog-assets/moto-strap.png"
+    },
+    {
+      "id": "moto-fabric",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/14034108285.webp",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/oxford-detail.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a macro product photo of black Oxford 210D weave and a few natural clear water droplets. Input 1 LEFT half is factual material reference; its silver RIGHT half depicts a different material and must be excluded entirely. Input 2 defines the desired studio photographic style. Show fine black technical weave and gentle fabric fold, droplets sharply resolved. Every face of textile remains black; no silver lining. Do not reproduce the coarse texture scale of input 2 literally, use the fine weave from input 1. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-6019e03e-050f-46aa-a68b-1c87a058dbe5.png",
+      "outputPath": "dist/catalog-assets/moto-fabric.png"
+    },
+    {
+      "id": "moto-canvas-insert",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/12075395338.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a close-up from the INSIDE of the heat-resistant motorcycle cover, showing the olive khaki woven canvas insert sewn to the surrounding black Oxford textile. Match reference canvas hue, medium plain woven texture and black outer shell. Show the transition seam and both fabric textures clearly, canvas occupies about half the frame and black Oxford the rest. Clearly internal panel, not an exterior colored stripe. No fire, hot exhaust or claims, no metallic reflective foil. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-69dcf6b6-e7dd-42d4-a5ac-e723443c903f.png",
+      "outputPath": "dist/catalog-assets/moto-canvas-insert.png"
+    },
+    {
+      "id": "moto-vent",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/12075394871.webp",
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/12903590546.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a close-up of the ventilation POCKET/FLAP on the enhanced black motorcycle cover from the references. Input 1 shows the genuine flap construction; input 2 locates it at mirror-height on the cover. Show the downward-facing opening underneath the narrow silver reflective-trimmed black flap with a small dark gap for air, exactly like input 1. Flap is gently naturally lifted enough to read the opening; no hands. Do NOT invent a mesh screen, filter cartridge, zipper, wide air grille or triangular rain hood. Black Oxford with neat black seam and narrow silver strip. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-c5485a4d-3b7b-43ad-b163-69bf751c1cf4.png",
+      "outputPath": "dist/catalog-assets/moto-vent.png"
+    },
+    {
+      "id": "moto-reflector",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/12075394871.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a macro close-up focused on the narrow SILVER REFLECTIVE STRIP stitched along the ventilation flap of the enhanced motorcycle cover in the reference. Show the same flat strip with the two neat black stitch lines along its edges against the black Oxford fabric; a gentle neutral light glints on the strip to show contrast, without glowing or colored light. Detail of reflective trim only. Do not invent a wide band encircling the cover. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-dcad600d-2481-4f1a-870c-531590104be5.png",
+      "outputPath": "dist/catalog-assets/moto-reflector.png"
+    },
+    {
+      "id": "wheel-drawstring",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14930902189.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create close-up photograph of the gathered CIRCULAR DRAWSTRING EDGE around the open center of the wheel cover in the reference. Black Oxford 210D textile curves around the edge of a car tire with a small part of dark unbranded rim visible behind. Show the sewn casing with a small black cord emerging and an understated black cord lock, allowing adjustment. This is a drawstring gathered hem, not an exposed broad elastic band. Texture, seam and drawcord in focus, wheel cropped tightly. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-f5fa39ee-575a-4aa9-a079-20afc7f387a5.png",
+      "outputPath": "dist/catalog-assets/wheel-drawstring.png"
+    },
+    {
+      "id": "wheel-seam",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14928362147.webp",
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14930901412.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a close-up product photograph of the curved seam joining the round black textile side panel to the tread band of this car wheel cover. Use the references for actual black Oxford 210D texture, lightweight folds and curvature. Neat black stitching, seam runs in an arc, fabric fills frame. No full wheel, no padding, leather, quilting, reinforcement patch or extra fastener. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-464d0b36-0cb6-4450-bd6e-aa26cb11f621.png",
+      "outputPath": "dist/catalog-assets/wheel-seam.png"
+    },
+    {
+      "id": "wheel-handle-pocket",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14928362147.webp"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a close-up product photograph of the webbing HANDLE and IDENTIFICATION POCKET on the tread side of the car wheel cover in the reference. Preserve the actual construction: vertical black webbing carry loop, black textile rectangular flap pocket beneath it, continuation of black strap below pocket. Show curved side of wheel covered in thin black Oxford textile with natural wrinkles, entire handle and pocket within frame. Pale neutral studio background around its edges. No written marker, no label, no extra plastic buckle or zipper. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-6ba8b213-7d9e-4a95-8aa4-3d0e960b61d5.png",
+      "outputPath": "dist/catalog-assets/wheel-handle-pocket.png"
+    },
+    {
+      "id": "wheel-fabric",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14930901412.webp",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/oxford-detail.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Asset type: Needle Shark website product construction detail. Create a studio macro of the fine black Oxford 210D weave used for the wheel cover: first reference's small fabric swatch is the material reference, second reference is only photographic aesthetic. Black fabric arranged in a broad shallow fold with a few naturally sized transparent droplets, fine interwoven threads in focus. Both sides of fabric black, no silver lining. No wheel or other product parts. Landscape 3:2 photograph, sharp readable construction in the center with comfortable margins. Soft neutral studio illumination, background light warm gray, realistic BLACK technical woven textile with natural folds. Same quiet minimalist website aesthetic as existing product photography. No human hands, logos, letters, text, numbers, icons, orange panels, callout graphics, comparison layout or watermark. No invented accessories, zippers or metal grommets. This is a single detail photograph, NOT a collage.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-556468fc-92eb-4001-be29-de451acb8ccd.png",
+      "outputPath": "dist/catalog-assets/wheel-fabric.png"
+    }
+  ]
+}

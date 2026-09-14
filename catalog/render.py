@@ -26,7 +26,64 @@ def lines(value):
 
 
 def image_for(product, role):
+    gallery = product.get('galleries', {}).get(default_gallery(product))
+    if gallery and role in gallery:
+        return image_by_id(product, gallery[role])
     return next((img for img in product['images'] if img.get('role') == role), product['images'][0])
+
+
+def default_gallery(product):
+    return product['variants'][0]['galleryId'] if product.get('variants') else product.get('defaultGallery', '')
+
+
+def image_by_id(product, image_id):
+    return next(image for image in product['images'] if image['id'] == image_id)
+
+
+def gallery_images(product, gallery_id=None):
+    if not product.get('galleries'):
+        return product['images']
+    gallery = product['galleries'][gallery_id or default_gallery(product)]
+    return [image_by_id(product, image_id) for image_id in gallery['images']]
+
+
+def gallery_image_data(image):
+    return {**image, 'photo': image_attributes(image['src'], '(max-width:800px) 90vw, 48vw'),
+            'thumbnail': image_attributes(image['src'], '76px', True)}
+
+
+def gallery_data(product):
+    return {key: {**gallery, 'images': [gallery_image_data(image) for image in gallery_images(product, key)],
+                  'photos': {role: gallery_image_data(image_by_id(product, gallery[role])) for role in ('material', 'fit', 'kit')}}
+            for key, gallery in product.get('galleries', {}).items()}
+
+
+def construction_features(product, gallery):
+    cards = ''.join(f'<article>{picture(image_by_id(product, item["image"]), sizes="(max-width:540px) 90vw, (max-width:1024px) 43vw, 28vw")}<h4>{e(item["title"])}</h4><p>{e(item["text"])}</p></article>' for item in gallery['features'])
+    return f'<div class="construction-grid">{cards}</div>'
+
+
+def construction_details(product):
+    key = default_gallery(product)
+    gallery = product['galleries'][key]
+    templates = ''.join(f'<template data-gallery-features="{e(name)}">{construction_features(product, item)}</template>' for name, item in product['galleries'].items())
+    return f'<div class="wrap construction-details"><div class="construction-heading"><h3>Рассмотрите детали.</h3><p id="construction-label">{e(gallery["label"])}</p></div><div id="construction-content">{construction_features(product, gallery)}</div>{templates}</div>'
+
+
+def validate_galleries(product):
+    if not product.get('galleries'):
+        return
+    ids = [image['id'] for image in product['images']]
+    if len(ids) != len(set(ids)) or default_gallery(product) not in product['galleries']:
+        raise ValueError('Invalid product gallery or duplicate image id')
+    for gallery in product['galleries'].values():
+        if not gallery['images'] or len(gallery['images']) != len(set(gallery['images'])):
+            raise ValueError('Empty gallery or duplicate gallery image')
+        references = gallery['images'] + [gallery[role] for role in ('hero', 'material', 'fit', 'kit')] + [item['image'] for item in gallery['features']]
+        if not set(references) <= set(ids):
+            raise ValueError('Unknown gallery image')
+        if not set(references) <= set(gallery['images']) or gallery['hero'] != gallery['images'][0]:
+            raise ValueError('Page details must belong to the selected gallery')
 
 
 def picture(image, eager=False, sizes='(max-width:800px) 90vw, 48vw', thumbnail=False, **attrs):
@@ -90,8 +147,8 @@ def validate_variants(product):
             raise ValueError('Duplicate variant')
         if not variant['ozonUrl'].startswith('https://www.ozon.ru/product/'):
             raise ValueError('Variant must link to its HTTPS Ozon product')
-        if not 0 <= variant['imageIndex'] < len(product['images']):
-            raise ValueError('Invalid variant image')
+        if variant['galleryId'] not in product.get('galleries', {}):
+            raise ValueError('Invalid variant gallery')
         ids.add(variant['id'])
         combinations.add(combination)
 
@@ -132,7 +189,11 @@ def dialogs():
 
 
 def hero(product):
-    gallery = product['images']
+    gallery = gallery_images(product)
+    gallery_id = default_gallery(product)
+    gallery_label = f'<p class="gallery-model" id="gallery-model">{e(product["galleries"][gallery_id]["label"])}</p>' if gallery_id else ''
+    galleries = json.dumps(gallery_data(product), ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    gallery_config = f'<script type="application/json" id="product-galleries" data-default-gallery="{e(gallery_id)}">{galleries}</script>' if gallery_id else ''
     thumbnails = ''.join(f'<button class="gallery-thumb" data-gallery-src="{e(image_attributes(img["src"])["src"])}" data-gallery-srcset="{e(image_attributes(img["src"]).get("srcset", ""))}" data-gallery-alt="{e(img["alt"])}" data-gallery-label="{e(img["label"])}" aria-pressed="{"true" if i == 0 else "false"}" aria-label="{e(img["label"])}">{picture(img, sizes="76px", thumbnail=True)}</button>' for i, img in enumerate(gallery))
     sizes = ''.join(f'<label class="size-option"><input type="radio" name="product-size" value="{size_label(s)}"><span>{size_label(s)}</span></label>' for s in product['sizes'])
     picker = variant_picker(product) if product.get('variants') else f'<fieldset class="size-picker"><legend>Размер, см <span>Д × Ш × В</span></legend><div class="size-options">{sizes}</div></fieldset>'
@@ -142,7 +203,7 @@ def hero(product):
     return f'''
     <nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/catalog/">Каталог</a><span aria-hidden="true">/</span><span>{e(product['name'])}</span></nav>
     <section class="wrap detail-hero" aria-labelledby="product-title">
-      <div class="gallery">
+      <div class="gallery">{gallery_label}{gallery_config}
         <div class="gallery-stage"><span class="product-badge">{e(product['badge'])}</span>{picture(gallery[0], True, id='gallery-image', fetchpriority='high')}<span class="photo-index" id="photo-index">01 / {len(gallery):02d}</span></div>
         <div class="gallery-bottom"><div class="gallery-thumbs" aria-label="Фотографии товара">{thumbnails}</div><p id="gallery-caption">{e(gallery[0]['label'])}</p></div>
       </div>
@@ -166,25 +227,28 @@ def detail_sections(product):
             size_rows += f'<tr class="size-guidance"><td colspan="5"><strong>{e(hint["label"])}</strong><span>{e(hint["note"])}</span></td></tr>'
     fastenings = ''.join(f'<article><span>0{i+1}</span><div><h3>{e(item["title"])}</h3><p>{e(item["text"])}</p></div></article>' for i, item in enumerate(product.get('fastenings', [])))
     faqs = ''.join(f'<details><summary>{e(item["question"])}<span aria-hidden="true">+</span></summary><p>{e(item["answer"])}</p></details>' for item in product['faq'])
+    active_gallery = product.get('galleries', {}).get(default_gallery(product), {})
+    material_text = active_gallery.get('materialText', product['materialText'])
     kit = ''.join(f'<li><span>0{i+1}</span>{e(item)}</li>' for i, item in enumerate(product['kit']))
     sections = {
         'scenarios': f'''<section class="wrap product-section" id="scenarios"><div class="section-heading"><div><p class="eyebrow">СЦЕНАРИИ ИСПОЛЬЗОВАНИЯ</p><h2>{lines(copy['scenariosTitle'])}</h2></div><p>{lines(copy['scenariosIntro'])}</p></div><div class="scenario-grid">{scenarios}</div></section>''',
-        'material': f'''<section class="material-section" id="material"><div class="wrap material-layout"><div class="material-copy"><p class="eyebrow">МАТЕРИАЛ</p><h2>{lines(copy['materialTitle'])}</h2><p>{e(product['materialText'])}</p><dl class="material-specs"><div><dt>Ткань</dt><dd>{e(product['material'])}</dd></div><div><dt>Влагозащитная пропитка</dt><dd>{e(product['coating'])}</dd></div><div><dt>Цвет</dt><dd>{e(product['color'])}</dd></div></dl></div><figure class="material-photo">{picture(image_for(product, 'material'))}<figcaption>{e(copy['materialCaption'])}</figcaption></figure></div></section>''',
-        'sizes': f'''<section class="wrap product-section sizes-section" id="sizes"><div class="section-heading"><div><p class="eyebrow">ПОДБОР РАЗМЕРА</p><h2>{lines(copy['sizesTitle'])}</h2></div><p>{lines(copy['sizesIntro'])}</p></div><div class="sizes-layout"><div><div class="fit-photo">{picture(image_for(product, 'fit'))}<span>Длина × ширина × высота</span></div><p class="fit-note">{e(product['fitNote'])}</p><button class="text-link size-request" data-request="Подбор размера">Помогите выбрать размер <span aria-hidden="true">↗</span></button></div><div class="size-table-wrap"><table class="size-table"><caption>{e(copy['sizeTableCaption'])}</caption><thead><tr><th scope="col">№</th><th scope="col">Длина</th><th scope="col">Ширина</th><th scope="col">Высота</th><th scope="col"><span class="sr-only">Выбор</span></th></tr></thead><tbody>{size_rows}</tbody></table><p class="selected-size-note" id="selected-size-note" role="status">Выберите размер — он появится в вашей заявке.</p><button class="button accent" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button></div></div></section>''',
-        'kit': f'''<section class="kit-section" id="kit"><div class="wrap kit-layout"><div class="kit-photo">{picture(image_for(product, 'hero'))}</div><div class="kit-copy"><p class="eyebrow">КОМПЛЕКТАЦИЯ</p><h2>{lines(copy['kitTitle'])}</h2><p>{e(copy['kitDescription'])}</p><ul>{kit}</ul></div></div></section>''',
+        'material': f'''<section class="material-section" id="material"><div class="wrap material-layout"><div class="material-copy"><p class="eyebrow">МАТЕРИАЛ</p><h2>{lines(copy['materialTitle'])}</h2><p id="material-description">{e(material_text)}</p><dl class="material-specs"><div><dt>Ткань</dt><dd>{e(product['material'])}</dd></div><div><dt>Влагозащитная пропитка</dt><dd>{e(product['coating'])}</dd></div><div><dt>Цвет</dt><dd>{e(product['color'])}</dd></div></dl></div><figure class="material-photo">{picture(image_for(product, 'material'), **{'data-product-photo': 'material'})}<figcaption id="material-caption">{e(active_gallery.get('materialCaption', copy['materialCaption']))}</figcaption></figure></div></section>''',
+        'sizes': f'''<section class="wrap product-section sizes-section" id="sizes"><div class="section-heading"><div><p class="eyebrow">ПОДБОР РАЗМЕРА</p><h2>{lines(copy['sizesTitle'])}</h2></div><p>{lines(copy['sizesIntro'])}</p></div><div class="sizes-layout"><div><div class="fit-photo">{picture(image_for(product, 'fit'), **{'data-product-photo': 'fit'})}<span>Длина × ширина × высота</span></div><p class="fit-note">{e(product['fitNote'])}</p><button class="text-link size-request" data-request="Подбор размера">Помогите выбрать размер <span aria-hidden="true">↗</span></button></div><div class="size-table-wrap"><table class="size-table"><caption>{e(copy['sizeTableCaption'])}</caption><thead><tr><th scope="col">№</th><th scope="col">Длина</th><th scope="col">Ширина</th><th scope="col">Высота</th><th scope="col"><span class="sr-only">Выбор</span></th></tr></thead><tbody>{size_rows}</tbody></table><p class="selected-size-note" id="selected-size-note" role="status">Выберите размер — он появится в вашей заявке.</p><button class="button accent" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button></div></div></section>''',
+        'kit': f'''<section class="kit-section" id="kit"><div class="wrap kit-layout"><div class="kit-photo">{picture(image_for(product, 'kit') if active_gallery else image_for(product, 'hero'), **{'data-product-photo': 'kit'})}</div><div class="kit-copy"><p class="eyebrow">КОМПЛЕКТАЦИЯ</p><h2>{lines(copy['kitTitle'])}</h2><p>{e(copy['kitDescription'])}</p><ul>{kit}</ul></div></div></section>''',
         'questions': f'''<section class="wrap product-section faq-section" id="questions"><div><p class="eyebrow">ВОПРОСЫ ОБ ИЗДЕЛИИ</p><h2>{lines(copy['faqTitle'])}</h2><p>{lines(copy['faqIntro'])}</p><button class="text-link" data-request="Подбор размера">Задать вопрос <span aria-hidden="true">↗</span></button></div><div class="faq-list">{faqs}</div></section>''',
         'wholesale': f'''<section class="wholesale-section" id="wholesale"><div class="wrap wholesale-layout"><div><p class="eyebrow">ДЛЯ БИЗНЕСА</p><h2>{lines(copy['wholesaleTitle'])}</h2></div><div><p>{e(copy['wholesaleDescription'])}</p><button class="button accent" data-request="Партия для бизнеса">Обсудить партию <span aria-hidden="true">↗</span></button><a href="/#about">Узнать о производстве →</a></div></div></section>'''
     }
     labels = dict(zip(sections, ['Когда пригодится', 'Материал', 'Размеры', 'Комплектация', 'Вопросы', 'Для бизнеса']))
-    if fastenings:
+    if product.get('galleries'):
+        sections['material'] = sections['material'].replace('</section>', construction_details(product) + '</section>')
+    elif fastenings:
         sections['material'] = sections['material'].replace('</section>', f'<div class="wrap fastening-details"><h3>Детали, которые держат.</h3><div>{fastenings}</div></div></section>')
     if product.get('variants'):
         sections['sizes'] = re.sub(r'<table class="size-table">.*?</table>', lambda _: variant_size_table(product), sections['sizes'], flags=re.S)
         sections['sizes'] = sections['sizes'].replace('Длина × ширина × высота', e(product.get('measurementLabel', 'Длина × ширина × высота')))
         sections['kit'] = sections['kit'].replace(f'<ul>{kit}</ul>', f'<ul id="variant-kit">{kit}</ul>')
-        sections['kit'] = sections['kit'].replace('class="kit-photo"', 'class="kit-photo" id="variant-kit-photo"')
-        descriptions = ''.join(f'<article><h3 class="type-h3">{e(v["label"])}</h3><p>{e(v["note"])}</p></article>' for g in product['optionGroups'] if g['id'] == 'configuration' for v in g['values'])
-        sections['kit'] = sections['kit'].replace(f'<ul id="variant-kit">', f'<div class="configuration-details">{descriptions}</div><ul id="variant-kit">')
+        default = variant_data(product)[0]
+        sections['kit'] = sections['kit'].replace('<ul id="variant-kit">', f'<p class="kit-configuration" id="kit-configuration">{e(default["summary"])} · {e(default["sizeLabel"])}</p><ul id="variant-kit">')
     enabled = product['sections']
     if len(enabled) != len(set(enabled)) or any(key not in sections for key in enabled):
         raise ValueError('Unknown or duplicate product section')
@@ -223,6 +287,7 @@ def render():
     slugs = set()
     for product in products:
         validate_variants(product)
+        validate_galleries(product)
         slug = product['slug']
         if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug) or slug in slugs:
             raise ValueError(f'Invalid or duplicate slug: {slug}')
