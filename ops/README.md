@@ -48,4 +48,4 @@ python3 server/preview.py --port 4173
 
 `check-site.py` is local and read-only. It validates page metadata/JSON-LD, sitemap, links, anchors, assets, image hashes and CSS tokens. Browser checks on the five documented widths are still required. The preview now resolves extensionless legal URLs like production. It does not send real submissions unless explicitly started with `--live-api`.
 
-The optimization changes have not been installed on the VPS. Save/push the checked commit before publishing with `ops/deploy.sh`; the local browser tests do not count as a production or Google/email delivery check.
+The optimization was installed on 11 September. The expanded three-product catalogue was published on 14 September from commit `2f098b0`, release `20260914T080537Z-8230`; public verification is recorded in `docs/verification/20260914-catalog-publication.json`. Save/push each checked commit before publishing with `ops/deploy.sh`; local browser tests do not count as a production or Google/email delivery check.
