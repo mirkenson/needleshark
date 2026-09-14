@@ -61,7 +61,7 @@ class BlogTests(unittest.TestCase):
             html = (Path(tmp) / 'test/index.html').read_text()
             self.assertEqual(html.count('src="/metrika.js?v=20260911"'), 1)
             self.assertIn('https://mc.yandex.ru/watch/112428810', html)
-            self.assertIn('src="/analytics.js?v=20260911-events2"', html)
+            self.assertIn('src="/analytics.js?v=20260914-blog2"', html)
             self.assertIn('href="/blog/"', html.split('</header>')[0])
 
     def test_cta_metadata_and_optional_faq(self):
@@ -176,3 +176,14 @@ class BlogTests(unittest.TestCase):
             self.assertIn('data-blog-cta="ozon" data-article="test"', html)
             url = unescape(re.search(r'href="(https://www.ozon.ru/[^"]+)"', html)[1])
             self.assertEqual(parse_qs(urlsplit(url).query)['utm_campaign'], ['vendor_org_211216'])
+
+    def test_interactive_ids_and_article_tracking_context(self):
+        post = {**POST, 'blocks': [dict(type='checklist', id='preflight', title='Checklist', items=['One', 'Two'])]}
+        with tempfile.TemporaryDirectory() as tmp:
+            render([post], Path(tmp))
+            html = (Path(tmp) / 'test/index.html').read_text()
+            self.assertIn('class="wrap blog-article" data-article="test"', html)
+            self.assertIn('data-blog-block="preflight"', html)
+            post['blocks'].append(dict(type='accordion', id='preflight', title='Details', items=[dict(label='More', blocks=[dict(type='paragraph', text='Text')])]))
+            with self.assertRaises(ValueError):
+                render([post], Path(tmp))

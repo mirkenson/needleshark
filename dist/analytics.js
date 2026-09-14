@@ -21,7 +21,8 @@
     if (event.type === 'auxclick' && event.button !== 1) return;
     const el = event.target.closest('a,button,input[type=checkbox],input[type=file]');
     if (!el || el.disabled) return;
-    const params = {page: location.pathname};
+    const article = el.closest('[data-article]')?.dataset.article;
+    const params = {page: location.pathname, ...(article ? {article} : {})};
     if (el.dataset.blogCta) {
       navigationGoal(event, el, 'blog_cta_click', {...params, article: el.dataset.article, cta: el.dataset.blogCta});
       return;
@@ -46,6 +47,11 @@
   }
   document.addEventListener('click', trackClick);
   document.addEventListener('auxclick', trackClick);
+  document.addEventListener('blog-interaction', event => {
+    const {article, element, block, item, state} = event.detail || {};
+    if (!['blog_tab', 'blog_accordion', 'blog_checklist'].includes(element)) return;
+    goal('ui_click', {page: location.pathname, article, element, block, item, state});
+  });
   document.querySelectorAll('form').forEach(form => {
     form.addEventListener('focusin', () => goal('form_start'), {once: true});
     form.addEventListener('submit', () => goal('form_submit_attempt'));

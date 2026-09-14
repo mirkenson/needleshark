@@ -1,0 +1,531 @@
+{
+  "date": "2026-09-14",
+  "status": "checked locally, publication authorized by owner",
+  "branch": "codex/blog-reading",
+  "pythonTests": {
+    "blog": 13,
+    "catalog": 11,
+    "publication": 7,
+    "total": 31
+  },
+  "browser": {
+    "date": "2026-09-14",
+    "environment": "http://127.0.0.1:4174; isolated Chrome; analytics SDK and external Ozon destinations intercepted",
+    "article": [
+      {
+        "width": 360,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      },
+      {
+        "width": 390,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      },
+      {
+        "width": 768,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      },
+      {
+        "width": 1024,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      },
+      {
+        "width": 1440,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      }
+    ],
+    "ctaLinks": [
+      {
+        "id": "storage-catalog",
+        "url": "http://127.0.0.1:4174/catalog/"
+      },
+      {
+        "id": "atv-cover-winter",
+        "url": "http://127.0.0.1:4174/catalog/chehol-na-kvadrocikl/"
+      },
+      {
+        "id": "atv-cover-ozon",
+        "url": "https://www.ozon.ru/product/2360802204/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_8ab958a7"
+      },
+      {
+        "id": "moto-cover-catalog",
+        "url": "http://127.0.0.1:4174/catalog/chehol-dlya-motocikla/"
+      },
+      {
+        "id": "winter-ozon-shop",
+        "url": "https://www.ozon.ru/seller/needle-shark/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_d3b29143"
+      }
+    ],
+    "ctaEvents": "One blog_cta_click per CTA; all five navigated to the expected URL",
+    "regressionPageChecks": 45,
+    "zoom": "200% text at 390 and 1024px",
+    "noJavaScript": "All tab contents visible; native details operable",
+    "reducedMotion": true,
+    "errors": [],
+    "limitations": [
+      "Deployment status recorded separately",
+      "Ozon page availability and analytics ingestion not verified",
+      "No real forms submitted; server, Google Sheets and email untouched"
+    ]
+  },
+  "interactionEvents": {
+    "base": "http://127.0.0.1:4174",
+    "counter": 112428810,
+    "goal": "ui_click",
+    "events": [
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_tab",
+        "block": "storage-place",
+        "item": 2,
+        "state": "selected"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_tab",
+        "block": "storage-place",
+        "item": 3,
+        "state": "selected"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_accordion",
+        "block": "fluids",
+        "item": 1,
+        "state": "open"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_accordion",
+        "block": "fluids",
+        "item": 1,
+        "state": "closed"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_checklist",
+        "block": "storage-checklist",
+        "item": 1,
+        "state": "checked"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_checklist",
+        "block": "storage-checklist",
+        "item": 1,
+        "state": "unchecked"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_toc_section-mode"
+      }
+    ],
+    "initializationEvents": 0,
+    "repeatedSelectedTabEvents": 0,
+    "programmaticChangesEvents": 0,
+    "duplicates": 0,
+    "realSdk": false
+  },
+  "allEightGoals": {
+    "base": "http://127.0.0.1:4174",
+    "pages": [
+      {
+        "path": "/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 3,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehol-dlya-motocikla/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 6
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehly-dlya-koles/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 2
+      },
+      {
+        "path": "/blog/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/blog/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 2,
+        "variantLinks": 0
+      },
+      {
+        "path": "/privacy-policy",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/privacy-policy",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      },
+      {
+        "path": "/user-agreement",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/user-agreement",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      }
+    ],
+    "goals": [
+      "blog_cta_click",
+      "contact_click",
+      "form_start",
+      "form_submit_attempt",
+      "lead_submitted",
+      "outbound_click",
+      "request_open",
+      "ui_click"
+    ],
+    "errors": [],
+    "mockedSdk": true,
+    "mockedApi": true,
+    "containsPersonalData": false
+  },
+  "externalLinks": [
+    {
+      "url": "https://www.ozon.ru/product/2360802204/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_8ab958a7",
+      "status": 0,
+      "finalUrl": "https://www.ozon.ru/product/2360802204/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_8ab958a7",
+      "error": "curl: (28) Connection timed out after 18006 milliseconds"
+    },
+    {
+      "url": "https://www.ozon.ru/seller/needle-shark/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_d3b29143",
+      "status": 0,
+      "finalUrl": "https://www.ozon.ru/seller/needle-shark/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_d3b29143",
+      "error": "curl: (28) Connection timed out after 18006 milliseconds"
+    },
+    {
+      "url": "https://www.polaris.com/en-us/off-road/owner-resources/help-center/article/KA-01324/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_1",
+      "status": 403,
+      "finalUrl": "https://www.polaris.com/en-us/off-road/owner-resources/help-center/article/KA-01324/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_1",
+      "error": null
+    },
+    {
+      "url": "https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.amfr2525omen.pdf?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_2",
+      "status": 403,
+      "finalUrl": "https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.amfr2525omen.pdf?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_2",
+      "error": null
+    },
+    {
+      "url": "https://publications.polaris.com/owner/owners-manuals/0000911388.XML.xml?onepage=true&utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_3",
+      "status": 200,
+      "finalUrl": "https://publications.polaris.com/owner/owners-manuals/0000911388.XML.xml?onepage=true&utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_3",
+      "error": null
+    },
+    {
+      "url": "https://global.honda/en/motorcycle-aftersales/plusone/202209.html?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_4",
+      "status": 403,
+      "finalUrl": "https://global.honda/en/motorcycle-aftersales/plusone/202209.html?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_4",
+      "error": null
+    },
+    {
+      "url": "https://www.yuasabatteries.com/resources/guides/battery-maintenance-storage/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_5",
+      "status": 403,
+      "finalUrl": "https://www.yuasabatteries.com/resources/guides/battery-maintenance-storage/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_5",
+      "error": null
+    },
+    {
+      "url": "https://shoraipower.com/charging?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_6",
+      "status": 200,
+      "finalUrl": "https://shoraipower.com/charging?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_6",
+      "error": null
+    },
+    {
+      "url": "https://vk.com/needleshark?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_2a3f38ce",
+      "status": 200,
+      "finalUrl": "https://m.vk.com/needleshark?utm_source=needle-shark_ru&utm_medium=referral&utm_campaign=website&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_2a3f38ce",
+      "error": null
+    }
+  ],
+  "cabinet": {
+    "counter": 112428810,
+    "goals": {
+      "blog_cta_click": 611918849,
+      "outbound_click": 611919368,
+      "contact_click": 611919492,
+      "request_open": 611920007,
+      "form_start": 611920074,
+      "form_submit_attempt": 611920219,
+      "lead_submitted": 611920414,
+      "ui_click": 611921224
+    },
+    "mainDomain": "needle-shark.ru",
+    "additionalDomain": "needleshark.ru",
+    "includeSubdomains": true,
+    "restrictToDomains": true,
+    "filter": "keep only site and additional addresses",
+    "excludeOwnVisits": false,
+    "removeBehavioralBots": false,
+    "settingsChanged": false
+  },
+  "serverBefore": {
+    "current": "20260914T080537Z-8230",
+    "previous": "20260911T174008Z-5491",
+    "nginx": "active",
+    "needle-leads": "active",
+    "diskAvailable": "4.6G"
+  },
+  "limitations": [
+    "External Ozon URLs timed out through curl and native Chrome; store/card URL verified against catalog data",
+    "Some manufacturer source sites returned HTTP 403 to automatic HTTP client",
+    "No real form submissions; mock success only in isolated analytics regression test"
+  ],
+  "staticSha256": {
+    "analytics.js": "96fa04eef14a1191d61eace9eb3e1c3a66b7638cd7ced1d0b240c174faf02287",
+    "apple-touch-icon.png": "f773819d11d5c28d7bbbcdf1e37a6790b9ef8b7de1f0c58d7341453b98a0e94c",
+    "atv-cover.png": "e000badce016f4e4fdeb0aeb1522bcb3ea6f4d5d493935ac87845bcb29f4339c",
+    "black-fabric-rolls.png": "517493441901184faf432434dce81fdd08aa01c6e5589d2ad84dacb5910318e5",
+    "blog/index.html": "e8e432a3a2ac599ca602638b4dac89b75199c319a78e92736b881c3fa532296f",
+    "blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html": "73c8de0b8c97923ba1a61c74a4c30feb7fcfd83196fd38b8f874eeba9117e44c",
+    "blog.css": "59ce2a74be192e8889652b6d9b1dc760299dbe7a76443de45fbbe2c6103ddbc3",
+    "blog.js": "5dfcc7b0fbdc3ce10ff27740ccb0d5933a9e5f8360cdc48b5c3313a711483e8d",
+    "brand-preview.png": "de765b20f3260e440dad360844b3a5d38c7e6ce0ee73192253124e9c79561ef1",
+    "catalog/chehly-dlya-koles/index.html": "bfc0fe6c7ee1a9d9e9e2091d3512f1e2c1e43942bf5a6cc3769ef0e1fe9fa165",
+    "catalog/chehol-dlya-motocikla/index.html": "02b5e53bedda56159a139253964a1780ee05063abb6ea71b64d9ea288b6e0a8e",
+    "catalog/chehol-na-kvadrocikl/index.html": "40d38ee2d94f8cbd72da374c600241113957e43feed6a2a75cb29551a2c69523",
+    "catalog/index.html": "a2e890813cdafe581a804d1801fb8dcf845c644795a2845e474faac0a73bde61",
+    "catalog-assets/atv-elastic.png": "705f5f8ab9cecd7b2c5a4c07b4649ae40d01b45813b52fab97bbf577d782b949",
+    "catalog-assets/atv-seam.png": "42bd8e7e5c6cb2aba67b32cbf91a46fe300ef2de0fba9274a988d8c010f8dca3",
+    "catalog-assets/atv-side.jpg": "90b03d60f9eb8801dfeba588ba84924184c7a9b03f42279d2bc2ed32797acfbb",
+    "catalog-assets/atv-strap.png": "0f5eee597d295dcdce6558000b33b5be2cf75b1f34964416a4c3700b50adb8a3",
+    "catalog-assets/atv-studio.jpg": "73c79db1ee4e08101f22874ec11fe7fdb8ba916a67e8a633767029a01f82cb7f",
+    "catalog-assets/moto-canvas-insert.png": "0cc69fa707c21c707dadc930f8805895b1bbebb12a08ff2533659e5dcf9e0e80",
+    "catalog-assets/moto-elastic.png": "7664a1cdd13c486d695d9dc044d48833c834419ec5d85f7ebda76037f74edf9c",
+    "catalog-assets/moto-fabric.png": "6a6436fd1a2ba740fbe8fb050bcf04be2b7aa02188e705725a09d238753e9a3c",
+    "catalog-assets/moto-heat.png": "6d244bda4c1bba224803a48f1ceb123c78795b9add0331dabc35d79c584d5290",
+    "catalog-assets/moto-reflector.png": "3cd3f21bede63573181b981927aa01ba505dc832bf19bcc3dd49819220bc635d",
+    "catalog-assets/moto-seam.png": "8b81e4ad3a1364d1b9b689664f0d1ff1b8a53eca964c5e391ebbf8396d38024e",
+    "catalog-assets/moto-standard.png": "a19fa9df07a10cefca66bce7897ac977b9a42373c7a10e8739cc0c9413bde4aa",
+    "catalog-assets/moto-strap.png": "46157f74ee4458ac5575ecc4f348686b2b5be7310614cf21a9617fb739f402d6",
+    "catalog-assets/moto-vent.png": "14f32886f4f9256d250984753992600ea10a9d4195376e4b54b16da997f1c77f",
+    "catalog-assets/oxford-detail.jpg": "d84ebcc494dc9bb0b9962684af38ed83c02bf72d07d7928728941fd43450e916",
+    "catalog-assets/wheel-drawstring.png": "7af84d7a6103617aba90450a56f0f6d83cff5eba79b6cdadaf88808c4f81fe6e",
+    "catalog-assets/wheel-fabric.png": "0d15d97395852c9a23406c8ceb30d88e1987fa93afe70182cfdfb5ef0b6e2353",
+    "catalog-assets/wheel-handle-pocket.png": "e1d55d03a910b9708b58c5dde88661e76066e678741f1b32f26ec126f1930924",
+    "catalog-assets/wheel-seam.png": "dd86e349732a5027a3f8c56053727122586436cc7a926710f03a1d85e13dd5c2",
+    "catalog-assets/wheel-set.png": "9376cc46d0543034c9748cb334de6261d9654f03cc07fbdac5cf2133526dbd7a",
+    "catalog-assets/wheel-single.png": "f9fe68cad99616ee88022fb498a918f9e4487b6c86d2157caffa1923d4361d93",
+    "catalog.css": "9ba75eefef0a98df1b2fcc68fbb2afbda423f2b0313a34e8f41d4cf8d0e7669b",
+    "catalog.js": "c83d0d47b538de391b027a5bc1cfc43f099ebe52de82d25b7f67f217941bf370",
+    "favicon-96.png": "86c9ae938c63eeaafd32b43fef15496607a9e7219580f6e0a36b91cdcd48cbf5",
+    "favicon.ico": "815f5dd90f1182fcdac8cee7ba710239a68737177f7e0375366e6a2638c7ba78",
+    "favicon.svg": "3c2a51065e750d3b9008c5de3210e3981b9bc2869cb734bdbd4fee8f30379843",
+    "fonts/OFL.txt": "f612090fb72b6dca3e807e66fa0d2b5def163cef86f1a3209b5c897cba5ee4b7",
+    "fonts/manrope-cyrillic.woff2": "95a493061fe0a8d0d027c2892747134ba747141112d3be4d5022e70ab7d3a1a6",
+    "fonts/manrope-latin.woff2": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f",
+    "icon-192.png": "76fa79e86823b4ed6d8387013b69af14b810faffa1c1438ce90ebdcd4da2699c",
+    "icon-512.png": "077f1ebe988d69c3104bad07795115f9346be7922cad95a4854bbe6b49988c62",
+    "images/atv-cover-160.webp": "b840a74ace4854ebdc30154b829ee7d3760e3152f26c39eefb5df6e28b058fcf",
+    "images/atv-cover-480.webp": "dc6b17c7fb23142e2d9c0ee21a6d570f4bde6ae896a5a5aaf67baa94f903006e",
+    "images/atv-cover-800.webp": "d003b0d48cea07a26f703e4c6a05b09d788c184f81ff3021f2a5bd646c963ad9",
+    "images/atv-cover-900.webp": "73342cabd2e8dd0328e3c4ce5283ea4ddad2fe2bea07f2e0379211a76c918e3f",
+    "images/atv-elastic-1200.webp": "56bfd29f6da10c63e6c374f0de185d1d9e986f1533d5ea3701db786779099989",
+    "images/atv-elastic-1536.webp": "be9e5504aab24f034f6d7d9ec0b756d1429d01334927cac91857901717d178a7",
+    "images/atv-elastic-160.webp": "5b81155f15eaf40daf7097773df9a7c2bcd8cce5d69f4f0dca819492f2af3a2f",
+    "images/atv-elastic-480.webp": "59bbe34678695dc24815769853cb8414d8bcabe096d531e233578f049a79a2e3",
+    "images/atv-elastic-800.webp": "5a0ec59e62b5df6aa3a0f0b3f6202ee74abe0823c186f7ea02c96c67875a6093",
+    "images/atv-seam-1200.webp": "ff60aab9ba19d7850d4930c9282faa48fd5bcad15474b8834a0eea86d72f99d4",
+    "images/atv-seam-1536.webp": "19dd90104acedbbf180c1bfef243123e7ce01a9a29ac2f1a0b8debc864a5898a",
+    "images/atv-seam-160.webp": "d6c6f9b451bffead5d342246af5e8877d6fbebac7945a93b59ba08bb8466e697",
+    "images/atv-seam-480.webp": "af171f6174e867047c60728f0c27eb1526ce019426ac3a6cb368d8b3cf8fb157",
+    "images/atv-seam-800.webp": "fbb7d3d0c9850ba8853b711cc6f35c02cb659716b0b65b1336a2ef2ff05861ec",
+    "images/atv-side-1200.webp": "7b43c650d190cb1898fcaf2e293ad239a7277f97b5f22972858a4f37b5a6b597",
+    "images/atv-side-1536.webp": "b287ce9232111e6fe48e4d4ffcd16ce332bef7f0163392fe5da93a7b1069531a",
+    "images/atv-side-160.webp": "1ff4f9dd85e0bb9e7660daacf6e9dead7c7042b0ebe3e3aba4232b7621e4f988",
+    "images/atv-side-480.webp": "325ad29fcff8133289f72333f742a620f8302ba63d24c1e9bf25625890af0f5e",
+    "images/atv-side-800.webp": "3315e2830cf71a0246977425ccb2dd57117e6532cdd20ead5d4aa593dc4d67dc",
+    "images/atv-strap-1200.webp": "abcf5e0f03a67c5ec20baa7506f239c546dbcb7f8ff711d8095cdd6b2206b493",
+    "images/atv-strap-1536.webp": "1af310aa1183ab81ca30690d4c83decba2441d6016968fb2e6e86b23fc053169",
+    "images/atv-strap-160.webp": "71abe0f1d8162c62bc12bb732532e9ac6700d0d3cc6a148108619f162723fbd0",
+    "images/atv-strap-480.webp": "a2b8bd7927ed448f5ece87e2b3ff99c7051489f0a6badbbca05fb93a79390eca",
+    "images/atv-strap-800.webp": "66d4af313089c38f4e076467491d8f950de40bfd157326849f9ed984d7a289df",
+    "images/atv-studio-1200.webp": "488821c5d82f937e5846c8312aef9a8eb38dff6edd805beb50a594b5b9a51f3f",
+    "images/atv-studio-1536.webp": "72bd711e30d8c002171094911b900682af3b256e784fc98b2589e57fd6bfdc64",
+    "images/atv-studio-160.webp": "917e3acb091e284e1e7c45b61ab95160a10d3969838a75b8a17c4991b571d70a",
+    "images/atv-studio-480.webp": "cc58d504d497ae84a9205fb34ca423df5a9e5d18c00b257cdf1ee8f7e215fe28",
+    "images/atv-studio-800.webp": "57098c595ff6de1a2aff7ea7b6a97bdc6083a19ff0860f90a7be32cddc1d9536",
+    "images/black-fabric-rolls-1200.webp": "80d8148d44345dde9c84ae6ae0c02dd5a436e5a573a4ec2de818025204c6f528",
+    "images/black-fabric-rolls-1536.webp": "a340bcbedb0ecaee183f117c71d540711ea468012cbc77fa6df75fefab9c689e",
+    "images/black-fabric-rolls-160.webp": "b21f6f86fc0227ea916b8976a7aaa68144eeca9df18e49bd896bc7d1df250d0b",
+    "images/black-fabric-rolls-480.webp": "fd6b528e774be2e2a573057cfcc543e43693f05441312ff41e8df09d54398b4c",
+    "images/black-fabric-rolls-800.webp": "b549885b8258641aed0e0588e0487ef89a008792adc63aed6a1dfe94123f27aa",
+    "images/moto-canvas-insert-1200.webp": "918e0f93026937fc9fc33db607f3ca0c95b35725a94839d7a9296b4115c2bbb9",
+    "images/moto-canvas-insert-1536.webp": "2cbde43c95545669fca0758346f72e63a8efa46f724d18c398406b974ae17f97",
+    "images/moto-canvas-insert-160.webp": "b219208924010f4e9f77b44c8c7ff55d8a7e1cac5bccf3ec416fcfbb89454ce3",
+    "images/moto-canvas-insert-480.webp": "b076b481c0aa9520132fc19b1526f36eb351de66c6fae658ee043b6523da922f",
+    "images/moto-canvas-insert-800.webp": "25e62991a9b89e27219d54e6e184daf6d564aae79c7633f783aafb50c0e2efc6",
+    "images/moto-elastic-1200.webp": "8d5a3112bba9a8faca36dc51337d465346e0b6efe13f240439645718ecf03346",
+    "images/moto-elastic-1536.webp": "d0df6614591508cb541fc02e55b6c7e757d4bb406e7f87e1405ce5a81ef564e4",
+    "images/moto-elastic-160.webp": "6b5170004f4357e7bfbce38281482fe7ecb3082aee06f3b1c6bd9cc01270ef55",
+    "images/moto-elastic-480.webp": "af15fdeceeeddd9c31fef1595ae23964fc868deaab4ff20ecf54366c102ec8a3",
+    "images/moto-elastic-800.webp": "7701622323d2ba3d33d97ff0765621579c9e3825bbe26351292cedca95bea403",
+    "images/moto-fabric-1200.webp": "25d814f3d2c91c965052f287d8a8c2837d6d1497e1a79150d02160ec170d76e8",
+    "images/moto-fabric-1536.webp": "5c5a6c93d82fb7911b52478067b0d2863bdd7f8bcdf5323ab6da4a86ed08639d",
+    "images/moto-fabric-160.webp": "727731ed26d6851d961c0dcdb504b63a73718339489c2a537ca21d7de7c8ebc1",
+    "images/moto-fabric-480.webp": "26e1f61cd455161c3e14e7eb92d05229d492a903ba9f9c34d9cac3a07a304828",
+    "images/moto-fabric-800.webp": "f61fa51aba76e5e5d992bc77b3ac15bf4d383a8194e849d3d59cc8acfae0462e",
+    "images/moto-heat-1200.webp": "4b699130e8e613f4c27789468ecad444fa85c85d918482cf5bf54e97cd14baf2",
+    "images/moto-heat-1536.webp": "173c12cf7a9e02922f6b943b695257c04e8ff1fa4f2ba161d5a9b7e022a01f58",
+    "images/moto-heat-160.webp": "69fc48b2690ef6201cb1772e80033904bace7af64e4170ca482fe6c02c7fef06",
+    "images/moto-heat-480.webp": "ac3feae6f24cfd6bf099f0ed52687489e9447d40d1834431ad5c21f8f97945c6",
+    "images/moto-heat-800.webp": "66578724d081b96d5a480f4e54b061ede3b901487ad7ad274a89ae1f76034bed",
+    "images/moto-reflector-1200.webp": "fccfc606a9ab5dbd68f177f69fc4f68e6ed755e66554ce0bac6fd1dd753eb26b",
+    "images/moto-reflector-1536.webp": "fb5f6b2a2e77831cfa5a620f1430d9aa8d7644a29fabd0c02c30bc72fc6c6700",
+    "images/moto-reflector-160.webp": "9ece2659d8829b728fd8ee18abdfe6b4671c19a498a08dc6bb09ade5dfc40be7",
+    "images/moto-reflector-480.webp": "5baacf9c36bf6545ecd76d9c610fa6ef47bfc6957a738ea1f0f89315f6813203",
+    "images/moto-reflector-800.webp": "90de0c671a7358b7422d973e4fbe3579d585227e3fd2444fec64846c6eb7bc2f",
+    "images/moto-seam-1200.webp": "8976459d32884c5b87c643bf9dcdfa3cf38c206666184294f9cc0fabe9d0d486",
+    "images/moto-seam-1536.webp": "3c0f15a5a818527b0eb58994ee0610c54a55f77f8f8bcca103227b97b811303c",
+    "images/moto-seam-160.webp": "49032d49fdbb795a000e5d58ffc886699e93682f9a0e0bddb350dc53f8343add",
+    "images/moto-seam-480.webp": "ef362b1b9b1ae581ede7613bee986f04a7594b64cf9b3fe4de639eea23841274",
+    "images/moto-seam-800.webp": "f27088f8b33d3b1355f1f985cb6b6181f66c8b804650ea8d9e329592259b3b55",
+    "images/moto-standard-1200.webp": "46e5c785fa41d6f365180d18e44734911763fd54fd592961ac5617498c0dd4f3",
+    "images/moto-standard-1536.webp": "ada8e353fe0083081f89c636b2eb211050f4e7726f74021c67ac7391307954d1",
+    "images/moto-standard-160.webp": "8efe9ac0b7425da3d612070e0cabc95e06ba2cc986a47e19c0adc4d376504800",
+    "images/moto-standard-480.webp": "afcec9a8f6b8e152ca0827a7653dbfb553a664b734dcf8f5c6bba516d6e87ae7",
+    "images/moto-standard-800.webp": "ecc0b76b7bab19bfbc8a1b24d3fc190f99ad1b5d4dcea86b8765666568ed85ce",
+    "images/moto-strap-1200.webp": "23a785f8312c586dbb286885f034e8f3798e848532face892d27ebe85f331e28",
+    "images/moto-strap-1536.webp": "6658e3d54985ed51cd6acab393ce88e169f05866c54956f08fd02f04cd141981",
+    "images/moto-strap-160.webp": "aa241576f2f596f036874e175615264c623e0c4c886a45b86bb0235b8bff3875",
+    "images/moto-strap-480.webp": "1ff10b153f4e62f63f03265f581b80c281fc4878acedb2a88b09d280cead1d4d",
+    "images/moto-strap-800.webp": "90f0b232e37e158e85c8fe2a0a7ef4042002d06bb5dab390b6decaa27ae8d072",
+    "images/moto-vent-1200.webp": "cdd60b4812f6442e6f3ad941e3647f6ae6c440c45b7b6df2a57b0f7b448781e5",
+    "images/moto-vent-1536.webp": "fc374ad04d79c5da149254f01ed9b8a2dda1080216516cb0bd087f297334e475",
+    "images/moto-vent-160.webp": "7ea9d0589c801eda7e0d21919597ef564a953f000f244bdbf791b00ae78c2ea0",
+    "images/moto-vent-480.webp": "7920a8741abb19170021d746b12f1abbcc472743d586682bf3238492410dd92a",
+    "images/moto-vent-800.webp": "0f3c475566fbf2ba1ef15e8b6c7b7dcc5abc05ae0275078a647de13869116bd6",
+    "images/oxford-detail-1200.webp": "6dbc30d4f1a3ed59dbea7417c838131cdb5d9bc63d7444c7ce301373a679bdf8",
+    "images/oxford-detail-1536.webp": "be7849d79982a798b56bf4920edc0dde6fa067c204af8116944d469b1c0c1a61",
+    "images/oxford-detail-160.webp": "bb3d7ee99fdb816e921118f38a803770c6c77a4ec70a9f44fbd0993778980d5c",
+    "images/oxford-detail-480.webp": "0f770062b7f900d4861337c9de433a4bc9608a33a5d7df7895330e994b72dfd0",
+    "images/oxford-detail-800.webp": "1a145e4e1d8f0a74991e282126eabb4c37bcda48dbcf5ec54e457db96033d367",
+    "images/pocket-organizer-1200.webp": "cd269cc0f0228a627e952d7d17313bd4345c90f32fe774b7fc3b150b52ce60a6",
+    "images/pocket-organizer-1536.webp": "b51ec7b7e84204d2b7ab2d72048f8b3708c74de692f845fa1cd0778eb583300c",
+    "images/pocket-organizer-160.webp": "8a3278dd95517569f056777d25493174fbefb9796d3b6303ae68d12a2963763f",
+    "images/pocket-organizer-480.webp": "e62b8820ec82665b6408518e5cc909143d0ff1c5d87ae7b4c93dde03d4842186",
+    "images/pocket-organizer-800.webp": "58b43d1b44b7befed57bc76f7f62518d1533b7dbcbe3afd944e5164ad5e09ef9",
+    "images/textile-hero-1200.webp": "67437a9f79f5d55ebd792b1da6a04960d50c070f3cacf87bac21761cb5ad80eb",
+    "images/textile-hero-1536.webp": "6bc0f8385f786c82771bfe208195578a60a72e9642c51e508bd90649112bfbf0",
+    "images/textile-hero-160.webp": "d33d5e94ad093c9db4718d4d4f34900cb396e1c209a7fd137811b92021f772da",
+    "images/textile-hero-480.webp": "d2c8f27a1c728e2bb6f105138b8e0e213d58ed8028d01e8156a75ab6fe662e1a",
+    "images/textile-hero-800.webp": "e033446ae0ef46158e59c0229175df36cd8682607f78112ef9d950d196ad46b8",
+    "images/wheel-drawstring-1200.webp": "e23ac4c8724bf4ac211bac11c75c6e6f3e3a690408e571ef238b734b179ce9f9",
+    "images/wheel-drawstring-1536.webp": "de97601fc31dcce0b084587ff09790d6d834793c5781e0cd8cf8d263e99b9f0b",
+    "images/wheel-drawstring-160.webp": "408afd00136f1d1405aa156f4f65412cc56562f5a2ce47fca072a3317fb01dd4",
+    "images/wheel-drawstring-480.webp": "e7ae7a8994656b46b0dd50c7a6d9ed257e30f3009d341e7cfe6512e23a5b3776",
+    "images/wheel-drawstring-800.webp": "f9dad623b091487a7107d9719b72cd2fd04aa83dc6588a2460796fe63e8c8006",
+    "images/wheel-fabric-1200.webp": "f778b4339c5bb0a6ae7edb3c9748b9b9c1ee57454db53f9f9887ef7777bf2b35",
+    "images/wheel-fabric-1536.webp": "4153d8c526546e28721206e39a615ef40280afb59d21dc9a8c02b87480e90135",
+    "images/wheel-fabric-160.webp": "14f54d74f497922cf941157da707afa60c721d9226bf212142e837e7b6895a74",
+    "images/wheel-fabric-480.webp": "199e6da5c34b6eab2cd3e82e04b339936b0627e533f7803d52bea014acfa75e4",
+    "images/wheel-fabric-800.webp": "19b95106370a10dcc79f8cedd3a87d6ed543f88601d74102a964a980a4a1397f",
+    "images/wheel-handle-pocket-1200.webp": "1362b7d8642090ea8edfc3d3e3018f3574f833d964da3d5ecaa33078135e63ca",
+    "images/wheel-handle-pocket-1536.webp": "d6e5a45734b5d25552003440b96643db8b6b81d61a71c7867ea57e86e9a6db29",
+    "images/wheel-handle-pocket-160.webp": "764ad6940d12741acb2ecef6d644bddbce0866ed5fe461394b7d27c7bc9fd9d1",
+    "images/wheel-handle-pocket-480.webp": "38aeeffc4f72a0d5d5a963febbc9b26f608da5b1a8b733dfb3d85812a4a7a592",
+    "images/wheel-handle-pocket-800.webp": "e69a3b0db6b5e445b71b79efa96c4f25ddbf6b02d8461e41cdaa38298a7ff565",
+    "images/wheel-seam-1200.webp": "22ef9806dd9def52aef415eefc05ac7a856bc8a28ed0984aa09f3f10d69ed46d",
+    "images/wheel-seam-1536.webp": "cfd576fa644e61e8f8cba0db2ed410f9abf58818e50004b193b6433ea4c88a9f",
+    "images/wheel-seam-160.webp": "8e0aa6d235fd8eaf1b5d5100d9eb4ddde32ba88837955f14316c3c0fc81f3a52",
+    "images/wheel-seam-480.webp": "03cbd67bd3050811453baed1b8818aa8bb9ebb960ef617145e3ebe56e1841275",
+    "images/wheel-seam-800.webp": "3d579cfcfe6778ac0cb0feb93d5dc00e8d4aa7ea900e1a26e41884a533b9802b",
+    "images/wheel-set-1200.webp": "df051a73bb28bc8165d01920b06d00e8d2d001ce726d8d3289183fef646e4db0",
+    "images/wheel-set-1536.webp": "24e36d419f54479bbd504e67466d86b0fa207bbc2112378da80680193a4d0cd8",
+    "images/wheel-set-160.webp": "7311d61f1285a6b6d6d73cc356dcbf477b4e0f14f4dc6bb82cb057418676b349",
+    "images/wheel-set-480.webp": "41c0e24d89e06340f02cdc35663c78d48ce20c2c750a42866e09c116819959f9",
+    "images/wheel-set-800.webp": "8451de3e3d9143e272ed8716c833b714062222723f3e92a179f3d84f7fba3fba",
+    "images/wheel-single-1200.webp": "6f5b3a7707b938643c4881955a571dc8a71d1ca7fc921e053082b533d6f531a1",
+    "images/wheel-single-1536.webp": "d7949276df9a42f8a6ec6067524ad1f375596202d8ac1e8481df0eed99bfe256",
+    "images/wheel-single-160.webp": "eb95460266477de2de8e226c6d26a5c6378f9b7397db4a34d01994d6e8e49f84",
+    "images/wheel-single-480.webp": "4aa744f87700c851169a3d236951087007539a71fd0be876f1cbdae94cae2933",
+    "images/wheel-single-800.webp": "bcb858ac0bb734c4538f4bedf282ed86457ba84e8c846b7f50c9517c535db133",
+    "index.html": "7fe3a7237c286f70e42133b72e2b05a1dbf20d3629dcc27663ae540090d8e35e",
+    "logo.svg": "510043ccae85e0240f88827fadc6b8674be41120fa4b10e893858dfdef1bbc93",
+    "menu.js": "aadabdb2c26c4d06b7268bcd11f1be07e2bb1f01a887c9ab8c3fa8f12afc038c",
+    "metrika.js": "922a6dbb67485561d41dc61acb6ce884cb0792932977c906adde10dce6574aff",
+    "navigation.css": "f035924594f210400c371ef84f58f1a1faa189f6d6af5f254058a6dc609da459",
+    "pocket-organizer.png": "fbd79ff3f4bcaf2df650c5401083ad02302ca5739782d3b82b4ab0dae1b2131f",
+    "privacy-policy.html": "6eea4b25ab51000ca194dc019fa4094bc40cea054adfec709641d76a3fd48401",
+    "robots.txt": "1b654eb5770f21019b5aa2c8293773abf3a0177082a5370b84b8dcabca597311",
+    "script.js": "58c3c070b22a0429e580028baab27aee513f5723de0560773981d8e08bd244df",
+    "site.webmanifest": "c324969d366d920e408fe5327ae6a01b2b70eedd17d42418a58da674f6c4338d",
+    "sitemap.xml": "43accb208d112f31436907f05fe74eba3a7e72e97bc2cb4f9fc5875afdf34e3a",
+    "style.css": "00712ff6dd2524f9818bda2d0978103ece4de7423e5e8b14eab887430e533b37",
+    "textile-hero.png": "8f35da8b0398e114ce586a40853fb1e2c5c9f2bf4351eda12e1a3c77c5fe4380",
+    "theme.css": "567d42990937d176d4ac7dcd5773a7ce2b69ed505bacbf316f3b632b22e33766",
+    "typography.css": "5ec21d6d5358e45f9c29d020a93b3a2b4d40167ccc8031a5b24f4ede261a34c6",
+    "user-agreement.html": "13d9e04692ecf60ade41ec7e9060e2358d35f0934d32807c9204d46b2473e6cf"
+  }
+}

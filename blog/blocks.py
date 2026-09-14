@@ -59,9 +59,14 @@ def walk(blocks):
 
 
 def validate_blocks(blocks):
-    cta_ids, heading_ids = set(), set()
+    cta_ids, heading_ids, interaction_ids = set(), set(), set()
     for block in walk(blocks):
         kind = block['type']
+        if kind in ('tabs', 'accordion', 'checklist') and 'id' in block:
+            require_text(block, 'id')
+            if not re.fullmatch(SEGMENT, block['id']) or block['id'] in interaction_ids:
+                raise ValueError('Interactive block ids must be unique URL segments')
+            interaction_ids.add(block['id'])
         if kind in ('paragraph', 'heading'):
             require_text(block, 'text')
             if kind == 'heading':
@@ -138,6 +143,7 @@ class ArticleBlocks:
             self.counter += 1
             key = str(self.counter)
             kind = block['type']
+            tracking_id = e(block.get('id', f'{kind}-auto-{key}'))
             if kind == 'paragraph':
                 output.append('<p>' + rich(block['text']) + '</p>')
             elif kind == 'heading':
@@ -153,7 +159,7 @@ class ArticleBlocks:
                     ref = f'note-ref-{key}-{index}'
                     note['refs'].append(ref)
                     number = note['number']
-                    links.append(f'<a id="{ref}" href="#note-{number}" role="doc-noteref" aria-label="Источник {number}: {e(source["title"])}" title="{e(source["title"])}">[{number}]</a>')
+                    links.append(f'<a id="{ref}" href="#note-{number}" data-track="blog_note_{number}" role="doc-noteref" aria-label="Источник {number}: {e(source["title"])}" title="{e(source["title"])}">[{number}]</a>')
                 output.append('<p class="article-sources">По руководству производителя ' + ' '.join(links) + '</p>')
             elif kind == 'image':
                 output.append(figure(block))
@@ -173,13 +179,13 @@ class ArticleBlocks:
                     panel = f'tabs-{key}-panel-{index}'
                     controls.append(f'<button type="button" id="tabs-{key}-tab-{index}" data-tab-target="{panel}">{e(item["label"])}</button>')
                     panels.append(f'<section id="{panel}" class="article-tab-panel"><h3>{e(item["label"])}</h3>{self.render(item["blocks"])}</section>')
-                output.append(f'<section class="article-tabs" data-article-tabs aria-labelledby="tabs-{key}-title"><p id="tabs-{key}-title" class="interactive-title">{e(block["title"])}</p><div class="article-tab-list" aria-labelledby="tabs-{key}-title" hidden>{"".join(controls)}</div>{"".join(panels)}</section>')
+                output.append(f'<section class="article-tabs" data-article-tabs data-blog-block="{tracking_id}" aria-labelledby="tabs-{key}-title"><p id="tabs-{key}-title" class="interactive-title">{e(block["title"])}</p><div class="article-tab-list" aria-labelledby="tabs-{key}-title" hidden>{"".join(controls)}</div>{"".join(panels)}</section>')
             elif kind == 'accordion':
                 items = ''.join(f'<details><summary>{e(item["label"])}<span aria-hidden="true">+</span></summary><div class="article-disclosure-content">{self.render(item["blocks"])}</div></details>' for item in block['items'])
-                output.append(f'<section class="article-accordion" aria-label="{e(block["title"])}"><p class="interactive-title">{e(block["title"])}</p>{items}</section>')
+                output.append(f'<section class="article-accordion" data-blog-block="{tracking_id}" aria-label="{e(block["title"])}"><p class="interactive-title">{e(block["title"])}</p>{items}</section>')
             elif kind == 'checklist':
                 items = ''.join(f'<li><label><input type="checkbox"><span>{rich(item)}</span></label></li>' for item in block['items'])
-                output.append(f'<section class="article-checklist" data-article-checklist aria-labelledby="checklist-{key}"><h3 id="checklist-{key}">{e(block["title"])}</h3><p class="checklist-hint">Отмечайте по мере подготовки.</p><ul>{items}</ul><p class="checklist-status" role="status" hidden>Отмечено 0 из {len(block["items"])}</p></section>')
+                output.append(f'<section class="article-checklist" data-article-checklist data-blog-block="{tracking_id}" aria-labelledby="checklist-{key}"><h3 id="checklist-{key}">{e(block["title"])}</h3><p class="checklist-hint">Отмечайте по мере подготовки.</p><ul>{items}</ul><p class="checklist-status" role="status" hidden>Отмечено 0 из {len(block["items"])}</p></section>')
             elif kind == 'faq':
                 output.append('<section class="article-faq"><h2>Вопросы и ответы</h2>' + ''.join(f'<h3>{e(item["question"])}</h3><p>{rich(item["answer"])}</p>' for item in block['items']) + '</section>')
         return '\n'.join(output)
@@ -187,7 +193,7 @@ class ArticleBlocks:
     def contents(self):
         if not self.headings:
             return ''
-        links = ''.join(f'<li><a href="#{identifier}">{e(label)}</a></li>' for identifier, label in self.headings)
+        links = ''.join(f'<li><a href="#{identifier}" data-track="blog_toc_{identifier}">{e(label)}</a></li>' for identifier, label in self.headings)
         return f'<nav class="article-contents" aria-label="Содержание статьи"><p>В этой статье</p><ol>{links}</ol><a class="article-notes-link" href="#article-notes">Источники ↓</a></nav>' if self.notes else f'<nav class="article-contents" aria-label="Содержание статьи"><p>В этой статье</p><ol>{links}</ol></nav>'
 
     def footnotes(self):
@@ -195,6 +201,6 @@ class ArticleBlocks:
             return ''
         items = []
         for url, note in self.notes.items():
-            back = ' '.join(f'<a class="note-back" href="#{ref}" aria-label="Вернуться к упоминанию {index + 1} источника {note["number"]}">↩{index + 1 if len(note["refs"]) > 1 else ""}</a>' for index, ref in enumerate(note['refs']))
-            items.append(f'<li id="note-{note["number"]}" tabindex="-1"><a href="{e(url)}" rel="noopener noreferrer">{e(note["title"])}</a> {back}</li>')
+            back = ' '.join(f'<a class="note-back" href="#{ref}" data-track="blog_note_return_{note["number"]}" aria-label="Вернуться к упоминанию {index + 1} источника {note["number"]}">↩{index + 1 if len(note["refs"]) > 1 else ""}</a>' for index, ref in enumerate(note['refs']))
+            items.append(f'<li id="note-{note["number"]}" tabindex="-1"><a href="{e(url)}" data-track="blog_source_{note["number"]}" rel="noopener noreferrer">{e(note["title"])}</a> {back}</li>')
         return '<section class="article-notes" role="doc-endnotes" aria-labelledby="article-notes"><h2 id="article-notes" tabindex="-1">Источники и примечания</h2><ol>' + ''.join(items) + '</ol></section>'
