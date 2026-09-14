@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-14",
+  "tool": "built-in image_gen",
+  "note": "AI-generated studio visualizations based on the owner's marketplace images. Product facts are verified separately from the workbook and original graphics.",
+  "images": [
+    {
+      "id": "moto-standard",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/12106261301.webp",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a separate Needle Shark website catalogue photograph based on input 1, the exact plain black motorcycle cover product; input 2 is ONLY a reference for the website's studio photography style, not the subject. Landscape 3:2 composition, seamless light warm gray studio floor/background, soft natural shadows, restrained premium utilitarian photography. Show one black motorcycle under the plain black Oxford textile cover with natural folds, the exact general silhouette from input 1, and one small plain black drawstring storage bag beside it. Full product entirely inside frame with generous margins, no crop. Do not add reflective strips, vents or visible heatproof panels to this STANDARD model. Remove all marketplace typography, numbers, pictograms, orange panels, logos, callouts and badges. No text or watermark anywhere. Keep fabric black and realistic, no shiny leather appearance.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-7e6c01a4-e146-46c8-b1b3-6ebe57cd9e7b.png",
+      "savedPath": "dist/catalog-assets/moto-standard.png"
+    },
+    {
+      "id": "moto-heat",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для мотоциклов/12903590546.webp",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create a separate Needle Shark website catalogue photograph of the enhanced motorcycle cover in input 1. Input 2 is ONLY studio style reference, do not reproduce ATV. Preserve exact motorcycle cover silhouette, proportions, seams, elastic lower edge and silver reflective ventilation flaps at mirror height from input 1. Entire cover is black: the orange glow and heatproof label in source are infographic overlay, NOT orange fabric; REMOVE them. Internal heatproof inserts must stay inside and not be invented as exterior patches. One covered motorcycle and small plain black drawstring storage bag beside it, three-quarter front view. Landscape 3:2, full product within frame, generous margins, warm light-gray seamless studio with soft shadow to match input 2. Natural matte black technical Oxford fabric. Absolutely no text, logos, captions, callout lines, colored overlays or watermark.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-733b6c51-e08d-4868-9f54-b2a994a19c3e.png",
+      "savedPath": "dist/catalog-assets/moto-heat.png"
+    },
+    {
+      "id": "wheel-single",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14930902189.webp",
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14928362147.webp",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Create Needle Shark website product photography: one car wheel in the EXACT black fabric wheel storage cover shown in input 1. Input 2 supplies construction detail: black webbing carry handle and identification pocket on the tread side; input 3 ONLY supplies neutral studio style, not its subject. Preserve gathered fabric round tire edge and uncovered central opening revealing the wheel rim from input 1. Cover must remain a practical thin black Oxford textile cover, natural wrinkles, not rubber or padded leather. Show one upright wheel at a slight three-quarter angle so the opening and side handle can be seen. Full wheel centered with generous margins on warm light-gray seamless studio floor, soft grounding shadow. Landscape 3:2. Remove every label, numeral, orange block, logo, icon, watermark and text. No extra objects, no bag, no vehicle.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-3276ed7e-61ef-46ab-8aaa-23f6cfce3d70.png",
+      "savedPath": "dist/catalog-assets/wheel-single.png"
+    },
+    {
+      "id": "wheel-set",
+      "refs": [
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14930902189.webp",
+        "/Users/mirkenson/Documents/Озон товары/Чехлы для колес/14928362147.webp",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "prompt": "Use case: product-mockup. Needle Shark website catalogue hero of a set of EXACTLY FOUR black fabric car wheel covers fitted over four wheels. Input 1 is exact wheel cover construction: gathered black Oxford tire perimeter, circular opening revealing the rim. Input 2: black webbing handle and flap identification pocket across tread. Input 3 ONLY neutral studio lighting and background style. Arrange three wheels stacked horizontally on the left, fourth upright to the right leaning slightly toward stack, all four separately countable, each in the same practical thin black textile cover with natural wrinkles and side webbing handles. Face of upright wheel exposes the unbranded black-and-silver rim through circular opening. Landscape 3:2, all objects fully framed with generous margins, warm pale-gray seamless studio, soft shadows. No cars, motorcycles, storage bag or extra wheels. Remove all text, logos, numerals, orange overlays, watermarks, icons and badges.",
+      "generatedPath": "/Users/mirkenson/.codex/generated_images/01a09e99-d4c7-7880-9df4-5489ed3a5d28/exec-8a992b36-1f6f-48d3-93f3-23990c37fab8.png",
+      "savedPath": "dist/catalog-assets/wheel-set.png"
+    }
+  ]
+}

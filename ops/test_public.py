@@ -4,6 +4,18 @@ from urllib.parse import parse_qs, urlsplit
 from site_utils import prepare_html
 
 class PublicTests(unittest.TestCase):
+    def test_ozon_campaign_replaces_existing_duplicates_and_preserves_other_data(self):
+        from site_utils import external_url
+        for host in ('ozon.ru', 'www.ozon.ru', 'm.ozon.ru'):
+            url = external_url(f'https://{host}/product/123/?size=M&utm_campaign=website&utm_campaign=old&UTM_CAMPAIGN=old#reviews', 'catalog_product_m')
+            query = parse_qs(urlsplit(url).query)
+            self.assertEqual(query['utm_campaign'], ['vendor_org_211216'])
+            self.assertNotIn('UTM_CAMPAIGN', query)
+            self.assertEqual(query['size'], ['M'])
+            self.assertEqual(urlsplit(url).fragment, 'reviews')
+            self.assertEqual(external_url(url, 'another_context'), url)
+        self.assertIn('utm_campaign=website', external_url('https://ozon.ru.example.com/', 'test'))
+
     def test_metadata_is_complete_idempotent_and_escaped(self):
         import json
         import re

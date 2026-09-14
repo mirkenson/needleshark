@@ -102,6 +102,32 @@ def public_path(path):
     path = '/' + str(path).lstrip('/')
     return path.removesuffix('index.html') if path.endswith('/index.html') else path.removesuffix('.html')
 
+
+def external_url(url, content):
+    """Tag external links, including variant URLs that are selected in JavaScript."""
+    parsed = urlsplit(url)
+    if parsed.scheme not in ('http', 'https') or parsed.hostname in HOSTS:
+        return url
+    query = parse_qsl(parsed.query, keep_blank_values=True)
+    ozon = parsed.hostname == 'ozon.ru' or (parsed.hostname or '').endswith('.ozon.ru')
+    if ozon:
+        normalized, campaign_seen = [], False
+        for key, value in query:
+            if key.lower() == 'utm_campaign':
+                if not campaign_seen:
+                    normalized.append(('utm_campaign', 'vendor_org_211216'))
+                    campaign_seen = True
+            else:
+                normalized.append((key, value))
+        query = normalized
+    keys = {key for key, value in query}
+    campaign = 'vendor_org_211216' if ozon else 'website'
+    for key, value in [('utm_source', urlsplit(ORIGIN).hostname), ('utm_medium', 'referral'),
+                       ('utm_campaign', campaign), ('utm_content', content)]:
+        if key not in keys:
+            query.append((key, value))
+    return urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), parsed.fragment))
+
 def prepare_html(html, path):
     canonical = ORIGIN + public_path(path)
     canonical_tag = f'<link rel="canonical" href="{canonical}">'
@@ -123,13 +149,8 @@ def prepare_html(html, path):
             return tag[:href.start(1)] + escape(updated, quote=True) + tag[href.end(1):]
         if parsed.scheme not in ('http', 'https'):
             return tag
-        query = parse_qsl(parsed.query, keep_blank_values=True)
-        keys = {key for key, value in query}
         track = re.search(r'\bdata-track="([^"]+)"', tag)
         content = track.group(1) if track else public_path(path).strip('/').replace('/', '_') + '_' + hashlib.sha256((parsed.hostname + parsed.path).encode()).hexdigest()[:8]
-        for key, value in [('utm_source',urlsplit(ORIGIN).hostname),('utm_medium','referral'),('utm_campaign','website'),('utm_content',content)]:
-            if key not in keys:
-                query.append((key, value))
-        updated = urlunsplit((parsed.scheme,parsed.netloc,parsed.path,urlencode(query),parsed.fragment))
+        updated = external_url(url, content)
         return tag[:href.start(1)] + escape(updated, quote=True) + tag[href.end(1):]
     return common_metadata(re.sub(r'<a\b[^>]*>', anchor, html), path)

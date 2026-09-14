@@ -31,6 +31,67 @@ document.querySelectorAll('[data-select-size]').forEach(button => button.addEven
   updateSize();
 }));
 
+// Only combinations listed in product data can be selected. Additional groups
+// (for example colour) use the same controls without inventing combinations.
+const variants = JSON.parse(document.querySelector('#product-variants')?.textContent || '[]');
+const optionInputs = [...document.querySelectorAll('[data-option]')];
+const optionGroups = [...new Set(optionInputs.map(input => input.dataset.option))];
+const packProduct = variants.some(variant => variant.unitsPerPack > 1);
+let selectedVariant = variants[0] || null;
+function updateVariant(variant, changeImage = true) {
+  selectedVariant = variant;
+  optionInputs.forEach(input => {
+    const group = input.dataset.option;
+    input.checked = variant.options[group] === input.value;
+    const preceding = optionGroups.slice(0, optionGroups.indexOf(group));
+    input.disabled = !variants.some(candidate => candidate.options[group] === input.value &&
+      preceding.every(key => candidate.options[key] === variant.options[key]));
+  });
+  document.querySelector('#variant-selection').textContent = `Выбрано: ${variant.summary} · ${variant.sizeLabel}`;
+  document.querySelectorAll('[data-variant-market="Ozon"]').forEach(link => {
+    link.href = variant.ozonUrl;
+    link.setAttribute('aria-label', `Купить на Ozon: ${variant.summary} · ${variant.sizeLabel}`);
+  });
+  const galleryButton = document.querySelectorAll('[data-gallery-src]')[variant.imageIndex];
+  if (changeImage) galleryButton?.click();
+  const kitPhoto = document.querySelector('#variant-kit-photo img');
+  if (kitPhoto && galleryButton) {
+    kitPhoto.srcset = galleryButton.dataset.gallerySrcset || '';
+    kitPhoto.src = galleryButton.dataset.gallerySrc;
+    kitPhoto.alt = galleryButton.dataset.galleryAlt;
+  }
+  const kit = document.querySelector('#variant-kit');
+  if (kit) kit.replaceChildren(...variant.kit.map((text, index) => {
+    const item = document.createElement('li');
+    const number = document.createElement('span');
+    number.textContent = String(index + 1).padStart(2, '0');
+    item.append(number, document.createTextNode(text));
+    return item;
+  }));
+  document.querySelectorAll('[data-select-variant]').forEach(button => {
+    const active = button.dataset.selectVariant === variant.id;
+    button.closest('tr').classList.toggle('is-selected', active);
+    button.setAttribute('aria-pressed', String(active));
+    button.innerHTML = active ? 'Выбрано <span aria-hidden="true">✓</span>' : 'Выбрать <span aria-hidden="true">↗</span>';
+  });
+  const note = document.querySelector('#selected-size-note');
+  if (note) note.textContent = `Выбрано: ${variant.summary} · ${variant.sizeLabel}. Этот вариант появится в заявке.`;
+  const quantity = document.querySelector('[name="quantity"]');
+  if (quantity && packProduct) quantity.max = String(Math.floor(1000000 / variant.unitsPerPack));
+}
+optionInputs.forEach(input => input.addEventListener('change', () => {
+  const group = input.dataset.option;
+  const candidates = variants.filter(variant => variant.options[group] === input.value);
+  const score = variant => optionGroups.filter(key => key !== group && variant.options[key] === selectedVariant.options[key]).length;
+  candidates.sort((a, b) => score(b) - score(a));
+  if (candidates[0]) updateVariant(candidates[0]);
+}));
+document.querySelectorAll('[data-select-variant]').forEach(button => button.addEventListener('click', () => {
+  const variant = variants.find(item => item.id === button.dataset.selectVariant);
+  if (variant) updateVariant(variant);
+}));
+if (selectedVariant) updateVariant(selectedVariant, false);
+
 let dialogOpener = null;
 function openDialog(dialog, opener) {
   if (!dialog) return;
@@ -50,6 +111,10 @@ const requestForm = document.querySelector('#catalog-request');
 const requestResult = document.querySelector('#request-result');
 const contactError = document.querySelector('#contact-error');
 const intentValues = {'Заказ напрямую': 'direct', 'Подбор размера': 'sizing', 'Партия для бизнеса': 'wholesale'};
+if (packProduct) {
+  const label = requestForm.elements.quantity.closest('label');
+  label.firstChild.textContent = 'Количество комплектов';
+}
 let sending = false;
 let submissionId = null;
 let submissionContent = null;
@@ -57,7 +122,8 @@ document.querySelectorAll('[data-request]').forEach(button => button.addEventLis
   if (sending) return;
   const selected = sizeInputs.find(input => input.checked)?.value;
   const product = document.body.dataset.productName;
-  const context = product ? `${product} · ${selected ? `${selected} см` : 'размер пока не выбран'}` : 'Готовые изделия и пошив партии';
+  const choice = selectedVariant ? `${selectedVariant.summary} · ${selectedVariant.sizeLabel}` : (selected ? `${selected} см` : 'размер пока не выбран');
+  const context = product ? `${product} · ${choice}` : 'Готовые изделия и пошив партии';
   document.querySelector('#request-context').textContent = context;
   requestForm.elements.intent.value = intentValues[button.dataset.request] || 'direct';
   requestResult.hidden = true;
@@ -85,17 +151,20 @@ requestForm?.addEventListener('submit', async event => {
     return;
   }
   if (!requestForm.reportValidity()) return;
+  const quantity = requestForm.elements.quantity.value === '' ? null : Number(requestForm.elements.quantity.value);
+  const question = requestForm.elements.question.value.trim() || 'Обращение по каталогу.';
+  const variantContext = selectedVariant ? `${selectedVariant.context}\nГабариты / типоразмер: ${selectedVariant.sizeLabel}\nАртикул варианта: ${selectedVariant.id}\n${packProduct ? `Чехлов в комплекте: ${selectedVariant.unitsPerPack}\nКоличество комплектов: ${quantity ?? 'не указано'}\n` : ''}\nКомментарий: ` : '';
   const payload = {
     name: requestForm.elements.name.value.trim(),
     contact: value,
-    question: requestForm.elements.question.value.trim() || 'Обращение по каталогу.',
+    question: variantContext + question,
     consent: requestForm.elements.consent.checked,
     website: requestForm.elements.website.value,
     product_slug: document.body.dataset.productSlug || '',
     product_name: document.body.dataset.productName || '',
-    product_size: sizeInputs.find(input => input.checked)?.value || '',
+    product_size: selectedVariant ? selectedVariant.legacySize : sizeInputs.find(input => input.checked)?.value || '',
     inquiry_type: requestForm.elements.intent.value,
-    quantity: requestForm.elements.quantity.value === '' ? null : Number(requestForm.elements.quantity.value),
+    quantity: quantity === null ? null : quantity * (selectedVariant?.unitsPerPack || 1),
     source_path: location.pathname
   };
   // Reuse the ID after a lost response; a changed request gets its own ID.

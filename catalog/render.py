@@ -8,7 +8,7 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from site_utils import prepare_html, image_attributes, json_ld, breadcrumbs, ORIGIN
+from site_utils import prepare_html, image_attributes, json_ld, breadcrumbs, external_url, ORIGIN
 DIST = ROOT / 'dist'
 BASE = Template((ROOT / 'catalog/templates/base.html').read_text())
 
@@ -35,6 +35,67 @@ def picture(image, eager=False, sizes='(max-width:800px) 90vw, 48vw', thumbnail=
     return f'<img alt="{e(image["alt"])}" loading="{"eager" if eager else "lazy"}" decoding="async" {extra}>'
 
 
+def variant_choices(product, variant):
+    return [(group['label'], next(value['label'] for value in group['values']
+             if value['id'] == variant['options'][group['id']])) for group in product['optionGroups']]
+
+
+def variant_data(product):
+    result = []
+    for variant in product.get('variants', []):
+        choices = variant_choices(product, variant)
+        result.append({**variant, 'summary': ' · '.join(value for label, value in choices if label != 'Размер'),
+                       'context': '\n'.join(f'{label}: {value}' for label, value in choices),
+                       'ozonUrl': external_url(variant['ozonUrl'], f'catalog_{product["slug"]}_{variant["id"]}')})
+    return result
+
+
+def variant_picker(product):
+    variants = variant_data(product)
+    default = variants[0]
+    groups = []
+    for group in product['optionGroups']:
+        options = ''
+        for value in group['values']:
+            checked = ' checked' if default['options'][group['id']] == value['id'] else ''
+            note = f'<small>{e(value["note"])}</small>' if value.get('note') else ''
+            options += f'<label class="size-option"><input type="radio" name="option-{e(group["id"])}" data-option="{e(group["id"])}" value="{e(value["id"])}"{checked}><span><strong>{e(value["label"])}</strong>{note}</span></label>'
+        groups.append(f'<fieldset class="size-picker variant-picker"><legend>{e(group["label"])}</legend><div class="size-options">{options}</div></fieldset>')
+    data = json.dumps(variants, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    return ''.join(groups) + f'<p class="variant-selection type-small" id="variant-selection" role="status">Выбрано: {e(default["summary"])} · {e(default["sizeLabel"])}</p><script type="application/json" id="product-variants">{data}</script>'
+
+
+def variant_size_table(product):
+    rows = ''
+    for variant in product['variants']:
+        choices = ' · '.join(value for label, value in variant_choices(product, variant) if label != 'Размер')
+        rows += f'<tr><td>{e(choices)}</td><td>{e(variant["sizeLabel"])}</td><td><button data-select-variant="{e(variant["id"])}" aria-label="Выбрать {e(choices)} — {e(variant["sizeLabel"])}">Выбрать <span aria-hidden="true">↗</span></button></td></tr>'
+    return f'<table class="size-table variant-table"><caption>{e(product["copy"]["sizeTableCaption"])}</caption><thead><tr><th scope="col">Комплектация</th><th scope="col">Размер</th><th scope="col"><span class="sr-only">Выбор</span></th></tr></thead><tbody>{rows}</tbody></table>'
+
+
+def validate_variants(product):
+    if not product.get('variants'):
+        return
+    groups = product['optionGroups']
+    allowed = {g['id']: {v['id'] for v in g['values']} for g in groups}
+    if len(allowed) != len(groups) or any(len(allowed[g['id']]) != len(g['values']) for g in groups):
+        raise ValueError('Duplicate option group or value')
+    ids, combinations = set(), set()
+    for variant in product['variants']:
+        options = variant['options']
+        combination = tuple(sorted(options.items()))
+        if set(options) != set(allowed) or any(value not in allowed[key] for key, value in options.items()):
+            raise ValueError('Unknown or missing variant option')
+        if variant['id'] in ids or combination in combinations:
+            raise ValueError('Duplicate variant')
+        if not variant['ozonUrl'].startswith('https://www.ozon.ru/product/'):
+            raise ValueError('Variant must link to its HTTPS Ozon product')
+        if not 0 <= variant['imageIndex'] < len(product['images']):
+            raise ValueError('Invalid variant image')
+        ids.add(variant['id'])
+        combinations.add(combination)
+
+
 def markets(product, compact=False):
     links = []
     for market in product['marketplaces']:
@@ -43,7 +104,11 @@ def markets(product, compact=False):
         if market['url']:
             if not market['url'].startswith('https://'):
                 raise ValueError('Marketplace links must use HTTPS')
-            links.append(f'<a class="market-button" href="{e(market["url"])}" target="_blank" rel="noopener noreferrer">{content}</a>')
+            url = market['url']
+            if product.get('variants') and market['name'] == 'Ozon':
+                url = variant_data(product)[0]['ozonUrl']
+            marker = ' data-variant-market="Ozon"' if product.get('variants') and not compact and market['name'] == 'Ozon' else ''
+            links.append(f'<a class="market-button"{marker} href="{e(url)}" target="_blank" rel="noopener noreferrer">{content}</a>')
         else:
             links.append(f'<button class="market-button" type="button" disabled aria-label="{name}: покупка пока недоступна">{name}<small>Пока недоступно</small></button>')
     return f'<div class="marketplaces{" compact" if compact else ""}">{"".join(links)}</div>'
@@ -70,6 +135,7 @@ def hero(product):
     gallery = product['images']
     thumbnails = ''.join(f'<button class="gallery-thumb" data-gallery-src="{e(image_attributes(img["src"])["src"])}" data-gallery-srcset="{e(image_attributes(img["src"]).get("srcset", ""))}" data-gallery-alt="{e(img["alt"])}" data-gallery-label="{e(img["label"])}" aria-pressed="{"true" if i == 0 else "false"}" aria-label="{e(img["label"])}">{picture(img, sizes="76px", thumbnail=True)}</button>' for i, img in enumerate(gallery))
     sizes = ''.join(f'<label class="size-option"><input type="radio" name="product-size" value="{size_label(s)}"><span>{size_label(s)}</span></label>' for s in product['sizes'])
+    picker = variant_picker(product) if product.get('variants') else f'<fieldset class="size-picker"><legend>Размер, см <span>Д × Ш × В</span></legend><div class="size-options">{sizes}</div></fieldset>'
     note = f'<p class="seasonal-note">{e(product["seasonalNote"])}</p>' if product['seasonalNote'] else ''
     size_help = '<a class="size-help" href="#sizes">Как подобрать размер <span aria-hidden="true">↙</span></a>' if 'sizes' in product['sections'] else '<button class="text-link size-help" data-request="Подбор размера">Помогите подобрать размер ↗</button>'
     purchase_note = "Цена и доставка — на выбранном маркетплейсе." if any(m["url"] for m in product["marketplaces"]) else "Переходы на маркетплейсы временно недоступны. Заказать можно напрямую — оставьте заявку ниже."
@@ -82,7 +148,7 @@ def hero(product):
       </div>
       <div class="detail-copy"><p class="eyebrow">NEEDLE SHARK / {e(product['category']).upper()}</p><h1 id="product-title">{e(product['name'])}<span class="title-dot">.</span></h1><p class="detail-intro">{e(product['description'])}</p>{note}
         <div class="hero-specs"><div><span>Материал</span><strong>{e(product['material'])}</strong></div><div><span>Влагозащитная пропитка</span><strong>{e(product['coating'])}</strong></div></div>
-        <fieldset class="size-picker"><legend>Размер, см <span>Д × Ш × В</span></legend><div class="size-options">{sizes}</div></fieldset>
+        {picker}
         {size_help}
         <div class="buy-block"><p class="buy-label">Способы заказа</p>{markets(product)}<p class="price-note">{purchase_note}</p><button class="button accent request-primary" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button><p class="direct-note">Заказ напрямую · подбор размера · партии для бизнеса</p></div>
       </div>
@@ -112,6 +178,13 @@ def detail_sections(product):
     labels = dict(zip(sections, ['Когда пригодится', 'Материал', 'Размеры', 'Комплектация', 'Вопросы', 'Для бизнеса']))
     if fastenings:
         sections['material'] = sections['material'].replace('</section>', f'<div class="wrap fastening-details"><h3>Детали, которые держат.</h3><div>{fastenings}</div></div></section>')
+    if product.get('variants'):
+        sections['sizes'] = re.sub(r'<table class="size-table">.*?</table>', lambda _: variant_size_table(product), sections['sizes'], flags=re.S)
+        sections['sizes'] = sections['sizes'].replace('Длина × ширина × высота', e(product.get('measurementLabel', 'Длина × ширина × высота')))
+        sections['kit'] = sections['kit'].replace(f'<ul>{kit}</ul>', f'<ul id="variant-kit">{kit}</ul>')
+        sections['kit'] = sections['kit'].replace('class="kit-photo"', 'class="kit-photo" id="variant-kit-photo"')
+        descriptions = ''.join(f'<article><h3 class="type-h3">{e(v["label"])}</h3><p>{e(v["note"])}</p></article>' for g in product['optionGroups'] if g['id'] == 'configuration' for v in g['values'])
+        sections['kit'] = sections['kit'].replace(f'<ul id="variant-kit">', f'<div class="configuration-details">{descriptions}</div><ul id="variant-kit">')
     enabled = product['sections']
     if len(enabled) != len(set(enabled)) or any(key not in sections for key in enabled):
         raise ValueError('Unknown or duplicate product section')
@@ -126,8 +199,8 @@ def catalogue(products):
         if not product['visible']:
             continue
         url = f'/catalog/{product["slug"]}/'
-        cards.append(f'''<article class="catalog-card"><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) == 0, sizes='(max-width:540px) 90vw, (max-width:1150px) 44vw, 29vw')}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(product['material'])} / {e(product['coating'])}</span><span>{len(product['sizes'])} размеров</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a><div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div></article>''')
-    return f'''<nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span>{len(cards):02d} / {"изделие" if len(cards) == 1 else "изделий"}</span></div><div class="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой техники нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
+        cards.append(f'''<article class="catalog-card"><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) == 0, sizes='(max-width:540px) 90vw, (max-width:1150px) 44vw, 29vw')}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(product['material'])} / {e(product['coating'])}</span><span>{e(product.get('rangeLabel', str(len(product['sizes'])) + ' размеров'))}</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a><div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div></article>''')
+    return f'''<nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span>{len(cards):02d} / {"изделие" if len(cards) == 1 else "изделия" if 2 <= len(cards) <= 4 else "изделий"}</span></div><div class="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой техники нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
 
 
 def product_schema(product):
@@ -141,7 +214,7 @@ def product_schema(product):
             'mainEntityOfPage': {'@id': url + '#webpage'},
             'material': product['material'], 'color': product['color'],
             'category': product['category'],
-            'size': [size_label(size) + ' см (Д × Ш × В)' for size in product['sizes']],
+            'size': list(dict.fromkeys(v['sizeLabel'] for v in product['variants'])) if product.get('variants') else [size_label(size) + ' см (Д × Ш × В)' for size in product['sizes']],
             'additionalProperty': [{'@type': 'PropertyValue', 'name': 'Влагозащитная пропитка', 'value': product['coating']}]}
 
 
@@ -149,6 +222,7 @@ def render():
     products = json.loads((ROOT / 'catalog/products.json').read_text())['products']
     slugs = set()
     for product in products:
+        validate_variants(product)
         slug = product['slug']
         if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug) or slug in slugs:
             raise ValueError(f'Invalid or duplicate slug: {slug}')
@@ -158,7 +232,8 @@ def render():
                 raise ValueError(f'Missing image: {img["src"]}')
         page_dir = DIST / 'catalog' / slug
         page_dir.mkdir(parents=True, exist_ok=True)
-        html = shell(hero(product) + detail_sections(product), f'{product["name"]} — {product["material"]}, {len(product["sizes"])} размеров | Needle Shark', product['seoDescription'], product['name'], product_slug=slug, structured=product_schema(product))
+        title = product.get('seoTitle', f'{product["name"]} — {product["material"]}, {len(product["sizes"])} размеров | Needle Shark')
+        html = shell(hero(product) + detail_sections(product), title, product['seoDescription'], product['name'], product_slug=slug, structured=product_schema(product))
         (page_dir / 'index.html').write_text(html)
     visible = sorted((p for p in products if p['visible']), key=lambda p: p['order'])
     collection = {'@context': 'https://schema.org', '@type': 'CollectionPage',
@@ -166,7 +241,7 @@ def render():
                   'mainEntity': {'@type': 'ItemList', 'itemListElement': [
                       {'@type': 'ListItem', 'position': i + 1, 'name': p['name'],
                        'url': ORIGIN + '/catalog/' + p['slug'] + '/'} for i, p in enumerate(visible)]}}
-    (DIST / 'catalog/index.html').write_text(shell(catalogue(products), 'Каталог чехлов и изделий из технических тканей | Needle Shark', 'Готовые изделия Needle Shark из технических тканей: чехлы для квадроциклов, размеры и характеристики. Подбор изделия и заказ партии у производства.', catalog_current='page', structured=collection))
+    (DIST / 'catalog/index.html').write_text(shell(catalogue(products), 'Каталог чехлов и изделий из технических тканей | Needle Shark', 'Готовые изделия Needle Shark из технических тканей: чехлы для квадроциклов, мотоциклов и колёс. Размеры и комплектации. Подбор изделия и заказ партии у производства.', catalog_current='page', structured=collection))
     print(f'Rendered catalogue and {len(products)} product page(s). Homepage unchanged.')
 
 

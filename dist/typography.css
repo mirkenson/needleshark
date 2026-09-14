@@ -258,6 +258,9 @@ header nav[aria-label="Основная навигация"] a{font-size:var(--t
 .size-guidance strong{font-size:var(--text-caption)}
 }
 .market-button small{font-size:var(--text-fine);font-weight:var(--weight-regular);line-height:1.4}
+.variant-picker .size-option strong{font-size:var(--text-small);line-height:1.4}
+.variant-picker .size-option small{font-size:var(--text-caption);font-weight:var(--weight-regular);line-height:1.55}
+.variant-table td:first-child{font-size:inherit}
 /* blog — existing semantic selectors remain the shared API. */
 .blog-intro h1{font-size:var(--heading-blog)}
 .blog-intro>p:last-child{font-size:var(--text-lead)}

@@ -258,5 +258,157 @@
         "bytes": 199702
       }
     ]
+  },
+  "/catalog-assets/moto-standard.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 1744877,
+    "sha256": "a19fa9df07a10cefca66bce7897ac977b9a42373c7a10e8739cc0c9413bde4aa",
+    "variants": [
+      {
+        "src": "/images/moto-standard-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1580
+      },
+      {
+        "src": "/images/moto-standard-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 6452
+      },
+      {
+        "src": "/images/moto-standard-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 12972
+      },
+      {
+        "src": "/images/moto-standard-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 23928
+      },
+      {
+        "src": "/images/moto-standard-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 33308
+      }
+    ]
+  },
+  "/catalog-assets/moto-heat.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 1848795,
+    "sha256": "6d244bda4c1bba224803a48f1ceb123c78795b9add0331dabc35d79c584d5290",
+    "variants": [
+      {
+        "src": "/images/moto-heat-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2162
+      },
+      {
+        "src": "/images/moto-heat-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 9390
+      },
+      {
+        "src": "/images/moto-heat-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 18794
+      },
+      {
+        "src": "/images/moto-heat-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 32970
+      },
+      {
+        "src": "/images/moto-heat-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 47198
+      }
+    ]
+  },
+  "/catalog-assets/wheel-set.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2119104,
+    "sha256": "9376cc46d0543034c9748cb334de6261d9654f03cc07fbdac5cf2133526dbd7a",
+    "variants": [
+      {
+        "src": "/images/wheel-set-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2780
+      },
+      {
+        "src": "/images/wheel-set-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14800
+      },
+      {
+        "src": "/images/wheel-set-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 31148
+      },
+      {
+        "src": "/images/wheel-set-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 57616
+      },
+      {
+        "src": "/images/wheel-set-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 83740
+      }
+    ]
+  },
+  "/catalog-assets/wheel-single.png": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 2034080,
+    "sha256": "f9fe68cad99616ee88022fb498a918f9e4487b6c86d2157caffa1923d4361d93",
+    "variants": [
+      {
+        "src": "/images/wheel-single-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2336
+      },
+      {
+        "src": "/images/wheel-single-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12132
+      },
+      {
+        "src": "/images/wheel-single-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 25454
+      },
+      {
+        "src": "/images/wheel-single-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 46202
+      },
+      {
+        "src": "/images/wheel-single-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 69622
+      }
+    ]
   }
 }
