@@ -3,26 +3,15 @@ import json
 import sys
 import re
 from datetime import date
-from html import escape
 from pathlib import Path
 from string import Template
-from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from site_utils import prepare_html, ORIGIN, json_ld, breadcrumbs
+from blocks import ArticleBlocks, e, validate_blocks, walk
+
 BASE = Template((ROOT / 'blog/base.html').read_text())
-
-
-def e(value):
-    return escape(str(value), quote=True)
-
-
-def safe_url(value):
-    parts = urlsplit(value)
-    return (not re.search(r'[\s\\]', value) and
-            ((value.startswith('/') and not value.startswith('//')) or
-             (parts.scheme == 'https' and bool(parts.hostname) and not parts.username and not parts.password)))
 
 
 def validate(posts):
@@ -47,31 +36,7 @@ def validate(posts):
                 raise ValueError(f'Missing {key}')
         if not post['blocks']:
             raise ValueError('Article body is empty')
-        cta_ids = set()
-        for block in post['blocks']:
-            if block['type'] in ('paragraph', 'heading'):
-                if not isinstance(block['text'], str) or not block['text'].strip():
-                    raise ValueError('Empty text block')
-            elif block['type'] == 'list':
-                if not block['items'] or not all(isinstance(item, str) and item.strip() for item in block['items']):
-                    raise ValueError('Empty list')
-            elif block['type'] == 'sources':
-                if not block['items'] or not all(isinstance(item.get('title'), str) and item['title'].strip() and isinstance(item.get('url'), str) and safe_url(item['url']) for item in block['items']):
-                    raise ValueError('Sources require a title and safe URL')
-            elif block['type'] == 'cta':
-                for key in ('id', 'lead', 'text', 'label', 'url'):
-                    if not isinstance(block[key], str) or not block[key].strip():
-                        raise ValueError(f'Missing CTA {key}')
-                if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', block['id']) or block['id'] in cta_ids:
-                    raise ValueError('CTA ids must be unique stable URL segments')
-                cta_ids.add(block['id'])
-                if not safe_url(block['url']):
-                    raise ValueError('CTA requires a local path or HTTPS URL')
-            elif block['type'] == 'faq':
-                if not block['items'] or not all(isinstance(item.get(key), str) and item[key].strip() for item in block['items'] for key in ('question', 'answer')):
-                    raise ValueError('FAQ requires questions and answers')
-            else:
-                raise ValueError('Unknown content block')
+        validate_blocks(post['blocks'])
 
 
 def shell(content, title, description, current='false', slug=None, structured=None):
@@ -101,29 +66,18 @@ def render(posts, output):
                         'url': ORIGIN + '/blog/' + post['slug'] + '/'} for i, post in enumerate(published)]}}
     pages = {'index.html': shell(intro + collection, 'Блог о чехлах, материалах и хранении техники | Needle Shark', 'Статьи Needle Shark о защитных чехлах, технических тканях и уходе за техникой. Подготовка мотоцикла и квадроцикла к зимнему хранению.', 'page', structured=blog_schema)}
     for post in published:
-        blocks = []
-        for block in post['blocks']:
-            if block['type'] == 'list':
-                blocks.append('<ul>' + ''.join(f'<li>{e(item)}</li>' for item in block['items']) + '</ul>')
-            elif block['type'] == 'sources':
-                blocks.append('<p class="article-sources">Источники: ' + '; '.join(f'<a href="{e(item["url"])}" rel="noopener noreferrer">{e(item["title"])}</a>' for item in block['items']) + '.</p>')
-            elif block['type'] == 'cta':
-                external = ' rel="noopener noreferrer"' if block['url'].startswith('https://') else ''
-                blocks.append(f'<aside class="article-cta" aria-label="{e(block["lead"])}"><p class="cta-lead">{e(block["lead"])}</p><p>{e(block["text"])}</p><a class="button accent" href="{e(block["url"])}" data-blog-cta="{e(block["id"])}" data-article="{e(post["slug"])}"{external}>{e(block["label"])} <span aria-hidden="true">↗</span></a></aside>')
-            elif block['type'] == 'faq':
-                blocks.append('<section class="article-faq"><h2>Вопросы и ответы</h2>' + ''.join(f'<h3>{e(item["question"])}</h3><p>{e(item["answer"])}</p>' for item in block['items']) + '</section>')
-            else:
-                tag = 'h2' if block['type'] == 'heading' else 'p'
-                blocks.append(f'<{tag}>{e(block["text"])}</{tag}>')
+        article = ArticleBlocks(post)
+        content = article.render(post['blocks'])
         byline = f'<p class="article-author">Автор: {e(post["author"])}</p>' if post.get('author') else ''
         updated = f'<p class="article-updated">Обновлено: <time datetime="{e(post["updated"])}">{date_label(post["updated"])}</time></p>' if post.get('updated') else ''
-        body = f'<article class="wrap blog-article"><a class="blog-back" href="/blog/">← Все статьи</a><h1>{e(post["title"])}</h1><time datetime="{e(post["date"])}">{date_label(post["date"])}</time>{byline}{updated}<p class="article-lead">{e(post["description"])}</p>{"".join(blocks)}<a class="blog-back" href="/blog/">← Вернуться в блог</a></article>'
+        meta = f'<div class="article-meta"><span>Опубликовано <time datetime="{e(post["date"])}">{date_label(post["date"])}</time></span>{byline}{updated}</div>'
+        body = f'<article class="wrap blog-article"><a class="blog-back" href="/blog/">← Все статьи</a><div class="article-header"><p class="eyebrow">NEEDLE SHARK / ПРАКТИКА</p><h1>{e(post["title"])}</h1>{meta}<p class="article-lead">{e(post["description"])}</p></div><div class="article-layout">{article.contents()}<div class="article-body">{content}{article.footnotes()}<a class="blog-back" href="/blog/">← Вернуться в блог</a></div></div></article>'
         structured = {'@context': 'https://schema.org', '@type': 'BlogPosting', 'headline': post['title'], 'description': post['description'], 'datePublished': post['date'], 'inLanguage': 'ru-RU', 'mainEntityOfPage': ORIGIN + '/blog/' + post['slug'] + '/', 'publisher': {'@type': 'Organization', 'name': 'Needle Shark', 'url': ORIGIN + '/'}}
         structured['@id'] = ORIGIN + '/blog/' + post['slug'] + '/#article'
         structured['url'] = ORIGIN + '/blog/' + post['slug'] + '/'
         structured['publisher']['@id'] = ORIGIN + '/#organization'
         structured['publisher']['logo'] = ORIGIN + '/logo.svg'
-        structured['citation'] = [item['url'] for block in post['blocks'] if block['type'] == 'sources' for item in block['items']]
+        structured['citation'] = list(dict.fromkeys(item['url'] for block in walk(post['blocks']) if block['type'] == 'sources' for item in block['items']))
         if post.get('author'):
             structured['author'] = {'@type': 'Person', 'name': post['author']}
         if post.get('updated'):

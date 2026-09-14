@@ -282,6 +282,24 @@ header nav[aria-label="Основная навигация"] a{font-size:var(--t
 .article-faq h3{font-size:var(--text-card);line-height:1.4}
 .blog-article .article-sources{font-size:var(--text-small);line-height:1.7}
 
+/* Editorial controls retain the site's font and type tokens. */
+.article-meta{font-size:var(--text-small)}
+.blog-article .article-contents p{font-size:var(--text-body);font-weight:var(--weight-heavy)}
+.blog-article .article-contents li,.article-notes-link{font-size:var(--text-small);line-height:1.5}
+.article-contents li a:before{font-size:var(--text-caption)}
+.blog-article .callout-title{font-size:var(--text-body);font-weight:var(--weight-heavy);line-height:1.5}
+.blog-article .article-callout p:last-child{font-size:var(--text-body);line-height:1.8}
+.article-photo figcaption{font-size:var(--text-small);line-height:1.65}
+.blog-article .article-cta .cta-lead{font-size:var(--text-card);line-height:1.4}
+.article-cta-link{font-size:var(--text-small);font-weight:var(--weight-bold);line-height:1.6}
+.blog-article .interactive-title{font-size:var(--text-body);font-weight:var(--weight-bold);line-height:1.5}
+.article-tab-list button{font-size:var(--text-small);font-weight:var(--weight-bold);line-height:1.5}
+.article-accordion summary{font-size:var(--text-body);font-weight:var(--weight-semibold);line-height:1.6}
+.article-accordion summary>span{font-size:var(--text-title-xl);font-weight:var(--weight-regular);line-height:1}
+.blog-article .article-checklist li{font-size:var(--text-body);line-height:1.7}
+.blog-article .checklist-hint,.blog-article .checklist-status{font-size:var(--text-small);line-height:1.6}
+.blog-article .article-notes li{font-size:var(--text-small);line-height:1.8}
+
 /* Use these only when the semantic HTML role differs from the visual role. */
 .type-display{font-size:var(--heading-display);font-weight:var(--weight-heavy);line-height:1.01;letter-spacing:-.075em}
 .type-h1{font-size:var(--heading-article);font-weight:var(--weight-heavy);line-height:1.13;letter-spacing:-.045em}

@@ -103,3 +103,76 @@ class BlogTests(unittest.TestCase):
             post['blocks'][0]['items'][0]['url'] = 'javascript:alert(1)'
             with self.assertRaises(ValueError):
                 render([post], Path(tmp))
+
+    def test_editorial_text_and_nested_source_backlinks(self):
+        import json
+        import re
+        source = dict(type='sources', items=[dict(title='Manual', url='https://example.com/manual')])
+        post = {**POST, 'blocks': [
+            dict(type='heading', id='preparation', text='Preparation'),
+            dict(type='paragraph', text='**<script>bad()</script>** and ==dry=='), source,
+            dict(type='accordion', title='Details', items=[dict(label='Read more', blocks=[source])])
+        ]}
+        with tempfile.TemporaryDirectory() as tmp:
+            render([post], Path(tmp))
+            html = (Path(tmp) / 'test/index.html').read_text()
+            self.assertIn('<strong>&lt;script&gt;bad()&lt;/script&gt;</strong>', html)
+            self.assertIn('<mark>dry</mark>', html)
+            self.assertEqual(html.count('id="note-1"'), 1)
+            self.assertEqual(html.count('role="doc-noteref"'), 2)
+            ids = re.findall(r'\bid="([^"]+)"', html)
+            self.assertEqual(len(ids), len(set(ids)))
+            for ref in re.findall(r'href="#([^"]+)"', html):
+                self.assertIn(ref, ids)
+            schema = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', html).group(1))
+            self.assertEqual(schema['citation'], ['https://example.com/manual'])
+
+    def test_tabs_content_is_readable_before_javascript(self):
+        import re
+        post = {**POST, 'blocks': [dict(type='tabs', title='Choose a place', items=[
+            dict(label='Garage', blocks=[dict(type='paragraph', text='Garage advice')]),
+            dict(label='Outside', blocks=[dict(type='paragraph', text='Outside advice')])])
+        ]}
+        with tempfile.TemporaryDirectory() as tmp:
+            render([post], Path(tmp))
+            html = (Path(tmp) / 'test/index.html').read_text()
+            self.assertIn('class="article-tab-list" aria-labelledby="tabs-1-title" hidden', html)
+            panels = re.findall(r'<section[^>]*class="article-tab-panel"[^>]*>', html)
+            self.assertEqual(len(panels), 2)
+            self.assertTrue(all('hidden' not in panel for panel in panels))
+            self.assertIn('Garage advice', html)
+            self.assertIn('Outside advice', html)
+
+    def test_reject_invalid_editorial_data_before_writing(self):
+        cta = dict(type='cta', id='catalog', lead='Choose', text='Cover', label='Catalogue', url='/catalog/')
+        invalid = [
+            [dict(type='image', product='missing', image='photo', caption='Photo')],
+            [dict(type='image', product='chehol-na-kvadrocikl', image='missing', caption='Photo')],
+            [dict(type='callout', title='Note', text='Text', tone='invalid')],
+            [{**cta, 'links': [dict(id='ozon', label='Link', url='javascript:alert(1)')]}],
+            [{**cta, 'links': [dict(id='catalog', label='Link', url='/catalog/')]}],
+            [dict(type='heading', id='same', text='A'), dict(type='heading', id='same', text='B')],
+            [dict(type='tabs', title='Tabs', items=[dict(label='One', blocks=[cta]), dict(label='Two', blocks=[cta])])],
+        ]
+        for blocks in invalid:
+            with self.subTest(blocks=blocks), tempfile.TemporaryDirectory() as tmp:
+                with self.assertRaises(ValueError):
+                    render([{**POST, 'blocks': blocks}], Path(tmp))
+                self.assertEqual(list(Path(tmp).iterdir()), [])
+
+    def test_product_photo_and_secondary_cta_use_shared_assets_and_tracking(self):
+        from urllib.parse import parse_qs, urlsplit
+        from html import unescape
+        import re
+        post = {**POST, 'blocks': [dict(type='cta', id='catalog', lead='Choose', text='Cover', label='Catalogue', url='/catalog/',
+            image=dict(product='chehol-na-kvadrocikl', image='atv-studio', caption='<b>Photo</b>'),
+            links=[dict(id='ozon', label='Ozon', url='https://www.ozon.ru/product/2360802204/')])]}
+        with tempfile.TemporaryDirectory() as tmp:
+            render([post], Path(tmp))
+            html = (Path(tmp) / 'test/index.html').read_text()
+            self.assertIn('srcset="/images/', html)
+            self.assertIn('loading="lazy"', html)
+            self.assertIn('&lt;b&gt;Photo&lt;/b&gt;', html)
+            self.assertIn('data-blog-cta="ozon" data-article="test"', html)
+            url = unescape(re.search(r'href="(https://www.ozon.ru/[^"]+)"', html)[1])
+            self.assertEqual(parse_qs(urlsplit(url).query)['utm_campaign'], ['vendor_org_211216'])
