@@ -1,4 +1,4 @@
-"""Optional catalogue context, shared by validation, CRM and Google delivery."""
+"""Optional catalogue context, shared by validation, CRM and notification delivery."""
 import re
 
 CONTEXT_FIELDS = ('product_slug', 'product_name', 'product_size', 'inquiry_type', 'quantity', 'source_path',
@@ -41,8 +41,8 @@ def validate_context(data):
     return result
 
 
-def google_payload(lead):
-    """Keep the existing Sheets columns/mail template; enrich only task text."""
+def notification_payload(lead):
+    """Enrich notification text while preserving structured fields and the original lead."""
     labels = [('product_name', 'Товар'), ('product_slug', 'Код товара'), ('product_size', 'Размер, см'),
               ('inquiry_type', 'Тип обращения'), ('quantity', 'Количество, шт.'), ('source_path', 'Страница'),
               ('business_intent', 'Направление'), ('business_company', 'Компания / сфера')]
@@ -56,3 +56,7 @@ def google_payload(lead):
     if not context:
         return dict(lead)
     return dict(lead, question='\n'.join(context) + '\n\nКомментарий:\n' + lead['question'])
+
+
+# Compatibility for historical backfill/check tools; no Google network integration.
+google_payload = notification_payload

@@ -1,3 +1,28 @@
+# Server-side leads and email
+
+## Google-free delivery — 18 September 2026
+
+Current implementation: `/api/leads` → one PostgreSQL transaction (`customers`, `orders`, `lead_submissions`, `lead_files`, `lead_deliveries`) → background SMTP worker. Google Apps Script, Sheets, Drive and SQLite are not used by this runtime. Historical setup notes below describe the superseded deployment; historical orders and Drive links are not rewritten. Production installation/results are recorded in `docs/verification/20260918-server-mail.json`.
+
+The form API and confirmation semantics stay unchanged: 202 is returned only after durable database commit, not after email. An identical retry returns 200; changed content under the same UUID returns 409. The permanent fingerprint includes file bytes and consent. Reusing a pre-migration Google UUID returns 409 instead of re-sending historical requests whose full fingerprint is unavailable. Limits remain 10 submissions/hour per keyed IP hash and 500 pending submissions. Files (JPG/PNG/PDF, max 2 MiB) are stored privately as PostgreSQL BYTEA and attached to emails; new requests do not have public or Drive links. SQL remains reachable only through localhost/SSH. No automatic deletion of new requests/files is configured.
+
+Each configured recipient gets a separate job. SMTP success means acceptance by the provider, not confirmed inbox delivery. TLS verification is mandatory; both implicit TLS and STARTTLS require authentication. Stable Message-ID helps correlate possible duplicates, but cannot guarantee exactly-once email if a connection/process fails after provider acceptance and before local status commit. Jobs retry with backoff (60 s to 1 h), including provider refusals, without a retry-count cutoff. Workers claim jobs with a five-minute lease; stale workers cannot finalize reclaimed jobs. Exception text is never saved; only neutral error codes. CRM and messenger integration are deliberately deferred.
+
+Settings: `/etc/needle-shark/leads.env`, root-owned 0600; see `leads.env.example`. `MAIL_RECIPIENTS` has no default. During initial verification use only the one recipient explicitly approved by the owner; additional recipients must be enabled separately. Empty SMTP credentials pause sending without stopping intake. `IP_HASH_SECRET` is independent from the removed Google secret. Do not print the environment or SMTP debug logs.
+
+Install committed/pushed code with `bash ops/install-server-mail.sh PRIVATE_SMTP_FILE APPROVED_RECIPIENT`. This backend-only installer does not publish static pages. It stops the previous worker, refuses a switch if the old SQLite queue has pending deliveries, backs up code/environment/unit/database privately, applies the additive SQL migration, grants application access only to new tables/sequence, removes Google settings, checks access as the service user, and switches `/opt/needle-shark/current` atomically. The existing unit retains all hardening; only ExecStart changes to the release symlink. It restarts the service and probes the actual HTTP handler. `previous` preserves the prior backend code; the original unit/environment and database dump are in the printed private backup directory. An automatic install failure restores the prior unit/environment/code pointer. Do not restore the database dump blindly over newer leads.
+
+Inspect queue without personal data:
+
+```sql
+SELECT status, count(*), max(attempts) FROM lead_deliveries GROUP BY status;
+SELECT last_error, count(*) FROM lead_deliveries WHERE status <> 'sent' GROUP BY last_error;
+```
+
+Validation: `python3 -m unittest discover -s server -p 'test_*.py'`; `python3 -m unittest discover -s ops -p 'test_*.py'`; `CRM_TEST_DSN=... python3 server/check_delivery_postgres.py`. The integration script uses a disposable schema and never sends mail. Back up PostgreSQL with `pg_dump -Fc`; this now includes attachments and pending jobs. Release snapshots on the same VPS do not provide offsite recovery. Automated external backup remains unconfigured and must not be described as available.
+
+## Historical Google implementation (superseded)
+
 # Leads integration
 
 Notification recipients are configured privately in the Apps Script property `NOTIFICATION_RECIPIENTS` (comma-separated, up to 10 email addresses). Default: info@neesha.ru. The owner authorized four mailboxes on 18 September 2026. Each receives the full task, attachment and its private Drive link; keep additional recipient addresses out of Git. The Google account executing Apps Script sends notifications; no mailbox password is needed. Replies can go directly to the contact email supplied by the visitor.

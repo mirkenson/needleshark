@@ -1,48 +1,20 @@
-"""Private durable lead queue; expose only /api/leads through Nginx."""
-from contextlib import contextmanager
+"""Transactional lead intake and SMTP worker; expose only /api/leads through Nginx."""
 import base64
-import hashlib
 import json
 import os
 import re
-import sqlite3
 import threading
 import time
 import uuid
-from crm import archive, save_attachment_link
-from lead_context import validate_context, google_payload
+import delivery_store
+import mail_delivery
+from lead_context import validate_context, notification_payload
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.request import Request, urlopen
 
-DB = os.environ.get('LEADS_DB', '/var/lib/needle-shark/leads.sqlite3')
-HOOK = os.environ.get('GOOGLE_LEADS_URL', '')
-SECRET = os.environ.get('GOOGLE_LEADS_SECRET', '')
 MAX_FILE = 2 * 1024 * 1024
 MAX_BODY = 3 * 1024 * 1024
 ORIGINS = {'https://needle-shark.ru', 'https://www.needle-shark.ru',
            'https://needleshark.ru', 'https://www.needleshark.ru'}
-
-
-@contextmanager
-def connect():
-    connection = sqlite3.connect(DB, timeout=10)
-    connection.execute('PRAGMA busy_timeout=10000')
-    try:
-        with connection:
-            yield connection
-    finally:
-        connection.close()
-
-
-def initialize():
-    os.makedirs(os.path.dirname(DB), mode=0o700, exist_ok=True)
-    with connect() as db:
-        db.execute('''CREATE TABLE IF NOT EXISTS leads (
-            id TEXT PRIMARY KEY, payload TEXT NOT NULL, fingerprint TEXT NOT NULL,
-            created REAL NOT NULL, ip_hash TEXT NOT NULL, delivered REAL,
-            attempts INTEGER NOT NULL DEFAULT 0, retry_at REAL NOT NULL DEFAULT 0)''')
-        db.execute('CREATE INDEX IF NOT EXISTS leads_retry ON leads(delivered, retry_at)')
-    os.chmod(DB, 0o600)
 
 
 def validate(data):
@@ -66,7 +38,7 @@ def validate(data):
         if not re.fullmatch(r'[+\d()\s.-]+', contact) or not 7 <= len(re.sub(r'\D', '', contact)) <= 15:
             raise ValueError('Укажите корректный телефон или email.')
     result.update(validate_context(data))
-    if len(google_payload(result)['question']) > 5000:
+    if len(notification_payload(result)['question']) > 5000:
         raise ValueError('Сократите описание задачи с учётом сведений о товаре.')
     attachment = data.get('attachment')
     if attachment is not None:
@@ -88,54 +60,24 @@ def validate(data):
 
 
 def enqueue(data, ip):
-    payload = json.dumps(data, ensure_ascii=False, sort_keys=True)
-    fingerprint = hashlib.sha256(payload.encode()).hexdigest()
-    ip_hash = hashlib.sha256((SECRET + ip).encode()).hexdigest()
-    now = time.time()
-    with connect() as db:
-        db.execute('BEGIN IMMEDIATE')
-        old = db.execute('SELECT fingerprint FROM leads WHERE id=?', (data['id'],)).fetchone()
-        if old:
-            return (200, {'ok': True, 'id': data['id']}) if old[0] == fingerprint else (409, {'ok': False, 'error': 'Повторите отправку с новым номером заявки.'})
-        recent = db.execute('SELECT count(*) FROM leads WHERE ip_hash=? AND created>?', (ip_hash, now - 3600)).fetchone()[0]
-        pending = db.execute('SELECT count(*) FROM leads WHERE delivered IS NULL').fetchone()[0]
-        if recent >= 10 or pending >= 500:
-            return 429, {'ok': False, 'error': 'Слишком много заявок. Попробуйте позже или напишите на info@neesha.ru.'}
-        data['created_at'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(now))
-        archive(data)
-        db.execute('INSERT INTO leads(id,payload,fingerprint,created,ip_hash) VALUES(?,?,?,?,?)',
-                   (data['id'], json.dumps(data, ensure_ascii=False), fingerprint, now, ip_hash))
-    return 202, {'ok': True, 'id': data['id']}
+    return delivery_store.enqueue(data, ip, mail_delivery.recipients(), os.environ.get('IP_HASH_SECRET', ''))
 
 
 def deliver_once():
-    if not HOOK or not SECRET:
+    config = mail_delivery.smtp_config()
+    if config is None:
         return
-    with connect() as db:
-        rows = db.execute('SELECT id,payload,attempts FROM leads WHERE delivered IS NULL AND retry_at<=? ORDER BY created LIMIT 5', (time.time(),)).fetchall()
-    for lead_id, payload, attempts in rows:
+    for _ in range(5):
+        job = delivery_store.claim()
+        if job is None:
+            break
         try:
-            lead = json.loads(payload)
-            body = json.dumps({'token': SECRET, 'lead': google_payload(lead)}).encode()
-            request = Request(HOOK, data=body, headers={'Content-Type': 'application/json'}, method='POST')
-            with urlopen(request, timeout=40) as response:
-                result = json.loads(response.read(4096))
-            if result.get('ok') is not True or result.get('id') != lead_id:
-                raise ValueError('Delivery not acknowledged')
-            if lead.get('attachment'):
-                url = result.get('attachment_url')
-                if not isinstance(url, str) or not re.fullmatch(r'https://drive\.google\.com/file/d/[A-Za-z0-9_-]{10,200}/view', url):
-                    raise ValueError('Private attachment link not acknowledged')
-                save_attachment_link(lead_id, url)
-            with connect() as db:
-                db.execute('UPDATE leads SET delivered=? WHERE id=?', (time.time(), lead_id))
-        except Exception:
-            # Log identifiers only, never contacts, messages, files, tokens or webhook URLs.
-            print('Lead delivery pending:', lead_id, flush=True)
-            with connect() as db:
-                db.execute('UPDATE leads SET attempts=attempts+1,retry_at=? WHERE id=?', (time.time() + min(3600, 60 * 2 ** min(attempts, 6)), lead_id))
-    with connect() as db:
-        db.execute('DELETE FROM leads WHERE delivered IS NOT NULL AND delivered<?', (time.time() - 7 * 86400,))
+            mail_delivery.send(job['lead'], job['recipient'], config)
+        except Exception as error:
+            delivery_store.finish(job, mail_delivery.error_code(error))
+            print('Email delivery pending:', job['id'], flush=True)
+        else:
+            delivery_store.finish(job)
 
 
 def worker():
@@ -163,8 +105,6 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         if self.path != '/api/leads':
             return self.reply(404, {'ok': False})
-        if not HOOK or not SECRET:
-            return self.reply(503, {'ok': False, 'error': 'Напишите нам на info@neesha.ru — форма временно недоступна.'})
         if self.headers.get('Origin') not in ORIGINS:
             return self.reply(403, {'ok': False, 'error': 'Откройте форму на needle-shark.ru.'})
         if self.headers.get('Content-Type', '').split(';')[0] != 'application/json':
@@ -187,10 +127,11 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    if HOOK and not re.fullmatch(r'https://script\.google\.com/macros/s/[A-Za-z0-9_-]+/exec', HOOK):
-        raise SystemExit('Invalid Google webhook configuration')
-    if SECRET and len(SECRET) < 32:
-        raise SystemExit('Shared secret must contain at least 32 characters')
-    initialize()
+    if len(os.environ.get('IP_HASH_SECRET', '')) < 32:
+        raise SystemExit('IP_HASH_SECRET must contain at least 32 characters')
+    mail_delivery.recipients()
+    if mail_delivery.smtp_config() is None:
+        print('SMTP not configured: leads will be saved, email delivery paused', flush=True)
+    delivery_store.initialize()
     threading.Thread(target=worker, daemon=True).start()
     ThreadingHTTPServer(('127.0.0.1', 8091), Handler).serve_forever()

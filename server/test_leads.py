@@ -1,20 +1,16 @@
 import sys
-sys.path.insert(0, str(__import__('pathlib').Path(__file__).parent))
-import copy
-import importlib.util
-import json
-import tempfile
-import time
-import unittest
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+import unittest
 from unittest.mock import patch
-
-spec = importlib.util.spec_from_file_location('leads', Path(__file__).with_name('leads.py'))
-leads = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(leads)
+import leads
 
 
-class LeadQueueTests(unittest.TestCase):
+class LeadTests(unittest.TestCase):
+    def setUp(self):
+        self.data = {'id': '12345678-1234-4234-8234-123456789abc', 'name': 'ТЕСТ',
+                     'contact': 'test@example.invalid', 'question': 'Тестовая заявка', 'consent': True}
+
     def test_http_origin_gate_allows_owned_domains_only(self):
         # Exercise the real HTTP handler with an invalid payload so no lead is saved.
         from http.server import ThreadingHTTPServer
@@ -40,30 +36,11 @@ class LeadQueueTests(unittest.TestCase):
             server.server_close()
             worker.join()
 
-    def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
-        leads.DB = self.tmp.name + '/queue.sqlite3'
-        leads.SECRET = 'test-only-' * 4
-        leads.HOOK = 'https://script.google.com/macros/s/test/exec'
-        leads.initialize()
-        self.data = {'id': '12345678-1234-4234-8234-123456789abc', 'name': 'Тест', 'contact': 'test@example.com', 'question': 'Тестовая заявка', 'consent': True}
-
-    def tearDown(self):
-        self.tmp.cleanup()
-
-    def test_duplicate_has_one_row_and_rejects_changed_content(self):
-        self.assertEqual(leads.enqueue(copy.deepcopy(self.data), 'test-ip')[0], 202)
-        self.assertEqual(leads.enqueue(copy.deepcopy(self.data), 'test-ip')[0], 200)
-        changed = dict(self.data, question='Другая задача')
-        self.assertEqual(leads.enqueue(changed, 'test-ip')[0], 409)
-        with leads.connect() as db:
-            self.assertEqual(db.execute('SELECT COUNT(*) FROM leads').fetchone()[0], 1)
-
     def test_validation_rejects_spam_bad_contact_and_bad_attachment(self):
         for changes in [{'website': 'spam'}, {'contact': 'not a contact'}, {'attachment': {'name': 'bad.png', 'type': 'image/png', 'data': 'aGVsbG8='}}]:
             with self.assertRaises(ValueError):
                 leads.validate(dict(self.data, **changes))
-        self.assertEqual(leads.validate(dict(self.data, contact='+7 (999) 123-45-67'))['name'], 'Тест')
+        self.assertEqual(leads.validate(dict(self.data, contact='+7 (999) 123-45-67'))['name'], 'ТЕСТ')
 
     def test_consent_requires_explicit_boolean_true(self):
         for value in [False, None, 'true', 1]:
@@ -75,82 +52,12 @@ class LeadQueueTests(unittest.TestCase):
             leads.validate(missing)
         self.assertIs(leads.validate(self.data)['consent'], True)
 
-    def test_database_failure_does_not_acknowledge_or_enqueue(self):
-        with patch.object(leads, 'archive', side_effect=RuntimeError('database unavailable')):
-            with self.assertRaises(RuntimeError):
-                leads.enqueue(copy.deepcopy(self.data), 'test-ip')
-        with leads.connect() as db:
-            self.assertEqual(db.execute('SELECT count(*) FROM leads').fetchone()[0], 0)
-
-    def test_failed_delivery_is_persisted_and_retried(self):
-        leads.enqueue(copy.deepcopy(self.data), 'test-ip')
-        with patch.object(leads, 'urlopen', side_effect=TimeoutError):
-            leads.deliver_once()
-        with leads.connect() as db:
-            delivered, attempts, retry = db.execute('SELECT delivered,attempts,retry_at FROM leads').fetchone()
-        self.assertIsNone(delivered)
-        self.assertEqual(attempts, 1)
-        self.assertGreater(retry, time.time())
-
-    def test_acknowledgement_must_match_lead(self):
-        leads.enqueue(copy.deepcopy(self.data), 'test-ip')
-        class Reply:
-            def __enter__(self): return self
-            def __exit__(self, *args): pass
-            def read(self, *args): return json.dumps({'ok': True, 'id': 'wrong'}).encode()
-        with patch.object(leads, 'urlopen', return_value=Reply()):
-            leads.deliver_once()
-        with leads.connect() as db:
-            self.assertIsNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
-
-    def test_successful_delivery_marks_queue(self):
-        leads.enqueue(copy.deepcopy(self.data), 'test-ip')
-        lead_id = self.data['id']
-        class Reply:
-            def __enter__(self): return self
-            def __exit__(self, *args): pass
-            def read(self, *args): return json.dumps({'ok': True, 'id': lead_id}).encode()
-        with patch.object(leads, 'urlopen', return_value=Reply()):
-            leads.deliver_once()
-        with leads.connect() as db:
-            self.assertIsNotNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
-
     def product_data(self):
         return dict(self.data, product_slug='chehol-na-kvadrocikl', product_name='Чехол на квадроцикл',
                     product_size='220 × 98 × 106', inquiry_type='wholesale', quantity=12,
                     source_path='/catalog/chehol-na-kvadrocikl/')
 
-    def test_catalogue_fields_reach_archive_queue_and_google_task(self):
-        data = leads.validate(self.product_data())
-        with patch.object(leads, 'archive') as archive:
-            self.assertEqual(leads.enqueue(copy.deepcopy(data), 'test-ip')[0], 202)
-            self.assertEqual(archive.call_args.args[0]['quantity'], 12)
-        sent = []
-        class Reply:
-            def __enter__(self): return self
-            def __exit__(self, *args): pass
-            def read(self, *args): return json.dumps({'ok': True, 'id': data['id']}).encode()
-        def send(request, **kwargs):
-            sent.append(json.loads(request.data)['lead'])
-            return Reply()
-        with patch.object(leads, 'urlopen', side_effect=send):
-            leads.deliver_once()
-        self.assertIn('Количество, шт.: 12', sent[0]['question'])
-        self.assertIn('Размер, см: 220 × 98 × 106', sent[0]['question'])
-        self.assertIn('Тип обращения: Партия для бизнеса', sent[0]['question'])
-        with leads.connect() as db:
-            payload = json.loads(db.execute('SELECT payload FROM leads').fetchone()[0])
-            self.assertEqual(payload['question'], self.data['question'])
-            self.assertEqual(payload['source_path'], '/catalog/chehol-na-kvadrocikl/')
-
-    def test_catalogue_retry_rejects_changed_quantity_and_size(self):
-        data = leads.validate(self.product_data())
-        self.assertEqual(leads.enqueue(copy.deepcopy(data), 'test-ip')[0], 202)
-        self.assertEqual(leads.enqueue(copy.deepcopy(data), 'test-ip')[0], 200)
-        for update in [{'quantity': 13}, {'product_size': '255 × 140 × 120'}]:
-            self.assertEqual(leads.enqueue(dict(data, **update), 'test-ip')[0], 409)
-
-    def test_invalid_catalogue_metadata_and_oversized_google_task(self):
+    def test_invalid_catalogue_metadata_and_oversized_notification(self):
         for update in [{'quantity': True}, {'quantity': 0}, {'quantity': 1.5}, {'quantity': '12'},
                        {'quantity': 1000001}, {'product_slug': '../test'}, {'inquiry_type': 'unknown'},
                        {'product_size': 'not a size'}, {'product_name': ''},
@@ -159,66 +66,12 @@ class LeadQueueTests(unittest.TestCase):
             with self.subTest(update=list(update)), self.assertRaises(ValueError):
                 leads.validate(dict(self.product_data(), **update))
 
-    def test_legacy_request_keeps_its_payload_shape(self):
-        data = leads.validate(self.data)
-        self.assertNotIn('quantity', data)
-        self.assertEqual(leads.google_payload(data), data)
-
-    def test_business_fields_remain_structured_in_queue_and_google(self):
-        for intent in ('ready', 'custom', 'materials'):
-            with self.subTest(intent=intent):
-                data = leads.validate(dict(self.data, business_intent=intent,
-                                           business_company='  ТЕСТ мастерская  ', source_path='/business/'))
-                self.assertEqual(data['question'], self.data['question'])
-                self.assertEqual(data['business_company'], 'ТЕСТ мастерская')
-                google = leads.google_payload(data)
-                self.assertEqual(google['business_intent'], intent)
-                self.assertIn('Компания / сфера: ТЕСТ мастерская', google['question'])
-                self.assertIn('Направление:', google['question'])
-        with patch.object(leads, 'archive') as archive:
-            leads.enqueue(copy.deepcopy(data), 'business-test')
-            self.assertEqual(archive.call_args.args[0]['business_intent'], 'materials')
-        with leads.connect() as db:
-            queued = json.loads(db.execute('SELECT payload FROM leads').fetchone()[0])
-        self.assertEqual(queued['business_company'], 'ТЕСТ мастерская')
-        self.assertEqual(leads.enqueue(dict(data, business_company='Другая'), 'business-test')[0], 409)
-
     def test_invalid_business_fields_and_client_link_are_not_accepted(self):
         for update in [{'business_intent': 'unknown'}, {'business_company': 'x' * 161},
                        {'business_intent': 1}, {'business_company': 'foo\nbar'}]:
             with self.subTest(update=update), self.assertRaises(ValueError):
                 leads.validate(dict(self.data, **update))
         self.assertNotIn('attachment_url', leads.validate(dict(self.data, attachment_url='https://evil.example/')))
-
-    def test_file_delivery_requires_persisted_trusted_link(self):
-        import base64
-        data = leads.validate(dict(self.data, attachment={'name': 'ТЕСТ.pdf', 'type': 'application/pdf',
-                                'data': base64.b64encode(b'%PDF-test').decode()}))
-        leads.enqueue(copy.deepcopy(data), 'file-test')
-        result = {'ok': True, 'id': data['id']}
-        class Reply:
-            def __enter__(self): return self
-            def __exit__(self, *args): pass
-            def read(self, *args): return json.dumps(result).encode()
-        def retry():
-            with leads.connect() as db:
-                db.execute('UPDATE leads SET retry_at=0')
-            leads.deliver_once()
-        with patch.object(leads, 'urlopen', return_value=Reply()), patch.object(leads, 'save_attachment_link') as save:
-            for url in [None, 'https://evil.example/file', 'https://drive.google.com.evil.example/file/d/1234567890/view']:
-                result['attachment_url'] = url
-                retry()
-                save.assert_not_called()
-            result['attachment_url'] = 'https://drive.google.com/file/d/test-file-123456789/view'
-            save.side_effect = RuntimeError('CRM unavailable')
-            retry()
-            with leads.connect() as db:
-                self.assertIsNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
-            save.side_effect = None
-            retry()
-            save.assert_called_with(data['id'], result['attachment_url'])
-            with leads.connect() as db:
-                self.assertIsNotNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
 
     def test_valid_file_and_oversized_file(self):
         import base64
@@ -228,6 +81,49 @@ class LeadQueueTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             leads.validate(dict(self.data, attachment=attachment))
 
+    def test_notification_preserves_original_and_business_fields(self):
+        for intent in ('ready', 'custom', 'materials'):
+            data = leads.validate(dict(self.product_data(), business_intent=intent,
+                                  business_company='ТЕСТ компания', source_path='/business/'))
+            enriched = leads.notification_payload(data)
+            self.assertEqual(data['question'], self.data['question'])
+            self.assertEqual(enriched['business_intent'], intent)
+            for part in ('Количество, шт.: 12', 'Размер, см: 220 × 98 × 106', 'Компания / сфера: ТЕСТ компания'):
+                self.assertIn(part, enriched['question'])
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_api_does_not_report_success_when_database_fails(self):
+        import json
+        import threading
+        from http.server import ThreadingHTTPServer
+        from http.client import HTTPConnection
+        server = ThreadingHTTPServer(('127.0.0.1', 0), leads.Handler)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            with patch.object(leads, 'enqueue', side_effect=RuntimeError('database unavailable')):
+                conn = HTTPConnection(*server.server_address)
+                conn.request('POST', '/api/leads', json.dumps(self.data),
+                             {'Origin': 'https://needle-shark.ru', 'Content-Type': 'application/json'})
+                response = conn.getresponse()
+                self.assertEqual(response.status, 503)
+                self.assertFalse(json.loads(response.read())['ok'])
+                conn.close()
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join()
+
+    def test_unconfigured_smtp_keeps_jobs_pending(self):
+        with patch.object(leads.mail_delivery, 'smtp_config', return_value=None), patch.object(leads.delivery_store, 'claim') as claim:
+            leads.deliver_once()
+            claim.assert_not_called()
+
+    def test_worker_retries_failures_and_continues_other_deliveries(self):
+        jobs = [{'id': i, 'lead': self.data, 'recipient': 'test@example.invalid'} for i in (1, 2)]
+        with patch.object(leads.mail_delivery, 'smtp_config', return_value={}), \
+             patch.object(leads.delivery_store, 'claim', side_effect=[*jobs, None]), \
+             patch.object(leads.mail_delivery, 'send', side_effect=[TimeoutError(), None]), \
+             patch.object(leads.delivery_store, 'finish') as finish:
+            leads.deliver_once()
+        self.assertEqual(finish.call_args_list[0].args, (jobs[0], 'network_error'))
+        self.assertEqual(finish.call_args_list[1].args, (jobs[1],))
