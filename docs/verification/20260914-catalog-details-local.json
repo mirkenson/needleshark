@@ -1,0 +1,480 @@
+{
+  "date": "2026-09-14",
+  "scope": "Local catalogue detail galleries",
+  "published": false,
+  "responsive": {
+    "base": "http://127.0.0.1:4173",
+    "checks": [
+      {
+        "path": "/",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/catalog/",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/blog/",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/privacy-policy",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/user-agreement",
+        "width": 360,
+        "ok": true
+      },
+      {
+        "path": "/",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/catalog/",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/blog/",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/privacy-policy",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/user-agreement",
+        "width": 390,
+        "ok": true
+      },
+      {
+        "path": "/",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/catalog/",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/blog/",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/privacy-policy",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/user-agreement",
+        "width": 768,
+        "ok": true
+      },
+      {
+        "path": "/",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/catalog/",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/blog/",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/privacy-policy",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/user-agreement",
+        "width": 1024,
+        "ok": true
+      },
+      {
+        "path": "/",
+        "width": 1440,
+        "ok": true
+      },
+      {
+        "path": "/catalog/",
+        "width": 1440,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "width": 1440,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "width": 1440,
+        "ok": true
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "width": 1440,
+        "ok": true
+      },
+      {
+        "path": "/blog/",
+        "width": 1440,
+        "ok": true
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 1440,
+        "ok": true
+      },
+      {
+        "path": "/privacy-policy",
+        "width": 1440,
+        "ok": true
+      },
+      {
+        "path": "/user-agreement",
+        "width": 1440,
+        "ok": true
+      }
+    ],
+    "variants": [
+      {
+        "slug": "chehol-dlya-motocikla",
+        "id": "standard-s",
+        "ok": true
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "id": "standard-m",
+        "ok": true
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "id": "standard-l",
+        "ok": true
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "id": "standard-xl",
+        "ok": true
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "id": "heat-m",
+        "ok": true
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "id": "heat-l",
+        "ok": true
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "id": "four",
+        "ok": true
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "id": "one",
+        "ok": true
+      }
+    ],
+    "form": {
+      "mocked": true,
+      "cases": [
+        "required",
+        "invalid contact",
+        "network failure",
+        "wrong response id",
+        "long error",
+        "retry id",
+        "double click",
+        "confirmed success"
+      ],
+      "wheelPackQuantity": 8
+    },
+    "errors": []
+  },
+  "galleries": {
+    "base": "http://127.0.0.1:4173",
+    "checks": [
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 360,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 360,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 360,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 360,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 360,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 390,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 390,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 390,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 390,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 390,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 768,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 768,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 768,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 768,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 768,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 1024,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 1024,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 1024,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 1024,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 1024,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 1440,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 1440,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 1440,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 1440,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 1440,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      }
+    ],
+    "errors": [],
+    "keyboardThumbnails": true,
+    "sizePreservesPhoto": true
+  },
+  "limitations": [
+    "Production and real Google/email chain were not exercised.",
+    "Metrika requests were stubbed in local browser checks.",
+    "Generated construction views are visualizations based on source images."
+  ]
+}

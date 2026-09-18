@@ -1,0 +1,42 @@
+{
+  "files_matching": 25,
+  "redirect_checks": 49,
+  "api_owned_origins": 4,
+  "foreign_origin_rejected": true,
+  "certificate_names": [
+    [
+      "DNS",
+      "needle-shark.ru"
+    ],
+    [
+      "DNS",
+      "needleshark.ru"
+    ],
+    [
+      "DNS",
+      "www.needle-shark.ru"
+    ],
+    [
+      "DNS",
+      "www.needleshark.ru"
+    ]
+  ],
+  "certificate_expires": "Dec 10 12:30:49 2026 GMT",
+  "commit": "4dc82fe",
+  "static_release": "20260911T135543Z-13109",
+  "backend_release": "20260911T135522Z-13098",
+  "responsive_pages": 7,
+  "widths": [
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "google_test_uuid": "b664f2d0-c42b-4cce-8369-7a9ba01465ef",
+  "sheet_row": 9,
+  "sheet_notification": "Отправлено",
+  "mail_inbox_verified": false,
+  "certificate_renewal_dry_run": true,
+  "metrika_domain_settings": "pending owner login"
+}

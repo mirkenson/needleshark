@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-18",
+  "tool": "image_gen.imagegen",
+  "images": [
+    {
+      "key": "hero-jack",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-42663fbd-a611-4c33-adc1-ec9a894c4e55.png",
+      "prompt": {
+        "key": "hero-jack",
+        "refs": [
+          "/Users/mirkenson/Downloads/ChatGPT Image 31 авг. 2026 г., 09_14_44.png"
+        ],
+        "prompt": "Use case: precise-object-edit. Edit the supplied sewing workshop image for a Needle Shark website hero. Preserve the same women, faces, poses, hands, black fabric, white shirts, black aprons, shelving, bright clean workshop, composition and natural photographic lighting. Change ONLY every visible sewing machine brand label from JUKI to the exact uppercase text JACK, in blue on the white machine bodies, matching the size and placement of the original machine logos. In particular the large foreground machine and midground machine must read JACK, spelled J A C K. Do not add banners or other writing. Keep the full original 4:3 scene. Photorealistic, crisp, natural. Do not invent a new room or alter people."
+      }
+    },
+    {
+      "key": "category-covers",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-541bc5e8-7534-4869-8beb-c4e20ccd0e63.png",
+      "prompt": {
+        "key": "category-covers",
+        "refs": [
+          "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg",
+          "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/moto-standard.png"
+        ],
+        "prompt": "Use case: product-mockup. Create a premium photorealistic category photograph for Needle Shark. Reference image 1 is the black ATV cover construction and textile. Reference image 2 is the black motorcycle cover construction and textile. Show BOTH a covered ATV and a covered motorcycle standing side by side on a seamless PURE WHITE studio background and white floor. Clear separate silhouettes, three-quarter view, believable relative scale, no overlap obscuring either product. Covers matte black with natural folds and visible seams, preserving the simple unbranded construction of the references. No little storage sacks, no text, badges, measurements, watermark, props, or scenery. Soft diffuse light and subtle grounding shadows. Wide 3:2 composition, both products fully within frame with generous white margins, consistent catalogue image style."
+      }
+    },
+    {
+      "key": "category-bags",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-2ff28c3e-2901-4bb5-a407-aeae7f5e926a.png",
+      "prompt": {
+        "key": "category-bags",
+        "refs": [
+          "/var/folders/q1/t5r_1rsn3pj569r11vzqnyqc0000gn/T/codex-clipboard-25d81d6b-4ed9-49f1-a5c2-e8400eabfdf7.png"
+        ],
+        "prompt": "Use case: product-mockup. Generate a photorealistic universal category image for black large rectangular textile moving/storage duffel bags, using the supplied image ONLY as reference for the products. Two large black box-shaped soft fabric baul bags with zippered tops, sturdy black webbing wraparound carry handles, one slightly behind the other, handles visible. Natural woven technical textile surface, sewn edges, plausible detailed construction. Seamless PURE WHITE studio background and white floor, soft diffuse lighting, subtle contact shadows. Premium minimalist Needle Shark catalogue style. Wide 3:2 composition with whole products and white margin. Absolutely no blue background, advertising graphics, typography, text, dimensions, symbols, logos, or watermark. Bags must be entirely black."
+      }
+    },
+    {
+      "key": "category-straps",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-2f2f9c0d-b066-4fb6-9463-fc252a963f5b.png",
+      "prompt": {
+        "key": "category-straps",
+        "refs": [
+          "/var/folders/q1/t5r_1rsn3pj569r11vzqnyqc0000gn/T/codex-clipboard-0bf76e3d-d960-478c-87e5-ed9390520c33.png"
+        ],
+        "prompt": "Use case: product-mockup. Generate a photorealistic product category image for a black webbing carrying strap based on the supplied reference. This is the simple textile carrying harness shown in the reference: two parallel wide black webbing straps pass vertically around an unmarked kraft cardboard box and join a short reinforced padded BLACK handle above its top. Sewn black loops and reinforcement stitching, correct plausible strap routing around bottom of box. Show one entire clean medium rectangular kraft box with this black carrying strap fitted, three-quarter front view. No ratchets, hooks, chains, metal lifting machinery, person, branding, load rating or safety claims. Seamless PURE WHITE studio floor/background, soft realistic shadows, high quality fine webbing detail, minimal Needle Shark catalogue photograph. Wide 3:2, centered full object with generous margins. No promotional text, arrows, numbers, measurements or watermark."
+      }
+    },
+    {
+      "key": "fabric-oxford",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-a912f624-45b7-4c50-b297-b7278ad06be6.png",
+      "prompt": {
+        "key": "fabric-oxford",
+        "prompt": "Use case: product-mockup. A photorealistic textile swatch photograph for a Needle Shark materials tab. Subject: black Oxford 210D technical fabric, fine basket weave, subtle polyurethane-coated sheen on one edge but matte woven face, thin lightweight drape. One generous uncut fabric swatch folded into two or three broad layers with an open soft fold that clearly reveals the material's actual microtexture. Macro product photography at an oblique 45-degree angle. Fabric is BLACK, rich tonal texture without crushing shadows. Seamless PURE WHITE studio background, diffuse soft lighting, subtle shadows, pristine minimalist presentation. No rolls, hands, sewing machines, tools, decorative objects, labels, typography, logo or watermark. Landscape 3:2 composition with entire folded sample and white margin, textile fills about 75% of the image. This is a material illustration, no test certificate or performance claims."
+      }
+    },
+    {
+      "key": "fabric-canvas",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-5609c5b0-b2b6-40ab-b5b9-8a49c637d06e.png",
+      "prompt": {
+        "key": "fabric-canvas",
+        "prompt": "Use case: product-mockup. A photorealistic textile swatch photograph for a Needle Shark materials tab. Subject: black heavy cotton-linen canvas tarpaulin textile, distinctly coarse plain weave with visible thick spun yarns, matte dry surface, heavy structured fold. One generous uncut fabric swatch folded into two or three broad layers with an open soft fold that clearly reveals the material's actual microtexture. Macro product photography at an oblique 45-degree angle. Fabric is BLACK, rich tonal texture without crushing shadows. Seamless PURE WHITE studio background, diffuse soft lighting, subtle shadows, pristine minimalist presentation. No rolls, hands, sewing machines, tools, decorative objects, labels, typography, logo or watermark. Landscape 3:2 composition with entire folded sample and white margin, textile fills about 75% of the image. This is a material illustration, no test certificate or performance claims."
+      }
+    },
+    {
+      "key": "fabric-spunbond",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-461b5a1e-423b-43c1-9909-b1d31097ab9d.png",
+      "prompt": {
+        "key": "fabric-spunbond",
+        "prompt": "Use case: product-mockup. A photorealistic textile swatch photograph for a Needle Shark materials tab. Subject: black polypropylene spunbond NONWOVEN textile, visible small thermal bonding dot pattern and fine randomly bonded fibers, no woven warp and weft grid, thin lightweight folded sheet. One generous uncut fabric swatch folded into two or three broad layers with an open soft fold that clearly reveals the material's actual microtexture. Macro product photography at an oblique 45-degree angle. Fabric is BLACK, rich tonal texture without crushing shadows. Seamless PURE WHITE studio background, diffuse soft lighting, subtle shadows, pristine minimalist presentation. No rolls, hands, sewing machines, tools, decorative objects, labels, typography, logo or watermark. Landscape 3:2 composition with entire folded sample and white margin, textile fills about 75% of the image. This is a material illustration, no test certificate or performance claims."
+      }
+    },
+    {
+      "key": "fabric-cordura",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-4918ff44-ec3b-40a2-a333-88b8791b44aa.png",
+      "prompt": {
+        "key": "fabric-cordura",
+        "prompt": "Use case: product-mockup. A photorealistic textile swatch photograph for a Needle Shark materials tab. Subject: black high tenacity textured nylon Cordura-style packcloth, pronounced dense rugged basket texture, thick yarn, matte slightly pebbled woven surface, structured fold, no logos. One generous uncut fabric swatch folded into two or three broad layers with an open soft fold that clearly reveals the material's actual microtexture. Macro product photography at an oblique 45-degree angle. Fabric is BLACK, rich tonal texture without crushing shadows. Seamless PURE WHITE studio background, diffuse soft lighting, subtle shadows, pristine minimalist presentation. No rolls, hands, sewing machines, tools, decorative objects, labels, typography, logo or watermark. Landscape 3:2 composition with entire folded sample and white margin, textile fills about 75% of the image. This is a material illustration, no test certificate or performance claims."
+      }
+    },
+    {
+      "key": "fabric-polyester",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-61684fd6-84b9-4e4a-9112-5d157af58be8.png",
+      "prompt": {
+        "key": "fabric-polyester",
+        "prompt": "Use case: product-mockup. A photorealistic textile swatch photograph for a Needle Shark materials tab. Subject: black smooth tightly woven polyester technical textile, fine even weave, soft satin-like modest sheen, supple clean curved fold, visibly finer smoother surface than coarse canvas. One generous uncut fabric swatch folded into two or three broad layers with an open soft fold that clearly reveals the material's actual microtexture. Macro product photography at an oblique 45-degree angle. Fabric is BLACK, rich tonal texture without crushing shadows. Seamless PURE WHITE studio background, diffuse soft lighting, subtle shadows, pristine minimalist presentation. No rolls, hands, sewing machines, tools, decorative objects, labels, typography, logo or watermark. Landscape 3:2 composition with entire folded sample and white margin, textile fills about 75% of the image. This is a material illustration, no test certificate or performance claims."
+      }
+    }
+  ]
+}

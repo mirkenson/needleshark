@@ -1,0 +1,302 @@
+{
+  "base": "http://127.0.0.1:4173",
+  "checks": [
+    {
+      "path": "/",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/catalog/",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-dlya-motocikla/",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehly-dlya-koles/",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/blog/",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/user-agreement",
+      "width": 360,
+      "ok": true
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/catalog/",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-dlya-motocikla/",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehly-dlya-koles/",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/blog/",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/user-agreement",
+      "width": 390,
+      "ok": true
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/catalog/",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-dlya-motocikla/",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehly-dlya-koles/",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/blog/",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/user-agreement",
+      "width": 768,
+      "ok": true
+    },
+    {
+      "path": "/",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/catalog/",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-dlya-motocikla/",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehly-dlya-koles/",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/blog/",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/user-agreement",
+      "width": 1024,
+      "ok": true
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "ok": true
+    },
+    {
+      "path": "/catalog/",
+      "width": 1440,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "width": 1440,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehol-dlya-motocikla/",
+      "width": 1440,
+      "ok": true
+    },
+    {
+      "path": "/catalog/chehly-dlya-koles/",
+      "width": 1440,
+      "ok": true
+    },
+    {
+      "path": "/blog/",
+      "width": 1440,
+      "ok": true
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "width": 1440,
+      "ok": true
+    },
+    {
+      "path": "/privacy-policy",
+      "width": 1440,
+      "ok": true
+    },
+    {
+      "path": "/user-agreement",
+      "width": 1440,
+      "ok": true
+    }
+  ],
+  "variants": [
+    {
+      "slug": "chehol-dlya-motocikla",
+      "id": "standard-s",
+      "ok": true
+    },
+    {
+      "slug": "chehol-dlya-motocikla",
+      "id": "standard-m",
+      "ok": true
+    },
+    {
+      "slug": "chehol-dlya-motocikla",
+      "id": "standard-l",
+      "ok": true
+    },
+    {
+      "slug": "chehol-dlya-motocikla",
+      "id": "standard-xl",
+      "ok": true
+    },
+    {
+      "slug": "chehol-dlya-motocikla",
+      "id": "heat-m",
+      "ok": true
+    },
+    {
+      "slug": "chehol-dlya-motocikla",
+      "id": "heat-l",
+      "ok": true
+    },
+    {
+      "slug": "chehly-dlya-koles",
+      "id": "four",
+      "ok": true
+    },
+    {
+      "slug": "chehly-dlya-koles",
+      "id": "one",
+      "ok": true
+    }
+  ],
+  "form": {
+    "mocked": true,
+    "cases": [
+      "required",
+      "invalid contact",
+      "network failure",
+      "wrong response id",
+      "long error",
+      "retry id",
+      "double click",
+      "confirmed success"
+    ],
+    "wheelPackQuantity": 8
+  },
+  "errors": [],
+  "date": "2026-09-14",
+  "published": false,
+  "pythonTests": {
+    "catalog": 9,
+    "ops": 7,
+    "blog": 8,
+    "server": 16
+  },
+  "staticCheck": {
+    "pages": 9,
+    "passed": true
+  },
+  "screenshotsVisuallyReviewed": true,
+  "liveGoogleDeliveryTested": false,
+  "ozonLivePagesVerified": false
+}

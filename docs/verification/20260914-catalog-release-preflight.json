@@ -1,0 +1,279 @@
+{
+  "date": "2026-09-14",
+  "pythonTests": 26,
+  "siteCheckPages": 9,
+  "analytics": {
+    "base": "http://127.0.0.1:4173",
+    "pages": [
+      {
+        "path": "/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 3,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehol-dlya-motocikla/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 6
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehly-dlya-koles/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 2
+      },
+      {
+        "path": "/blog/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/blog/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      },
+      {
+        "path": "/privacy-policy",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/privacy-policy",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      },
+      {
+        "path": "/user-agreement",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/user-agreement",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      }
+    ],
+    "goals": [
+      "blog_cta_click",
+      "contact_click",
+      "form_start",
+      "form_submit_attempt",
+      "lead_submitted",
+      "outbound_click",
+      "request_open",
+      "ui_click"
+    ],
+    "errors": [],
+    "mockedSdk": true,
+    "mockedApi": true,
+    "containsPersonalData": false
+  },
+  "galleries": {
+    "base": "http://127.0.0.1:4173",
+    "checks": [
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 360,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 360,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 360,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 360,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 360,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 390,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 390,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 390,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 390,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 390,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 768,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 768,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 768,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 768,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 768,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 1024,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 1024,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 1024,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 1024,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 1024,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-na-kvadrocikl",
+        "width": 1440,
+        "gallery": "standard",
+        "photos": 6,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 1440,
+        "gallery": "standard",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehol-dlya-motocikla",
+        "width": 1440,
+        "gallery": "heat",
+        "photos": 8,
+        "details": 6
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 1440,
+        "gallery": "four",
+        "photos": 5,
+        "details": 3
+      },
+      {
+        "slug": "chehly-dlya-koles",
+        "width": 1440,
+        "gallery": "one",
+        "photos": 5,
+        "details": 3
+      }
+    ],
+    "errors": [],
+    "keyboardThumbnails": true,
+    "sizePreservesPhoto": true
+  }
+}

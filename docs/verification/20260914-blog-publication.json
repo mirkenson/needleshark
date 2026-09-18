@@ -1,0 +1,772 @@
+{
+  "date": "2026-09-14",
+  "releaseCommit": "6fe6a1743e083059554a48fff821cc69849dabcf",
+  "branch": "codex/blog-reading",
+  "publication": {
+    "checks": [
+      {
+        "path": "/",
+        "status": "200",
+        "sha256": "7fe3a7237c286f70e42133b72e2b05a1dbf20d3629dcc27663ae540090d8e35e",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/user-agreement",
+        "status": "200",
+        "sha256": "13d9e04692ecf60ade41ec7e9060e2358d35f0934d32807c9204d46b2473e6cf",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/privacy-policy",
+        "status": "200",
+        "sha256": "6eea4b25ab51000ca194dc019fa4094bc40cea054adfec709641d76a3fd48401",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/catalog/",
+        "status": "200",
+        "sha256": "a2e890813cdafe581a804d1801fb8dcf845c644795a2845e474faac0a73bde61",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/blog/",
+        "status": "200",
+        "sha256": "e8e432a3a2ac599ca602638b4dac89b75199c319a78e92736b881c3fa532296f",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "status": "200",
+        "sha256": "73c8de0b8c97923ba1a61c74a4c30feb7fcfd83196fd38b8f874eeba9117e44c",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "status": "200",
+        "sha256": "02b5e53bedda56159a139253964a1780ee05063abb6ea71b64d9ea288b6e0a8e",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "status": "200",
+        "sha256": "bfc0fe6c7ee1a9d9e9e2091d3512f1e2c1e43942bf5a6cc3769ef0e1fe9fa165",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "status": "200",
+        "sha256": "40d38ee2d94f8cbd72da374c600241113957e43feed6a2a75cb29551a2c69523",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/analytics.js",
+        "status": "200",
+        "sha256": "96fa04eef14a1191d61eace9eb3e1c3a66b7638cd7ced1d0b240c174faf02287",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/blog.js",
+        "status": "200",
+        "sha256": "5dfcc7b0fbdc3ce10ff27740ccb0d5933a9e5f8360cdc48b5c3313a711483e8d",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/blog.css",
+        "status": "200",
+        "sha256": "59ce2a74be192e8889652b6d9b1dc760299dbe7a76443de45fbbe2c6103ddbc3",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/typography.css",
+        "status": "200",
+        "sha256": "5ec21d6d5358e45f9c29d020a93b3a2b4d40167ccc8031a5b24f4ede261a34c6",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": "200",
+        "sha256": "43accb208d112f31436907f05fe74eba3a7e72e97bc2cb4f9fc5875afdf34e3a",
+        "matches": true,
+        "error": null
+      },
+      {
+        "path": "/robots.txt",
+        "status": "200",
+        "sha256": "1b654eb5770f21019b5aa2c8293773abf3a0177082a5370b84b8dcabca597311",
+        "matches": true,
+        "error": null
+      }
+    ],
+    "allStaticFilesMatch": 184,
+    "current": "/var/www/needle-shark/releases/20260914T085850Z-10644",
+    "previous": "/var/www/needle-shark/releases/20260914T080537Z-8230",
+    "nginx": "active",
+    "needle-leads": "active"
+  },
+  "publicBrowser": {
+    "date": "2026-09-14",
+    "environment": "https://needle-shark.ru; isolated Chrome; analytics SDK and external Ozon destinations intercepted",
+    "article": [
+      {
+        "width": 360,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      },
+      {
+        "width": 390,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      },
+      {
+        "width": 768,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      },
+      {
+        "width": 1024,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      },
+      {
+        "width": 1440,
+        "overflow": false,
+        "images": 3,
+        "tabs": 3,
+        "disclosures": 4,
+        "noteRoundTrips": 12,
+        "keyboard": true,
+        "menu": true
+      }
+    ],
+    "ctaLinks": [
+      {
+        "id": "storage-catalog",
+        "url": "https://needle-shark.ru/catalog/"
+      },
+      {
+        "id": "atv-cover-winter",
+        "url": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/"
+      },
+      {
+        "id": "atv-cover-ozon",
+        "url": "https://www.ozon.ru/product/2360802204/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_8ab958a7"
+      },
+      {
+        "id": "moto-cover-catalog",
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-motocikla/"
+      },
+      {
+        "id": "winter-ozon-shop",
+        "url": "https://www.ozon.ru/seller/needle-shark/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_d3b29143"
+      }
+    ],
+    "ctaEvents": "One blog_cta_click per CTA; all five navigated to the expected URL",
+    "regressionPageChecks": 45,
+    "zoom": "200% text at 390 and 1024px",
+    "noJavaScript": "All tab contents visible; native details operable",
+    "reducedMotion": true,
+    "errors": [],
+    "limitations": [
+      "Deployment status recorded separately",
+      "Ozon page availability and analytics ingestion not verified",
+      "No real forms submitted; server, Google Sheets and email untouched"
+    ]
+  },
+  "publicAnalyticsWithMockSdkAndApi": {
+    "base": "https://needle-shark.ru",
+    "pages": [
+      {
+        "path": "/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 3,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 0
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehol-dlya-motocikla/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 6
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/catalog/chehly-dlya-koles/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 1,
+        "variantLinks": 2
+      },
+      {
+        "path": "/blog/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/blog/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 2,
+        "variantLinks": 0
+      },
+      {
+        "path": "/privacy-policy",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/privacy-policy",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      },
+      {
+        "path": "/user-agreement",
+        "counter": 112428810,
+        "canonical": "https://needle-shark.ru/user-agreement",
+        "robots": "index,follow,max-image-preview:large",
+        "ozonLinks": 0,
+        "variantLinks": 0
+      }
+    ],
+    "goals": [
+      "blog_cta_click",
+      "contact_click",
+      "form_start",
+      "form_submit_attempt",
+      "lead_submitted",
+      "outbound_click",
+      "request_open",
+      "ui_click"
+    ],
+    "errors": [],
+    "mockedSdk": true,
+    "mockedApi": true,
+    "containsPersonalData": false
+  },
+  "interactionDuplicateChecks": {
+    "base": "http://127.0.0.1:4174",
+    "counter": 112428810,
+    "goal": "ui_click",
+    "events": [
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_tab",
+        "block": "storage-place",
+        "item": 2,
+        "state": "selected"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_tab",
+        "block": "storage-place",
+        "item": 3,
+        "state": "selected"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_accordion",
+        "block": "fluids",
+        "item": 1,
+        "state": "open"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_accordion",
+        "block": "fluids",
+        "item": 1,
+        "state": "closed"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_checklist",
+        "block": "storage-checklist",
+        "item": 1,
+        "state": "checked"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_checklist",
+        "block": "storage-checklist",
+        "item": 1,
+        "state": "unchecked"
+      },
+      {
+        "page": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "article": "zimnee-hranenie-motocikla-i-kvadrocikla",
+        "element": "blog_toc_section-mode"
+      }
+    ],
+    "initializationEvents": 0,
+    "repeatedSelectedTabEvents": 0,
+    "programmaticChangesEvents": 0,
+    "duplicates": 0,
+    "realSdk": false
+  },
+  "realMetrika": {
+    "counter": 112428810,
+    "qaCampaign": "blog_20260914",
+    "interactiveGoalsAccepted": [
+      {
+        "host": "mc.yandex.com",
+        "path": "/watch/112428810/1",
+        "status": 200,
+        "goal": "ui_click",
+        "element": "blog_tab",
+        "block": "storage-place",
+        "cta": null
+      },
+      {
+        "host": "mc.yandex.com",
+        "path": "/watch/112428810/1",
+        "status": 200,
+        "goal": "ui_click",
+        "element": "blog_accordion",
+        "block": "fluids",
+        "cta": null
+      },
+      {
+        "host": "mc.yandex.com",
+        "path": "/watch/112428810/1",
+        "status": 200,
+        "goal": "ui_click",
+        "element": "blog_checklist",
+        "block": "storage-checklist",
+        "cta": null
+      }
+    ],
+    "ctaNewTab": {
+      "date": "2026-09-14",
+      "realSdk": true,
+      "tagLoaded": true,
+      "goals": [
+        {
+          "host": "mc.yandex.com",
+          "path": "/watch/112428810/1",
+          "status": 200,
+          "goal": "blog_cta_click",
+          "element": null,
+          "block": null,
+          "cta": "storage-catalog"
+        }
+      ],
+      "network": [
+        {
+          "host": "mc.yandex.ru",
+          "path": "/metrika/tag.js",
+          "status": 200,
+          "goal": null,
+          "element": null,
+          "block": null,
+          "cta": null
+        },
+        {
+          "host": "mc.yandex.com",
+          "path": "/watch/112428810",
+          "status": 302,
+          "goal": null,
+          "element": null,
+          "block": null,
+          "cta": null
+        },
+        {
+          "host": "mc.yandex.com",
+          "path": "/watch/112428810/1",
+          "status": 200,
+          "goal": null,
+          "element": null,
+          "block": null,
+          "cta": null
+        },
+        {
+          "host": "mc.yandex.ru",
+          "path": "/metrika/tag.js",
+          "status": 200,
+          "goal": null,
+          "element": null,
+          "block": null,
+          "cta": null
+        },
+        {
+          "host": "mc.yandex.com",
+          "path": "/watch/112428810/1",
+          "status": 200,
+          "goal": "blog_cta_click",
+          "element": null,
+          "block": null,
+          "cta": "storage-catalog"
+        }
+      ],
+      "failures": [],
+      "formsSubmitted": false,
+      "reportProcessingVerified": false,
+      "qaCampaign": "blog_20260914"
+    },
+    "sameTabDiagnostics": {
+      "unmodifiedSite": {
+        "date": "2026-09-14",
+        "realSdk": true,
+        "tagLoaded": true,
+        "goals": [],
+        "network": [
+          {
+            "host": "mc.yandex.ru",
+            "path": "/metrika/tag.js",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.com",
+            "path": "/watch/112428810",
+            "status": 302,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.com",
+            "path": "/watch/112428810/1",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.ru",
+            "path": "/metrika/tag.js",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.com",
+            "path": "/watch/112428810",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.com",
+            "path": "/watch/112428810",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          }
+        ],
+        "failures": [],
+        "formsSubmitted": false,
+        "reportProcessingVerified": false,
+        "qaCampaign": "blog_20260914",
+        "diagnostics": [],
+        "requests": [
+          {
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null,
+            "method": "GET"
+          },
+          {
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null,
+            "method": "GET"
+          },
+          {
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null,
+            "method": "GET"
+          },
+          {
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null,
+            "method": "GET"
+          }
+        ]
+      },
+      "isolatedLongTimeoutExperiment": {
+        "date": "2026-09-14",
+        "realSdk": true,
+        "tagLoaded": true,
+        "goals": [],
+        "network": [
+          {
+            "host": "mc.yandex.ru",
+            "path": "/metrika/tag.js",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.com",
+            "path": "/watch/112428810",
+            "status": 302,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.com",
+            "path": "/watch/112428810/1",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.ru",
+            "path": "/metrika/tag.js",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          },
+          {
+            "host": "mc.yandex.com",
+            "path": "/watch/112428810",
+            "status": 200,
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null
+          }
+        ],
+        "failures": [],
+        "formsSubmitted": false,
+        "reportProcessingVerified": false,
+        "qaCampaign": "blog_20260914",
+        "labNavigationTimeoutMs": 8000,
+        "diagnostics": [
+          {
+            "type": "navigation",
+            "elapsedMs": 6497
+          }
+        ],
+        "requests": [
+          {
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null,
+            "method": "GET"
+          },
+          {
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null,
+            "method": "GET"
+          },
+          {
+            "goal": "blog_cta_click",
+            "element": null,
+            "block": null,
+            "cta": "storage-catalog",
+            "method": "POST"
+          },
+          {
+            "goal": null,
+            "element": null,
+            "block": null,
+            "cta": null,
+            "method": "GET"
+          }
+        ]
+      },
+      "publicTimeoutChanged": false,
+      "note": "Some ordinary same-tab headless checks could not observe the goal response. An isolated 8000ms fallback experiment observed the goal POST before navigation but no response event. This experiment is not the deployed version. Diagnostic SDK wrappers were discarded because they interfered with its queue. Do not claim every test visit was ingested."
+    },
+    "cabinet": {
+      "counter": 112428810,
+      "customGoalsConfigured": 8,
+      "domainsConfirmed": [
+        "needle-shark.ru",
+        "needleshark.ru"
+      ],
+      "settingsChanged": false,
+      "report": "Conversions, today",
+      "blogCtaReachesBefore": 0,
+      "blogCtaReachesObserved": 2,
+      "uiClickReachesBefore": 33,
+      "uiClickReachesObserved": 39,
+      "countsAreWholeReportNotCampaignIsolated": true
+    },
+    "formsSubmitted": false,
+    "ordinaryBrowser": {
+      "campaign": "blog_browser_20260914",
+      "sdkMocked": false,
+      "siteCodeModified": false,
+      "cta": "atv-cover-winter",
+      "destination": "/catalog/chehol-na-kvadrocikl/",
+      "navigationVerified": true,
+      "individualReportAttributionVerified": false
+    }
+  },
+  "externalLinks": [
+    {
+      "url": "https://www.ozon.ru/product/2360802204/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_8ab958a7",
+      "status": 0,
+      "finalUrl": "https://www.ozon.ru/product/2360802204/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_8ab958a7",
+      "error": "curl: (28) Connection timed out after 18006 milliseconds"
+    },
+    {
+      "url": "https://www.ozon.ru/seller/needle-shark/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_d3b29143",
+      "status": 0,
+      "finalUrl": "https://www.ozon.ru/seller/needle-shark/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_d3b29143",
+      "error": "curl: (28) Connection timed out after 18006 milliseconds"
+    },
+    {
+      "url": "https://www.polaris.com/en-us/off-road/owner-resources/help-center/article/KA-01324/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_1",
+      "status": 403,
+      "finalUrl": "https://www.polaris.com/en-us/off-road/owner-resources/help-center/article/KA-01324/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_1",
+      "error": null
+    },
+    {
+      "url": "https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.amfr2525omen.pdf?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_2",
+      "status": 403,
+      "finalUrl": "https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.amfr2525omen.pdf?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_2",
+      "error": null
+    },
+    {
+      "url": "https://publications.polaris.com/owner/owners-manuals/0000911388.XML.xml?onepage=true&utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_3",
+      "status": 200,
+      "finalUrl": "https://publications.polaris.com/owner/owners-manuals/0000911388.XML.xml?onepage=true&utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_3",
+      "error": null
+    },
+    {
+      "url": "https://global.honda/en/motorcycle-aftersales/plusone/202209.html?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_4",
+      "status": 403,
+      "finalUrl": "https://global.honda/en/motorcycle-aftersales/plusone/202209.html?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_4",
+      "error": null
+    },
+    {
+      "url": "https://www.yuasabatteries.com/resources/guides/battery-maintenance-storage/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_5",
+      "status": 403,
+      "finalUrl": "https://www.yuasabatteries.com/resources/guides/battery-maintenance-storage/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_5",
+      "error": null
+    },
+    {
+      "url": "https://shoraipower.com/charging?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_6",
+      "status": 200,
+      "finalUrl": "https://shoraipower.com/charging?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_source_6",
+      "error": null
+    },
+    {
+      "url": "https://vk.com/needleshark?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=website&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_2a3f38ce",
+      "status": 200,
+      "finalUrl": "https://m.vk.com/needleshark?utm_source=needle-shark_ru&utm_medium=referral&utm_campaign=website&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_2a3f38ce",
+      "error": null
+    }
+  ],
+  "externalSourceChecksWithoutUtm": [
+    {
+      "url": "https://www.polaris.com/en-us/off-road/owner-resources/help-center/article/KA-01324/",
+      "status": 403,
+      "finalUrl": "https://www.polaris.com/en-us/off-road/owner-resources/help-center/article/KA-01324/",
+      "error": null
+    },
+    {
+      "url": "https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.amfr2525omen.pdf",
+      "status": 403,
+      "finalUrl": "https://cdn.powersports.honda.com/documentum/MWOM/ml.remawmom.amfr2525omen.pdf",
+      "error": null
+    },
+    {
+      "url": "https://global.honda/en/motorcycle-aftersales/plusone/202209.html",
+      "status": 403,
+      "finalUrl": "https://global.honda/en/motorcycle-aftersales/plusone/202209.html",
+      "error": null
+    },
+    {
+      "url": "https://www.yuasabatteries.com/resources/guides/battery-maintenance-storage/",
+      "status": 403,
+      "finalUrl": "https://www.yuasabatteries.com/resources/guides/battery-maintenance-storage/",
+      "error": null
+    }
+  ],
+  "limitations": [
+    "Ozon pages unavailable from current network; approved destination IDs and UTM checked, purchases not verified.",
+    "Four source URLs return 403 both with and without UTM.",
+    "Real API, Google Sheets and email pipeline unchanged and not retested.",
+    "Goal counts are whole-report observations, not proof that every diagnostic visit was ingested."
+  ]
+}

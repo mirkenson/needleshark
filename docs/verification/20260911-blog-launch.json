@@ -1,0 +1,536 @@
+{
+  "date": "2026-09-11",
+  "deployed_commit": "749286c",
+  "release": "20260911T131431Z-12062",
+  "previous": "20260911T130815Z-11787",
+  "nginx_backup": "/etc/nginx/sites-available/needle-shark.pre-indexing-20260911",
+  "file_checks": [
+    {
+      "host": "needleshark.ru",
+      "path": "textile-hero.png",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "user-agreement.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "privacy-policy.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "catalog.css",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "catalog.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "script.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "blog.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "analytics.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "style.css",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "sitemap.xml",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "black-fabric-rolls.png",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "metrika.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "robots.txt",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "pocket-organizer.png",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "logo.svg",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "blog.css",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "atv-cover.png",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "catalog/index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "blog/index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "catalog-assets/atv-side.jpg",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "catalog-assets/atv-studio.jpg",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "catalog-assets/oxford-detail.jpg",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "catalog/chehol-na-kvadrocikl/index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "textile-hero.png",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "user-agreement.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "privacy-policy.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "catalog.css",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "catalog.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "script.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "blog.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "analytics.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "style.css",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "sitemap.xml",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "black-fabric-rolls.png",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "metrika.js",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "robots.txt",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "pocket-organizer.png",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "logo.svg",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "blog.css",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "atv-cover.png",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "catalog/index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "blog/index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "catalog-assets/atv-side.jpg",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "catalog-assets/atv-studio.jpg",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "catalog-assets/oxford-detail.jpg",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "catalog/chehol-na-kvadrocikl/index.html",
+      "status": "200",
+      "equal": true,
+      "noindex": false
+    }
+  ],
+  "metrika_page_hits": [
+    {
+      "host": "needleshark.ru",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "/blog/",
+      "status": 200
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "status": 200
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "/catalog/",
+      "status": 200
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "status": 200
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "/privacy-policy",
+      "status": 200
+    },
+    {
+      "host": "needleshark.ru",
+      "path": "/user-agreement",
+      "status": 200
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "/blog/",
+      "status": 200
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "status": 200
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "/catalog/",
+      "status": 200
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "status": 200
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "/privacy-policy",
+      "status": 200
+    },
+    {
+      "host": "www.needleshark.ru",
+      "path": "/user-agreement",
+      "status": 200
+    }
+  ],
+  "real_goal_http_200": [
+    "blog_cta_click",
+    "request_open",
+    "form_start",
+    "contact_click",
+    "outbound_click"
+  ],
+  "goals_configured": {
+    "blog_cta_click": 611918849,
+    "outbound_click": 611919368,
+    "contact_click": 611919492,
+    "request_open": 611920007,
+    "form_start": 611920074,
+    "form_submit_attempt": 611920219,
+    "lead_submitted": 611920414,
+    "ui_click": 611921224
+  },
+  "layout_widths": [
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "layout_errors": [],
+  "external_link_checks": [
+    {
+      "host": "cdn.powersports.honda.com",
+      "path": "/documentum/MWOM/ml.remawmom.amfr2525omen.pdf",
+      "status": "403",
+      "error": 0
+    },
+    {
+      "host": "global.honda",
+      "path": "/en/motorcycle-aftersales/plusone/202209.html",
+      "status": "403",
+      "error": 0
+    },
+    {
+      "host": "ozon.ru",
+      "path": "/seller/needle-shark/",
+      "status": "000",
+      "error": 28
+    },
+    {
+      "host": "publications.polaris.com",
+      "path": "/owner/owners-manuals/0000911388.XML.xml",
+      "status": "200",
+      "error": 0
+    },
+    {
+      "host": "shoraipower.com",
+      "path": "/charging",
+      "status": "200",
+      "error": 0
+    },
+    {
+      "host": "vk.com",
+      "path": "/needleshark",
+      "status": "200",
+      "error": 0
+    },
+    {
+      "host": "vk.com",
+      "path": "/needleshark",
+      "status": "200",
+      "error": 0
+    },
+    {
+      "host": "vk.com",
+      "path": "/needleshark",
+      "status": "200",
+      "error": 0
+    },
+    {
+      "host": "vk.com",
+      "path": "/needleshark",
+      "status": "200",
+      "error": 0
+    },
+    {
+      "host": "vk.com",
+      "path": "/needleshark",
+      "status": "200",
+      "error": 0
+    },
+    {
+      "host": "www.polaris.com",
+      "path": "/en-us/off-road/owner-resources/help-center/article/KA-01324/",
+      "status": "403",
+      "error": 0
+    },
+    {
+      "host": "www.yuasabatteries.com",
+      "path": "/resources/guides/battery-maintenance-storage/",
+      "status": "403",
+      "error": 0
+    }
+  ],
+  "limitations": [
+    "No test lead sent; form_submit_attempt and lead_submitted not triggered in production during this release.",
+    "HTTP 200 confirms collection endpoint response, not all reporting/attribution results.",
+    "Some external sites return 403 or timeout to automated requests, including original URLs without UTM.",
+    "Search engine indexing timing and rankings are not guaranteed."
+  ]
+}

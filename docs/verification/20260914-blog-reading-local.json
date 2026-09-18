@@ -1,0 +1,109 @@
+{
+  "date": "2026-09-14",
+  "environment": "local Chrome, port 4174; analytics SDK and external Ozon destinations intercepted",
+  "article": [
+    {
+      "width": 360,
+      "overflow": false,
+      "images": 3,
+      "tabs": 3,
+      "disclosures": 4,
+      "noteRoundTrips": 12,
+      "keyboard": true,
+      "menu": true
+    },
+    {
+      "width": 390,
+      "overflow": false,
+      "images": 3,
+      "tabs": 3,
+      "disclosures": 4,
+      "noteRoundTrips": 12,
+      "keyboard": true,
+      "menu": true
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "images": 3,
+      "tabs": 3,
+      "disclosures": 4,
+      "noteRoundTrips": 12,
+      "keyboard": true,
+      "menu": true
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "images": 3,
+      "tabs": 3,
+      "disclosures": 4,
+      "noteRoundTrips": 12,
+      "keyboard": true,
+      "menu": true
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "images": 3,
+      "tabs": 3,
+      "disclosures": 4,
+      "noteRoundTrips": 12,
+      "keyboard": true,
+      "menu": true
+    }
+  ],
+  "ctaLinks": [
+    {
+      "id": "storage-catalog",
+      "url": "http://127.0.0.1:4174/catalog/"
+    },
+    {
+      "id": "atv-cover-winter",
+      "url": "http://127.0.0.1:4174/catalog/chehol-na-kvadrocikl/"
+    },
+    {
+      "id": "atv-cover-ozon",
+      "url": "https://www.ozon.ru/product/2360802204/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_8ab958a7"
+    },
+    {
+      "id": "moto-cover-catalog",
+      "url": "http://127.0.0.1:4174/catalog/chehol-dlya-motocikla/"
+    },
+    {
+      "id": "winter-ozon-shop",
+      "url": "https://www.ozon.ru/seller/needle-shark/?utm_source=needle-shark.ru&utm_medium=referral&utm_campaign=vendor_org_211216&utm_content=blog_zimnee-hranenie-motocikla-i-kvadrocikla_d3b29143"
+    }
+  ],
+  "ctaEvents": "One blog_cta_click per CTA; all five navigated to the expected URL",
+  "regressionPageChecks": 45,
+  "zoom": "200% text at 390 and 1024px",
+  "noJavaScript": "All tab contents visible; native details operable",
+  "reducedMotion": true,
+  "errors": [],
+  "limitations": [
+    "Not deployed to VPS",
+    "Ozon page availability and analytics ingestion not verified",
+    "No real forms submitted; server, Google Sheets and email untouched"
+  ],
+  "pythonTests": {
+    "blog": 12,
+    "catalog": 11,
+    "publication": 7,
+    "total": 30
+  },
+  "staticChecks": "ops/check-site.py: 9 pages; metadata, JSON-LD, sitemap, image manifest, assets, links, anchors, CSS tokens",
+  "unchangedPages": "Home, legal and catalogue HTML differ only in typography.css cache version; checked against HEAD",
+  "assetReuse": "Three existing catalogue images; responsive WebP, lazy loading, intrinsic dimensions; no new generated images",
+  "filesSha256": {
+    "blog/posts.json": "fdd5a1ea67ad2a748218a976b45a33032627e42220ea705762fd41a2b1e3616b",
+    "blog/blocks.py": "69916511874e711089b9159efe9788d207f7f0d20013563a6deb8e49ac856f6b",
+    "blog/render.py": "f98bb8415f913964ecb987552140a2aa51992c8e0a5feda0c4e372331d598546",
+    "dist/blog.css": "59ce2a74be192e8889652b6d9b1dc760299dbe7a76443de45fbbe2c6103ddbc3",
+    "dist/blog.js": "152d3094fe9c9a545e6acdae47642fe5632b9d2dcf8f4446707443c2fecdefcb",
+    "dist/typography.css": "5ec21d6d5358e45f9c29d020a93b3a2b4d40167ccc8031a5b24f4ede261a34c6",
+    "dist/blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html": "7de5e3257ae2ba6e39c7fd1c95a1aaaa19baa86f63438be0114438dec772f388"
+  },
+  "navigation": "Blog card → article; mobile CTA → home contact form; product CTA → motorcycle request dialog, Escape",
+  "print": "All tab panels and accordion contents visible"
+}

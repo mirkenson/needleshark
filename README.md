@@ -1,25 +1,25 @@
 # Needle Shark
 
-Правила работы: [AGENTS.md](AGENTS.md). Текущее состояние и следующие шаги: [docs/PROJECT_CONTEXT.md](docs/PROJECT_CONTEXT.md).
+Сайт швейного производства технических изделий. Основной публичный адрес: [needle-shark.ru](https://needle-shark.ru/).
 
-Static homepage prototype for Needle Shark technical sewing production.
+## Начать работу
 
-Live VPS site: https://needleshark.ru/
+Прочитайте [AGENTS.md](AGENTS.md), затем [контекст проекта](docs/PROJECT_CONTEXT.md) и [порядок работы на другой машине](docs/HANDOFF.md).
 
-## Project
+**В `main` собрана актуальная документация, но код приложения пока остаётся старым.** Синхронизация от 18 сентября 2026 года переносит инструкции и отчёты. Для изменений сайта выберите исходную ветку по `docs/HANDOFF.md`: опубликованный блог и каталог, конфигурация редиректа и B2B-прототип находятся в разных ветках. Не публикуйте `dist` из `main` как актуальную версию сайта.
 
-- `dist/`: authored HTML, CSS, JavaScript and public images. These files are source assets and must stay tracked.
-- `ops/`: VPS Nginx configuration, deployment script and operations notes.
-- `.openai/hosting.json`: metadata for the earlier, separate Sites preview.
+## Документация
 
-## Preview locally
+- Блог: [редакционный стандарт статей](blog/ARTICLE_GUIDE.md) и [готовые блоки, данные, генерация](blog/README.md). Одобренная статья о зимнем хранении — образец; блоки переиспользуются по смыслу.
+- Каталог: [товары и общий шаблон](catalog/README.md).
+- Для бизнеса: [состояние прототипа и требования к публикации](business/README.md).
+- Оформление и поиск: [типографика](docs/TYPOGRAPHY.md), [SEO](docs/SEO.md).
+- Измерение действий: [цели, UTM и ограничения аналитики](docs/ANALYTICS.md).
+- Эксплуатация: [VPS и публикация](ops/README.md), [приём заявок](server/README.md), [база данных](docs/DATABASE.md).
+- Результаты выполненных проверок: [docs/verification](docs/verification/). Каждый отчёт относится к указанной версии и дате.
 
-Run `python3 -m http.server 4173 --directory dist` and open http://localhost:4173/.
+## Запуск и публикация
 
-## Publish to VPS
+После выбора актуальной рабочей ветки используйте команды её инструкций. `dist/` содержит исходные публичные HTML/CSS/JS и изображения; не удаляйте его как временную сборку. Основной сайт публикуется через `ops/deploy.sh` на существующий VPS. `.openai/hosting.json` относится к отдельному старому прототипу Sites.
 
-Run `bash ops/deploy.sh` from a computer with the authorized SSH key. It uploads a new release and atomically switches the live symlink, preserving a reference to the previous release. See `ops/README.md`.
-
-The form submits to the VPS queue, Google Sheets and email. Product category images are AI-generated visualizations. Marketplace totals are supplied by the owner; invented customer testimonials are not published. Search indexing is currently discouraged using Nginx noindex headers.
-
-Private SSH keys, TLS keys and credentials are not part of this repository. GitHub stores source history; it does not back up the server's private keys or future application data.
+GitHub хранит код и документацию. SSH-ключи, секреты Google, переменные окружения и клиентские заявки в Git не входят; доступы на другой машине настраиваются отдельно. Фактическое состояние VPS и внешних сервисов проверяется перед изменениями.

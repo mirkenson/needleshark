@@ -1,0 +1,501 @@
+{
+  "checked_utc": "2026-09-18T05:58:18.644236+00:00",
+  "installed_config_commit": "0a89b9e",
+  "redirects": [
+    {
+      "url": "http://neesha.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "http://neesha.ru/catalog/",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/"
+    },
+    {
+      "url": "http://neesha.ru/catalog/chehol-na-kvadrocikl/",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/"
+    },
+    {
+      "url": "http://neesha.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "status": 301,
+      "location": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+    },
+    {
+      "url": "http://neesha.ru/privacy-policy",
+      "status": 301,
+      "location": "https://needle-shark.ru/privacy-policy"
+    },
+    {
+      "url": "http://neesha.ru/api/leads",
+      "status": 301,
+      "location": "https://needle-shark.ru/api/leads"
+    },
+    {
+      "url": "http://neesha.ru/missing-neesha-check/",
+      "status": 301,
+      "location": "https://needle-shark.ru/missing-neesha-check/"
+    },
+    {
+      "url": "http://neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "https://neesha.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "https://neesha.ru/catalog/",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/"
+    },
+    {
+      "url": "https://neesha.ru/catalog/chehol-na-kvadrocikl/",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/"
+    },
+    {
+      "url": "https://neesha.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "status": 301,
+      "location": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+    },
+    {
+      "url": "https://neesha.ru/privacy-policy",
+      "status": 301,
+      "location": "https://needle-shark.ru/privacy-policy"
+    },
+    {
+      "url": "https://neesha.ru/api/leads",
+      "status": 301,
+      "location": "https://needle-shark.ru/api/leads"
+    },
+    {
+      "url": "https://neesha.ru/missing-neesha-check/",
+      "status": 301,
+      "location": "https://needle-shark.ru/missing-neesha-check/"
+    },
+    {
+      "url": "https://neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "http://www.neesha.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "http://www.neesha.ru/catalog/",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/"
+    },
+    {
+      "url": "http://www.neesha.ru/catalog/chehol-na-kvadrocikl/",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/"
+    },
+    {
+      "url": "http://www.neesha.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "status": 301,
+      "location": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+    },
+    {
+      "url": "http://www.neesha.ru/privacy-policy",
+      "status": 301,
+      "location": "https://needle-shark.ru/privacy-policy"
+    },
+    {
+      "url": "http://www.neesha.ru/api/leads",
+      "status": 301,
+      "location": "https://needle-shark.ru/api/leads"
+    },
+    {
+      "url": "http://www.neesha.ru/missing-neesha-check/",
+      "status": 301,
+      "location": "https://needle-shark.ru/missing-neesha-check/"
+    },
+    {
+      "url": "http://www.neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "https://www.neesha.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "https://www.neesha.ru/catalog/",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/"
+    },
+    {
+      "url": "https://www.neesha.ru/catalog/chehol-na-kvadrocikl/",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/"
+    },
+    {
+      "url": "https://www.neesha.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "status": 301,
+      "location": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+    },
+    {
+      "url": "https://www.neesha.ru/privacy-policy",
+      "status": 301,
+      "location": "https://needle-shark.ru/privacy-policy"
+    },
+    {
+      "url": "https://www.neesha.ru/api/leads",
+      "status": 301,
+      "location": "https://needle-shark.ru/api/leads"
+    },
+    {
+      "url": "https://www.neesha.ru/missing-neesha-check/",
+      "status": 301,
+      "location": "https://needle-shark.ru/missing-neesha-check/"
+    },
+    {
+      "url": "https://www.neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "http://needle-shark.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "http://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "http://www.needle-shark.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "http://www.needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "https://www.needle-shark.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "https://www.needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "http://needleshark.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "http://needleshark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "https://needleshark.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "https://needleshark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "http://www.needleshark.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "http://www.needleshark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    },
+    {
+      "url": "https://www.needleshark.ru/",
+      "status": 301,
+      "location": "https://needle-shark.ru/"
+    },
+    {
+      "url": "https://www.needleshark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 301,
+      "location": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c"
+    }
+  ],
+  "followed_redirects": [
+    {
+      "url": "http://neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 200,
+      "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "redirects": 1,
+      "tls_valid": true
+    },
+    {
+      "url": "https://neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 200,
+      "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "redirects": 1,
+      "tls_valid": true
+    },
+    {
+      "url": "http://www.neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 200,
+      "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "redirects": 1,
+      "tls_valid": true
+    },
+    {
+      "url": "https://www.neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "status": 200,
+      "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918&value=a%2Bb%20c",
+      "redirects": 1,
+      "tls_valid": true
+    }
+  ],
+  "public_content": [
+    {
+      "url": "https://needle-shark.ru/",
+      "status": 200,
+      "sha256": "7fe3a7237c286f70e42133b72e2b05a1dbf20d3629dcc27663ae540090d8e35e",
+      "matches_published_source": true
+    },
+    {
+      "url": "https://needle-shark.ru/catalog/",
+      "status": 200,
+      "sha256": "a2e890813cdafe581a804d1801fb8dcf845c644795a2845e474faac0a73bde61",
+      "matches_published_source": true
+    },
+    {
+      "url": "https://needle-shark.ru/blog/",
+      "status": 200,
+      "sha256": "e8e432a3a2ac599ca602638b4dac89b75199c319a78e92736b881c3fa532296f",
+      "matches_published_source": true
+    },
+    {
+      "url": "https://needle-shark.ru/privacy-policy",
+      "status": 200,
+      "sha256": "6eea4b25ab51000ca194dc019fa4094bc40cea054adfec709641d76a3fd48401",
+      "matches_published_source": true
+    },
+    {
+      "url": "https://needle-shark.ru/logo.svg",
+      "status": 200,
+      "sha256": "510043ccae85e0240f88827fadc6b8674be41120fa4b10e893858dfdef1bbc93",
+      "matches_published_source": true
+    },
+    {
+      "url": "https://needle-shark.ru/robots.txt",
+      "status": 200,
+      "sha256": "1b654eb5770f21019b5aa2c8293773abf3a0177082a5370b84b8dcabca597311",
+      "matches_published_source": true
+    },
+    {
+      "url": "https://needle-shark.ru/sitemap.xml",
+      "status": 200,
+      "sha256": "43accb208d112f31436907f05fe74eba3a7e72e97bc2cb4f9fc5875afdf34e3a",
+      "matches_published_source": true
+    }
+  ],
+  "dns": [
+    {
+      "server": "ns1.reg.ru",
+      "host": "neesha.ru",
+      "A": "194.87.99.98"
+    },
+    {
+      "server": "ns1.reg.ru",
+      "host": "www.neesha.ru",
+      "A": "194.87.99.98"
+    },
+    {
+      "server": "ns2.reg.ru",
+      "host": "neesha.ru",
+      "A": "194.87.99.98"
+    },
+    {
+      "server": "ns2.reg.ru",
+      "host": "www.neesha.ru",
+      "A": "194.87.99.98"
+    },
+    {
+      "server": "1.1.1.1",
+      "host": "neesha.ru",
+      "A": "194.87.99.98"
+    },
+    {
+      "server": "1.1.1.1",
+      "host": "www.neesha.ru",
+      "A": "194.87.99.98"
+    },
+    {
+      "server": "8.8.8.8",
+      "host": "neesha.ru",
+      "A": "194.87.99.98"
+    },
+    {
+      "server": "8.8.8.8",
+      "host": "www.neesha.ru",
+      "A": "194.87.99.98"
+    }
+  ],
+  "mail_mx": "10 emx.mail.ru.",
+  "mail_delivery_tested": false,
+  "browser": {
+    "checked_utc": "2026-09-18T05:59:37.742Z",
+    "browser": "Google Chrome (headless)",
+    "checks": [
+      {
+        "source": "https://neesha.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 360,
+        "viewport": 360,
+        "scrollWidth": 360,
+        "title": "Пошив чехлов и изделий из технических тканей в СПб | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "https://www.neesha.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 390,
+        "viewport": 390,
+        "scrollWidth": 390,
+        "title": "Пошив чехлов и изделий из технических тканей в СПб | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "http://neesha.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 768,
+        "viewport": 768,
+        "scrollWidth": 768,
+        "title": "Пошив чехлов и изделий из технических тканей в СПб | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "http://www.neesha.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 1024,
+        "viewport": 1024,
+        "scrollWidth": 1024,
+        "title": "Пошив чехлов и изделий из технических тканей в СПб | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "https://neesha.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 1440,
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "title": "Пошив чехлов и изделий из технических тканей в СПб | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "https://neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 360,
+        "viewport": 360,
+        "scrollWidth": 360,
+        "title": "Каталог чехлов и изделий из технических тканей | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "https://www.neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 390,
+        "viewport": 390,
+        "scrollWidth": 390,
+        "title": "Каталог чехлов и изделий из технических тканей | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "http://neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 768,
+        "viewport": 768,
+        "scrollWidth": 768,
+        "title": "Каталог чехлов и изделий из технических тканей | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "http://www.neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 1024,
+        "viewport": 1024,
+        "scrollWidth": 1024,
+        "title": "Каталог чехлов и изделий из технических тканей | Needle Shark",
+        "brokenImages": []
+      },
+      {
+        "source": "https://neesha.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "final_url": "https://needle-shark.ru/catalog/?utm_source=release_check&utm_medium=qa&utm_campaign=neesha_redirect_20260918",
+        "status": 200,
+        "width": 1440,
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "title": "Каталог чехлов и изделий из технических тканей | Needle Shark",
+        "brokenImages": []
+      }
+    ],
+    "page_errors": [],
+    "failed_resources": [],
+    "form_submissions": 0,
+    "visual_review": {
+      "pages": [
+        "home",
+        "catalog"
+      ],
+      "widths": [
+        390,
+        1440
+      ],
+      "screenshots_reviewed": 4,
+      "layout_issues_observed": false
+    }
+  },
+  "server": {
+    "nginx_sha256": "b91c87951621d62a4151f8a6799f2bc7f28e6ce6e16b7ecc76e2c99d1e9aaa1e",
+    "backup": "/root/needle-shark-backups/neesha-20260918T055236Z/nginx/",
+    "nginx_test_passed": true,
+    "services": {
+      "nginx": "active",
+      "needle-leads": "active",
+      "certbot.timer": "active"
+    },
+    "error_entries_since_install": 0,
+    "certificate_names": [
+      "neesha.ru",
+      "www.neesha.ru"
+    ],
+    "certificate_expires_utc": "2026-12-17T04:55:27Z",
+    "renewal_dry_run_with_deploy_hook_passed": true,
+    "renew_hook": "nginx -t && systemctl reload nginx",
+    "current": "20260914T085850Z-10644",
+    "previous": "20260914T080537Z-8230",
+    "static_release_changed": false
+  },
+  "limitations": [
+    "No form submissions, Google Sheets checks, or mail delivery tests.",
+    "Metrika report processing was not checked.",
+    "Browser checks covered redirect arrival and layout of home and catalog; no redesign or application logic was changed."
+  ]
+}

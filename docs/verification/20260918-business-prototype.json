@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-18",
+  "status": "local prototype only; not published",
+  "preview": "http://127.0.0.1:4175/business/",
+  "content": {
+    "owner_conditions": "2026-09-18 answers",
+    "materials": ["oxford", "canvas", "spunbond", "cordura", "polyester"],
+    "real_b2b_cases": false,
+    "workshop_placeholders": 2,
+    "product_images": "existing catalogue assets"
+  },
+  "responsive": {
+    "actual_viewports_verified": [360, 390, 768, 1024, 1440],
+    "all_five_material_panels_checked_at_each_width": true,
+    "horizontal_page_overflow": false,
+    "heading_overflow": false,
+    "text_200_percent": [390, 1024],
+    "scripts_removed_fallback": "all five panels readable; native anchors; form POST",
+    "screenshots_visually_reviewed": ["hero desktop", "hero phone", "hero tablet", "material desktop", "material phone", "contact phone"]
+  },
+  "interaction": {
+    "tabs": "click, ArrowLeft/Right, Home, End and focus checked",
+    "faq": "all six opened, text fits on mobile",
+    "mobile_menu": "open, Escape, focus return",
+    "homepage_navigation": "mobile menu to /business/ verified",
+    "cta": "material CTA selects intent and pre-fills empty task, preserves incoming UTM",
+    "local_links_and_anchors": "checked across ten preview pages"
+  },
+  "form": {
+    "environment": "isolated QA server, real validator, fake API acknowledgement, no real leads",
+    "required_fields": "native validation blocks empty submission",
+    "invalid_contact": "inline message and aria-invalid; no submitted goal",
+    "large_attachment": "PDF over 2 MiB rejected in browser",
+    "valid_attachment": "small synthetic PDF accepted by real validator on QA server",
+    "double_click": "submit/inputs disabled while pending; one success goal after acknowledgement",
+    "wrong_acknowledgement_id": "error, no success goal",
+    "long_server_error": "fits mobile, no success goal",
+    "lost_response": "error then successful retry",
+    "success": "form reset and one lead_submitted with context and selected intent"
+  },
+  "analytics": {
+    "counter": 112428810,
+    "single_counter_and_analytics_inclusion": true,
+    "goals_verified_with_local_sdk": ["ui_click", "request_open", "form_start", "form_submit_attempt", "lead_submitted"],
+    "business_goal_parameters": ["page", "context", "element", "intent", "item", "state"],
+    "personal_data_in_observed_events": false,
+    "new_account_goals_created": false,
+    "real_b2b_reports_verified": false,
+    "incoming_utm_preserved_to_form_anchor": true,
+    "internal_utm_added": false,
+    "vk_utm": "website / business_vk",
+    "ozon_existing_campaign": "unchanged: vendor_org_211216"
+  },
+  "checks": {
+    "existing_server_tests": "16 passed",
+    "existing_ops_tests": "7 passed",
+    "production_static_checker": "9 pages passed",
+    "prototype_static_checks": "10 pages, links/assets/anchors/IDs/noindex/UTM/CSS tokens passed",
+    "javascript_syntax": "three changed/new JS files passed",
+    "browser_console_normal_preview": "no errors or warnings observed",
+    "broken_loaded_images": "none observed",
+    "git_diff_check": "passed"
+  },
+  "limitations": [
+    "Local prototype cannot create real leads.",
+    "No VPS release, Google Sheets, email delivery or real Metrika report check.",
+    "Workshop photos must replace placeholders before publication.",
+    "Publication integration and sitemap remain a separate release stage."
+  ]
+}
