@@ -15,7 +15,7 @@
 
 Do not commit private keys, credentials or user-submitted data.
 
-Before a static release, run `python3 blog/render.py`, `python3 catalog/render.py`, then `python3 ops/prepare-public.py`. The last command finalizes external-anchor UTM parameters and canonical URLs and regenerates robots.txt/sitemap.xml from approved blog/catalog data. Do not add draft HTML to dist. Resource URLs and internal links are not UTM-tagged.
+Before a static release, run `python3 blog/render.py`, `python3 catalog/render.py`, `python3 business/render.py --publish`, then `python3 ops/prepare-public.py`. The last command finalizes external-anchor UTM parameters and canonical URLs and regenerates robots.txt/sitemap.xml from approved blog/catalog data. Do not add draft HTML to dist. Resource URLs and internal links are not UTM-tagged.
 
 Indexing configuration backup for the 11 September launch: `/etc/nginx/sites-available/needle-shark.pre-indexing-20260911`. Before reverting, inspect current/previous and this backup; restore only the matching verified version, run `nginx -t` before reload.
 
@@ -38,11 +38,13 @@ Prepare and check a static change:
 ```sh
 python3 blog/render.py
 python3 catalog/render.py
+python3 business/render.py --publish
 python3 ops/prepare-public.py
 python3 ops/check-site.py
 python3 -m unittest discover -s blog -p 'test_*.py'
 python3 -m unittest discover -s catalog -p 'test_*.py'
 python3 -m unittest discover -s ops -p 'test_*.py'
+python3 -m unittest discover -s business -p 'test_*.py'
 python3 server/preview.py --port 4173
 ```
 

@@ -1,25 +1,39 @@
 # Needle Shark
 
-Правила работы: [AGENTS.md](AGENTS.md). Текущее состояние и следующие шаги: [docs/PROJECT_CONTEXT.md](docs/PROJECT_CONTEXT.md).
+Сайт швейного производства технических изделий в Санкт-Петербурге: https://needle-shark.ru/.
 
-Static homepage prototype for Needle Shark technical sewing production.
+Правила работы и обязательные проверки публикации: [AGENTS.md](AGENTS.md). Подтверждённое состояние и история релизов: [docs/PROJECT_CONTEXT.md](docs/PROJECT_CONTEXT.md).
 
-Live VPS site: https://needleshark.ru/
+## Структура
 
-## Project
+- `dist/` — публичные HTML/CSS/JS и изображения; файлы отслеживаются в Git.
+- `catalog/` — данные товаров и общий генератор каталога.
+- `blog/` — статьи и общий генератор блога.
+- `business/` — исходники B2B-страницы, изображения и изолированный QA.
+- `server/` — форма, PostgreSQL и очередь доставки в Google Sheets/почту.
+- `google/` — обработчик Sheets, закрытых Drive-вложений и уведомлений.
+- `ops/` — проверки, подготовка публичных файлов и публикация на VPS.
+- `.openai/hosting.json` — прежний отдельный Sites preview, не основной сайт.
 
-- `dist/`: authored HTML, CSS, JavaScript and public images. These files are source assets and must stay tracked.
-- `ops/`: VPS Nginx configuration, deployment script and operations notes.
-- `.openai/hosting.json`: metadata for the earlier, separate Sites preview.
+## Подготовка и просмотр
 
-## Preview locally
+```sh
+python3 blog/render.py
+python3 catalog/render.py
+python3 business/render.py --publish
+python3 ops/prepare-public.py
+python3 ops/check-site.py
+python3 server/preview.py --port 4173
+```
 
-Run `python3 -m http.server 4173 --directory dist` and open http://localhost:4173/.
+Локальный просмотр: http://127.0.0.1:4173/. По умолчанию реальные заявки не отправляются. Отдельный `python3 business/preview.py --port 4175` создаёт закрытую от индексации копию вне `dist/`.
 
-## Publish to VPS
+## Публикация
 
-Run `bash ops/deploy.sh` from a computer with the authorized SSH key. It uploads a new release and atomically switches the live symlink, preserving a reference to the previous release. See `ops/README.md`.
+После обязательных проверок сохранить и отправить проверенный коммит в GitHub, затем выполнить `bash ops/deploy.sh`. Скрипт создаёт новый релиз на действующем VPS, атомарно переключает `current` и сохраняет `previous`. Порядок проверки публичного HTTPS, формы, SEO, аналитики и отката — [ops/README.md](ops/README.md) и [AGENTS.md](AGENTS.md).
 
-The form submits to the VPS queue, Google Sheets and email. Product category images are AI-generated visualizations. Marketplace totals are supplied by the owner; invented customer testimonials are not published. Search indexing is currently discouraged using Nginx noindex headers.
+Индексация основного сайта разрешена. Sitemap/robots/canonical готовит общий генератор; техническая готовность не означает подтверждённого включения в поиск. Используется один счётчик Метрики 112428810 и существующие цели; описание — [docs/ANALYTICS.md](docs/ANALYTICS.md).
 
-Private SSH keys, TLS keys and credentials are not part of this repository. GitHub stores source history; it does not back up the server's private keys or future application data.
+Заявки сохраняются в PostgreSQL и очереди, затем передаются в закрытую Sheets и уведомления. Вложения приходят файлами в письмах и имеют приватные Drive-ссылки. Получатели задаются закрытым свойством Apps Script, не в Git. Изображения содержат согласованные визуализации; они не являются доказательством испытаний или документальной съёмкой производства.
+
+Ключи, секреты, БД и данные заявителей не коммитятся. GitHub хранит код и документацию, но не резервную копию заявок.

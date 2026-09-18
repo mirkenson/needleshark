@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-18",
+  "stage": "preflight passed; installation pending",
+  "page": "https://needle-shark.ru/business/",
+  "tests": {
+    "server": 19,
+    "blog": 13,
+    "catalog": 11,
+    "ops": 7,
+    "business": 2,
+    "appsScript": 10
+  },
+  "staticChecks": {
+    "publicPageCount": 10,
+    "sitemapIncludesBusiness": true,
+    "metadataAssetsLinksAnchors": true,
+    "singleCounterAndAnalyticsPerPage": true,
+    "idempotentBuild": true
+  },
+  "localBrowser": {
+    "viewportWidths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "homepageNavigation": true,
+    "businessOverflow": false,
+    "threeColumnCtasAligned": true,
+    "keyboardTabs": true,
+    "requiredFields": true,
+    "invalidContact": true,
+    "oversizePdfRejected": true,
+    "validPdfAccepted": true,
+    "lostResponseRetry": true,
+    "successGoalOnlyAfterConfirmation": true,
+    "incomingUtmPreserved": true
+  },
+  "metrika": {
+    "counter": 112428810,
+    "allowedDomains": [
+      "needle-shark.ru",
+      "needleshark.ru"
+    ],
+    "existingCustomGoalCount": 8,
+    "settingsChanged": false,
+    "publicSdkVerified": false
+  },
+  "publication": {
+    "installed": false
+  }
+}

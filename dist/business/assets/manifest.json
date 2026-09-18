@@ -1,0 +1,46 @@
+{
+  "hero-jack": {
+    "width": 1448,
+    "height": 1086
+  },
+  "category-covers": {
+    "width": 1536,
+    "height": 1024
+  },
+  "category-bags": {
+    "width": 1536,
+    "height": 1024
+  },
+  "category-straps": {
+    "width": 1536,
+    "height": 1024
+  },
+  "fabric-oxford": {
+    "width": 1536,
+    "height": 1024
+  },
+  "fabric-canvas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "fabric-spunbond": {
+    "width": 1536,
+    "height": 1024
+  },
+  "fabric-cordura": {
+    "width": 1536,
+    "height": 1024
+  },
+  "fabric-polyester": {
+    "width": 1536,
+    "height": 1024
+  },
+  "workshop-room": {
+    "width": 1536,
+    "height": 1024
+  },
+  "workshop-cutting": {
+    "width": 1536,
+    "height": 1024
+  }
+}

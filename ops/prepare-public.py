@@ -9,7 +9,7 @@ from site_utils import prepare_html, public_path, ORIGIN
 DIST = ROOT / 'dist'
 for page in DIST.rglob('*.html'):
     page.write_text(prepare_html(page.read_text(), page.relative_to(DIST)))
-paths = ['index.html', 'catalog/index.html', 'blog/index.html', 'privacy-policy.html', 'user-agreement.html']
+paths = ['index.html', 'catalog/index.html', 'blog/index.html', 'business/index.html', 'privacy-policy.html', 'user-agreement.html']
 paths += ['catalog/' + p['slug'] + '/index.html' for p in json.loads((ROOT/'catalog/products.json').read_text())['products']]
 published_posts = [p for p in json.loads((ROOT/'blog/posts.json').read_text()) if p['status']=='published']
 paths += ['blog/' + p['slug'] + '/index.html' for p in published_posts]
