@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-18",
+  "url": "https://needle-shark.ru/",
+  "commit": "81cd2895395a5db103c453ba99867e977f489db9",
+  "branch": "codex/server-maintenance",
+  "maintenance_release": "20260918T093037Z-81cd2895395a",
+  "installed": true,
+  "static_release_unchanged": "20260918T083901Z-35018",
+  "backend_release_unchanged": "20260918T085337Z-9fbb60120094",
+  "disk": {
+    "total_gib_rounded": 9.7,
+    "used_gib_rounded": 4.9,
+    "available_gib_rounded": 4.3,
+    "used_percent": 54,
+    "inodes_used_percent": 15
+  },
+  "postgres_directory_mib": 63,
+  "database_size_reported": "9799 kB",
+  "log_directory_mib": 933,
+  "attachments": {
+    "count": 3,
+    "bytes": 1464668,
+    "pending_delivery_jobs": 0,
+    "first_cleanup_deleted": 0
+  },
+  "retention": {
+    "days": 30,
+    "age_from": "lead_submissions.created_at",
+    "requires": "at least one delivery; all sent with sent_at",
+    "preserves": [
+      "orders",
+      "customers",
+      "submission payload metadata",
+      "permanent fingerprints",
+      "pending/sending/partially delivered files"
+    ],
+    "batch": 100,
+    "max_per_run": 1000,
+    "timer": "daily 03:20 UTC + 0-5min jitter, persistent"
+  },
+  "monitor": {
+    "timer": "every five minutes",
+    "checks": [
+      "disk >=80% or free <1GiB",
+      "free inodes <15%",
+      "MemAvailable <32MiB",
+      "nginx",
+      "needle-leads",
+      "postgresql@16-main",
+      "cleanup timer",
+      "public HTTPS 200",
+      "local invalid API probe HTTP400",
+      "pending delivery jobs >15min",
+      "cleanup success within 36h"
+    ],
+    "first_result": "no issues",
+    "reminder_hours": 6,
+    "recovery_email": true,
+    "recipient": "owner-approved private configuration",
+    "test_smtp": "accepted",
+    "inbox": "not independently confirmed"
+  },
+  "validation": {
+    "server_tests": 20,
+    "ops_tests": 12,
+    "postgres_isolated_schema": "passed: expired sent removed; fresh/pending/sending/partial/no-job preserved; orders/fingerprints kept; idempotency; remaining bytes unchanged",
+    "systemd_verify": "passed",
+    "actual_service_results": "success/0 for cleanup and monitor",
+    "timer_enabled_active": true,
+    "installed_sha256_matches_git": 5,
+    "public_https": 200,
+    "shell_syntax": "passed",
+    "git_diff_check": "passed"
+  },
+  "not_applicable": [
+    "visual/adaptive browser checks: no public page/style/JS changes",
+    "SEO/indexing/analytics/UTM: no public changes",
+    "new form submission chain: intake and delivery integration unchanged"
+  ],
+  "limitations": [
+    "No external backup, per owner deferral",
+    "Local monitoring cannot notify reliably on whole VPS/network/SMTP loss or its own stopped timer",
+    "No deletion from mailbox, historical Google files or backup dumps",
+    "PostgreSQL may reuse space without immediately shrinking filesystem usage",
+    "1000 files per daily cleanup maximum",
+    "SMTP acceptance is not inbox confirmation"
+  ],
+  "backlog": "docs/BACKLOG.md"
+}
