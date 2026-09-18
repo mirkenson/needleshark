@@ -28,6 +28,11 @@
       return;
     }
     const href = el.getAttribute('href') || '';
+    if (el.dataset.businessCta) {
+      goal('request_open', {...params, context: 'business', element: el.dataset.businessCta, intent: el.dataset.businessIntent || 'unspecified'});
+      return;
+    }
+    if (el.getAttribute('role') === 'tab' && el.closest('.b2b-tabs')) return;
     if (/^(mailto:|tel:)/i.test(href)) {
       goal('contact_click', {...params, method: href.startsWith('mailto:') ? 'email' : 'phone'});
       return;
@@ -53,10 +58,18 @@
     goal('ui_click', {page: location.pathname, article, element, block, item, state});
   });
   document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('focusin', () => goal('form_start'), {once: true});
-    form.addEventListener('submit', () => goal('form_submit_attempt'));
+    const params = () => form.dataset.context === 'business' ? {page: location.pathname, context: 'business', intent: form.elements.business_intent.value || 'unspecified'} : {};
+    form.addEventListener('focusin', () => goal('form_start', params()), {once: true});
+    form.addEventListener('submit', () => {
+      if (form.dataset.context !== 'business' || form.checkValidity()) goal('form_submit_attempt', params());
+    });
   });
-  document.addEventListener('lead-saved', () => goal('lead_submitted'));
+  document.addEventListener('lead-saved', event => goal('lead_submitted', event.detail?.context === 'business' ? {page: location.pathname, context: 'business', intent: event.detail.intent} : {}));
+  document.addEventListener('business-interaction', event => {
+    const {element, item, state} = event.detail || {};
+    if (!['business_material', 'business_intent', 'business_faq'].includes(element)) return;
+    goal('ui_click', {page: location.pathname, context: 'business', element, item, state});
+  });
   let dismissed = false;
   try { dismissed = localStorage.getItem('needle_cookie_notice') === '1'; } catch (_) {}
   if (dismissed) return;
