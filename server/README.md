@@ -1,6 +1,6 @@
 # Leads integration
 
-Recipient: info@neesha.ru. The Google account executing Apps Script sends notifications; no mailbox password is needed. Replies can go directly to the contact email supplied by the visitor.
+Notification recipients are configured privately in the Apps Script property `NOTIFICATION_RECIPIENTS` (comma-separated, up to 10 email addresses). Default: info@neesha.ru. The owner authorized four mailboxes on 18 September 2026. Each receives the full task, attachment and its private Drive link; keep additional recipient addresses out of Git. The Google account executing Apps Script sends notifications; no mailbox password is needed. Replies can go directly to the contact email supplied by the visitor.
 
 1. Import a private Google spreadsheet with a `Заявки` worksheet and these headers: ID заявки, Дата UTC, Имя, Телефон / email, Задача, Файл в письме, Статус заявки, Уведомление.
 2. Create an Apps Script project using `google/Code.gs`. Keep the existing spreadsheet ID in `sheet_()` and set a random Script Property `SHARED_SECRET` of at least 32 characters. Keep the secret out of Git and frontend files.

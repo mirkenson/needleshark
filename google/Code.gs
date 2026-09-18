@@ -20,6 +20,7 @@ function setup() {
   if (current.some((cell, i) => cell && cell !== HEADERS[i])) throw new Error('Unexpected sheet headers');
   // Preserve the live table's formatting and existing columns.
   MailApp.getRemainingDailyQuota();
+  notificationRecipients_();
 }
 
 function setupBusiness() {
@@ -73,6 +74,13 @@ function text_(value) {
   return /^[\s]*[=+\-@]/.test(text) ? "'" + text : text;
 }
 
+function notificationRecipients_() {
+  const value = PropertiesService.getScriptProperties().getProperty('NOTIFICATION_RECIPIENTS') || RECIPIENT;
+  const recipients = value.split(',').map(address => address.trim());
+  if (recipients.length > 10 || recipients.some(address => !/^[^\s@,]+@[^\s@,]+\.[^\s@,]+$/.test(address))) throw new Error('Invalid notification recipients');
+  return recipients.join(', ');
+}
+
 function json_(value) {
   return ContentService.createTextOutput(JSON.stringify(value)).setMimeType(ContentService.MimeType.JSON);
 }
@@ -108,7 +116,7 @@ function doPost(e) {
     }
     if (sheet.getRange(row, 8).getValue() !== 'Отправлено') {
       const mail = {
-        to: RECIPIENT,
+        to: notificationRecipients_(),
         name: 'Needle Shark — заявки',
         subject: 'Заявка Needle Shark · ' + lead.id,
         body: 'Имя: ' + lead.name + '\nКонтакт: ' + lead.contact + '\n\nЗадача:\n' + lead.question + '\n\nID: ' + lead.id + '\nТаблица: ' + sheet.getParent().getUrl()

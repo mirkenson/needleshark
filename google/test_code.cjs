@@ -6,7 +6,7 @@ function fixture() {
   const headers=['ID заявки','Дата UTC','Имя','Телефон / email','Задача','Файл в письме','Статус заявки','Уведомление'];
   const rows=[headers.slice()], links=new Map(), files=new Map(), mails=[];
   let serial=0, privateFolder=true, failAppend=false, failMail=false;
-  const props={SHARED_SECRET:'test-secret-'.repeat(4)};
+  const props={SHARED_SECRET:'test-secret-'.repeat(4),NOTIFICATION_RECIPIENTS:'info@neesha.ru, test-one@example.invalid, test-two@example.invalid, test-three@example.invalid'};
   const sheet={
     getLastRow:()=>rows.length,
     getParent:()=>({getUrl:()=> 'https://docs.google.com/test-only'}),
@@ -39,7 +39,8 @@ function fixture() {
     post:(l=lead,token=props.SHARED_SECRET)=>sandbox.doPost({postData:{contents:JSON.stringify({token,lead:l})}})};
 }
 const tests={
-  'B2B fields, rich-text file link, attachment and mail':()=>{const f=fixture(),r=f.post();assert.equal(r.ok,true);assert.equal(f.rows[1][8],"'=TEST");assert.equal(f.rows[1][9],'Изделие на заказ');assert.equal(f.links.get(2),r.attachment_url);assert.equal(f.mails.length,1);assert.ok(f.mails[0].body.includes(r.attachment_url));assert.equal(f.mails[0].attachments[0].name,'ТЕСТ.pdf')},
+  'B2B fields, rich-text file link, attachment and mail':()=>{const f=fixture(),r=f.post();assert.equal(r.ok,true);assert.equal(f.rows[1][8],"'=TEST");assert.equal(f.rows[1][9],'Изделие на заказ');assert.equal(f.links.get(2),r.attachment_url);assert.equal(f.mails.length,1);assert.equal(f.mails[0].to,f.props.NOTIFICATION_RECIPIENTS);assert.ok(f.mails[0].body.includes(r.attachment_url));assert.equal(f.mails[0].attachments[0].name,'ТЕСТ.pdf')},
+  'recipient fallback preserves the main mailbox':()=>{const f=fixture();delete f.props.NOTIFICATION_RECIPIENTS;assert.equal(f.post().ok,true);assert.equal(f.mails[0].to,'info@neesha.ru')},
   'retry reuses row, file, and sent mail':()=>{const f=fixture(),a=f.post(),b=f.post();assert.equal(a.attachment_url,b.attachment_url);assert.equal(f.files.size,1);assert.equal(f.rows.length,2);assert.equal(f.mails.length,1)},
   'failure after Drive write does not duplicate file':()=>{const f=fixture();f.setFailAppend(true);assert.equal(f.post().ok,false);assert.equal(f.files.size,1);f.setFailAppend(false);assert.equal(f.post().ok,true);assert.equal(f.files.size,1)},
   'mail failure keeps one row and file until retry':()=>{const f=fixture();f.setFailMail(true);assert.equal(f.post().ok,false);assert.equal(f.rows[1][7],'Ожидает отправки');f.setFailMail(false);assert.equal(f.post().ok,true);assert.equal(f.files.size,1);assert.equal(f.rows.length,2)},
