@@ -1,0 +1,22 @@
+[Unit]
+Description=Needle Shark server health email alerts
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=needleleads
+Group=needleleads
+EnvironmentFile=/etc/needle-shark/leads.env
+EnvironmentFile=/etc/needle-shark/monitor.env
+ExecStart=/usr/bin/python3 /opt/needle-maintenance/current/maintenance.py monitor
+StateDirectory=needle-monitor
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+MemoryMax=64M
+TasksMax=16
+TimeoutStartSec=180

@@ -1,0 +1,18 @@
+[Unit]
+Description=Needle Shark delivered attachment retention (30 days)
+After=postgresql.service
+
+[Service]
+Type=oneshot
+User=postgres
+ExecStart=/usr/bin/python3 /opt/needle-maintenance/current/maintenance.py cleanup
+StateDirectory=needle-cleanup
+StateDirectoryMode=0755
+UMask=0022
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+MemoryMax=64M
+TasksMax=16
+TimeoutStartSec=60

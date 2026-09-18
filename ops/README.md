@@ -56,3 +56,16 @@ The optimization was installed on 11 September. The expanded three-product catal
 ## Backend without Google
 
 Use `ops/install-server-mail.sh PRIVATE_SMTP_FILE APPROVED_RECIPIENT` for the new PostgreSQL/SMTP backend. `ops/install-leads.sh` now forwards to this installer and requires the same two arguments. Static publication still uses `ops/deploy.sh` independently. Backend code has its own `/opt/needle-shark/current` and `previous`; the service points to current. The installer backs up the actual unit and environment before changing ExecStart, preserves hardening and does not change Nginx. See `server/README.md` for queue semantics, verification and rollback constraints.
+
+
+## Attachment retention and server alerts — 18 September 2026
+
+Independent maintenance release: `bash ops/install-maintenance.sh APPROVED_MONITOR_RECIPIENT`. Commit and push first. Installation snapshots actual systemd units/configuration, switches `/opt/needle-maintenance/current` atomically, and restores prior unit configuration on failure; `previous` is kept on subsequent updates. It does not publish static files or restart/change the lead backend, Nginx or PostgreSQL. Rollback never restores a database dump over new leads.
+
+`needle-cleanup.timer`: daily 03:20 UTC (06:20 Moscow), up to five minutes jitter; missed runs execute after boot. Deletes only `lead_files` for submissions older than 30 days where all existing delivery jobs are `sent` with a timestamp. No-job, pending, sending and partially delivered files remain. Up to 1,000 files per run in transactions of 100; orders, payload metadata and permanent deduplication fingerprints stay. PostgreSQL autovacuum reuses freed space; immediate reduction in filesystem usage is not guaranteed. No VACUUM FULL or deletions of backups, Google or mailbox copies. Cleanup runs as postgres using local peer authentication; code is root-owned, no new database password.
+
+`needle-monitor.timer`: every five minutes, checks disk (80% used or <1 GiB free), inodes (<15% free), available RAM (<32 MiB), Nginx/API/PostgreSQL/cleanup timer, public HTTPS, a harmless invalid API probe, email jobs older than 15 minutes, and successful cleanup within 36 hours. Alerts on issue-set changes, six-hour reminders, recovery mail; no periodic all-clear mail. SMTP failure does not mark the alert sent and retries next run. Recipient is exclusively `MONITOR_RECIPIENT` in root-only `/etc/needle-shark/monitor.env`; existing authenticated TLS SMTP configuration is reused. Lead recipients are unchanged. State and logs contain no lead content.
+
+Send an explicitly labelled test with the same environment as the monitor and `maintenance.py test-email`; SMTP acceptance is not proof of inbox placement. Local monitoring cannot report total VPS/network/SMTP failure, nor its own stopped timer. Independent monitoring and external backup are deferred in `docs/BACKLOG.md`.
+
+Checks: `python3 -m unittest discover -s ops -p 'test_*.py'`, existing server tests, `CRM_TEST_DSN=... python3 ops/check_maintenance_postgres.py` (disposable schema, synthetic data, no email), `systemd-analyze verify`, actual timer/SQL/HTTPS and SMTP verification. Stop automation with `systemctl disable --now needle-cleanup.timer needle-monitor.timer`; this does not restore expired file bytes.
