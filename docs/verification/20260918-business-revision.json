@@ -1,6 +1,6 @@
 {
   "date": "2026-09-18",
-  "stage": "local prototype and isolated backend verification",
+  "stage": "local prototype complete; backend and Google integration installed and verified",
   "images": {
     "tool": "image_gen.imagegen",
     "count": 9,
@@ -35,14 +35,42 @@
   },
   "backend": {
     "serverTests": 19,
-    "appsScriptContractTests": 9,
+    "appsScriptContractTests": 10,
     "postgres": "VPS, isolated disposable schema: 3 business intents, company with apostrophe, original description, source_path, attachment_url, legacy payload, retries, migration applied twice",
-    "productionSchemaChanged": false,
-    "googleDeploymentChanged": false,
-    "liveGoogleDeliveryVerified": false,
+    "productionSchemaChanged": true,
+    "googleDeploymentChanged": true,
+    "liveGoogleDeliveryVerified": true,
     "googleDraftUpdated": true,
-    "googleSetup": "Auto-review rejected setupBusiness pending owner approval for columns and Drive access"
+    "googleSetup": "Owner explicitly approved Drive setup and live backend/webhook update; setupBusiness completed successfully",
+    "liveTest": {
+      "browserApiStatus": 202,
+      "postgresFieldsVerified": [
+        "business_intent",
+        "business_company",
+        "description",
+        "source_path",
+        "attachment_name",
+        "attachment_url"
+      ],
+      "queueDelivered": true,
+      "queueRetries": 0,
+      "sheetNotification": "Отправлено",
+      "sheetRichTextLinkMatchesDatabase": true,
+      "drivePdfReadable": true,
+      "driveAccess": "owner only, verified in viewer",
+      "mailRecipientCount": 4,
+      "mailAttachments": "PDF attached, Drive URL in body",
+      "inboxReceipt": "Owner confirmed all four mailboxes received the test email",
+      "recipientConfiguration": "Private Apps Script property NOTIFICATION_RECIPIENTS; extra addresses excluded from Git",
+      "localPreviewTls": "Used macOS /etc/ssl/cert.pem; certificate verification kept enabled",
+      "recordLabel": "Synthetic TEST B2B record, no customer data"
+    }
   },
   "publicSiteChanged": false,
-  "commit": "d4d5cab"
+  "commit": "a353fc6",
+  "remaining": [
+    "Two additional production photos are still placeholders in the local prototype.",
+    "B2B page is not published to the public website.",
+    "Drive links require the owner or an explicitly authorized Google account; email includes the attachment itself."
+  ]
 }
