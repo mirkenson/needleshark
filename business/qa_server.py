@@ -82,6 +82,7 @@ class QAHandler(PreviewHandler):
         # Only synthetic data is accepted; record counts/context, never attachment bytes.
         self.records.append({'id': data['id'], 'attempt': self.attempts[data['id']], 'scenario': scenario,
                              'source_path': validated.get('source_path'), 'inquiry_type': validated.get('inquiry_type'),
+                             'business_intent': validated.get('business_intent'), 'business_company': validated.get('business_company'),
                              'question': validated['question'], 'attachment': bool(validated.get('attachment'))})
         if scenario == 'retry' and self.attempts[data['id']] == 1:
             self.connection.shutdown(socket.SHUT_RDWR)

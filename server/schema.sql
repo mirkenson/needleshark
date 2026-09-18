@@ -33,3 +33,8 @@ ALTER TABLE orders
  ADD COLUMN IF NOT EXISTS inquiry_type TEXT,
  ADD COLUMN IF NOT EXISTS quantity INTEGER CHECK (quantity BETWEEN 1 AND 1000000),
  ADD COLUMN IF NOT EXISTS source_path TEXT;
+
+ALTER TABLE orders
+ ADD COLUMN IF NOT EXISTS business_intent TEXT CHECK (business_intent IN ('ready', 'custom', 'materials')),
+ ADD COLUMN IF NOT EXISTS business_company TEXT,
+ ADD COLUMN IF NOT EXISTS attachment_url TEXT;

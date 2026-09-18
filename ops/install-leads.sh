@@ -10,6 +10,7 @@ ssh_options=(-i "$ssh_key" -o BatchMode=yes -o StrictHostKeyChecking=yes -o Conn
 ssh "${ssh_options[@]}" "$remote_host" "install -d -m 0755 '$release_dir'"
 scp "${ssh_options[@]}" "$project_dir/server/leads.py" "$project_dir/server/crm.py" \
   "$project_dir/server/lead_context.py" "$project_dir/server/migrations/20260910_catalog_context.sql" \
+  "$project_dir/server/migrations/20260918_business_attachments.sql" \
   "$remote_host:$release_dir/"
 ssh "${ssh_options[@]}" "$remote_host" bash -s -- "$release" <<'REMOTE'
 set -euo pipefail
@@ -27,6 +28,7 @@ umask 077
 sudo -u postgres pg_dump -Fc needle_shark > "$backup_dir/needle_shark.dump"
 pg_restore --list "$backup_dir/needle_shark.dump" >/dev/null
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -f "$release_dir/20260910_catalog_context.sql"
+sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -f "$release_dir/20260918_business_attachments.sql"
 restore_backend() {
   for name in leads.py crm.py lead_context.py; do
     if test -f "$backup_dir/$name"; then install -m 0644 "$backup_dir/$name" "/opt/needle-shark/$name"; fi

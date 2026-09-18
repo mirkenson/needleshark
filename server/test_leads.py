@@ -164,6 +164,62 @@ class LeadQueueTests(unittest.TestCase):
         self.assertNotIn('quantity', data)
         self.assertEqual(leads.google_payload(data), data)
 
+    def test_business_fields_remain_structured_in_queue_and_google(self):
+        for intent in ('ready', 'custom', 'materials'):
+            with self.subTest(intent=intent):
+                data = leads.validate(dict(self.data, business_intent=intent,
+                                           business_company='  ТЕСТ мастерская  ', source_path='/business/'))
+                self.assertEqual(data['question'], self.data['question'])
+                self.assertEqual(data['business_company'], 'ТЕСТ мастерская')
+                google = leads.google_payload(data)
+                self.assertEqual(google['business_intent'], intent)
+                self.assertIn('Компания / сфера: ТЕСТ мастерская', google['question'])
+                self.assertIn('Направление:', google['question'])
+        with patch.object(leads, 'archive') as archive:
+            leads.enqueue(copy.deepcopy(data), 'business-test')
+            self.assertEqual(archive.call_args.args[0]['business_intent'], 'materials')
+        with leads.connect() as db:
+            queued = json.loads(db.execute('SELECT payload FROM leads').fetchone()[0])
+        self.assertEqual(queued['business_company'], 'ТЕСТ мастерская')
+        self.assertEqual(leads.enqueue(dict(data, business_company='Другая'), 'business-test')[0], 409)
+
+    def test_invalid_business_fields_and_client_link_are_not_accepted(self):
+        for update in [{'business_intent': 'unknown'}, {'business_company': 'x' * 161},
+                       {'business_intent': 1}, {'business_company': 'foo\nbar'}]:
+            with self.subTest(update=update), self.assertRaises(ValueError):
+                leads.validate(dict(self.data, **update))
+        self.assertNotIn('attachment_url', leads.validate(dict(self.data, attachment_url='https://evil.example/')))
+
+    def test_file_delivery_requires_persisted_trusted_link(self):
+        import base64
+        data = leads.validate(dict(self.data, attachment={'name': 'ТЕСТ.pdf', 'type': 'application/pdf',
+                                'data': base64.b64encode(b'%PDF-test').decode()}))
+        leads.enqueue(copy.deepcopy(data), 'file-test')
+        result = {'ok': True, 'id': data['id']}
+        class Reply:
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def read(self, *args): return json.dumps(result).encode()
+        def retry():
+            with leads.connect() as db:
+                db.execute('UPDATE leads SET retry_at=0')
+            leads.deliver_once()
+        with patch.object(leads, 'urlopen', return_value=Reply()), patch.object(leads, 'save_attachment_link') as save:
+            for url in [None, 'https://evil.example/file', 'https://drive.google.com.evil.example/file/d/1234567890/view']:
+                result['attachment_url'] = url
+                retry()
+                save.assert_not_called()
+            result['attachment_url'] = 'https://drive.google.com/file/d/test-file-123456789/view'
+            save.side_effect = RuntimeError('CRM unavailable')
+            retry()
+            with leads.connect() as db:
+                self.assertIsNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
+            save.side_effect = None
+            retry()
+            save.assert_called_with(data['id'], result['attachment_url'])
+            with leads.connect() as db:
+                self.assertIsNotNone(db.execute('SELECT delivered FROM leads').fetchone()[0])
+
     def test_valid_file_and_oversized_file(self):
         import base64
         attachment = {'name': 'test.pdf', 'type': 'application/pdf', 'data': base64.b64encode(b'%PDF-test').decode()}

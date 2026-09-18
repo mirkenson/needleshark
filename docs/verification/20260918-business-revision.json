@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-18",
+  "stage": "local prototype and isolated backend verification",
+  "images": {
+    "tool": "image_gen.imagegen",
+    "count": 9,
+    "formats": "WebP 480/800/1280",
+    "location": "business/assets"
+  },
+  "browser": {
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "horizontalOverflow": false,
+    "threeColumnCtaAligned": [
+      768,
+      1024,
+      1440
+    ],
+    "materialImagesLoaded": 5,
+    "text200Widths": [
+      390,
+      1024
+    ],
+    "keyboardTabs": true,
+    "mobileMenu": true,
+    "catalogLink": true,
+    "form": "invalid contact then success through isolated API; B2B intent prefilled; no live submission",
+    "analytics": "request_open, form_start, form_submit_attempt, lead_submitted observed through mock SDK; company/contact not in params",
+    "consoleErrors": []
+  },
+  "backend": {
+    "serverTests": 19,
+    "appsScriptContractTests": 9,
+    "postgres": "VPS, isolated disposable schema: 3 business intents, company with apostrophe, original description, source_path, attachment_url, legacy payload, retries, migration applied twice",
+    "productionSchemaChanged": false,
+    "googleDeploymentChanged": false,
+    "liveGoogleDeliveryVerified": false
+  },
+  "publicSiteChanged": false
+}

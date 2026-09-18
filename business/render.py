@@ -1,5 +1,6 @@
 """Build the isolated B2B prototype without changing the publishable dist tree."""
 import argparse
+import json
 import re
 import shutil
 import sys
@@ -9,7 +10,7 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from site_utils import image_attributes, prepare_html
+from site_utils import prepare_html
 
 
 def build(destination):
@@ -21,13 +22,17 @@ def build(destination):
     page_dir = destination / 'business'
     page_dir.mkdir(exist_ok=True)
     images = {}
-    for name, source in [('hero', '/catalog-assets/atv-studio.jpg'),
-                         ('atv', '/catalog-assets/atv-studio.jpg'),
-                         ('moto', '/catalog-assets/moto-standard.png'),
-                         ('wheels', '/catalog-assets/wheel-set.png')]:
-        sizes = '(max-width: 800px) 90vw, 45vw' if name == 'hero' else '(max-width: 700px) 90vw, 30vw'
-        images[name] = ' '.join(f'{key}="{escape(str(value), quote=True)}"'
-                               for key, value in image_attributes(source, sizes).items())
+    shutil.copytree(ROOT / 'business/assets', page_dir / 'assets', dirs_exist_ok=True)
+    manifest = json.loads((ROOT / 'business/assets/manifest.json').read_text())
+    for name, key in [('hero', 'hero-jack'), ('covers', 'category-covers'),
+                      ('bags', 'category-bags'), ('straps', 'category-straps'),
+                      *[(fabric, 'fabric-' + fabric) for fabric in
+                        ['oxford', 'canvas', 'spunbond', 'cordura', 'polyester']]]:
+        sizes = '(max-width: 800px) 90vw, 45vw' if name == 'hero' else '(max-width: 700px) 90vw, 40vw'
+        attrs = dict(src=f'/business/assets/{key}-800.webp',
+                     srcset=', '.join(f'/business/assets/{key}-{w}.webp {w}w' for w in [480, 800, 1280]),
+                     sizes=sizes, **manifest[key])
+        images[name] = ' '.join(f'{attr}="{escape(str(value), quote=True)}"' for attr, value in attrs.items())
     source = Template((ROOT / 'business/index.html').read_text()).substitute(images)
     (page_dir / 'index.html').write_text(prepare_html(source, 'business/index.html'))
     for filename in ['business.css', 'business.js', 'preview-navigation.css']:

@@ -3,7 +3,6 @@ const form = document.querySelector('#request-form');
 const status = document.querySelector('#form-status');
 const submit = form.querySelector('[type=submit]');
 const isBusiness = form.dataset.context === 'business';
-const businessLabels = {ready: 'Партия готовых изделий', custom: 'Пошив на заказ', materials: 'Ткани и стропы'};
 let submissionId = null;
 let sending = false;
 form.addEventListener('input', () => {
@@ -61,7 +60,8 @@ form.addEventListener('submit', async event => {
   const intent = isBusiness ? (form.elements.business_intent.value || 'unspecified') : '';
   if (isBusiness) {
     const company = form.elements.business_company.value.trim();
-    payload.question = `Направление: ${businessLabels[intent] || 'Обсудить задачу'}\n${company ? `Компания / сфера: ${company}\n` : ''}\n${payload.question}`;
+    if (intent !== 'unspecified') payload.business_intent = intent;
+    if (company) payload.business_company = company;
     payload.source_path = form.dataset.sourcePath;
     payload.inquiry_type = intent === 'materials' ? 'direct' : 'wholesale';
   }

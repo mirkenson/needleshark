@@ -9,7 +9,7 @@ import sqlite3
 import threading
 import time
 import uuid
-from crm import archive
+from crm import archive, save_attachment_link
 from lead_context import validate_context, google_payload
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.request import Request, urlopen
@@ -115,12 +115,18 @@ def deliver_once():
         rows = db.execute('SELECT id,payload,attempts FROM leads WHERE delivered IS NULL AND retry_at<=? ORDER BY created LIMIT 5', (time.time(),)).fetchall()
     for lead_id, payload, attempts in rows:
         try:
-            body = json.dumps({'token': SECRET, 'lead': google_payload(json.loads(payload))}).encode()
+            lead = json.loads(payload)
+            body = json.dumps({'token': SECRET, 'lead': google_payload(lead)}).encode()
             request = Request(HOOK, data=body, headers={'Content-Type': 'application/json'}, method='POST')
             with urlopen(request, timeout=40) as response:
                 result = json.loads(response.read(4096))
             if result.get('ok') is not True or result.get('id') != lead_id:
                 raise ValueError('Delivery not acknowledged')
+            if lead.get('attachment'):
+                url = result.get('attachment_url')
+                if not isinstance(url, str) or not re.fullmatch(r'https://drive\.google\.com/file/d/[A-Za-z0-9_-]{10,200}/view', url):
+                    raise ValueError('Private attachment link not acknowledged')
+                save_attachment_link(lead_id, url)
             with connect() as db:
                 db.execute('UPDATE leads SET delivered=? WHERE id=?', (time.time(), lead_id))
         except Exception:

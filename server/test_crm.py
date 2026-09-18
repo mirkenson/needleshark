@@ -28,12 +28,12 @@ class ArchiveTests(unittest.TestCase):
         sql, args = self.cur.execute.call_args.args
         self.assertIn('product_size', sql)
         self.assertIn('quantity', sql)
-        self.assertEqual(args[-6:], tuple(self.lead[key] for key in crm.CONTEXT_FIELDS))
+        self.assertEqual(args[-len(crm.CONTEXT_FIELDS):], tuple(self.lead.get(key) for key in crm.CONTEXT_FIELDS))
         self.conn.close.assert_called_once()
 
     def test_expired_queue_retry_compares_product_context(self):
         self.cur.fetchone.return_value = (self.lead['name'], self.lead['contact'], self.lead['question'],
-                                         *(self.lead[key] for key in crm.CONTEXT_FIELDS))
+                                         *(self.lead.get(key) for key in crm.CONTEXT_FIELDS))
         self.archive(self.lead)
         self.assertEqual(self.cur.execute.call_count, 1)
         with self.assertRaises(ValueError):
