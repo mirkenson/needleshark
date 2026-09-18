@@ -34,5 +34,13 @@
   "fabric-polyester": {
     "width": 1536,
     "height": 1024
+  },
+  "workshop-room": {
+    "width": 1536,
+    "height": 1024
+  },
+  "workshop-cutting": {
+    "width": 1536,
+    "height": 1024
   }
 }

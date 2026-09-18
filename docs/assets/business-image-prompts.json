@@ -86,6 +86,31 @@
         "key": "fabric-polyester",
         "prompt": "Use case: product-mockup. A photorealistic textile swatch photograph for a Needle Shark materials tab. Subject: black smooth tightly woven polyester technical textile, fine even weave, soft satin-like modest sheen, supple clean curved fold, visibly finer smoother surface than coarse canvas. One generous uncut fabric swatch folded into two or three broad layers with an open soft fold that clearly reveals the material's actual microtexture. Macro product photography at an oblique 45-degree angle. Fabric is BLACK, rich tonal texture without crushing shadows. Seamless PURE WHITE studio background, diffuse soft lighting, subtle shadows, pristine minimalist presentation. No rolls, hands, sewing machines, tools, decorative objects, labels, typography, logo or watermark. Landscape 3:2 composition with entire folded sample and white margin, textile fills about 75% of the image. This is a material illustration, no test certificate or performance claims."
       }
+    },
+    {
+      "key": "workshop-room",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-73f01818-b887-4ee7-ad80-85124693400f.png",
+      "prompt": {
+        "key": "workshop-room",
+        "refs": [
+          "/Users/mirkenson/Downloads/20260918_092322.jpg",
+          "/Users/mirkenson/Downloads/20260918_092338.jpg"
+        ],
+        "prompt": "Use case: precise-object-edit. Asset: Needle Shark sewing workshop website section. Image 1 is the edit target and exact room identity; image 2 is supporting reference for the same room's architecture and existing lighting. Create a photorealistic tidied version of THIS identifiable room, horizontal 3:2. Preserve its long narrow industrial hall, sequence of pale mint-green cast-iron columns with broad distinctive capitals, low white concrete beams, overhead pipes, long cool fluorescent/LED task lights, gray floor, white tiled walls with blue and red rectangular tile panels and the existing muted mosaic at the far end. Same perspective looking down the hall, slightly lower framing so workstations are visible. Remove the foreground heaps of cardboard boxes, pallets and huge black sacks obstructing the view. Arrange existing type of sewing tables in two orderly working rows along a clear central aisle, approximately 6 adult women naturally seated sewing black technical fabric, varied everyday work clothes, no posing, no identical people. White industrial sewing machines with blue JACK labels if visible. Modest tidy shelves along walls, manageable folded stacks of black material beside stations. Clean and lightly repaint shabby walls/ceiling and mint columns while retaining their original structure, texture, joints, pipes and age; do not turn it into a new showroom. Match the actual reference's cool slightly greenish fluorescent overhead light, mild uneven exposure, ordinary phone-photo realism and natural modest contrast. No studio lighting, sunbeams, glossy architectural render, luxury renovation, pristine catalogue scene, extra spaciousness or inflated factory scale. Retain authentic occupied working shop atmosphere and realistic human anatomy. No captions, watermark or promotional text."
+      },
+      "refinement": "Use case: precise-object-edit. Make ONLY a restrained maintenance cleanup of this sewing workshop photograph. Preserve the exact composition, all people and their faces/poses, tables, JACK machines, fabrics, shelves, floor, perspective, recognizable mint-green column shapes, wall tiles/mosaic, beams, pipes, hanging light fixtures and the cool slightly uneven real fluorescent exposure. Clean the ceiling of dark stains and mottled dirt and give it an ordinary matte off-white maintenance coat while retaining concrete texture, panel joints, beam edges, mild age and natural shadows. Touch up the peeling yellow patches on mint columns with matching muted mint paint, retaining slight wear and rough cast texture. Clean minor wall grime. Do NOT change architecture, add or remove equipment or people, brighten the whole photo, beautify faces, create a smooth modern office ceiling, or make a glossy showroom. The workshop should remain the same recognizable practical old industrial room, simply cared for. No text overlays. Same 3:2 framing."
+    },
+    {
+      "key": "workshop-cutting",
+      "path": "/Users/mirkenson/.codex/generated_images/01a0b2b8-7d22-7462-8eb6-96f5fd57d9d2/exec-4be26948-b9c5-46dc-97d4-949d4118da21.png",
+      "prompt": {
+        "key": "workshop-cutting",
+        "refs": [
+          "/Users/mirkenson/Downloads/20260918_092322.jpg",
+          "/Users/mirkenson/Downloads/20260918_092338.jpg"
+        ],
+        "prompt": "Use case: photorealistic-natural. Asset: second photograph for Needle Shark production-and-service section. The two input images are ONLY references for the real room, lighting and atmosphere. Generate a new realistic close photograph of cut black technical fabric pieces on a cutting table inside this same modest working sewing workshop. Landscape 3:2 frame. Slightly oblique overhead view with tabletop filling 85 percent of frame: worn light neutral laminate surface, several neatly laid out large curved and rectangular panels of black Oxford fabric, accurate visible woven grain and a few subtle tailor chalk cut marks, one brown kraft-paper pattern partly over the fabric, a metal straightedge and closed sturdy tailor scissors, one small tidy stack of already cut matching panels. Plausible functional fabric cutting layout, not decorative styling. No people or hands. In a narrow out-of-focus background at top, subtle recognizable mint-green column and white wall with small blue/red tile accents matching the references. Match the real workshop cool slightly greenish overhead fluorescent lighting, modest uneven shadows, neutral slightly muted color and ordinary phone-camera grain. Black fabric retains texture and small practical wrinkles. Real work-in-progress detail, reasonably tidy, never sterile or studio lit. No catalogue seamless background, dramatic rim light, theatrical bokeh, golden light, unnecessary accessories, labels, legible writing, watermark or advertising."
+      }
     }
   ]
 }

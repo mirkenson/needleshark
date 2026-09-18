@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-18",
+  "stage": "local prototype only",
+  "scope": "Replace two workshop placeholders with reference-based ImageGen visuals",
+  "tool": "image_gen.imagegen (built-in)",
+  "images": [
+    "workshop-room",
+    "workshop-cutting"
+  ],
+  "responsiveWidths": [
+    480,
+    800,
+    1280
+  ],
+  "viewportChecks": [
+    {
+      "width": 360,
+      "imagesLoaded": true,
+      "horizontalOverflow": false,
+      "captionsFit": true,
+      "screenshotInspected": true
+    },
+    {
+      "width": 390,
+      "imagesLoaded": true,
+      "horizontalOverflow": false,
+      "captionsFit": true,
+      "screenshotInspected": true
+    },
+    {
+      "width": 768,
+      "imagesLoaded": true,
+      "horizontalOverflow": false,
+      "captionsFit": true,
+      "screenshotInspected": true
+    },
+    {
+      "width": 1024,
+      "imagesLoaded": true,
+      "horizontalOverflow": false,
+      "captionsFit": true,
+      "screenshotInspected": true
+    },
+    {
+      "width": 1440,
+      "imagesLoaded": true,
+      "horizontalOverflow": false,
+      "captionsFit": true,
+      "screenshotInspected": true
+    }
+  ],
+  "consoleWarningsAndErrors": [],
+  "originalPhotosModified": false,
+  "publicSiteChanged": false,
+  "backendChanged": false,
+  "formRetestedThisRevision": false,
+  "prompts": "docs/assets/business-image-prompts.json"
+}

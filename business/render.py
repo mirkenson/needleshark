@@ -26,9 +26,12 @@ def build(destination):
     manifest = json.loads((ROOT / 'business/assets/manifest.json').read_text())
     for name, key in [('hero', 'hero-jack'), ('covers', 'category-covers'),
                       ('bags', 'category-bags'), ('straps', 'category-straps'),
+                      ('workshop', 'workshop-room'), ('cutting', 'workshop-cutting'),
                       *[(fabric, 'fabric-' + fabric) for fabric in
                         ['oxford', 'canvas', 'spunbond', 'cordura', 'polyester']]]:
         sizes = '(max-width: 800px) 90vw, 45vw' if name == 'hero' else '(max-width: 700px) 90vw, 40vw'
+        if name == 'workshop':
+            sizes = '(max-width: 700px) 90vw, 55vw'
         attrs = dict(src=f'/business/assets/{key}-800.webp',
                      srcset=', '.join(f'/business/assets/{key}-{w}.webp {w}w' for w in [480, 800, 1280]),
                      sizes=sizes, **manifest[key])
