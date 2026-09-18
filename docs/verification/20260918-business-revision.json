@@ -39,7 +39,10 @@
     "postgres": "VPS, isolated disposable schema: 3 business intents, company with apostrophe, original description, source_path, attachment_url, legacy payload, retries, migration applied twice",
     "productionSchemaChanged": false,
     "googleDeploymentChanged": false,
-    "liveGoogleDeliveryVerified": false
+    "liveGoogleDeliveryVerified": false,
+    "googleDraftUpdated": true,
+    "googleSetup": "Auto-review rejected setupBusiness pending owner approval for columns and Drive access"
   },
-  "publicSiteChanged": false
+  "publicSiteChanged": false,
+  "commit": "d4d5cab"
 }
