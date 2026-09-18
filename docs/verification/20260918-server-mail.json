@@ -1,6 +1,6 @@
 {
   "date": "2026-09-18",
-  "stage": "implementation verified; awaiting valid SMTP credentials and installation",
+  "stage": "installed and verified end-to-end; Google deployment archived",
   "unitTests": {
     "server": 20,
     "ops": 9
@@ -8,13 +8,71 @@
   "postgresIntegration": "Final implementation, disposable VPS schema: transaction rollback, concurrent duplicate intake, changed attachment conflict, leases, stale worker fencing, retries, independent recipients, rate limiting, attachment persistence. No SMTP sends.",
   "staticValidation": "10 pages checked; this backend task makes no static changes",
   "visualAndSeoPublication": "Not applicable: HTML/CSS/JS/navigation and static release unchanged by this task",
-  "smtp": "VPS TLS connection verified; initial authentication rejected with 535; owner notified; no email sent",
-  "productionChanged": false,
+  "smtp": {
+    "tlsAndAuthentication": "Verified from VPS after owner replaced application password",
+    "providerAcceptance": true,
+    "syntheticJobStatus": "sent",
+    "initialFailure": "535; preserved in queue, delivered after configuration update",
+    "recipientCount": 1,
+    "inboxReceipt": "Owner confirmed email received and PDF opens"
+  },
+  "productionChanged": true,
   "historicalMigration": "Explicitly excluded by owner; existing Google history retained, no files/rows deleted",
   "recipientPolicy": "Exactly one owner-approved test recipient from private configuration; additional recipients not enabled",
   "limitations": [
     "External automatic backup not configured",
     "SMTP acceptance must be distinguished from inbox receipt",
     "SMTP permits duplicate delivery after an ambiguous connection/process failure"
-  ]
+  ],
+  "commit": "9fbb60120094fd02212440adc4a8655d3db5ef89",
+  "backendRelease": "20260918T085337Z-9fbb60120094",
+  "staticReleaseObserved": "20260918T083901Z-35018",
+  "staticReleaseNote": "Published independently by the B2B task; not deployed or modified by this backend task",
+  "browser": {
+    "url": "https://needle-shark.ru/",
+    "qaCampaign": "server_mail_20260918",
+    "syntheticName": "ТЕСТ SMTP — не обрабатывать",
+    "attachedPdf": true,
+    "successMessageObserved": true,
+    "consoleErrorsOrWarnings": []
+  },
+  "database": {
+    "syntheticRecordCount": 1,
+    "fileBytes": 1728,
+    "fileMd5": "db81988b61c8f351300e8f59fced6fc3",
+    "fileMatchesOriginal": true,
+    "newFilesPrivateInPostgres": true,
+    "allQueuedJobsSentAtCheck": true
+  },
+  "publicApi": {
+    "identicalRetry": 200,
+    "changedContent": 409,
+    "invalidContact": 400,
+    "missingConsent": 400,
+    "forbiddenOrigin": 403,
+    "oversizedFile": 400,
+    "newRecordsFromTheseChecks": 0
+  },
+  "deploymentVerification": {
+    "backendFileHashesMatchCommit": true,
+    "googleEnvironmentKeysAbsent": true,
+    "environmentMode": "0600",
+    "services": [
+      "needle-leads active/running",
+      "nginx active",
+      "postgresql active"
+    ],
+    "serviceMemoryBytes": 21057536
+  },
+  "google": {
+    "deploymentArchived": true,
+    "archiveConfirmationObservedInBrowser": true,
+    "historicalSheetDriveAndSourceRetained": true,
+    "runtimeCallsToGoogle": false
+  },
+  "backup": {
+    "privatePreSwitchSnapshot": true,
+    "postSwitchDumpRestoreTest": "Restored in disposable database on VPS, then removed that disposable database; orders, submissions, files and jobs present",
+    "automatedOffsiteBackup": false
+  }
 }
