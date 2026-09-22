@@ -57,7 +57,7 @@ restore_backend() {
   systemctl restart needle-leads
 }
 # EXIT also covers shell expansion errors (set -u), which do not trigger ERR.
-trap 'deploy_exit=$?; if test "$deploy_exit" -ne 0; then restore_backend; fi; exit "$deploy_exit"' EXIT
+trap 'deploy_exit=$?; restore_backend; test "$deploy_exit" -ne 0 || deploy_exit=1; exit "$deploy_exit"' EXIT
 # Stop only after recovery has been armed.
 systemctl stop needle-leads
 python3 - <<'PY'
