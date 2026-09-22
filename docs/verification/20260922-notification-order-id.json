@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-22",
+  "scope": "Display orders.id in email subject/body and LOOP; explain existing customer sequence gaps. Customer allocation and API remain unchanged.",
+  "published": true,
+  "site_url": "https://needle-shark.ru/",
+  "branch": "codex/notification-order-id",
+  "code_commit": "1e940964f438bdd290ae1a5e69558e12d78c9fb5",
+  "committed_and_pushed_before_install": true,
+  "runtime": {
+    "backend_current": "20260922T094139Z-1e940964f438",
+    "backend_previous": "20260922T071148Z-6eedb20ef75a",
+    "static_current": "20260922T070621Z-52722",
+    "static_previous": "20260918T083901Z-35018",
+    "installer": "ops/install-server-mail.sh --loop with the existing private webhook value",
+    "delivery_environment_matches_backup_byte_for_byte": true,
+    "systemd_unit_matches_backup_byte_for_byte": true,
+    "schema_changed": false,
+    "nginx_changed": false,
+    "existing_migrations_reapplied_idempotently": true,
+    "services_active": [
+      "needle-leads",
+      "nginx",
+      "postgresql@16-main",
+      "needle-monitor.timer",
+      "needle-cleanup.timer"
+    ],
+    "seven_installed_python_files_match_commit": true,
+    "module_sha256": {
+      "leads.py": "9d708aac27cadc20a69bbdc52836d28ecca7557ca4ea4901718c2244d7966eaa",
+      "crm.py": "f90bdabc1f0714786e2e21b9028896248cfe926ae9f7ea5375a1a1fa4adbb982",
+      "lead_context.py": "ff20453a9a86f883f7638b5efa1469a5ea8b817aab027926fe40ba9e1f18f05e",
+      "delivery_store.py": "4ae864aec389b03ab3fd7a36d24849dfac6314f5dc8ba545a5af3cf2377e38e4",
+      "mail_delivery.py": "c8ba99410f4ccdc60bfbbb6799f4a6a9d790c707c5b5504b3513d5ccde3d1cf7",
+      "loop_delivery.py": "892b843d4abc1a54be8aeb2121518b55777419374b4df3d0de503930f73bda19",
+      "configure-server-mail.py": "aac1cda25766ef09a15e9f270120e7bde60e458987ea895014059f8a0e37e154"
+    }
+  },
+  "local_checks": {
+    "server_tests_passed": 26,
+    "ops_tests_passed": 14,
+    "git_diff_check": "passed",
+    "real_postgresql_disposable_schema": [
+      "order 401 with different customer/job ids",
+      "both queues resolve orders.id including payloads without order_id",
+      "same number after lease recovery and retry",
+      "UUID and stored payload remain unchanged",
+      "atomic rollback, concurrent deduplication, independent queues, attachments, backoff and rate limits"
+    ],
+    "integration_external_sends": 0
+  },
+  "customer_numbering": {
+    "production_read_only_check": "Separate sequences confirmed; gaps observed without exporting names, contacts or request text.",
+    "synthetic_reproduction": "Real crm.archive generated customer IDs 1,5,8,10 from ten inquiries across four contacts, without deletions or failed transactions.",
+    "cause": "INSERT ON CONFLICT consumes the next customer identity value before resolving an existing contact. Every new inquiry can advance both sequences. UUID retries are rejected before this insert.",
+    "limits": "This reproduces the mechanism, not the complete production history of each missing number. No counters or existing IDs were changed."
+  },
+  "public_browser": {
+    "page": "https://needle-shark.ru/",
+    "qa_campaign": "order_id_20260922",
+    "synthetic_submissions": 1,
+    "success_message_observed": true,
+    "console_errors_and_warnings": [],
+    "file_selected": "Synthetic PDF; no real applicant information"
+  },
+  "synthetic_delivery": {
+    "order_id": 15,
+    "source_path": "/",
+    "email_subject": "Needle Shark — заявка №15",
+    "email_and_loop_number": "Номер заявки: 15",
+    "format_verification": "Installed message builders against the saved synthetic request; no retransmission for rendering verification.",
+    "visible_uuid_absent": true,
+    "technical_uuid_message_id_preserved": true,
+    "email_jobs": [
+      {
+        "status": "sent",
+        "attempts": 1,
+        "last_error": null,
+        "sent_at_present": true
+      }
+    ],
+    "loop_jobs": [
+      {
+        "status": "sent",
+        "attempts": 1,
+        "last_error": null,
+        "sent_at_present": true
+      }
+    ],
+    "file_bytes": 617,
+    "file_sha256": "8921c23b3a3a7ca54a1efdfa76fbec2695c1afa801250eea9766881e75fb535b",
+    "database_file_matches_original": true,
+    "rendered_mime_attachment_matches_original": true,
+    "file_viewer_open": "Not separately checked; bytes and MIME integrity verified.",
+    "inbox_and_loop_ui_receipt": "Not independently confirmed; SMTP acceptance and LOOP HTTP 200/ok confirmed by completed outbox jobs."
+  },
+  "public_api_retry": {
+    "identical": 200,
+    "changed": 409,
+    "uuid_response_preserved": true,
+    "after_retry_rows": {
+      "orders": 1,
+      "lead_submissions": 1,
+      "lead_files": 1,
+      "lead_deliveries": 1,
+      "lead_loop_deliveries": 1
+    },
+    "new_jobs_created": false
+  },
+  "public_https": {
+    "homepage_status": 200,
+    "homepage_bytes_match_dist": true,
+    "old_domain_redirect_final_status": 200,
+    "qa_query_preserved": true
+  },
+  "not_applicable": {
+    "static_generation_prepare_public_check_site_and_deploy_sh": "No public-page or static asset change; backend installed through its existing dedicated installer.",
+    "five_viewport_visual_regression": "No layout or frontend change.",
+    "seo_sitemap_reindex": "No new or changed public content.",
+    "analytics_cabinet_and_full_event_audit": "No analytics or form API changes; browser visit tagged with separate QA campaign.",
+    "new_field_migration": "No fields added. Existing order ID is joined at delivery time."
+  },
+  "privacy": "No webhook, SMTP settings, recipient addresses, real applicant data, UUIDs or private file URLs in this report. Existing outputs/ untouched."
+}
