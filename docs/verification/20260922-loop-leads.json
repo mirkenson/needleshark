@@ -1,0 +1,332 @@
+{
+  "date": "2026-09-22",
+  "scope": "Text-only new website leads to owner-supplied neesha.loop.ru incoming webhook. No files, historical replay or LOOP monitoring.",
+  "published": true,
+  "code_commit": "6eedb20ef75af950f460879a7ad60ad343e29f28",
+  "branch": "codex/loop-leads",
+  "committed_and_pushed_before_install": true,
+  "runtime": {
+    "backend_release": "20260922T071148Z-6eedb20ef75a",
+    "backend_commit": "6eedb20ef75af950f460879a7ad60ad343e29f28",
+    "backend_previous": "/opt/needle-shark/releases/20260922T070503Z-6bc0fdb34c73",
+    "static_current": "/var/www/needle-shark/releases/20260922T070621Z-52722",
+    "static_previous": "/var/www/needle-shark/releases/20260918T083901Z-35018",
+    "mail_configuration_unchanged": true,
+    "systemd_unit_unchanged": true,
+    "loop_configured": true,
+    "environment_mode": "0600",
+    "module_hashes": {
+      "leads.py": "9d708aac27cadc20a69bbdc52836d28ecca7557ca4ea4901718c2244d7966eaa",
+      "lead_context.py": "ff20453a9a86f883f7638b5efa1469a5ea8b817aab027926fe40ba9e1f18f05e",
+      "configure-server-mail.py": "aac1cda25766ef09a15e9f270120e7bde60e458987ea895014059f8a0e37e154",
+      "mail_delivery.py": "45d65e5740df7780a8793d49f7f07e51aac1ab5211942f42246e6928dd2d0e50",
+      "delivery_store.py": "4cc0bde70a5c127f09bc2ee3ce92c6f76af9b6f3e606083c62eaa615ec3d8cb7",
+      "crm.py": "f90bdabc1f0714786e2e21b9028896248cfe926ae9f7ea5375a1a1fa4adbb982",
+      "loop_delivery.py": "8ccf53018c2da92ea0f0cf42501cdb1c51656538fdf9663be28a821548171bfd"
+    },
+    "services": {
+      "needle-leads": "active",
+      "nginx": "active",
+      "postgresql@16-main": "active",
+      "needle-monitor.timer": "active",
+      "needle-cleanup.timer": "active"
+    },
+    "loop_jobs_total": 3,
+    "pending_loop_jobs": 0,
+    "pending_email_jobs": 0
+  },
+  "public_release": {
+    "release": "20260922T070621Z-52722",
+    "previous": "/var/www/needle-shark/releases/20260918T083901Z-35018",
+    "verified_file_count": 222,
+    "all_sha256_match_checked_local_dist": true
+  },
+  "public_https": {
+    "resources": [
+      {
+        "path": "/",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/script.js",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog.js",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/metrika.js",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/analytics.js",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "matches_release": true,
+        "x_robots_tag": null
+      }
+    ],
+    "redirects": [
+      {
+        "origin": "http://needle-shark.ru",
+        "final_status": 200,
+        "query_preserved": true
+      },
+      {
+        "origin": "https://www.needle-shark.ru",
+        "final_status": 200,
+        "query_preserved": true
+      },
+      {
+        "origin": "https://needleshark.ru",
+        "final_status": 200,
+        "query_preserved": true
+      },
+      {
+        "origin": "https://www.needleshark.ru",
+        "final_status": 200,
+        "query_preserved": true
+      }
+    ]
+  },
+  "automated_checks": {
+    "server": 26,
+    "ops": 14,
+    "catalog": 11,
+    "business": 2,
+    "blog": 13,
+    "legacy_apps_script_contract": 10,
+    "total": 76,
+    "generation_prepare_public_check_site": "passed, 10 pages",
+    "js_and_shell_syntax": "passed",
+    "real_postgresql_disposable_schema": [
+      "atomic intake and rollback",
+      "concurrent UUID deduplication",
+      "same UUID changed content conflict",
+      "independent SMTP and LOOP queues",
+      "LOOP job excludes attachment bytes",
+      "lease fencing and recovery",
+      "retry backoff",
+      "disabled LOOP does not create jobs",
+      "existing rate limit"
+    ],
+    "postgresql_test_external_sends": 0,
+    "installer_exit_recovery": [
+      "failing command",
+      "unbound shell parameter",
+      "success disarms trap"
+    ]
+  },
+  "local_browser": {
+    "api": "synthetic local mock; no external messages",
+    "checks": [
+      "required fields",
+      "invalid contact",
+      "503 error without success",
+      "disconnected response without success",
+      "retry retains UUID",
+      "double-click creates one in-flight request",
+      "controls disabled until response",
+      "valid PDF exact bytes",
+      "over-2-MiB PDF rejected before request"
+    ],
+    "errors": []
+  },
+  "public_browser": {
+    "urls": [
+      "https://needle-shark.ru/",
+      "https://needle-shark.ru/business/",
+      "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/"
+    ],
+    "qa_campaign": "loop_leads_20260922",
+    "three_success_messages_after_server_save": true,
+    "double_click_home_and_catalogue_single_submission": true,
+    "catalogue_viewports_verified": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "home_business_observed_width": 1280,
+    "home_business_other_widths": "not verified in this release: viewport override did not apply (observed innerWidth remained 1280)",
+    "visual_changes": false,
+    "observed_horizontal_or_form_overflow": false,
+    "observed_broken_images": 0,
+    "console_errors_and_warnings": []
+  },
+  "end_to_end_synthetic_cases": [
+    {
+      "case": "каталог",
+      "source_verified": true,
+      "all_order_fields_verified": true,
+      "no_attachment_url": true,
+      "email_jobs": [
+        [
+          "sent",
+          1,
+          null
+        ]
+      ],
+      "loop_jobs": [
+        [
+          "sent",
+          1,
+          null
+        ]
+      ],
+      "file_bytes": 0,
+      "file_sha256": null
+    },
+    {
+      "case": "главная",
+      "source_verified": true,
+      "all_order_fields_verified": true,
+      "no_attachment_url": true,
+      "email_jobs": [
+        [
+          "sent",
+          1,
+          null
+        ]
+      ],
+      "loop_jobs": [
+        [
+          "sent",
+          1,
+          null
+        ]
+      ],
+      "file_bytes": 1437,
+      "file_sha256": "ddeea478f92cdd5f4b0e2ad6065f9132a49e642104085aebe2127ba7707b4ee3"
+    },
+    {
+      "case": "бизнес",
+      "source_verified": true,
+      "all_order_fields_verified": true,
+      "no_attachment_url": true,
+      "email_jobs": [
+        [
+          "sent",
+          1,
+          null
+        ]
+      ],
+      "loop_jobs": [
+        [
+          "sent",
+          1,
+          null
+        ]
+      ],
+      "file_bytes": 0,
+      "file_sha256": null
+    }
+  ],
+  "attachment": {
+    "bytes": 1437,
+    "sha256": "ddeea478f92cdd5f4b0e2ad6065f9132a49e642104085aebe2127ba7707b4ee3",
+    "local_pdf_opens": "pypdf read one page and expected synthetic QA text",
+    "postgres_bytes_equal_fixture": true,
+    "public_or_drive_url": false,
+    "smtp_provider_accepted": true,
+    "current_test_email_inbox_and_attachment_open_by_owner": "not confirmed",
+    "loop_payload": "text only; optional attached-file notice, no filename, bytes or link"
+  },
+  "public_api_replay": {
+    "identical_retry": 200,
+    "changed_retry": 409,
+    "outboxes_unchanged": true
+  },
+  "loop_receipt": {
+    "provider_ack": "HTTP 200 and body ok for each of three cases",
+    "owner_confirmed": "Catalogue message visible and readable in intended channel",
+    "home_business_display": "provider acknowledgement checked; no separate owner/UI confirmation",
+    "at_least_once": "Lost provider acknowledgement can produce another post with same visible UUID."
+  },
+  "analytics": {
+    "counter": 112428810,
+    "single_loader_and_handler": true,
+    "cabinet_domains": [
+      "needle-shark.ru",
+      "needleshark.ru"
+    ],
+    "only_configured_domains_and_subdomains": true,
+    "eight_existing_goal_identifiers_rechecked": true,
+    "new_goals_created": false,
+    "sdk": "Real Yandex debug SDK; not a substituted ym handler",
+    "lead_submitted_utc": [
+      "2026-09-22T07:14:09.487Z",
+      "2026-09-22T07:25:45.640Z",
+      "2026-09-22T07:26:48.187Z"
+    ],
+    "one_lead_submitted_per_success": true,
+    "report_ingestion": "not confirmed: Yandex maintenance notice; report widgets failed to load",
+    "utm_retained_until_submit": true,
+    "utm_or_referrer_stored_in_orders_or_loop": false,
+    "form_content_added_to_analytics": false
+  },
+  "seo": {
+    "metadata_content_design_changed": false,
+    "ten_pages_checked": true,
+    "reindex_request": "not applicable: no new or materially changed page",
+    "index_presence": "not rechecked"
+  },
+  "deployment_incident": {
+    "initial_attempt": "20260922T070122Z-4c19bfbecfab",
+    "cause": "SSH omitted empty positional argument; unbound variable bypassed ERR recovery trap",
+    "service_stopped_utc": [
+      "2026-09-22T07:02:02Z",
+      "2026-09-22T07:03:33Z"
+    ],
+    "duration_seconds": 91,
+    "nginx_api_leads_requests_in_interval": 0,
+    "nginx_total_requests_in_interval": 1,
+    "static_https_available": true,
+    "original_service_restored_before_retry": true,
+    "fix": "Nonempty SSH placeholder and EXIT recovery armed before stop, with regression tests",
+    "historical_records_modified": false
+  },
+  "remaining_limits": [
+    "LOOP monitoring explicitly deferred; existing email monitor unchanged",
+    "SMTP acknowledgement does not prove inbox placement",
+    "No exactly-once LOOP guarantee after lost acknowledgement",
+    "UTM/referrer attribution not added",
+    "No external backup or restore validation added",
+    "Homepage/B2B five-width visual recheck unavailable; layout unchanged"
+  ],
+  "official_reference": "https://developers.loop.ru/integrate/webhooks/",
+  "privacy": "No webhook token, recipient addresses, real lead records or private attachment links included."
+}
