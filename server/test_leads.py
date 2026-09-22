@@ -57,14 +57,20 @@ class LeadTests(unittest.TestCase):
                     product_size='220 × 98 × 106', inquiry_type='wholesale', quantity=12,
                     source_path='/catalog/chehol-na-kvadrocikl/')
 
-    def test_invalid_catalogue_metadata_and_oversized_notification(self):
+    def test_invalid_catalogue_metadata(self):
         for update in [{'quantity': True}, {'quantity': 0}, {'quantity': 1.5}, {'quantity': '12'},
                        {'quantity': 1000001}, {'product_slug': '../test'}, {'inquiry_type': 'unknown'},
                        {'product_size': 'not a size'}, {'product_name': ''},
-                       {'source_path': 'https://other.example/'}, {'source_path': '/catalog/?contact=private'},
-                       {'question': 'x' * 4900}]:
+                       {'source_path': 'https://other.example/'}, {'source_path': '/catalog/?contact=private'}]:
             with self.subTest(update=list(update)), self.assertRaises(ValueError):
                 leads.validate(dict(self.product_data(), **update))
+
+    def test_source_metadata_does_not_shorten_the_full_message_limit(self):
+        for data in (dict(self.data, source_path='/'), self.product_data(),
+                     dict(self.data, source_path='/business/', business_company='ТЕСТ', business_intent='custom')):
+            self.assertEqual(leads.validate(dict(data, question='Я' * 5000))['question'], 'Я' * 5000)
+            with self.assertRaises(ValueError):
+                leads.validate(dict(data, question='Я' * 5001))
 
     def test_invalid_business_fields_and_client_link_are_not_accepted(self):
         for update in [{'business_intent': 'unknown'}, {'business_company': 'x' * 161},

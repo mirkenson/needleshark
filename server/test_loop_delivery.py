@@ -31,7 +31,9 @@ class LoopTests(unittest.TestCase):
                          'Размер, см: 220 × 98 × 106', 'Карточка товара — форма обращения',
                          'https://needle-shark.ru/catalog/chehol-na-kvadrocikl/'):
             self.assertIn(expected, text)
-        self.assertIn('    @channel <!here> ``` ![image](https://example.invalid)', text)
+        self.assertIn('\n~~~\n', text)
+        self.assertTrue(text.endswith('\n~~~'))
+        self.assertIn(self.lead['question'], text)
         self.assertTrue(payload['skip_slack_parsing'])
         self.assertEqual(set(payload), {'text', 'skip_slack_parsing'})
         self.assertNotIn('private.pdf', json.dumps(payload))
@@ -48,6 +50,10 @@ class LoopTests(unittest.TestCase):
         self.assertNotIn('https://needle-shark.ru', text)
         for path, expected in [('/', 'Главная'), ('/catalog/', 'Каталог'), ('/business/', 'Для бизнеса')]:
             self.assertIn(expected, loop.message(dict(lead, source_path=path))['text'])
+        for question in ('\n' * 4999 + 'Я', '`' * 2500 + '~' * 2500):
+            text = loop.message(dict(lead, question=question))['text']
+            self.assertIn(question, text)
+            self.assertLess(len(text), 16000)
 
     def test_url_configuration_is_restricted_and_optional(self):
         self.assertEqual(loop.webhook_url(TEST_WEBHOOK), TEST_WEBHOOK)

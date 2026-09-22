@@ -48,10 +48,13 @@ def message(lead):
               '', 'Текст обращения:', lead['question']]
     if lead.get('attachment'):
         lines += ['', 'К заявке приложен файл. Он отправляется только по почте.']
-    # Indent every line as literal code: visitor text cannot become mentions, images,
-    # misleading Markdown links or close a fenced block. Preserve exact contact text.
-    literal = '\n'.join('    ' + line for line in '\n'.join(lines).splitlines())
-    return {'text': '**Новая заявка Needle Shark**\nНомер: ' + lead['id'] + '\n\n' + literal,
+    # A code fence preserves complete text/contact without interpreting mentions/images.
+    # Choose the shorter safe delimiter so even many newlines/backticks fit one post.
+    literal = '\n'.join(lines)
+    fences = [char * max(3, 1 + max((len(run) for run in re.findall(re.escape(char) + '+', literal)), default=0))
+              for char in ('`', '~')]
+    fence = min(fences, key=len)
+    return {'text': '**Новая заявка Needle Shark**\nНомер: ' + lead['id'] + '\n\n' + fence + '\n' + literal + '\n' + fence,
             'skip_slack_parsing': True}
 
 

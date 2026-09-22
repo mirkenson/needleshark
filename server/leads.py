@@ -39,8 +39,8 @@ def validate(data):
         if not re.fullmatch(r'[+\d()\s.-]+', contact) or not 7 <= len(re.sub(r'\D', '', contact)) <= 15:
             raise ValueError('Укажите корректный телефон или email.')
     result.update(validate_context(data))
-    if len(notification_payload(result)['question']) > 5000:
-        raise ValueError('Сократите описание задачи с учётом сведений о товаре.')
+    # The 5,000-character limit applies to the visitor's text. Page/product metadata
+    # must not reduce it; the former combined limit belonged to the retired Google sink.
     attachment = data.get('attachment')
     if attachment is not None:
         if not isinstance(attachment, dict):
