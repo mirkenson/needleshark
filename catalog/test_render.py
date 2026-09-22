@@ -16,7 +16,7 @@ class CatalogueTests(unittest.TestCase):
         products = json.loads((render.ROOT / 'catalog/products.json').read_text())['products']
         for product in products:
             render.validate_galleries(product)
-        moto, wheel = products[1:]
+        moto, wheel = products[1:3]
         self.assertNotIn('moto-heat', moto['galleries']['standard']['images'])
         self.assertNotIn('moto-standard', moto['galleries']['heat']['images'])
         special = {'moto-canvas-insert', 'moto-vent', 'moto-reflector'}
@@ -47,8 +47,8 @@ class CatalogueTests(unittest.TestCase):
 
     def test_variants_have_only_confirmed_combinations_and_distinct_links(self):
         products = json.loads((render.ROOT / 'catalog/products.json').read_text())['products']
-        self.assertEqual(len(products), 3)
-        moto, wheel = products[1:]
+        self.assertEqual(sum(p.get('status', 'published') == 'published' for p in products), 3)
+        moto, wheel = products[1:3]
         for product in (moto, wheel):
             render.validate_variants(product)
             data = render.variant_data(product)
@@ -86,6 +86,63 @@ class CatalogueTests(unittest.TestCase):
         product['variants'][0]['options']['size'] = 'unknown'
         with self.assertRaises(ValueError):
             render.validate_variants(product)
+
+    def test_unconfirmed_marketplace_links_are_not_invented(self):
+        product = copy.deepcopy(json.loads((render.ROOT / 'catalog/products.json').read_text())['products'][1])
+        product['variants'][0]['ozonUrl'] = None
+        render.validate_variants(product)
+        self.assertIsNone(render.variant_data(product)[0]['ozonUrl'])
+        html = render.markets(product)
+        self.assertNotIn('href="None"', html)
+        self.assertIn('Ozon: покупка пока недоступна', html)
+
+    def test_unknown_material_coating_and_sizes_are_omitted(self):
+        product = copy.deepcopy(PRODUCT)
+        product.update(material='', coating='', sizes=[], facts=[], materialFacts=[])
+        schema = render.product_schema(product)
+        self.assertNotIn('material', schema)
+        self.assertNotIn('additionalProperty', schema)
+        self.assertNotIn('size', schema)
+        self.assertNotIn('hero-specs', render.hero(product))
+
+    def test_size_only_label_avoids_duplicate_product_name_and_source_metadata(self):
+        product = copy.deepcopy(json.loads((render.ROOT / 'catalog/products.json').read_text())['products'][1])
+        product['optionGroups'] = [g for g in product['optionGroups'] if g['id'] == 'size']
+        for variant in product['variants']:
+            variant['options'] = {'size': variant['options']['size']}
+            variant['source'] = {'file': 'internal-source.xlsx'}
+        variant = render.variant_data(product)[0]
+        self.assertEqual(variant['label'], variant['sizeLabel'])
+        self.assertNotIn('source', variant)
+
+    def test_drafts_have_only_an_isolated_noindex_preview(self):
+        published = copy.deepcopy(PRODUCT)
+        draft = copy.deepcopy(PRODUCT)
+        draft.update(slug='draft-product', status='draft', name='Черновой товар')
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            dist = root / 'dist'
+            (root / 'catalog').mkdir()
+            (root / 'catalog/products.json').write_text(json.dumps({'products':[published, draft]}))
+            for image in PRODUCT['images']:
+                path = dist / image['src'].lstrip('/')
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(b'test asset')
+            (dist / 'index.html').write_text('Existing homepage')
+            with patch.object(render, 'ROOT', root), patch.object(render, 'DIST', dist):
+                render.render()
+                before = (dist / 'catalog/index.html').read_bytes()
+                self.assertNotIn(b'draft-product', before)
+                self.assertFalse((dist / 'catalog/draft-product').exists())
+                render.render(preview=True)
+            self.assertEqual(before, (dist / 'catalog/index.html').read_bytes())
+            preview = root / 'outputs/catalog-preview'
+            html = (preview / 'catalog/draft-product/index.html').read_text()
+            self.assertIn('content="noindex,nofollow"', html)
+            self.assertNotIn('src="/metrika.js', html)
+            self.assertNotIn('mc.yandex.ru/watch', html)
+            self.assertIn('draft-product', (preview / 'catalog/index.html').read_text())
+            self.assertIn('Disallow: /', (preview / 'robots.txt').read_text())
 
     def test_social_image_comes_from_this_product(self):
         product = copy.deepcopy(PRODUCT)

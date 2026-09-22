@@ -84,7 +84,9 @@ document.querySelectorAll('[data-select-size]').forEach(button => button.addEven
 
 // Only combinations listed in product data can be selected. Additional groups
 // (for example colour) use the same controls without inventing combinations.
-const variants = JSON.parse(document.querySelector('#product-variants')?.textContent || '[]');
+const variants = JSON.parse(document.querySelector('#product-variants')?.textContent || '[]').map(variant => ({
+  ...variant, label: variant.label || [variant.summary, variant.sizeLabel].filter(Boolean).join(' · ')
+}));
 const optionInputs = [...document.querySelectorAll('[data-option]')];
 const optionGroups = [...new Set(optionInputs.map(input => input.dataset.option))];
 const packProduct = variants.some(variant => variant.unitsPerPack > 1);
@@ -98,13 +100,15 @@ function updateVariant(variant) {
     input.disabled = !variants.some(candidate => candidate.options[group] === input.value &&
       preceding.every(key => candidate.options[key] === variant.options[key]));
   });
-  document.querySelector('#variant-selection').textContent = `Выбрано: ${variant.summary} · ${variant.sizeLabel}`;
+  document.querySelector('#variant-selection').textContent = `Выбрано: ${variant.label}`;
   document.querySelectorAll('[data-variant-market="Ozon"]').forEach(link => {
-    link.href = variant.ozonUrl;
-    link.setAttribute('aria-label', `Купить на Ozon: ${variant.summary} · ${variant.sizeLabel}`);
+    if (variant.ozonUrl) link.href = variant.ozonUrl;
+    else link.removeAttribute('href');
+    link.setAttribute('aria-disabled', String(!variant.ozonUrl));
+    link.setAttribute('aria-label', `Купить на Ozon: ${variant.label}`);
   });
   activateGallery(variant.galleryId);
-  setGalleryText('#kit-configuration', `${variant.summary} · ${variant.sizeLabel}`);
+  setGalleryText('#kit-configuration', variant.label);
   const kit = document.querySelector('#variant-kit');
   if (kit) kit.replaceChildren(...variant.kit.map((text, index) => {
     const item = document.createElement('li');
@@ -120,7 +124,7 @@ function updateVariant(variant) {
     button.innerHTML = active ? 'Выбрано <span aria-hidden="true">✓</span>' : 'Выбрать <span aria-hidden="true">↗</span>';
   });
   const note = document.querySelector('#selected-size-note');
-  if (note) note.textContent = `Выбрано: ${variant.summary} · ${variant.sizeLabel}. Этот вариант появится в заявке.`;
+  if (note) note.textContent = `Выбрано: ${variant.label}. Этот вариант появится в заявке.`;
   const quantity = document.querySelector('[name="quantity"]');
   if (quantity && packProduct) quantity.max = String(Math.floor(1000000 / variant.unitsPerPack));
 }
@@ -167,7 +171,7 @@ document.querySelectorAll('[data-request]').forEach(button => button.addEventLis
   if (sending) return;
   const selected = sizeInputs.find(input => input.checked)?.value;
   const product = document.body.dataset.productName;
-  const choice = selectedVariant ? `${selectedVariant.summary} · ${selectedVariant.sizeLabel}` : (selected ? `${selected} см` : 'размер пока не выбран');
+  const choice = selectedVariant ? selectedVariant.label : (selected ? `${selected} см` : 'размер пока не выбран');
   const context = product ? `${product} · ${choice}` : 'Готовые изделия и пошив партии';
   document.querySelector('#request-context').textContent = context;
   requestForm.elements.intent.value = intentValues[button.dataset.request] || 'direct';
@@ -198,7 +202,7 @@ requestForm?.addEventListener('submit', async event => {
   if (!requestForm.reportValidity()) return;
   const quantity = requestForm.elements.quantity.value === '' ? null : Number(requestForm.elements.quantity.value);
   const question = requestForm.elements.question.value.trim() || 'Обращение по каталогу.';
-  const variantContext = selectedVariant ? `${selectedVariant.context}\nГабариты / типоразмер: ${selectedVariant.sizeLabel}\nАртикул варианта: ${selectedVariant.id}\n${packProduct ? `Чехлов в комплекте: ${selectedVariant.unitsPerPack}\nКоличество комплектов: ${quantity ?? 'не указано'}\n` : ''}\nКомментарий: ` : '';
+  const variantContext = selectedVariant ? `${selectedVariant.context}\n${selectedVariant.sizeLabel ? `Габариты / типоразмер: ${selectedVariant.sizeLabel}\n` : ''}Артикул варианта: ${selectedVariant.id}\n${packProduct ? `${document.body.dataset.unitLabel || 'Чехлов'} в комплекте: ${selectedVariant.unitsPerPack}\nКоличество комплектов: ${quantity ?? 'не указано'}\n` : ''}\nКомментарий: ` : '';
   const payload = {
     name: requestForm.elements.name.value.trim(),
     contact: value,

@@ -62,8 +62,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=4173)
     parser.add_argument('--live-api', action='store_true', help='Forward form submissions to the existing live API')
+    parser.add_argument('--directory', type=Path, help='Serve an isolated local preview directory')
     args = parser.parse_args()
-    directory = str(Path(__file__).resolve().parent.parent / 'dist')
+    if args.directory and args.live_api:
+        parser.error('Custom preview directories cannot enable the live API')
+    directory = str(args.directory.resolve() if args.directory else Path(__file__).resolve().parent.parent / 'dist')
     server = ThreadingHTTPServer(('127.0.0.1', args.port), partial(PreviewHandler, directory=directory))
     server.live_api = args.live_api
     print(f'Preview: http://127.0.0.1:{args.port}/catalog/ (live API: {args.live_api})', flush=True)

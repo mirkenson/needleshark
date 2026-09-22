@@ -18,6 +18,8 @@ WIDTHS = (160, 480, 800, 1200, 1536)
 def render():
     output = DIST / 'images'
     output.mkdir(exist_ok=True)
+    manifest_path = ROOT / 'ops/image-manifest.json'
+    previous = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
     manifest = {}
     products = json.loads((ROOT / 'catalog/products.json').read_text())['products']
     sources = dict.fromkeys(HOME_IMAGES + [image['src'].lstrip('/') for product in products for image in product['images']])
@@ -25,6 +27,11 @@ def render():
         source = DIST / name
         if not source.resolve().is_relative_to(DIST.resolve()):
             raise ValueError('Image must be inside dist: ' + name)
+        digest = hashlib.sha256(source.read_bytes()).hexdigest()
+        cached = previous.get('/' + name)
+        if cached and cached['sha256'] == digest and all((DIST / v['src'].lstrip('/')).is_file() and (DIST / v['src'].lstrip('/')).stat().st_size == v['bytes'] for v in cached['variants']):
+            manifest['/' + name] = cached
+            continue
         with Image.open(source) as original:
             image = ImageOps.exif_transpose(original).convert('RGB')
             variants = []
@@ -37,7 +44,7 @@ def render():
                                  'width': width, 'height': height, 'bytes': target.stat().st_size})
             manifest['/' + name] = {'width': image.width, 'height': image.height,
                                      'originalBytes': source.stat().st_size,
-                                     'sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
+                                     'sha256': digest,
                                      'variants': variants}
     (ROOT / 'ops/image-manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     print(f'Created {sum(len(item["variants"]) for item in manifest.values())} responsive images; originals retained.')

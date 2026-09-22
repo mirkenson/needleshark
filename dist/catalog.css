@@ -291,6 +291,10 @@ body.dialog-open{overflow:hidden}
 .variant-picker input:disabled+span{cursor:default;color:var(--muted);background:var(--surface-disabled)}
 .variant-picker input:disabled+span strong{text-decoration:line-through}
 .variant-selection{color:var(--ink-secondary);margin:8px 0;overflow-wrap:anywhere}
+.assortment[data-source-images=true] .hero-specs{flex-wrap:wrap;gap:16px 30px}
+.assortment[data-source-images=true] .material-photo img{object-fit:contain;aspect-ratio:auto;max-height:560px}
+.assortment[data-source-images=true] .material-specs dd{text-align:right;overflow-wrap:anywhere}
+.assortment[data-source-images=true] .product-badge,.catalog-card[data-source-images=true] .product-badge{display:none}
 .gallery-model{margin:0 0 12px;color:var(--ink-secondary)}
 .kit-configuration{color:var(--accent);margin-block:24px 12px}
 .construction-details{border-top:var(--rule-width) solid var(--line-strong);padding-top:30px;margin-top:38px}

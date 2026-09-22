@@ -2,6 +2,8 @@
 import json
 import sys
 import re
+import argparse
+import shutil
 from html import escape
 from pathlib import Path
 from string import Template
@@ -101,9 +103,13 @@ def variant_data(product):
     result = []
     for variant in product.get('variants', []):
         choices = variant_choices(product, variant)
-        result.append({**variant, 'summary': ' · '.join(value for label, value in choices if label != 'Размер'),
+        summary = ' · '.join(value for label, value in choices if label not in ('Размер', 'Объём', 'Ширина'))
+        label = ' · '.join(dict.fromkeys(value for value in (summary, variant['sizeLabel']) if value))
+        summary = summary or product['name']
+        public_variant = {key: value for key, value in variant.items() if key != 'source'}
+        result.append({**public_variant, 'summary': summary, 'label': label,
                        'context': '\n'.join(f'{label}: {value}' for label, value in choices),
-                       'ozonUrl': external_url(variant['ozonUrl'], f'catalog_{product["slug"]}_{variant["id"]}')})
+                       'ozonUrl': external_url(variant['ozonUrl'], f'catalog_{product["slug"]}_{variant["id"]}') if variant.get('ozonUrl') else None})
     return result
 
 
@@ -119,15 +125,15 @@ def variant_picker(product):
             options += f'<label class="size-option"><input type="radio" name="option-{e(group["id"])}" data-option="{e(group["id"])}" value="{e(value["id"])}"{checked}><span><strong>{e(value["label"])}</strong>{note}</span></label>'
         groups.append(f'<fieldset class="size-picker variant-picker"><legend>{e(group["label"])}</legend><div class="size-options">{options}</div></fieldset>')
     data = json.dumps(variants, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
-    return ''.join(groups) + f'<p class="variant-selection type-small" id="variant-selection" role="status">Выбрано: {e(default["summary"])} · {e(default["sizeLabel"])}</p><script type="application/json" id="product-variants">{data}</script>'
+    return ''.join(groups) + f'<p class="variant-selection type-small" id="variant-selection" role="status">Выбрано: {e(default["label"])}</p><script type="application/json" id="product-variants">{data}</script>'
 
 
 def variant_size_table(product):
     rows = ''
-    for variant in product['variants']:
-        choices = ' · '.join(value for label, value in variant_choices(product, variant) if label != 'Размер')
+    for variant in variant_data(product):
+        choices = variant['summary']
         rows += f'<tr><td>{e(choices)}</td><td>{e(variant["sizeLabel"])}</td><td><button data-select-variant="{e(variant["id"])}" aria-label="Выбрать {e(choices)} — {e(variant["sizeLabel"])}">Выбрать <span aria-hidden="true">↗</span></button></td></tr>'
-    return f'<table class="size-table variant-table"><caption>{e(product["copy"]["sizeTableCaption"])}</caption><thead><tr><th scope="col">Комплектация</th><th scope="col">Размер</th><th scope="col"><span class="sr-only">Выбор</span></th></tr></thead><tbody>{rows}</tbody></table>'
+    return f'<table class="size-table variant-table"><caption>{e(product["copy"]["sizeTableCaption"])}</caption><thead><tr><th scope="col">{e(product.get("variantTableLabel", "Комплектация"))}</th><th scope="col">{e(product.get("variantSizeHeading", "Размер"))}</th><th scope="col"><span class="sr-only">Выбор</span></th></tr></thead><tbody>{rows}</tbody></table>'
 
 
 def validate_variants(product):
@@ -145,7 +151,7 @@ def validate_variants(product):
             raise ValueError('Unknown or missing variant option')
         if variant['id'] in ids or combination in combinations:
             raise ValueError('Duplicate variant')
-        if not variant['ozonUrl'].startswith('https://www.ozon.ru/product/'):
+        if variant.get('ozonUrl') and not variant['ozonUrl'].startswith('https://www.ozon.ru/product/'):
             raise ValueError('Variant must link to its HTTPS Ozon product')
         if variant['galleryId'] not in product.get('galleries', {}):
             raise ValueError('Invalid variant gallery')
@@ -158,12 +164,10 @@ def markets(product, compact=False):
     for market in product['marketplaces']:
         name = e(market['name'])
         content = f'{name}<span aria-hidden="true">↗</span>'
-        if market['url']:
-            if not market['url'].startswith('https://'):
+        url = variant_data(product)[0]['ozonUrl'] if product.get('variants') and market['name'] == 'Ozon' else market['url']
+        if url:
+            if not url.startswith('https://'):
                 raise ValueError('Marketplace links must use HTTPS')
-            url = market['url']
-            if product.get('variants') and market['name'] == 'Ozon':
-                url = variant_data(product)[0]['ozonUrl']
             marker = ' data-variant-market="Ozon"' if product.get('variants') and not compact and market['name'] == 'Ozon' else ''
             links.append(f'<a class="market-button"{marker} href="{e(url)}" target="_blank" rel="noopener noreferrer">{content}</a>')
         else:
@@ -171,7 +175,7 @@ def markets(product, compact=False):
     return f'<div class="marketplaces{" compact" if compact else ""}">{"".join(links)}</div>'
 
 
-def shell(content, title, description, product_name='', catalog_current='false', product_slug='', structured=None):
+def shell(content, title, description, product_name='', catalog_current='false', product_slug='', structured=None, unit_label='Чехлов', source_images=False):
     if structured:
         content += json_ld(structured)
     trail = [('Главная', '/'), ('Каталог', '/catalog/')]
@@ -179,7 +183,7 @@ def shell(content, title, description, product_name='', catalog_current='false',
         trail.append((product_name, f'/catalog/{product_slug}/'))
     content += json_ld(breadcrumbs(trail))
     return prepare_html(BASE.substitute(content=content, title=e(title), description=e(description),
-                           product_name=e(product_name), product_slug=e(product_slug), catalog_current=catalog_current, dialogs=dialogs()), 'catalog/' + (product_slug + '/' if product_slug else '') + 'index.html')
+                           product_name=e(product_name), product_slug=e(product_slug), unit_label=e(unit_label), source_images=str(source_images).lower(), catalog_current=catalog_current, dialogs=dialogs()), 'catalog/' + (product_slug + '/' if product_slug else '') + 'index.html')
 
 
 def dialogs():
@@ -199,7 +203,10 @@ def hero(product):
     picker = variant_picker(product) if product.get('variants') else f'<fieldset class="size-picker"><legend>Размер, см <span>Д × Ш × В</span></legend><div class="size-options">{sizes}</div></fieldset>'
     note = f'<p class="seasonal-note">{e(product["seasonalNote"])}</p>' if product['seasonalNote'] else ''
     size_help = '<a class="size-help" href="#sizes">Как подобрать размер <span aria-hidden="true">↙</span></a>' if 'sizes' in product['sections'] else '<button class="text-link size-help" data-request="Подбор размера">Помогите подобрать размер ↗</button>'
-    purchase_note = "Цена и доставка — на выбранном маркетплейсе." if any(m["url"] for m in product["marketplaces"]) else "Переходы на маркетплейсы временно недоступны. Заказать можно напрямую — оставьте заявку ниже."
+    purchase_note = product.get('purchaseNote') or ("Цена и доставка — на выбранном маркетплейсе." if any(m["url"] for m in product["marketplaces"]) else "Переходы на маркетплейсы временно недоступны. Заказать можно напрямую — оставьте заявку ниже.")
+    facts = product.get('facts', [{'label': 'Материал', 'value': product['material']}, {'label': 'Влагозащитная пропитка', 'value': product['coating']}])
+    specs = ''.join(f'<div><span>{e(fact["label"])}</span><strong>{e(fact["value"])}</strong></div>' for fact in facts if fact['value'])
+    hero_specs = f'<div class="hero-specs">{specs}</div>' if specs else ''
     return f'''
     <nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/catalog/">Каталог</a><span aria-hidden="true">/</span><span>{e(product['name'])}</span></nav>
     <section class="wrap detail-hero" aria-labelledby="product-title">
@@ -208,7 +215,7 @@ def hero(product):
         <div class="gallery-bottom"><div class="gallery-thumbs" aria-label="Фотографии товара">{thumbnails}</div><p id="gallery-caption">{e(gallery[0]['label'])}</p></div>
       </div>
       <div class="detail-copy"><p class="eyebrow">NEEDLE SHARK / {e(product['category']).upper()}</p><h1 id="product-title">{e(product['name'])}<span class="title-dot">.</span></h1><p class="detail-intro">{e(product['description'])}</p>{note}
-        <div class="hero-specs"><div><span>Материал</span><strong>{e(product['material'])}</strong></div><div><span>Влагозащитная пропитка</span><strong>{e(product['coating'])}</strong></div></div>
+        {hero_specs}
         {picker}
         {size_help}
         <div class="buy-block"><p class="buy-label">Способы заказа</p>{markets(product)}<p class="price-note">{purchase_note}</p><button class="button accent request-primary" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button><p class="direct-note">Заказ напрямую · подбор размера · партии для бизнеса</p></div>
@@ -229,17 +236,19 @@ def detail_sections(product):
     faqs = ''.join(f'<details><summary>{e(item["question"])}<span aria-hidden="true">+</span></summary><p>{e(item["answer"])}</p></details>' for item in product['faq'])
     active_gallery = product.get('galleries', {}).get(default_gallery(product), {})
     material_text = active_gallery.get('materialText', product['materialText'])
+    material_facts = product.get('materialFacts', [{'label': 'Ткань', 'value': product['material']}, {'label': 'Влагозащитная пропитка', 'value': product['coating']}, {'label': 'Цвет', 'value': product['color']}])
+    material_specs = ''.join(f'<div><dt>{e(fact["label"])}</dt><dd>{e(fact["value"])}</dd></div>' for fact in material_facts if fact['value'])
     kit = ''.join(f'<li><span>0{i+1}</span>{e(item)}</li>' for i, item in enumerate(product['kit']))
     sections = {
         'scenarios': f'''<section class="wrap product-section" id="scenarios"><div class="section-heading"><div><p class="eyebrow">СЦЕНАРИИ ИСПОЛЬЗОВАНИЯ</p><h2>{lines(copy['scenariosTitle'])}</h2></div><p>{lines(copy['scenariosIntro'])}</p></div><div class="scenario-grid">{scenarios}</div></section>''',
-        'material': f'''<section class="material-section" id="material"><div class="wrap material-layout"><div class="material-copy"><p class="eyebrow">МАТЕРИАЛ</p><h2>{lines(copy['materialTitle'])}</h2><p id="material-description">{e(material_text)}</p><dl class="material-specs"><div><dt>Ткань</dt><dd>{e(product['material'])}</dd></div><div><dt>Влагозащитная пропитка</dt><dd>{e(product['coating'])}</dd></div><div><dt>Цвет</dt><dd>{e(product['color'])}</dd></div></dl></div><figure class="material-photo">{picture(image_for(product, 'material'), **{'data-product-photo': 'material'})}<figcaption id="material-caption">{e(active_gallery.get('materialCaption', copy['materialCaption']))}</figcaption></figure></div></section>''',
+        'material': f'''<section class="material-section" id="material"><div class="wrap material-layout"><div class="material-copy"><p class="eyebrow">МАТЕРИАЛ</p><h2>{lines(copy['materialTitle'])}</h2><p id="material-description">{e(material_text)}</p><dl class="material-specs">{material_specs}</dl></div><figure class="material-photo">{picture(image_for(product, 'material'), **{'data-product-photo': 'material'})}<figcaption id="material-caption">{e(active_gallery.get('materialCaption', copy['materialCaption']))}</figcaption></figure></div></section>''',
         'sizes': f'''<section class="wrap product-section sizes-section" id="sizes"><div class="section-heading"><div><p class="eyebrow">ПОДБОР РАЗМЕРА</p><h2>{lines(copy['sizesTitle'])}</h2></div><p>{lines(copy['sizesIntro'])}</p></div><div class="sizes-layout"><div><div class="fit-photo">{picture(image_for(product, 'fit'), **{'data-product-photo': 'fit'})}<span>Длина × ширина × высота</span></div><p class="fit-note">{e(product['fitNote'])}</p><button class="text-link size-request" data-request="Подбор размера">Помогите выбрать размер <span aria-hidden="true">↗</span></button></div><div class="size-table-wrap"><table class="size-table"><caption>{e(copy['sizeTableCaption'])}</caption><thead><tr><th scope="col">№</th><th scope="col">Длина</th><th scope="col">Ширина</th><th scope="col">Высота</th><th scope="col"><span class="sr-only">Выбор</span></th></tr></thead><tbody>{size_rows}</tbody></table><p class="selected-size-note" id="selected-size-note" role="status">Выберите размер — он появится в вашей заявке.</p><button class="button accent" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button></div></div></section>''',
         'kit': f'''<section class="kit-section" id="kit"><div class="wrap kit-layout"><div class="kit-photo">{picture(image_for(product, 'kit') if active_gallery else image_for(product, 'hero'), **{'data-product-photo': 'kit'})}</div><div class="kit-copy"><p class="eyebrow">КОМПЛЕКТАЦИЯ</p><h2>{lines(copy['kitTitle'])}</h2><p>{e(copy['kitDescription'])}</p><ul>{kit}</ul></div></div></section>''',
         'questions': f'''<section class="wrap product-section faq-section" id="questions"><div><p class="eyebrow">ВОПРОСЫ ОБ ИЗДЕЛИИ</p><h2>{lines(copy['faqTitle'])}</h2><p>{lines(copy['faqIntro'])}</p><button class="text-link" data-request="Подбор размера">Задать вопрос <span aria-hidden="true">↗</span></button></div><div class="faq-list">{faqs}</div></section>''',
         'wholesale': f'''<section class="wholesale-section" id="wholesale"><div class="wrap wholesale-layout"><div><p class="eyebrow">ДЛЯ БИЗНЕСА</p><h2>{lines(copy['wholesaleTitle'])}</h2></div><div><p>{e(copy['wholesaleDescription'])}</p><button class="button accent" data-request="Партия для бизнеса">Обсудить партию <span aria-hidden="true">↗</span></button><a href="/#about">Узнать о производстве →</a></div></div></section>'''
     }
     labels = dict(zip(sections, ['Когда пригодится', 'Материал', 'Размеры', 'Комплектация', 'Вопросы', 'Для бизнеса']))
-    if product.get('galleries'):
+    if product.get('galleries') and any(gallery['features'] for gallery in product['galleries'].values()):
         sections['material'] = sections['material'].replace('</section>', construction_details(product) + '</section>')
     elif fastenings:
         sections['material'] = sections['material'].replace('</section>', f'<div class="wrap fastening-details"><h3>Детали, которые держат.</h3><div>{fastenings}</div></div></section>')
@@ -248,7 +257,7 @@ def detail_sections(product):
         sections['sizes'] = sections['sizes'].replace('Длина × ширина × высота', e(product.get('measurementLabel', 'Длина × ширина × высота')))
         sections['kit'] = sections['kit'].replace(f'<ul>{kit}</ul>', f'<ul id="variant-kit">{kit}</ul>')
         default = variant_data(product)[0]
-        sections['kit'] = sections['kit'].replace('<ul id="variant-kit">', f'<p class="kit-configuration" id="kit-configuration">{e(default["summary"])} · {e(default["sizeLabel"])}</p><ul id="variant-kit">')
+        sections['kit'] = sections['kit'].replace('<ul id="variant-kit">', f'<p class="kit-configuration" id="kit-configuration">{e(default["label"])}</p><ul id="variant-kit">')
     enabled = product['sections']
     if len(enabled) != len(set(enabled)) or any(key not in sections for key in enabled):
         raise ValueError('Unknown or duplicate product section')
@@ -263,14 +272,17 @@ def catalogue(products):
         if not product['visible']:
             continue
         url = f'/catalog/{product["slug"]}/'
-        cards.append(f'''<article class="catalog-card"><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) == 0, sizes='(max-width:540px) 90vw, (max-width:1150px) 44vw, 29vw')}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(product['material'])} / {e(product['coating'])}</span><span>{e(product.get('rangeLabel', str(len(product['sizes'])) + ' размеров'))}</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a><div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div></article>''')
+        meta = ' / '.join(value for value in (product['material'], product['coating']) if value) or product['category']
+        buying = f'<div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div>' if product['marketplaces'] else ''
+        source_flag = ' data-source-images="true"' if product.get('sourcePhotography') else ''
+        cards.append(f'''<article class="catalog-card"{source_flag}><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) == 0, sizes='(max-width:540px) 90vw, (max-width:1150px) 44vw, 29vw')}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(meta)}</span><span>{e(product.get('rangeLabel', str(len(product['sizes'])) + ' размеров'))}</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a>{buying}</article>''')
     return f'''<nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span>{len(cards):02d} / {"изделие" if len(cards) == 1 else "изделия" if 2 <= len(cards) <= 4 else "изделий"}</span></div><div class="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой техники нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
 
 
 def product_schema(product):
     url = ORIGIN + '/catalog/' + product['slug'] + '/'
     # Descriptive Product only. No invented price, availability, SKU or borrowed shop rating.
-    return {'@context': 'https://schema.org', '@type': 'Product', '@id': url + '#product',
+    schema = {'@context': 'https://schema.org', '@type': 'Product', '@id': url + '#product',
             'url': url, 'name': product['name'], 'description': product['description'],
             'image': [ORIGIN + image_attributes(img['src'])['src'] for img in product['images']],
             'brand': {'@type': 'Brand', 'name': 'Needle Shark'},
@@ -278,12 +290,24 @@ def product_schema(product):
             'mainEntityOfPage': {'@id': url + '#webpage'},
             'material': product['material'], 'color': product['color'],
             'category': product['category'],
-            'size': list(dict.fromkeys(v['sizeLabel'] for v in product['variants'])) if product.get('variants') else [size_label(size) + ' см (Д × Ш × В)' for size in product['sizes']],
+            'size': list(dict.fromkeys(v['sizeLabel'] for v in product['variants'] if v['sizeLabel'])) if product.get('variants') else [size_label(size) + ' см (Д × Ш × В)' for size in product['sizes']],
             'additionalProperty': [{'@type': 'PropertyValue', 'name': 'Влагозащитная пропитка', 'value': product['coating']}]}
+    for field in ('material', 'color', 'size'):
+        if not schema[field]:
+            del schema[field]
+    if not product['coating']:
+        del schema['additionalProperty']
+    return schema
 
 
-def render():
+def render(preview=False):
     products = json.loads((ROOT / 'catalog/products.json').read_text())['products']
+    if any(p.get('status', 'published') not in ('draft', 'published') for p in products):
+        raise ValueError('Unknown product status')
+    products = [p for p in products if preview or p.get('status', 'published') == 'published']
+    output = ROOT / 'outputs/catalog-preview' if preview else DIST
+    if preview:
+        shutil.copytree(DIST, output, dirs_exist_ok=True)
     slugs = set()
     for product in products:
         validate_variants(product)
@@ -295,10 +319,10 @@ def render():
         for img in product['images']:
             if not (DIST / img['src'].lstrip('/')).is_file():
                 raise ValueError(f'Missing image: {img["src"]}')
-        page_dir = DIST / 'catalog' / slug
+        page_dir = output / 'catalog' / slug
         page_dir.mkdir(parents=True, exist_ok=True)
         title = product.get('seoTitle', f'{product["name"]} — {product["material"]}, {len(product["sizes"])} размеров | Needle Shark')
-        html = shell(hero(product) + detail_sections(product), title, product['seoDescription'], product['name'], product_slug=slug, structured=product_schema(product))
+        html = shell(hero(product) + detail_sections(product), title, product['seoDescription'], product['name'], product_slug=slug, structured=product_schema(product), unit_label=product.get('unitLabel', 'Чехлов'), source_images=product.get('sourcePhotography', False))
         (page_dir / 'index.html').write_text(html)
     visible = sorted((p for p in products if p['visible']), key=lambda p: p['order'])
     collection = {'@context': 'https://schema.org', '@type': 'CollectionPage',
@@ -306,9 +330,22 @@ def render():
                   'mainEntity': {'@type': 'ItemList', 'itemListElement': [
                       {'@type': 'ListItem', 'position': i + 1, 'name': p['name'],
                        'url': ORIGIN + '/catalog/' + p['slug'] + '/'} for i, p in enumerate(visible)]}}
-    (DIST / 'catalog/index.html').write_text(shell(catalogue(products), 'Каталог чехлов и изделий из технических тканей | Needle Shark', 'Готовые изделия Needle Shark из технических тканей: чехлы для квадроциклов, мотоциклов и колёс. Размеры и комплектации. Подбор изделия и заказ партии у производства.', catalog_current='page', structured=collection))
-    print(f'Rendered catalogue and {len(products)} product page(s). Homepage unchanged.')
+    description = 'Готовые изделия Needle Shark из технических тканей: чехлы для квадроциклов, мотоциклов и колёс. Размеры и комплектации. Подбор изделия и заказ партии у производства.'
+    if preview:
+        description = 'Каталог Needle Shark: чехлы, сумки, ремни и текстильные аксессуары. Размеры, цвета, комплектации и заказ напрямую.'
+    (output / 'catalog/index.html').write_text(shell(catalogue(products), 'Каталог чехлов и изделий из технических тканей | Needle Shark', description, catalog_current='page', structured=collection))
+    if preview:
+        for page in output.rglob('*.html'):
+            html = re.sub(r'<meta name="robots"[^>]*>', '<meta name="robots" content="noindex,nofollow">', page.read_text())
+            # Local reviews must not send pageviews or noscript pixels to production analytics.
+            html = re.sub(r'<script src="/metrika\.js[^\"]*"[^>]*></script>', '', html)
+            html = re.sub(r'<noscript>.*?</noscript>', '', html, flags=re.S)
+            page.write_text(html)
+        (output / 'robots.txt').write_text('User-agent: *\nDisallow: /\n')
+    print(f'Rendered catalogue and {len(products)} product page(s) in {output}. Homepage source unchanged.')
 
 
 if __name__ == '__main__':
-    render()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--preview', action='store_true', help='Include drafts in an isolated, noindex local preview')
+    render(preview=parser.parse_args().preview)
