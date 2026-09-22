@@ -6,7 +6,7 @@ mode=mail
 if [[ "${1:-}" == --loop ]]; then
   mode=loop
   settings="${2:?Usage: install-server-mail.sh --loop PRIVATE_LOOP_FILE}"
-  approved_recipient=''
+  approved_recipient='-'  # Preserve this positional argument through the SSH command.
 else
   settings="${1:?Usage: install-server-mail.sh PRIVATE_SMTP_FILE APPROVED_RECIPIENT}"
   approved_recipient="${2:?Approved recipient required}"
