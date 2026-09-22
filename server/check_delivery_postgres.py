@@ -38,6 +38,8 @@ def main():
             loop_migration = Path(__file__).with_name('migrations').joinpath('20260922_loop_delivery.sql').read_text()
             cur.execute(loop_migration)
             cur.execute(loop_migration)
+            # Distinct ranges detect accidentally displaying a customer/outbox id.
+            cur.execute('ALTER TABLE orders ALTER COLUMN id RESTART WITH 401')
         os.environ['CRM_DSN'] = make_dsn(dsn, options='-csearch_path=' + schema)
         store.initialize(loop_enabled=True)
         first = lead()
@@ -51,6 +53,8 @@ def main():
         assert query('SELECT business_company,description FROM orders') == [(first['business_company'], first['question'])]
         assert bytes(query('SELECT content FROM lead_files')[0][0]) == b'%PDF-test'
         assert 'data' not in query('SELECT payload FROM lead_submissions')[0][0]['attachment']
+        assert 'order_id' not in query('SELECT payload FROM lead_submissions')[0][0]
+        assert query('SELECT id,customer_id FROM orders') == [(401, 1)]
         for change in ({'question': 'Changed'}, {'business_company': 'Changed'},
                        {'attachment': dict(first['attachment'], data=base64.b64encode(b'%PDF-changed').decode())}):
             assert store.enqueue(dict(first, **change), 'ip1', (recipient,), secret)[0] == 409
@@ -67,6 +71,8 @@ def main():
         jobs = [job for job in claims if job]
         assert len(jobs) == 1
         job = jobs[0]
+        assert job['lead']['order_id'] == 401 and job['id'] != 401
+        assert job['lead']['id'] == first['id']
         assert job['lead']['attachment']['content'] == b'%PDF-test'
         assert store.finish(job, 'network_error')
         assert store.claim() is None  # Backoff is persistent, no immediate loop.
@@ -76,6 +82,7 @@ def main():
         assert abandoned['attempts'] == 2
         query("UPDATE lead_deliveries SET lease_until=now()-interval '1 second'")
         recovered = store.claim()
+        assert recovered['lead']['order_id'] == 401
         assert recovered['attempts'] == 3
         assert not store.finish(abandoned)  # A stale worker cannot finalize a reclaimed job.
         assert store.finish(recovered)
@@ -86,6 +93,8 @@ def main():
         loop_jobs = [job for job in loop_claims if job]
         assert len(loop_jobs) == 1
         loop_job = loop_jobs[0]
+        assert loop_job['lead']['order_id'] == 401 and loop_job['id'] != 401
+        assert loop_job['lead']['id'] == first['id']
         assert 'content' not in loop_job['lead']['attachment']
         assert store.finish(loop_job, 'loop_http_503')
         assert query('SELECT status FROM lead_deliveries') == [('sent',)]
@@ -123,6 +132,8 @@ def main():
             assert store.enqueue(lead(), 'rate-ip', (recipient,), secret)[0] == 202
         assert store.enqueue(lead(), 'rate-ip', (recipient,), secret)[0] == 429
         assert query('SELECT count(*) FROM lead_loop_deliveries') == [(1,)]  # Disabled integration adds no jobs.
+        assert 'order_id' not in query('SELECT payload FROM lead_submissions WHERE submission_id=%s', (first['id'],))[0][0]
+        print('PASS notification order number: registry id 401 differs from customer/job ids, both queues and retries receive it, stored payload and UUID unchanged')
         print('PASS LOOP PostgreSQL: atomic enqueue/rollback, concurrent deduplication, independent mail state, text-only claim, durable retries, lease recovery, stale fencing, disabled mode; zero network sends')
         print('PASS PostgreSQL: atomic rollback (order/file/jobs), concurrent deduplication, file changes rejected, leases/restart recovery, stale fencing, backoff, per-recipient status, rate limit, private file persistence; zero SMTP sends')
     finally:

@@ -58,6 +58,20 @@ def main():
             cur.execute('SELECT count(*) FROM customers')
             assert cur.fetchone()[0] == 1
         print('PASS PostgreSQL: 3 B2B directions, legacy form, exact fields, file links, retry deduplication, additive migration twice')
+        # Four distinct submissions above used one customer, consuming sequence
+        # values 1..4. Retries of an already archived UUID consumed none.
+        for contact, count in [('second@example.invalid', 3), ('third@example.invalid', 2),
+                               ('fourth@example.invalid', 1)]:
+            for _ in range(count):
+                crm.archive(dict(id=str(uuid.uuid4()), name='ТЕСТ нумерация', contact=contact,
+                                 question='ТЕСТ повторное обращение', consent=True,
+                                 created_at='2026-09-22T00:00:00Z'))
+        with admin.cursor() as cur:
+            cur.execute('SELECT id FROM customers ORDER BY id')
+            assert cur.fetchall() == [(1,), (5,), (8,), (10,)]
+            cur.execute('SELECT count(*) FROM orders')
+            assert cur.fetchone()[0] == 10
+        print('PASS customer sequence gaps reproduced: ids 1,5,8,10 with 10 inquiries, no deletions or failed transactions')
     finally:
         with admin.cursor() as cur:
             cur.execute(sql.SQL('DROP SCHEMA IF EXISTS {} CASCADE').format(sql.Identifier(schema)))

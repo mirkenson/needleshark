@@ -10,7 +10,7 @@ import mail_delivery as mail
 
 class MailTests(unittest.TestCase):
     def setUp(self):
-        self.lead = dict(id='12345678-1234-4234-8234-123456789abc', name='ТЕСТ',
+        self.lead = dict(id='12345678-1234-4234-8234-123456789abc', order_id=42, name='ТЕСТ',
                          contact='test@example.invalid', question='ТЕСТ письмо',
                          created_at='2026-09-18T00:00:00Z', business_company='Компания',
                          business_intent='custom', attachment={'name': 'Тест.pdf',
@@ -26,6 +26,11 @@ class MailTests(unittest.TestCase):
         self.assertEqual(msg['Reply-To'], 'test@example.invalid')
         self.assertIn('Компания / сфера: Компания', msg.get_body().get_content())
         self.assertNotIn('google.com', msg.as_string())
+        self.assertEqual(msg['Subject'], 'Needle Shark — заявка №42')
+        self.assertIn('Номер заявки: 42\n', msg.get_body().get_content())
+        self.assertNotIn(self.lead['id'], str(msg['Subject']))
+        self.assertNotIn(self.lead['id'], msg.get_body().get_content())
+        self.assertIn(self.lead['id'], msg['Message-ID'])
         self.assertEqual(msg['Message-ID'], mail.message(self.lead, 'test@example.invalid', self.cfg['sender'])['Message-ID'])
 
     def test_recipient_and_header_injection_rejected(self):

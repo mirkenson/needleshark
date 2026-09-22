@@ -99,8 +99,12 @@ def claim(channel='email'):
         if not row:
             return None
         job_id, submission_id, recipient, attempts = row
-        cur.execute('SELECT payload FROM lead_submissions WHERE submission_id=%s', (submission_id,))
-        lead = cur.fetchone()[0]
+        # Resolve the human-facing number from the registry, including older queued
+        # payloads. Keep the original UUID/fingerprint and API retry contract intact.
+        cur.execute('''SELECT s.payload,o.id FROM lead_submissions s
+            JOIN orders o USING(submission_id) WHERE s.submission_id=%s''', (submission_id,))
+        lead, order_id = cur.fetchone()
+        lead['order_id'] = order_id
         if channel == 'email':
             cur.execute('SELECT name,mime_type,content FROM lead_files WHERE submission_id=%s', (submission_id,))
             attachment = cur.fetchone()

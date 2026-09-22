@@ -15,7 +15,7 @@ TEST_WEBHOOK = 'https://neesha.loop.ru/hooks/' + 'a' * 26
 
 class LoopTests(unittest.TestCase):
     def setUp(self):
-        self.lead = dict(id='12345678-1234-4234-8234-123456789abc', name='ТЕСТ',
+        self.lead = dict(id='12345678-1234-4234-8234-123456789abc', order_id=42, name='ТЕСТ',
             contact='test@example.invalid', question='ТЕСТ текст\n@channel <!here> ``` ![image](https://example.invalid)',
             created_at='2026-09-21T22:00:00Z', source_path='/catalog/chehol-na-kvadrocikl/',
             product_name='Чехол на квадроцикл', product_slug='chehol-na-kvadrocikl',
@@ -39,6 +39,8 @@ class LoopTests(unittest.TestCase):
         self.assertNotIn('private.pdf', json.dumps(payload))
         self.assertNotIn('private file bytes', json.dumps(payload))
         self.assertNotIn(TEST_WEBHOOK, json.dumps(payload))
+        self.assertIn('\nНомер заявки: 42\n', text)
+        self.assertNotIn(self.lead['id'], text)
 
     def test_long_message_is_complete_and_absent_source_is_not_invented(self):
         lead = dict(self.lead, question='Ю' * 5000)

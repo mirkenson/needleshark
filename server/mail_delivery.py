@@ -50,7 +50,7 @@ def message(lead, recipient, sender):
     msg = EmailMessage()
     msg['From'] = mailbox(sender)
     msg['To'] = mailbox(recipient)
-    msg['Subject'] = 'Needle Shark — заявка ' + lead['id']
+    msg['Subject'] = 'Needle Shark — заявка №' + str(lead['order_id'])
     msg['Date'] = formatdate(usegmt=True)
     digest = hashlib.sha256(recipient.encode()).hexdigest()[:16]
     msg['Message-ID'] = '<' + lead['id'] + '.' + digest + '@' + sender.split('@')[1] + '>'
@@ -58,7 +58,7 @@ def message(lead, recipient, sender):
         msg['Reply-To'] = mailbox(lead['contact'])
     except ValueError:
         pass  # Telephone contacts and non-mailbox text belong only in the body.
-    msg.set_content('Новая заявка Needle Shark\n\nID: ' + lead['id'] +
+    msg.set_content('Новая заявка Needle Shark\n\nНомер заявки: ' + str(lead['order_id']) +
                     '\nДата UTC: ' + lead['created_at'] + '\nИмя: ' + lead['name'] +
                     '\nКонтакт: ' + lead['contact'] + '\n\n' + notification_payload(lead)['question'])
     attachment = lead.get('attachment')

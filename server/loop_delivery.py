@@ -54,7 +54,7 @@ def message(lead):
     fences = [char * max(3, 1 + max((len(run) for run in re.findall(re.escape(char) + '+', literal)), default=0))
               for char in ('`', '~')]
     fence = min(fences, key=len)
-    return {'text': '**Новая заявка Needle Shark**\nНомер: ' + lead['id'] + '\n\n' + fence + '\n' + literal + '\n' + fence,
+    return {'text': '**Новая заявка Needle Shark**\nНомер заявки: ' + str(lead['order_id']) + '\n\n' + fence + '\n' + literal + '\n' + fence,
             'skip_slack_parsing': True}
 
 
