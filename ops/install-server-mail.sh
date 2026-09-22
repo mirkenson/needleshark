@@ -43,8 +43,6 @@ if test -L /opt/needle-shark/current; then readlink /opt/needle-shark/current > 
 if test -L /opt/needle-shark/previous; then readlink /opt/needle-shark/previous > "$backup_dir/backend-previous"; fi
 readlink /var/www/needle-shark/current > "$backup_dir/static-current"
 readlink /var/www/needle-shark/previous > "$backup_dir/static-previous"
-# Stop before snapshot/switch: no Google deliveries or new old-format queue entries during migration.
-systemctl stop needle-leads
 restore_backend() {
   cp -p "$backup_dir/needle-leads.service" /etc/systemd/system/needle-leads.service
   cp -p "$backup_dir/leads.env" /etc/needle-shark/leads.env
@@ -58,7 +56,10 @@ restore_backend() {
   systemctl daemon-reload
   systemctl restart needle-leads
 }
-trap 'restore_backend' ERR
+# EXIT also covers shell expansion errors (set -u), which do not trigger ERR.
+trap 'deploy_exit=$?; if test "$deploy_exit" -ne 0; then restore_backend; fi; exit "$deploy_exit"' EXIT
+# Stop only after recovery has been armed.
+systemctl stop needle-leads
 python3 - <<'PY'
 from pathlib import Path
 import sqlite3
@@ -109,6 +110,6 @@ systemctl is-active --quiet needle-leads
 http_status="$(curl -sS -o /dev/null -w '%{http_code}' http://127.0.0.1:8091/api/leads -H 'Origin: https://needle-shark.ru' -H 'Content-Type: application/json' -d '{}')"
 test "$http_status" = 400
 printf '%s\n' "$2" > "$release_dir/COMMIT"
-trap - ERR
+trap - EXIT
 printf 'Backend installed: %s\nBackup: %s\n' "$release_dir" "$backup_dir"
 REMOTE
