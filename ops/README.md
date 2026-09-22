@@ -15,6 +15,10 @@
 
 Do not commit private keys, credentials or user-submitted data.
 
+## Local Obsidian knowledge mirror
+
+After updating project context and committing the final documentation, run `python3 ops/sync-obsidian.py` and `python3 ops/sync-obsidian.py --check`. This copies the committed Git tree and generates readable indexes/reports in the owner's local Needle Shark vault project. Existing manual edits cause a conflict instead of an overwrite; personal project notes remain separate. No VPS deployment or background schedule is involved. See [docs/OBSIDIAN.md](../docs/OBSIDIAN.md) for paths, scope and conflict handling.
+
 Before a static release, run `python3 blog/render.py`, `python3 catalog/render.py`, `python3 business/render.py --publish`, then `python3 ops/prepare-public.py`. The last command finalizes external-anchor UTM parameters and canonical URLs and regenerates robots.txt/sitemap.xml from approved blog/catalog data. Do not add draft HTML to dist. Resource URLs and internal links are not UTM-tagged.
 
 Indexing configuration backup for the 11 September launch: `/etc/nginx/sites-available/needle-shark.pre-indexing-20260911`. Before reverting, inspect current/previous and this backup; restore only the matching verified version, run `nginx -t` before reload.
