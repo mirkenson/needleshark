@@ -943,4515 +943,1941 @@
       }
     ]
   },
-  "/catalog-assets/ozon-9068457325.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 157475,
-    "sha256": "3fc02d6a116b3f0bc60e55d978ddecff4d2465b1682034ee3d289277aab5f474",
+  "/catalog-assets/studio-ns-car-bam-s.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 214940,
+    "sha256": "4fd6bbe70154ce560018864680677f6ca2d401403a5669e970809ca6b5493ff5",
     "variants": [
       {
-        "src": "/images/ozon-9068457325-160.webp",
+        "src": "/images/studio-ns-car-bam-s-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 8276
+        "height": 107,
+        "bytes": 2106
       },
       {
-        "src": "/images/ozon-9068457325-480.webp",
+        "src": "/images/studio-ns-car-bam-s-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 45558
+        "height": 320,
+        "bytes": 8008
       },
       {
-        "src": "/images/ozon-9068457325-800.webp",
+        "src": "/images/studio-ns-car-bam-s-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 86378
+        "height": 533,
+        "bytes": 15286
       },
       {
-        "src": "/images/ozon-9068457325-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 101434
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9068457341.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 147709,
-    "sha256": "038b9815fd8fcb4d7059e24b59db4b617d091291a8dcc33f706427edcff1bbad",
-    "variants": [
-      {
-        "src": "/images/ozon-9068457341-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6568
-      },
-      {
-        "src": "/images/ozon-9068457341-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 36688
-      },
-      {
-        "src": "/images/ozon-9068457341-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 81544
-      },
-      {
-        "src": "/images/ozon-9068457341-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 100858
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9068457326.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 153749,
-    "sha256": "9095f34d2bf0c7cb0ff15b3fa8b48af9db05cbe236e95bc79ab7a7b443985c2d",
-    "variants": [
-      {
-        "src": "/images/ozon-9068457326-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7868
-      },
-      {
-        "src": "/images/ozon-9068457326-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 44200
-      },
-      {
-        "src": "/images/ozon-9068457326-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 88540
-      },
-      {
-        "src": "/images/ozon-9068457326-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 105032
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8806247359.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 128593,
-    "sha256": "f176d48d58450b819f9f83e04f0517303d6703b6ea01c06d49b6caddbe1bc258",
-    "variants": [
-      {
-        "src": "/images/ozon-8806247359-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7458
-      },
-      {
-        "src": "/images/ozon-8806247359-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30160
-      },
-      {
-        "src": "/images/ozon-8806247359-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 62436
-      },
-      {
-        "src": "/images/ozon-8806247359-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 78726
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8806247345.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 165518,
-    "sha256": "fc7e1f9b91121398fd7758a6cef729469ee2a9b8151d237abe5da8b55a1669b9",
-    "variants": [
-      {
-        "src": "/images/ozon-8806247345-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7696
-      },
-      {
-        "src": "/images/ozon-8806247345-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 45936
-      },
-      {
-        "src": "/images/ozon-8806247345-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 95806
-      },
-      {
-        "src": "/images/ozon-8806247345-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 113822
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8806247376.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 105884,
-    "sha256": "d3dd63506b457a2d0a005d0651b368155baf510b810b7133dbbf7f1af29984bc",
-    "variants": [
-      {
-        "src": "/images/ozon-8806247376-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6340
-      },
-      {
-        "src": "/images/ozon-8806247376-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 26378
-      },
-      {
-        "src": "/images/ozon-8806247376-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 51194
-      },
-      {
-        "src": "/images/ozon-8806247376-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 61286
-      }
-    ]
-  },
-  "/catalog-assets/ozon-12296373117.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 347231,
-    "sha256": "8ac60999755472fe5e0e347089b6a1ac50c187eef89eb057c7aeda064cc25a03",
-    "variants": [
-      {
-        "src": "/images/ozon-12296373117-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 7702
-      },
-      {
-        "src": "/images/ozon-12296373117-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 35110
-      },
-      {
-        "src": "/images/ozon-12296373117-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 68632
-      },
-      {
-        "src": "/images/ozon-12296373117-1200.webp",
+        "src": "/images/studio-ns-car-bam-s-1200.webp",
         "width": 1200,
-        "height": 1607,
-        "bytes": 116412
+        "height": 800,
+        "bytes": 26966
       },
       {
-        "src": "/images/ozon-12296373117-1536.webp",
+        "src": "/images/studio-ns-car-bam-s-1536.webp",
         "width": 1536,
-        "height": 2057,
-        "bytes": 157344
+        "height": 1024,
+        "bytes": 46454
       }
     ]
   },
-  "/catalog-assets/ozon-8619599661.jpg": {
-    "width": 1800,
-    "height": 2400,
-    "originalBytes": 437319,
-    "sha256": "6c77b9004a1db818ae9b407ffd43fc89c5ab87b89b603c48e7b560f43c1c9b70",
+  "/catalog-assets/studio-vstky-car-mat-s.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 202798,
+    "sha256": "742d3550a7cba92f56c2af0ca4924d94b4d48abd0e5b2cad6ec7b0fdb7c057db",
     "variants": [
       {
-        "src": "/images/ozon-8619599661-160.webp",
+        "src": "/images/studio-vstky-car-mat-s-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 9886
+        "height": 107,
+        "bytes": 2386
       },
       {
-        "src": "/images/ozon-8619599661-480.webp",
+        "src": "/images/studio-vstky-car-mat-s-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 50366
+        "height": 320,
+        "bytes": 8820
       },
       {
-        "src": "/images/ozon-8619599661-800.webp",
+        "src": "/images/studio-vstky-car-mat-s-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 96200
+        "height": 533,
+        "bytes": 17422
       },
       {
-        "src": "/images/ozon-8619599661-1200.webp",
+        "src": "/images/studio-vstky-car-mat-s-1200.webp",
         "width": 1200,
-        "height": 1600,
-        "bytes": 155756
+        "height": 800,
+        "bytes": 33696
       },
       {
-        "src": "/images/ozon-8619599661-1536.webp",
+        "src": "/images/studio-vstky-car-mat-s-1536.webp",
         "width": 1536,
-        "height": 2048,
-        "bytes": 209504
+        "height": 1024,
+        "bytes": 55256
       }
     ]
   },
-  "/catalog-assets/ozon-8619599719.jpg": {
-    "width": 1800,
-    "height": 2400,
-    "originalBytes": 532256,
-    "sha256": "09b295a9f26629754ec45eb5859149dfa29b551ef5e6ba44d3cb653e9d7514e1",
+  "/catalog-assets/studio-vstk-amc-case-270.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 98050,
+    "sha256": "2e8065adf691ef33d4ca58a642aac1634c9e457a5715475b1242bd0476090345",
     "variants": [
       {
-        "src": "/images/ozon-8619599719-160.webp",
+        "src": "/images/studio-vstk-amc-case-270-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 9814
+        "height": 107,
+        "bytes": 1180
       },
       {
-        "src": "/images/ozon-8619599719-480.webp",
+        "src": "/images/studio-vstk-amc-case-270-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 56570
+        "height": 320,
+        "bytes": 3588
       },
       {
-        "src": "/images/ozon-8619599719-800.webp",
+        "src": "/images/studio-vstk-amc-case-270-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 114494
+        "height": 533,
+        "bytes": 9786
       },
       {
-        "src": "/images/ozon-8619599719-1200.webp",
+        "src": "/images/studio-vstk-amc-case-270-1200.webp",
         "width": 1200,
-        "height": 1600,
-        "bytes": 193050
+        "height": 800,
+        "bytes": 28902
       },
       {
-        "src": "/images/ozon-8619599719-1536.webp",
+        "src": "/images/studio-vstk-amc-case-270-1536.webp",
         "width": 1536,
-        "height": 2048,
-        "bytes": 269290
+        "height": 1024,
+        "bytes": 50056
       }
     ]
   },
-  "/catalog-assets/ozon-14077369840.jpg": {
-    "width": 896,
-    "height": 1200,
-    "originalBytes": 101555,
-    "sha256": "4814b5a67cb9f06a092ae881e6788f35f70a120e2cc8ec93539748ba6a0a548b",
+  "/catalog-assets/studio-pram-brown.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 122524,
+    "sha256": "5dff2d4a1771417587773568539e9c1e6e6ea94334377f1d9999ecbb5811a143",
     "variants": [
       {
-        "src": "/images/ozon-14077369840-160.webp",
+        "src": "/images/studio-pram-brown-160.webp",
         "width": 160,
-        "height": 214,
-        "bytes": 6522
+        "height": 107,
+        "bytes": 1980
       },
       {
-        "src": "/images/ozon-14077369840-480.webp",
+        "src": "/images/studio-pram-brown-480.webp",
         "width": 480,
-        "height": 643,
-        "bytes": 29998
+        "height": 320,
+        "bytes": 7310
       },
       {
-        "src": "/images/ozon-14077369840-800.webp",
+        "src": "/images/studio-pram-brown-800.webp",
         "width": 800,
-        "height": 1071,
-        "bytes": 59830
+        "height": 533,
+        "bytes": 14336
       },
       {
-        "src": "/images/ozon-14077369840-896.webp",
-        "width": 896,
-        "height": 1200,
-        "bytes": 73380
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077371358.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 252141,
-    "sha256": "aa9883907cfa631f8485494b2ce110bcc39be5fd7cc65cdbcfd2c1797f499750",
-    "variants": [
-      {
-        "src": "/images/ozon-14077371358-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 5006
-      },
-      {
-        "src": "/images/ozon-14077371358-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 25530
-      },
-      {
-        "src": "/images/ozon-14077371358-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 50174
-      },
-      {
-        "src": "/images/ozon-14077371358-1200.webp",
+        "src": "/images/studio-pram-brown-1200.webp",
         "width": 1200,
-        "height": 1607,
-        "bytes": 85670
+        "height": 800,
+        "bytes": 25112
       },
       {
-        "src": "/images/ozon-14077371358-1536.webp",
+        "src": "/images/studio-pram-brown-1536.webp",
         "width": 1536,
-        "height": 2057,
-        "bytes": 117274
+        "height": 1024,
+        "bytes": 38434
       }
     ]
   },
-  "/catalog-assets/ozon-14077366462.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 280421,
-    "sha256": "74c1a366b2a7efbc190b82a0e713678f9b720ef9c1b7a22398f73f6e0acd1652",
+  "/catalog-assets/studio-ns-pram-red.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 133544,
+    "sha256": "c0439249aa35c43577efaa2d6d6c8447c1cc1c840f83a7d9e06c91e340987df8",
     "variants": [
       {
-        "src": "/images/ozon-14077366462-160.webp",
+        "src": "/images/studio-ns-pram-red-160.webp",
         "width": 160,
-        "height": 214,
-        "bytes": 5670
+        "height": 107,
+        "bytes": 2282
       },
       {
-        "src": "/images/ozon-14077366462-480.webp",
+        "src": "/images/studio-ns-pram-red-480.webp",
         "width": 480,
-        "height": 643,
-        "bytes": 27698
+        "height": 320,
+        "bytes": 8824
       },
       {
-        "src": "/images/ozon-14077366462-800.webp",
+        "src": "/images/studio-ns-pram-red-800.webp",
         "width": 800,
-        "height": 1071,
-        "bytes": 58182
+        "height": 533,
+        "bytes": 17146
       },
       {
-        "src": "/images/ozon-14077366462-1200.webp",
+        "src": "/images/studio-ns-pram-red-1200.webp",
         "width": 1200,
-        "height": 1607,
-        "bytes": 103726
-      },
-      {
-        "src": "/images/ozon-14077366462-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 146460
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077441198.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 294247,
-    "sha256": "2eda5acf85b13154bc7fca35a85a45005031b9ba783bad936381b12bb20784bc",
-    "variants": [
-      {
-        "src": "/images/ozon-14077441198-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6718
-      },
-      {
-        "src": "/images/ozon-14077441198-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 30152
-      },
-      {
-        "src": "/images/ozon-14077441198-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 59974
-      },
-      {
-        "src": "/images/ozon-14077441198-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 104746
-      },
-      {
-        "src": "/images/ozon-14077441198-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 146814
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077439272.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 253746,
-    "sha256": "2226243718a9884cb56ec857d1727628c4864d96655d2fca8f1c3fd4d20bd357",
-    "variants": [
-      {
-        "src": "/images/ozon-14077439272-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 5140
-      },
-      {
-        "src": "/images/ozon-14077439272-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 26098
-      },
-      {
-        "src": "/images/ozon-14077439272-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 52362
-      },
-      {
-        "src": "/images/ozon-14077439272-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 87316
-      },
-      {
-        "src": "/images/ozon-14077439272-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 121068
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077442491.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 287823,
-    "sha256": "167616be06e6f6912d1ac5e4aae2aab98b74e55d75a365c80f22b8cbb8d2b3f7",
-    "variants": [
-      {
-        "src": "/images/ozon-14077442491-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 5902
-      },
-      {
-        "src": "/images/ozon-14077442491-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 28488
-      },
-      {
-        "src": "/images/ozon-14077442491-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 58912
-      },
-      {
-        "src": "/images/ozon-14077442491-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 107430
-      },
-      {
-        "src": "/images/ozon-14077442491-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 151220
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077246318.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 315086,
-    "sha256": "79ae856ca179b327311c64480fd77e05c611d00d448f5313448b7007a0e60011",
-    "variants": [
-      {
-        "src": "/images/ozon-14077246318-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6992
-      },
-      {
-        "src": "/images/ozon-14077246318-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 32248
-      },
-      {
-        "src": "/images/ozon-14077246318-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 62880
-      },
-      {
-        "src": "/images/ozon-14077246318-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 104860
-      },
-      {
-        "src": "/images/ozon-14077246318-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 142988
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077253595.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 284904,
-    "sha256": "0506fa08cb0106a7e7f71bc5cb2d084808ad4ec274d98d1fb3515d1806eeabd6",
-    "variants": [
-      {
-        "src": "/images/ozon-14077253595-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 5540
-      },
-      {
-        "src": "/images/ozon-14077253595-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 27670
-      },
-      {
-        "src": "/images/ozon-14077253595-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 54910
-      },
-      {
-        "src": "/images/ozon-14077253595-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 91312
-      },
-      {
-        "src": "/images/ozon-14077253595-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 121976
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077253622.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 337005,
-    "sha256": "8abdcd54986ec11091aec5dc0de51c2d523140f6dfc7bd4a692873fbcc94279b",
-    "variants": [
-      {
-        "src": "/images/ozon-14077253622-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6452
-      },
-      {
-        "src": "/images/ozon-14077253622-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 31520
-      },
-      {
-        "src": "/images/ozon-14077253622-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 63978
-      },
-      {
-        "src": "/images/ozon-14077253622-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 116910
-      },
-      {
-        "src": "/images/ozon-14077253622-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 165072
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077397207.jpg": {
-    "width": 896,
-    "height": 1200,
-    "originalBytes": 100673,
-    "sha256": "85713d98590a42abf4cad0565efce411abf8df81d55dca5b7432844364a23f11",
-    "variants": [
-      {
-        "src": "/images/ozon-14077397207-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6472
-      },
-      {
-        "src": "/images/ozon-14077397207-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 29636
-      },
-      {
-        "src": "/images/ozon-14077397207-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 59168
-      },
-      {
-        "src": "/images/ozon-14077397207-896.webp",
-        "width": 896,
-        "height": 1200,
-        "bytes": 72344
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077394166.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 247936,
-    "sha256": "2d24323d119ae0d5e1506ff60eedf041e5cff96746493297a91e6cbd088793b1",
-    "variants": [
-      {
-        "src": "/images/ozon-14077394166-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 5124
-      },
-      {
-        "src": "/images/ozon-14077394166-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 25946
-      },
-      {
-        "src": "/images/ozon-14077394166-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 52074
-      },
-      {
-        "src": "/images/ozon-14077394166-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 85606
-      },
-      {
-        "src": "/images/ozon-14077394166-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 117678
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077394541.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 277816,
-    "sha256": "649f9c21e9d0513d1a20be08f2a04ff0978bf5cf0931cb696b283aa35b52eb3d",
-    "variants": [
-      {
-        "src": "/images/ozon-14077394541-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 5760
-      },
-      {
-        "src": "/images/ozon-14077394541-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 28122
-      },
-      {
-        "src": "/images/ozon-14077394541-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 58010
-      },
-      {
-        "src": "/images/ozon-14077394541-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 103366
-      },
-      {
-        "src": "/images/ozon-14077394541-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 143330
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077420108.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 275646,
-    "sha256": "31a5191cab7ae7ec6ce43528b10a8fe2ac8cce64b1d94b910bd37eb37cb37247",
-    "variants": [
-      {
-        "src": "/images/ozon-14077420108-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6596
-      },
-      {
-        "src": "/images/ozon-14077420108-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 30052
-      },
-      {
-        "src": "/images/ozon-14077420108-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 59318
-      },
-      {
-        "src": "/images/ozon-14077420108-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 99138
-      },
-      {
-        "src": "/images/ozon-14077420108-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 132584
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077422673.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 249395,
-    "sha256": "0dfb7cb18f96145de3a97b8f22513fc9ecc9d7c15621cfbefdfe8d69423e0955",
-    "variants": [
-      {
-        "src": "/images/ozon-14077422673-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 5036
-      },
-      {
-        "src": "/images/ozon-14077422673-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 25432
-      },
-      {
-        "src": "/images/ozon-14077422673-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 50848
-      },
-      {
-        "src": "/images/ozon-14077422673-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 86244
-      },
-      {
-        "src": "/images/ozon-14077422673-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 117792
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077418459.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 278271,
-    "sha256": "64dbfdca4a805cedc186f7823277061d17f26f7e6d895c7e467d7872163ca86c",
-    "variants": [
-      {
-        "src": "/images/ozon-14077418459-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 5648
-      },
-      {
-        "src": "/images/ozon-14077418459-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 27564
-      },
-      {
-        "src": "/images/ozon-14077418459-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 57348
-      },
-      {
-        "src": "/images/ozon-14077418459-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 103548
-      },
-      {
-        "src": "/images/ozon-14077418459-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 145260
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077311275.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 337853,
-    "sha256": "3d97f36b24d910bdb2460ac065284cf8e6bca53d786961477ce2c4a03a002a50",
-    "variants": [
-      {
-        "src": "/images/ozon-14077311275-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6984
-      },
-      {
-        "src": "/images/ozon-14077311275-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 31994
-      },
-      {
-        "src": "/images/ozon-14077311275-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 66514
-      },
-      {
-        "src": "/images/ozon-14077311275-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 129650
-      },
-      {
-        "src": "/images/ozon-14077311275-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 191304
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077318628.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 278248,
-    "sha256": "c0e04795461f08749ea698ead0dea78106461e6d50b787af1c10032863a56595",
-    "variants": [
-      {
-        "src": "/images/ozon-14077318628-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 5512
-      },
-      {
-        "src": "/images/ozon-14077318628-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 27364
-      },
-      {
-        "src": "/images/ozon-14077318628-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 55088
-      },
-      {
-        "src": "/images/ozon-14077318628-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 92814
-      },
-      {
-        "src": "/images/ozon-14077318628-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 132466
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077310933.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 302557,
-    "sha256": "c1e3c7ef72bc77003d3f4b9645b8beec0304bcf25436fee66c63fc6011411c66",
-    "variants": [
-      {
-        "src": "/images/ozon-14077310933-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6500
-      },
-      {
-        "src": "/images/ozon-14077310933-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 31280
-      },
-      {
-        "src": "/images/ozon-14077310933-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 65098
-      },
-      {
-        "src": "/images/ozon-14077310933-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 116230
-      },
-      {
-        "src": "/images/ozon-14077310933-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 163084
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9135339863.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 123648,
-    "sha256": "698262da97000090297dc4b683e69d4a68ed7fee5e89365322cbb5ce7d08ada3",
-    "variants": [
-      {
-        "src": "/images/ozon-9135339863-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7576
-      },
-      {
-        "src": "/images/ozon-9135339863-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 34338
-      },
-      {
-        "src": "/images/ozon-9135339863-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 67088
-      },
-      {
-        "src": "/images/ozon-9135339863-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 79058
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8777609794.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 108604,
-    "sha256": "5dc2b652e4a7fc75372a6f59f223f41c66a4771338af6423dafbd4c2e32d5aaf",
-    "variants": [
-      {
-        "src": "/images/ozon-8777609794-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 5778
-      },
-      {
-        "src": "/images/ozon-8777609794-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30026
-      },
-      {
-        "src": "/images/ozon-8777609794-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 64848
-      },
-      {
-        "src": "/images/ozon-8777609794-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 79908
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8777610230.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 94530,
-    "sha256": "92677b3147b5c0df6fbe084fcfebf4576deaddff209824aa38e5c1feeaa8c7d1",
-    "variants": [
-      {
-        "src": "/images/ozon-8777610230-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 5344
-      },
-      {
-        "src": "/images/ozon-8777610230-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 22222
-      },
-      {
-        "src": "/images/ozon-8777610230-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 43770
-      },
-      {
-        "src": "/images/ozon-8777610230-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 51690
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9072348456.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 95844,
-    "sha256": "2486c8f13a9ffce6b4c67bf1387384f9541f6bf09fa95f86fcd2062100251da0",
-    "variants": [
-      {
-        "src": "/images/ozon-9072348456-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6040
-      },
-      {
-        "src": "/images/ozon-9072348456-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 22478
-      },
-      {
-        "src": "/images/ozon-9072348456-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 42722
-      },
-      {
-        "src": "/images/ozon-9072348456-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 50442
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9072348080.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 139674,
-    "sha256": "cdabff214a4e25cac4c81da1b48b8c94ba062cd57c7049b950fa3e1861a1db42",
-    "variants": [
-      {
-        "src": "/images/ozon-9072348080-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6980
-      },
-      {
-        "src": "/images/ozon-9072348080-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 40958
-      },
-      {
-        "src": "/images/ozon-9072348080-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 81192
-      },
-      {
-        "src": "/images/ozon-9072348080-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 95148
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9072259254.jpg": {
-    "width": 923,
-    "height": 1231,
-    "originalBytes": 154710,
-    "sha256": "27cbabeb398f89acbd1e308618b2a3a821455b78a76c34362ab8c4f53119674c",
-    "variants": [
-      {
-        "src": "/images/ozon-9072259254-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 4296
-      },
-      {
-        "src": "/images/ozon-9072259254-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 32712
-      },
-      {
-        "src": "/images/ozon-9072259254-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 88802
-      },
-      {
-        "src": "/images/ozon-9072259254-923.webp",
-        "width": 923,
-        "height": 1231,
-        "bytes": 115942
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9072334262.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 95810,
-    "sha256": "274344d6c1dd8e244b389da47691648e138bbeeacfe01819f1d24eb3cad0a75f",
-    "variants": [
-      {
-        "src": "/images/ozon-9072334262-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6054
-      },
-      {
-        "src": "/images/ozon-9072334262-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 22540
-      },
-      {
-        "src": "/images/ozon-9072334262-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 42700
-      },
-      {
-        "src": "/images/ozon-9072334262-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 50258
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9072334399.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 140667,
-    "sha256": "92065d3c3a3790c98548d010496d15ba2afb60e921da574cba11e73a33466d7d",
-    "variants": [
-      {
-        "src": "/images/ozon-9072334399-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7004
-      },
-      {
-        "src": "/images/ozon-9072334399-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 41302
-      },
-      {
-        "src": "/images/ozon-9072334399-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 82278
-      },
-      {
-        "src": "/images/ozon-9072334399-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 95858
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8889424696.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 143487,
-    "sha256": "a0b7751d46df8faec6d228af72749be234bc178e72aa245fd339809494c0335f",
-    "variants": [
-      {
-        "src": "/images/ozon-8889424696-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8226
-      },
-      {
-        "src": "/images/ozon-8889424696-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 41406
-      },
-      {
-        "src": "/images/ozon-8889424696-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 79732
-      },
-      {
-        "src": "/images/ozon-8889424696-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 93542
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8889422625.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 79425,
-    "sha256": "95e57f9e0b2e0011c26fbc91f12523a468a5d87308aa9ff5d36efbc091e83825",
-    "variants": [
-      {
-        "src": "/images/ozon-8889422625-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 4476
-      },
-      {
-        "src": "/images/ozon-8889422625-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 17424
-      },
-      {
-        "src": "/images/ozon-8889422625-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 31834
-      },
-      {
-        "src": "/images/ozon-8889422625-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 38728
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8889423851.jpg": {
-    "width": 923,
-    "height": 1231,
-    "originalBytes": 154770,
-    "sha256": "a2317e8c5ac83fe5d8dafbab4c3177df150898c28d8f4a52a5d2aa00c1be3589",
-    "variants": [
-      {
-        "src": "/images/ozon-8889423851-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 4284
-      },
-      {
-        "src": "/images/ozon-8889423851-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 32786
-      },
-      {
-        "src": "/images/ozon-8889423851-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 89294
-      },
-      {
-        "src": "/images/ozon-8889423851-923.webp",
-        "width": 923,
-        "height": 1231,
-        "bytes": 116024
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9072259367.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 95767,
-    "sha256": "664d483e5adbc8ffcb0f77ea22f4979c84cfc9db60c3cd6fba8cf2ff259cea0b",
-    "variants": [
-      {
-        "src": "/images/ozon-9072259367-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6098
-      },
-      {
-        "src": "/images/ozon-9072259367-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 22546
-      },
-      {
-        "src": "/images/ozon-9072259367-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 42394
-      },
-      {
-        "src": "/images/ozon-9072259367-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 50830
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9072259491.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 139966,
-    "sha256": "b4ab7683c3cb75965fc7e086fd8739e3d39bdbc7fba6d873e398154a078af310",
-    "variants": [
-      {
-        "src": "/images/ozon-9072259491-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6988
-      },
-      {
-        "src": "/images/ozon-9072259491-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 40990
-      },
-      {
-        "src": "/images/ozon-9072259491-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 81440
-      },
-      {
-        "src": "/images/ozon-9072259491-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 95248
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9573327373.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 144230,
-    "sha256": "7033b9131909f28c987fce83d098945b6e9c094332c2b966160a340c63e24993",
-    "variants": [
-      {
-        "src": "/images/ozon-9573327373-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7618
-      },
-      {
-        "src": "/images/ozon-9573327373-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 38624
-      },
-      {
-        "src": "/images/ozon-9573327373-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 78126
-      },
-      {
-        "src": "/images/ozon-9573327373-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 91794
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9573327712.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 122626,
-    "sha256": "2c31d10392651ecb936bff70473bb67f8203615228d3f215fb2dfad1cb30fc3e",
-    "variants": [
-      {
-        "src": "/images/ozon-9573327712-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7112
-      },
-      {
-        "src": "/images/ozon-9573327712-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 31864
-      },
-      {
-        "src": "/images/ozon-9573327712-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 61734
-      },
-      {
-        "src": "/images/ozon-9573327712-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 75866
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9573327293.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 124646,
-    "sha256": "e6e70dc5e6e7e91c60b54233c532b0b16ea1688351b005c2536873a9cb77a282",
-    "variants": [
-      {
-        "src": "/images/ozon-9573327293-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 5752
-      },
-      {
-        "src": "/images/ozon-9573327293-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 31094
-      },
-      {
-        "src": "/images/ozon-9573327293-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 65062
-      },
-      {
-        "src": "/images/ozon-9573327293-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 78784
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9573336558.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 144451,
-    "sha256": "ada7619d7f1a76d9831c812bb3189c263d157f1a049d3b284e13652a2bbf79d2",
-    "variants": [
-      {
-        "src": "/images/ozon-9573336558-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7654
-      },
-      {
-        "src": "/images/ozon-9573336558-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 38466
-      },
-      {
-        "src": "/images/ozon-9573336558-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 77156
-      },
-      {
-        "src": "/images/ozon-9573336558-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 92122
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9573336241.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 124667,
-    "sha256": "8d6134d24a62843f40c1ff770fbe33f94e596485a41b6f4477c85fce864040f0",
-    "variants": [
-      {
-        "src": "/images/ozon-9573336241-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 5766
-      },
-      {
-        "src": "/images/ozon-9573336241-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 31574
-      },
-      {
-        "src": "/images/ozon-9573336241-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 64936
-      },
-      {
-        "src": "/images/ozon-9573336241-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 79218
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8881812557.jpg": {
-    "width": 1512,
-    "height": 2016,
-    "originalBytes": 328279,
-    "sha256": "72646c0670616c58341a26741e0128c44eeed255ba91ede6c728d4aa443ba1e8",
-    "variants": [
-      {
-        "src": "/images/ozon-8881812557-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8080
-      },
-      {
-        "src": "/images/ozon-8881812557-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 44810
-      },
-      {
-        "src": "/images/ozon-8881812557-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 85118
-      },
-      {
-        "src": "/images/ozon-8881812557-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 139528
-      },
-      {
-        "src": "/images/ozon-8881812557-1512.webp",
-        "width": 1512,
-        "height": 2016,
-        "bytes": 198348
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8881812517.jpg": {
-    "width": 1512,
-    "height": 2016,
-    "originalBytes": 264159,
-    "sha256": "8602c7d42b3a8e5a1ee56ff525d2aa77b95f6ca4feccd99d640cfe473d8c45fc",
-    "variants": [
-      {
-        "src": "/images/ozon-8881812517-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6936
-      },
-      {
-        "src": "/images/ozon-8881812517-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 33018
-      },
-      {
-        "src": "/images/ozon-8881812517-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 63246
-      },
-      {
-        "src": "/images/ozon-8881812517-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 101962
-      },
-      {
-        "src": "/images/ozon-8881812517-1512.webp",
-        "width": 1512,
-        "height": 2016,
-        "bytes": 144960
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8881812455.jpg": {
-    "width": 1512,
-    "height": 2016,
-    "originalBytes": 355384,
-    "sha256": "326a5cb9ad020b3bb2f900658a21bdf12f710bfc923ec4e9cca9e7f24f195f80",
-    "variants": [
-      {
-        "src": "/images/ozon-8881812455-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 9358
-      },
-      {
-        "src": "/images/ozon-8881812455-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 49428
-      },
-      {
-        "src": "/images/ozon-8881812455-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 94168
-      },
-      {
-        "src": "/images/ozon-8881812455-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 155152
-      },
-      {
-        "src": "/images/ozon-8881812455-1512.webp",
-        "width": 1512,
-        "height": 2016,
-        "bytes": 215042
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8815416614.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 86851,
-    "sha256": "a61a359baed86571fd0ab3f1a15c5c2f11f0ba24424c57496ccf6864fcc94316",
-    "variants": [
-      {
-        "src": "/images/ozon-8815416614-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 5428
-      },
-      {
-        "src": "/images/ozon-8815416614-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 21252
-      },
-      {
-        "src": "/images/ozon-8815416614-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 40886
-      },
-      {
-        "src": "/images/ozon-8815416614-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 49296
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8815415259.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 296867,
-    "sha256": "d3cdfda37e68bdeda55a007444e75882d968e9910b6d5434e6240dfaa9cb3316",
-    "variants": [
-      {
-        "src": "/images/ozon-8815415259-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7308
-      },
-      {
-        "src": "/images/ozon-8815415259-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 95158
-      },
-      {
-        "src": "/images/ozon-8815415259-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 240378
-      },
-      {
-        "src": "/images/ozon-8815415259-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 302308
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8815416302.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 99771,
-    "sha256": "b8bbb906e71087e948d5c2b3ba36ec41f12f1aa19a84b72c9ab286c22498db35",
-    "variants": [
-      {
-        "src": "/images/ozon-8815416302-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 5990
-      },
-      {
-        "src": "/images/ozon-8815416302-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 24744
-      },
-      {
-        "src": "/images/ozon-8815416302-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 47694
-      },
-      {
-        "src": "/images/ozon-8815416302-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 57564
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14650610447.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 300170,
-    "sha256": "4753f3386f30d2d43441b3fe3fd1a6df1afbc899a727f9d1a933ceee52340b23",
-    "variants": [
-      {
-        "src": "/images/ozon-14650610447-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6514
-      },
-      {
-        "src": "/images/ozon-14650610447-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 28976
-      },
-      {
-        "src": "/images/ozon-14650610447-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 53614
-      },
-      {
-        "src": "/images/ozon-14650610447-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 86940
-      },
-      {
-        "src": "/images/ozon-14650610447-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 117992
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14650611848.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 485825,
-    "sha256": "795e5a2d1eca4faa1962ba4dbb2f86985b93312d46a22ac794240c0141676df6",
-    "variants": [
-      {
-        "src": "/images/ozon-14650611848-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6636
-      },
-      {
-        "src": "/images/ozon-14650611848-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30070
-      },
-      {
-        "src": "/images/ozon-14650611848-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 62456
-      },
-      {
-        "src": "/images/ozon-14650611848-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 125470
-      },
-      {
-        "src": "/images/ozon-14650611848-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 185850
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14650631678.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 236518,
-    "sha256": "15a2e92c17cd224c695ac83c1b271fc73df13779d8a3a022a152463cd403b14b",
-    "variants": [
-      {
-        "src": "/images/ozon-14650631678-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6448
-      },
-      {
-        "src": "/images/ozon-14650631678-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 26126
-      },
-      {
-        "src": "/images/ozon-14650631678-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 46490
-      },
-      {
-        "src": "/images/ozon-14650631678-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 75646
-      },
-      {
-        "src": "/images/ozon-14650631678-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 100060
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14650617389.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 412833,
-    "sha256": "e3c247b06a8d71bf6f8d11435c343827e436057332a9181a0376059804fa8c1f",
-    "variants": [
-      {
-        "src": "/images/ozon-14650617389-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6336
-      },
-      {
-        "src": "/images/ozon-14650617389-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 26584
-      },
-      {
-        "src": "/images/ozon-14650617389-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 51568
-      },
-      {
-        "src": "/images/ozon-14650617389-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 99208
-      },
-      {
-        "src": "/images/ozon-14650617389-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 153408
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14650612766.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 403175,
-    "sha256": "e30c0ecf0a0e59529cd4e166b8ca1c4dda0a1895a9aad1e24cc3889726049c69",
-    "variants": [
-      {
-        "src": "/images/ozon-14650612766-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6498
-      },
-      {
-        "src": "/images/ozon-14650612766-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 26652
-      },
-      {
-        "src": "/images/ozon-14650612766-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 51072
-      },
-      {
-        "src": "/images/ozon-14650612766-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 98230
-      },
-      {
-        "src": "/images/ozon-14650612766-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 150352
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14177536484.jpg": {
-    "width": 1280,
-    "height": 1715,
-    "originalBytes": 210667,
-    "sha256": "11a950da9f33772cf9cb2b31ffa37411eceb2f8c48e72d56d20e27cb0de2e91f",
-    "variants": [
-      {
-        "src": "/images/ozon-14177536484-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 7216
-      },
-      {
-        "src": "/images/ozon-14177536484-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 27848
-      },
-      {
-        "src": "/images/ozon-14177536484-800.webp",
-        "width": 800,
-        "height": 1072,
-        "bytes": 68306
-      },
-      {
-        "src": "/images/ozon-14177536484-1200.webp",
-        "width": 1200,
-        "height": 1608,
-        "bytes": 136988
-      },
-      {
-        "src": "/images/ozon-14177536484-1280.webp",
-        "width": 1280,
-        "height": 1715,
-        "bytes": 150382
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077188097.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 262344,
-    "sha256": "f0a744b0015ee240261fde68f5ea4228b95b47563f01367c881a16958136eabe",
-    "variants": [
-      {
-        "src": "/images/ozon-14077188097-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6560
-      },
-      {
-        "src": "/images/ozon-14077188097-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 29302
-      },
-      {
-        "src": "/images/ozon-14077188097-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 54058
-      },
-      {
-        "src": "/images/ozon-14077188097-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 87324
-      },
-      {
-        "src": "/images/ozon-14077188097-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 119036
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14077194941.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 412271,
-    "sha256": "602d29960fee1a78abf1456b9a93acb2481d213c014940e93a5434d293850810",
-    "variants": [
-      {
-        "src": "/images/ozon-14077194941-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6666
-      },
-      {
-        "src": "/images/ozon-14077194941-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30136
-      },
-      {
-        "src": "/images/ozon-14077194941-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 62550
-      },
-      {
-        "src": "/images/ozon-14077194941-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 126048
-      },
-      {
-        "src": "/images/ozon-14077194941-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 185986
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14604596048.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 232469,
-    "sha256": "05c4358f527b7497704cd4ad47f20ac576f49beeb53712dc92416fe7230f8593",
-    "variants": [
-      {
-        "src": "/images/ozon-14604596048-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6474
-      },
-      {
-        "src": "/images/ozon-14604596048-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 26102
-      },
-      {
-        "src": "/images/ozon-14604596048-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 46458
-      },
-      {
-        "src": "/images/ozon-14604596048-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 74146
-      },
-      {
-        "src": "/images/ozon-14604596048-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 97708
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14604597505.jpg": {
-    "width": 750,
-    "height": 1000,
-    "originalBytes": 74323,
-    "sha256": "b2befcf8a71531aa6575626f0958817ce6fdb033d1b6d33169473acb5b95f049",
-    "variants": [
-      {
-        "src": "/images/ozon-14604597505-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6570
-      },
-      {
-        "src": "/images/ozon-14604597505-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 27674
-      },
-      {
-        "src": "/images/ozon-14604597505-750.webp",
-        "width": 750,
-        "height": 1000,
-        "bytes": 47384
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14604598175.jpg": {
-    "width": 750,
-    "height": 1000,
-    "originalBytes": 80948,
-    "sha256": "15edb9bcd346cbadc700108714f784a14550409aa60647f1faac2cdd9c0cee84",
-    "variants": [
-      {
-        "src": "/images/ozon-14604598175-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6590
-      },
-      {
-        "src": "/images/ozon-14604598175-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 28014
-      },
-      {
-        "src": "/images/ozon-14604598175-750.webp",
-        "width": 750,
-        "height": 1000,
-        "bytes": 50460
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14177500128.jpg": {
-    "width": 1280,
-    "height": 1715,
-    "originalBytes": 134993,
-    "sha256": "e17da6a49ebfd677dd98b5c0924a35903ce188903f38c479270a8f664f001b1e",
-    "variants": [
-      {
-        "src": "/images/ozon-14177500128-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6460
-      },
-      {
-        "src": "/images/ozon-14177500128-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 24954
-      },
-      {
-        "src": "/images/ozon-14177500128-800.webp",
-        "width": 800,
-        "height": 1072,
-        "bytes": 41476
-      },
-      {
-        "src": "/images/ozon-14177500128-1200.webp",
-        "width": 1200,
-        "height": 1608,
-        "bytes": 64158
-      },
-      {
-        "src": "/images/ozon-14177500128-1280.webp",
-        "width": 1280,
-        "height": 1715,
-        "bytes": 66514
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14084285996.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 485827,
-    "sha256": "bae220d41efcbd617ec5ee3db0248beb2bf4396790bef06e0a0167844af32170",
-    "variants": [
-      {
-        "src": "/images/ozon-14084285996-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6634
-      },
-      {
-        "src": "/images/ozon-14084285996-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30078
-      },
-      {
-        "src": "/images/ozon-14084285996-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 62318
-      },
-      {
-        "src": "/images/ozon-14084285996-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 125480
-      },
-      {
-        "src": "/images/ozon-14084285996-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 185640
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14084285494.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 301897,
-    "sha256": "557bd7782da16daf9d27a1957dcf107a47277faf514d172d41ebca037002a912",
-    "variants": [
-      {
-        "src": "/images/ozon-14084285494-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6624
-      },
-      {
-        "src": "/images/ozon-14084285494-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 29310
-      },
-      {
-        "src": "/images/ozon-14084285494-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 54094
-      },
-      {
-        "src": "/images/ozon-14084285494-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 87460
-      },
-      {
-        "src": "/images/ozon-14084285494-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 118768
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14604601195.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 413542,
-    "sha256": "0c188512e0b1a11a58dd4c8e3670034cc7e13d068e570ddf90f1088f320af4f3",
-    "variants": [
-      {
-        "src": "/images/ozon-14604601195-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6400
-      },
-      {
-        "src": "/images/ozon-14604601195-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 26820
-      },
-      {
-        "src": "/images/ozon-14604601195-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 51562
-      },
-      {
-        "src": "/images/ozon-14604601195-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 99860
-      },
-      {
-        "src": "/images/ozon-14604601195-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 153858
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14604607730.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 404016,
-    "sha256": "b03139bafe697cdf66c6448717fc366ff3e27a34da87b19f18e36eda4900d8fd",
-    "variants": [
-      {
-        "src": "/images/ozon-14604607730-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6560
-      },
-      {
-        "src": "/images/ozon-14604607730-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 27076
-      },
-      {
-        "src": "/images/ozon-14604607730-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 51450
-      },
-      {
-        "src": "/images/ozon-14604607730-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 98758
-      },
-      {
-        "src": "/images/ozon-14604607730-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 150822
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14855905619.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 240678,
-    "sha256": "2ecdeacc9396a054b4dc5222aea95d35a228a797dd0b4e2adc595bd2354a5998",
-    "variants": [
-      {
-        "src": "/images/ozon-14855905619-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6526
-      },
-      {
-        "src": "/images/ozon-14855905619-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 26476
-      },
-      {
-        "src": "/images/ozon-14855905619-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 47656
-      },
-      {
-        "src": "/images/ozon-14855905619-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 77332
-      },
-      {
-        "src": "/images/ozon-14855905619-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 104404
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14855822133.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 301270,
-    "sha256": "ff85c6dfadef4831a4c5edd76ca24e8e13d63541a9da646fa8608c8b4ace739c",
-    "variants": [
-      {
-        "src": "/images/ozon-14855822133-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6546
-      },
-      {
-        "src": "/images/ozon-14855822133-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 29270
-      },
-      {
-        "src": "/images/ozon-14855822133-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 53822
-      },
-      {
-        "src": "/images/ozon-14855822133-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 87194
-      },
-      {
-        "src": "/images/ozon-14855822133-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 118432
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14604771600.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 485223,
-    "sha256": "4cee71a8177e5c23d97e99b1748a871041a4871c0d9386a3f8ac75420f96d0ab",
-    "variants": [
-      {
-        "src": "/images/ozon-14604771600-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6644
-      },
-      {
-        "src": "/images/ozon-14604771600-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30134
-      },
-      {
-        "src": "/images/ozon-14604771600-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 62252
-      },
-      {
-        "src": "/images/ozon-14604771600-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 125424
-      },
-      {
-        "src": "/images/ozon-14604771600-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 185632
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14855933200.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 264654,
-    "sha256": "95025d555a12836208d9f55773b05a79bcea922283a8c1a1ffa927d96ac5f894",
-    "variants": [
-      {
-        "src": "/images/ozon-14855933200-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6644
-      },
-      {
-        "src": "/images/ozon-14855933200-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 27280
-      },
-      {
-        "src": "/images/ozon-14855933200-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 49250
-      },
-      {
-        "src": "/images/ozon-14855933200-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 80838
-      },
-      {
-        "src": "/images/ozon-14855933200-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 107938
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14856000231.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 414014,
-    "sha256": "583bd87c86dfc1d8e49b817793f02d6ff7d2f147941d19102ba0419ea17e9741",
-    "variants": [
-      {
-        "src": "/images/ozon-14856000231-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6396
-      },
-      {
-        "src": "/images/ozon-14856000231-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 26858
-      },
-      {
-        "src": "/images/ozon-14856000231-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 51908
-      },
-      {
-        "src": "/images/ozon-14856000231-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 99750
-      },
-      {
-        "src": "/images/ozon-14856000231-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 154120
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14856073545.jpg": {
-    "width": 1920,
-    "height": 2560,
-    "originalBytes": 404342,
-    "sha256": "5f2cb561e57a50917777c1aa26c93ea4758f4cdae7a508c01a19a98a4b3ac99e",
-    "variants": [
-      {
-        "src": "/images/ozon-14856073545-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6586
-      },
-      {
-        "src": "/images/ozon-14856073545-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 26982
-      },
-      {
-        "src": "/images/ozon-14856073545-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 51404
-      },
-      {
-        "src": "/images/ozon-14856073545-1200.webp",
-        "width": 1200,
-        "height": 1600,
-        "bytes": 98698
-      },
-      {
-        "src": "/images/ozon-14856073545-1536.webp",
-        "width": 1536,
-        "height": 2048,
-        "bytes": 150868
-      }
-    ]
-  },
-  "/catalog-assets/ozon-12620122198.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 178947,
-    "sha256": "50a33d3a8d8744ebdb1e65fd15a0568186111b3f7e679a44338b7021e27fe74d",
-    "variants": [
-      {
-        "src": "/images/ozon-12620122198-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6876
-      },
-      {
-        "src": "/images/ozon-12620122198-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 27286
-      },
-      {
-        "src": "/images/ozon-12620122198-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 65216
-      },
-      {
-        "src": "/images/ozon-12620122198-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 110360
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9068352016.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 128351,
-    "sha256": "58ac2429954bba6e2a9e96a62d9cc41f1fb25f01f03459d873aa86718d64403e",
-    "variants": [
-      {
-        "src": "/images/ozon-9068352016-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 4540
-      },
-      {
-        "src": "/images/ozon-9068352016-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 23036
-      },
-      {
-        "src": "/images/ozon-9068352016-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 52464
-      },
-      {
-        "src": "/images/ozon-9068352016-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 71488
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14133235154.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 252402,
-    "sha256": "4d5440c55a58a505d4c1ad32ce3c985072d56a98d3ac053c760a4c3e184b8a76",
-    "variants": [
-      {
-        "src": "/images/ozon-14133235154-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 6060
-      },
-      {
-        "src": "/images/ozon-14133235154-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 22812
-      },
-      {
-        "src": "/images/ozon-14133235154-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 43062
-      },
-      {
-        "src": "/images/ozon-14133235154-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 71736
-      },
-      {
-        "src": "/images/ozon-14133235154-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 95972
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9149245642.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 199515,
-    "sha256": "473383b30088a199cda0fb417a752c7c19f92d79401bab118558bff1113007f5",
-    "variants": [
-      {
-        "src": "/images/ozon-9149245642-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7274
-      },
-      {
-        "src": "/images/ozon-9149245642-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 50368
-      },
-      {
-        "src": "/images/ozon-9149245642-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 140374
-      },
-      {
-        "src": "/images/ozon-9149245642-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 176464
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9149239426.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 152198,
-    "sha256": "a48d4a0ff698688dbfa90484e8953cc6701a37afe0b9ea8e0b8a9c51527461ec",
-    "variants": [
-      {
-        "src": "/images/ozon-9149239426-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6928
-      },
-      {
-        "src": "/images/ozon-9149239426-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 43654
-      },
-      {
-        "src": "/images/ozon-9149239426-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 85874
-      },
-      {
-        "src": "/images/ozon-9149239426-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 102420
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9149239102.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 199457,
-    "sha256": "21ba24a8ee9851cd705b754ee1d0e1c1b7dc1591db28d8cbcb4274079c281bcd",
-    "variants": [
-      {
-        "src": "/images/ozon-9149239102-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7254
-      },
-      {
-        "src": "/images/ozon-9149239102-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 50414
-      },
-      {
-        "src": "/images/ozon-9149239102-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 140428
-      },
-      {
-        "src": "/images/ozon-9149239102-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 176396
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14133390551.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 466780,
-    "sha256": "c900f184acbee5a2df526c65de6ef3f6375c6051dd40a15064044a1f9b34f2b6",
-    "variants": [
-      {
-        "src": "/images/ozon-14133390551-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 8474
-      },
-      {
-        "src": "/images/ozon-14133390551-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 41224
-      },
-      {
-        "src": "/images/ozon-14133390551-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 92200
-      },
-      {
-        "src": "/images/ozon-14133390551-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 174370
-      },
-      {
-        "src": "/images/ozon-14133390551-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 247440
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14133560819.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 322752,
-    "sha256": "f9c6ee1ce87bbf2522d047d0154adb07f30da0a0c7b95e6328598f44fb6d25ea",
-    "variants": [
-      {
-        "src": "/images/ozon-14133560819-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 7950
-      },
-      {
-        "src": "/images/ozon-14133560819-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 33726
-      },
-      {
-        "src": "/images/ozon-14133560819-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 68916
-      },
-      {
-        "src": "/images/ozon-14133560819-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 116070
-      },
-      {
-        "src": "/images/ozon-14133560819-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 157992
-      }
-    ]
-  },
-  "/catalog-assets/ozon-12620677388.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 237237,
-    "sha256": "aec19b4704a9c5dd6d551c178ff200078051ff9a59e6b5e0a23f01b4b84542fb",
-    "variants": [
-      {
-        "src": "/images/ozon-12620677388-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 9402
-      },
-      {
-        "src": "/images/ozon-12620677388-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 46238
-      },
-      {
-        "src": "/images/ozon-12620677388-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 107686
-      },
-      {
-        "src": "/images/ozon-12620677388-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 173224
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9068423790.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 149581,
-    "sha256": "e455fac8f053f24ba46a7ee9ce64741a487c669e3953be4715695fb2be0c93d5",
-    "variants": [
-      {
-        "src": "/images/ozon-9068423790-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7924
-      },
-      {
-        "src": "/images/ozon-9068423790-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 44016
-      },
-      {
-        "src": "/images/ozon-9068423790-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 86280
-      },
-      {
-        "src": "/images/ozon-9068423790-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 101130
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9068423784.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 91979,
-    "sha256": "690677cc3cec8315b62607d01e126572d201f277030dfda3585a8c65ef538292",
-    "variants": [
-      {
-        "src": "/images/ozon-9068423784-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 4214
-      },
-      {
-        "src": "/images/ozon-9068423784-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 21308
-      },
-      {
-        "src": "/images/ozon-9068423784-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 42528
-      },
-      {
-        "src": "/images/ozon-9068423784-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 53044
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066576078.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 136964,
-    "sha256": "5b1cac6e28b9ea61e7ce2490eff8b48a7dbe2904c65fef5fe05448ed8b7ac027",
-    "variants": [
-      {
-        "src": "/images/ozon-9066576078-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6168
-      },
-      {
-        "src": "/images/ozon-9066576078-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 37128
-      },
-      {
-        "src": "/images/ozon-9066576078-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 74172
-      },
-      {
-        "src": "/images/ozon-9066576078-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 88472
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066538874.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 165001,
-    "sha256": "71000593af426cbab468ea63b2852f24b355467d1e658bcb09093a175077eef8",
-    "variants": [
-      {
-        "src": "/images/ozon-9066538874-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8104
-      },
-      {
-        "src": "/images/ozon-9066538874-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 49820
-      },
-      {
-        "src": "/images/ozon-9066538874-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 103944
-      },
-      {
-        "src": "/images/ozon-9066538874-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 123838
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066538107.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 144549,
-    "sha256": "f1b29e8dfa62fee3eb8a6fa79cc52de11244f57a6098608c72ebb41430a5bb9a",
-    "variants": [
-      {
-        "src": "/images/ozon-9066538107-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6402
-      },
-      {
-        "src": "/images/ozon-9066538107-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 43694
-      },
-      {
-        "src": "/images/ozon-9066538107-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 85990
-      },
-      {
-        "src": "/images/ozon-9066538107-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 100730
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066567914.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 137001,
-    "sha256": "e2bd804a8a86ec44ec1f72b7643c03aea811325366ec7532805c71c75e20e343",
-    "variants": [
-      {
-        "src": "/images/ozon-9066567914-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6174
-      },
-      {
-        "src": "/images/ozon-9066567914-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 37204
-      },
-      {
-        "src": "/images/ozon-9066567914-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 74074
-      },
-      {
-        "src": "/images/ozon-9066567914-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 88700
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066559298.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 137031,
-    "sha256": "571a2d1a52ce06da50ae393de0181591895bce92605ec50a6ff1235034b7111a",
-    "variants": [
-      {
-        "src": "/images/ozon-9066559298-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6152
-      },
-      {
-        "src": "/images/ozon-9066559298-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 37498
-      },
-      {
-        "src": "/images/ozon-9066559298-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 74338
-      },
-      {
-        "src": "/images/ozon-9066559298-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 88780
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066552856.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 137089,
-    "sha256": "175d7fbc0521d427a4845cabebc834aba9da58665990736a96bb1f09b580d999",
-    "variants": [
-      {
-        "src": "/images/ozon-9066552856-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6146
-      },
-      {
-        "src": "/images/ozon-9066552856-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 37326
-      },
-      {
-        "src": "/images/ozon-9066552856-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 74160
-      },
-      {
-        "src": "/images/ozon-9066552856-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 88582
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066546960.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 137060,
-    "sha256": "c46a097e5d2072c2250a11d0700a77c65001e2f1e2c9e5e9532f351b3825a63e",
-    "variants": [
-      {
-        "src": "/images/ozon-9066546960-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6172
-      },
-      {
-        "src": "/images/ozon-9066546960-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 37224
-      },
-      {
-        "src": "/images/ozon-9066546960-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 74138
-      },
-      {
-        "src": "/images/ozon-9066546960-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 88350
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066538705.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 137037,
-    "sha256": "8958f017e4337cc6b839e67c88b5b2bdcd50d864317fb3645c375edd9151b2c7",
-    "variants": [
-      {
-        "src": "/images/ozon-9066538705-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6158
-      },
-      {
-        "src": "/images/ozon-9066538705-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 37484
-      },
-      {
-        "src": "/images/ozon-9066538705-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 74232
-      },
-      {
-        "src": "/images/ozon-9066538705-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 88778
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9068407207.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 149456,
-    "sha256": "3d5d9a59f6dc21ebabf8ca5d215559d27691b20b709cf3a95655e4c9f16b0eed",
-    "variants": [
-      {
-        "src": "/images/ozon-9068407207-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8152
-      },
-      {
-        "src": "/images/ozon-9068407207-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 44244
-      },
-      {
-        "src": "/images/ozon-9068407207-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 86124
-      },
-      {
-        "src": "/images/ozon-9068407207-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 103472
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9068407260.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 186292,
-    "sha256": "a1dc16a788598afa5c4c94dd967055fb4d2ad6cc424d270c6385550c58805b4f",
-    "variants": [
-      {
-        "src": "/images/ozon-9068407260-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8646
-      },
-      {
-        "src": "/images/ozon-9068407260-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 60648
-      },
-      {
-        "src": "/images/ozon-9068407260-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 125054
-      },
-      {
-        "src": "/images/ozon-9068407260-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 145028
-      }
-    ]
-  },
-  "/catalog-assets/ozon-11305936171.jpg": {
-    "width": 1024,
-    "height": 1536,
-    "originalBytes": 280840,
-    "sha256": "1c468d1f62afddfc5f44aee7b804ac2ac2d4cf80f6f0e239b3995bb641a2a17a",
-    "variants": [
-      {
-        "src": "/images/ozon-11305936171-160.webp",
-        "width": 160,
-        "height": 240,
-        "bytes": 10526
-      },
-      {
-        "src": "/images/ozon-11305936171-480.webp",
-        "width": 480,
-        "height": 720,
-        "bytes": 66484
-      },
-      {
-        "src": "/images/ozon-11305936171-800.webp",
-        "width": 800,
-        "height": 1200,
-        "bytes": 155256
-      },
-      {
-        "src": "/images/ozon-11305936171-1024.webp",
-        "width": 1024,
-        "height": 1536,
-        "bytes": 236052
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9121714106.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 134575,
-    "sha256": "6118e2cddbc44e9685986b91c403fd58646043ea9a296425fa8bbb87c42e6c82",
-    "variants": [
-      {
-        "src": "/images/ozon-9121714106-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6696
-      },
-      {
-        "src": "/images/ozon-9121714106-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 32028
-      },
-      {
-        "src": "/images/ozon-9121714106-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 65560
-      },
-      {
-        "src": "/images/ozon-9121714106-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 80802
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9121812074.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 103696,
-    "sha256": "a2d94f1bb206b13abc39761bb51214c0d3269079cd9f292b2d9a02de3f9d330d",
-    "variants": [
-      {
-        "src": "/images/ozon-9121812074-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 4722
-      },
-      {
-        "src": "/images/ozon-9121812074-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 19458
-      },
-      {
-        "src": "/images/ozon-9121812074-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 45842
-      },
-      {
-        "src": "/images/ozon-9121812074-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 61156
-      }
-    ]
-  },
-  "/catalog-assets/ozon-11436337926.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 477166,
-    "sha256": "7211c8f6c0af09e59eca1d41b15cf74767fa24cfda1767920a6f6a94991ea040",
-    "variants": [
-      {
-        "src": "/images/ozon-11436337926-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 10126
-      },
-      {
-        "src": "/images/ozon-11436337926-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 52034
-      },
-      {
-        "src": "/images/ozon-11436337926-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 105398
-      },
-      {
-        "src": "/images/ozon-11436337926-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 179628
-      },
-      {
-        "src": "/images/ozon-11436337926-1536.webp",
-        "width": 1536,
-        "height": 2057,
-        "bytes": 246558
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9121714001.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 113166,
-    "sha256": "f2e5a195486165d6a923b785302dbe71bfb1481ca4284bb06db5ba43831dee98",
-    "variants": [
-      {
-        "src": "/images/ozon-9121714001-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6772
-      },
-      {
-        "src": "/images/ozon-9121714001-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 28950
-      },
-      {
-        "src": "/images/ozon-9121714001-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 59568
-      },
-      {
-        "src": "/images/ozon-9121714001-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 70474
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9067969087.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 115051,
-    "sha256": "83b488095d5b2b59397d14d4e7172372246824a974243c36ef77cbe03563290f",
-    "variants": [
-      {
-        "src": "/images/ozon-9067969087-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6456
-      },
-      {
-        "src": "/images/ozon-9067969087-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30556
-      },
-      {
-        "src": "/images/ozon-9067969087-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 57310
-      },
-      {
-        "src": "/images/ozon-9067969087-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 67570
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066239898.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 136990,
-    "sha256": "f499a52790fadf59b85201f6a16b7c5096ac7183e0ca5d65671c6aa78276e553",
-    "variants": [
-      {
-        "src": "/images/ozon-9066239898-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 5458
-      },
-      {
-        "src": "/images/ozon-9066239898-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 34910
-      },
-      {
-        "src": "/images/ozon-9066239898-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 72490
-      },
-      {
-        "src": "/images/ozon-9066239898-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 87168
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066240598.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 161613,
-    "sha256": "520ee2ae066676f2e9382f94c982e2d7e2cbaae73de8f1b1b7ffcc79d5975059",
-    "variants": [
-      {
-        "src": "/images/ozon-9066240598-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 9804
-      },
-      {
-        "src": "/images/ozon-9066240598-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 54506
-      },
-      {
-        "src": "/images/ozon-9066240598-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 102386
-      },
-      {
-        "src": "/images/ozon-9066240598-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 120052
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9066240036.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 114859,
-    "sha256": "72dd20e8a4488221be3fb62254fb6f75f86e7cf47b41d52b1f4815d9aa5aed42",
-    "variants": [
-      {
-        "src": "/images/ozon-9066240036-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6464
-      },
-      {
-        "src": "/images/ozon-9066240036-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30544
-      },
-      {
-        "src": "/images/ozon-9066240036-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 57312
-      },
-      {
-        "src": "/images/ozon-9066240036-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 67420
-      }
-    ]
-  },
-  "/catalog-assets/ozon-13771009006.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 243470,
-    "sha256": "74f87278581dcd9ec0c6674ac28f0b8e7391b42e526b8f3fef728fc2d3c30825",
-    "variants": [
-      {
-        "src": "/images/ozon-13771009006-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 9460
-      },
-      {
-        "src": "/images/ozon-13771009006-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 44250
-      },
-      {
-        "src": "/images/ozon-13771009006-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 95824
-      },
-      {
-        "src": "/images/ozon-13771009006-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 151954
-      }
-    ]
-  },
-  "/catalog-assets/ozon-10086452838.jpg": {
-    "width": 1936,
-    "height": 2547,
-    "originalBytes": 375138,
-    "sha256": "a0dd187464cb2a091b475f650156690e53f36465bfd1176333d5edbd42198f72",
-    "variants": [
-      {
-        "src": "/images/ozon-10086452838-160.webp",
-        "width": 160,
-        "height": 210,
-        "bytes": 7072
-      },
-      {
-        "src": "/images/ozon-10086452838-480.webp",
-        "width": 480,
-        "height": 631,
-        "bytes": 30360
-      },
-      {
-        "src": "/images/ozon-10086452838-800.webp",
-        "width": 800,
-        "height": 1052,
-        "bytes": 52458
-      },
-      {
-        "src": "/images/ozon-10086452838-1200.webp",
-        "width": 1200,
-        "height": 1579,
-        "bytes": 89206
-      },
-      {
-        "src": "/images/ozon-10086452838-1536.webp",
-        "width": 1536,
-        "height": 2021,
-        "bytes": 130756
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14033437323.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 222205,
-    "sha256": "50fc6529afab84355fea4d3dba76932a475ab50f6dad838ff2b14935206d66cf",
-    "variants": [
-      {
-        "src": "/images/ozon-14033437323-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8666
-      },
-      {
-        "src": "/images/ozon-14033437323-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 51550
-      },
-      {
-        "src": "/images/ozon-14033437323-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 111208
-      },
-      {
-        "src": "/images/ozon-14033437323-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 167364
-      }
-    ]
-  },
-  "/catalog-assets/ozon-13431064061.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 304553,
-    "sha256": "880911ad80c121022b2c32709bb43abd03b2c946d48b4ecb619a6c56e4a768b2",
-    "variants": [
-      {
-        "src": "/images/ozon-13431064061-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8796
-      },
-      {
-        "src": "/images/ozon-13431064061-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 51358
-      },
-      {
-        "src": "/images/ozon-13431064061-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 114804
-      },
-      {
-        "src": "/images/ozon-13431064061-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 177860
-      }
-    ]
-  },
-  "/catalog-assets/ozon-9517595327.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 126837,
-    "sha256": "b2caaf268c7a91c62dc6fc4a9831615b9864a027ee5d65d604fd285a929a981b",
-    "variants": [
-      {
-        "src": "/images/ozon-9517595327-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7356
-      },
-      {
-        "src": "/images/ozon-9517595327-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 34970
-      },
-      {
-        "src": "/images/ozon-9517595327-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 67694
-      },
-      {
-        "src": "/images/ozon-9517595327-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 80150
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14034108285.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 214512,
-    "sha256": "06213c2075a721819e73a3d99f342cf16eb8e8aa03e3d344cd313ea73bb1dcd6",
-    "variants": [
-      {
-        "src": "/images/ozon-14034108285-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8690
-      },
-      {
-        "src": "/images/ozon-14034108285-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 50208
-      },
-      {
-        "src": "/images/ozon-14034108285-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 104462
-      },
-      {
-        "src": "/images/ozon-14034108285-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 156164
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14840922874.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 152806,
-    "sha256": "f94f7bf568166ced529e85a6896d70587bb92cdb7b67b07f6ac9821174c0c181",
-    "variants": [
-      {
-        "src": "/images/ozon-14840922874-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7428
-      },
-      {
-        "src": "/images/ozon-14840922874-480.webp",
-        "width": 480,
-        "height": 640,
+        "height": 800,
         "bytes": 29872
       },
       {
-        "src": "/images/ozon-14840922874-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 59678
-      },
-      {
-        "src": "/images/ozon-14840922874-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 97228
+        "src": "/images/studio-ns-pram-red-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 43176
       }
     ]
   },
-  "/catalog-assets/ozon-14812004819.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 135583,
-    "sha256": "638e0708934d8adc995f7cbb3e5f4450cb5208b523a24de5c97fbe00aa5f1d0a",
+  "/catalog-assets/studio-ns-pram-blue.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 139312,
+    "sha256": "7a7dfc8d6f06c0231dba9e5ad833a5e29ab94479abd2c11227b0f17ad7a1d1f8",
     "variants": [
       {
-        "src": "/images/ozon-14812004819-160.webp",
+        "src": "/images/studio-ns-pram-blue-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 7060
+        "height": 107,
+        "bytes": 2558
       },
       {
-        "src": "/images/ozon-14812004819-480.webp",
+        "src": "/images/studio-ns-pram-blue-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 28836
+        "height": 320,
+        "bytes": 9938
       },
       {
-        "src": "/images/ozon-14812004819-800.webp",
+        "src": "/images/studio-ns-pram-blue-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 53884
+        "height": 533,
+        "bytes": 19668
       },
       {
-        "src": "/images/ozon-14812004819-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 83050
+        "src": "/images/studio-ns-pram-blue-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 33854
+      },
+      {
+        "src": "/images/studio-ns-pram-blue-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 51904
       }
     ]
   },
-  "/catalog-assets/ozon-14840921133.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 141968,
-    "sha256": "05d08b63ebbef3e4f8a25e72e1d8fdd261cb6abcef9473855d0b6851d5a156b5",
+  "/catalog-assets/studio-ns-pram-darkblue.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 149912,
+    "sha256": "5d7a7bbbfa79e903dbde8d3cbec94370d1e67ab40f8ebc40e8a99b2e9c7930a4",
     "variants": [
       {
-        "src": "/images/ozon-14840921133-160.webp",
+        "src": "/images/studio-ns-pram-darkblue-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 7084
+        "height": 107,
+        "bytes": 1998
       },
       {
-        "src": "/images/ozon-14840921133-480.webp",
+        "src": "/images/studio-ns-pram-darkblue-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 28838
+        "height": 320,
+        "bytes": 7488
       },
       {
-        "src": "/images/ozon-14840921133-800.webp",
+        "src": "/images/studio-ns-pram-darkblue-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 54166
+        "height": 533,
+        "bytes": 14782
       },
       {
-        "src": "/images/ozon-14840921133-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 82140
+        "src": "/images/studio-ns-pram-darkblue-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 26566
+      },
+      {
+        "src": "/images/studio-ns-pram-darkblue-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 49582
       }
     ]
   },
-  "/catalog-assets/ozon-14841322596.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 153375,
-    "sha256": "38a8c49f42da9d57dd32ec81ee5c5b251607542f7f68694f3a18cfab6a74eb8e",
+  "/catalog-assets/studio-ns-pram-green.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 112880,
+    "sha256": "9a21bf83fed90adc0d7037d9ad0cca1a0c1bf647d9161ed8762d472d184dc507",
     "variants": [
       {
-        "src": "/images/ozon-14841322596-160.webp",
+        "src": "/images/studio-ns-pram-green-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 7394
+        "height": 107,
+        "bytes": 2288
       },
       {
-        "src": "/images/ozon-14841322596-480.webp",
+        "src": "/images/studio-ns-pram-green-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 30050
+        "height": 320,
+        "bytes": 8944
       },
       {
-        "src": "/images/ozon-14841322596-800.webp",
+        "src": "/images/studio-ns-pram-green-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 59932
+        "height": 533,
+        "bytes": 17276
       },
       {
-        "src": "/images/ozon-14841322596-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 97446
+        "src": "/images/studio-ns-pram-green-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 29926
+      },
+      {
+        "src": "/images/studio-ns-pram-green-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 43730
       }
     ]
   },
-  "/catalog-assets/ozon-14841312922.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 144218,
-    "sha256": "c3067fa3ae3d747174ec3aa37d0da67cbc5bd47fd0dfb8db33f2d2331e754412",
+  "/catalog-assets/studio-ns-pram-orange.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 160190,
+    "sha256": "8ae65f6f68dddf00ba4da1a3eb37c7f1f45e587e4e29ffff812fe11b0ee772c4",
     "variants": [
       {
-        "src": "/images/ozon-14841312922-160.webp",
+        "src": "/images/studio-ns-pram-orange-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 7292
+        "height": 107,
+        "bytes": 2490
       },
       {
-        "src": "/images/ozon-14841312922-480.webp",
+        "src": "/images/studio-ns-pram-orange-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 29320
+        "height": 320,
+        "bytes": 9416
       },
       {
-        "src": "/images/ozon-14841312922-800.webp",
+        "src": "/images/studio-ns-pram-orange-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 55034
+        "height": 533,
+        "bytes": 18246
       },
       {
-        "src": "/images/ozon-14841312922-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 84624
+        "src": "/images/studio-ns-pram-orange-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 30924
+      },
+      {
+        "src": "/images/studio-ns-pram-orange-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 56478
       }
     ]
   },
-  "/catalog-assets/ozon-14840895487.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 151242,
-    "sha256": "e709cf7440a73b6f5151729e68c8cf21fb7ff5d21e070a2e49f97836d00237f5",
+  "/catalog-assets/studio-ns-hook-2.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 173364,
+    "sha256": "23e5ef5a10a3ead8cf9da95f02f412d2d0c74985bacd62942798f542ed779e6d",
     "variants": [
       {
-        "src": "/images/ozon-14840895487-160.webp",
+        "src": "/images/studio-ns-hook-2-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 7466
+        "height": 107,
+        "bytes": 2296
       },
       {
-        "src": "/images/ozon-14840895487-480.webp",
+        "src": "/images/studio-ns-hook-2-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 30226
+        "height": 320,
+        "bytes": 11298
       },
       {
-        "src": "/images/ozon-14840895487-800.webp",
+        "src": "/images/studio-ns-hook-2-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 58948
+        "height": 533,
+        "bytes": 28164
       },
       {
-        "src": "/images/ozon-14840895487-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 94962
+        "src": "/images/studio-ns-hook-2-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 55550
+      },
+      {
+        "src": "/images/studio-ns-hook-2-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 83034
       }
     ]
   },
-  "/catalog-assets/ozon-14840903237.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 143382,
-    "sha256": "01b3fd3c84488cfb3f91d67580d85ec3916843ff1271d59ebe94bb21f8d3f318",
+  "/catalog-assets/studio-vstky-cage-mat-s.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 162670,
+    "sha256": "50f7e1e0420f29dc7a927d6bbacb5945761397818e3891e999ff373a2a149aa2",
     "variants": [
       {
-        "src": "/images/ozon-14840903237-160.webp",
+        "src": "/images/studio-vstky-cage-mat-s-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 7198
+        "height": 107,
+        "bytes": 1654
       },
       {
-        "src": "/images/ozon-14840903237-480.webp",
+        "src": "/images/studio-vstky-cage-mat-s-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 29388
+        "height": 320,
+        "bytes": 5420
       },
       {
-        "src": "/images/ozon-14840903237-800.webp",
+        "src": "/images/studio-vstky-cage-mat-s-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 55106
+        "height": 533,
+        "bytes": 10452
       },
       {
-        "src": "/images/ozon-14840903237-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 84234
+        "src": "/images/studio-vstky-cage-mat-s-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 22750
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-s-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 51940
       }
     ]
   },
-  "/catalog-assets/ozon-14812008866.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 154394,
-    "sha256": "8f4dfba9615cf11951e48f99fad185d1ef5c2c9db8aa4c9538279ebaf41653df",
+  "/catalog-assets/studio-vstky-cage-mat-m.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 192688,
+    "sha256": "b1cc3b2928eaf1eb6a3231dec0693317d0bfd729d251247e58701eb14a9404c6",
     "variants": [
       {
-        "src": "/images/ozon-14812008866-160.webp",
+        "src": "/images/studio-vstky-cage-mat-m-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 7498
+        "height": 107,
+        "bytes": 1702
       },
       {
-        "src": "/images/ozon-14812008866-480.webp",
+        "src": "/images/studio-vstky-cage-mat-m-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 30348
+        "height": 320,
+        "bytes": 5494
       },
       {
-        "src": "/images/ozon-14812008866-800.webp",
+        "src": "/images/studio-vstky-cage-mat-m-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 60568
+        "height": 533,
+        "bytes": 10890
       },
       {
-        "src": "/images/ozon-14812008866-1086.webp",
-        "width": 1086,
-        "height": 1448,
+        "src": "/images/studio-vstky-cage-mat-m-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 26260
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-m-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 66260
+      }
+    ]
+  },
+  "/catalog-assets/studio-vstky-cage-mat-l.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 113502,
+    "sha256": "e407e2500f71dd8565d016a2ce295d1b221a13fa18f98796e4b46f423c37dcb7",
+    "variants": [
+      {
+        "src": "/images/studio-vstky-cage-mat-l-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1612
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-l-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 5380
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-l-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 10508
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-l-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 18584
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-l-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 32304
+      }
+    ]
+  },
+  "/catalog-assets/studio-vstky-cage-mat-xl.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 203350,
+    "sha256": "a50a47d5cf1004e20ccd3bff8ec1c772f56c49e5c295db3ea0d133d70c297897",
+    "variants": [
+      {
+        "src": "/images/studio-vstky-cage-mat-xl-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1694
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-xl-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 5424
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-xl-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 11054
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-xl-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 30756
+      },
+      {
+        "src": "/images/studio-vstky-cage-mat-xl-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 78706
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-gen-002.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 197750,
+    "sha256": "9fe09b2aa2221cb247a55cba34f1aa54e097f2f22039f5d0c9634e9857ae6396",
+    "variants": [
+      {
+        "src": "/images/studio-ns-gen-002-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 3360
+      },
+      {
+        "src": "/images/studio-ns-gen-002-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 15584
+      },
+      {
+        "src": "/images/studio-ns-gen-002-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 32416
+      },
+      {
+        "src": "/images/studio-ns-gen-002-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 58814
+      },
+      {
+        "src": "/images/studio-ns-gen-002-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 84274
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-gen-001.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 195280,
+    "sha256": "fab82cff868232f0c466dd64c4e43c6cd4a5dcb4123dbb8747ddc8b6a3e8b15c",
+    "variants": [
+      {
+        "src": "/images/studio-ns-gen-001-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 3186
+      },
+      {
+        "src": "/images/studio-ns-gen-001-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14668
+      },
+      {
+        "src": "/images/studio-ns-gen-001-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 30408
+      },
+      {
+        "src": "/images/studio-ns-gen-001-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 54580
+      },
+      {
+        "src": "/images/studio-ns-gen-001-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 78260
+      }
+    ]
+  },
+  "/catalog-assets/studio-hook-2-long.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 155224,
+    "sha256": "374ec037e03708eab899c364a936332da5b0e14daaad3a711b4fcac49c507269",
+    "variants": [
+      {
+        "src": "/images/studio-hook-2-long-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1720
+      },
+      {
+        "src": "/images/studio-hook-2-long-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 9766
+      },
+      {
+        "src": "/images/studio-hook-2-long-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 25044
+      },
+      {
+        "src": "/images/studio-hook-2-long-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 52378
+      },
+      {
+        "src": "/images/studio-hook-2-long-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 80072
+      }
+    ]
+  },
+  "/catalog-assets/studio-shurup-001.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 249438,
+    "sha256": "de0be23cc0b8722e44d7196a24dcb2585e24786762cb97432c138fdce93558e8",
+    "variants": [
+      {
+        "src": "/images/studio-shurup-001-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1614
+      },
+      {
+        "src": "/images/studio-shurup-001-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 6128
+      },
+      {
+        "src": "/images/studio-shurup-001-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 14130
+      },
+      {
+        "src": "/images/studio-shurup-001-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 59984
+      },
+      {
+        "src": "/images/studio-shurup-001-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 119272
+      }
+    ]
+  },
+  "/catalog-assets/studio-bag-35.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 135172,
+    "sha256": "aaab6f1880defdf32f59ef402b0403e1ea64eb39f00e52f74531350161b6ea94",
+    "variants": [
+      {
+        "src": "/images/studio-bag-35-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1626
+      },
+      {
+        "src": "/images/studio-bag-35-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 5708
+      },
+      {
+        "src": "/images/studio-bag-35-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 11636
+      },
+      {
+        "src": "/images/studio-bag-35-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 20792
+      },
+      {
+        "src": "/images/studio-bag-35-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 31528
+      }
+    ]
+  },
+  "/catalog-assets/studio-bag-108.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 368230,
+    "sha256": "600b5edd3fa9a83b6f313fd8545236f3362f51f405ebd8527755241a535451a1",
+    "variants": [
+      {
+        "src": "/images/studio-bag-108-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2220
+      },
+      {
+        "src": "/images/studio-bag-108-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8258
+      },
+      {
+        "src": "/images/studio-bag-108-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 17176
+      },
+      {
+        "src": "/images/studio-bag-108-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 69602
+      },
+      {
+        "src": "/images/studio-bag-108-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 178514
+      }
+    ]
+  },
+  "/catalog-assets/studio-bag-230.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 242952,
+    "sha256": "ed10c95f4ef60a96ada26778d02100c07d4002f39d7f3595c47ac3d901c11bc4",
+    "variants": [
+      {
+        "src": "/images/studio-bag-230-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1598
+      },
+      {
+        "src": "/images/studio-bag-230-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 5558
+      },
+      {
+        "src": "/images/studio-bag-230-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 11244
+      },
+      {
+        "src": "/images/studio-bag-230-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 22846
+      },
+      {
+        "src": "/images/studio-bag-230-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 66072
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-strp-trns-1.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 302280,
+    "sha256": "563ad3c91ed556adc737474fcb0e3bb111e345b2f5d5605949bafcbd23eef9ed",
+    "variants": [
+      {
+        "src": "/images/studio-ns-strp-trns-1-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2000
+      },
+      {
+        "src": "/images/studio-ns-strp-trns-1-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 7322
+      },
+      {
+        "src": "/images/studio-ns-strp-trns-1-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 19162
+      },
+      {
+        "src": "/images/studio-ns-strp-trns-1-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 55572
+      },
+      {
+        "src": "/images/studio-ns-strp-trns-1-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 101646
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-strp-trns-new.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 250790,
+    "sha256": "b5fe1958ba8a8f65ce7bdb66e1935eb161a3c7d7be50ebf3d932fb8931d40255",
+    "variants": [
+      {
+        "src": "/images/studio-ns-strp-trns-new-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1856
+      },
+      {
+        "src": "/images/studio-ns-strp-trns-new-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 6564
+      },
+      {
+        "src": "/images/studio-ns-strp-trns-new-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 17528
+      },
+      {
+        "src": "/images/studio-ns-strp-trns-new-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 44112
+      },
+      {
+        "src": "/images/studio-ns-strp-trns-new-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 76218
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-belt-bag-3.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 213040,
+    "sha256": "4a37d068cc9f944c239f73a153aafc6f0efab3fb165e7a140d158ce1933c2146",
+    "variants": [
+      {
+        "src": "/images/studio-ns-belt-bag-3-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1990
+      },
+      {
+        "src": "/images/studio-ns-belt-bag-3-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 11464
+      },
+      {
+        "src": "/images/studio-ns-belt-bag-3-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 31358
+      },
+      {
+        "src": "/images/studio-ns-belt-bag-3-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 62848
+      },
+      {
+        "src": "/images/studio-ns-belt-bag-3-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 93540
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-belt-bag-4.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 222982,
+    "sha256": "82f6b0aeaba07e5e89ebe8d267972af8c96b59d4b18eee070d359f77b80fb813",
+    "variants": [
+      {
+        "src": "/images/studio-ns-belt-bag-4-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2006
+      },
+      {
+        "src": "/images/studio-ns-belt-bag-4-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12944
+      },
+      {
+        "src": "/images/studio-ns-belt-bag-4-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 33890
+      },
+      {
+        "src": "/images/studio-ns-belt-bag-4-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 66740
+      },
+      {
+        "src": "/images/studio-ns-belt-bag-4-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 99202
+      }
+    ]
+  },
+  "/catalog-assets/studio-strap-metall.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 223986,
+    "sha256": "bbb13ea6057fcbe212185e7413eb6bba3207cd28d151e7cfb194c80e16175ce1",
+    "variants": [
+      {
+        "src": "/images/studio-strap-metall-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2386
+      },
+      {
+        "src": "/images/studio-strap-metall-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12040
+      },
+      {
+        "src": "/images/studio-strap-metall-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 31482
+      },
+      {
+        "src": "/images/studio-strap-metall-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 71686
+      },
+      {
+        "src": "/images/studio-strap-metall-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 116558
+      }
+    ]
+  },
+  "/catalog-assets/studio-belt-bag-metall-4.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 153900,
+    "sha256": "2127bd4d4f084f7e1485be8224d11455f3be8dc47c23888b5c21a86051d4bcd8",
+    "variants": [
+      {
+        "src": "/images/studio-belt-bag-metall-4-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2100
+      },
+      {
+        "src": "/images/studio-belt-bag-metall-4-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 7658
+      },
+      {
+        "src": "/images/studio-belt-bag-metall-4-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 19854
+      },
+      {
+        "src": "/images/studio-belt-bag-metall-4-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 39300
+      },
+      {
+        "src": "/images/studio-belt-bag-metall-4-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 64152
+      }
+    ]
+  },
+  "/catalog-assets/studio-vstky-strap.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 242698,
+    "sha256": "22cee2337f66dc54793dfd8cd7fc328ff4b8c998a0f3d9b4f0f379b1bc04aa14",
+    "variants": [
+      {
+        "src": "/images/studio-vstky-strap-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2480
+      },
+      {
+        "src": "/images/studio-vstky-strap-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12100
+      },
+      {
+        "src": "/images/studio-vstky-strap-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 30816
+      },
+      {
+        "src": "/images/studio-vstky-strap-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 66932
+      },
+      {
+        "src": "/images/studio-vstky-strap-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 103390
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-belt-body-1.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 170884,
+    "sha256": "cf694a261088dc7dfb3211ea2acce8d2726547fe77792a8180dfd5698415e7a2",
+    "variants": [
+      {
+        "src": "/images/studio-ns-belt-body-1-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1650
+      },
+      {
+        "src": "/images/studio-ns-belt-body-1-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 9846
+      },
+      {
+        "src": "/images/studio-ns-belt-body-1-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 25764
+      },
+      {
+        "src": "/images/studio-ns-belt-body-1-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 51184
+      },
+      {
+        "src": "/images/studio-ns-belt-body-1-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 74396
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-strp-10-10.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 290004,
+    "sha256": "484a2cbb46f78e632980e368b6ecb5fcf809d5ec739c47880dedae631fe77873",
+    "variants": [
+      {
+        "src": "/images/studio-ns-strp-10-10-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1784
+      },
+      {
+        "src": "/images/studio-ns-strp-10-10-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 16378
+      },
+      {
+        "src": "/images/studio-ns-strp-10-10-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 48918
+      },
+      {
+        "src": "/images/studio-ns-strp-10-10-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 104982
+      },
+      {
+        "src": "/images/studio-ns-strp-10-10-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 157834
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-strp-20-10.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 259702,
+    "sha256": "a23b28213a4ce7d9209c715291ab6fb6efb978e75384f2ef25c16b1da3d80881",
+    "variants": [
+      {
+        "src": "/images/studio-ns-strp-20-10-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1664
+      },
+      {
+        "src": "/images/studio-ns-strp-20-10-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 13526
+      },
+      {
+        "src": "/images/studio-ns-strp-20-10-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 41256
+      },
+      {
+        "src": "/images/studio-ns-strp-20-10-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 89132
+      },
+      {
+        "src": "/images/studio-ns-strp-20-10-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 135312
+      }
+    ]
+  },
+  "/catalog-assets/studio-webbing-25.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 268464,
+    "sha256": "a9a349632024daf632f7da9cddba3b542a94088d661a724b5e76f863f072dcd6",
+    "variants": [
+      {
+        "src": "/images/studio-webbing-25-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1676
+      },
+      {
+        "src": "/images/studio-webbing-25-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14634
+      },
+      {
+        "src": "/images/studio-webbing-25-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 44648
+      },
+      {
+        "src": "/images/studio-webbing-25-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 95468
+      },
+      {
+        "src": "/images/studio-webbing-25-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 143192
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-strp-30-10.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 265374,
+    "sha256": "cf266c588d708038e9e20efcaef5fb76094eddd1ad9d17519c6efc23603b04f7",
+    "variants": [
+      {
+        "src": "/images/studio-ns-strp-30-10-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1662
+      },
+      {
+        "src": "/images/studio-ns-strp-30-10-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14552
+      },
+      {
+        "src": "/images/studio-ns-strp-30-10-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 43356
+      },
+      {
+        "src": "/images/studio-ns-strp-30-10-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 93230
+      },
+      {
+        "src": "/images/studio-ns-strp-30-10-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 140738
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-strp-40-10.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 288820,
+    "sha256": "c16da9eff66dd9a36595f4fd17a15f3950f1cea0243e219a7e5b38683e24a87b",
+    "variants": [
+      {
+        "src": "/images/studio-ns-strp-40-10-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1724
+      },
+      {
+        "src": "/images/studio-ns-strp-40-10-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 15582
+      },
+      {
+        "src": "/images/studio-ns-strp-40-10-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 46872
+      },
+      {
+        "src": "/images/studio-ns-strp-40-10-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 99604
+      },
+      {
+        "src": "/images/studio-ns-strp-40-10-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 149342
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-strp-50-10.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 276912,
+    "sha256": "eeb0cbb798d856d63a67ad86cedc4fcdf9f4bbba65d249d1e1429ad7e6a6968a",
+    "variants": [
+      {
+        "src": "/images/studio-ns-strp-50-10-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1666
+      },
+      {
+        "src": "/images/studio-ns-strp-50-10-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 14908
+      },
+      {
+        "src": "/images/studio-ns-strp-50-10-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 45316
+      },
+      {
+        "src": "/images/studio-ns-strp-50-10-1200.webp",
+        "width": 1200,
+        "height": 800,
         "bytes": 98432
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14812017301.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 149517,
-    "sha256": "a3c41952fba8aff30615f7a1bbca13d3889a59b4204a5d340c24578b9e9b085a",
-    "variants": [
-      {
-        "src": "/images/ozon-14812017301-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7372
       },
       {
-        "src": "/images/ozon-14812017301-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 29894
-      },
-      {
-        "src": "/images/ozon-14812017301-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 56960
-      },
-      {
-        "src": "/images/ozon-14812017301-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 89644
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14841104138.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 151187,
-    "sha256": "da3728bb54f67a3e9daf1fb93532d185ced1a72c9be87a2f470bf8ad551d6bf5",
-    "variants": [
-      {
-        "src": "/images/ozon-14841104138-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7586
-      },
-      {
-        "src": "/images/ozon-14841104138-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 30506
-      },
-      {
-        "src": "/images/ozon-14841104138-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 58842
-      },
-      {
-        "src": "/images/ozon-14841104138-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 94542
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14840971307.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 145326,
-    "sha256": "eb9ee84eea5c6487b5a397c38dbd1d9fb36ab9ddfadb5171fc1e9976b2095b2c",
-    "variants": [
-      {
-        "src": "/images/ozon-14840971307-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7332
-      },
-      {
-        "src": "/images/ozon-14840971307-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 29828
-      },
-      {
-        "src": "/images/ozon-14840971307-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 56324
-      },
-      {
-        "src": "/images/ozon-14840971307-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 85066
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14682885925.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 151141,
-    "sha256": "a65e22c41b36d6e73d050043ebae8c6d49acfb8d1932765a81b9470c94a919c7",
-    "variants": [
-      {
-        "src": "/images/ozon-14682885925-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 8152
-      },
-      {
-        "src": "/images/ozon-14682885925-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 37972
-      },
-      {
-        "src": "/images/ozon-14682885925-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 85108
-      },
-      {
-        "src": "/images/ozon-14682885925-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 109180
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14859624230.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 141030,
-    "sha256": "2774fa1b53db360c45983b888b7e8b1a6ed624eb0e8538cf2dad2693b4766a7c",
-    "variants": [
-      {
-        "src": "/images/ozon-14859624230-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7054
-      },
-      {
-        "src": "/images/ozon-14859624230-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 33154
-      },
-      {
-        "src": "/images/ozon-14859624230-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 75710
-      },
-      {
-        "src": "/images/ozon-14859624230-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 96062
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14859623019.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 142215,
-    "sha256": "d820d8a5da050bf59ee6af29dcbf0dca058208c1141dbe4a4f4b426489b8c271",
-    "variants": [
-      {
-        "src": "/images/ozon-14859623019-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 7106
-      },
-      {
-        "src": "/images/ozon-14859623019-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 36404
-      },
-      {
-        "src": "/images/ozon-14859623019-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 81772
-      },
-      {
-        "src": "/images/ozon-14859623019-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 105888
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14808860716.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 131544,
-    "sha256": "63e07f5a159135e99b0004fe8d7d4af5064400b717b227ce147fbc8570b1aba1",
-    "variants": [
-      {
-        "src": "/images/ozon-14808860716-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6726
-      },
-      {
-        "src": "/images/ozon-14808860716-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 27022
-      },
-      {
-        "src": "/images/ozon-14808860716-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 49192
-      },
-      {
-        "src": "/images/ozon-14808860716-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 74062
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14808862104.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 122638,
-    "sha256": "c5aea38a25c2062d1371819e2bc622699441a1c694f4976e3cdeff6c930c1e5c",
-    "variants": [
-      {
-        "src": "/images/ozon-14808862104-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6044
-      },
-      {
-        "src": "/images/ozon-14808862104-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 25286
-      },
-      {
-        "src": "/images/ozon-14808862104-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 47960
-      },
-      {
-        "src": "/images/ozon-14808862104-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 74094
-      }
-    ]
-  },
-  "/catalog-assets/ozon-14808865547.jpg": {
-    "width": 1086,
-    "height": 1448,
-    "originalBytes": 164991,
-    "sha256": "e627775284e81b37388f9f90e0cff60be7aa9f6c944dc38852792c914dfbb55f",
-    "variants": [
-      {
-        "src": "/images/ozon-14808865547-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 6102
-      },
-      {
-        "src": "/images/ozon-14808865547-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 27968
-      },
-      {
-        "src": "/images/ozon-14808865547-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 70450
-      },
-      {
-        "src": "/images/ozon-14808865547-1086.webp",
-        "width": 1086,
-        "height": 1448,
-        "bytes": 122090
-      }
-    ]
-  },
-  "/catalog-assets/ozon-11972295497.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 148946,
-    "sha256": "fcd1c77556fa60453b456741bfd3d3cac4ceed4f567c4dd6c1eb14f8920a9e76",
-    "variants": [
-      {
-        "src": "/images/ozon-11972295497-160.webp",
-        "width": 160,
-        "height": 213,
-        "bytes": 9468
-      },
-      {
-        "src": "/images/ozon-11972295497-480.webp",
-        "width": 480,
-        "height": 640,
-        "bytes": 44388
-      },
-      {
-        "src": "/images/ozon-11972295497-800.webp",
-        "width": 800,
-        "height": 1067,
-        "bytes": 81240
-      },
-      {
-        "src": "/images/ozon-11972295497-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 95318
-      }
-    ]
-  },
-  "/catalog-assets/ozon-11818909280.jpg": {
-    "width": 1792,
-    "height": 2400,
-    "originalBytes": 426297,
-    "sha256": "c0eb28237c6817d9ce72b3655f8b4570c5d42140a5505ccebd0fd4aac9104010",
-    "variants": [
-      {
-        "src": "/images/ozon-11818909280-160.webp",
-        "width": 160,
-        "height": 214,
-        "bytes": 10454
-      },
-      {
-        "src": "/images/ozon-11818909280-480.webp",
-        "width": 480,
-        "height": 643,
-        "bytes": 50318
-      },
-      {
-        "src": "/images/ozon-11818909280-800.webp",
-        "width": 800,
-        "height": 1071,
-        "bytes": 94744
-      },
-      {
-        "src": "/images/ozon-11818909280-1200.webp",
-        "width": 1200,
-        "height": 1607,
-        "bytes": 155594
-      },
-      {
-        "src": "/images/ozon-11818909280-1536.webp",
+        "src": "/images/studio-ns-strp-50-10-1536.webp",
         "width": 1536,
-        "height": 2057,
-        "bytes": 210208
+        "height": 1024,
+        "bytes": 149520
       }
     ]
   },
-  "/catalog-assets/ozon-9906405308.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 186295,
-    "sha256": "e84152ed4def77d9e766aae55602663532de5c27c6919cdc17a3c6868ac8d543",
+  "/catalog-assets/studio-ns-tape-25-1.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 208132,
+    "sha256": "e32ee0e6331eb9dab41fccf08bc27e8818d7e5e17585ed555525fb3f677b9b3a",
     "variants": [
       {
-        "src": "/images/ozon-9906405308-160.webp",
+        "src": "/images/studio-ns-tape-25-1-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 9862
+        "height": 107,
+        "bytes": 1868
       },
       {
-        "src": "/images/ozon-9906405308-480.webp",
+        "src": "/images/studio-ns-tape-25-1-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 63762
+        "height": 320,
+        "bytes": 12764
       },
       {
-        "src": "/images/ozon-9906405308-800.webp",
+        "src": "/images/studio-ns-tape-25-1-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 119236
+        "height": 533,
+        "bytes": 33350
       },
       {
-        "src": "/images/ozon-9906405308-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 138952
-      }
-    ]
-  },
-  "/catalog-assets/ozon-8674467780.jpg": {
-    "width": 1770,
-    "height": 2400,
-    "originalBytes": 439124,
-    "sha256": "cded31cfd8e1179af753c8aad6c351933dd724c66fb2dc36b5ea7ce0951b0e2e",
-    "variants": [
-      {
-        "src": "/images/ozon-8674467780-160.webp",
-        "width": 160,
-        "height": 217,
-        "bytes": 9260
-      },
-      {
-        "src": "/images/ozon-8674467780-480.webp",
-        "width": 480,
-        "height": 651,
-        "bytes": 49620
-      },
-      {
-        "src": "/images/ozon-8674467780-800.webp",
-        "width": 800,
-        "height": 1085,
-        "bytes": 92586
-      },
-      {
-        "src": "/images/ozon-8674467780-1200.webp",
+        "src": "/images/studio-ns-tape-25-1-1200.webp",
         "width": 1200,
-        "height": 1627,
-        "bytes": 150468
+        "height": 800,
+        "bytes": 68144
       },
       {
-        "src": "/images/ozon-8674467780-1536.webp",
+        "src": "/images/studio-ns-tape-25-1-1536.webp",
         "width": 1536,
-        "height": 2083,
-        "bytes": 209280
+        "height": 1024,
+        "bytes": 100932
       }
     ]
   },
-  "/catalog-assets/ozon-8674467753.jpg": {
-    "width": 1800,
-    "height": 2400,
-    "originalBytes": 303249,
-    "sha256": "3a5821f6a4402f409dbfca3f5cfc86ed38aea22a54d614dd59dec34f7b5d99e7",
+  "/catalog-assets/studio-ek-001.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 154106,
+    "sha256": "2e9ca7a20577ed2b32412067a0d56f0cc7428ef81bcd3bf20b5f6d721eff677d",
     "variants": [
       {
-        "src": "/images/ozon-8674467753-160.webp",
+        "src": "/images/studio-ek-001-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 5680
+        "height": 107,
+        "bytes": 2086
       },
       {
-        "src": "/images/ozon-8674467753-480.webp",
+        "src": "/images/studio-ek-001-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 25918
+        "height": 320,
+        "bytes": 7734
       },
       {
-        "src": "/images/ozon-8674467753-800.webp",
+        "src": "/images/studio-ek-001-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 49178
+        "height": 533,
+        "bytes": 15822
       },
       {
-        "src": "/images/ozon-8674467753-1200.webp",
+        "src": "/images/studio-ek-001-1200.webp",
         "width": 1200,
-        "height": 1600,
-        "bytes": 78746
+        "height": 800,
+        "bytes": 28618
       },
       {
-        "src": "/images/ozon-8674467753-1536.webp",
+        "src": "/images/studio-ek-001-1536.webp",
         "width": 1536,
-        "height": 2048,
-        "bytes": 109422
+        "height": 1024,
+        "bytes": 42658
       }
     ]
   },
-  "/catalog-assets/ozon-8674467844.jpg": {
-    "width": 900,
-    "height": 1200,
-    "originalBytes": 156770,
-    "sha256": "bd7f87b7b0e0c7f9026458d18dfe390dbb6601ef98438eac8d4195fc507d17b5",
+  "/catalog-assets/studio-ek-002.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 110634,
+    "sha256": "4afe17907773702381f1cf835b91eb149bb15ad15174586029fcfd12fcd092ba",
     "variants": [
       {
-        "src": "/images/ozon-8674467844-160.webp",
+        "src": "/images/studio-ek-002-160.webp",
         "width": 160,
-        "height": 213,
-        "bytes": 9906
+        "height": 107,
+        "bytes": 1894
       },
       {
-        "src": "/images/ozon-8674467844-480.webp",
+        "src": "/images/studio-ek-002-480.webp",
         "width": 480,
-        "height": 640,
-        "bytes": 46128
+        "height": 320,
+        "bytes": 7154
       },
       {
-        "src": "/images/ozon-8674467844-800.webp",
+        "src": "/images/studio-ek-002-800.webp",
         "width": 800,
-        "height": 1067,
-        "bytes": 87236
+        "height": 533,
+        "bytes": 14082
       },
       {
-        "src": "/images/ozon-8674467844-900.webp",
-        "width": 900,
-        "height": 1200,
-        "bytes": 102996
+        "src": "/images/studio-ek-002-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 26028
+      },
+      {
+        "src": "/images/studio-ek-002-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 37928
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-belt-140-2.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 222654,
+    "sha256": "6069289cb0192b197092bfb189fb8afcc3f27c536691a50736769c53993740f6",
+    "variants": [
+      {
+        "src": "/images/studio-ns-belt-140-2-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1968
+      },
+      {
+        "src": "/images/studio-ns-belt-140-2-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 13410
+      },
+      {
+        "src": "/images/studio-ns-belt-140-2-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 33888
+      },
+      {
+        "src": "/images/studio-ns-belt-140-2-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 67624
+      },
+      {
+        "src": "/images/studio-ns-belt-140-2-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 102736
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-belt-140-4.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 282558,
+    "sha256": "3b1d045094187eda8475cc000513edb705eaaf23b563e87cb8ac55e1500d5570",
+    "variants": [
+      {
+        "src": "/images/studio-ns-belt-140-4-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2630
+      },
+      {
+        "src": "/images/studio-ns-belt-140-4-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 18626
+      },
+      {
+        "src": "/images/studio-ns-belt-140-4-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 48156
+      },
+      {
+        "src": "/images/studio-ns-belt-140-4-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 96820
+      },
+      {
+        "src": "/images/studio-ns-belt-140-4-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 144738
+      }
+    ]
+  },
+  "/catalog-assets/studio-vstky-bike.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 220934,
+    "sha256": "2dc4e753b412bc689404472f4189afe11bce62c87e02f53ce075efe5109119d1",
+    "variants": [
+      {
+        "src": "/images/studio-vstky-bike-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2840
+      },
+      {
+        "src": "/images/studio-vstky-bike-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 12330
+      },
+      {
+        "src": "/images/studio-vstky-bike-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 26262
+      },
+      {
+        "src": "/images/studio-vstky-bike-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 50650
+      },
+      {
+        "src": "/images/studio-vstky-bike-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 72820
+      }
+    ]
+  },
+  "/catalog-assets/studio-vstky-bike-02.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 222412,
+    "sha256": "b60af3f052d290c0515e15b8a2d7ec2ee641cacad5b936557964d382b6254e5a",
+    "variants": [
+      {
+        "src": "/images/studio-vstky-bike-02-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2538
+      },
+      {
+        "src": "/images/studio-vstky-bike-02-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 10914
+      },
+      {
+        "src": "/images/studio-vstky-bike-02-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 25140
+      },
+      {
+        "src": "/images/studio-vstky-bike-02-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 49962
+      },
+      {
+        "src": "/images/studio-vstky-bike-02-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 72776
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-fishcase-100.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 123192,
+    "sha256": "bf8f54e796a3e05c87e62d82a7c9e975ff72fc3bbd259f29202193f66897863c",
+    "variants": [
+      {
+        "src": "/images/studio-ns-fishcase-100-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2094
+      },
+      {
+        "src": "/images/studio-ns-fishcase-100-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8310
+      },
+      {
+        "src": "/images/studio-ns-fishcase-100-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 16072
+      },
+      {
+        "src": "/images/studio-ns-fishcase-100-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 30912
+      },
+      {
+        "src": "/images/studio-ns-fishcase-100-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 50824
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-fishcase-120.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 127448,
+    "sha256": "67a9857bc8daba1fd8125e1c1eb03d18b8cedf51db4af64ba02e6faab076165f",
+    "variants": [
+      {
+        "src": "/images/studio-ns-fishcase-120-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2156
+      },
+      {
+        "src": "/images/studio-ns-fishcase-120-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8278
+      },
+      {
+        "src": "/images/studio-ns-fishcase-120-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 16152
+      },
+      {
+        "src": "/images/studio-ns-fishcase-120-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 30096
+      },
+      {
+        "src": "/images/studio-ns-fishcase-120-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 48432
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-fishcase-130.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 126876,
+    "sha256": "95ce193f5b3036a252192e7b60aad8fdd15f4880b59a0484daec4d88b7c6cb5b",
+    "variants": [
+      {
+        "src": "/images/studio-ns-fishcase-130-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2264
+      },
+      {
+        "src": "/images/studio-ns-fishcase-130-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8880
+      },
+      {
+        "src": "/images/studio-ns-fishcase-130-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 17438
+      },
+      {
+        "src": "/images/studio-ns-fishcase-130-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 31402
+      },
+      {
+        "src": "/images/studio-ns-fishcase-130-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 49338
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-fishcase-140.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 125988,
+    "sha256": "844d413af75a164e11c420246b9575cabfd92c2c3a9200f8152ffbf8f1053c76",
+    "variants": [
+      {
+        "src": "/images/studio-ns-fishcase-140-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2110
+      },
+      {
+        "src": "/images/studio-ns-fishcase-140-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8432
+      },
+      {
+        "src": "/images/studio-ns-fishcase-140-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 16582
+      },
+      {
+        "src": "/images/studio-ns-fishcase-140-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 30838
+      },
+      {
+        "src": "/images/studio-ns-fishcase-140-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 49346
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-fishcase-160.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 119356,
+    "sha256": "ce898f6e18ffb0154c9c439d1a402382ebed5024b7ad804b4f3d045972c949a2",
+    "variants": [
+      {
+        "src": "/images/studio-ns-fishcase-160-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2168
+      },
+      {
+        "src": "/images/studio-ns-fishcase-160-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8184
+      },
+      {
+        "src": "/images/studio-ns-fishcase-160-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 16342
+      },
+      {
+        "src": "/images/studio-ns-fishcase-160-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 29378
+      },
+      {
+        "src": "/images/studio-ns-fishcase-160-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 47458
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-car-org.webp": {
+    "width": 1809,
+    "height": 869,
+    "originalBytes": 508514,
+    "sha256": "727efee17f7bfc5618320d0f49d999abe900c70a53d7854f9d51dfcdb43a454b",
+    "variants": [
+      {
+        "src": "/images/studio-ns-car-org-160.webp",
+        "width": 160,
+        "height": 77,
+        "bytes": 1782
+      },
+      {
+        "src": "/images/studio-ns-car-org-480.webp",
+        "width": 480,
+        "height": 231,
+        "bytes": 11738
+      },
+      {
+        "src": "/images/studio-ns-car-org-800.webp",
+        "width": 800,
+        "height": 384,
+        "bytes": 33090
+      },
+      {
+        "src": "/images/studio-ns-car-org-1200.webp",
+        "width": 1200,
+        "height": 576,
+        "bytes": 83572
+      },
+      {
+        "src": "/images/studio-ns-car-org-1536.webp",
+        "width": 1536,
+        "height": 738,
+        "bytes": 174806
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-shoe-33-45.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 189236,
+    "sha256": "5e6b7b78b8bdd67794d338e080e7ffbfe8a41921299d88b2875451e55109be83",
+    "variants": [
+      {
+        "src": "/images/studio-ns-shoe-33-45-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 2710
+      },
+      {
+        "src": "/images/studio-ns-shoe-33-45-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 10800
+      },
+      {
+        "src": "/images/studio-ns-shoe-33-45-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 20466
+      },
+      {
+        "src": "/images/studio-ns-shoe-33-45-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 35970
+      },
+      {
+        "src": "/images/studio-ns-shoe-33-45-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 70622
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-swing-1.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 77980,
+    "sha256": "e5faf38526cce3542ea46c73407c6901511f226a602ad45649a2de178280dc8d",
+    "variants": [
+      {
+        "src": "/images/studio-ns-swing-1-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1494
+      },
+      {
+        "src": "/images/studio-ns-swing-1-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 5610
+      },
+      {
+        "src": "/images/studio-ns-swing-1-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 11132
+      },
+      {
+        "src": "/images/studio-ns-swing-1-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 20834
+      },
+      {
+        "src": "/images/studio-ns-swing-1-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 30698
+      }
+    ]
+  },
+  "/catalog-assets/studio-ns-snowboard-bag-165.webp": {
+    "width": 1536,
+    "height": 1024,
+    "originalBytes": 132616,
+    "sha256": "aa654b1d82d1cb05ac90e9a8d2cc9dfe3410a15373d7dccc5e5d424e39012af6",
+    "variants": [
+      {
+        "src": "/images/studio-ns-snowboard-bag-165-160.webp",
+        "width": 160,
+        "height": 107,
+        "bytes": 1794
+      },
+      {
+        "src": "/images/studio-ns-snowboard-bag-165-480.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 6824
+      },
+      {
+        "src": "/images/studio-ns-snowboard-bag-165-800.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 13432
+      },
+      {
+        "src": "/images/studio-ns-snowboard-bag-165-1200.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 25496
+      },
+      {
+        "src": "/images/studio-ns-snowboard-bag-165-1536.webp",
+        "width": 1536,
+        "height": 1024,
+        "bytes": 41520
       }
     ]
   }

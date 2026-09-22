@@ -1,0 +1,773 @@
+{
+  "date": "2026-09-22",
+  "tool": "Built-in image_gen.imagegen",
+  "purpose": "Studio product visuals for local catalog preview",
+  "nativeOriginals": "outputs/catalog-refresh-20260922/generated/ (local, unmodified native PNG copies)",
+  "assets": [
+    {
+      "id": "ns-car-bam-s",
+      "product": "nakidka-na-bamper",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-3084cc60-ad25-4456-b8b6-ee979b3ea6c7.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: the black rectangular textile bumper protector with its reflective strip. Keep ONLY the protector, neatly unfolded with a natural loose drape over a plain low neutral-grey studio plinth, no car or outdoor background. Preserve its segmentation, edging and strip position.\nReference variant: 74 × 74 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9068457325.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-car-bam-s.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-car-bam-s.png",
+      "sha256": "4fd6bbe70154ce560018864680677f6ca2d401403a5669e970809ca6b5493ff5",
+      "nativeSha256": "4233f3499fb4415972e96807e16b83d4053b90d6ce73b53cb1dec91af822ec7e",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstky-car-mat-s",
+      "product": "nakidka-na-sidene-i-bagazhnik",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-bbe0c049-5593-47fc-a553-51eb211f1b5c.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one black 150x150 cm seat/trunk protective textile mat. Display the unfolded textile in a gently draped three-quarter studio view; retain the exact edging and attachment tabs visible. No car, animal, dirt or advertising.\nReference variant: 150 × 150 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-8806247359.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstky-car-mat-s.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstky-car-mat-s.png",
+      "sha256": "742d3550a7cba92f56c2af0ca4924d94b4d48abd0e5b2cad6ec7b0fdb7c057db",
+      "nativeSha256": "55aa21e423e3fd0f9ad25a578931ed104c31d3b0e752149ed82fe0bcfd6b13a5",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstk-amc-case-270",
+      "product": "chehol-dlya-amortizatora",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-8ddb307f-f856-4245-af44-8d1a1ca91cb0.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: the fitted BLACK textile shock-absorber sleeve from the reference. Preserve the sleeve silhouette and ends secured as shown. Isolate the covered small shock assembly if necessary for shape support, no motorcycle frame or scenery. Do not expose or invent extra spring mechanism.\nReference variant: 27 × 24 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-12296373117.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstk-amc-case-270.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstk-amc-case-270.png",
+      "sha256": "2e8065adf691ef33d4ca58a642aac1634c9e457a5715475b1242bd0476090345",
+      "nativeSha256": "da5bd57fd2bb4d9b53dacb2e1b8d2ae866892c3e6f5efc9886d38a0f6113fb66",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "pram-brown",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-aea4d258-39cc-492b-9d26-9d2bba3d003a.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for the neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, the entire product visible, realistic tactile fabric, light grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features.\nSubject: the BROWN stroller transport sack with long BLACK webbing carry handles, drawcord mouth partially open with folded stroller visible. Preserve the brown color; do not make black. Remove the small inset unfolded stroller, retain only the packed stroller and bag, no new accessories.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14077369840.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-pram-brown.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/pram-brown.png",
+      "sha256": "5dff2d4a1771417587773568539e9c1e6e6ea94334377f1d9999ecbb5811a143",
+      "nativeSha256": "0894e826430ce957d92a6efb0c27c318a21fa5b2e67c1753a9dc599c055af294",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-pram-red",
+      "product": "chehol-dlya-kolyaski",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-b68528cd-caf2-4a06-b658-ca3ba7e6d77b.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: the stroller travel sack, open drawcord mouth with the folded stroller visible and two long BLACK webbing carry handles. Preserve the actual fabric COLOR from the reference and its silhouette. Remove the small inset unfolded stroller; show ONLY the packed stroller with its bag.\nReference variant: Красный. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14077441198.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-pram-red.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-pram-red.png",
+      "sha256": "c0439249aa35c43577efaa2d6d6c8447c1cc1c840f83a7d9e06c91e340987df8",
+      "nativeSha256": "f1690d7dfb7751753128367ba7527b05b8fae0299f76b5f63ad44e0878a33fc8",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-pram-blue",
+      "product": "chehol-dlya-kolyaski",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-57e8890b-6956-4cd0-a69a-5f42eb6c9f3d.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: the stroller travel sack, open drawcord mouth with the folded stroller visible and two long BLACK webbing carry handles. Preserve the actual fabric COLOR from the reference and its silhouette. Remove the small inset unfolded stroller; show ONLY the packed stroller with its bag.\nReference variant: Синий. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14077246318.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-pram-blue.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-pram-blue.png",
+      "sha256": "7a7dfc8d6f06c0231dba9e5ad833a5e29ab94479abd2c11227b0f17ad7a1d1f8",
+      "nativeSha256": "e7760a157449765d883627ce505276988be9f1d1661469850cd395c211b9838f",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-pram-darkblue",
+      "product": "chehol-dlya-kolyaski",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-06bccab2-89af-4e89-b336-2a95bd380edf.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: the stroller travel sack, open drawcord mouth with the folded stroller visible and two long BLACK webbing carry handles. Preserve the actual fabric COLOR from the reference and its silhouette. Remove the small inset unfolded stroller; show ONLY the packed stroller with its bag.\nReference variant: Тёмно-синий. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14077397207.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-pram-darkblue.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-pram-darkblue.png",
+      "sha256": "5d7a7bbbfa79e903dbde8d3cbec94370d1e67ab40f8ebc40e8a99b2e9c7930a4",
+      "nativeSha256": "93e5955393fbcabb4a96897678b8db3e13ec10e79a9f23b5d7f9733418f450ed",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-pram-green",
+      "product": "chehol-dlya-kolyaski",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-6b858bf2-5957-449d-b3ae-fe0ae52ee5e6.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: the stroller travel sack, open drawcord mouth with the folded stroller visible and two long BLACK webbing carry handles. Preserve the actual fabric COLOR from the reference and its silhouette. Remove the small inset unfolded stroller; show ONLY the packed stroller with its bag.\nReference variant: Зелёный. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14077420108.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-pram-green.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-pram-green.png",
+      "sha256": "9a21bf83fed90adc0d7037d9ad0cca1a0c1bf647d9161ed8762d472d184dc507",
+      "nativeSha256": "ee8d0935c43d34cbfbf3076a998c2ee889ff1a8b78d1e78a42496d4173e41401",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-pram-orange",
+      "product": "chehol-dlya-kolyaski",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-cd3eacdd-2b82-46b0-b8c2-e6024f973bf2.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: the stroller travel sack, open drawcord mouth with the folded stroller visible and two long BLACK webbing carry handles. Preserve the actual fabric COLOR from the reference and its silhouette. Remove the small inset unfolded stroller; show ONLY the packed stroller with its bag.\nReference variant: Оранжевый. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14077311275.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-pram-orange.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-pram-orange.png",
+      "sha256": "8ae65f6f68dddf00ba4da1a3eb37c7f1f45e587e4e29ffff812fe11b0ee772c4",
+      "nativeSha256": "f42ab0354c6bed34d485701222fa011c6d34ae167661563ad649ed1746aeb053",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-hook-2",
+      "product": "kryuchki-dlya-kolyaski",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-7c920cf1-f568-4587-90b0-b6ea423385a3.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: exactly TWO black plastic swivel carabiner hooks, each with its short black hook-and-loop mounting strap. Both complete, side by side on the studio surface; preserve hook hardware geometry, no stroller, no human, no other accessories.\nReference variant: 2 шт.. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9135339863.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-hook-2.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-hook-2.png",
+      "sha256": "23e5ef5a10a3ead8cf9da95f02f412d2d0c74985bacd62942798f542ed779e6d",
+      "nativeSha256": "77fae8d5eb75f6c341a406e7f6ee7bb68b39417c3cdb1adcab93939ed9de7e17",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstky-cage-mat-s",
+      "product": "dno-dlya-volera",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-8cb79246-f353-4e3b-8db2-d0279fb471c6.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: black low-sided rectangular textile tray for a pet pen, 5 cm shallow walls. Remove the dog and cage bars; show ONLY the textile tray, fully open in three-quarter view. Keep proportions and edge seams for THIS size from image 1. No cage, no pets, no stand or extra accessories.\nReference variant: 111 × 76 × 5 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9072348456.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstky-cage-mat-s.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstky-cage-mat-s.png",
+      "sha256": "50f7e1e0420f29dc7a927d6bbacb5945761397818e3891e999ff373a2a149aa2",
+      "nativeSha256": "c1a00edd0f825178c324e066da50e671dd25fa81d6f27627b5c4b74a54ad7988",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstky-cage-mat-m",
+      "product": "dno-dlya-volera",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-afac4881-af99-426e-a833-2c73f303e7b1.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: black low-sided rectangular textile tray for a pet pen, 5 cm shallow walls. Remove the dog and cage bars; show ONLY the textile tray, fully open in three-quarter view. Keep proportions and edge seams for THIS size from image 1. No cage, no pets, no stand or extra accessories.\nReference variant: 130 × 68 × 5 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9072334262.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstky-cage-mat-m.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstky-cage-mat-m.png",
+      "sha256": "b1cc3b2928eaf1eb6a3231dec0693317d0bfd729d251247e58701eb14a9404c6",
+      "nativeSha256": "f3c137f6d4595f13db222e3af1147c5b235a9c32425f99febddd88aee395b94a",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstky-cage-mat-l",
+      "product": "dno-dlya-volera",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-e86fc189-1489-449e-94f6-f85e50a5f077.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: black low-sided rectangular textile tray for a pet pen, 5 cm shallow walls. Remove the dog and cage bars; show ONLY the textile tray, fully open in three-quarter view. Keep proportions and edge seams for THIS size from image 1. No cage, no pets, no stand or extra accessories.\nReference variant: 146 × 76 × 5 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-8889424696.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstky-cage-mat-l.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstky-cage-mat-l.png",
+      "sha256": "e407e2500f71dd8565d016a2ce295d1b221a13fa18f98796e4b46f423c37dcb7",
+      "nativeSha256": "a955ba3475f4c4f0531ba7fc131fca5c7851840bed678d79293b8ba68d553cff",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstky-cage-mat-xl",
+      "product": "dno-dlya-volera",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-928b9860-a863-47ab-af5e-1729da558c65.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: black low-sided rectangular textile tray for a pet pen, 5 cm shallow walls. Remove the dog and cage bars; show ONLY the textile tray, fully open in three-quarter view. Keep proportions and edge seams for THIS size from image 1. No cage, no pets, no stand or extra accessories.\nReference variant: 111 × 111 × 5 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9072259367.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstky-cage-mat-xl.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstky-cage-mat-xl.png",
+      "sha256": "a50a47d5cf1004e20ccd3bff8ec1c772f56c49e5c295db3ea0d133d70c297897",
+      "nativeSha256": "15fa38baaa217a956558c1c1f6af5a38005c59ebf47f5abd80b8b737d456fd8a",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-gen-002",
+      "product": "chehol-dlya-generatora",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-fcd3e7e2-168c-42e5-ad2d-212652fd1d17.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one BLACK generator cover draped over a rectangular generator-shaped silhouette, mostly covering equipment as in the reference. Plain three-quarter studio product view. Include the small black drawstring storage pouch only if it is visible in the reference, no extra accessories. No outdoor scenery; preserve the actual cover form and its hem.\nReference variant: 70 × 55 × 55 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9573327373.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-gen-002.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-gen-002.png",
+      "sha256": "9fe09b2aa2221cb247a55cba34f1aa54e097f2f22039f5d0c9634e9857ae6396",
+      "nativeSha256": "16c52c27fdf3319e9e990b877d6640d69a3cd472bc5e131a10603b41423e6b35",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-gen-001",
+      "product": "chehol-dlya-generatora",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-b2b8fdb7-6a5f-4cfe-8ee4-52d2e332ab9a.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one BLACK generator cover draped over a rectangular generator-shaped silhouette, mostly covering equipment as in the reference. Plain three-quarter studio product view. Include the small black drawstring storage pouch only if it is visible in the reference, no extra accessories. No outdoor scenery; preserve the actual cover form and its hem.\nReference variant: 80 × 60 × 60 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9573336558.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-gen-001.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-gen-001.png",
+      "sha256": "fab82cff868232f0c466dd64c4e43c6cd4a5dcb4123dbb8747ddc8b6a3e8b15c",
+      "nativeSha256": "7d74fbe134f87c86f55829826bac804547203da5d62e7f3562465ad8263b2ce5",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "hook-2-long",
+      "product": "karabiny-dlya-vesla",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-30652e39-40bd-4d2e-91f4-096c86d1b6ba.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: exactly TWO black paddle attachment swivel carabiners with their LONG hook-and-loop textile straps. Flat-lay on studio surface, whole straps and hooks visible. Preserve the actual thin straps and plastic hook geometry. No paddle, no water, no other props.\nReference variant: 2 шт.. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-8881812557.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-hook-2-long.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/hook-2-long.png",
+      "sha256": "374ec037e03708eab899c364a936332da5b0e14daaad3a711b4fcac49c507269",
+      "nativeSha256": "2e77bab3725370c7f3b2ef28e620252780c9416f68dd982d9fc588130c45ab35",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "shurup-001",
+      "product": "chehol-dlya-shurupoverta",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-bce98b52-74da-4668-9b2e-8c91cdc992cb.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: black fabric cordless-drill cover shown on the compact drill silhouette exactly as in the reference, with the chuck/end exposed. No auger shaft, ice, hands, snow, labels or separate tool. Preserve cover shape and fabric flap; do not invent insulation thickness.\nReference variant: Чёрный. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-8815416614.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-shurup-001.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/shurup-001.png",
+      "sha256": "de0be23cc0b8722e44d7196a24dcb2585e24786762cb97432c138fdce93558e8",
+      "nativeSha256": "064241c3f23bcd024456c9df70532406851decf0ca092227bb4fc3f1ab698e1e",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "bag-35",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-d99bbe1e-d3e6-415b-a7ce-0d145ca7151b.png",
+      "prompt": "Edit image 1, preserving composition, black fabric, handles, lighting, backdrop and proportions. Remove the invented horizontal zipper that runs around the upper side perimeter. That perimeter must be a simple sewn fabric seam, WITHOUT zipper teeth or pulls. Keep only the real longitudinal zipper down the centre of the TOP panel, as shown in exact product reference image 2. Do not add features. No text.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/outputs/catalog-refresh-20260922/generated/bag-35-initial.png",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14650610447.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-bag-35.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/bag-35.png",
+      "sha256": "aaab6f1880defdf32f59ef402b0403e1ea64eb39f00e52f74531350161b6ea94",
+      "nativeSha256": "c392e9021100561fbd042be3ea5821e86eaf090e43abb47834b818bc6f1a3bf0",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance.",
+      "promptKind": "Final correction prompt; input image retained locally, intermediate prompt omitted."
+    },
+    {
+      "id": "bag-108",
+      "product": "sumki-bauly",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-8dda2ec9-942b-473f-9bf6-28540ec0f863.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE opaque BLACK rectangular storage duffel in three-quarter view. The source may show a set or an explanatory transparent cutaway: isolate ONE complete bag and make ALL its sides opaque black Oxford textile, no visible contents. Preserve this volume model silhouette, top zipper and two webbing carry handles; no added shoulder strap or added side zipper. No inset folded bag.\nReference variant: 108 л · 1 шт.. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14177536484.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-bag-108.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/bag-108.png",
+      "sha256": "600b5edd3fa9a83b6f313fd8545236f3362f51f405ebd8527755241a535451a1",
+      "nativeSha256": "0a41c9140b4e8c13c8f7614205869a632a12393b91b235a54fa3bb30d948a4ec",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "bag-230",
+      "product": "sumki-bauly",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-a7266070-842e-4f06-8f50-6a8d332280d7.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE opaque BLACK rectangular storage duffel in three-quarter view. The source may show a set or an explanatory transparent cutaway: isolate ONE complete bag and make ALL its sides opaque black Oxford textile, no visible contents. Preserve this volume model silhouette, top zipper and two webbing carry handles; no added shoulder strap or added side zipper. No inset folded bag.\nReference variant: 237 л · 2 шт.. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14855905619.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-bag-230.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/bag-230.png",
+      "sha256": "ed10c95f4ef60a96ada26778d02100c07d4002f39d7f3595c47ac3d901c11bc4",
+      "nativeSha256": "8c0ba650b89659e679c4b4e09c446bc9b77790baee1c104dd34b5a525eea360a",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-strp-trns-1",
+      "product": "remen-dlya-perenoski",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-7908270a-dc27-4625-82bc-8f12a8bef026.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one BLACK carrying strap with the same handle and buckle/adjuster as the reference, wrapped around a plain closed neutral cardboard box only to demonstrate its true arrangement. No hand, people, text or background objects. Preserve strap routing and THIS handle construction exactly.\nReference variant: С ручкой. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-12620122198.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-strp-trns-1.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-strp-trns-1.png",
+      "sha256": "563ad3c91ed556adc737474fcb0e3bb111e345b2f5d5605949bafcbd23eef9ed",
+      "nativeSha256": "40876ed108f3aae34e8698474d9df2f2db5f4aeae1dfae98aced27b12f7d44b5",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-strp-trns-new",
+      "product": "remen-dlya-perenoski",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-6746bf67-c8fc-4c52-a43a-3d9242215637.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one BLACK carrying strap with the same handle and buckle/adjuster as the reference, wrapped around a plain closed neutral cardboard box only to demonstrate its true arrangement. No hand, people, text or background objects. Preserve strap routing and THIS handle construction exactly.\nReference variant: С ручкой, новое исполнение. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14133235154.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-strp-trns-new.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-strp-trns-new.png",
+      "sha256": "b5fe1958ba8a8f65ce7bdb66e1935eb161a3c7d7be50ebf3d932fb8931d40255",
+      "nativeSha256": "232796bbc47e89b756329b5b8dc4aaa49b17c8c3ac10f2976f866f547df2600e",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-belt-bag-3",
+      "product": "plechevye-remni-dlya-sumok",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-d67c3332-e188-406f-b069-64ea1c792dd5.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE complete black shoulder strap arranged in a loose flat oval on the studio surface with BOTH end clips clearly visible. Preserve THIS strap width, exact metal/plastic hook shapes, adjuster, and shoulder pad IF present. Do not add a shoulder pad to an unpadded variant. No bag, no lettering.\nReference variant: Ширина 3 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9149245642.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-belt-bag-3.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-belt-bag-3.png",
+      "sha256": "4a37d068cc9f944c239f73a153aafc6f0efab3fb165e7a140d158ce1933c2146",
+      "nativeSha256": "2fb0b9ac04427f48b8be55a419b2d929f0b4715b712ff9ee027396212f0daae6",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-belt-bag-4",
+      "product": "plechevye-remni-dlya-sumok",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-715df178-cc45-4648-9425-cc20d2f7ab5d.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE complete black shoulder strap arranged in a loose flat oval on the studio surface with BOTH end clips clearly visible. Preserve THIS strap width, exact metal/plastic hook shapes, adjuster, and shoulder pad IF present. Do not add a shoulder pad to an unpadded variant. No bag, no lettering.\nReference variant: Ширина 4 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9149239102.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-belt-bag-4.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-belt-bag-4.png",
+      "sha256": "82f6b0aeaba07e5e89ebe8d267972af8c96b59d4b18eee070d359f77b80fb813",
+      "nativeSha256": "685e2fd0f5e80f0ec531a8c15615dcf55ab53426a6f6ebf87559744c6b588c62",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "strap-metall",
+      "product": "plechevye-remni-dlya-sumok",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-936bb88c-7473-42ac-9916-ac63cbb9e931.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE complete black shoulder strap arranged in a loose flat oval on the studio surface with BOTH end clips clearly visible. Preserve THIS strap width, exact metal/plastic hook shapes, adjuster, and shoulder pad IF present. Do not add a shoulder pad to an unpadded variant. No bag, no lettering.\nReference variant: С наплечником и металлическими карабинами. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14133390551.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-strap-metall.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/strap-metall.png",
+      "sha256": "bbb13ea6057fcbe212185e7413eb6bba3207cd28d151e7cfb194c80e16175ce1",
+      "nativeSha256": "1bcd9f8e9f59675df8d71f259a6458470ba7508148eb1cf286ff63d759c4e1b0",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "belt-bag-metall-4",
+      "product": "plechevye-remni-dlya-sumok",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-4b779a79-9777-4c78-879f-ca67d7dbbd3c.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE complete black shoulder strap arranged in a loose flat oval on the studio surface with BOTH end clips clearly visible. Preserve THIS strap width, exact metal/plastic hook shapes, adjuster, and shoulder pad IF present. Do not add a shoulder pad to an unpadded variant. No bag, no lettering.\nReference variant: С поворотными карабинами. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14133560819.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-belt-bag-metall-4.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/belt-bag-metall-4.png",
+      "sha256": "2127bd4d4f084f7e1485be8224d11455f3be8dc47c23888b5c21a86051d4bcd8",
+      "nativeSha256": "404ae156fd7d9e28f3d2516f2cbb8fc9e36267a875825de040d703b01d5d5cf6",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstky-strap",
+      "product": "plechevye-remni-dlya-sumok",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-22e2c0b1-6a1b-4f68-90df-f28d7c3e8ca3.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE complete black shoulder strap arranged in a loose flat oval on the studio surface with BOTH end clips clearly visible. Preserve THIS strap width, exact metal/plastic hook shapes, adjuster, and shoulder pad IF present. Do not add a shoulder pad to an unpadded variant. No bag, no lettering.\nReference variant: Широкий, с наплечником. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-12620677388.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstky-strap.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstky-strap.png",
+      "sha256": "22cee2337f66dc54793dfd8cd7fc328ff4b8c998a0f3d9b4f0f379b1bc04aa14",
+      "nativeSha256": "d23a5b9bac22d9a8351d92d91819ddfbbe064514340b76f2f1b21621a4b8d48f",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-belt-body-1",
+      "product": "nagrudnaya-styazhka",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-b6306aa5-a381-42bc-98ef-db5e52ecf9d1.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE complete black backpack sternum strap with central side-release buckle, strap adjusters and end attachment loops as in source. Flat lay fully visible. No backpack or people, no added load weight props.\nReference variant: Чёрный. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9068423790.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-belt-body-1.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-belt-body-1.png",
+      "sha256": "cf694a261088dc7dfb3211ea2acce8d2726547fe77792a8180dfd5698415e7a2",
+      "nativeSha256": "72950800ce3d2f3c3dfb6e3e4b902332f8681a870886652cecd218c84700ffb8",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-strp-10-10",
+      "product": "stropa-remennaya",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-571822e2-120f-4111-8ca1-8275f67f732f.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one roll of BLACK woven nylon webbing with a loose end arranged gently in front. Preserve the exact reference texture and apparent strap width. No buckles, no stitched hardware, no ruler, no tools or extra accessories.\nReference variant: 10 мм × 10 м. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9066576078.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-strp-10-10.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-strp-10-10.png",
+      "sha256": "484a2cbb46f78e632980e368b6ecb5fcf809d5ec739c47880dedae631fe77873",
+      "nativeSha256": "7ce336ee40693197cc9e34444fda2870fef67d90dd30eeff7cac4649ccaeac11",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-strp-20-10",
+      "product": "stropa-remennaya",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-636971f8-ffe9-45ee-9b3f-b1a2b97d69e2.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one roll of BLACK woven nylon webbing with a loose end arranged gently in front. Preserve the exact reference texture and apparent strap width. No buckles, no stitched hardware, no ruler, no tools or extra accessories.\nReference variant: 20 мм × 10 м. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9066567914.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-strp-20-10.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-strp-20-10.png",
+      "sha256": "a23b28213a4ce7d9209c715291ab6fb6efb978e75384f2ef25c16b1da3d80881",
+      "nativeSha256": "fd2934d14dd190e36db9ea838786d44967a408c40c490d944ffa0c4e67d5e6e0",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "webbing-25",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-d634d67d-e452-4298-a44e-6249260119dd.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for the neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, the entire product visible, realistic tactile fabric, light grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features.\nSubject: one roll of BLACK 25 mm woven nylon webbing with a loose end arranged gently in front. Preserve dense woven texture and narrow width; no buckle, no stitching, no straps or tools added.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9066559298.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-webbing-25.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/webbing-25.png",
+      "sha256": "a9a349632024daf632f7da9cddba3b542a94088d661a724b5e76f863f072dcd6",
+      "nativeSha256": "ddaa7935236c043bf8cc18176fb07f3b2a9bb46a6073ffe026858c6426227ccc",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-strp-30-10",
+      "product": "stropa-remennaya",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-bed51b62-6fe1-4c50-bc97-5851b207392f.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one roll of BLACK woven nylon webbing with a loose end arranged gently in front. Preserve the exact reference texture and apparent strap width. No buckles, no stitched hardware, no ruler, no tools or extra accessories.\nReference variant: 30 мм × 10 м. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9066552856.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-strp-30-10.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-strp-30-10.png",
+      "sha256": "cf266c588d708038e9e20efcaef5fb76094eddd1ad9d17519c6efc23603b04f7",
+      "nativeSha256": "d8c13e630c659cfa71089f827a42981ee43b1d42b22283de6b19b46fc2996e0b",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-strp-40-10",
+      "product": "stropa-remennaya",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-57441a8f-7381-49fb-a2e8-9c1874fa2282.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one roll of BLACK woven nylon webbing with a loose end arranged gently in front. Preserve the exact reference texture and apparent strap width. No buckles, no stitched hardware, no ruler, no tools or extra accessories.\nReference variant: 40 мм × 10 м. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9066546960.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-strp-40-10.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-strp-40-10.png",
+      "sha256": "c16da9eff66dd9a36595f4fd17a15f3950f1cea0243e219a7e5b38683e24a87b",
+      "nativeSha256": "429f693c3f5e331017b372d9427b168b8592ca2f882980a7792ab02da2ee8a19",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-strp-50-10",
+      "product": "stropa-remennaya",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-368ba93e-ed24-4670-84a2-b4208d85a956.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: one roll of BLACK woven nylon webbing with a loose end arranged gently in front. Preserve the exact reference texture and apparent strap width. No buckles, no stitched hardware, no ruler, no tools or extra accessories.\nReference variant: 50 мм × 10 м. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9066538705.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-strp-50-10.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-strp-50-10.png",
+      "sha256": "eeb0cbb798d856d63a67ad86cedc4fcdf9f4bbba65d249d1e1429ad7e6a6968a",
+      "nativeSha256": "7b7c403bf8b31c6c462123ea34af5ff84869a4b8947d469b6f755147441b999d",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-tape-25-1",
+      "product": "lenta-kontaktnaya",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-e6abea31-7241-477d-bf91-1d301f2f16bf.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: two short BLACK sew-on hook-and-loop tape rolls, one loop side and one hook side, showing different surface texture. They are the two mating parts of one product; preserve width and weave; no adhesive backing or paper, no objects added.\nReference variant: 25 мм × 1 м. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9068407207.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-tape-25-1.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-tape-25-1.png",
+      "sha256": "e32ee0e6331eb9dab41fccf08bc27e8818d7e5e17585ed555525fb3f677b9b3a",
+      "nativeSha256": "255ca7cfb8aae27cfd8704786a7c339b430396d42dbd5110fce46f8485437642",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ek-001",
+      "product": "chehol-na-evrokub",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-ef8c54a8-dcd3-45af-af53-0f15d2a380c2.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: BLACK cover fitted to a cube-shaped 1000 litre IBC tank. Preserve THIS access construction from image 1: either opening flaps or the front vertical zipper, do not mix models. Keep the red top tank cap and bottom valve only where the reference shows them. Neutral studio, no garden, plants or flags.\nReference variant: С лючками на липучках. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-11305936171.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ek-001.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ek-001.png",
+      "sha256": "2e9ca7a20577ed2b32412067a0d56f0cc7428ef81bcd3bf20b5f6d721eff677d",
+      "nativeSha256": "be60b1aa35cf0692a7ff9c95ee4a02bc9a60b430bc4c645c278266c43c60b8e2",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ek-002",
+      "product": "chehol-na-evrokub",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-28269705-da89-44b1-8c20-cad0a0db0aec.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: BLACK cover fitted to a cube-shaped 1000 litre IBC tank. Preserve THIS access construction from image 1: either opening flaps or the front vertical zipper, do not mix models. Keep the red top tank cap and bottom valve only where the reference shows them. Neutral studio, no garden, plants or flags.\nReference variant: С молнией. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-11436337926.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ek-002.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ek-002.png",
+      "sha256": "4afe17907773702381f1cf835b91eb149bb15ad15174586029fcfd12fcd092ba",
+      "nativeSha256": "fa29f24920882f820598b62d639a202c090cf8f3057ad817cfeb7f545a568887",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-belt-140-2",
+      "product": "remni-styazhnye",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-5c4cd74a-1997-4131-8a74-1011062a28ac.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: exactly the number of BLACK narrow luggage securing straps shown in image 1, each with its same small black plastic buckle. Arrange cleanly as loose coils on the studio surface with buckle visible for each. Do not invent metal ratchets or hooks. No box, hands or scenery.\nReference variant: 2 шт.. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9067969087.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-belt-140-2.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-belt-140-2.png",
+      "sha256": "6069289cb0192b197092bfb189fb8afcc3f27c536691a50736769c53993740f6",
+      "nativeSha256": "31f9eef81cdaaf9fa5bf9b327081f26100ecbbd11368ee93949f4a8b82c0f1cb",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-belt-140-4",
+      "product": "remni-styazhnye",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-99de117a-bfec-48f0-9a95-8aacaa8801cd.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: exactly the number of BLACK narrow luggage securing straps shown in image 1, each with its same small black plastic buckle. Arrange cleanly as loose coils on the studio surface with buckle visible for each. Do not invent metal ratchets or hooks. No box, hands or scenery.\nReference variant: 4 шт.. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-9066240036.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-belt-140-4.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-belt-140-4.png",
+      "sha256": "3b1d045094187eda8475cc000513edb705eaaf23b563e87cb8ac55e1500d5570",
+      "nativeSha256": "8a7a2825982b0bad4759104908509d0b6ceafecb1c81fb9718edce5f9c1f0a30",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstky-bike",
+      "product": "chehol-dlya-velosipeda",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-1abfcbcd-423a-499f-a7b0-d0d0f9bf8261.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: BLACK bicycle storage cover enclosing the correct group silhouette from image 1, fully covered. Preserve this cover shape/proportions and gathered bottom hem. No uncovered bicycles, cars or outdoor background. No extra storage bag unless visible in the primary product view.\nReference variant: Для двух велосипедов. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-13771009006.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstky-bike.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstky-bike.png",
+      "sha256": "2dc4e753b412bc689404472f4189afe11bce62c87e02f53ce075efe5109119d1",
+      "nativeSha256": "11decc374bf468503107023ab0b4bce86b1f4b0b515cb734eaf43be73e66c2d6",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "vstky-bike-02",
+      "product": "chehol-dlya-velosipeda",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-8513618b-2520-4ba2-96c1-c91d96a929b9.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: BLACK bicycle storage cover enclosing the correct group silhouette from image 1, fully covered. Preserve this cover shape/proportions and gathered bottom hem. No uncovered bicycles, cars or outdoor background. No extra storage bag unless visible in the primary product view.\nReference variant: Для трёх велосипедов. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-13431064061.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-vstky-bike-02.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/vstky-bike-02.png",
+      "sha256": "b60af3f052d290c0515e15b8a2d7ec2ee641cacad5b936557964d382b6254e5a",
+      "nativeSha256": "a4ea3da567475c554506a3aaa36d1981cd18866d2a2bde886ff54f85161ad047",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-fishcase-100",
+      "product": "chehol-dlya-udochek",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-c067c717-f2e7-4dfb-bc67-15c44183b1de.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE BLACK long soft fishing-rod bag. Preserve this length-to-width ratio and the real zipper, carrying handles and webbing strap visible. Display diagonally across the landscape studio frame; whole bag with natural fabric folds. No rods, reels, boxes, callout circles or dimension markings.\nReference variant: 100 × 25 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14840922874.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-fishcase-100.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-fishcase-100.png",
+      "sha256": "bf8f54e796a3e05c87e62d82a7c9e975ff72fc3bbd259f29202193f66897863c",
+      "nativeSha256": "15f4bf06a9e3b84f913f32f7cdc5f67cd9e8d5de28367698de040d586cc35b0f",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-fishcase-120",
+      "product": "chehol-dlya-udochek",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-2598a7e6-2a61-42a5-9fa2-d3e99f797e69.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE BLACK long soft fishing-rod bag. Preserve this length-to-width ratio and the real zipper, carrying handles and webbing strap visible. Display diagonally across the landscape studio frame; whole bag with natural fabric folds. No rods, reels, boxes, callout circles or dimension markings.\nReference variant: 120 × 25 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14841322596.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-fishcase-120.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-fishcase-120.png",
+      "sha256": "67a9857bc8daba1fd8125e1c1eb03d18b8cedf51db4af64ba02e6faab076165f",
+      "nativeSha256": "a0a781da5af4cb10b8a6961c0be3984a7bfddfa8a3cce25bc5e36d74371ca547",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-fishcase-130",
+      "product": "chehol-dlya-udochek",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-c54e1fde-6bb9-41ba-9264-8453b74834dc.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE BLACK long soft fishing-rod bag. Preserve this length-to-width ratio and the real zipper, carrying handles and webbing strap visible. Display diagonally across the landscape studio frame; whole bag with natural fabric folds. No rods, reels, boxes, callout circles or dimension markings.\nReference variant: 130 × 25 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14840895487.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-fishcase-130.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-fishcase-130.png",
+      "sha256": "95ce193f5b3036a252192e7b60aad8fdd15f4880b59a0484daec4d88b7c6cb5b",
+      "nativeSha256": "665403c2ea404374191ed318a0edf70c64db1bf98a53d63599c209a88b34a670",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-fishcase-140",
+      "product": "chehol-dlya-udochek",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-7968f454-8647-4955-baca-d4a4e44f1abf.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE BLACK long soft fishing-rod bag. Preserve this length-to-width ratio and the real zipper, carrying handles and webbing strap visible. Display diagonally across the landscape studio frame; whole bag with natural fabric folds. No rods, reels, boxes, callout circles or dimension markings.\nReference variant: 140 × 25 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14812008866.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-fishcase-140.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-fishcase-140.png",
+      "sha256": "844d413af75a164e11c420246b9575cabfd92c2c3a9200f8152ffbf8f1053c76",
+      "nativeSha256": "1acef29d352044f361718579deea7df68f6a922cfa6d4556c3691be0f69f861b",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-fishcase-160",
+      "product": "chehol-dlya-udochek",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-a3294107-4328-48c1-be6c-90d6e1b0322d.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE BLACK long soft fishing-rod bag. Preserve this length-to-width ratio and the real zipper, carrying handles and webbing strap visible. Display diagonally across the landscape studio frame; whole bag with natural fabric folds. No rods, reels, boxes, callout circles or dimension markings.\nReference variant: 160 × 25 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14841104138.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-fishcase-160.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-fishcase-160.png",
+      "sha256": "ce898f6e18ffb0154c9c439d1a402382ebed5024b7ad804b4f3d045972c949a2",
+      "nativeSha256": "f7773974f88b85a0cb8603dfff31168d8621cd9b30916d115eda589db2a93196",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-car-org",
+      "product": "organayzer-v-bagazhnik",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-ffd25b98-d8a0-4728-a2d3-ca83aa7f5e81.png",
+      "prompt": "Edit studio image 1 against exact product reference image 2. Keep black hanging organizer, empty pockets, pale grey studio and all pocket arrangement: FIVE upper fabric compartments (wide left, narrow bottle pocket, two central compartments under one shared flap, wide right), FOUR lower mesh pockets, plus ONE long horizontal zipped compartment behind the lower row: ten total. Correct the main rectangular panel proportions to actual 110 cm wide by 53 cm tall (wide, not nearly square). There are SIX attachment loops along the top edge, as in source, not four. All must be plain black webbing. Keep pocket widths and seams true to source, no extra features, text or props.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/outputs/catalog-refresh-20260922/generated/ns-car-org-initial.png",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14682885925.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-car-org.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-car-org.png",
+      "sha256": "727efee17f7bfc5618320d0f49d999abe900c70a53d7854f9d51dfcdb43a454b",
+      "nativeSha256": "e213a16942fdecdb5c8d004858496ddb68c4a066ef42e2764e4a99250e37fa7e",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance.",
+      "promptKind": "Final correction prompt; input image retained locally, intermediate prompt omitted."
+    },
+    {
+      "id": "ns-shoe-33-45",
+      "product": "bahily-mnogorazovye",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-c709a23f-b728-464a-aaf1-442ed39e28d3.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: exactly TWO BLACK reusable textile shoe covers with gathered elastic openings. Preserve thin Oxford texture, low shoe-cover construction and reference contours. No shoes, feet, hands or other props.\nReference variant: Размер обуви 33–45. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-14808860716.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-shoe-33-45.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-shoe-33-45.png",
+      "sha256": "5e6b7b78b8bdd67794d338e080e7ffbfe8a41921299d88b2875451e55109be83",
+      "nativeSha256": "60ba5b0e275616054111eaf8fa54a93f58bc4dd9906caf0fc57c352263f44a2d",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    },
+    {
+      "id": "ns-swing-1",
+      "product": "chehol-dlya-kacheley-kokona",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-8b6ac9ca-036c-407d-bd1e-51d844b8f04d.png",
+      "prompt": "Edit only the unwanted exposed metal pedestal/base in image 1: remove that silver cross-shaped stand completely. Keep the fully closed BLACK cocoon-chair cover, its exact rounded teardrop silhouette, front full-length zipper and lower drawcord. The covered shape should have a natural soft contact shadow just above the pale studio floor with no visible chair frame or support stand. Keep studio, scale and lighting unchanged. Do not add any objects, fabric changes, logos or text.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/outputs/catalog-refresh-20260922/generated/ns-swing-1-initial.png"
+      ],
+      "file": "dist/catalog-assets/studio-ns-swing-1.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-swing-1.png",
+      "sha256": "e5faf38526cce3542ea46c73407c6901511f226a602ad45649a2de178280dc8d",
+      "nativeSha256": "4026454adf872cb5d68423bda22a27c4173dc0f5160b02b8f1081c999d9935aa",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance.",
+      "promptKind": "Final correction prompt; input image retained locally, intermediate prompt omitted."
+    },
+    {
+      "id": "ns-snowboard-bag-165",
+      "product": "chehol-dlya-snouborda",
+      "original": "/Users/mirkenson/.codex/generated_images/01a0c8cf-3932-7a43-aaac-8efc8748d4ea/exec-4075f0ff-19f0-48f1-bf73-b361e21a09ba.png",
+      "prompt": "Use case: style-transfer. Asset: professional e-commerce product photograph for the existing Needle Shark catalog. Image 1 is the exact product reference. Image 2 is ONLY a reference for neutral light grey seamless studio background, soft realistic shadow, textile detail, restrained professional lighting and generous margins; do not include the ATV or its pouch. Remove all advertising text, icons, labels, diagrams, dimension arrows, watermarks, inset panels and scenery. Keep actual product geometry, hardware, stitching, construction, color and proportions from image 1. A single centered composition, entire product visible, photorealistic tactile fabric, pale grey background, landscape 3:2 framing. No typography, no collage, no invented logos or features. Do not crop the product.\nSubject: ONE BLACK soft snowboard carry bag, full elongated form, with original zipper and carrying straps. No uncovered snowboard or bindings; fully enclosed as a standalone product. Diagonal composition on the pale-grey studio surface, entire length visible. Preserve construction and fabric, no added padding or hard shell.\nReference variant: 165 см. Labels identify the variant only, do not add any text to image.",
+      "refs": [
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/ozon-8674467780.jpg",
+        "/Users/mirkenson/Desktop/Сайт для Needle Shark/dist/catalog-assets/atv-studio.jpg"
+      ],
+      "file": "dist/catalog-assets/studio-ns-snowboard-bag-165.webp",
+      "nativeCopy": "outputs/catalog-refresh-20260922/generated/ns-snowboard-bag-165.png",
+      "sha256": "aa654b1d82d1cb05ac90e9a8d2cc9dfe3410a15373d7dccc5e5d424e39012af6",
+      "nativeSha256": "a13b86fd17372caaef42cfea2d73f45a14526528d7988f5425a45710d717e674",
+      "review": "Compared with source; studio reconstruction, not evidence of material performance."
+    }
+  ],
+  "promptPolicy": "Only the final tool prompt per delivered image. Intermediate prompts and revision history are excluded."
+}

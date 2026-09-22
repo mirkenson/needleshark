@@ -119,13 +119,22 @@ def variant_picker(product):
     groups = []
     for group in product['optionGroups']:
         options = ''
+        swatches = group.get('display') == 'swatches'
         for value in group['values']:
             checked = ' checked' if default['options'][group['id']] == value['id'] else ''
             note = f'<small>{e(value["note"])}</small>' if value.get('note') else ''
-            options += f'<label class="size-option"><input type="radio" name="option-{e(group["id"])}" data-option="{e(group["id"])}" value="{e(value["id"])}"{checked}><span><strong>{e(value["label"])}</strong>{note}</span></label>'
-        groups.append(f'<fieldset class="size-picker variant-picker"><legend>{e(group["label"])}</legend><div class="size-options">{options}</div></fieldset>')
+            if swatches:
+                color = value.get('color', '')
+                if not re.fullmatch(r'#[0-9a-fA-F]{6}', color):
+                    raise ValueError('Swatch must use a six-digit hex colour')
+                options += f'<label class="color-option" title="{e(value["label"])}"><input type="radio" name="option-{e(group["id"])}" data-option="{e(group["id"])}" value="{e(value["id"])}" aria-label="{e(value["label"])}"{checked}><span class="color-swatch" style="--swatch-color:{color}" aria-hidden="true"></span></label>'
+            else:
+                options += f'<label class="size-option"><input type="radio" name="option-{e(group["id"])}" data-option="{e(group["id"])}" value="{e(value["id"])}"{checked}><span><strong>{e(value["label"])}</strong>{note}</span></label>'
+        options_class = 'color-options' if swatches else 'size-options'
+        groups.append(f'<fieldset class="size-picker variant-picker"><legend>{e(group["label"])}</legend><div class="{options_class}">{options}</div></fieldset>')
     data = json.dumps(variants, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
-    return ''.join(groups) + f'<p class="variant-selection type-small" id="variant-selection" role="status">Выбрано: {e(default["label"])}</p><script type="application/json" id="product-variants">{data}</script>'
+    option_note = f'<p class="option-note">{e(product["optionNote"])}</p>' if product.get('optionNote') else ''
+    return ''.join(groups) + f'<p class="variant-selection type-small" id="variant-selection" role="status">Выбрано: {e(default["label"])}</p>{option_note}<script type="application/json" id="product-variants">{data}</script>'
 
 
 def variant_size_table(product):
@@ -267,16 +276,26 @@ def detail_sections(product):
 
 
 def catalogue(products):
+    visible = sorted((p for p in products if p['visible']), key=lambda p: p['order'])
+    categories = {}
     cards = []
-    for product in sorted(products, key=lambda p: p['order']):
-        if not product['visible']:
-            continue
+    for product in visible:
+        category = product.get('catalogCategory', {'id': product['category'], 'label': product['category']})
+        bucket = categories.setdefault(category['id'], {'label': category['label'], 'count': 0})
+        bucket['count'] += 1
+        search_parts = [product['name'], product['description'], product['category'], category['label'],
+                        product.get('material', ''), product.get('color', ''), *product.get('searchTerms', [])]
+        search_parts.extend(v['id'] + ' ' + v.get('sizeLabel', '') for v in product.get('variants', []))
+        search_parts.extend(v['label'] for g in product.get('optionGroups', []) for v in g['values'])
         url = f'/catalog/{product["slug"]}/'
         meta = ' / '.join(value for value in (product['material'], product['coating']) if value) or product['category']
         buying = f'<div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div>' if product['marketplaces'] else ''
         source_flag = ' data-source-images="true"' if product.get('sourcePhotography') else ''
-        cards.append(f'''<article class="catalog-card"{source_flag}><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) == 0, sizes='(max-width:540px) 90vw, (max-width:1150px) 44vw, 29vw')}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(meta)}</span><span>{e(product.get('rangeLabel', str(len(product['sizes'])) + ' размеров'))}</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a>{buying}</article>''')
-    return f'''<nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span>{len(cards):02d} / {"изделие" if len(cards) == 1 else "изделия" if 2 <= len(cards) <= 4 else "изделий"}</span></div><div class="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой техники нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
+        cards.append(f'''<article class="catalog-card" data-category="{e(category['id'])}" data-search="{e(' '.join(search_parts))}"{source_flag}><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) == 0, sizes='(max-width:540px) 90vw, (max-width:1150px) 44vw, 29vw')}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(meta)}</span><span>{e(product.get('rangeLabel', str(len(product['sizes'])) + ' размеров'))}</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a>{buying}</article>''')
+    category_buttons = f'<button type="button" data-category-filter="" aria-pressed="true" aria-controls="catalog-grid" data-track="catalog_category_all">Все изделия <span>{len(cards)}</span></button>'
+    category_buttons += ''.join(f'<button type="button" data-category-filter="{e(key)}" aria-pressed="false" aria-controls="catalog-grid" data-track="catalog_category_{e(key)}">{e(value["label"])} <span>{value["count"]}</span></button>' for key, value in categories.items())
+    controls = f'''<div class="catalog-tools" id="catalog-tools" hidden><div class="catalog-search" role="search" aria-label="Поиск по каталогу"><label for="catalog-search">Найти изделие</label><div class="catalog-search-field"><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="catalog-search" class="ym-disable-keys" type="search" placeholder="Название или артикул" maxlength="150" autocomplete="off" aria-controls="catalog-grid" aria-describedby="catalog-results"></div></div><div class="catalog-categories" role="group" aria-label="Категории товаров">{category_buttons}</div><button type="button" class="catalog-reset text-link" id="catalog-reset" hidden>Сбросить поиск и категорию <span aria-hidden="true">×</span></button></div>'''
+    return f'''<nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span id="catalog-results" role="status" aria-live="polite" aria-atomic="true">Все изделия: {len(cards)}</span></div>{controls}<div class="catalog-empty" id="catalog-empty" hidden><h3>Ничего не найдено</h3><p>Попробуйте другое слово или выберите другую категорию.</p></div><div class="catalog-grid" id="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой задачи нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
 
 
 def product_schema(product):

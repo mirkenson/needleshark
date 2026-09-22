@@ -33,13 +33,15 @@ def render():
             manifest['/' + name] = cached
             continue
         with Image.open(source) as original:
+            # Keep the provenance marker when producing responsive AI image assets.
+            metadata = {'xmp': original.info['xmp']} if original.info.get('xmp') else {}
             image = ImageOps.exif_transpose(original).convert('RGB')
             variants = []
             for width in sorted({min(width, image.width) for width in WIDTHS}):
                 height = round(image.height * width / image.width)
                 target = output / f'{source.stem}-{width}.webp'
                 resized = image.resize((width, height), Image.Resampling.LANCZOS)
-                resized.save(target, 'WEBP', quality=82, method=6)
+                resized.save(target, 'WEBP', quality=82, method=6, **metadata)
                 variants.append({'src': '/' + target.relative_to(DIST).as_posix(),
                                  'width': width, 'height': height, 'bytes': target.stat().st_size})
             manifest['/' + name] = {'width': image.width, 'height': image.height,

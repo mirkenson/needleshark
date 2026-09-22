@@ -303,6 +303,10 @@
             }
           ]
         }
+      },
+      "catalogCategory": {
+        "id": "tech",
+        "label": "Чехлы для техники"
       }
     },
     {
@@ -741,6 +745,10 @@
             }
           ]
         }
+      },
+      "catalogCategory": {
+        "id": "tech",
+        "label": "Чехлы для техники"
       }
     },
     {
@@ -1041,6 +1049,10 @@
             }
           ]
         }
+      },
+      "catalogCategory": {
+        "id": "auto",
+        "label": "Для автомобиля"
       }
     },
     {
@@ -1063,25 +1075,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9068457325",
-          "src": "/catalog-assets/ozon-9068457325.jpg",
-          "alt": "Накидка на задний бампер — общий вид",
+          "id": "studio-ns-car-bam-s",
+          "src": "/catalog-assets/studio-ns-car-bam-s.webp",
+          "alt": "Накидка на задний бампер — 74 × 74 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9068457325.jpg"
-        },
-        {
-          "id": "ozon-9068457341",
-          "src": "/catalog-assets/ozon-9068457341.jpg",
-          "alt": "Накидка на задний бампер — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/9068457341.jpg"
-        },
-        {
-          "id": "ozon-9068457326",
-          "src": "/catalog-assets/ozon-9068457326.jpg",
-          "alt": "Накидка на задний бампер — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/9068457326.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9068457325.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -1106,22 +1105,21 @@
         }
       ],
       "reviewNotes": [
-        "В таблице перечислены нейлон, изолон и Taffeta; конструкция слоёв не подтверждена, материал не конкретизирован."
+        "В таблице перечислены нейлон, изолон и Taffeta; конструкция слоёв не подтверждена, материал не конкретизирован.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-car-bam-s": {
           "label": "74 × 74 см",
           "images": [
-            "ozon-9068457325",
-            "ozon-9068457341",
-            "ozon-9068457326"
+            "studio-ns-car-bam-s"
           ],
-          "hero": "ozon-9068457325",
-          "material": "ozon-9068457325",
-          "fit": "ozon-9068457325",
-          "kit": "ozon-9068457325",
+          "hero": "studio-ns-car-bam-s",
+          "material": "studio-ns-car-bam-s",
+          "fit": "studio-ns-car-bam-s",
+          "kit": "studio-ns-car-bam-s",
           "materialText": "",
-          "materialCaption": "Накидка на задний бампер — внешний вид",
+          "materialCaption": "Накидка на задний бампер — 74 × 74 см",
           "features": []
         }
       },
@@ -1214,6 +1212,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "auto",
+        "label": "Для автомобиля"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-9068457325",
+          "src": "/catalog-assets/ozon-9068457325.jpg",
+          "alt": "Накидка на задний бампер — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9068457325.jpg"
+        },
+        {
+          "id": "ozon-9068457341",
+          "src": "/catalog-assets/ozon-9068457341.jpg",
+          "alt": "Накидка на задний бампер — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/9068457341.jpg"
+        },
+        {
+          "id": "ozon-9068457326",
+          "src": "/catalog-assets/ozon-9068457326.jpg",
+          "alt": "Накидка на задний бампер — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/9068457326.jpg"
+        }
       ]
     },
     {
@@ -1236,25 +1261,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-8806247359",
-          "src": "/catalog-assets/ozon-8806247359.jpg",
-          "alt": "Накидка на сиденье и в багажник — общий вид",
+          "id": "studio-vstky-car-mat-s",
+          "src": "/catalog-assets/studio-vstky-car-mat-s.webp",
+          "alt": "Накидка на сиденье и в багажник — 150 × 150 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/8806247359.jpg"
-        },
-        {
-          "id": "ozon-8806247345",
-          "src": "/catalog-assets/ozon-8806247345.jpg",
-          "alt": "Накидка на сиденье и в багажник — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/8806247345.jpg"
-        },
-        {
-          "id": "ozon-8806247376",
-          "src": "/catalog-assets/ozon-8806247376.jpg",
-          "alt": "Накидка на сиденье и в багажник — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/8806247376.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/8806247359.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -1280,21 +1292,21 @@
           "tag": "Для автомобиля"
         }
       ],
-      "reviewNotes": [],
+      "reviewNotes": [
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
+      ],
       "galleries": {
         "vstky-car-mat-s": {
           "label": "150 × 150 см",
           "images": [
-            "ozon-8806247359",
-            "ozon-8806247345",
-            "ozon-8806247376"
+            "studio-vstky-car-mat-s"
           ],
-          "hero": "ozon-8806247359",
-          "material": "ozon-8806247359",
-          "fit": "ozon-8806247359",
-          "kit": "ozon-8806247359",
+          "hero": "studio-vstky-car-mat-s",
+          "material": "studio-vstky-car-mat-s",
+          "fit": "studio-vstky-car-mat-s",
+          "kit": "studio-vstky-car-mat-s",
           "materialText": "Материал: Oxford 240D.",
-          "materialCaption": "Накидка на сиденье и в багажник — внешний вид",
+          "materialCaption": "Накидка на сиденье и в багажник — 150 × 150 см",
           "features": []
         }
       },
@@ -1410,6 +1422,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "auto",
+        "label": "Для автомобиля"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-8806247359",
+          "src": "/catalog-assets/ozon-8806247359.jpg",
+          "alt": "Накидка на сиденье и в багажник — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/8806247359.jpg"
+        },
+        {
+          "id": "ozon-8806247345",
+          "src": "/catalog-assets/ozon-8806247345.jpg",
+          "alt": "Накидка на сиденье и в багажник — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/8806247345.jpg"
+        },
+        {
+          "id": "ozon-8806247376",
+          "src": "/catalog-assets/ozon-8806247376.jpg",
+          "alt": "Накидка на сиденье и в багажник — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/8806247376.jpg"
+        }
       ]
     },
     {
@@ -1432,25 +1471,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-12296373117",
-          "src": "/catalog-assets/ozon-12296373117.jpg",
-          "alt": "Чехол для амортизатора — общий вид",
+          "id": "studio-vstk-amc-case-270",
+          "src": "/catalog-assets/studio-vstk-amc-case-270.webp",
+          "alt": "Чехол для амортизатора — 27 × 24 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-x/12296373117.jpg"
-        },
-        {
-          "id": "ozon-8619599661",
-          "src": "/catalog-assets/ozon-8619599661.jpg",
-          "alt": "Чехол для амортизатора — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-x/8619599661.jpg"
-        },
-        {
-          "id": "ozon-8619599719",
-          "src": "/catalog-assets/ozon-8619599719.jpg",
-          "alt": "Чехол для амортизатора — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-j/8619599719.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-x/12296373117.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -1478,22 +1504,21 @@
         }
       ],
       "reviewNotes": [
-        "Покрытие в полях обозначено как ПВХ, в описании — PU2000. Тип покрытия не перенесён. Совместимость с конкретными моделями не заявляется."
+        "Покрытие в полях обозначено как ПВХ, в описании — PU2000. Тип покрытия не перенесён. Совместимость с конкретными моделями не заявляется.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "vstk-amc-case-270": {
           "label": "27 × 24 см",
           "images": [
-            "ozon-12296373117",
-            "ozon-8619599661",
-            "ozon-8619599719"
+            "studio-vstk-amc-case-270"
           ],
-          "hero": "ozon-12296373117",
-          "material": "ozon-12296373117",
-          "fit": "ozon-12296373117",
-          "kit": "ozon-12296373117",
+          "hero": "studio-vstk-amc-case-270",
+          "material": "studio-vstk-amc-case-270",
+          "fit": "studio-vstk-amc-case-270",
+          "kit": "studio-vstk-amc-case-270",
           "materialText": "Материал: Oxford 300D.",
-          "materialCaption": "Чехол для амортизатора — внешний вид",
+          "materialCaption": "Чехол для амортизатора — 27 × 24 см",
           "features": []
         }
       },
@@ -1605,6 +1630,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "tech",
+        "label": "Чехлы для техники"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-12296373117",
+          "src": "/catalog-assets/ozon-12296373117.jpg",
+          "alt": "Чехол для амортизатора — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-x/12296373117.jpg"
+        },
+        {
+          "id": "ozon-8619599661",
+          "src": "/catalog-assets/ozon-8619599661.jpg",
+          "alt": "Чехол для амортизатора — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-x/8619599661.jpg"
+        },
+        {
+          "id": "ozon-8619599719",
+          "src": "/catalog-assets/ozon-8619599719.jpg",
+          "alt": "Чехол для амортизатора — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-j/8619599719.jpg"
+        }
       ]
     },
     {
@@ -1627,130 +1679,52 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-14077369840",
-          "src": "/catalog-assets/ozon-14077369840.jpg",
-          "alt": "Чехол для перевозки коляски — общий вид",
+          "id": "studio-pram-brown",
+          "src": "/catalog-assets/studio-pram-brown.webp",
+          "alt": "Чехол для перевозки коляски — Коричневый",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/14077369840.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/14077369840.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14077371358",
-          "src": "/catalog-assets/ozon-14077371358.jpg",
-          "alt": "Чехол для перевозки коляски — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14077371358.jpg"
-        },
-        {
-          "id": "ozon-14077366462",
-          "src": "/catalog-assets/ozon-14077366462.jpg",
-          "alt": "Чехол для перевозки коляски — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14077366462.jpg"
-        },
-        {
-          "id": "ozon-14077441198",
-          "src": "/catalog-assets/ozon-14077441198.jpg",
-          "alt": "Чехол для перевозки коляски — общий вид",
+          "id": "studio-ns-pram-red",
+          "src": "/catalog-assets/studio-ns-pram-red.webp",
+          "alt": "Чехол для перевозки коляски — Красный",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14077441198.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14077441198.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14077439272",
-          "src": "/catalog-assets/ozon-14077439272.jpg",
-          "alt": "Чехол для перевозки коляски — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-s/14077439272.jpg"
-        },
-        {
-          "id": "ozon-14077442491",
-          "src": "/catalog-assets/ozon-14077442491.jpg",
-          "alt": "Чехол для перевозки коляски — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/14077442491.jpg"
-        },
-        {
-          "id": "ozon-14077246318",
-          "src": "/catalog-assets/ozon-14077246318.jpg",
-          "alt": "Чехол для перевозки коляски — общий вид",
+          "id": "studio-ns-pram-blue",
+          "src": "/catalog-assets/studio-ns-pram-blue.webp",
+          "alt": "Чехол для перевозки коляски — Синий",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/14077246318.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/14077246318.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14077253595",
-          "src": "/catalog-assets/ozon-14077253595.jpg",
-          "alt": "Чехол для перевозки коляски — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/14077253595.jpg"
-        },
-        {
-          "id": "ozon-14077253622",
-          "src": "/catalog-assets/ozon-14077253622.jpg",
-          "alt": "Чехол для перевозки коляски — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-u/14077253622.jpg"
-        },
-        {
-          "id": "ozon-14077397207",
-          "src": "/catalog-assets/ozon-14077397207.jpg",
-          "alt": "Чехол для перевозки коляски — общий вид",
+          "id": "studio-ns-pram-darkblue",
+          "src": "/catalog-assets/studio-ns-pram-darkblue.webp",
+          "alt": "Чехол для перевозки коляски — Тёмно-синий",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14077397207.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14077397207.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14077394166",
-          "src": "/catalog-assets/ozon-14077394166.jpg",
-          "alt": "Чехол для перевозки коляски — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-u/14077394166.jpg"
-        },
-        {
-          "id": "ozon-14077394541",
-          "src": "/catalog-assets/ozon-14077394541.jpg",
-          "alt": "Чехол для перевозки коляски — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-9/14077394541.jpg"
-        },
-        {
-          "id": "ozon-14077420108",
-          "src": "/catalog-assets/ozon-14077420108.jpg",
-          "alt": "Чехол для перевозки коляски — общий вид",
+          "id": "studio-ns-pram-green",
+          "src": "/catalog-assets/studio-ns-pram-green.webp",
+          "alt": "Чехол для перевозки коляски — Зелёный",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-g/14077420108.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-g/14077420108.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14077422673",
-          "src": "/catalog-assets/ozon-14077422673.jpg",
-          "alt": "Чехол для перевозки коляски — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-p/14077422673.jpg"
-        },
-        {
-          "id": "ozon-14077418459",
-          "src": "/catalog-assets/ozon-14077418459.jpg",
-          "alt": "Чехол для перевозки коляски — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/14077418459.jpg"
-        },
-        {
-          "id": "ozon-14077311275",
-          "src": "/catalog-assets/ozon-14077311275.jpg",
-          "alt": "Чехол для перевозки коляски — общий вид",
+          "id": "studio-ns-pram-orange",
+          "src": "/catalog-assets/studio-ns-pram-orange.webp",
+          "alt": "Чехол для перевозки коляски — Оранжевый",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14077311275.jpg"
-        },
-        {
-          "id": "ozon-14077318628",
-          "src": "/catalog-assets/ozon-14077318628.jpg",
-          "alt": "Чехол для перевозки коляски — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-k/14077318628.jpg"
-        },
-        {
-          "id": "ozon-14077310933",
-          "src": "/catalog-assets/ozon-14077310933.jpg",
-          "alt": "Чехол для перевозки коляски — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/14077310933.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14077311275.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -1776,96 +1750,86 @@
           "tag": "Для поездок"
         }
       ],
-      "reviewNotes": [],
+      "reviewNotes": [
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
+      ],
       "galleries": {
         "ns-pram-brown": {
           "label": "Коричневый",
           "images": [
-            "ozon-14077369840",
-            "ozon-14077371358",
-            "ozon-14077366462"
+            "studio-pram-brown"
           ],
-          "hero": "ozon-14077369840",
-          "material": "ozon-14077369840",
-          "fit": "ozon-14077369840",
-          "kit": "ozon-14077369840",
+          "hero": "studio-pram-brown",
+          "material": "studio-pram-brown",
+          "fit": "studio-pram-brown",
+          "kit": "studio-pram-brown",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Чехол для перевозки коляски — внешний вид",
+          "materialCaption": "Чехол для перевозки коляски — Коричневый",
           "features": []
         },
         "ns-pram-red": {
           "label": "Красный",
           "images": [
-            "ozon-14077441198",
-            "ozon-14077439272",
-            "ozon-14077442491"
+            "studio-ns-pram-red"
           ],
-          "hero": "ozon-14077441198",
-          "material": "ozon-14077441198",
-          "fit": "ozon-14077441198",
-          "kit": "ozon-14077441198",
+          "hero": "studio-ns-pram-red",
+          "material": "studio-ns-pram-red",
+          "fit": "studio-ns-pram-red",
+          "kit": "studio-ns-pram-red",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Чехол для перевозки коляски — внешний вид",
+          "materialCaption": "Чехол для перевозки коляски — Красный",
           "features": []
         },
         "ns-pram-blue": {
           "label": "Синий",
           "images": [
-            "ozon-14077246318",
-            "ozon-14077253595",
-            "ozon-14077253622"
+            "studio-ns-pram-blue"
           ],
-          "hero": "ozon-14077246318",
-          "material": "ozon-14077246318",
-          "fit": "ozon-14077246318",
-          "kit": "ozon-14077246318",
+          "hero": "studio-ns-pram-blue",
+          "material": "studio-ns-pram-blue",
+          "fit": "studio-ns-pram-blue",
+          "kit": "studio-ns-pram-blue",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Чехол для перевозки коляски — внешний вид",
+          "materialCaption": "Чехол для перевозки коляски — Синий",
           "features": []
         },
         "ns-pram-darkblue": {
           "label": "Тёмно-синий",
           "images": [
-            "ozon-14077397207",
-            "ozon-14077394166",
-            "ozon-14077394541"
+            "studio-ns-pram-darkblue"
           ],
-          "hero": "ozon-14077397207",
-          "material": "ozon-14077397207",
-          "fit": "ozon-14077397207",
-          "kit": "ozon-14077397207",
+          "hero": "studio-ns-pram-darkblue",
+          "material": "studio-ns-pram-darkblue",
+          "fit": "studio-ns-pram-darkblue",
+          "kit": "studio-ns-pram-darkblue",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Чехол для перевозки коляски — внешний вид",
+          "materialCaption": "Чехол для перевозки коляски — Тёмно-синий",
           "features": []
         },
         "ns-pram-green": {
           "label": "Зелёный",
           "images": [
-            "ozon-14077420108",
-            "ozon-14077422673",
-            "ozon-14077418459"
+            "studio-ns-pram-green"
           ],
-          "hero": "ozon-14077420108",
-          "material": "ozon-14077420108",
-          "fit": "ozon-14077420108",
-          "kit": "ozon-14077420108",
+          "hero": "studio-ns-pram-green",
+          "material": "studio-ns-pram-green",
+          "fit": "studio-ns-pram-green",
+          "kit": "studio-ns-pram-green",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Чехол для перевозки коляски — внешний вид",
+          "materialCaption": "Чехол для перевозки коляски — Зелёный",
           "features": []
         },
         "ns-pram-orange": {
           "label": "Оранжевый",
           "images": [
-            "ozon-14077311275",
-            "ozon-14077318628",
-            "ozon-14077310933"
+            "studio-ns-pram-orange"
           ],
-          "hero": "ozon-14077311275",
-          "material": "ozon-14077311275",
-          "fit": "ozon-14077311275",
-          "kit": "ozon-14077311275",
+          "hero": "studio-ns-pram-orange",
+          "material": "studio-ns-pram-orange",
+          "fit": "studio-ns-pram-orange",
+          "kit": "studio-ns-pram-orange",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Чехол для перевозки коляски — внешний вид",
+          "materialCaption": "Чехол для перевозки коляски — Оранжевый",
           "features": []
         }
       },
@@ -2028,29 +1992,36 @@
           "values": [
             {
               "id": "brown",
-              "label": "Коричневый"
+              "label": "Коричневый",
+              "color": "#51372F"
             },
             {
               "id": "red",
-              "label": "Красный"
+              "label": "Красный",
+              "color": "#862F46"
             },
             {
               "id": "blue",
-              "label": "Синий"
+              "label": "Синий",
+              "color": "#2362C2"
             },
             {
               "id": "darkblue",
-              "label": "Тёмно-синий"
+              "label": "Тёмно-синий",
+              "color": "#192C50"
             },
             {
               "id": "green",
-              "label": "Зелёный"
+              "label": "Зелёный",
+              "color": "#244B3B"
             },
             {
               "id": "orange",
-              "label": "Оранжевый"
+              "label": "Оранжевый",
+              "color": "#E76F28"
             }
-          ]
+          ],
+          "display": "swatches"
         }
       ],
       "copy": {
@@ -2118,6 +2089,138 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "travel",
+        "label": "Сумки и поездки"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-14077369840",
+          "src": "/catalog-assets/ozon-14077369840.jpg",
+          "alt": "Чехол для перевозки коляски — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/14077369840.jpg"
+        },
+        {
+          "id": "ozon-14077371358",
+          "src": "/catalog-assets/ozon-14077371358.jpg",
+          "alt": "Чехол для перевозки коляски — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14077371358.jpg"
+        },
+        {
+          "id": "ozon-14077366462",
+          "src": "/catalog-assets/ozon-14077366462.jpg",
+          "alt": "Чехол для перевозки коляски — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14077366462.jpg"
+        },
+        {
+          "id": "ozon-14077441198",
+          "src": "/catalog-assets/ozon-14077441198.jpg",
+          "alt": "Чехол для перевозки коляски — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14077441198.jpg"
+        },
+        {
+          "id": "ozon-14077439272",
+          "src": "/catalog-assets/ozon-14077439272.jpg",
+          "alt": "Чехол для перевозки коляски — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-s/14077439272.jpg"
+        },
+        {
+          "id": "ozon-14077442491",
+          "src": "/catalog-assets/ozon-14077442491.jpg",
+          "alt": "Чехол для перевозки коляски — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/14077442491.jpg"
+        },
+        {
+          "id": "ozon-14077246318",
+          "src": "/catalog-assets/ozon-14077246318.jpg",
+          "alt": "Чехол для перевозки коляски — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/14077246318.jpg"
+        },
+        {
+          "id": "ozon-14077253595",
+          "src": "/catalog-assets/ozon-14077253595.jpg",
+          "alt": "Чехол для перевозки коляски — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/14077253595.jpg"
+        },
+        {
+          "id": "ozon-14077253622",
+          "src": "/catalog-assets/ozon-14077253622.jpg",
+          "alt": "Чехол для перевозки коляски — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-u/14077253622.jpg"
+        },
+        {
+          "id": "ozon-14077397207",
+          "src": "/catalog-assets/ozon-14077397207.jpg",
+          "alt": "Чехол для перевозки коляски — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14077397207.jpg"
+        },
+        {
+          "id": "ozon-14077394166",
+          "src": "/catalog-assets/ozon-14077394166.jpg",
+          "alt": "Чехол для перевозки коляски — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-u/14077394166.jpg"
+        },
+        {
+          "id": "ozon-14077394541",
+          "src": "/catalog-assets/ozon-14077394541.jpg",
+          "alt": "Чехол для перевозки коляски — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-9/14077394541.jpg"
+        },
+        {
+          "id": "ozon-14077420108",
+          "src": "/catalog-assets/ozon-14077420108.jpg",
+          "alt": "Чехол для перевозки коляски — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-g/14077420108.jpg"
+        },
+        {
+          "id": "ozon-14077422673",
+          "src": "/catalog-assets/ozon-14077422673.jpg",
+          "alt": "Чехол для перевозки коляски — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-p/14077422673.jpg"
+        },
+        {
+          "id": "ozon-14077418459",
+          "src": "/catalog-assets/ozon-14077418459.jpg",
+          "alt": "Чехол для перевозки коляски — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/14077418459.jpg"
+        },
+        {
+          "id": "ozon-14077311275",
+          "src": "/catalog-assets/ozon-14077311275.jpg",
+          "alt": "Чехол для перевозки коляски — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14077311275.jpg"
+        },
+        {
+          "id": "ozon-14077318628",
+          "src": "/catalog-assets/ozon-14077318628.jpg",
+          "alt": "Чехол для перевозки коляски — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-k/14077318628.jpg"
+        },
+        {
+          "id": "ozon-14077310933",
+          "src": "/catalog-assets/ozon-14077310933.jpg",
+          "alt": "Чехол для перевозки коляски — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/14077310933.jpg"
+        }
       ]
     },
     {
@@ -2140,25 +2243,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9135339863",
-          "src": "/catalog-assets/ozon-9135339863.jpg",
-          "alt": "Крючки для коляски — общий вид",
+          "id": "studio-ns-hook-2",
+          "src": "/catalog-assets/studio-ns-hook-2.webp",
+          "alt": "Крючки для коляски — 2 шт.",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/9135339863.jpg"
-        },
-        {
-          "id": "ozon-8777609794",
-          "src": "/catalog-assets/ozon-8777609794.jpg",
-          "alt": "Крючки для коляски — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/8777609794.jpg"
-        },
-        {
-          "id": "ozon-8777610230",
-          "src": "/catalog-assets/ozon-8777610230.jpg",
-          "alt": "Крючки для коляски — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/8777610230.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/9135339863.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -2185,22 +2275,21 @@
         }
       ],
       "reviewNotes": [
-        "В полях ABS-пластик и металл, на главном фото ацеталь. Материал исключён до сверки."
+        "В полях ABS-пластик и металл, на главном фото ацеталь. Материал исключён до сверки.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-hook-2": {
           "label": "2 шт.",
           "images": [
-            "ozon-9135339863",
-            "ozon-8777609794",
-            "ozon-8777610230"
+            "studio-ns-hook-2"
           ],
-          "hero": "ozon-9135339863",
-          "material": "ozon-9135339863",
-          "fit": "ozon-9135339863",
-          "kit": "ozon-9135339863",
+          "hero": "studio-ns-hook-2",
+          "material": "studio-ns-hook-2",
+          "fit": "studio-ns-hook-2",
+          "kit": "studio-ns-hook-2",
           "materialText": "Материал: ABS-пластик и металл.",
-          "materialCaption": "Крючки для коляски — внешний вид",
+          "materialCaption": "Крючки для коляски — 2 шт.",
           "features": []
         }
       },
@@ -2291,6 +2380,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "travel",
+        "label": "Сумки и поездки"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-9135339863",
+          "src": "/catalog-assets/ozon-9135339863.jpg",
+          "alt": "Крючки для коляски — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/9135339863.jpg"
+        },
+        {
+          "id": "ozon-8777609794",
+          "src": "/catalog-assets/ozon-8777609794.jpg",
+          "alt": "Крючки для коляски — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/8777609794.jpg"
+        },
+        {
+          "id": "ozon-8777610230",
+          "src": "/catalog-assets/ozon-8777610230.jpg",
+          "alt": "Крючки для коляски — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/8777610230.jpg"
+        }
       ]
     },
     {
@@ -2313,74 +2429,36 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9072348456",
-          "src": "/catalog-assets/ozon-9072348456.jpg",
-          "alt": "Дно для клетки и вольера — общий вид",
+          "id": "studio-vstky-cage-mat-s",
+          "src": "/catalog-assets/studio-vstky-cage-mat-s.webp",
+          "alt": "Дно для клетки и вольера — 111 × 76 × 5 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-c/9072348456.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-c/9072348456.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9072348080",
-          "src": "/catalog-assets/ozon-9072348080.jpg",
-          "alt": "Дно для клетки и вольера — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-w/9072348080.jpg"
-        },
-        {
-          "id": "ozon-9072259254",
-          "src": "/catalog-assets/ozon-9072259254.jpg",
-          "alt": "Дно для клетки и вольера — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/9072259254.jpg"
-        },
-        {
-          "id": "ozon-9072334262",
-          "src": "/catalog-assets/ozon-9072334262.jpg",
-          "alt": "Дно для клетки и вольера — общий вид",
+          "id": "studio-vstky-cage-mat-m",
+          "src": "/catalog-assets/studio-vstky-cage-mat-m.webp",
+          "alt": "Дно для клетки и вольера — 130 × 68 × 5 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/9072334262.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/9072334262.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9072334399",
-          "src": "/catalog-assets/ozon-9072334399.jpg",
-          "alt": "Дно для клетки и вольера — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-v/9072334399.jpg"
-        },
-        {
-          "id": "ozon-8889424696",
-          "src": "/catalog-assets/ozon-8889424696.jpg",
-          "alt": "Дно для клетки и вольера — общий вид",
+          "id": "studio-vstky-cage-mat-l",
+          "src": "/catalog-assets/studio-vstky-cage-mat-l.webp",
+          "alt": "Дно для клетки и вольера — 146 × 76 × 5 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-s/8889424696.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-s/8889424696.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-8889422625",
-          "src": "/catalog-assets/ozon-8889422625.jpg",
-          "alt": "Дно для клетки и вольера — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-9/8889422625.jpg"
-        },
-        {
-          "id": "ozon-8889423851",
-          "src": "/catalog-assets/ozon-8889423851.jpg",
-          "alt": "Дно для клетки и вольера — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/8889423851.jpg"
-        },
-        {
-          "id": "ozon-9072259367",
-          "src": "/catalog-assets/ozon-9072259367.jpg",
-          "alt": "Дно для клетки и вольера — общий вид",
+          "id": "studio-vstky-cage-mat-xl",
+          "src": "/catalog-assets/studio-vstky-cage-mat-xl.webp",
+          "alt": "Дно для клетки и вольера — 111 × 111 × 5 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/9072259367.jpg"
-        },
-        {
-          "id": "ozon-9072259491",
-          "src": "/catalog-assets/ozon-9072259491.jpg",
-          "alt": "Дно для клетки и вольера — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/9072259491.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/9072259367.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -2406,66 +2484,60 @@
           "tag": "Для дома и животных"
         }
       ],
-      "reviewNotes": [],
+      "reviewNotes": [
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
+      ],
       "galleries": {
         "vstky-cage-mat-s": {
           "label": "111 × 76 × 5 см",
           "images": [
-            "ozon-9072348456",
-            "ozon-9072348080",
-            "ozon-9072259254"
+            "studio-vstky-cage-mat-s"
           ],
-          "hero": "ozon-9072348456",
-          "material": "ozon-9072348456",
-          "fit": "ozon-9072348456",
-          "kit": "ozon-9072348456",
+          "hero": "studio-vstky-cage-mat-s",
+          "material": "studio-vstky-cage-mat-s",
+          "fit": "studio-vstky-cage-mat-s",
+          "kit": "studio-vstky-cage-mat-s",
           "materialText": "Материал: Oxford 600D.",
-          "materialCaption": "Дно для клетки и вольера — внешний вид",
+          "materialCaption": "Дно для клетки и вольера — 111 × 76 × 5 см",
           "features": []
         },
         "vstky-cage-mat-m": {
           "label": "130 × 68 × 5 см",
           "images": [
-            "ozon-9072334262",
-            "ozon-9072334399",
-            "ozon-9072259254"
+            "studio-vstky-cage-mat-m"
           ],
-          "hero": "ozon-9072334262",
-          "material": "ozon-9072334262",
-          "fit": "ozon-9072334262",
-          "kit": "ozon-9072334262",
+          "hero": "studio-vstky-cage-mat-m",
+          "material": "studio-vstky-cage-mat-m",
+          "fit": "studio-vstky-cage-mat-m",
+          "kit": "studio-vstky-cage-mat-m",
           "materialText": "Материал: Oxford 600D.",
-          "materialCaption": "Дно для клетки и вольера — внешний вид",
+          "materialCaption": "Дно для клетки и вольера — 130 × 68 × 5 см",
           "features": []
         },
         "vstky-cage-mat-l": {
           "label": "146 × 76 × 5 см",
           "images": [
-            "ozon-8889424696",
-            "ozon-8889422625",
-            "ozon-8889423851"
+            "studio-vstky-cage-mat-l"
           ],
-          "hero": "ozon-8889424696",
-          "material": "ozon-8889424696",
-          "fit": "ozon-8889424696",
-          "kit": "ozon-8889424696",
+          "hero": "studio-vstky-cage-mat-l",
+          "material": "studio-vstky-cage-mat-l",
+          "fit": "studio-vstky-cage-mat-l",
+          "kit": "studio-vstky-cage-mat-l",
           "materialText": "Материал: Oxford 600D.",
-          "materialCaption": "Дно для клетки и вольера — внешний вид",
+          "materialCaption": "Дно для клетки и вольера — 146 × 76 × 5 см",
           "features": []
         },
         "vstky-cage-mat-xl": {
           "label": "111 × 111 × 5 см",
           "images": [
-            "ozon-9072259367",
-            "ozon-9072259491",
-            "ozon-9072259254"
+            "studio-vstky-cage-mat-xl"
           ],
-          "hero": "ozon-9072259367",
-          "material": "ozon-9072259367",
-          "fit": "ozon-9072259367",
-          "kit": "ozon-9072259367",
+          "hero": "studio-vstky-cage-mat-xl",
+          "material": "studio-vstky-cage-mat-xl",
+          "fit": "studio-vstky-cage-mat-xl",
+          "kit": "studio-vstky-cage-mat-xl",
           "materialText": "Материал: Oxford 600D.",
-          "materialCaption": "Дно для клетки и вольера — внешний вид",
+          "materialCaption": "Дно для клетки и вольера — 111 × 111 × 5 см",
           "features": []
         }
       },
@@ -2674,6 +2746,82 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "home",
+        "label": "Для дома и животных"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-9072348456",
+          "src": "/catalog-assets/ozon-9072348456.jpg",
+          "alt": "Дно для клетки и вольера — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-c/9072348456.jpg"
+        },
+        {
+          "id": "ozon-9072348080",
+          "src": "/catalog-assets/ozon-9072348080.jpg",
+          "alt": "Дно для клетки и вольера — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-w/9072348080.jpg"
+        },
+        {
+          "id": "ozon-9072259254",
+          "src": "/catalog-assets/ozon-9072259254.jpg",
+          "alt": "Дно для клетки и вольера — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/9072259254.jpg"
+        },
+        {
+          "id": "ozon-9072334262",
+          "src": "/catalog-assets/ozon-9072334262.jpg",
+          "alt": "Дно для клетки и вольера — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/9072334262.jpg"
+        },
+        {
+          "id": "ozon-9072334399",
+          "src": "/catalog-assets/ozon-9072334399.jpg",
+          "alt": "Дно для клетки и вольера — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-v/9072334399.jpg"
+        },
+        {
+          "id": "ozon-8889424696",
+          "src": "/catalog-assets/ozon-8889424696.jpg",
+          "alt": "Дно для клетки и вольера — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-s/8889424696.jpg"
+        },
+        {
+          "id": "ozon-8889422625",
+          "src": "/catalog-assets/ozon-8889422625.jpg",
+          "alt": "Дно для клетки и вольера — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-9/8889422625.jpg"
+        },
+        {
+          "id": "ozon-8889423851",
+          "src": "/catalog-assets/ozon-8889423851.jpg",
+          "alt": "Дно для клетки и вольера — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/8889423851.jpg"
+        },
+        {
+          "id": "ozon-9072259367",
+          "src": "/catalog-assets/ozon-9072259367.jpg",
+          "alt": "Дно для клетки и вольера — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/9072259367.jpg"
+        },
+        {
+          "id": "ozon-9072259491",
+          "src": "/catalog-assets/ozon-9072259491.jpg",
+          "alt": "Дно для клетки и вольера — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/9072259491.jpg"
+        }
       ]
     },
     {
@@ -2696,39 +2844,20 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9573327373",
-          "src": "/catalog-assets/ozon-9573327373.jpg",
-          "alt": "Чехол для генератора — общий вид",
+          "id": "studio-ns-gen-002",
+          "src": "/catalog-assets/studio-ns-gen-002.webp",
+          "alt": "Чехол для генератора — 70 × 55 × 55 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9573327373.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9573327373.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9573327712",
-          "src": "/catalog-assets/ozon-9573327712.jpg",
-          "alt": "Чехол для генератора — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-s/9573327712.jpg"
-        },
-        {
-          "id": "ozon-9573327293",
-          "src": "/catalog-assets/ozon-9573327293.jpg",
-          "alt": "Чехол для генератора — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-5/9573327293.jpg"
-        },
-        {
-          "id": "ozon-9573336558",
-          "src": "/catalog-assets/ozon-9573336558.jpg",
-          "alt": "Чехол для генератора — общий вид",
+          "id": "studio-ns-gen-001",
+          "src": "/catalog-assets/studio-ns-gen-001.webp",
+          "alt": "Чехол для генератора — 80 × 60 × 60 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/9573336558.jpg"
-        },
-        {
-          "id": "ozon-9573336241",
-          "src": "/catalog-assets/ozon-9573336241.jpg",
-          "alt": "Чехол для генератора — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-p/9573336241.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/9573336558.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -2753,37 +2882,34 @@
         }
       ],
       "reviewNotes": [
-        "Состав комплекта не заполнен. Сумка для хранения не обещается."
+        "Состав комплекта не заполнен. Сумка для хранения не обещается.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-gen-002": {
           "label": "70 × 55 × 55 см",
           "images": [
-            "ozon-9573327373",
-            "ozon-9573327712",
-            "ozon-9573327293"
+            "studio-ns-gen-002"
           ],
-          "hero": "ozon-9573327373",
-          "material": "ozon-9573327373",
-          "fit": "ozon-9573327373",
-          "kit": "ozon-9573327373",
+          "hero": "studio-ns-gen-002",
+          "material": "studio-ns-gen-002",
+          "fit": "studio-ns-gen-002",
+          "kit": "studio-ns-gen-002",
           "materialText": "Материал: Oxford 240D. Покрытие: PU 2000.",
-          "materialCaption": "Чехол для генератора — внешний вид",
+          "materialCaption": "Чехол для генератора — 70 × 55 × 55 см",
           "features": []
         },
         "ns-gen-001": {
           "label": "80 × 60 × 60 см",
           "images": [
-            "ozon-9573336558",
-            "ozon-9573327712",
-            "ozon-9573336241"
+            "studio-ns-gen-001"
           ],
-          "hero": "ozon-9573336558",
-          "material": "ozon-9573336558",
-          "fit": "ozon-9573336558",
-          "kit": "ozon-9573336558",
+          "hero": "studio-ns-gen-001",
+          "material": "studio-ns-gen-001",
+          "fit": "studio-ns-gen-001",
+          "kit": "studio-ns-gen-001",
           "materialText": "Материал: Oxford 240D. Покрытие: PU 2000.",
-          "materialCaption": "Чехол для генератора — внешний вид",
+          "materialCaption": "Чехол для генератора — 80 × 60 × 60 см",
           "features": []
         }
       },
@@ -2917,6 +3043,47 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "tech",
+        "label": "Чехлы для техники"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-9573327373",
+          "src": "/catalog-assets/ozon-9573327373.jpg",
+          "alt": "Чехол для генератора — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9573327373.jpg"
+        },
+        {
+          "id": "ozon-9573327712",
+          "src": "/catalog-assets/ozon-9573327712.jpg",
+          "alt": "Чехол для генератора — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-s/9573327712.jpg"
+        },
+        {
+          "id": "ozon-9573327293",
+          "src": "/catalog-assets/ozon-9573327293.jpg",
+          "alt": "Чехол для генератора — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-5/9573327293.jpg"
+        },
+        {
+          "id": "ozon-9573336558",
+          "src": "/catalog-assets/ozon-9573336558.jpg",
+          "alt": "Чехол для генератора — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/9573336558.jpg"
+        },
+        {
+          "id": "ozon-9573336241",
+          "src": "/catalog-assets/ozon-9573336241.jpg",
+          "alt": "Чехол для генератора — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-p/9573336241.jpg"
+        }
       ]
     },
     {
@@ -2939,25 +3106,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-8881812557",
-          "src": "/catalog-assets/ozon-8881812557.jpg",
-          "alt": "Карабины для весла — общий вид",
+          "id": "studio-hook-2-long",
+          "src": "/catalog-assets/studio-hook-2-long.webp",
+          "alt": "Карабины для весла — 2 шт.",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-h/8881812557.jpg"
-        },
-        {
-          "id": "ozon-8881812517",
-          "src": "/catalog-assets/ozon-8881812517.jpg",
-          "alt": "Карабины для весла — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/8881812517.jpg"
-        },
-        {
-          "id": "ozon-8881812455",
-          "src": "/catalog-assets/ozon-8881812455.jpg",
-          "alt": "Карабины для весла — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/8881812455.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-h/8881812557.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -2983,21 +3137,21 @@
           "tag": "Спорт и отдых"
         }
       ],
-      "reviewNotes": [],
+      "reviewNotes": [
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
+      ],
       "galleries": {
         "hook-2-long": {
           "label": "2 шт.",
           "images": [
-            "ozon-8881812557",
-            "ozon-8881812517",
-            "ozon-8881812455"
+            "studio-hook-2-long"
           ],
-          "hero": "ozon-8881812557",
-          "material": "ozon-8881812557",
-          "fit": "ozon-8881812557",
-          "kit": "ozon-8881812557",
+          "hero": "studio-hook-2-long",
+          "material": "studio-hook-2-long",
+          "fit": "studio-hook-2-long",
+          "kit": "studio-hook-2-long",
           "materialText": "",
-          "materialCaption": "Карабины для весла — внешний вид",
+          "materialCaption": "Карабины для весла — 2 шт.",
           "features": []
         }
       },
@@ -3096,6 +3250,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "sport",
+        "label": "Спорт и отдых"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-8881812557",
+          "src": "/catalog-assets/ozon-8881812557.jpg",
+          "alt": "Карабины для весла — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-h/8881812557.jpg"
+        },
+        {
+          "id": "ozon-8881812517",
+          "src": "/catalog-assets/ozon-8881812517.jpg",
+          "alt": "Карабины для весла — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/8881812517.jpg"
+        },
+        {
+          "id": "ozon-8881812455",
+          "src": "/catalog-assets/ozon-8881812455.jpg",
+          "alt": "Карабины для весла — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/8881812455.jpg"
+        }
       ]
     },
     {
@@ -3118,25 +3299,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-8815416614",
-          "src": "/catalog-assets/ozon-8815416614.jpg",
-          "alt": "Чехол для шуруповёрта — общий вид",
+          "id": "studio-shurup-001",
+          "src": "/catalog-assets/studio-shurup-001.webp",
+          "alt": "Чехол для шуруповёрта — Чёрный",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/8815416614.jpg"
-        },
-        {
-          "id": "ozon-8815415259",
-          "src": "/catalog-assets/ozon-8815415259.jpg",
-          "alt": "Чехол для шуруповёрта — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/8815415259.jpg"
-        },
-        {
-          "id": "ozon-8815416302",
-          "src": "/catalog-assets/ozon-8815416302.jpg",
-          "alt": "Чехол для шуруповёрта — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/8815416302.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/8815416614.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -3161,22 +3329,21 @@
         }
       ],
       "reviewNotes": [
-        "Не подтверждены материал, утеплитель, габариты и допустимые модели. Обещания защиты от падений, короткого замыкания и заданной температуры не перенесены."
+        "Не подтверждены материал, утеплитель, габариты и допустимые модели. Обещания защиты от падений, короткого замыкания и заданной температуры не перенесены.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "shurup-001": {
           "label": "Чёрный",
           "images": [
-            "ozon-8815416614",
-            "ozon-8815415259",
-            "ozon-8815416302"
+            "studio-shurup-001"
           ],
-          "hero": "ozon-8815416614",
-          "material": "ozon-8815416614",
-          "fit": "ozon-8815416614",
-          "kit": "ozon-8815416614",
+          "hero": "studio-shurup-001",
+          "material": "studio-shurup-001",
+          "fit": "studio-shurup-001",
+          "kit": "studio-shurup-001",
           "materialText": "",
-          "materialCaption": "Чехол для шуруповёрта — внешний вид",
+          "materialCaption": "Чехол для шуруповёрта — Чёрный",
           "features": []
         }
       },
@@ -3270,6 +3437,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "sport",
+        "label": "Спорт и отдых"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-8815416614",
+          "src": "/catalog-assets/ozon-8815416614.jpg",
+          "alt": "Чехол для шуруповёрта — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/8815416614.jpg"
+        },
+        {
+          "id": "ozon-8815415259",
+          "src": "/catalog-assets/ozon-8815415259.jpg",
+          "alt": "Чехол для шуруповёрта — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/8815415259.jpg"
+        },
+        {
+          "id": "ozon-8815416302",
+          "src": "/catalog-assets/ozon-8815416302.jpg",
+          "alt": "Чехол для шуруповёрта — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/8815416302.jpg"
+        }
       ]
     },
     {
@@ -3292,158 +3486,28 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-14650610447",
-          "src": "/catalog-assets/ozon-14650610447.jpg",
-          "alt": "Сумки-баулы для хранения — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14650610447.jpg"
+          "id": "studio-bag-35",
+          "src": "/catalog-assets/studio-bag-35.webp",
+          "alt": "Сумки-баулы для хранения — 35 л · 1 шт. — одна сумка",
+          "label": "Общий вид одной сумки",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14650610447.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14650611848",
-          "src": "/catalog-assets/ozon-14650611848.jpg",
-          "alt": "Сумки-баулы для хранения — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-8/14650611848.jpg"
+          "id": "studio-bag-108",
+          "src": "/catalog-assets/studio-bag-108.webp",
+          "alt": "Сумки-баулы для хранения — 108 л · 1 шт. — одна сумка",
+          "label": "Общий вид одной сумки",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-w/14177536484.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14650631678",
-          "src": "/catalog-assets/ozon-14650631678.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/14650631678.jpg"
-        },
-        {
-          "id": "ozon-14650617389",
-          "src": "/catalog-assets/ozon-14650617389.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-5/14650617389.jpg"
-        },
-        {
-          "id": "ozon-14650612766",
-          "src": "/catalog-assets/ozon-14650612766.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14650612766.jpg"
-        },
-        {
-          "id": "ozon-14177536484",
-          "src": "/catalog-assets/ozon-14177536484.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-w/14177536484.jpg"
-        },
-        {
-          "id": "ozon-14077188097",
-          "src": "/catalog-assets/ozon-14077188097.jpg",
-          "alt": "Сумки-баулы для хранения — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-p/14077188097.jpg"
-        },
-        {
-          "id": "ozon-14077194941",
-          "src": "/catalog-assets/ozon-14077194941.jpg",
-          "alt": "Сумки-баулы для хранения — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/14077194941.jpg"
-        },
-        {
-          "id": "ozon-14604596048",
-          "src": "/catalog-assets/ozon-14604596048.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-k/14604596048.jpg"
-        },
-        {
-          "id": "ozon-14604597505",
-          "src": "/catalog-assets/ozon-14604597505.jpg",
-          "alt": "Сумки-баулы для хранения — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-1/14604597505.jpg"
-        },
-        {
-          "id": "ozon-14604598175",
-          "src": "/catalog-assets/ozon-14604598175.jpg",
-          "alt": "Сумки-баулы для хранения — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/14604598175.jpg"
-        },
-        {
-          "id": "ozon-14177500128",
-          "src": "/catalog-assets/ozon-14177500128.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/14177500128.jpg"
-        },
-        {
-          "id": "ozon-14084285996",
-          "src": "/catalog-assets/ozon-14084285996.jpg",
-          "alt": "Сумки-баулы для хранения — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-k/14084285996.jpg"
-        },
-        {
-          "id": "ozon-14084285494",
-          "src": "/catalog-assets/ozon-14084285494.jpg",
-          "alt": "Сумки-баулы для хранения — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/14084285494.jpg"
-        },
-        {
-          "id": "ozon-14604601195",
-          "src": "/catalog-assets/ozon-14604601195.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-j/14604601195.jpg"
-        },
-        {
-          "id": "ozon-14604607730",
-          "src": "/catalog-assets/ozon-14604607730.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/14604607730.jpg"
-        },
-        {
-          "id": "ozon-14855905619",
-          "src": "/catalog-assets/ozon-14855905619.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/14855905619.jpg"
-        },
-        {
-          "id": "ozon-14855822133",
-          "src": "/catalog-assets/ozon-14855822133.jpg",
-          "alt": "Сумки-баулы для хранения — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-x/14855822133.jpg"
-        },
-        {
-          "id": "ozon-14604771600",
-          "src": "/catalog-assets/ozon-14604771600.jpg",
-          "alt": "Сумки-баулы для хранения — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/14604771600.jpg"
-        },
-        {
-          "id": "ozon-14855933200",
-          "src": "/catalog-assets/ozon-14855933200.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/14855933200.jpg"
-        },
-        {
-          "id": "ozon-14856000231",
-          "src": "/catalog-assets/ozon-14856000231.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/14856000231.jpg"
-        },
-        {
-          "id": "ozon-14856073545",
-          "src": "/catalog-assets/ozon-14856073545.jpg",
-          "alt": "Сумки-баулы для хранения — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-l/14856073545.jpg"
+          "id": "studio-bag-230",
+          "src": "/catalog-assets/studio-bag-230.webp",
+          "alt": "Сумки-баулы для хранения — 237 л · 2 шт. — одна сумка",
+          "label": "Общий вид одной сумки",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/14855905619.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -3476,215 +3540,190 @@
       ],
       "reviewNotes": [
         "У NS-BAG-35-4 название содержит 2 шт., описание/артикул/комплект — 4; выбран комплект из 4 по трём согласующимся полям, требуется окончательная сверка. Габариты 35 л совпадают с 108 л; все физические габариты сумок опущены. Для 237 л заголовок содержит 210D, описание 600D — плотность ткани опущена. Для 237 л есть комплекты только по 2–5 шт.; вариант из 1 шт. не создан.",
-        "Фото 14604789715 у NS-BAG-35-3 показывает 230 л и заменено общими фото сумки 35 л; фото 14650638282 противоречит остальным фото по нагрузке (50/20 кг) и не используется."
+        "Фото 14604789715 у NS-BAG-35-3 показывает 230 л и заменено общими фото сумки 35 л; фото 14650638282 противоречит остальным фото по нагрузке (50/20 кг) и не используется.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-bag-35-1": {
           "label": "35 л · 1 шт.",
           "images": [
-            "ozon-14650610447",
-            "ozon-14650611848"
+            "studio-bag-35"
           ],
-          "hero": "ozon-14650610447",
-          "material": "ozon-14650610447",
-          "fit": "ozon-14650610447",
-          "kit": "ozon-14650610447",
+          "hero": "studio-bag-35",
+          "material": "studio-bag-35",
+          "fit": "studio-bag-35",
+          "kit": "studio-bag-35",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-35-2": {
           "label": "35 л · 2 шт.",
           "images": [
-            "ozon-14650631678",
-            "ozon-14650610447",
-            "ozon-14650611848"
+            "studio-bag-35"
           ],
-          "hero": "ozon-14650631678",
-          "material": "ozon-14650631678",
-          "fit": "ozon-14650631678",
-          "kit": "ozon-14650631678",
+          "hero": "studio-bag-35",
+          "material": "studio-bag-35",
+          "fit": "studio-bag-35",
+          "kit": "studio-bag-35",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-35-3": {
           "label": "35 л · 3 шт.",
           "images": [
-            "ozon-14650610447",
-            "ozon-14650611848"
+            "studio-bag-35"
           ],
-          "hero": "ozon-14650610447",
-          "material": "ozon-14650610447",
-          "fit": "ozon-14650610447",
-          "kit": "ozon-14650610447",
+          "hero": "studio-bag-35",
+          "material": "studio-bag-35",
+          "fit": "studio-bag-35",
+          "kit": "studio-bag-35",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-35-4": {
           "label": "35 л · 4 шт.",
           "images": [
-            "ozon-14650617389",
-            "ozon-14650610447",
-            "ozon-14650611848"
+            "studio-bag-35"
           ],
-          "hero": "ozon-14650617389",
-          "material": "ozon-14650617389",
-          "fit": "ozon-14650617389",
-          "kit": "ozon-14650617389",
+          "hero": "studio-bag-35",
+          "material": "studio-bag-35",
+          "fit": "studio-bag-35",
+          "kit": "studio-bag-35",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-35-5": {
           "label": "35 л · 5 шт.",
           "images": [
-            "ozon-14650612766",
-            "ozon-14650610447",
-            "ozon-14650611848"
+            "studio-bag-35"
           ],
-          "hero": "ozon-14650612766",
-          "material": "ozon-14650612766",
-          "fit": "ozon-14650612766",
-          "kit": "ozon-14650612766",
+          "hero": "studio-bag-35",
+          "material": "studio-bag-35",
+          "fit": "studio-bag-35",
+          "kit": "studio-bag-35",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-108-1": {
           "label": "108 л · 1 шт.",
           "images": [
-            "ozon-14177536484",
-            "ozon-14077188097",
-            "ozon-14077194941"
+            "studio-bag-108"
           ],
-          "hero": "ozon-14177536484",
-          "material": "ozon-14177536484",
-          "fit": "ozon-14177536484",
-          "kit": "ozon-14177536484",
+          "hero": "studio-bag-108",
+          "material": "studio-bag-108",
+          "fit": "studio-bag-108",
+          "kit": "studio-bag-108",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-108-2": {
           "label": "108 л · 2 шт.",
           "images": [
-            "ozon-14604596048",
-            "ozon-14604597505",
-            "ozon-14604598175"
+            "studio-bag-108"
           ],
-          "hero": "ozon-14604596048",
-          "material": "ozon-14604596048",
-          "fit": "ozon-14604596048",
-          "kit": "ozon-14604596048",
+          "hero": "studio-bag-108",
+          "material": "studio-bag-108",
+          "fit": "studio-bag-108",
+          "kit": "studio-bag-108",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-108-3": {
           "label": "108 л · 3 шт.",
           "images": [
-            "ozon-14177500128",
-            "ozon-14084285996",
-            "ozon-14084285494"
+            "studio-bag-108"
           ],
-          "hero": "ozon-14177500128",
-          "material": "ozon-14177500128",
-          "fit": "ozon-14177500128",
-          "kit": "ozon-14177500128",
+          "hero": "studio-bag-108",
+          "material": "studio-bag-108",
+          "fit": "studio-bag-108",
+          "kit": "studio-bag-108",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-108-4": {
           "label": "108 л · 4 шт.",
           "images": [
-            "ozon-14604601195",
-            "ozon-14604597505",
-            "ozon-14604598175"
+            "studio-bag-108"
           ],
-          "hero": "ozon-14604601195",
-          "material": "ozon-14604601195",
-          "fit": "ozon-14604601195",
-          "kit": "ozon-14604601195",
+          "hero": "studio-bag-108",
+          "material": "studio-bag-108",
+          "fit": "studio-bag-108",
+          "kit": "studio-bag-108",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-108-5": {
           "label": "108 л · 5 шт.",
           "images": [
-            "ozon-14604607730",
-            "ozon-14604597505",
-            "ozon-14604598175"
+            "studio-bag-108"
           ],
-          "hero": "ozon-14604607730",
-          "material": "ozon-14604607730",
-          "fit": "ozon-14604607730",
-          "kit": "ozon-14604607730",
+          "hero": "studio-bag-108",
+          "material": "studio-bag-108",
+          "fit": "studio-bag-108",
+          "kit": "studio-bag-108",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-230-2": {
           "label": "237 л · 2 шт.",
           "images": [
-            "ozon-14855905619",
-            "ozon-14855822133",
-            "ozon-14604771600"
+            "studio-bag-230"
           ],
-          "hero": "ozon-14855905619",
-          "material": "ozon-14855905619",
-          "fit": "ozon-14855905619",
-          "kit": "ozon-14855905619",
+          "hero": "studio-bag-230",
+          "material": "studio-bag-230",
+          "fit": "studio-bag-230",
+          "kit": "studio-bag-230",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-230-3": {
           "label": "237 л · 3 шт.",
           "images": [
-            "ozon-14855933200",
-            "ozon-14855822133",
-            "ozon-14604771600"
+            "studio-bag-230"
           ],
-          "hero": "ozon-14855933200",
-          "material": "ozon-14855933200",
-          "fit": "ozon-14855933200",
-          "kit": "ozon-14855933200",
+          "hero": "studio-bag-230",
+          "material": "studio-bag-230",
+          "fit": "studio-bag-230",
+          "kit": "studio-bag-230",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-230-4": {
           "label": "237 л · 4 шт.",
           "images": [
-            "ozon-14856000231",
-            "ozon-14855822133",
-            "ozon-14604771600"
+            "studio-bag-230"
           ],
-          "hero": "ozon-14856000231",
-          "material": "ozon-14856000231",
-          "fit": "ozon-14856000231",
-          "kit": "ozon-14856000231",
+          "hero": "studio-bag-230",
+          "material": "studio-bag-230",
+          "fit": "studio-bag-230",
+          "kit": "studio-bag-230",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         },
         "ns-bag-230-5": {
           "label": "237 л · 5 шт.",
           "images": [
-            "ozon-14856073545",
-            "ozon-14855822133",
-            "ozon-14604771600"
+            "studio-bag-230"
           ],
-          "hero": "ozon-14856073545",
-          "material": "ozon-14856073545",
-          "fit": "ozon-14856073545",
-          "kit": "ozon-14856073545",
+          "hero": "studio-bag-230",
+          "material": "studio-bag-230",
+          "fit": "studio-bag-230",
+          "kit": "studio-bag-230",
           "materialText": "Материал: Oxford.",
-          "materialCaption": "Сумки-баулы для хранения — внешний вид",
+          "materialCaption": "Одна сумка выбранного объёма",
           "features": []
         }
       },
@@ -4137,7 +4176,7 @@
         "sizesIntro": "Выберите исполнение\nперед обращением.",
         "sizeTableCaption": "Сумки-баулы для хранения — варианты",
         "kitTitle": "Что входит в заказ.",
-        "kitDescription": "Состав зависит от выбранного варианта.",
+        "kitDescription": "На фото — одна сумка выбранного объёма. Количество сумок в заказе зависит от выбранного комплекта.",
         "faqTitle": "Перед заказом.",
         "faqIntro": "Ответы на частые вопросы.",
         "wholesaleTitle": "Нужна партия?",
@@ -4193,6 +4232,166 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "travel",
+        "label": "Сумки и поездки"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-14650610447",
+          "src": "/catalog-assets/ozon-14650610447.jpg",
+          "alt": "Сумки-баулы для хранения — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14650610447.jpg"
+        },
+        {
+          "id": "ozon-14650611848",
+          "src": "/catalog-assets/ozon-14650611848.jpg",
+          "alt": "Сумки-баулы для хранения — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-8/14650611848.jpg"
+        },
+        {
+          "id": "ozon-14650631678",
+          "src": "/catalog-assets/ozon-14650631678.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/14650631678.jpg"
+        },
+        {
+          "id": "ozon-14650617389",
+          "src": "/catalog-assets/ozon-14650617389.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-5/14650617389.jpg"
+        },
+        {
+          "id": "ozon-14650612766",
+          "src": "/catalog-assets/ozon-14650612766.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14650612766.jpg"
+        },
+        {
+          "id": "ozon-14177536484",
+          "src": "/catalog-assets/ozon-14177536484.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-w/14177536484.jpg"
+        },
+        {
+          "id": "ozon-14077188097",
+          "src": "/catalog-assets/ozon-14077188097.jpg",
+          "alt": "Сумки-баулы для хранения — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-p/14077188097.jpg"
+        },
+        {
+          "id": "ozon-14077194941",
+          "src": "/catalog-assets/ozon-14077194941.jpg",
+          "alt": "Сумки-баулы для хранения — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/14077194941.jpg"
+        },
+        {
+          "id": "ozon-14604596048",
+          "src": "/catalog-assets/ozon-14604596048.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-k/14604596048.jpg"
+        },
+        {
+          "id": "ozon-14604597505",
+          "src": "/catalog-assets/ozon-14604597505.jpg",
+          "alt": "Сумки-баулы для хранения — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-1/14604597505.jpg"
+        },
+        {
+          "id": "ozon-14604598175",
+          "src": "/catalog-assets/ozon-14604598175.jpg",
+          "alt": "Сумки-баулы для хранения — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/14604598175.jpg"
+        },
+        {
+          "id": "ozon-14177500128",
+          "src": "/catalog-assets/ozon-14177500128.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/14177500128.jpg"
+        },
+        {
+          "id": "ozon-14084285996",
+          "src": "/catalog-assets/ozon-14084285996.jpg",
+          "alt": "Сумки-баулы для хранения — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-k/14084285996.jpg"
+        },
+        {
+          "id": "ozon-14084285494",
+          "src": "/catalog-assets/ozon-14084285494.jpg",
+          "alt": "Сумки-баулы для хранения — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/14084285494.jpg"
+        },
+        {
+          "id": "ozon-14604601195",
+          "src": "/catalog-assets/ozon-14604601195.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-j/14604601195.jpg"
+        },
+        {
+          "id": "ozon-14604607730",
+          "src": "/catalog-assets/ozon-14604607730.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/14604607730.jpg"
+        },
+        {
+          "id": "ozon-14855905619",
+          "src": "/catalog-assets/ozon-14855905619.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/14855905619.jpg"
+        },
+        {
+          "id": "ozon-14855822133",
+          "src": "/catalog-assets/ozon-14855822133.jpg",
+          "alt": "Сумки-баулы для хранения — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-x/14855822133.jpg"
+        },
+        {
+          "id": "ozon-14604771600",
+          "src": "/catalog-assets/ozon-14604771600.jpg",
+          "alt": "Сумки-баулы для хранения — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/14604771600.jpg"
+        },
+        {
+          "id": "ozon-14855933200",
+          "src": "/catalog-assets/ozon-14855933200.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/14855933200.jpg"
+        },
+        {
+          "id": "ozon-14856000231",
+          "src": "/catalog-assets/ozon-14856000231.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/14856000231.jpg"
+        },
+        {
+          "id": "ozon-14856073545",
+          "src": "/catalog-assets/ozon-14856073545.jpg",
+          "alt": "Сумки-баулы для хранения — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-l/14856073545.jpg"
+        }
       ]
     },
     {
@@ -4215,25 +4414,20 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-12620122198",
-          "src": "/catalog-assets/ozon-12620122198.jpg",
-          "alt": "Ремень для переноски грузов — общий вид",
+          "id": "studio-ns-strp-trns-1",
+          "src": "/catalog-assets/studio-ns-strp-trns-1.webp",
+          "alt": "Ремень для переноски грузов — С ручкой",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/12620122198.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/12620122198.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9068352016",
-          "src": "/catalog-assets/ozon-9068352016.jpg",
-          "alt": "Ремень для переноски грузов — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/9068352016.jpg"
-        },
-        {
-          "id": "ozon-14133235154",
-          "src": "/catalog-assets/ozon-14133235154.jpg",
-          "alt": "Ремень для переноски грузов — общий вид",
+          "id": "studio-ns-strp-trns-new",
+          "src": "/catalog-assets/studio-ns-strp-trns-new.webp",
+          "alt": "Ремень для переноски грузов — С ручкой, новое исполнение",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/14133235154.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/14133235154.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -4258,34 +4452,34 @@
         }
       ],
       "reviewNotes": [
-        "Для нового исполнения поле размеров 200×60×30 мм расходится с описанием длины 205 см и ширины 5 см. Размеры и нагрузка 50 кг до сверки не перенесены. Различия исполнения определяются по фотографиям и артикулам."
+        "Для нового исполнения поле размеров 200×60×30 мм расходится с описанием длины 205 см и ширины 5 см. Размеры и нагрузка 50 кг до сверки не перенесены. Различия исполнения определяются по фотографиям и артикулам.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-strp-trns-1": {
           "label": "С ручкой",
           "images": [
-            "ozon-12620122198",
-            "ozon-9068352016"
+            "studio-ns-strp-trns-1"
           ],
-          "hero": "ozon-12620122198",
-          "material": "ozon-12620122198",
-          "fit": "ozon-12620122198",
-          "kit": "ozon-12620122198",
+          "hero": "studio-ns-strp-trns-1",
+          "material": "studio-ns-strp-trns-1",
+          "fit": "studio-ns-strp-trns-1",
+          "kit": "studio-ns-strp-trns-1",
           "materialText": "",
-          "materialCaption": "Ремень для переноски грузов — внешний вид",
+          "materialCaption": "Ремень для переноски грузов — С ручкой",
           "features": []
         },
         "ns-strp-trns-new": {
           "label": "С ручкой, новое исполнение",
           "images": [
-            "ozon-14133235154"
+            "studio-ns-strp-trns-new"
           ],
-          "hero": "ozon-14133235154",
-          "material": "ozon-14133235154",
-          "fit": "ozon-14133235154",
-          "kit": "ozon-14133235154",
+          "hero": "studio-ns-strp-trns-new",
+          "material": "studio-ns-strp-trns-new",
+          "fit": "studio-ns-strp-trns-new",
+          "kit": "studio-ns-strp-trns-new",
           "materialText": "",
-          "materialCaption": "Ремень для переноски грузов — внешний вид",
+          "materialCaption": "Ремень для переноски грузов — С ручкой, новое исполнение",
           "features": []
         }
       },
@@ -4401,6 +4595,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "fastenings",
+        "label": "Ремни и крепления"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-12620122198",
+          "src": "/catalog-assets/ozon-12620122198.jpg",
+          "alt": "Ремень для переноски грузов — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/12620122198.jpg"
+        },
+        {
+          "id": "ozon-9068352016",
+          "src": "/catalog-assets/ozon-9068352016.jpg",
+          "alt": "Ремень для переноски грузов — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/9068352016.jpg"
+        },
+        {
+          "id": "ozon-14133235154",
+          "src": "/catalog-assets/ozon-14133235154.jpg",
+          "alt": "Ремень для переноски грузов — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/14133235154.jpg"
+        }
       ]
     },
     {
@@ -4423,46 +4644,44 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9149245642",
-          "src": "/catalog-assets/ozon-9149245642.jpg",
-          "alt": "Плечевые ремни для сумок — общий вид",
+          "id": "studio-ns-belt-bag-3",
+          "src": "/catalog-assets/studio-ns-belt-bag-3.webp",
+          "alt": "Плечевые ремни для сумок — Ширина 3 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/9149245642.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/9149245642.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9149239426",
-          "src": "/catalog-assets/ozon-9149239426.jpg",
-          "alt": "Плечевые ремни для сумок — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/9149239426.jpg"
+          "id": "studio-ns-belt-bag-4",
+          "src": "/catalog-assets/studio-ns-belt-bag-4.webp",
+          "alt": "Плечевые ремни для сумок — Ширина 4 см",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/9149239102.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9149239102",
-          "src": "/catalog-assets/ozon-9149239102.jpg",
-          "alt": "Плечевые ремни для сумок — общий вид",
+          "id": "studio-strap-metall",
+          "src": "/catalog-assets/studio-strap-metall.webp",
+          "alt": "Плечевые ремни для сумок — С наплечником и металлическими карабинами",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/9149239102.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/14133390551.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14133390551",
-          "src": "/catalog-assets/ozon-14133390551.jpg",
-          "alt": "Плечевые ремни для сумок — общий вид",
+          "id": "studio-belt-bag-metall-4",
+          "src": "/catalog-assets/studio-belt-bag-metall-4.webp",
+          "alt": "Плечевые ремни для сумок — С поворотными карабинами",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/14133390551.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/14133560819.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14133560819",
-          "src": "/catalog-assets/ozon-14133560819.jpg",
-          "alt": "Плечевые ремни для сумок — общий вид",
+          "id": "studio-vstky-strap",
+          "src": "/catalog-assets/studio-vstky-strap.webp",
+          "alt": "Плечевые ремни для сумок — Широкий, с наплечником",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/14133560819.jpg"
-        },
-        {
-          "id": "ozon-12620677388",
-          "src": "/catalog-assets/ozon-12620677388.jpg",
-          "alt": "Плечевые ремни для сумок — общий вид",
-          "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-w/12620677388.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-w/12620677388.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -4487,74 +4706,73 @@
         }
       ],
       "reviewNotes": [
-        "Материалы различаются по исполнениям; общий состав не заявляется. Для вариантов без подтверждённых габаритов размеры не показаны."
+        "Материалы различаются по исполнениям; общий состав не заявляется. Для вариантов без подтверждённых габаритов размеры не показаны.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-belt-bag-3": {
           "label": "Ширина 3 см",
           "images": [
-            "ozon-9149245642",
-            "ozon-9149239426"
+            "studio-ns-belt-bag-3"
           ],
-          "hero": "ozon-9149245642",
-          "material": "ozon-9149245642",
-          "fit": "ozon-9149245642",
-          "kit": "ozon-9149245642",
+          "hero": "studio-ns-belt-bag-3",
+          "material": "studio-ns-belt-bag-3",
+          "fit": "studio-ns-belt-bag-3",
+          "kit": "studio-ns-belt-bag-3",
           "materialText": "",
-          "materialCaption": "Плечевые ремни для сумок — внешний вид",
+          "materialCaption": "Плечевые ремни для сумок — Ширина 3 см",
           "features": []
         },
         "ns-belt-bag-4": {
           "label": "Ширина 4 см",
           "images": [
-            "ozon-9149239102",
-            "ozon-9149239426"
+            "studio-ns-belt-bag-4"
           ],
-          "hero": "ozon-9149239102",
-          "material": "ozon-9149239102",
-          "fit": "ozon-9149239102",
-          "kit": "ozon-9149239102",
+          "hero": "studio-ns-belt-bag-4",
+          "material": "studio-ns-belt-bag-4",
+          "fit": "studio-ns-belt-bag-4",
+          "kit": "studio-ns-belt-bag-4",
           "materialText": "",
-          "materialCaption": "Плечевые ремни для сумок — внешний вид",
+          "materialCaption": "Плечевые ремни для сумок — Ширина 4 см",
           "features": []
         },
         "strap-metall": {
           "label": "С наплечником и металлическими карабинами",
           "images": [
-            "ozon-14133390551"
+            "studio-strap-metall"
           ],
-          "hero": "ozon-14133390551",
-          "material": "ozon-14133390551",
-          "fit": "ozon-14133390551",
-          "kit": "ozon-14133390551",
+          "hero": "studio-strap-metall",
+          "material": "studio-strap-metall",
+          "fit": "studio-strap-metall",
+          "kit": "studio-strap-metall",
           "materialText": "",
-          "materialCaption": "Плечевые ремни для сумок — внешний вид",
+          "materialCaption": "Плечевые ремни для сумок — С наплечником и металлическими карабинами",
           "features": []
         },
         "belt-bag-metall-4": {
           "label": "С поворотными карабинами",
           "images": [
-            "ozon-14133560819"
+            "studio-belt-bag-metall-4"
           ],
-          "hero": "ozon-14133560819",
-          "material": "ozon-14133560819",
-          "fit": "ozon-14133560819",
-          "kit": "ozon-14133560819",
+          "hero": "studio-belt-bag-metall-4",
+          "material": "studio-belt-bag-metall-4",
+          "fit": "studio-belt-bag-metall-4",
+          "kit": "studio-belt-bag-metall-4",
           "materialText": "",
-          "materialCaption": "Плечевые ремни для сумок — внешний вид",
+          "materialCaption": "Плечевые ремни для сумок — С поворотными карабинами",
           "features": []
         },
         "vstky-strap": {
           "label": "Широкий, с наплечником",
           "images": [
-            "ozon-12620677388"
+            "studio-vstky-strap"
           ],
-          "hero": "ozon-12620677388",
-          "material": "ozon-12620677388",
-          "fit": "ozon-12620677388",
-          "kit": "ozon-12620677388",
+          "hero": "studio-vstky-strap",
+          "material": "studio-vstky-strap",
+          "fit": "studio-vstky-strap",
+          "kit": "studio-vstky-strap",
           "materialText": "",
-          "materialCaption": "Плечевые ремни для сумок — внешний вид",
+          "materialCaption": "Плечевые ремни для сумок — Широкий, с наплечником",
           "features": []
         }
       },
@@ -4747,6 +4965,54 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "fastenings",
+        "label": "Ремни и крепления"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-9149245642",
+          "src": "/catalog-assets/ozon-9149245642.jpg",
+          "alt": "Плечевые ремни для сумок — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/9149245642.jpg"
+        },
+        {
+          "id": "ozon-9149239426",
+          "src": "/catalog-assets/ozon-9149239426.jpg",
+          "alt": "Плечевые ремни для сумок — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/9149239426.jpg"
+        },
+        {
+          "id": "ozon-9149239102",
+          "src": "/catalog-assets/ozon-9149239102.jpg",
+          "alt": "Плечевые ремни для сумок — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/9149239102.jpg"
+        },
+        {
+          "id": "ozon-14133390551",
+          "src": "/catalog-assets/ozon-14133390551.jpg",
+          "alt": "Плечевые ремни для сумок — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/14133390551.jpg"
+        },
+        {
+          "id": "ozon-14133560819",
+          "src": "/catalog-assets/ozon-14133560819.jpg",
+          "alt": "Плечевые ремни для сумок — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-n/14133560819.jpg"
+        },
+        {
+          "id": "ozon-12620677388",
+          "src": "/catalog-assets/ozon-12620677388.jpg",
+          "alt": "Плечевые ремни для сумок — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-w/12620677388.jpg"
+        }
       ]
     },
     {
@@ -4769,18 +5035,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9068423790",
-          "src": "/catalog-assets/ozon-9068423790.jpg",
-          "alt": "Нагрудная стяжка для рюкзака — общий вид",
+          "id": "studio-ns-belt-body-1",
+          "src": "/catalog-assets/studio-ns-belt-body-1.webp",
+          "alt": "Нагрудная стяжка для рюкзака — Чёрный",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-u/9068423790.jpg"
-        },
-        {
-          "id": "ozon-9068423784",
-          "src": "/catalog-assets/ozon-9068423784.jpg",
-          "alt": "Нагрудная стяжка для рюкзака — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/9068423784.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-u/9068423790.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -4804,20 +5064,21 @@
           "tag": "Ремни и крепления"
         }
       ],
-      "reviewNotes": [],
+      "reviewNotes": [
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
+      ],
       "galleries": {
         "ns-belt-body-1": {
           "label": "Чёрный",
           "images": [
-            "ozon-9068423790",
-            "ozon-9068423784"
+            "studio-ns-belt-body-1"
           ],
-          "hero": "ozon-9068423790",
-          "material": "ozon-9068423790",
-          "fit": "ozon-9068423790",
-          "kit": "ozon-9068423790",
+          "hero": "studio-ns-belt-body-1",
+          "material": "studio-ns-belt-body-1",
+          "fit": "studio-ns-belt-body-1",
+          "kit": "studio-ns-belt-body-1",
           "materialText": "Материал: Полиэстер.",
-          "materialCaption": "Нагрудная стяжка для рюкзака — внешний вид",
+          "materialCaption": "Нагрудная стяжка для рюкзака — Чёрный",
           "features": []
         }
       },
@@ -4917,6 +5178,26 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "fastenings",
+        "label": "Ремни и крепления"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-9068423790",
+          "src": "/catalog-assets/ozon-9068423790.jpg",
+          "alt": "Нагрудная стяжка для рюкзака — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-u/9068423790.jpg"
+        },
+        {
+          "id": "ozon-9068423784",
+          "src": "/catalog-assets/ozon-9068423784.jpg",
+          "alt": "Нагрудная стяжка для рюкзака — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/9068423784.jpg"
+        }
       ]
     },
     {
@@ -4929,9 +5210,9 @@
       "visible": true,
       "seasonalNote": "",
       "badge": "Материалы",
-      "description": "Чёрная нейлоновая стропа для пошива и ремонта текстильных изделий. Шесть вариантов ширины, длина отреза — 10 м.",
-      "shortDescription": "Чёрная нейлоновая стропа для пошива и ремонта текстильных изделий. Шесть вариантов ширины, длина отреза — 10 м.",
-      "seoDescription": "Чёрная нейлоновая стропа для пошива и ремонта текстильных изделий. Шесть вариантов ширины, длина отреза — 10 м.",
+      "description": "Чёрная нейлоновая стропа для пошива и ремонта. Шесть вариантов ширины от 10 до 50 мм. Стандартный отрез — 10 м; свою длину на отрез можно заказать по заявке.",
+      "shortDescription": "Нейлоновая стропа шириной 10–50 мм. Отрезы по 10 м или своя длина по заявке.",
+      "seoDescription": "Чёрная нейлоновая стропа для пошива и ремонта. Шесть вариантов ширины от 10 до 50 мм. Стандартный отрез — 10 м; свою длину на отрез можно заказать по заявке.",
       "seoTitle": "Ременная стропа — варианты и заказ | Needle Shark",
       "material": "Нейлон",
       "coating": "",
@@ -4939,60 +5220,52 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9066576078",
-          "src": "/catalog-assets/ozon-9066576078.jpg",
-          "alt": "Ременная стропа — общий вид",
+          "id": "studio-ns-strp-10-10",
+          "src": "/catalog-assets/studio-ns-strp-10-10.webp",
+          "alt": "Ременная стропа — 10 мм × 10 м",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/9066576078.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/9066576078.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9066538874",
-          "src": "/catalog-assets/ozon-9066538874.jpg",
-          "alt": "Ременная стропа — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/9066538874.jpg"
-        },
-        {
-          "id": "ozon-9066538107",
-          "src": "/catalog-assets/ozon-9066538107.jpg",
-          "alt": "Ременная стропа — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-r/9066538107.jpg"
-        },
-        {
-          "id": "ozon-9066567914",
-          "src": "/catalog-assets/ozon-9066567914.jpg",
-          "alt": "Ременная стропа — общий вид",
+          "id": "studio-ns-strp-20-10",
+          "src": "/catalog-assets/studio-ns-strp-20-10.webp",
+          "alt": "Ременная стропа — 20 мм × 10 м",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/9066567914.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/9066567914.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9066559298",
-          "src": "/catalog-assets/ozon-9066559298.jpg",
-          "alt": "Ременная стропа — общий вид",
+          "id": "studio-webbing-25",
+          "src": "/catalog-assets/studio-webbing-25.webp",
+          "alt": "Ременная стропа — 25 мм × 10 м",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/9066559298.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/9066559298.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9066552856",
-          "src": "/catalog-assets/ozon-9066552856.jpg",
-          "alt": "Ременная стропа — общий вид",
+          "id": "studio-ns-strp-30-10",
+          "src": "/catalog-assets/studio-ns-strp-30-10.webp",
+          "alt": "Ременная стропа — 30 мм × 10 м",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-g/9066552856.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-g/9066552856.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9066546960",
-          "src": "/catalog-assets/ozon-9066546960.jpg",
-          "alt": "Ременная стропа — общий вид",
+          "id": "studio-ns-strp-40-10",
+          "src": "/catalog-assets/studio-ns-strp-40-10.webp",
+          "alt": "Ременная стропа — 40 мм × 10 м",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/9066546960.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/9066546960.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9066538705",
-          "src": "/catalog-assets/ozon-9066538705.jpg",
-          "alt": "Ременная стропа — общий вид",
+          "id": "studio-ns-strp-50-10",
+          "src": "/catalog-assets/studio-ns-strp-50-10.webp",
+          "alt": "Ременная стропа — 50 мм × 10 м",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9066538705.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9066538705.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -5002,7 +5275,7 @@
       "variantTableLabel": "Вариант",
       "variantSizeHeading": "Размер",
       "materialText": "Материал: Нейлон.",
-      "fitNote": "Сверьте размер изделия с вашей задачей перед заказом. Если нужна помощь, укажите необходимые габариты в заявке.",
+      "fitNote": "Выберите ширину под вашу фурнитуру и задачу. Стандартный отрез — 10 м. Если нужна своя длина, укажите её в метрах в комментарии к заявке.",
       "kit": [
         "Отрез стропы — 10 м"
       ],
@@ -5019,97 +5292,87 @@
         }
       ],
       "reviewNotes": [
-        "Неподтверждённые обещания прочности, буксировки и разрывной нагрузки исключены. Поле «цвет ниток: многоцветный» не использовано: название, основной цвет и описание указывают чёрный."
+        "Неподтверждённые обещания прочности, буксировки и разрывной нагрузки исключены. Поле «цвет ниток: многоцветный» не использовано: название, основной цвет и описание указывают чёрный.",
+        "Владелец 22.09.2026 подтвердил возможность заказать свою длину на отрез по заявке; цена, минимальный отрез и шаг нарезки не заданы.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-strp-10-10": {
           "label": "10 мм × 10 м",
           "images": [
-            "ozon-9066576078",
-            "ozon-9066538874",
-            "ozon-9066538107"
+            "studio-ns-strp-10-10"
           ],
-          "hero": "ozon-9066576078",
-          "material": "ozon-9066576078",
-          "fit": "ozon-9066576078",
-          "kit": "ozon-9066576078",
+          "hero": "studio-ns-strp-10-10",
+          "material": "studio-ns-strp-10-10",
+          "fit": "studio-ns-strp-10-10",
+          "kit": "studio-ns-strp-10-10",
           "materialText": "Материал: Нейлон.",
-          "materialCaption": "Ременная стропа — внешний вид",
+          "materialCaption": "Ременная стропа — 10 мм × 10 м",
           "features": []
         },
         "ns-strp-20-10": {
           "label": "20 мм × 10 м",
           "images": [
-            "ozon-9066567914",
-            "ozon-9066538874",
-            "ozon-9066538107"
+            "studio-ns-strp-20-10"
           ],
-          "hero": "ozon-9066567914",
-          "material": "ozon-9066567914",
-          "fit": "ozon-9066567914",
-          "kit": "ozon-9066567914",
+          "hero": "studio-ns-strp-20-10",
+          "material": "studio-ns-strp-20-10",
+          "fit": "studio-ns-strp-20-10",
+          "kit": "studio-ns-strp-20-10",
           "materialText": "Материал: Нейлон.",
-          "materialCaption": "Ременная стропа — внешний вид",
+          "materialCaption": "Ременная стропа — 20 мм × 10 м",
           "features": []
         },
         "ns-strp-25-10": {
           "label": "25 мм × 10 м",
           "images": [
-            "ozon-9066559298",
-            "ozon-9066538874",
-            "ozon-9066538107"
+            "studio-webbing-25"
           ],
-          "hero": "ozon-9066559298",
-          "material": "ozon-9066559298",
-          "fit": "ozon-9066559298",
-          "kit": "ozon-9066559298",
+          "hero": "studio-webbing-25",
+          "material": "studio-webbing-25",
+          "fit": "studio-webbing-25",
+          "kit": "studio-webbing-25",
           "materialText": "Материал: Нейлон.",
-          "materialCaption": "Ременная стропа — внешний вид",
+          "materialCaption": "Ременная стропа — 25 мм × 10 м",
           "features": []
         },
         "ns-strp-30-10": {
           "label": "30 мм × 10 м",
           "images": [
-            "ozon-9066552856",
-            "ozon-9066538874",
-            "ozon-9066538107"
+            "studio-ns-strp-30-10"
           ],
-          "hero": "ozon-9066552856",
-          "material": "ozon-9066552856",
-          "fit": "ozon-9066552856",
-          "kit": "ozon-9066552856",
+          "hero": "studio-ns-strp-30-10",
+          "material": "studio-ns-strp-30-10",
+          "fit": "studio-ns-strp-30-10",
+          "kit": "studio-ns-strp-30-10",
           "materialText": "Материал: Нейлон.",
-          "materialCaption": "Ременная стропа — внешний вид",
+          "materialCaption": "Ременная стропа — 30 мм × 10 м",
           "features": []
         },
         "ns-strp-40-10": {
           "label": "40 мм × 10 м",
           "images": [
-            "ozon-9066546960",
-            "ozon-9066538874",
-            "ozon-9066538107"
+            "studio-ns-strp-40-10"
           ],
-          "hero": "ozon-9066546960",
-          "material": "ozon-9066546960",
-          "fit": "ozon-9066546960",
-          "kit": "ozon-9066546960",
+          "hero": "studio-ns-strp-40-10",
+          "material": "studio-ns-strp-40-10",
+          "fit": "studio-ns-strp-40-10",
+          "kit": "studio-ns-strp-40-10",
           "materialText": "Материал: Нейлон.",
-          "materialCaption": "Ременная стропа — внешний вид",
+          "materialCaption": "Ременная стропа — 40 мм × 10 м",
           "features": []
         },
         "ns-strp-50-10": {
           "label": "50 мм × 10 м",
           "images": [
-            "ozon-9066538705",
-            "ozon-9066538874",
-            "ozon-9066538107"
+            "studio-ns-strp-50-10"
           ],
-          "hero": "ozon-9066538705",
-          "material": "ozon-9066538705",
-          "fit": "ozon-9066538705",
-          "kit": "ozon-9066538705",
+          "hero": "studio-ns-strp-50-10",
+          "material": "studio-ns-strp-50-10",
+          "fit": "studio-ns-strp-50-10",
+          "kit": "studio-ns-strp-50-10",
           "materialText": "Материал: Нейлон.",
-          "materialCaption": "Ременная стропа — внешний вид",
+          "materialCaption": "Ременная стропа — 50 мм × 10 м",
           "features": []
         }
       },
@@ -5348,7 +5611,11 @@
       "faq": [
         {
           "question": "Как выбрать подходящий вариант?",
-          "answer": "Сверьте размер изделия с вашей задачей перед заказом. Если нужна помощь, укажите необходимые габариты в заявке."
+          "answer": "Выберите ширину под вашу фурнитуру и задачу. Стандартный отрез — 10 м. Если нужна своя длина, укажите её в метрах в комментарии к заявке."
+        },
+        {
+          "question": "Можно заказать стропу своей длины на отрез?",
+          "answer": "Да. Оставьте заявку и укажите ширину стропы, нужную длину отреза в метрах и количество отрезов. Согласуем стоимость и условия заказа."
         },
         {
           "question": "Что входит в комплект?",
@@ -5361,6 +5628,69 @@
         {
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
+        }
+      ],
+      "catalogCategory": {
+        "id": "materials",
+        "label": "Материалы"
+      },
+      "optionNote": "Нужна другая длина на отрез? Укажите выбранную ширину и нужный метраж в заявке — согласуем заказ.",
+      "sourceImages": [
+        {
+          "id": "ozon-9066576078",
+          "src": "/catalog-assets/ozon-9066576078.jpg",
+          "alt": "Ременная стропа — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/9066576078.jpg"
+        },
+        {
+          "id": "ozon-9066538874",
+          "src": "/catalog-assets/ozon-9066538874.jpg",
+          "alt": "Ременная стропа — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-2/9066538874.jpg"
+        },
+        {
+          "id": "ozon-9066538107",
+          "src": "/catalog-assets/ozon-9066538107.jpg",
+          "alt": "Ременная стропа — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-r/9066538107.jpg"
+        },
+        {
+          "id": "ozon-9066567914",
+          "src": "/catalog-assets/ozon-9066567914.jpg",
+          "alt": "Ременная стропа — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/9066567914.jpg"
+        },
+        {
+          "id": "ozon-9066559298",
+          "src": "/catalog-assets/ozon-9066559298.jpg",
+          "alt": "Ременная стропа — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/9066559298.jpg"
+        },
+        {
+          "id": "ozon-9066552856",
+          "src": "/catalog-assets/ozon-9066552856.jpg",
+          "alt": "Ременная стропа — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-g/9066552856.jpg"
+        },
+        {
+          "id": "ozon-9066546960",
+          "src": "/catalog-assets/ozon-9066546960.jpg",
+          "alt": "Ременная стропа — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/9066546960.jpg"
+        },
+        {
+          "id": "ozon-9066538705",
+          "src": "/catalog-assets/ozon-9066538705.jpg",
+          "alt": "Ременная стропа — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/9066538705.jpg"
         }
       ]
     },
@@ -5384,18 +5714,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9068407207",
-          "src": "/catalog-assets/ozon-9068407207.jpg",
-          "alt": "Контактная лента — общий вид",
+          "id": "studio-ns-tape-25-1",
+          "src": "/catalog-assets/studio-ns-tape-25-1.webp",
+          "alt": "Контактная лента — 25 мм × 1 м",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/9068407207.jpg"
-        },
-        {
-          "id": "ozon-9068407260",
-          "src": "/catalog-assets/ozon-9068407260.jpg",
-          "alt": "Контактная лента — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/9068407260.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/9068407207.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -5422,20 +5746,21 @@
           "tag": "Материалы"
         }
       ],
-      "reviewNotes": [],
+      "reviewNotes": [
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
+      ],
       "galleries": {
         "ns-tape-25-1": {
           "label": "25 мм × 1 м",
           "images": [
-            "ozon-9068407207",
-            "ozon-9068407260"
+            "studio-ns-tape-25-1"
           ],
-          "hero": "ozon-9068407207",
-          "material": "ozon-9068407207",
-          "fit": "ozon-9068407207",
-          "kit": "ozon-9068407207",
+          "hero": "studio-ns-tape-25-1",
+          "material": "studio-ns-tape-25-1",
+          "fit": "studio-ns-tape-25-1",
+          "kit": "studio-ns-tape-25-1",
           "materialText": "Материал: Нейлон.",
-          "materialCaption": "Контактная лента — внешний вид",
+          "materialCaption": "Контактная лента — 25 мм × 1 м",
           "features": []
         }
       },
@@ -5544,6 +5869,26 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "materials",
+        "label": "Материалы"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-9068407207",
+          "src": "/catalog-assets/ozon-9068407207.jpg",
+          "alt": "Контактная лента — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/9068407207.jpg"
+        },
+        {
+          "id": "ozon-9068407260",
+          "src": "/catalog-assets/ozon-9068407260.jpg",
+          "alt": "Контактная лента — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/9068407260.jpg"
+        }
       ]
     },
     {
@@ -5566,39 +5911,20 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-11305936171",
-          "src": "/catalog-assets/ozon-11305936171.jpg",
-          "alt": "Чехол на еврокуб — общий вид",
+          "id": "studio-ek-001",
+          "src": "/catalog-assets/studio-ek-001.webp",
+          "alt": "Чехол на еврокуб — С лючками на липучках",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-j/11305936171.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-j/11305936171.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9121714106",
-          "src": "/catalog-assets/ozon-9121714106.jpg",
-          "alt": "Чехол на еврокуб — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/9121714106.jpg"
-        },
-        {
-          "id": "ozon-9121812074",
-          "src": "/catalog-assets/ozon-9121812074.jpg",
-          "alt": "Чехол на еврокуб — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/9121812074.jpg"
-        },
-        {
-          "id": "ozon-11436337926",
-          "src": "/catalog-assets/ozon-11436337926.jpg",
-          "alt": "Чехол на еврокуб — общий вид",
+          "id": "studio-ek-002",
+          "src": "/catalog-assets/studio-ek-002.webp",
+          "alt": "Чехол на еврокуб — С молнией",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/11436337926.jpg"
-        },
-        {
-          "id": "ozon-9121714001",
-          "src": "/catalog-assets/ozon-9121714001.jpg",
-          "alt": "Чехол на еврокуб — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-h/9121714001.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/11436337926.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -5624,37 +5950,34 @@
       ],
       "reviewNotes": [
         "Высота 116/117 см сохранена отдельно для двух исполнений из соответствующих описаний. Единый состав ткани не подтверждён для обоих вариантов.",
-        "На фото EK-001 указана высота 117 см, в описании 116 см. Требуется сверка габарита перед публикацией."
+        "На фото EK-001 указана высота 117 см, в описании 116 см. Требуется сверка габарита перед публикацией.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ek-001": {
           "label": "С лючками на липучках",
           "images": [
-            "ozon-11305936171",
-            "ozon-9121714106",
-            "ozon-9121812074"
+            "studio-ek-001"
           ],
-          "hero": "ozon-11305936171",
-          "material": "ozon-11305936171",
-          "fit": "ozon-11305936171",
-          "kit": "ozon-11305936171",
+          "hero": "studio-ek-001",
+          "material": "studio-ek-001",
+          "fit": "studio-ek-001",
+          "kit": "studio-ek-001",
           "materialText": "",
-          "materialCaption": "Чехол на еврокуб — внешний вид",
+          "materialCaption": "Чехол на еврокуб — С лючками на липучках",
           "features": []
         },
         "ek-002": {
           "label": "С молнией",
           "images": [
-            "ozon-11436337926",
-            "ozon-9121714106",
-            "ozon-9121714001"
+            "studio-ek-002"
           ],
-          "hero": "ozon-11436337926",
-          "material": "ozon-11436337926",
-          "fit": "ozon-11436337926",
-          "kit": "ozon-11436337926",
+          "hero": "studio-ek-002",
+          "material": "studio-ek-002",
+          "fit": "studio-ek-002",
+          "kit": "studio-ek-002",
           "materialText": "",
-          "materialCaption": "Чехол на еврокуб — внешний вид",
+          "materialCaption": "Чехол на еврокуб — С молнией",
           "features": []
         }
       },
@@ -5785,6 +6108,47 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "garden",
+        "label": "Для сада"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-11305936171",
+          "src": "/catalog-assets/ozon-11305936171.jpg",
+          "alt": "Чехол на еврокуб — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-j/11305936171.jpg"
+        },
+        {
+          "id": "ozon-9121714106",
+          "src": "/catalog-assets/ozon-9121714106.jpg",
+          "alt": "Чехол на еврокуб — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-e/9121714106.jpg"
+        },
+        {
+          "id": "ozon-9121812074",
+          "src": "/catalog-assets/ozon-9121812074.jpg",
+          "alt": "Чехол на еврокуб — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/9121812074.jpg"
+        },
+        {
+          "id": "ozon-11436337926",
+          "src": "/catalog-assets/ozon-11436337926.jpg",
+          "alt": "Чехол на еврокуб — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/11436337926.jpg"
+        },
+        {
+          "id": "ozon-9121714001",
+          "src": "/catalog-assets/ozon-9121714001.jpg",
+          "alt": "Чехол на еврокуб — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-h/9121714001.jpg"
+        }
       ]
     },
     {
@@ -5807,32 +6171,20 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-9067969087",
-          "src": "/catalog-assets/ozon-9067969087.jpg",
-          "alt": "Стяжные ремни — общий вид",
+          "id": "studio-ns-belt-140-2",
+          "src": "/catalog-assets/studio-ns-belt-140-2.webp",
+          "alt": "Стяжные ремни — 2 шт.",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/9067969087.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/9067969087.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-9066239898",
-          "src": "/catalog-assets/ozon-9066239898.jpg",
-          "alt": "Стяжные ремни — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-6/9066239898.jpg"
-        },
-        {
-          "id": "ozon-9066240598",
-          "src": "/catalog-assets/ozon-9066240598.jpg",
-          "alt": "Стяжные ремни — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/9066240598.jpg"
-        },
-        {
-          "id": "ozon-9066240036",
-          "src": "/catalog-assets/ozon-9066240036.jpg",
-          "alt": "Стяжные ремни — общий вид",
+          "id": "studio-ns-belt-140-4",
+          "src": "/catalog-assets/studio-ns-belt-140-4.webp",
+          "alt": "Стяжные ремни — 4 шт.",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/9066240036.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/9066240036.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -5859,37 +6211,34 @@
         }
       ],
       "reviewNotes": [
-        "Длина 140 см в названии расходится с 1,41 м у комплекта из 2 шт. Длина и разрывная нагрузка 100 кг не перенесены до уточнения; пригодность для дорожного крепления тяжёлого груза не заявляется."
+        "Длина 140 см в названии расходится с 1,41 м у комплекта из 2 шт. Длина и разрывная нагрузка 100 кг не перенесены до уточнения; пригодность для дорожного крепления тяжёлого груза не заявляется.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-belt-140-2": {
           "label": "2 шт.",
           "images": [
-            "ozon-9067969087",
-            "ozon-9066239898",
-            "ozon-9066240598"
+            "studio-ns-belt-140-2"
           ],
-          "hero": "ozon-9067969087",
-          "material": "ozon-9067969087",
-          "fit": "ozon-9067969087",
-          "kit": "ozon-9067969087",
+          "hero": "studio-ns-belt-140-2",
+          "material": "studio-ns-belt-140-2",
+          "fit": "studio-ns-belt-140-2",
+          "kit": "studio-ns-belt-140-2",
           "materialText": "Материал: Полипропилен.",
-          "materialCaption": "Стяжные ремни — внешний вид",
+          "materialCaption": "Стяжные ремни — 2 шт.",
           "features": []
         },
         "ns-belt-140-4": {
           "label": "4 шт.",
           "images": [
-            "ozon-9066240036",
-            "ozon-9066239898",
-            "ozon-9066240598"
+            "studio-ns-belt-140-4"
           ],
-          "hero": "ozon-9066240036",
-          "material": "ozon-9066240036",
-          "fit": "ozon-9066240036",
-          "kit": "ozon-9066240036",
+          "hero": "studio-ns-belt-140-4",
+          "material": "studio-ns-belt-140-4",
+          "fit": "studio-ns-belt-140-4",
+          "kit": "studio-ns-belt-140-4",
           "materialText": "Материал: Полипропилен.",
-          "materialCaption": "Стяжные ремни — внешний вид",
+          "materialCaption": "Стяжные ремни — 4 шт.",
           "features": []
         }
       },
@@ -6026,6 +6375,40 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "fastenings",
+        "label": "Ремни и крепления"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-9067969087",
+          "src": "/catalog-assets/ozon-9067969087.jpg",
+          "alt": "Стяжные ремни — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-7/9067969087.jpg"
+        },
+        {
+          "id": "ozon-9066239898",
+          "src": "/catalog-assets/ozon-9066239898.jpg",
+          "alt": "Стяжные ремни — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-6/9066239898.jpg"
+        },
+        {
+          "id": "ozon-9066240598",
+          "src": "/catalog-assets/ozon-9066240598.jpg",
+          "alt": "Стяжные ремни — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/9066240598.jpg"
+        },
+        {
+          "id": "ozon-9066240036",
+          "src": "/catalog-assets/ozon-9066240036.jpg",
+          "alt": "Стяжные ремни — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/9066240036.jpg"
+        }
       ]
     },
     {
@@ -6048,46 +6431,20 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-13771009006",
-          "src": "/catalog-assets/ozon-13771009006.jpg",
-          "alt": "Чехол для велосипеда — общий вид",
+          "id": "studio-vstky-bike",
+          "src": "/catalog-assets/studio-vstky-bike.webp",
+          "alt": "Чехол для велосипеда — Для двух велосипедов",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/13771009006.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/13771009006.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-10086452838",
-          "src": "/catalog-assets/ozon-10086452838.jpg",
-          "alt": "Чехол для велосипеда — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/10086452838.jpg"
-        },
-        {
-          "id": "ozon-14033437323",
-          "src": "/catalog-assets/ozon-14033437323.jpg",
-          "alt": "Чехол для велосипеда — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-f/14033437323.jpg"
-        },
-        {
-          "id": "ozon-13431064061",
-          "src": "/catalog-assets/ozon-13431064061.jpg",
-          "alt": "Чехол для велосипеда — общий вид",
+          "id": "studio-vstky-bike-02",
+          "src": "/catalog-assets/studio-vstky-bike-02.webp",
+          "alt": "Чехол для велосипеда — Для трёх велосипедов",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/13431064061.jpg"
-        },
-        {
-          "id": "ozon-9517595327",
-          "src": "/catalog-assets/ozon-9517595327.jpg",
-          "alt": "Чехол для велосипеда — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/9517595327.jpg"
-        },
-        {
-          "id": "ozon-14034108285",
-          "src": "/catalog-assets/ozon-14034108285.jpg",
-          "alt": "Чехол для велосипеда — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-9/14034108285.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/13431064061.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -6115,37 +6472,34 @@
         }
       ],
       "reviewNotes": [
-        "Для VSTKY-BIKE-02 выбрано 255×105×125 см из согласующихся названия и описания; отдельные колонки повторяют размер меньшей модели 200×90×100. Требуется сверка перед публикацией."
+        "Для VSTKY-BIKE-02 выбрано 255×105×125 см из согласующихся названия и описания; отдельные колонки повторяют размер меньшей модели 200×90×100. Требуется сверка перед публикацией.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "vstky-bike": {
           "label": "Для двух велосипедов",
           "images": [
-            "ozon-13771009006",
-            "ozon-10086452838",
-            "ozon-14033437323"
+            "studio-vstky-bike"
           ],
-          "hero": "ozon-13771009006",
-          "material": "ozon-13771009006",
-          "fit": "ozon-13771009006",
-          "kit": "ozon-13771009006",
+          "hero": "studio-vstky-bike",
+          "material": "studio-vstky-bike",
+          "fit": "studio-vstky-bike",
+          "kit": "studio-vstky-bike",
           "materialText": "Материал: Oxford 210D.",
-          "materialCaption": "Чехол для велосипеда — внешний вид",
+          "materialCaption": "Чехол для велосипеда — Для двух велосипедов",
           "features": []
         },
         "vstky-bike-02": {
           "label": "Для трёх велосипедов",
           "images": [
-            "ozon-13431064061",
-            "ozon-9517595327",
-            "ozon-14034108285"
+            "studio-vstky-bike-02"
           ],
-          "hero": "ozon-13431064061",
-          "material": "ozon-13431064061",
-          "fit": "ozon-13431064061",
-          "kit": "ozon-13431064061",
+          "hero": "studio-vstky-bike-02",
+          "material": "studio-vstky-bike-02",
+          "fit": "studio-vstky-bike-02",
+          "kit": "studio-vstky-bike-02",
           "materialText": "Материал: Oxford 210D.",
-          "materialCaption": "Чехол для велосипеда — внешний вид",
+          "materialCaption": "Чехол для велосипеда — Для трёх велосипедов",
           "features": []
         }
       },
@@ -6301,6 +6655,54 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "sport",
+        "label": "Спорт и отдых"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-13771009006",
+          "src": "/catalog-assets/ozon-13771009006.jpg",
+          "alt": "Чехол для велосипеда — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-y/13771009006.jpg"
+        },
+        {
+          "id": "ozon-10086452838",
+          "src": "/catalog-assets/ozon-10086452838.jpg",
+          "alt": "Чехол для велосипеда — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-i/10086452838.jpg"
+        },
+        {
+          "id": "ozon-14033437323",
+          "src": "/catalog-assets/ozon-14033437323.jpg",
+          "alt": "Чехол для велосипеда — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-f/14033437323.jpg"
+        },
+        {
+          "id": "ozon-13431064061",
+          "src": "/catalog-assets/ozon-13431064061.jpg",
+          "alt": "Чехол для велосипеда — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/13431064061.jpg"
+        },
+        {
+          "id": "ozon-9517595327",
+          "src": "/catalog-assets/ozon-9517595327.jpg",
+          "alt": "Чехол для велосипеда — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/9517595327.jpg"
+        },
+        {
+          "id": "ozon-14034108285",
+          "src": "/catalog-assets/ozon-14034108285.jpg",
+          "alt": "Чехол для велосипеда — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-9/14034108285.jpg"
+        }
       ]
     },
     {
@@ -6323,81 +6725,44 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-14840922874",
-          "src": "/catalog-assets/ozon-14840922874.jpg",
-          "alt": "Чехол для удочек — общий вид",
+          "id": "studio-ns-fishcase-100",
+          "src": "/catalog-assets/studio-ns-fishcase-100.webp",
+          "alt": "Чехол для удочек — 100 × 25 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/14840922874.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/14840922874.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14812004819",
-          "src": "/catalog-assets/ozon-14812004819.jpg",
-          "alt": "Чехол для удочек — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14812004819.jpg"
-        },
-        {
-          "id": "ozon-14840921133",
-          "src": "/catalog-assets/ozon-14840921133.jpg",
-          "alt": "Чехол для удочек — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-9/14840921133.jpg"
-        },
-        {
-          "id": "ozon-14841322596",
-          "src": "/catalog-assets/ozon-14841322596.jpg",
-          "alt": "Чехол для удочек — общий вид",
+          "id": "studio-ns-fishcase-120",
+          "src": "/catalog-assets/studio-ns-fishcase-120.webp",
+          "alt": "Чехол для удочек — 120 × 25 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/14841322596.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/14841322596.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14841312922",
-          "src": "/catalog-assets/ozon-14841312922.jpg",
-          "alt": "Чехол для удочек — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14841312922.jpg"
-        },
-        {
-          "id": "ozon-14840895487",
-          "src": "/catalog-assets/ozon-14840895487.jpg",
-          "alt": "Чехол для удочек — общий вид",
+          "id": "studio-ns-fishcase-130",
+          "src": "/catalog-assets/studio-ns-fishcase-130.webp",
+          "alt": "Чехол для удочек — 130 × 25 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-v/14840895487.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-v/14840895487.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14840903237",
-          "src": "/catalog-assets/ozon-14840903237.jpg",
-          "alt": "Чехол для удочек — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-5/14840903237.jpg"
-        },
-        {
-          "id": "ozon-14812008866",
-          "src": "/catalog-assets/ozon-14812008866.jpg",
-          "alt": "Чехол для удочек — общий вид",
+          "id": "studio-ns-fishcase-140",
+          "src": "/catalog-assets/studio-ns-fishcase-140.webp",
+          "alt": "Чехол для удочек — 140 × 25 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14812008866.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14812008866.jpg",
+          "generated": true
         },
         {
-          "id": "ozon-14812017301",
-          "src": "/catalog-assets/ozon-14812017301.jpg",
-          "alt": "Чехол для удочек — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-1/14812017301.jpg"
-        },
-        {
-          "id": "ozon-14841104138",
-          "src": "/catalog-assets/ozon-14841104138.jpg",
-          "alt": "Чехол для удочек — общий вид",
+          "id": "studio-ns-fishcase-160",
+          "src": "/catalog-assets/studio-ns-fishcase-160.webp",
+          "alt": "Чехол для удочек — 160 × 25 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14841104138.jpg"
-        },
-        {
-          "id": "ozon-14840971307",
-          "src": "/catalog-assets/ozon-14840971307.jpg",
-          "alt": "Чехол для удочек — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/14840971307.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14841104138.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -6422,82 +6787,73 @@
         }
       ],
       "reviewNotes": [
-        "Oxford 210D и PU2000 подтверждены главными фото всех пяти длин; в текстовых полях состав не заполнен. Снасти на снимках приведены как пример и в комплект не входят. Полный состав комплекта требует сверки."
+        "Oxford 210D и PU2000 подтверждены главными фото всех пяти длин; в текстовых полях состав не заполнен. Снасти на снимках приведены как пример и в комплект не входят. Полный состав комплекта требует сверки.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-fishcase-100": {
           "label": "100 × 25 см",
           "images": [
-            "ozon-14840922874",
-            "ozon-14812004819",
-            "ozon-14840921133"
+            "studio-ns-fishcase-100"
           ],
-          "hero": "ozon-14840922874",
-          "material": "ozon-14840922874",
-          "fit": "ozon-14840922874",
-          "kit": "ozon-14840922874",
+          "hero": "studio-ns-fishcase-100",
+          "material": "studio-ns-fishcase-100",
+          "fit": "studio-ns-fishcase-100",
+          "kit": "studio-ns-fishcase-100",
           "materialText": "Материал: Oxford 210D. Покрытие: PU 2000.",
-          "materialCaption": "Чехол для удочек — внешний вид",
+          "materialCaption": "Чехол для удочек — 100 × 25 см",
           "features": []
         },
         "ns-fishcase-120": {
           "label": "120 × 25 см",
           "images": [
-            "ozon-14841322596",
-            "ozon-14812004819",
-            "ozon-14841312922"
+            "studio-ns-fishcase-120"
           ],
-          "hero": "ozon-14841322596",
-          "material": "ozon-14841322596",
-          "fit": "ozon-14841322596",
-          "kit": "ozon-14841322596",
+          "hero": "studio-ns-fishcase-120",
+          "material": "studio-ns-fishcase-120",
+          "fit": "studio-ns-fishcase-120",
+          "kit": "studio-ns-fishcase-120",
           "materialText": "Материал: Oxford 210D. Покрытие: PU 2000.",
-          "materialCaption": "Чехол для удочек — внешний вид",
+          "materialCaption": "Чехол для удочек — 120 × 25 см",
           "features": []
         },
         "ns-fishcase-130": {
           "label": "130 × 25 см",
           "images": [
-            "ozon-14840895487",
-            "ozon-14812004819",
-            "ozon-14840903237"
+            "studio-ns-fishcase-130"
           ],
-          "hero": "ozon-14840895487",
-          "material": "ozon-14840895487",
-          "fit": "ozon-14840895487",
-          "kit": "ozon-14840895487",
+          "hero": "studio-ns-fishcase-130",
+          "material": "studio-ns-fishcase-130",
+          "fit": "studio-ns-fishcase-130",
+          "kit": "studio-ns-fishcase-130",
           "materialText": "Материал: Oxford 210D. Покрытие: PU 2000.",
-          "materialCaption": "Чехол для удочек — внешний вид",
+          "materialCaption": "Чехол для удочек — 130 × 25 см",
           "features": []
         },
         "ns-fishcase-140": {
           "label": "140 × 25 см",
           "images": [
-            "ozon-14812008866",
-            "ozon-14812004819",
-            "ozon-14812017301"
+            "studio-ns-fishcase-140"
           ],
-          "hero": "ozon-14812008866",
-          "material": "ozon-14812008866",
-          "fit": "ozon-14812008866",
-          "kit": "ozon-14812008866",
+          "hero": "studio-ns-fishcase-140",
+          "material": "studio-ns-fishcase-140",
+          "fit": "studio-ns-fishcase-140",
+          "kit": "studio-ns-fishcase-140",
           "materialText": "Материал: Oxford 210D. Покрытие: PU 2000.",
-          "materialCaption": "Чехол для удочек — внешний вид",
+          "materialCaption": "Чехол для удочек — 140 × 25 см",
           "features": []
         },
         "ns-fishcase-160": {
           "label": "160 × 25 см",
           "images": [
-            "ozon-14841104138",
-            "ozon-14812004819",
-            "ozon-14840971307"
+            "studio-ns-fishcase-160"
           ],
-          "hero": "ozon-14841104138",
-          "material": "ozon-14841104138",
-          "fit": "ozon-14841104138",
-          "kit": "ozon-14841104138",
+          "hero": "studio-ns-fishcase-160",
+          "material": "studio-ns-fishcase-160",
+          "fit": "studio-ns-fishcase-160",
+          "kit": "studio-ns-fishcase-160",
           "materialText": "Материал: Oxford 210D. Покрытие: PU 2000.",
-          "materialCaption": "Чехол для удочек — внешний вид",
+          "materialCaption": "Чехол для удочек — 160 × 25 см",
           "features": []
         }
       },
@@ -6731,6 +7087,89 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "sport",
+        "label": "Спорт и отдых"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-14840922874",
+          "src": "/catalog-assets/ozon-14840922874.jpg",
+          "alt": "Чехол для удочек — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-m/14840922874.jpg"
+        },
+        {
+          "id": "ozon-14812004819",
+          "src": "/catalog-assets/ozon-14812004819.jpg",
+          "alt": "Чехол для удочек — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14812004819.jpg"
+        },
+        {
+          "id": "ozon-14840921133",
+          "src": "/catalog-assets/ozon-14840921133.jpg",
+          "alt": "Чехол для удочек — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-9/14840921133.jpg"
+        },
+        {
+          "id": "ozon-14841322596",
+          "src": "/catalog-assets/ozon-14841322596.jpg",
+          "alt": "Чехол для удочек — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-0/14841322596.jpg"
+        },
+        {
+          "id": "ozon-14841312922",
+          "src": "/catalog-assets/ozon-14841312922.jpg",
+          "alt": "Чехол для удочек — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-a/14841312922.jpg"
+        },
+        {
+          "id": "ozon-14840895487",
+          "src": "/catalog-assets/ozon-14840895487.jpg",
+          "alt": "Чехол для удочек — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-v/14840895487.jpg"
+        },
+        {
+          "id": "ozon-14840903237",
+          "src": "/catalog-assets/ozon-14840903237.jpg",
+          "alt": "Чехол для удочек — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-5/14840903237.jpg"
+        },
+        {
+          "id": "ozon-14812008866",
+          "src": "/catalog-assets/ozon-14812008866.jpg",
+          "alt": "Чехол для удочек — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14812008866.jpg"
+        },
+        {
+          "id": "ozon-14812017301",
+          "src": "/catalog-assets/ozon-14812017301.jpg",
+          "alt": "Чехол для удочек — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-1/14812017301.jpg"
+        },
+        {
+          "id": "ozon-14841104138",
+          "src": "/catalog-assets/ozon-14841104138.jpg",
+          "alt": "Чехол для удочек — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14841104138.jpg"
+        },
+        {
+          "id": "ozon-14840971307",
+          "src": "/catalog-assets/ozon-14840971307.jpg",
+          "alt": "Чехол для удочек — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-z/14840971307.jpg"
+        }
       ]
     },
     {
@@ -6753,25 +7192,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-14682885925",
-          "src": "/catalog-assets/ozon-14682885925.jpg",
-          "alt": "Органайзер в багажник — общий вид",
+          "id": "studio-ns-car-org",
+          "src": "/catalog-assets/studio-ns-car-org.webp",
+          "alt": "Органайзер в багажник — Чёрный",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/14682885925.jpg"
-        },
-        {
-          "id": "ozon-14859624230",
-          "src": "/catalog-assets/ozon-14859624230.jpg",
-          "alt": "Органайзер в багажник — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14859624230.jpg"
-        },
-        {
-          "id": "ozon-14859623019",
-          "src": "/catalog-assets/ozon-14859623019.jpg",
-          "alt": "Органайзер в багажник — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/14859623019.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/14682885925.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -6796,22 +7222,21 @@
         }
       ],
       "reviewNotes": [
-        "Аннотация и характеристики в таблице пустые. Материал Oxford 600D, 10 карманов и размер 110×53 см прочитаны с фото 14682885925 и 14859624230. Полный состав комплекта требует сверки."
+        "Аннотация и характеристики в таблице пустые. Материал Oxford 600D, 10 карманов и размер 110×53 см прочитаны с фото 14682885925 и 14859624230. Полный состав комплекта требует сверки.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-car-org": {
           "label": "Чёрный",
           "images": [
-            "ozon-14682885925",
-            "ozon-14859624230",
-            "ozon-14859623019"
+            "studio-ns-car-org"
           ],
-          "hero": "ozon-14682885925",
-          "material": "ozon-14682885925",
-          "fit": "ozon-14682885925",
-          "kit": "ozon-14682885925",
+          "hero": "studio-ns-car-org",
+          "material": "studio-ns-car-org",
+          "fit": "studio-ns-car-org",
+          "kit": "studio-ns-car-org",
           "materialText": "Материал: Oxford 600D.",
-          "materialCaption": "Органайзер в багажник — внешний вид",
+          "materialCaption": "Органайзер в багажник — Чёрный",
           "features": []
         }
       },
@@ -6913,6 +7338,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "auto",
+        "label": "Для автомобиля"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-14682885925",
+          "src": "/catalog-assets/ozon-14682885925.jpg",
+          "alt": "Органайзер в багажник — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-d/14682885925.jpg"
+        },
+        {
+          "id": "ozon-14859624230",
+          "src": "/catalog-assets/ozon-14859624230.jpg",
+          "alt": "Органайзер в багажник — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-q/14859624230.jpg"
+        },
+        {
+          "id": "ozon-14859623019",
+          "src": "/catalog-assets/ozon-14859623019.jpg",
+          "alt": "Органайзер в багажник — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-3/14859623019.jpg"
+        }
       ]
     },
     {
@@ -6935,25 +7387,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-14808860716",
-          "src": "/catalog-assets/ozon-14808860716.jpg",
-          "alt": "Многоразовые бахилы — общий вид",
+          "id": "studio-ns-shoe-33-45",
+          "src": "/catalog-assets/studio-ns-shoe-33-45.webp",
+          "alt": "Многоразовые бахилы — Размер обуви 33–45",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/14808860716.jpg"
-        },
-        {
-          "id": "ozon-14808862104",
-          "src": "/catalog-assets/ozon-14808862104.jpg",
-          "alt": "Многоразовые бахилы — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/14808862104.jpg"
-        },
-        {
-          "id": "ozon-14808865547",
-          "src": "/catalog-assets/ozon-14808865547.jpg",
-          "alt": "Многоразовые бахилы — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14808865547.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/14808860716.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -6979,21 +7418,21 @@
           "tag": "Для дома и поездок"
         }
       ],
-      "reviewNotes": [],
+      "reviewNotes": [
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
+      ],
       "galleries": {
         "ns-shoe-33-45": {
           "label": "Размер обуви 33–45",
           "images": [
-            "ozon-14808860716",
-            "ozon-14808862104",
-            "ozon-14808865547"
+            "studio-ns-shoe-33-45"
           ],
-          "hero": "ozon-14808860716",
-          "material": "ozon-14808860716",
-          "fit": "ozon-14808860716",
-          "kit": "ozon-14808860716",
+          "hero": "studio-ns-shoe-33-45",
+          "material": "studio-ns-shoe-33-45",
+          "fit": "studio-ns-shoe-33-45",
+          "kit": "studio-ns-shoe-33-45",
           "materialText": "Материал: Oxford 210D.",
-          "materialCaption": "Многоразовые бахилы — внешний вид",
+          "materialCaption": "Многоразовые бахилы — Размер обуви 33–45",
           "features": []
         }
       },
@@ -7104,6 +7543,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "home",
+        "label": "Для дома и животных"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-14808860716",
+          "src": "/catalog-assets/ozon-14808860716.jpg",
+          "alt": "Многоразовые бахилы — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/14808860716.jpg"
+        },
+        {
+          "id": "ozon-14808862104",
+          "src": "/catalog-assets/ozon-14808862104.jpg",
+          "alt": "Многоразовые бахилы — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-o/14808862104.jpg"
+        },
+        {
+          "id": "ozon-14808865547",
+          "src": "/catalog-assets/ozon-14808865547.jpg",
+          "alt": "Многоразовые бахилы — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-b/14808865547.jpg"
+        }
       ]
     },
     {
@@ -7126,25 +7592,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-11972295497",
-          "src": "/catalog-assets/ozon-11972295497.jpg",
-          "alt": "Чехол для качелей-кокона — общий вид",
+          "id": "studio-ns-swing-1",
+          "src": "/catalog-assets/studio-ns-swing-1.webp",
+          "alt": "Чехол для качелей-кокона — 190 × 115 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/11972295497.jpg"
-        },
-        {
-          "id": "ozon-11818909280",
-          "src": "/catalog-assets/ozon-11818909280.jpg",
-          "alt": "Чехол для качелей-кокона — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-k/11818909280.jpg"
-        },
-        {
-          "id": "ozon-9906405308",
-          "src": "/catalog-assets/ozon-9906405308.jpg",
-          "alt": "Чехол для качелей-кокона — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-8/9906405308.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/11972295497.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -7170,21 +7623,21 @@
           "tag": "Для сада"
         }
       ],
-      "reviewNotes": [],
+      "reviewNotes": [
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
+      ],
       "galleries": {
         "ns-swing-1": {
           "label": "190 × 115 см",
           "images": [
-            "ozon-11972295497",
-            "ozon-11818909280",
-            "ozon-9906405308"
+            "studio-ns-swing-1"
           ],
-          "hero": "ozon-11972295497",
-          "material": "ozon-11972295497",
-          "fit": "ozon-11972295497",
-          "kit": "ozon-11972295497",
+          "hero": "studio-ns-swing-1",
+          "material": "studio-ns-swing-1",
+          "fit": "studio-ns-swing-1",
+          "kit": "studio-ns-swing-1",
           "materialText": "Материал: Oxford 210D. Покрытие: PU 2000.",
-          "materialCaption": "Чехол для качелей-кокона — внешний вид",
+          "materialCaption": "Чехол для качелей-кокона — 190 × 115 см",
           "features": []
         }
       },
@@ -7294,6 +7747,33 @@
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
         }
+      ],
+      "catalogCategory": {
+        "id": "garden",
+        "label": "Для сада"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-11972295497",
+          "src": "/catalog-assets/ozon-11972295497.jpg",
+          "alt": "Чехол для качелей-кокона — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-t/11972295497.jpg"
+        },
+        {
+          "id": "ozon-11818909280",
+          "src": "/catalog-assets/ozon-11818909280.jpg",
+          "alt": "Чехол для качелей-кокона — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-k/11818909280.jpg"
+        },
+        {
+          "id": "ozon-9906405308",
+          "src": "/catalog-assets/ozon-9906405308.jpg",
+          "alt": "Чехол для качелей-кокона — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-8/9906405308.jpg"
+        }
       ]
     },
     {
@@ -7316,25 +7796,12 @@
       "sizes": [],
       "images": [
         {
-          "id": "ozon-8674467780",
-          "src": "/catalog-assets/ozon-8674467780.jpg",
-          "alt": "Чехол для сноуборда — общий вид",
+          "id": "studio-ns-snowboard-bag-165",
+          "src": "/catalog-assets/studio-ns-snowboard-bag-165.webp",
+          "alt": "Чехол для сноуборда — 165 см",
           "label": "Общий вид",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-c/8674467780.jpg"
-        },
-        {
-          "id": "ozon-8674467753",
-          "src": "/catalog-assets/ozon-8674467753.jpg",
-          "alt": "Чехол для сноуборда — фото 2",
-          "label": "Фото 2",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-l/8674467753.jpg"
-        },
-        {
-          "id": "ozon-8674467844",
-          "src": "/catalog-assets/ozon-8674467844.jpg",
-          "alt": "Чехол для сноуборда — фото 3",
-          "label": "Фото 3",
-          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/8674467844.jpg"
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-c/8674467780.jpg",
+          "generated": true
         }
       ],
       "marketplaces": [],
@@ -7359,22 +7826,21 @@
         }
       ],
       "reviewNotes": [
-        "В таблице PU1000, на фото PU2000; текстовое значение покрытия исключено. На фото также встречаются длины 165/167 см; подбор — по длине доски до 165 см."
+        "В таблице PU1000, на фото PU2000; текстовое значение покрытия исключено. На фото также встречаются длины 165/167 см; подбор — по длине доски до 165 см.",
+        "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
       "galleries": {
         "ns-snowboard-bag-165": {
           "label": "165 см",
           "images": [
-            "ozon-8674467780",
-            "ozon-8674467753",
-            "ozon-8674467844"
+            "studio-ns-snowboard-bag-165"
           ],
-          "hero": "ozon-8674467780",
-          "material": "ozon-8674467780",
-          "fit": "ozon-8674467780",
-          "kit": "ozon-8674467780",
+          "hero": "studio-ns-snowboard-bag-165",
+          "material": "studio-ns-snowboard-bag-165",
+          "fit": "studio-ns-snowboard-bag-165",
+          "kit": "studio-ns-snowboard-bag-165",
           "materialText": "Материал: Oxford 600D.",
-          "materialCaption": "Чехол для сноуборда — внешний вид",
+          "materialCaption": "Чехол для сноуборда — 165 см",
           "features": []
         }
       },
@@ -7468,6 +7934,33 @@
         {
           "question": "Как согласовать доставку?",
           "answer": "Доставку при прямом заказе согласуем индивидуально. Оставьте контакт и укажите город, чтобы обсудить условия."
+        }
+      ],
+      "catalogCategory": {
+        "id": "sport",
+        "label": "Спорт и отдых"
+      },
+      "sourceImages": [
+        {
+          "id": "ozon-8674467780",
+          "src": "/catalog-assets/ozon-8674467780.jpg",
+          "alt": "Чехол для сноуборда — общий вид",
+          "label": "Общий вид",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-c/8674467780.jpg"
+        },
+        {
+          "id": "ozon-8674467753",
+          "src": "/catalog-assets/ozon-8674467753.jpg",
+          "alt": "Чехол для сноуборда — фото 2",
+          "label": "Фото 2",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-l/8674467753.jpg"
+        },
+        {
+          "id": "ozon-8674467844",
+          "src": "/catalog-assets/ozon-8674467844.jpg",
+          "alt": "Чехол для сноуборда — фото 3",
+          "label": "Фото 3",
+          "sourceUrl": "https://cdn1.ozone.ru/s3/multimedia-1-4/8674467844.jpg"
         }
       ]
     }

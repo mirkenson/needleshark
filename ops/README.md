@@ -39,7 +39,7 @@ Publication source uses site_utils.ORIGIN for canonical, sitemap, robots and blo
 
 Shared values: `dist/theme.css`; all typography: `dist/typography.css`; shared catalogue/blog navigation: `dist/navigation.css` + `dist/menu.js`. Instructions for future edits: `docs/TYPOGRAPHY.md` and `docs/SEO.md`. Existing page classes and design remain intact.
 
-After adding/replacing an image, first run `python3 ops/optimize-images.py` with a local Python environment containing Pillow. It reads homepage originals and product images from `catalog/products.json`, creates responsive WebP derivatives and records dimensions/hashes in `ops/image-manifest.json`. The static site and server do not need Pillow. Originals are retained. For unchanged images do not recompress before each release.
+After adding/replacing an image, first run `python3 ops/optimize-images.py` with a local Python environment containing Pillow. It reads homepage originals and product images from `catalog/products.json`, creates responsive WebP derivatives and records dimensions/hashes in `ops/image-manifest.json`. Embedded XMP is preserved in derivatives, including the IPTC DigitalSourceType marker on generated catalog images. Native generation PNGs remain untouched locally; optimized studio masters live in `dist/catalog-assets/studio-*.webp`. The static site and server do not need Pillow. Originals are retained. For unchanged images do not recompress before each release.
 
 Prepare and check a static change:
 

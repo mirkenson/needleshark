@@ -1,4 +1,41 @@
 'use strict';
+// Keep every product in the server-rendered page; filtering is an enhancement.
+const catalogTools = document.querySelector('#catalog-tools');
+if (catalogTools) {
+  const search = document.querySelector('#catalog-search');
+  const cards = [...document.querySelectorAll('.catalog-card')];
+  const categories = [...document.querySelectorAll('[data-category-filter]')];
+  const reset = document.querySelector('#catalog-reset');
+  const normalize = value => value.normalize('NFKC').toLocaleLowerCase('ru-RU').replaceAll('ё', 'е');
+  const index = cards.map(card => normalize(card.dataset.search || ''));
+  let category = '';
+  const filter = () => {
+    const terms = normalize(search.value).trim().split(/\s+/).filter(Boolean);
+    let count = 0;
+    cards.forEach((card, i) => {
+      const matches = (!category || card.dataset.category === category) && terms.every(term => index[i].includes(term));
+      card.hidden = !matches;
+      if (matches) count += 1;
+    });
+    categories.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.categoryFilter === category)));
+    document.querySelector('#catalog-results').textContent = terms.length || category ? `Найдено: ${count} из ${cards.length}` : `Все изделия: ${cards.length}`;
+    document.querySelector('#catalog-empty').hidden = count !== 0;
+    reset.hidden = !category && !search.value;
+  };
+  categories.forEach(button => button.addEventListener('click', () => {
+    category = button.dataset.categoryFilter;
+    filter();
+  }));
+  search.addEventListener('input', filter);
+  reset.addEventListener('click', () => {
+    category = '';
+    search.value = '';
+    filter();
+    search.focus();
+  });
+  catalogTools.hidden = false;
+  filter();
+}
 // Catalogue UI and submissions to the existing durable lead endpoint.
 const galleriesElement = document.querySelector('#product-galleries');
 const galleries = JSON.parse(galleriesElement?.textContent || '{}');

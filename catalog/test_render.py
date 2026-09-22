@@ -12,6 +12,28 @@ PRODUCT = json.loads((render.ROOT / 'catalog/products.json').read_text())['produ
 
 
 class CatalogueTests(unittest.TestCase):
+    def test_catalogue_keeps_all_links_without_js_and_escapes_search_data(self):
+        product = copy.deepcopy(PRODUCT)
+        product.update(name='Чехол "особый" <пример>', catalogCategory={'id': 'tech', 'label': 'Техника'})
+        html = render.catalogue([product])
+        self.assertIn('id="catalog-tools" hidden', html)
+        self.assertIn('data-search="', html)
+        self.assertIn('&quot;особый&quot; &lt;пример&gt;', html)
+        self.assertIn(f'/catalog/{product["slug"]}/', html)
+        self.assertNotIn('<form', html)
+        self.assertIn('aria-live="polite"', html)
+
+    def test_colour_swatches_keep_native_radios_names_and_validate_css_values(self):
+        products = json.loads((render.ROOT / 'catalog/products.json').read_text())['products']
+        product = copy.deepcopy(next(p for p in products if p['slug'] == 'chehol-dlya-kolyaski'))
+        html = render.variant_picker(product)
+        self.assertEqual(html.count('class="color-swatch"'), 6)
+        self.assertEqual(html.count('type="radio"'), 6)
+        self.assertIn('aria-label="Коричневый"', html)
+        product['optionGroups'][0]['values'][0]['color'] = 'red; background:url(example)'
+        with self.assertRaises(ValueError):
+            render.variant_picker(product)
+
     def test_each_configuration_contains_only_its_general_view_and_details(self):
         products = json.loads((render.ROOT / 'catalog/products.json').read_text())['products']
         for product in products:
