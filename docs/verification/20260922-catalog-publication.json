@@ -1,0 +1,191 @@
+{
+  "date": "2026-09-22",
+  "published": true,
+  "site_url": "https://needle-shark.ru/catalog/",
+  "branch": "codex/catalog-publication",
+  "code_commit": "fee19198d352509d9eed44914b205ac07295e2cf",
+  "content_commit": "6f535945f1b438abaad8d71c159845be83234d25",
+  "pushed_before_install": true,
+  "release": {
+    "static_current": "20260922T181556Z-89524",
+    "static_previous": "20260922T070621Z-52722",
+    "backend_current": "20260922T094139Z-1e940964f438",
+    "backend_changed": false,
+    "nginx_or_systemd_changed": false,
+    "services_active": [
+      "nginx",
+      "needle-leads",
+      "postgresql@16-main",
+      "needle-monitor.timer",
+      "needle-cleanup.timer"
+    ],
+    "method": "ops/deploy.sh --from-github; immutable public commit, verified HTTPS, 4 download workers, atomic current switch",
+    "files_verified_before_switch": 1259,
+    "downloaded": 1051,
+    "reused_matching_current": 208,
+    "aborted_transfers": [
+      "20260922T165731Z-86533",
+      "20260922T174303Z-88048"
+    ],
+    "aborted_transfer_impact": "Both stopped before switching current; incomplete directories retained. Local SCP and codeload archive were too slow; raw GitHub files completed successfully."
+  },
+  "catalog": {
+    "products": 26,
+    "new_products": 23,
+    "new_variants": 62,
+    "html_pages": 33,
+    "sitemap_urls": 33,
+    "new_studio_masters": 51,
+    "new_responsive_images": 255,
+    "final_prompts": "docs/assets/catalog-studio-image-prompts-20260922.json",
+    "published_features": [
+      "search",
+      "8 categories",
+      "6 stroller color swatches",
+      "custom webbing length note",
+      "aligned subgrid rows",
+      "readable search text"
+    ]
+  },
+  "checks": {
+    "catalog_python_tests": 17,
+    "ops_python_tests": 31,
+    "blog_python_tests": 13,
+    "business_python_tests": 2,
+    "server_python_tests": 26,
+    "analytics_node_tests": 8,
+    "total_tests": 97,
+    "static_pages": 33,
+    "repeat_generation": "35 HTML/sitemap/robots files byte-identical",
+    "local_browser_page_width_combinations": 135,
+    "public_browser_page_width_combinations": 135,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "public_overflow_result": "No persistent overflow. Initial contact-tape sample during loading flagged overflow; after load, all 5 widths passed, without a code change.",
+    "public_broken_loaded_images": 0,
+    "public_console_errors_warnings": [],
+    "public_hash_matches": 48,
+    "public_resource_head_checks": 270,
+    "public_https_failures": [],
+    "tls": "Verified with system /etc/ssl/cert.pem; first default Python CA store lacked issuer certificates, no TLS verification bypass used.",
+    "redirects_with_preserved_query": 5,
+    "catalog_search_color": "rgb(27, 31, 33)",
+    "catalog_desktop_first_row_cta_and_marketplace_y_equal": true,
+    "catalog_cta_rows_aligned_all_five_widths": true
+  },
+  "analytics": {
+    "counter": 112428810,
+    "one_counter_and_handler_each_public_page": 33,
+    "real_sdk_pageview_unique_paths": 33,
+    "real_sdk_reach_goals": [
+      "ui_click",
+      "request_open",
+      "form_start",
+      "form_submit_attempt",
+      "lead_submitted"
+    ],
+    "lead_submitted_count_for_test": 1,
+    "lead_submitted_utc": "2026-09-22T18:23:53.935Z",
+    "goal_definitions_verified": {
+      "blog_cta_click": 611918849,
+      "outbound_click": 611919368,
+      "contact_click": 611919492,
+      "request_open": 611920007,
+      "form_start": 611920074,
+      "form_submit_attempt": 611920219,
+      "lead_submitted": 611920414,
+      "ui_click": 611921224
+    },
+    "cabinet_domains": [
+      "needle-shark.ru",
+      "needleshark.ru"
+    ],
+    "domain_restriction_and_subdomains": true,
+    "new_counters_or_goals": false,
+    "qa_campaign": "catalog_publish_20260922",
+    "mock_sdk_used": false,
+    "report_processing": "Not independently confirmed for this QA session; SDK registration is not proof of report attribution.",
+    "privacy": "Search text and form contents excluded from custom events; forms hidden from Webvisor. Incoming QA UTM retained until submission; UTM not persisted in CRM. Internal raw links untagged, Ozon has one vendor_org_211216 campaign."
+  },
+  "synthetic_request": {
+    "order_id": 16,
+    "product_slug": "sumki-bauly",
+    "variant": "NS-BAG-108-4",
+    "packs": 2,
+    "units_per_pack": 4,
+    "quantity_saved": 8,
+    "source_path": "/catalog/sumki-bauly/",
+    "inquiry_type": "direct",
+    "success_message": true,
+    "email_jobs": [
+      {
+        "status": "sent",
+        "attempts": 1,
+        "error": null
+      }
+    ],
+    "loop_jobs": [
+      {
+        "status": "sent",
+        "attempts": 1,
+        "error": null
+      }
+    ],
+    "inbox_or_loop_ui_receipt": "Not independently confirmed; queues confirm acceptance by configured delivery services.",
+    "attachments": "Not applicable: catalog form has no attachment field; backend unchanged.",
+    "google_delivery": "Disabled and not enabled for testing."
+  },
+  "indexing": {
+    "yandex_reindex": {
+      "submitted": 27,
+      "status": "queued",
+      "cabinet_time": "2026-09-22 21:29 Europe/Moscow",
+      "remaining_daily_quota": 123
+    },
+    "yandex_metrika_autocrawl": {
+      "counter": 112428810,
+      "linked": true,
+      "enabled": true,
+      "old_counter_history": "106683266 preserved"
+    },
+    "google_sitemap": {
+      "url": "https://needle-shark.ru/sitemap.xml",
+      "submitted": true,
+      "status": "Success",
+      "date": "2026-09-22"
+    },
+    "google_catalog_live_check": "URL available to Google; page can be indexed",
+    "google_catalog_manual_request": "Temporary submission error. Manual retry deferred at owner request to tomorrow.",
+    "actual_new_product_index_inclusion": "Not confirmed; stroller URL initially unknown to Google.",
+    "google_stroller_live_check": {
+      "indexable": true,
+      "initial_index_status": "URL unknown to Google",
+      "rich_result_issue": "Requires one of offers, review or aggregateRating; no unverified price or review added.",
+      "manual_request": "Acceptance not confirmed; deferred at owner request."
+    },
+    "yandex_sitemap_recheck": "Recheck action attempted for sitemap.xml; acceptance not confirmed before owner requested shutdown. Historical dashboard still showed 10 URLs from 18 September; current public sitemap contains 33."
+  },
+  "backlog": {
+    "task": "Выйти с товарами в товарный фид",
+    "path": "docs/BACKLOG.md",
+    "research": "docs/product-feeds-20260922.md",
+    "feeds_created_or_submitted": false,
+    "ads_started": false
+  },
+  "limitations": [
+    "Search engines control crawl/index timing; accepted submission does not guarantee inclusion or rankings.",
+    "No verified prices/availability/checkout yet; product feeds remain a backlog task.",
+    "Browser checks cover listed states; do not guarantee all future content has zero layout shift."
+  ],
+  "remaining_tomorrow": [
+    "Retry Google manual index requests for catalog and selected new products; sitemap already accepted.",
+    "Verify Yandex sitemap refresh to 33 URLs; 27 individual URLs already queued.",
+    "Check actual index inclusion and attribution of QA goals in Metrika reports.",
+    "Continue product-feed backlog only after confirmed prices, availability and checkout decisions."
+  ]
+}

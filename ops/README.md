@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## Catalogue publication — 22 September 2026
+
+Published all 26 products / 33 HTML pages from pushed commit `fee19198d352509d9eed44914b205ac07295e2cf` through `ops/deploy.sh --from-github`. Static current: `20260922T181556Z-89524`; previous: `20260922T070621Z-52722`. All 1259 release files verified before atomic switch; 48 public files matched by SHA-256, 270 resources returned 200, services/timers active. Backend `20260922T094139Z-1e940964f438` and configuration unchanged. Two slow, incomplete transfer directories remain from aborted attempts before current switched. See [publication report](../docs/verification/20260922-catalog-publication.json). Earlier draft sections below are historical.
+
 ## Catalogue drafts — 22 September 2026
 
 `catalog/render.py --preview` writes the complete local review to `outputs/catalog-preview`; never deploy that directory. Normal rendering and `prepare-public.py` include only catalog entries with `status: published` or the pre-existing default status. New original/responsive images stay in the source tree for reproducible rendering. `optimize-images.py` reuses unchanged manifest entries when original SHA-256 and generated file sizes match; do not rerun full recompression unnecessarily. No VPS release/configuration was changed for this draft preparation. Audit: `docs/catalog-ozon-20260922.md`.
