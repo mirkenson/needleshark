@@ -1,0 +1,76 @@
+{
+  "date": "2026-09-22",
+  "scope": "Documentation only: complete database dictionary and explanation of IDs. No application, schema, data, sequence or VPS release changes.",
+  "site_url": "https://needle-shark.ru/",
+  "repository_url": "https://github.com/mirkenson/needleshark",
+  "branch": "codex/database-documentation",
+  "reviewed_source_commit": "f82d43ea2bee2cef5229fab2453baebac7f2eb58",
+  "installed_backend_commit": "6eedb20ef75af950f460879a7ad60ad343e29f28",
+  "installed_backend_release": "20260922T071148Z-6eedb20ef75a",
+  "installed_maintenance_release": "20260918T093037Z-81cd2895395a",
+  "live_checks": {
+    "database": "needle_shark",
+    "schema": "public",
+    "postgresql_version": "16.15",
+    "method": "SSH; BEGIN READ ONLY; system-catalog queries and two boolean aggregates. No customer rows or file bytes exported; no nextval/setval calls.",
+    "column_coverage_by_table": {
+      "customers": 8,
+      "lead_deliveries": 11,
+      "lead_files": 4,
+      "lead_loop_deliveries": 9,
+      "lead_submissions": 5,
+      "orders": 21
+    },
+    "columns_total": 58,
+    "constraints_read": 22,
+    "indexes_read": 15,
+    "identity_sequences": {
+      "customers": "public.customers_id_seq",
+      "orders": "public.orders_id_seq",
+      "lead_deliveries": "public.lead_deliveries_id_seq",
+      "lead_loop_deliveries": "public.lead_loop_deliveries_id_seq"
+    },
+    "all_identity_sequences_start_at": 1,
+    "all_identity_sequence_increments": 1,
+    "all_identity_sequences_cycle": false,
+    "all_order_customer_ids_equal": false,
+    "some_customers_have_multiple_orders": true,
+    "needle_admin_superuser": true,
+    "needle_app_superuser": false,
+    "needle_app_table_privileges": "INSERT, SELECT, UPDATE on all six tables",
+    "cleanup_timer": "active",
+    "installed_files_match_local_sha256": {
+      "server/crm.py": "f90bdabc1f0714786e2e21b9028896248cfe926ae9f7ea5375a1a1fa4adbb982",
+      "server/delivery_store.py": "4cc0bde70a5c127f09bc2ee3ce92c6f76af9b6f3e606083c62eaa615ec3d8cb7",
+      "server/lead_context.py": "ff20453a9a86f883f7638b5efa1469a5ea8b817aab027926fe40ba9e1f18f05e",
+      "server/leads.py": "9d708aac27cadc20a69bbdc52836d28ecca7557ca4ea4901718c2244d7966eaa",
+      "server/mail_delivery.py": "45d65e5740df7780a8793d49f7f07e51aac1ab5211942f42246e6928dd2d0e50",
+      "server/loop_delivery.py": "8ccf53018c2da92ea0f0cf42501cdb1c51656538fdf9663be28a821548171bfd",
+      "ops/maintenance.py": "2330bc53a2f5b1c927bf17611f54d7f570e0a7914f3708277d86f2ac25b39704"
+    }
+  },
+  "local_checks": {
+    "relative_markdown_links": "passed",
+    "git_diff_check": "passed",
+    "dictionary_coverage": "58/58 live columns; exact name, order, type, nullability, identity and defaults checked by temporary script",
+    "server_tests": {
+      "command": "python3 -m unittest discover -s server -p 'test_*.py'",
+      "passed": 26,
+      "failed": 0,
+      "environment_note": "First sandbox run could not bind loopback sockets for two HTTP tests. Approved rerun completed all 26 tests."
+    },
+    "documentation_sha256": "deaa1c26bad3e61d2cc63ab6f0082442e241e72aa6e05467ad30a2efe2b45c95"
+  },
+  "not_applicable": {
+    "static_generation_preview_and_five_viewports": "No public page, visual, navigation, form or static asset changes.",
+    "prepare_public_check_site_seo_sitemap_analytics_utm": "Repository documentation only; no website release.",
+    "live_form_and_smtp_loop_delivery": "No intake or delivery changes; no synthetic production submissions sent.",
+    "deploy_and_public_https_release_verification": "No VPS installation or release switching required or performed."
+  },
+  "limitations": [
+    "Readable NS-<orders.id> is documented as a proposal and read-only SELECT; API, email and LOOP still use the UUID.",
+    "Sequence gaps are allowed, including customer INSERT ON CONFLICT; no promise of gapless numbering.",
+    "Network access rules, backup recovery and inbox/channel receipt were not retested in this documentation task.",
+    "Existing untracked outputs/ was not modified or staged."
+  ]
+}

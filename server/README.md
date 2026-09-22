@@ -1,5 +1,7 @@
 # Server-side leads and email
 
+Database reference: [all six tables and every column](../docs/DATABASE.md), including independent customer/order IDs, UUID retry semantics, constraints, indexes, payload fields and attachment retention. Verified against the live schema and installed code on 22 September 2026. `orders.id` is the numeric request number; `orders.customer_id` references `customers.id`; `submission_id` remains the technical UUID used by the API and notifications.
+
 ## Text-only LOOP leads — 22 September 2026
 
 Owner scope: new leads only, one supplied incoming webhook at `neesha.loop.ru`, no files and no server-monitor messages. `loop_delivery.py` formats Moscow time, contact, name, full question, available company/direction/product/size/quantity and source page/form. Missing context is labelled as missing; no traffic source or product is invented. Homepage `script.js` now supplies `source_path=/`; catalogue/B2B already provide their own paths. UTM/referrer/CTA tracking is not added.
