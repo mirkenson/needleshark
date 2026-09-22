@@ -17,12 +17,33 @@
     goal(name, params, follow);
   };
   const localHosts = new Set(['needleshark.ru', 'www.needleshark.ru', location.hostname]);
+  const catalogParams = () => document.body.classList.contains('assortment') ? {
+    page: location.pathname, context: 'catalog', product: document.body.dataset.productSlug || 'catalog'
+  } : {};
   function trackClick(event) {
     if (event.type === 'auxclick' && event.button !== 1) return;
-    const el = event.target.closest('a,button,input[type=checkbox],input[type=file]');
+    const el = event.target.closest('a,button,summary,input[type=checkbox],input[type=file]');
     if (!el || el.disabled) return;
     const article = el.closest('[data-article]')?.dataset.article;
     const params = {page: location.pathname, ...(article ? {article} : {})};
+    if (document.body.dataset.productSlug) {
+      let element, item, state;
+      if (el.matches('[data-select-variant],[data-select-size]')) {
+        element = 'catalog_variant_table';
+        item = [...document.querySelectorAll('[data-select-variant],[data-select-size]')].indexOf(el) + 1;
+      } else if (el.matches('.gallery-thumb')) {
+        element = 'catalog_gallery';
+        item = [...document.querySelectorAll('.gallery-thumb')].indexOf(el) + 1;
+      } else if (el.matches('.faq-list summary')) {
+        element = 'catalog_faq';
+        item = [...document.querySelectorAll('.faq-list summary')].indexOf(el) + 1;
+        state = el.closest('details').open ? 'closed' : 'open';
+      }
+      if (element) {
+        goal('ui_click', {...catalogParams(), element, item, ...(state ? {state} : {})});
+        return;
+      }
+    }
     if (el.dataset.blogCta) {
       navigationGoal(event, el, 'blog_cta_click', {...params, article: el.dataset.article, cta: el.dataset.blogCta});
       return;
@@ -52,19 +73,26 @@
   }
   document.addEventListener('click', trackClick);
   document.addEventListener('auxclick', trackClick);
+  document.addEventListener('change', event => {
+    const input = event.target;
+    if (!document.body.dataset.productSlug || !input.matches('.size-picker input[type=radio]')) return;
+    const group = input.closest('fieldset');
+    goal('ui_click', {...catalogParams(), element: 'catalog_variant',
+      group: input.dataset.option || 'size', item: [...group.querySelectorAll('input[type=radio]')].indexOf(input) + 1});
+  });
   document.addEventListener('blog-interaction', event => {
     const {article, element, block, item, state} = event.detail || {};
     if (!['blog_tab', 'blog_accordion', 'blog_checklist'].includes(element)) return;
     goal('ui_click', {page: location.pathname, article, element, block, item, state});
   });
   document.querySelectorAll('form').forEach(form => {
-    const params = () => form.dataset.context === 'business' ? {page: location.pathname, context: 'business', intent: form.elements.business_intent.value || 'unspecified'} : {};
+    const params = () => form.dataset.context === 'business' ? {page: location.pathname, context: 'business', intent: form.elements.business_intent.value || 'unspecified'} : catalogParams();
     form.addEventListener('focusin', () => goal('form_start', params()), {once: true});
     form.addEventListener('submit', () => {
-      if (form.dataset.context !== 'business' || form.checkValidity()) goal('form_submit_attempt', params());
+      if (form.checkValidity()) goal('form_submit_attempt', params());
     });
   });
-  document.addEventListener('lead-saved', event => goal('lead_submitted', event.detail?.context === 'business' ? {page: location.pathname, context: 'business', intent: event.detail.intent} : {}));
+  document.addEventListener('lead-saved', event => goal('lead_submitted', event.detail?.context === 'business' ? {page: location.pathname, context: 'business', intent: event.detail.intent} : catalogParams()));
   document.addEventListener('business-interaction', event => {
     const {element, item, state} = event.detail || {};
     if (!['business_material', 'business_intent', 'business_faq'].includes(element)) return;

@@ -1057,7 +1057,7 @@
     },
     {
       "slug": "nakidka-na-bamper",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Накидка на задний бампер",
       "category": "Для автомобиля",
@@ -1243,7 +1243,7 @@
     },
     {
       "slug": "nakidka-na-sidene-i-bagazhnik",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Накидка на сиденье и в багажник",
       "category": "Для автомобиля",
@@ -1453,7 +1453,7 @@
     },
     {
       "slug": "chehol-dlya-amortizatora",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол для амортизатора",
       "category": "Чехлы для техники",
@@ -1661,7 +1661,7 @@
     },
     {
       "slug": "chehol-dlya-kolyaski",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол для перевозки коляски",
       "category": "Для поездок",
@@ -2225,7 +2225,7 @@
     },
     {
       "slug": "kryuchki-dlya-kolyaski",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Крючки для коляски",
       "category": "Для поездок",
@@ -2411,7 +2411,7 @@
     },
     {
       "slug": "dno-dlya-volera",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Дно для клетки и вольера",
       "category": "Для дома и животных",
@@ -2826,7 +2826,7 @@
     },
     {
       "slug": "chehol-dlya-generatora",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол для генератора",
       "category": "Чехлы для техники",
@@ -3088,7 +3088,7 @@
     },
     {
       "slug": "karabiny-dlya-vesla",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Карабины для весла",
       "category": "Спорт и отдых",
@@ -3281,7 +3281,7 @@
     },
     {
       "slug": "chehol-dlya-shurupoverta",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол для шуруповёрта",
       "category": "Спорт и отдых",
@@ -3468,7 +3468,7 @@
     },
     {
       "slug": "sumki-bauly",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Сумки-баулы для хранения",
       "category": "Сумки",
@@ -4396,7 +4396,7 @@
     },
     {
       "slug": "remen-dlya-perenoski",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Ремень для переноски грузов",
       "category": "Ремни и крепления",
@@ -4626,7 +4626,7 @@
     },
     {
       "slug": "plechevye-remni-dlya-sumok",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Плечевые ремни для сумок",
       "category": "Ремни и крепления",
@@ -5017,7 +5017,7 @@
     },
     {
       "slug": "nagrudnaya-styazhka",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Нагрудная стяжка для рюкзака",
       "category": "Ремни и крепления",
@@ -5202,7 +5202,7 @@
     },
     {
       "slug": "stropa-remennaya",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Ременная стропа",
       "category": "Материалы",
@@ -5696,7 +5696,7 @@
     },
     {
       "slug": "lenta-kontaktnaya",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Контактная лента",
       "category": "Материалы",
@@ -5893,7 +5893,7 @@
     },
     {
       "slug": "chehol-na-evrokub",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол на еврокуб",
       "category": "Для сада",
@@ -6153,7 +6153,7 @@
     },
     {
       "slug": "remni-styazhnye",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Стяжные ремни",
       "category": "Ремни и крепления",
@@ -6413,7 +6413,7 @@
     },
     {
       "slug": "chehol-dlya-velosipeda",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол для велосипеда",
       "category": "Спорт и отдых",
@@ -6707,7 +6707,7 @@
     },
     {
       "slug": "chehol-dlya-udochek",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол для удочек",
       "category": "Спорт и отдых",
@@ -7174,7 +7174,7 @@
     },
     {
       "slug": "organayzer-v-bagazhnik",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Органайзер в багажник",
       "category": "Для автомобиля",
@@ -7369,7 +7369,7 @@
     },
     {
       "slug": "bahily-mnogorazovye",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Многоразовые бахилы",
       "category": "Для дома и поездок",
@@ -7574,7 +7574,7 @@
     },
     {
       "slug": "chehol-dlya-kacheley-kokona",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол для качелей-кокона",
       "category": "Для сада",
@@ -7778,7 +7778,7 @@
     },
     {
       "slug": "chehol-dlya-snouborda",
-      "status": "draft",
+      "status": "published",
       "sourcePhotography": true,
       "name": "Чехол для сноуборда",
       "category": "Спорт и отдых",
