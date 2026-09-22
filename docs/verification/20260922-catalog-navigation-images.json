@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-22",
+  "scope": "Local catalog navigation, stable grid, swatches, custom-cut webbing copy, studio assets and feed research",
+  "branch": "codex/catalog-navigation-images",
+  "codeCommit": "f679b2c3494dd4007efe683da340dfc3685ec4f9",
+  "previewUrl": "http://127.0.0.1:4176/catalog/",
+  "publicDeployment": false,
+  "counts": {
+    "catalogCards": 26,
+    "newDraftCards": 23,
+    "newVariants": 62,
+    "newStudioMasters": 51,
+    "newStudioResponsiveCopies": 255,
+    "categories": 8,
+    "previewHtml": 33,
+    "normalBuildHtml": 10
+  },
+  "checks": {
+    "unitTests": {
+      "catalog": 17,
+      "ops": 22,
+      "result": "passed"
+    },
+    "javascriptSyntax": "passed: node --check dist/catalog.js",
+    "staticNormalBuild": "passed: catalog/render.py, ops/prepare-public.py, ops/check-site.py; 10 public HTML, metadata, JSON-LD, sitemap, assets, links, anchors and CSS tokens",
+    "staticPreview": "passed: 33 HTML, one H1, unique IDs, valid JSON-LD, local links/anchors/resources, noindex, no Metrika SDK/pixel",
+    "repeatGeneration": "passed: normal HTML, sitemap, robots and image manifest byte-identical after optimize/render/prepare cycle",
+    "assets": "51 final record hashes match masters and native PNG copies; all 306 new WebP retain IPTC trainedAlgorithmicMedia XMP",
+    "visualSourceComparison": "51 source/result pairs inspected; bag zipper, organizer loops/pockets and cocoon exposed base corrected; final corrections inspected separately",
+    "browser": {
+      "tool": "CUA in-app browser",
+      "widths": [
+        360,
+        390,
+        768,
+        1024,
+        1440
+      ],
+      "pageWidthCombinations": 135,
+      "pageWidthResult": "catalog + 26 product pages; one H1, no horizontal overflow, no broken loaded images. Whole-page pass preceded final catalog-only subgrid adjustment; catalog rechecked below.",
+      "finalGridCombinations": 45,
+      "finalGridResult": "all 9 category states × 5 widths: corresponding image/meta/title/description/CTA/market rows aligned with max top difference 0 px; no horizontal overflow",
+      "finalPaletteCombinations": 30,
+      "finalPaletteResult": "6 colors × 5 widths; six distinct variant images per width; gallery height and primary CTA absolute Y unchanged; no horizontal overflow",
+      "webbing": "6 widths at 390 px selected correctly; primary CTA Y stays 1527.890625 px; custom-length note visible; opened inquiry contains selected 50 mm × 10 m context",
+      "search": [
+        "case-insensitive СТРОПА",
+        "combined category + query",
+        "NS-STRP-25 article",
+        "колес matches ё",
+        "empty result",
+        "reset restores 26 cards and focus"
+      ],
+      "contrast": "typed query verified visually at mobile sizes and computed rgb(27, 31, 33) at tested widths; focus outline visible",
+      "keyboard": "palette native radio ArrowRight advances selected color and status",
+      "menu": "mobile menu opens/closes; catalog link present",
+      "console": "no errors/warnings in QA tab after final targeted checks",
+      "exhaustiveAllVariantAllWidthBatch": "not counted: additional full matrix attempt timed out without a complete report; earlier complete palette/grid/page matrices above remain the reported evidence"
+    },
+    "git": "staged diff reviewed, diff --check passed; outputs excluded; 51 final prompts only; common credential patterns absent",
+    "feeds": "official Yandex and Google sources examined; findings and direct source links in docs/product-feeds-20260922.md"
+  },
+  "limitations": [
+    "No VPS deployment, public HTTPS recheck, search submission, Merchant Center/Yandex account changes or advertising campaign.",
+    "No real Metrika SDK/report or live PostgreSQL/SMTP/LOOP end-to-end check in this local UI task; no server/form submission logic changed.",
+    "No invented prices, availability, GTIN or Offers. Draft pages remain excluded from public sitemap; preview is noindex.",
+    "AI product reconstructions visually compared with source references; physical product fidelity and previously noted source contradictions still require owner review.",
+    "Three final edit prompts depend on locally retained intermediate input PNGs. Intermediate prompts and revision history are intentionally absent from this Git addition.",
+    "Grid results cover tested contents/viewports; legacy browsers without CSS subgrid use flex fallback, not separately tested here."
+  ],
+  "reproduce": [
+    "python3 catalog/render.py --preview",
+    "python3 server/preview.py --directory outputs/catalog-preview --port 4176",
+    "python3 -m unittest discover -s catalog -p test_*.py",
+    "python3 -m unittest discover -s ops -p test_*.py",
+    "python3 catalog/render.py",
+    "python3 ops/prepare-public.py",
+    "python3 ops/check-site.py"
+  ],
+  "obsidian": "Mirror update and --check are finalization steps after the documentation commit; exact exported HEAD is recorded in vault Сайт/Синхронизация Git.json."
+}
