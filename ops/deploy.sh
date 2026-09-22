@@ -31,8 +31,8 @@ for path in sorted(root.rglob('*')):
 PY
 ssh "${ssh_options[@]}" "$remote_host" "mkdir -p '$remote_release'"
 if [[ "$transfer_mode" == --from-github ]]; then
-  # Stream only dist from the exact public, pushed revision. No keys or build tools on VPS.
-  ssh "${ssh_options[@]}" "$remote_host" "set -o pipefail; curl --fail --silent --show-error --location --proto '=https' --tlsv1.2 'https://codeload.github.com/mirkenson/needleshark/tar.gz/$revision' | tar -xz --strip-components=2 -C '$remote_release' 'needleshark-$revision/dist'"
+  # Reuse matching current files and fetch missing assets from the immutable public revision.
+  python3 "$project_dir/ops/fetch-static-release.py" --directory "$project_dir/dist" --revision "$revision" --release "$remote_release" --host "$remote_host" --key "$ssh_key"
 else
   scp -r "${ssh_options[@]}" "$project_dir"/dist/* "$remote_host:$remote_release/"
 fi
