@@ -103,6 +103,20 @@ class ObsidianSyncTests(unittest.TestCase):
             sync.sync(self.repo, self.vault)
         self.assertEqual(list(outside.iterdir()), [])
 
+    def test_committed_environment_file_is_rejected(self):
+        self.write(".env.production", "SYNTHETIC_ONLY=example\n")
+        self.commit()
+        with self.assertRaisesRegex(ValueError, "закрытый файл"):
+            sync.sync(self.repo, self.vault)
+        self.assertFalse(self.vault.exists())
+
+    def test_archive_cannot_silently_omit_tracked_files(self):
+        self.write(".gitattributes", "docs/PROJECT_CONTEXT.md export-ignore\n")
+        self.commit()
+        with self.assertRaisesRegex(ValueError, "Архив отличается"):
+            sync.sync(self.repo, self.vault)
+        self.assertFalse(self.vault.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

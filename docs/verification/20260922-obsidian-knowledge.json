@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-22",
+  "scope": "Local Obsidian knowledge export and project organization; no site deployment",
+  "implementation_commit": "e8b11e0a7a30b9c2b788adb01634d253a04325d1",
+  "branch": "codex/obsidian-project-context",
+  "git_repository": "https://github.com/mirkenson/needleshark",
+  "public_url": "https://needle-shark.ru/",
+  "initial_verified_export": {
+    "source_files": 365,
+    "source_bytes": 71765425,
+    "managed_files": 391,
+    "check_passed": true,
+    "context_byte_equal": true,
+    "idempotent_second_run_writes": 0
+  },
+  "final_revision_provenance": "The local Сайт/Синхронизация Git.json records the exact final HEAD and every exported SHA-256; a commit cannot include its own hash.",
+  "organization": {
+    "original_notes": 24,
+    "original_text_bytes_preserved": true,
+    "original_paths_preserved": true,
+    "new_maps": 8,
+    "new_project_instructions": true,
+    "new_wikilinks_resolved": 156,
+    "generated_relative_links_resolved": 435,
+    "broken_generated_links": 0,
+    "local_backup_zip_verified": true
+  },
+  "verification": {
+    "ops_tests_passed": 22,
+    "sync_tests_included": 8,
+    "sync_test_scenarios": [
+      "exact committed text/binary mirror; untracked files excluded",
+      "check-only and idempotence",
+      "manual conflict aborts whole write and preserves personal notes",
+      "dirty tracked tree refused; committed update accepted",
+      "removed Git file retained as archive",
+      "symlink target rejected",
+      "committed environment file rejected",
+      "export-ignore cannot silently omit tracked files"
+    ],
+    "git_diff_check": "passed",
+    "obsidian_ui": [
+      "Opened 00 Needle Shark in the existing Sazonov BD vault",
+      "Switched to reading mode",
+      "Followed actual internal link to 00 Сайт",
+      "31 homepage backlinks and 10 site-map backlinks visible"
+    ]
+  },
+  "server_read_only": {
+    "backend_current": "20260922T094139Z-1e940964f438",
+    "backend_previous": "20260922T071148Z-6eedb20ef75a",
+    "static_current": "20260922T070621Z-52722",
+    "services": {
+      "nginx": "active",
+      "needle-leads": "active"
+    },
+    "sha256_match": [
+      "leads.py",
+      "crm.py",
+      "mail_delivery.py",
+      "loop_delivery.py"
+    ]
+  },
+  "not_applicable": [
+    "static build/deployment",
+    "public layout viewport checks",
+    "new API/form delivery tests",
+    "search indexing submissions",
+    "analytics goals changes"
+  ],
+  "limitations": [
+    "No background timer or Git hook; synchronization is a required task completion step recorded in both AGENTS.md files.",
+    "Manual changes in the Git mirror must be reconciled into Git; personal notes are not automatically imported.",
+    "Git history database, other branches, uncommitted files, outputs, secrets and live lead data are not exported.",
+    "Historical reports and business research were not independently reverified.",
+    "No website, server settings or lead data were changed.",
+    "Existing Obsidian cloud sync may process local files; its remote completeness was not tested."
+  ]
+}

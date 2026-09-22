@@ -47,10 +47,14 @@ def snapshot(repo):
                 raise ValueError(f"Неподдерживаемый путь Git: {member.name}")
             name = path.name.lower()
             # Examples are public documentation; actual credentials/data never belong here.
-            if (name == ".env" or name.endswith((".key", ".pem", ".p12", ".pfx", ".sqlite3", ".dump"))
+            if (name == ".env" or (name.startswith(".env.") and not name.endswith(".example"))
+                    or name.endswith((".key", ".pem", ".p12", ".pfx", ".sqlite3", ".dump"))
                     or (name.endswith(".env") and not name.endswith(".example"))):
                 raise ValueError(f"Проверьте потенциально закрытый файл в Git: {member.name}")
             files[member.name] = archive.extractfile(member).read()
+    tracked = set(git(repo, "ls-tree", "-rz", "--name-only", commit).decode().rstrip("\0").split("\0"))
+    if set(files) != tracked:
+        raise ValueError("Архив отличается от дерева Git; проверьте export-ignore и подмодули.")
     return commit, files
 
 
