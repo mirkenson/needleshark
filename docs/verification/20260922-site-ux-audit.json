@@ -1,0 +1,1087 @@
+{
+  "audit_date": "2026-09-22",
+  "timezone": "Europe/Moscow",
+  "scope": "Read-only website audit; documentation only; no deployment",
+  "priority": "B2B orders; every retail user must understand how to buy",
+  "snapshot_commit": "6f535945f1b438abaad8d71c159845be83234d25",
+  "documentation_base_commit": "a4000b7",
+  "public_capture": {
+    "utc": "2026-09-22T17:32:23.467487+00:00",
+    "snapshot_commit": "6f535945f1b438abaad8d71c159845be83234d25",
+    "public_count": 10,
+    "local_count": 33
+  },
+  "public_recheck": {
+    "captured_utc": "2026-09-22T17:49:23.067646+00:00",
+    "results": [
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "sha256": "3995a4e5d351ccd759aa3f8c9af428a8407550ac22e4118a8eff8e815cd0cfb1",
+        "bytes": 809,
+        "urls": 10,
+        "has_stropa": false
+      },
+      {
+        "path": "/",
+        "status": 200,
+        "sha256": "cfaf9880c35129f0f192d30c6a69013859cdaad9f1243dd7bf8c1906b88e1b76",
+        "bytes": 21079,
+        "urls": null,
+        "has_stropa": false
+      },
+      {
+        "path": "/catalog/",
+        "status": 200,
+        "sha256": "c4a77d10c0d7c91657834d44298c5556ea3dd652fb03fdbe4f49fdfda5550d8f",
+        "bytes": 18382,
+        "urls": null,
+        "has_stropa": false
+      },
+      {
+        "path": "/catalog/stropa-remennaya/",
+        "error": "HTTP Error 404: Not Found"
+      }
+    ]
+  },
+  "local_pages": [
+    {
+      "path": "/blog/",
+      "sha256": "53cb8afed7c27e2b598459d1349c9833d2e3a1b7235a14d152fbfab0731f7da0",
+      "bytes": 8916,
+      "title": [
+        "Блог о чехлах, материалах и хранении техники | Needle Shark"
+      ],
+      "h1": [
+        "Блог ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/blog/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "sha256": "6bacf29bc3b4ff2f1b7101a269a0021723dd08ab4b417f2fd053250c66932eb7",
+      "bytes": 44792,
+      "title": [
+        "Зимнее хранение мотоцикла и квадроцикла: подготовка и консервация — Needle Shark"
+      ],
+      "h1": [
+        "Как подготовить мотоцикл и квадроцикл к зимнему хранению"
+      ],
+      "canonical": [
+        "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/business/",
+      "sha256": "cc3b70d78511104023d4b4611543987f6b7f5366fc36111b6fc64dfe4a30a8c9",
+      "bytes": 38504,
+      "title": [
+        "Швейное производство для бизнеса в Санкт-Петербурге | Needle Shark"
+      ],
+      "h1": [
+        "Ваша задача. Наше производство."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/business/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/bahily-mnogorazovye/",
+      "sha256": "8f35c699b1cc970b88a297505ad602b782071204cfd6d55cc79ea9ef98ff5df1",
+      "bytes": 26515,
+      "title": [
+        "Многоразовые бахилы — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Многоразовые бахилы ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/bahily-mnogorazovye/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehly-dlya-koles/",
+      "sha256": "b000f0587eb412d1070a8551cfe1a19bd02d1c0bf7777cc0d9c3ae338b82c594",
+      "bytes": 54737,
+      "title": [
+        "Чехлы для колёс R17–R22 — 1 или 4 шт. | Needle Shark"
+      ],
+      "h1": [
+        "Чехлы для колёс ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehly-dlya-koles/"
+      ],
+      "disabled_buttons": [
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно"
+      ]
+    },
+    {
+      "path": "/catalog/chehol-dlya-amortizatora/",
+      "sha256": "f887e137dc32a5a9b52f4302916df0c737ede9ebc29cc831ec936c4a9e65dd5f",
+      "bytes": 26944,
+      "title": [
+        "Чехол для амортизатора — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для амортизатора ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-amortizatora/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-dlya-generatora/",
+      "sha256": "5f9758e0d6ead788cfccb60963da27cda4d03ca36d14461a8baa1812a6dc3f4f",
+      "bytes": 29117,
+      "title": [
+        "Чехол для генератора — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для генератора ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-generatora/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-dlya-kacheley-kokona/",
+      "sha256": "3bc1aa9a0dcc67fab4ff114efbe316cd019de85ec652cf798146228504d0ee7b",
+      "bytes": 26794,
+      "title": [
+        "Чехол для качелей-кокона — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для качелей-кокона ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-kacheley-kokona/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-dlya-kolyaski/",
+      "sha256": "949d0aa2ddcb19c38d00c5ed46729d1b96cac0f86f17ada770809211f528c151",
+      "bytes": 48829,
+      "title": [
+        "Чехол для перевозки коляски — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для перевозки коляски ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-kolyaski/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-dlya-motocikla/",
+      "sha256": "2ba30cc7fecaeae8a581bd12a79c0070f54601ea3aff6366f3dfb76ec6f4f810",
+      "bytes": 63505,
+      "title": [
+        "Чехол для мотоцикла — размеры S–XL и комплектации | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для мотоцикла ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-motocikla/"
+      ],
+      "disabled_buttons": [
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно"
+      ]
+    },
+    {
+      "path": "/catalog/chehol-dlya-shurupoverta/",
+      "sha256": "456e2aaf9857aaf8cf9cf706aa507d4e0bdfcb5759198ec982936db3231e75e9",
+      "bytes": 21990,
+      "title": [
+        "Чехол для шуруповёрта — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для шуруповёрта ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-shurupoverta/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-dlya-snouborda/",
+      "sha256": "18381dfa39b64014cc6ffdfcbfd0a599b47953fcd6fe2df6cb749b2f2f71f836",
+      "bytes": 25568,
+      "title": [
+        "Чехол для сноуборда — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для сноуборда ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-snouborda/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-dlya-udochek/",
+      "sha256": "a3baf77b139a091bd600615fabd33be205049b55e35bcfe70c3b3723446e2cc2",
+      "bytes": 42360,
+      "title": [
+        "Чехол для удочек — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для удочек ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-udochek/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-dlya-velosipeda/",
+      "sha256": "bf0300f29afaf1c7ee4ea2fa302190f5583817946174f4581aa7db0dbba5b678",
+      "bytes": 31706,
+      "title": [
+        "Чехол для велосипеда — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для велосипеда ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-velosipeda/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-na-evrokub/",
+      "sha256": "46a04faad055c599d306fe9dd95d847ed814983ffaf126fea29263a9d42647b9",
+      "bytes": 27232,
+      "title": [
+        "Чехол на еврокуб — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Чехол на еврокуб ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-na-evrokub/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "sha256": "43a38c0724f84d7d9d562893a04c8879be1f3eb5cc7d7861a4a2724b48b5a50c",
+      "bytes": 48405,
+      "title": [
+        "Чехол на квадроцикл — Oxford 240D, 7 размеров | Needle Shark"
+      ],
+      "h1": [
+        "Чехол на квадроцикл ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/"
+      ],
+      "disabled_buttons": [
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно"
+      ]
+    },
+    {
+      "path": "/catalog/dno-dlya-volera/",
+      "sha256": "7bbfb08bf67385b0e9b044ff63b7e9100648e1e83efcfc14634b434e75d71530",
+      "bytes": 40553,
+      "title": [
+        "Дно для клетки и вольера — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Дно для клетки и вольера ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/dno-dlya-volera/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/",
+      "sha256": "3e60917745f65ab7a1a176c9412eb8aae9ae96a55e0569c23a567e979d75fbdd",
+      "bytes": 67676,
+      "title": [
+        "Каталог чехлов и изделий из технических тканей | Needle Shark"
+      ],
+      "h1": [
+        "Защита в каждой детали."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/"
+      ],
+      "disabled_buttons": [
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно",
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно",
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно"
+      ]
+    },
+    {
+      "path": "/catalog/karabiny-dlya-vesla/",
+      "sha256": "9838984de2e0e1918f7c1a42406245049c6b114029cf5af404c8570b1192d68a",
+      "bytes": 22742,
+      "title": [
+        "Карабины для весла — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Карабины для весла ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/karabiny-dlya-vesla/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/kryuchki-dlya-kolyaski/",
+      "sha256": "90b01eb63cc563a54e7e3fe92d629be385d0a415a8df7c8cd79cf1fa4c71d1b3",
+      "bytes": 22332,
+      "title": [
+        "Крючки для коляски — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Крючки для коляски ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/kryuchki-dlya-kolyaski/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/lenta-kontaktnaya/",
+      "sha256": "15121aff0ad7ffe92525ba7e69386c76b014a38d8e82a0d43f4cb102bce47d2b",
+      "bytes": 26030,
+      "title": [
+        "Контактная лента — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Контактная лента ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/lenta-kontaktnaya/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/nagrudnaya-styazhka/",
+      "sha256": "1de02da01526fa7ea90351ea29aeba6a2b0567db1b0aed3b2cd6767a1e7718bd",
+      "bytes": 23228,
+      "title": [
+        "Нагрудная стяжка для рюкзака — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Нагрудная стяжка для рюкзака ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/nagrudnaya-styazhka/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/nakidka-na-bamper/",
+      "sha256": "5c205193a50cc7aacf8ca4ed9fae8cfd018b86fdc0d834d05fc1fe5595533bce",
+      "bytes": 24158,
+      "title": [
+        "Накидка на задний бампер — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Накидка на задний бампер ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/nakidka-na-bamper/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/nakidka-na-sidene-i-bagazhnik/",
+      "sha256": "625ec57a5ec117f4be9fdca94ab6b9296affc9745fbf2755eb68d6a54021dfd2",
+      "bytes": 27083,
+      "title": [
+        "Накидка на сиденье и в багажник — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Накидка на сиденье и в багажник ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/nakidka-na-sidene-i-bagazhnik/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/organayzer-v-bagazhnik/",
+      "sha256": "5ddc1b8bdfe7276dfb25f3956bd71b4ac93bbe2701899c2fbf1bf5476045f57b",
+      "bytes": 25043,
+      "title": [
+        "Органайзер в багажник — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Органайзер в багажник ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/organayzer-v-bagazhnik/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/plechevye-remni-dlya-sumok/",
+      "sha256": "8a4fdc7dc8905ca2a21d32c1b423c444b0a50bf5086e371104de0ce9906447d8",
+      "bytes": 39259,
+      "title": [
+        "Плечевые ремни для сумок — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Плечевые ремни для сумок ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/plechevye-remni-dlya-sumok/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/remen-dlya-perenoski/",
+      "sha256": "3084d9fbdbabe6db411faaa0526e2b7cd20c635f26c42cf11fb8b5b82a046424",
+      "bytes": 26451,
+      "title": [
+        "Ремень для переноски грузов — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Ремень для переноски грузов ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/remen-dlya-perenoski/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/remni-styazhnye/",
+      "sha256": "bb907d943bc40e2dd3f9725844c8ba0112bd82684b949b3b88cbcf66a03d7200",
+      "bytes": 30015,
+      "title": [
+        "Стяжные ремни — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Стяжные ремни ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/remni-styazhnye/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/stropa-remennaya/",
+      "sha256": "c2b345560544f207bf6ad129f9c53096e44c56457831077adb227a3729ba2150",
+      "bytes": 48408,
+      "title": [
+        "Ременная стропа — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Ременная стропа ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/stropa-remennaya/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/catalog/sumki-bauly/",
+      "sha256": "e46650f99e4204bb359370b6faa2c2dca3fada8041c52330f4c93d40083601ef",
+      "bytes": 78606,
+      "title": [
+        "Сумки-баулы для хранения — варианты и заказ | Needle Shark"
+      ],
+      "h1": [
+        "Сумки-баулы для хранения ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/sumki-bauly/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/",
+      "sha256": "2b15f52e57fe9dfda40cec1c3bc05fa9b60caf3f125fc923805ba8be6ce0672c",
+      "bytes": 21083,
+      "title": [
+        "Пошив чехлов и изделий из технических тканей в СПб | Needle Shark"
+      ],
+      "h1": [
+        "С точностью до нитки."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/privacy-policy",
+      "sha256": "f4832d6b7459b7b88d2495bbffb2bad13cc16db152b0facb7647a062d3bba4a2",
+      "bytes": 12182,
+      "title": [
+        "Политика обработки персональных данных — Needle Shark"
+      ],
+      "h1": [
+        "Политика обработки персональных данных"
+      ],
+      "canonical": [
+        "https://needle-shark.ru/privacy-policy"
+      ],
+      "disabled_buttons": []
+    },
+    {
+      "path": "/user-agreement",
+      "sha256": "7dad60272327a0daed753120f03993fe372c92d5b756ccdf9f1cde06f98eb763",
+      "bytes": 8892,
+      "title": [
+        "Пользовательское соглашение — Needle Shark"
+      ],
+      "h1": [
+        "Пользовательское соглашение"
+      ],
+      "canonical": [
+        "https://needle-shark.ru/user-agreement"
+      ],
+      "disabled_buttons": []
+    }
+  ],
+  "public_pages": [
+    {
+      "path": "/",
+      "sha256": "cfaf9880c35129f0f192d30c6a69013859cdaad9f1243dd7bf8c1906b88e1b76",
+      "bytes": 21079,
+      "title": [
+        "Пошив чехлов и изделий из технических тканей в СПб | Needle Shark"
+      ],
+      "h1": [
+        "С точностью до нитки."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/"
+      ],
+      "disabled_buttons": [],
+      "status": 200
+    },
+    {
+      "path": "/catalog/",
+      "sha256": "c4a77d10c0d7c91657834d44298c5556ea3dd652fb03fdbe4f49fdfda5550d8f",
+      "bytes": 18382,
+      "title": [
+        "Каталог чехлов и изделий из технических тканей | Needle Shark"
+      ],
+      "h1": [
+        "Защита в каждой детали."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/"
+      ],
+      "disabled_buttons": [
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно",
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно",
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно"
+      ],
+      "status": 200
+    },
+    {
+      "path": "/blog/",
+      "sha256": "ff350e6e70d947df854d134ff508f033994b2fb52d892711147b8fbdd9d953d6",
+      "bytes": 8912,
+      "title": [
+        "Блог о чехлах, материалах и хранении техники | Needle Shark"
+      ],
+      "h1": [
+        "Блог ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/blog/"
+      ],
+      "disabled_buttons": [],
+      "status": 200
+    },
+    {
+      "path": "/business/",
+      "sha256": "098a21bca5b4cca735972c85a650cc9d0a1cf59436d2448e6fbfb7c6e20f2493",
+      "bytes": 38500,
+      "title": [
+        "Швейное производство для бизнеса в Санкт-Петербурге | Needle Shark"
+      ],
+      "h1": [
+        "Ваша задача. Наше производство."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/business/"
+      ],
+      "disabled_buttons": [],
+      "status": 200
+    },
+    {
+      "path": "/privacy-policy",
+      "sha256": "cff39f5d13a6b0e4614c701eed43b3523ddbed76c39960335b41c73c6c0841c1",
+      "bytes": 12178,
+      "title": [
+        "Политика обработки персональных данных — Needle Shark"
+      ],
+      "h1": [
+        "Политика обработки персональных данных"
+      ],
+      "canonical": [
+        "https://needle-shark.ru/privacy-policy"
+      ],
+      "disabled_buttons": [],
+      "status": 200
+    },
+    {
+      "path": "/user-agreement",
+      "sha256": "e3ba47c8d53412fe495d72ce2677609fc5685a18f636fcb2eb9d65191f908fb5",
+      "bytes": 8888,
+      "title": [
+        "Пользовательское соглашение — Needle Shark"
+      ],
+      "h1": [
+        "Пользовательское соглашение"
+      ],
+      "canonical": [
+        "https://needle-shark.ru/user-agreement"
+      ],
+      "disabled_buttons": [],
+      "status": 200
+    },
+    {
+      "path": "/catalog/chehol-na-kvadrocikl/",
+      "sha256": "6865c440ac2bffc13e7e94a9bf9f7f5bbe0d981bd29dbdeb3d1e17cf7e68fe84",
+      "bytes": 48337,
+      "title": [
+        "Чехол на квадроцикл — Oxford 240D, 7 размеров | Needle Shark"
+      ],
+      "h1": [
+        "Чехол на квадроцикл ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/"
+      ],
+      "disabled_buttons": [
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно"
+      ],
+      "status": 200
+    },
+    {
+      "path": "/catalog/chehol-dlya-motocikla/",
+      "sha256": "1a1515e8566c7023acddeaec12fdd90c6eb18b92b0f9406789cbfda1f664c20c",
+      "bytes": 63039,
+      "title": [
+        "Чехол для мотоцикла — размеры S–XL и комплектации | Needle Shark"
+      ],
+      "h1": [
+        "Чехол для мотоцикла ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehol-dlya-motocikla/"
+      ],
+      "disabled_buttons": [
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно"
+      ],
+      "status": 200
+    },
+    {
+      "path": "/catalog/chehly-dlya-koles/",
+      "sha256": "0f9f2c84623426061c1d4bc6b4e934d19e3740285d2da9bec165b4d26cf80b5f",
+      "bytes": 54557,
+      "title": [
+        "Чехлы для колёс R17–R22 — 1 или 4 шт. | Needle Shark"
+      ],
+      "h1": [
+        "Чехлы для колёс ."
+      ],
+      "canonical": [
+        "https://needle-shark.ru/catalog/chehly-dlya-koles/"
+      ],
+      "disabled_buttons": [
+        "Wildberries Пока недоступно",
+        "Яндекс Маркет Пока недоступно"
+      ],
+      "status": 200
+    },
+    {
+      "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "sha256": "2ba84e002986b7e9884f96af20570cf242325e38b6f99ce9c1fd977ad93a6cd0",
+      "bytes": 44788,
+      "title": [
+        "Зимнее хранение мотоцикла и квадроцикла: подготовка и консервация — Needle Shark"
+      ],
+      "h1": [
+        "Как подготовить мотоцикл и квадроцикл к зимнему хранению"
+      ],
+      "canonical": [
+        "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+      ],
+      "disabled_buttons": [],
+      "status": 200
+    }
+  ],
+  "copy_corpus": {
+    "unique_text_units": 1021,
+    "repeated_intro_new_products": 23,
+    "repeated_fit_note": 22,
+    "repeated_purchase_note": 23
+  },
+  "browser": {
+    "name": "Codex In-app Browser",
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "heights": [
+      844,
+      844,
+      900,
+      900,
+      900
+    ],
+    "representative_routes": [
+      "/",
+      "/catalog/",
+      "/business/",
+      "/catalog/chehol-dlya-motocikla/",
+      "/catalog/stropa-remennaya/",
+      "/blog/",
+      "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "/privacy-policy"
+    ],
+    "measurements_count": 92,
+    "all_products_extra_widths": [
+      390,
+      1440
+    ],
+    "initial_states_only": true,
+    "horizontal_overflow_found": false,
+    "loaded_broken_images_found": false,
+    "all_dynamic_combinations_checked": false
+  },
+  "catalog_geometry": [
+    {
+      "width": 360,
+      "first_card_y": 1008,
+      "first_card_height": 585,
+      "first_detail_y": 1429,
+      "page_height": 15709
+    },
+    {
+      "width": 390,
+      "first_card_y": 983,
+      "first_card_height": 607,
+      "first_detail_y": 1426,
+      "page_height": 16126
+    },
+    {
+      "width": 768,
+      "first_card_y": 875,
+      "first_card_height": 741,
+      "first_detail_y": 1340,
+      "page_height": 9182
+    },
+    {
+      "width": 1024,
+      "first_card_y": 759,
+      "first_card_height": 713,
+      "first_detail_y": 1300,
+      "page_height": 9856
+    },
+    {
+      "width": 1440,
+      "first_card_y": 804,
+      "first_card_height": 683,
+      "first_detail_y": 1316,
+      "page_height": 7170
+    }
+  ],
+  "search_checks": [
+    {
+      "query": "баул",
+      "count": 1,
+      "expected_product_found": true
+    },
+    {
+      "query": "липучка",
+      "count": 1,
+      "contact_tape_found": false,
+      "found": "Чехол на еврокуб"
+    },
+    {
+      "query": "27 24",
+      "count": 1,
+      "found": "Чехол для амортизатора"
+    },
+    {
+      "query": "VSTK-AMC-CASE-270",
+      "count": 0
+    },
+    {
+      "query": "VSTK-AMC‑CASE-270",
+      "count": 1
+    },
+    {
+      "query": "чехлы",
+      "count": 5
+    },
+    {
+      "query": "чехол",
+      "count": 12
+    }
+  ],
+  "back_navigation": {
+    "steps": [
+      "category materials",
+      "open strap",
+      "browser back"
+    ],
+    "expected": "same category and scroll position",
+    "actual": "all 26 products; scroll near top"
+  },
+  "forms": {
+    "production_submissions": 0,
+    "local_invalid_contact": "correct error and focus",
+    "local_required_description": "native required validation",
+    "local_submit_with_api_disabled": "explicit preview unavailable; no success",
+    "strap_25mm_context_preserved": true,
+    "strap_unit_label": "Количество, шт.",
+    "mobile_menu_escape": true,
+    "business_tab_arrow_right": true,
+    "business_faq_enter": true
+  },
+  "tests": {
+    "check_site": {
+      "status": "passed",
+      "html_pages": 33
+    },
+    "catalog": {
+      "passed": 17
+    },
+    "server": {
+      "passed": 26,
+      "note": "initial sandbox socket restriction; permitted retry passed; no live DB or mail"
+    },
+    "analytics_node": {
+      "passed": 8,
+      "live_sdk_report_verified": false
+    }
+  },
+  "performance": {
+    "url": "https://needle-shark.ru/",
+    "report_url": "https://pagespeed.web.dev/analysis/https-needle-shark-ru/h9vkha5lr4?form_factor=mobile",
+    "captured_local": "2026-09-22T20:42:07+03:00",
+    "lighthouse_version": "13.5.0",
+    "field_data_available": false,
+    "mobile": {
+      "performance": 96,
+      "accessibility": 100,
+      "best_practices": 96,
+      "seo": 100,
+      "fcp_s": 1.6,
+      "lcp_s": 1.7,
+      "tbt_ms": 10,
+      "cls": 0.099,
+      "speed_index_s": 3.3
+    },
+    "desktop": {
+      "performance": 97,
+      "accessibility": 100,
+      "best_practices": 96,
+      "seo": 100,
+      "fcp_s": 0.4,
+      "lcp_s": 0.5,
+      "tbt_ms": 10,
+      "cls": 0.098,
+      "speed_index_s": 1.2
+    },
+    "console_note": "Yandex Metrica WebSocket mc.yandex.com/solid.ws ERR_NAME_NOT_RESOLVED in Lighthouse environment"
+  },
+  "not_verified": [
+    "real conversion and lead quality",
+    "production lead delivery chain",
+    "all variants at all breakpoints",
+    "screen reader and physical mobile devices",
+    "full WCAG compliance",
+    "search console indexing",
+    "live Metrica report events",
+    "expanded public release after capture",
+    "physical product specifications independent of supplied data"
+  ],
+  "products_390_geometry": [
+    {
+      "slug": "chehol-na-kvadrocikl",
+      "h1_y": 749,
+      "page_height": 9761,
+      "first_direct_request_y": 1529
+    },
+    {
+      "slug": "chehol-dlya-motocikla",
+      "h1_y": 670,
+      "page_height": 9165,
+      "first_direct_request_y": 1709
+    },
+    {
+      "slug": "chehly-dlya-koles",
+      "h1_y": 670,
+      "page_height": 8871,
+      "first_direct_request_y": 1555
+    },
+    {
+      "slug": "nakidka-na-bamper",
+      "h1_y": 670,
+      "page_height": 4676,
+      "first_direct_request_y": 1259
+    },
+    {
+      "slug": "nakidka-na-sidene-i-bagazhnik",
+      "h1_y": 670,
+      "page_height": 6118,
+      "first_direct_request_y": 1309
+    },
+    {
+      "slug": "chehol-dlya-amortizatora",
+      "h1_y": 670,
+      "page_height": 6118,
+      "first_direct_request_y": 1259
+    },
+    {
+      "slug": "chehol-dlya-kolyaski",
+      "h1_y": 670,
+      "page_height": 6506,
+      "first_direct_request_y": 1315
+    },
+    {
+      "slug": "kryuchki-dlya-kolyaski",
+      "h1_y": 670,
+      "page_height": 4302,
+      "first_direct_request_y": 1109
+    },
+    {
+      "slug": "dno-dlya-volera",
+      "h1_y": 670,
+      "page_height": 6315,
+      "first_direct_request_y": 1313
+    },
+    {
+      "slug": "chehol-dlya-generatora",
+      "h1_y": 670,
+      "page_height": 5442,
+      "first_direct_request_y": 1233
+    },
+    {
+      "slug": "karabiny-dlya-vesla",
+      "h1_y": 670,
+      "page_height": 4327,
+      "first_direct_request_y": 1135
+    },
+    {
+      "slug": "chehol-dlya-shurupoverta",
+      "h1_y": 670,
+      "page_height": 3727,
+      "first_direct_request_y": 1162
+    },
+    {
+      "slug": "sumki-bauly",
+      "h1_y": 670,
+      "page_height": 7578,
+      "first_direct_request_y": 1519
+    },
+    {
+      "slug": "remen-dlya-perenoski",
+      "h1_y": 670,
+      "page_height": 3724,
+      "first_direct_request_y": 1205
+    },
+    {
+      "slug": "plechevye-remni-dlya-sumok",
+      "h1_y": 670,
+      "page_height": 3870,
+      "first_direct_request_y": 1351
+    },
+    {
+      "slug": "nagrudnaya-styazhka",
+      "h1_y": 670,
+      "page_height": 4386,
+      "first_direct_request_y": 1185
+    },
+    {
+      "slug": "stropa-remennaya",
+      "h1_y": 670,
+      "page_height": 6784,
+      "first_direct_request_y": 1528
+    },
+    {
+      "slug": "lenta-kontaktnaya",
+      "h1_y": 670,
+      "page_height": 6094,
+      "first_direct_request_y": 1259
+    },
+    {
+      "slug": "chehol-na-evrokub",
+      "h1_y": 670,
+      "page_height": 4739,
+      "first_direct_request_y": 1253
+    },
+    {
+      "slug": "remni-styazhnye",
+      "h1_y": 670,
+      "page_height": 6135,
+      "first_direct_request_y": 1259
+    },
+    {
+      "slug": "chehol-dlya-velosipeda",
+      "h1_y": 670,
+      "page_height": 6253,
+      "first_direct_request_y": 1279
+    },
+    {
+      "slug": "chehol-dlya-udochek",
+      "h1_y": 670,
+      "page_height": 5840,
+      "first_direct_request_y": 1366
+    },
+    {
+      "slug": "organayzer-v-bagazhnik",
+      "h1_y": 670,
+      "page_height": 5395,
+      "first_direct_request_y": 1259
+    },
+    {
+      "slug": "bahily-mnogorazovye",
+      "h1_y": 670,
+      "page_height": 6058,
+      "first_direct_request_y": 1233
+    },
+    {
+      "slug": "chehol-dlya-kacheley-kokona",
+      "h1_y": 670,
+      "page_height": 6187,
+      "first_direct_request_y": 1309
+    },
+    {
+      "slug": "chehol-dlya-snouborda",
+      "h1_y": 670,
+      "page_height": 5368,
+      "first_direct_request_y": 1259
+    }
+  ]
+}
