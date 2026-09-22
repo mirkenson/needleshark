@@ -25,14 +25,16 @@ def connection():
         conn.close()
 
 
-def initialize():
+def initialize(loop_enabled=False):
     with connection() as conn, conn.cursor() as cur:
         cur.execute('SELECT submission_id FROM lead_submissions LIMIT 0')
         cur.execute('SELECT content FROM lead_files LIMIT 0')
         cur.execute('SELECT lease_token FROM lead_deliveries LIMIT 0')
+        if loop_enabled:
+            cur.execute('SELECT lease_token FROM lead_loop_deliveries LIMIT 0')
 
 
-def enqueue(data, ip, recipients, secret):
+def enqueue(data, ip, recipients, secret, loop_enabled=False):
     if not recipients or len(secret) < 32:
         raise RuntimeError('Intake configuration missing')
     payload = json.dumps(data, ensure_ascii=False, sort_keys=True)
@@ -70,41 +72,52 @@ def enqueue(data, ip, recipients, secret):
                         (data['id'], attachment['name'], attachment['type'], base64.b64decode(attachment['data'], validate=True)))
         for recipient in dict.fromkeys(recipients):
             cur.execute("INSERT INTO lead_deliveries(submission_id,channel,recipient) VALUES(%s,'email',%s)", (data['id'], recipient))
+        if loop_enabled:
+            cur.execute('INSERT INTO lead_loop_deliveries(submission_id) VALUES(%s)', (data['id'],))
     return 202, {'ok': True, 'id': data['id']}
 
 
-def claim():
+def delivery_table(channel):
+    # SQL identifiers only come from this fixed allowlist, never from a request/config.
+    return {'email': 'lead_deliveries', 'loop': 'lead_loop_deliveries'}[channel]
+
+
+def claim(channel='email'):
+    table = delivery_table(channel)
+    recipient_sql = 'd.recipient' if channel == 'email' else "'loop-leads'"
     token = str(uuid.uuid4())
     with connection() as conn, conn.cursor() as cur:
-        cur.execute("""WITH next_job AS (
-            SELECT id FROM lead_deliveries WHERE channel='email' AND
+        cur.execute(f"""WITH next_job AS (
+            SELECT id FROM {table} WHERE
             ((status='pending' AND retry_at<=now()) OR (status='sending' AND lease_until<now()))
             ORDER BY id FOR UPDATE SKIP LOCKED LIMIT 1)
-            UPDATE lead_deliveries d SET status='sending',attempts=attempts+1,
+            UPDATE {table} d SET status='sending',attempts=attempts+1,
             lease_until=now()+interval '5 minutes',lease_token=%s
             FROM next_job n WHERE d.id=n.id
-            RETURNING d.id,d.submission_id,d.recipient,d.attempts""", (token,))
+            RETURNING d.id,d.submission_id,{recipient_sql},d.attempts""", (token,))
         row = cur.fetchone()
         if not row:
             return None
         job_id, submission_id, recipient, attempts = row
         cur.execute('SELECT payload FROM lead_submissions WHERE submission_id=%s', (submission_id,))
         lead = cur.fetchone()[0]
-        cur.execute('SELECT name,mime_type,content FROM lead_files WHERE submission_id=%s', (submission_id,))
-        attachment = cur.fetchone()
-        if attachment:
-            lead['attachment'] = {'name': attachment[0], 'type': attachment[1], 'content': bytes(attachment[2])}
-        return {'id': job_id, 'token': token, 'lead': lead, 'recipient': recipient, 'attempts': attempts}
+        if channel == 'email':
+            cur.execute('SELECT name,mime_type,content FROM lead_files WHERE submission_id=%s', (submission_id,))
+            attachment = cur.fetchone()
+            if attachment:
+                lead['attachment'] = {'name': attachment[0], 'type': attachment[1], 'content': bytes(attachment[2])}
+        return {'id': job_id, 'token': token, 'lead': lead, 'recipient': recipient, 'attempts': attempts, 'channel': channel}
 
 
 def finish(job, error=None):
+    table = delivery_table(job.get('channel', 'email'))
     with connection() as conn, conn.cursor() as cur:
         if error is None:
-            cur.execute("""UPDATE lead_deliveries SET status='sent',sent_at=now(),last_error=NULL,
+            cur.execute(f"""UPDATE {table} SET status='sent',sent_at=now(),last_error=NULL,
                 lease_until=NULL,lease_token=NULL WHERE id=%s AND lease_token=%s AND status='sending'""", (job['id'], job['token']))
         else:
             delay = min(3600, 60 * 2 ** min(job['attempts'] - 1, 6))
-            cur.execute("""UPDATE lead_deliveries SET status='pending',last_error=%s,
+            cur.execute(f"""UPDATE {table} SET status='pending',last_error=%s,
                 retry_at=now()+(%s * interval '1 second'),lease_until=NULL,lease_token=NULL
                 WHERE id=%s AND lease_token=%s AND status='sending'""", (error, delay, job['id'], job['token']))
         return cur.rowcount == 1

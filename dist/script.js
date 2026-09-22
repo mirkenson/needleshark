@@ -57,6 +57,7 @@ form.addEventListener('submit', async event => {
   }
   submissionId ||= crypto.randomUUID();
   const payload = {id: submissionId, name: form.elements.name.value, contact: form.elements.contact.value, question: form.elements.question.value, consent: form.elements.consent.checked, website: form.elements.website?.value || ''};
+  payload.source_path = form.dataset.sourcePath || '/';
   const intent = isBusiness ? (form.elements.business_intent.value || 'unspecified') : '';
   if (isBusiness) {
     const company = form.elements.business_company.value.trim();

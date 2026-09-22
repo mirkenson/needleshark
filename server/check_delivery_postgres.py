@@ -35,15 +35,19 @@ def main():
             migration = Path(__file__).with_name('migrations').joinpath('20260918_server_delivery.sql').read_text()
             cur.execute(migration)
             cur.execute(migration)
+            loop_migration = Path(__file__).with_name('migrations').joinpath('20260922_loop_delivery.sql').read_text()
+            cur.execute(loop_migration)
+            cur.execute(loop_migration)
         os.environ['CRM_DSN'] = make_dsn(dsn, options='-csearch_path=' + schema)
-        store.initialize()
+        store.initialize(loop_enabled=True)
         first = lead()
-        assert store.enqueue(first, 'ip1', (recipient,), secret)[0] == 202
+        assert store.enqueue(first, 'ip1', (recipient,), secret, loop_enabled=True)[0] == 202
         with ThreadPoolExecutor(max_workers=4) as pool:
-            results = list(pool.map(lambda _: store.enqueue(first, 'ip1', (recipient,), secret)[0], range(4)))
+            results = list(pool.map(lambda _: store.enqueue(first, 'ip1', (recipient,), secret, loop_enabled=True)[0], range(4)))
         assert results == [200] * 4
         assert query('SELECT count(*) FROM orders') == [(1,)]
         assert query('SELECT count(*) FROM lead_deliveries') == [(1,)]
+        assert query('SELECT count(*) FROM lead_loop_deliveries') == [(1,)]
         assert query('SELECT business_company,description FROM orders') == [(first['business_company'], first['question'])]
         assert bytes(query('SELECT content FROM lead_files')[0][0]) == b'%PDF-test'
         assert 'data' not in query('SELECT payload FROM lead_submissions')[0][0]['attachment']
@@ -76,6 +80,36 @@ def main():
         assert not store.finish(abandoned)  # A stale worker cannot finalize a reclaimed job.
         assert store.finish(recovered)
         assert store.claim() is None
+        # A LOOP failure must not affect the already-sent email with the same numeric id.
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            loop_claims = list(pool.map(lambda _: store.claim('loop'), range(4)))
+        loop_jobs = [job for job in loop_claims if job]
+        assert len(loop_jobs) == 1
+        loop_job = loop_jobs[0]
+        assert 'content' not in loop_job['lead']['attachment']
+        assert store.finish(loop_job, 'loop_http_503')
+        assert query('SELECT status FROM lead_deliveries') == [('sent',)]
+        assert store.claim('loop') is None
+        query("UPDATE lead_loop_deliveries SET retry_at=now()-interval '1 second'")
+        stale_loop = store.claim('loop')
+        query("UPDATE lead_loop_deliveries SET lease_until=now()-interval '1 second'")
+        recovered_loop = store.claim('loop')
+        assert recovered_loop['attempts'] == 3
+        assert not store.finish(stale_loop)
+        assert store.finish(recovered_loop)
+        assert store.claim('loop') is None
+        assert store.enqueue(first, 'ip1', (recipient,), secret, loop_enabled=True)[0] == 200
+        assert query('SELECT count(*) FROM lead_loop_deliveries') == [(1,)]
+        # Failure of LOOP enqueue rolls the entire new lead transaction back.
+        query('ALTER TABLE lead_loop_deliveries ADD CONSTRAINT test_reject CHECK (false) NOT VALID')
+        try:
+            store.enqueue(lead(), 'ip2', (recipient,), secret, loop_enabled=True)
+            raise AssertionError('Expected LOOP outbox insertion failure')
+        except psycopg2.IntegrityError:
+            pass
+        query('ALTER TABLE lead_loop_deliveries DROP CONSTRAINT test_reject')
+        for table in ('orders', 'lead_submissions', 'lead_files', 'lead_deliveries', 'lead_loop_deliveries'):
+            assert query('SELECT count(*) FROM ' + table) == [(1,)], table
         assert store.enqueue(first, 'ip1', (recipient,), secret)[0] == 200
         assert query('SELECT count(*) FROM lead_files') == [(1,)]  # Files survive sent status.
         second = lead(attachment=None)
@@ -88,6 +122,8 @@ def main():
         for _ in range(10):
             assert store.enqueue(lead(), 'rate-ip', (recipient,), secret)[0] == 202
         assert store.enqueue(lead(), 'rate-ip', (recipient,), secret)[0] == 429
+        assert query('SELECT count(*) FROM lead_loop_deliveries') == [(1,)]  # Disabled integration adds no jobs.
+        print('PASS LOOP PostgreSQL: atomic enqueue/rollback, concurrent deduplication, independent mail state, text-only claim, durable retries, lease recovery, stale fencing, disabled mode; zero network sends')
         print('PASS PostgreSQL: atomic rollback (order/file/jobs), concurrent deduplication, file changes rejected, leases/restart recovery, stale fencing, backoff, per-recipient status, rate limit, private file persistence; zero SMTP sends')
     finally:
         with admin.cursor() as cur:

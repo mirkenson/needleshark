@@ -57,6 +57,8 @@ The optimization was installed on 11 September. The expanded three-product catal
 
 Use `ops/install-server-mail.sh PRIVATE_SMTP_FILE APPROVED_RECIPIENT` for the new PostgreSQL/SMTP backend. `ops/install-leads.sh` now forwards to this installer and requires the same two arguments. Static publication still uses `ops/deploy.sh` independently. Backend code has its own `/opt/needle-shark/current` and `previous`; the service points to current. The installer backs up the actual unit and environment before changing ExecStart, preserves hardening and does not change Nginx. See `server/README.md` for queue semantics, verification and rollback constraints.
 
+For the approved text-only LOOP lead channel, use `bash ops/install-server-mail.sh --loop PRIVATE_LOOP_ENV` (22 September 2026). The file must contain only `LOOP_LEADS_WEBHOOK_URL`, outside Git/public files. The mode preserves all current mail settings and the service unit, adds the independent `lead_loop_deliveries` outbox and runs a separate worker; historical leads are not replayed. Both installer modes now require a committed revision already present in the branch upstream. Monitor/cleanup code and configuration are unchanged. See `server/README.md` for acknowledgements, duplicate limitations and rollback.
+
 
 ## Attachment retention and server alerts — 18 September 2026
 

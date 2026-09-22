@@ -25,7 +25,30 @@ def quoted(value):
     return '"' + value.replace('\\', '\\\\').replace('"', '\\"') + '"'
 
 
+def write_env(target, new):
+    temp = Path(target + '.next')
+    fd = os.open(temp, os.O_CREAT | os.O_TRUNC | os.O_WRONLY, 0o600)
+    with os.fdopen(fd, 'w') as stream:
+        stream.write(''.join(key + '=' + quoted(value) + '\n' for key, value in sorted(new.items())))
+    os.chmod(temp, 0o600)
+    os.replace(temp, target)
+
+
+def configure_loop(target, incoming):
+    from loop_delivery import webhook_url
+    old, supplied = read_env(target), read_env(incoming)
+    if set(supplied) != {'LOOP_LEADS_WEBHOOK_URL'} or not webhook_url(supplied['LOOP_LEADS_WEBHOOK_URL']):
+        raise ValueError('Only the approved LOOP webhook setting is allowed')
+    if not old.get('CRM_DSN') or not old.get('MAIL_RECIPIENTS'):
+        raise ValueError('Existing mail backend configuration missing')
+    write_env(target, dict(old, **supplied))
+
+
 def main():
+    if sys.argv[1] == '--loop':
+        configure_loop(*sys.argv[2:])
+        print('Private LOOP configuration updated; existing settings preserved')
+        return
     target, incoming, allowed_recipient = map(str, sys.argv[1:])
     old = read_env(target)
     supplied = read_env(incoming)
@@ -37,12 +60,7 @@ def main():
     new.setdefault('IP_HASH_SECRET', secrets.token_urlsafe(48))
     if not new.get('CRM_DSN'):
         raise SystemExit('Existing PostgreSQL configuration missing')
-    temp = Path(target + '.next')
-    fd = os.open(temp, os.O_CREAT | os.O_TRUNC | os.O_WRONLY, 0o600)
-    with os.fdopen(fd, 'w') as stream:
-        stream.write(''.join(key + '=' + quoted(value) + '\n' for key, value in sorted(new.items())))
-    os.chmod(temp, 0o600)
-    os.replace(temp, target)
+    write_env(target, new)
     print('Private environment updated; Google keys removed; one approved mail recipient')
 
 

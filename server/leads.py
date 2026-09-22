@@ -8,6 +8,7 @@ import time
 import uuid
 import delivery_store
 import mail_delivery
+import loop_delivery
 from lead_context import validate_context, notification_payload
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
@@ -60,7 +61,8 @@ def validate(data):
 
 
 def enqueue(data, ip):
-    return delivery_store.enqueue(data, ip, mail_delivery.recipients(), os.environ.get('IP_HASH_SECRET', ''))
+    return delivery_store.enqueue(data, ip, mail_delivery.recipients(), os.environ.get('IP_HASH_SECRET', ''),
+                                  loop_enabled=bool(loop_delivery.webhook_url()))
 
 
 def deliver_once():
@@ -80,10 +82,27 @@ def deliver_once():
             delivery_store.finish(job)
 
 
-def worker():
+def deliver_loop_once():
+    url = loop_delivery.webhook_url()
+    if not url:
+        return
+    for _ in range(5):
+        job = delivery_store.claim('loop')
+        if job is None:
+            break
+        try:
+            loop_delivery.send(job['lead'], url)
+        except Exception as error:
+            delivery_store.finish(job, loop_delivery.error_code(error))
+            print('LOOP delivery pending:', job['id'], flush=True)
+        else:
+            delivery_store.finish(job)
+
+
+def worker(deliver=deliver_once):
     while True:
         try:
-            deliver_once()
+            deliver()
         except Exception:
             print('Lead queue worker will retry', flush=True)
         time.sleep(15)
@@ -132,6 +151,7 @@ if __name__ == '__main__':
     mail_delivery.recipients()
     if mail_delivery.smtp_config() is None:
         print('SMTP not configured: leads will be saved, email delivery paused', flush=True)
-    delivery_store.initialize()
+    delivery_store.initialize(loop_enabled=bool(loop_delivery.webhook_url()))
     threading.Thread(target=worker, daemon=True).start()
+    threading.Thread(target=worker, args=(deliver_loop_once,), daemon=True).start()
     ThreadingHTTPServer(('127.0.0.1', 8091), Handler).serve_forever()

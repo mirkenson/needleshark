@@ -1,5 +1,19 @@
 # Server-side leads and email
 
+## Text-only LOOP leads — 22 September 2026
+
+Owner scope: new leads only, one supplied incoming webhook at `neesha.loop.ru`, no files and no server-monitor messages. `loop_delivery.py` formats Moscow time, contact, name, full question, available company/direction/product/size/quantity and source page/form. Missing context is labelled as missing; no traffic source or product is invented. Homepage `script.js` now supplies `source_path=/`; catalogue/B2B already provide their own paths. UTM/referrer/CTA tracking is not added.
+
+The same intake transaction inserts one `lead_loop_deliveries` job when `LOOP_LEADS_WEBHOOK_URL` is configured. Its migration is additive and never queues historical leads. A separate worker uses the existing lease/backoff implementation against the separate table, so SMTP delivery, its backlog limit, existing email monitor and attachment cleanup keep their prior behavior. LOOP does not load attachment bytes or publish file links/names. Visitor text is literal Markdown code, with Slack parsing disabled, to avoid visitor-controlled mentions/images/formatting.
+
+The private URL is kept only in root-owned `/etc/needle-shark/leads.env` (0600). HTTPS certificate verification is required; only the owner-approved host/path format is accepted, redirects and environment HTTP proxies are disabled. Only HTTP 200 with `ok` confirms a webhook delivery; other responses/timeouts retry from 60 seconds to one hour. Errors in the queue/logs are neutral codes, not provider bodies or URLs. A lost acknowledgement can still cause a repeated LOOP post with the same visible request UUID: incoming webhooks do not provide a verified exactly-once guarantee. API success remains confirmation of database commit, not messenger delivery.
+
+Deploy the committed/pushed backend with `bash ops/install-server-mail.sh --loop PRIVATE_LOOP_ENV`. This mode preserves SMTP settings/recipients and the actual systemd unit. The installer backs up the environment/database/pointers, applies the new table and minimal grants, verifies as the service user, and atomically switches the backend release. Static homepage context is published separately with `ops/deploy.sh`. Inspect both current/previous pointers before rollback; switching to the prior SMTP-only code leaves LOOP jobs stored but unprocessed. Do not restore a database dump over new requests. An empty private webhook setting pauses LOOP and stops creation of new LOOP jobs; existing pending jobs remain.
+
+Read-only health query: `SELECT status,count(*),max(attempts) FROM lead_loop_deliveries GROUP BY status;`. An incoming webhook does not grant access to read channel history, so actual channel display/read notifications require owner/UI confirmation. Existing monitor does not watch this new outbox or send to LOOP; that work was explicitly deferred by the owner.
+
+Validation: server/ops unit suites, `CRM_TEST_DSN=... python3 server/check_delivery_postgres.py` in a disposable schema (no network sends), then synthetic public-form → PostgreSQL → both delivery channels verification. Installation results belong in `docs/verification/20260922-loop-leads.json` and `docs/PROJECT_CONTEXT.md`.
+
 ## Google-free delivery — 18 September 2026
 
 Current implementation: `/api/leads` → one PostgreSQL transaction (`customers`, `orders`, `lead_submissions`, `lead_files`, `lead_deliveries`) → background SMTP worker. Google Apps Script, Sheets, Drive and SQLite are not used by this runtime. The legacy Google web-app deployment was also archived in the Google UI after SMTP provider acceptance. Historical setup notes below describe the superseded deployment; historical orders and Drive links are not rewritten. Production installation/results are recorded in `docs/verification/20260918-server-mail.json`.
