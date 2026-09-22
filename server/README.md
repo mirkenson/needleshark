@@ -1,5 +1,9 @@
 # Server-side leads and email
 
+## Isolated catalogue preview — 22 September 2026
+
+`python3 server/preview.py --directory outputs/catalog-preview --port 4176` serves the local catalogue drafts on loopback. Custom directories cannot be combined with `--live-api`; submissions return the existing explicit preview error. Production lead handling/database/delivery code is unchanged. New catalogue pack quantities still use the existing contract: number of packs in question text, total items in `quantity`, variant article/options in `question`. Local synthetic checks do not confirm PostgreSQL or SMTP/LOOP delivery. See `docs/verification/20260922-catalog-drafts.json`.
+
 Database reference: [all six tables and every column](../docs/DATABASE.md), including customer/order IDs, UUID retry semantics, constraints, indexes, payload fields and attachment retention. `orders.id` is the numeric request number; `orders.customer_id` references `customers.id`; `submission_id` remains the technical UUID used by the API, database links and email Message-ID.
 
 ## Numeric notification number — 22 September 2026

@@ -1,0 +1,333 @@
+{
+  "date": "2026-09-22",
+  "scope": "Local draft preparation; no deployment",
+  "code_commit": "3189d21ada4b99ee388b63ac9c61ee58fc4059d2",
+  "branch": "codex/catalog-ozon-drafts",
+  "preview_url": "http://127.0.0.1:4176/catalog/",
+  "source_files": [
+    {
+      "file": "Автоковрики и авточехлы_22.09.2026.xlsx",
+      "sha256": "d5abceaf7db5eaf61717783eccfb31e3a42af20ce153869ea41b7294ab9dbf63"
+    },
+    {
+      "file": "Аксессуар для коляски_22.09.2026.xlsx",
+      "sha256": "794f0cadd7a868d344305e5a01586daf4ccb0907c61b151be77dfcafea3bb7af"
+    },
+    {
+      "file": "Аксессуар для перевозки и сна_22.09.2026.xlsx",
+      "sha256": "c4ab539688000628b6bf6bccbb51f8d6d2925d04cceb8438922a8cd1f60535fb"
+    },
+    {
+      "file": "Аксессуар для сварки_22.09.2026.xlsx",
+      "sha256": "44ed0e36824013287bb6943d9c840358a4136de8aa500fbcf770e79aa2557d7c"
+    },
+    {
+      "file": "Аксессуары, запчасти для SUP-доски_22.09.2026.xlsx",
+      "sha256": "17cf3641c6cbd74afbb9d3712729bfa1ed97ba444639274aba096714ef7e0ca1"
+    },
+    {
+      "file": "Аксессуары, оснастка для рыбалки_22.09.2026.xlsx",
+      "sha256": "bd09fd45bc40656d4c8cf64798e052e9753c273b4403e0082e9c69cb730cb0a9"
+    },
+    {
+      "file": "Аксессуары_22.09.2026.xlsx",
+      "sha256": "d87e54fa5471c13705e6aaab07bac5bf38423c6200cc465609730d4ab67703a1"
+    },
+    {
+      "file": "Нитки, пряжа_22.09.2026.xlsx",
+      "sha256": "8b068da828d42e7644da98fce408d7189ffa1340c0f8953b65c58743fe9d3e96"
+    },
+    {
+      "file": "Оснастка для садовой техники_22.09.2026.xlsx",
+      "sha256": "8062bc3d6ed3fd9fe5f8ac1ab45f7b6babd25e6ae4e8463d76f65268783a0a44"
+    },
+    {
+      "file": "Ремень стяжной_22.09.2026.xlsx",
+      "sha256": "a054e280dbe7f4ad401cba4e9e039d52995e576a316dfbe8b772b8e612400aab"
+    },
+    {
+      "file": "Спортивные чехлы и сумки_22.09.2026.xlsx",
+      "sha256": "cb430761fea8daae8cf82c72d56faa55998e9b6a15d1fb4f071b0cb57acb51be"
+    },
+    {
+      "file": "Сумка-органайзер автомобильная_22.09.2026.xlsx",
+      "sha256": "5fe5baf33a4ecaa845da1eb389ec8668e1e6e7950c06cc17c69f3cab7d0a74a3"
+    },
+    {
+      "file": "Чехлы-дождевики на обувь_22.09.2026.xlsx",
+      "sha256": "a911de5899395fb35a829645b130359320b13780614daeceb499e69e06fdc6c6"
+    },
+    {
+      "file": "Чехол для бескаркасной мебели_22.09.2026.xlsx",
+      "sha256": "7ac708e072cad8218a15f7c00749bf938ccb299026d262315d46f44155b68c8b"
+    },
+    {
+      "file": "Чехол для сноуборда_22.09.2026.xlsx",
+      "sha256": "5ea0779d40b908db06616ae680e7239d85cde4ec5e5881175adb8890bdec2714"
+    }
+  ],
+  "counts": {
+    "source_workbooks": 15,
+    "source_articles": 77,
+    "existing_articles": 15,
+    "new_cards": 23,
+    "new_variants": 62,
+    "preview_cards": 26,
+    "downloaded_photos": 212,
+    "selected_source_photos": 132,
+    "new_webp_files": 576
+  },
+  "checks": {
+    "catalog_unit_tests": 15,
+    "ops_unit_tests": 22,
+    "server_unit_tests": 26,
+    "server_test_note": "Two socket tests initially blocked by sandbox; full rerun with local socket permission passed.",
+    "javascript_syntax": "node --check dist/catalog.js passed",
+    "public_static": "ops/prepare-public.py and ops/check-site.py passed for 10 public pages",
+    "preview_static": "33 HTML pages: headings, unique ids, local assets/links/anchors, JSON-LD, noindex; Metrika SDK absent",
+    "draft_exclusion": "All 23 draft HTML paths absent from dist/catalog and sitemap; preview is under outputs/catalog-preview",
+    "original_products": "First 3 product data entries unchanged versus parent commit",
+    "responsive": {
+      "paths": [
+        "/catalog/",
+        "/catalog/chehol-na-kvadrocikl/",
+        "/catalog/chehol-dlya-motocikla/",
+        "/catalog/chehly-dlya-koles/",
+        "/catalog/nakidka-na-bamper/",
+        "/catalog/nakidka-na-sidene-i-bagazhnik/",
+        "/catalog/chehol-dlya-amortizatora/",
+        "/catalog/chehol-dlya-kolyaski/",
+        "/catalog/kryuchki-dlya-kolyaski/",
+        "/catalog/dno-dlya-volera/",
+        "/catalog/chehol-dlya-generatora/",
+        "/catalog/karabiny-dlya-vesla/",
+        "/catalog/chehol-dlya-shurupoverta/",
+        "/catalog/sumki-bauly/",
+        "/catalog/remen-dlya-perenoski/",
+        "/catalog/plechevye-remni-dlya-sumok/",
+        "/catalog/nagrudnaya-styazhka/",
+        "/catalog/stropa-remennaya/",
+        "/catalog/lenta-kontaktnaya/",
+        "/catalog/chehol-na-evrokub/",
+        "/catalog/remni-styazhnye/",
+        "/catalog/chehol-dlya-velosipeda/",
+        "/catalog/chehol-dlya-udochek/",
+        "/catalog/organayzer-v-bagazhnik/",
+        "/catalog/bahily-mnogorazovye/",
+        "/catalog/chehol-dlya-kacheley-kokona/",
+        "/catalog/chehol-dlya-snouborda/"
+      ],
+      "widths": [
+        360,
+        390,
+        768,
+        1024,
+        1440
+      ],
+      "checks": 135,
+      "horizontal_overflow": 0,
+      "invalid_h1": 0,
+      "broken_loaded_images": 0,
+      "note": "DOM layout checks on every path and width; screenshots inspected on representative mobile and desktop pages and form/FAQ. Catalog badge change rechecked on all 5 widths."
+    },
+    "variant_ui": {
+      "tested_new_variants": 62,
+      "wrong_selection_or_gallery": 0,
+      "unavailable_combination": "237 L × 1 item disabled; only 2–5 exist",
+      "final_label_note": "Labels for size-only variants shortened after first switch pass; covered by regression unit test and final layout pass."
+    },
+    "interaction": [
+      "Gallery photo selection with Enter",
+      "Mobile menu open and Escape close",
+      "Section anchor and FAQ expansion",
+      "Invalid contact rejected",
+      "Local preview POST returns 503 and displays error, never success",
+      "Synthetic local endpoint returns matching id: success shown",
+      "Synthetic lost connection: error shown",
+      "Retry uses identical UUID and payload",
+      "2 packs × 4 items sends quantity=8; article, volume and pack count remain in question"
+    ],
+    "console": "No warning/error entries in reviewed final preview tab log",
+    "rebuild": "Public HTML, robots and sitemap repeat generation identical"
+  },
+  "limitations": [
+    "Not published; VPS release, HTTPS, production database/delivery and actual analytics SDK not retested in this task.",
+    "Synthetic form response confirms browser handling only; it does not prove database or notification delivery.",
+    "New Ozon links not inferred from OZN barcodes; SKU columns empty, variant ozonUrl stays null.",
+    "No prices or current stock imported.",
+    "Source Ozon infographics retained; some claims/dimensions conflict with text fields. See reviewNotes and audit document.",
+    "Original workbooks are referenced and hashed but not committed; outputs is untracked."
+  ],
+  "products": [
+    {
+      "slug": "nakidka-na-bamper",
+      "name": "Накидка на задний бампер",
+      "variants": 1,
+      "review_notes": [
+        "В таблице перечислены нейлон, изолон и Taffeta; конструкция слоёв не подтверждена, материал не конкретизирован."
+      ]
+    },
+    {
+      "slug": "nakidka-na-sidene-i-bagazhnik",
+      "name": "Накидка на сиденье и в багажник",
+      "variants": 1,
+      "review_notes": []
+    },
+    {
+      "slug": "chehol-dlya-amortizatora",
+      "name": "Чехол для амортизатора",
+      "variants": 1,
+      "review_notes": [
+        "Покрытие в полях обозначено как ПВХ, в описании — PU2000. Тип покрытия не перенесён. Совместимость с конкретными моделями не заявляется."
+      ]
+    },
+    {
+      "slug": "chehol-dlya-kolyaski",
+      "name": "Чехол для перевозки коляски",
+      "variants": 6,
+      "review_notes": []
+    },
+    {
+      "slug": "kryuchki-dlya-kolyaski",
+      "name": "Крючки для коляски",
+      "variants": 1,
+      "review_notes": [
+        "В полях ABS-пластик и металл, на главном фото ацеталь. Материал исключён до сверки."
+      ]
+    },
+    {
+      "slug": "dno-dlya-volera",
+      "name": "Дно для клетки и вольера",
+      "variants": 4,
+      "review_notes": []
+    },
+    {
+      "slug": "chehol-dlya-generatora",
+      "name": "Чехол для генератора",
+      "variants": 2,
+      "review_notes": [
+        "Состав комплекта не заполнен. Сумка для хранения не обещается."
+      ]
+    },
+    {
+      "slug": "karabiny-dlya-vesla",
+      "name": "Карабины для весла",
+      "variants": 1,
+      "review_notes": []
+    },
+    {
+      "slug": "chehol-dlya-shurupoverta",
+      "name": "Чехол для шуруповёрта",
+      "variants": 1,
+      "review_notes": [
+        "Не подтверждены материал, утеплитель, габариты и допустимые модели. Обещания защиты от падений, короткого замыкания и заданной температуры не перенесены."
+      ]
+    },
+    {
+      "slug": "sumki-bauly",
+      "name": "Сумки-баулы для хранения",
+      "variants": 14,
+      "review_notes": [
+        "У NS-BAG-35-4 название содержит 2 шт., описание/артикул/комплект — 4; выбран комплект из 4 по трём согласующимся полям, требуется окончательная сверка. Габариты 35 л совпадают с 108 л; все физические габариты сумок опущены. Для 237 л заголовок содержит 210D, описание 600D — плотность ткани опущена. Для 237 л есть комплекты только по 2–5 шт.; вариант из 1 шт. не создан.",
+        "Фото 14604789715 у NS-BAG-35-3 показывает 230 л и заменено общими фото сумки 35 л; фото 14650638282 противоречит остальным фото по нагрузке (50/20 кг) и не используется."
+      ]
+    },
+    {
+      "slug": "remen-dlya-perenoski",
+      "name": "Ремень для переноски грузов",
+      "variants": 2,
+      "review_notes": [
+        "Для нового исполнения поле размеров 200×60×30 мм расходится с описанием длины 205 см и ширины 5 см. Размеры и нагрузка 50 кг до сверки не перенесены. Различия исполнения определяются по фотографиям и артикулам."
+      ]
+    },
+    {
+      "slug": "plechevye-remni-dlya-sumok",
+      "name": "Плечевые ремни для сумок",
+      "variants": 5,
+      "review_notes": [
+        "Материалы различаются по исполнениям; общий состав не заявляется. Для вариантов без подтверждённых габаритов размеры не показаны."
+      ]
+    },
+    {
+      "slug": "nagrudnaya-styazhka",
+      "name": "Нагрудная стяжка для рюкзака",
+      "variants": 1,
+      "review_notes": []
+    },
+    {
+      "slug": "stropa-remennaya",
+      "name": "Ременная стропа",
+      "variants": 6,
+      "review_notes": [
+        "Неподтверждённые обещания прочности, буксировки и разрывной нагрузки исключены. Поле «цвет ниток: многоцветный» не использовано: название, основной цвет и описание указывают чёрный."
+      ]
+    },
+    {
+      "slug": "lenta-kontaktnaya",
+      "name": "Контактная лента",
+      "variants": 1,
+      "review_notes": []
+    },
+    {
+      "slug": "chehol-na-evrokub",
+      "name": "Чехол на еврокуб",
+      "variants": 2,
+      "review_notes": [
+        "Высота 116/117 см сохранена отдельно для двух исполнений из соответствующих описаний. Единый состав ткани не подтверждён для обоих вариантов.",
+        "На фото EK-001 указана высота 117 см, в описании 116 см. Требуется сверка габарита перед публикацией."
+      ]
+    },
+    {
+      "slug": "remni-styazhnye",
+      "name": "Стяжные ремни",
+      "variants": 2,
+      "review_notes": [
+        "Длина 140 см в названии расходится с 1,41 м у комплекта из 2 шт. Длина и разрывная нагрузка 100 кг не перенесены до уточнения; пригодность для дорожного крепления тяжёлого груза не заявляется."
+      ]
+    },
+    {
+      "slug": "chehol-dlya-velosipeda",
+      "name": "Чехол для велосипеда",
+      "variants": 2,
+      "review_notes": [
+        "Для VSTKY-BIKE-02 выбрано 255×105×125 см из согласующихся названия и описания; отдельные колонки повторяют размер меньшей модели 200×90×100. Требуется сверка перед публикацией."
+      ]
+    },
+    {
+      "slug": "chehol-dlya-udochek",
+      "name": "Чехол для удочек",
+      "variants": 5,
+      "review_notes": [
+        "Oxford 210D и PU2000 подтверждены главными фото всех пяти длин; в текстовых полях состав не заполнен. Снасти на снимках приведены как пример и в комплект не входят. Полный состав комплекта требует сверки."
+      ]
+    },
+    {
+      "slug": "organayzer-v-bagazhnik",
+      "name": "Органайзер в багажник",
+      "variants": 1,
+      "review_notes": [
+        "Аннотация и характеристики в таблице пустые. Материал Oxford 600D, 10 карманов и размер 110×53 см прочитаны с фото 14682885925 и 14859624230. Полный состав комплекта требует сверки."
+      ]
+    },
+    {
+      "slug": "bahily-mnogorazovye",
+      "name": "Многоразовые бахилы",
+      "variants": 1,
+      "review_notes": []
+    },
+    {
+      "slug": "chehol-dlya-kacheley-kokona",
+      "name": "Чехол для качелей-кокона",
+      "variants": 1,
+      "review_notes": []
+    },
+    {
+      "slug": "chehol-dlya-snouborda",
+      "name": "Чехол для сноуборда",
+      "variants": 1,
+      "review_notes": [
+        "В таблице PU1000, на фото PU2000; текстовое значение покрытия исключено. На фото также встречаются длины 165/167 см; подбор — по длине доски до 165 см."
+      ]
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## Catalogue drafts — 22 September 2026
+
+`catalog/render.py --preview` writes the complete local review to `outputs/catalog-preview`; never deploy that directory. Normal rendering and `prepare-public.py` include only catalog entries with `status: published` or the pre-existing default status. New original/responsive images stay in the source tree for reproducible rendering. `optimize-images.py` reuses unchanged manifest entries when original SHA-256 and generated file sizes match; do not rerun full recompression unnecessarily. No VPS release/configuration was changed for this draft preparation. Audit: `docs/catalog-ozon-20260922.md`.
+
 - Host: 194.87.99.98, Ubuntu 24.04.
 - Primary domain: needle-shark.ru; www.needle-shark.ru, needleshark.ru and www.needleshark.ru redirect to it.
 - Nginx config: /etc/nginx/sites-available/needle-shark.
