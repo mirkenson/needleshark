@@ -62,6 +62,19 @@ class ObsidianSyncTests(unittest.TestCase):
         sync.sync(self.repo, self.vault, check=True)
         self.assertEqual(before, {p: p.stat().st_mtime_ns for p in before})
 
+    def test_advertising_branch_preserves_manual_edits(self):
+        self.write("docs/advertising/README.md", "# Campaign plan\n")
+        self.commit()
+        sync.sync(self.repo, self.vault)
+        advertising = self.vault / "Сайт/Реклама/README.md"
+        self.assertEqual(advertising.read_text(), "# Campaign plan\n")
+        advertising.write_text("Owner's advertising note\n")
+        self.write("docs/advertising/README.md", "# Updated campaign plan\n")
+        self.commit()
+        with self.assertRaisesRegex(ValueError, "Ручные изменения"):
+            sync.sync(self.repo, self.vault)
+        self.assertEqual(advertising.read_text(), "Owner's advertising note\n")
+
     def test_conflict_stops_all_writes_and_preserves_personal_note(self):
         sync.sync(self.repo, self.vault)
         self.target().write_text("Owner's correction\n")

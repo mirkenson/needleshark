@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## B2B heading release — 23 September 2026
+
+Static current `20260923T190839Z-8792`, previous `20260923T181352Z-5967`; pushed code `bd8b972e4b3edebfe0a568160c00bf403c13faa6`. Five whitespace fixes, deployed using the existing GitHub transport with all 1266 files verified before switch. Public HTML matches; 49 resources and five services/timers pass. Backend/configuration unchanged. [Report](../docs/verification/20260923-b2b-heading-preflight.json). Older current/previous entries below are historical.
+
 ## UX and blog publication — 23 September 2026
 
 Production static release `20260923T181352Z-5967` comes from pushed commit `ea4b9005a9e3711ffc7f6bea436d1f13ab5f1860` on `codex/ux-blog-release`, using `ops/deploy.sh --from-github`. All 1266 files verified before switching current; 54 public files matched SHA-256, 117 resource URLs returned 200, five alias redirects preserved path/query. Five configured services/timers remain active. Backend/configuration/schema unchanged.

@@ -1,16 +1,59 @@
 {
   "date": "2026-09-23",
-  "status": "local verification passed; publication pending",
+  "status": "published and verified",
   "scope": "Whitespace in five B2B headings; no form, backend or analytics implementation change",
   "base_public_release": "20260923T181352Z-5967",
   "base_source": "ea4b9005a9e3711ffc7f6bea436d1f13ab5f1860",
-  "widths": [360,390,768,1024,1440],
+  "widths": [
+    360,
+    390,
+    768,
+    1024,
+    1440
+  ],
   "horizontal_overflow": false,
   "broken_loaded_images": 0,
   "console_errors_or_warnings": 0,
   "custom_cta_and_utm": true,
   "materials_tab_and_faq": true,
-  "tests": {"business":2,"public":7,"analytics":8},
-  "site_check_pages":39,
-  "limitations": ["No new end-to-end production submission yet", "No indexing resubmission required for whitespace-only correction"]
+  "tests": {
+    "business": 2,
+    "public": 7,
+    "analytics": 8
+  },
+  "site_check_pages": 39,
+  "limitations": [
+    "No new end-to-end production submission in this check; form/backend unchanged",
+    "SDK debug logs confirm calls, not a separately isolated processed report",
+    "Webvisor replay masking not manually inspected; existing form mask verified in public DOM",
+    "No indexing resubmission required for whitespace-only correction",
+    "Python urllib local CA store failed; public TLS checks succeeded with curl verification enabled"
+  ],
+  "code_commit": "bd8b972e4b3edebfe0a568160c00bf403c13faa6",
+  "url": "https://needle-shark.ru/business/",
+  "current": "20260923T190839Z-8792",
+  "previous": "20260923T181352Z-5967",
+  "backend": "20260922T094139Z-1e940964f438",
+  "release_files_verified": 1266,
+  "public_resources_checked": 49,
+  "public_resource_errors": [],
+  "public_html_sha256": "6a3290a8e9dbf2f98e9a597c2d09eb662c4cc1495ffd4ca29634b62fe6ae20bc",
+  "public_html_matches_release": true,
+  "public_five_widths_passed": true,
+  "services_active": 5,
+  "alias_redirect_preserves_query": true,
+  "h1_count": 1,
+  "canonical": "https://needle-shark.ru/business/",
+  "sitemap_count": 1,
+  "robots": "index,follow,max-image-preview:large",
+  "blocking_x_robots_tag": false,
+  "actual_sdk_events": [
+    "request_open",
+    "form_start",
+    "ui_click (material tab)",
+    "ui_click (FAQ)"
+  ],
+  "counter_domain_and_goal_definition_verified": true,
+  "webvisor_form_mask": "ym-hide-content",
+  "production_submission_this_check": "pending owner confirmation of user agreement; not sent"
 }

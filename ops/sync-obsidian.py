@@ -60,6 +60,10 @@ def snapshot(repo):
 
 def export_files(repo, commit, sources):
     result = {f"{MIRROR}/{name}": data for name, data in sources.items()}
+    # Keep the approved advertising knowledge branch directly accessible in the vault.
+    for name, data in sources.items():
+        if name.startswith("docs/advertising/"):
+            result[f"Сайт/Реклама/{name.removeprefix('docs/advertising/')}"] = data
     index = ["# Файлы сайта из Git", "", f"Коммит: `{commit}`.", "",
              f"Полный снимок: {len(sources)} файлов, {sum(map(len, sources.values())):,} байт.", "",
              "Документы открываются как заметки; код, JSON и медиа сохранены в исходном формате. "
