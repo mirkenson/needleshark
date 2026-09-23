@@ -4945,6 +4945,8 @@
     },
     "public_ozon_pages": "Not verified: public storefront navigation returned ERR_CONNECTION_TIMED_OUT. Links verified against Seller API identity fields, not by opening all retail pages.",
     "live_leads_and_metrika": "Not repeated; local preview blocks real submissions and removes SDK. Server and analytics integration unchanged.",
-    "deployment": "Not performed; changes only in codex/ux-prototype and local preview."
-  }
+    "deployment": "Not performed; changes only in codex/ux-prototype and local preview.",
+    "secret_scan": "API key absent from 1425 tracked/candidate paths and all dist files; full responses excluded."
+  },
+  "checked_code_commit": "4a53057f84461822b4730314438881676b97cc99"
 }
