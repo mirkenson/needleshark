@@ -12,6 +12,34 @@ PRODUCT = json.loads((render.ROOT / 'catalog/products.json').read_text())['produ
 
 
 class CatalogueTests(unittest.TestCase):
+    def test_atv_sizes_have_distinct_verified_market_links(self):
+        product = copy.deepcopy(PRODUCT)
+        render.validate_variants(product)
+        self.assertEqual(len(product['sizeOzonUrls']), 7)
+        self.assertEqual(product['sizeOzonUrls']['130 × 120 × 100'], 'https://www.ozon.ru/product/3363023459/')
+        self.assertEqual(product['sizeOzonUrls']['255 × 140 × 120'], 'https://www.ozon.ru/product/2360802204/')
+        html = render.hero(product)
+        self.assertEqual(html.count('data-ozon-url='), 7)
+        self.assertIn('data-size-market="Ozon"', html)
+        self.assertIn('vendor_org_211216', html)
+        del product['sizeOzonUrls']['130 × 120 × 100']
+        with self.assertRaises(ValueError):
+            render.validate_variants(product)
+
+    def test_every_variant_link_matches_verified_ozon_sku(self):
+        products = json.loads((render.ROOT / 'catalog/products.json').read_text())['products']
+        checked = 0
+        for product in products:
+            if not product.get('variants'):
+                continue
+            for variant in product['variants']:
+                source = variant['source']['ozon']
+                self.assertEqual(variant['ozonUrl'], f'https://www.ozon.ru/product/{source["sku"]}/')
+                checked += 1
+            self.assertIn('Перейти на Ozon', render.hero(product))
+            self.assertNotIn('productId', json.dumps(render.variant_data(product)))
+        self.assertEqual(checked, 70)
+
     def test_catalogue_keeps_all_links_without_js_and_escapes_search_data(self):
         product = copy.deepcopy(PRODUCT)
         product.update(name='Чехол "особый" <пример>', catalogCategory={'id': 'tech', 'label': 'Техника'})

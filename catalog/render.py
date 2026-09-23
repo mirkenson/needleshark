@@ -146,6 +146,12 @@ def variant_size_table(product):
 
 
 def validate_variants(product):
+    size_links = product.get('sizeOzonUrls', {})
+    if size_links:
+        if set(size_links) != {size_label(size) for size in product['sizes']}:
+            raise ValueError('Ozon size links must match every listed size')
+        if any(not re.fullmatch(r'https://www\.ozon\.ru/product/\d+/', url) for url in size_links.values()):
+            raise ValueError('Size must link to its confirmed HTTPS Ozon SKU')
     if not product.get('variants'):
         return
     groups = product['optionGroups']
@@ -172,12 +178,14 @@ def markets(product, compact=False):
     links = []
     for market in product['marketplaces']:
         name = e(market['name'])
-        content = f'Купить на {name}<span aria-hidden="true">↗</span>'
+        content = f'Перейти на {name}<span aria-hidden="true">↗</span>'
         url = variant_data(product)[0]['ozonUrl'] if product.get('variants') and market['name'] == 'Ozon' else market['url']
         if url:
             if not url.startswith('https://'):
                 raise ValueError('Marketplace links must use HTTPS')
             marker = ' data-variant-market="Ozon"' if product.get('variants') and not compact and market['name'] == 'Ozon' else ''
+            if product.get('sizeOzonUrls') and not compact and market['name'] == 'Ozon':
+                marker = ' data-size-market="Ozon"'
             links.append(f'<a class="market-button"{marker} href="{e(url)}" target="_blank" rel="noopener noreferrer">{content}</a>')
         # An unavailable marketplace is not an actionable purchase route.
     return f'<div class="marketplaces{" compact" if compact else ""}">{"".join(links)}</div>'
@@ -207,13 +215,19 @@ def hero(product):
     galleries = json.dumps(gallery_data(product), ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     gallery_config = f'<script type="application/json" id="product-galleries" data-default-gallery="{e(gallery_id)}">{galleries}</script>' if gallery_id else ''
     thumbnails = ''.join(f'<button class="gallery-thumb" data-gallery-src="{e(image_attributes(img["src"])["src"])}" data-gallery-srcset="{e(image_attributes(img["src"]).get("srcset", ""))}" data-gallery-alt="{e(img["alt"])}" data-gallery-label="{e(img["label"])}" aria-pressed="{"true" if i == 0 else "false"}" aria-label="{e(img["label"])}">{picture(img, sizes="76px", thumbnail=True)}</button>' for i, img in enumerate(gallery))
-    sizes = ''.join(f'<label class="size-option"><input type="radio" name="product-size" value="{size_label(s)}"><span>{size_label(s)}</span></label>' for s in product['sizes'])
+    sizes = ''
+    for i, size in enumerate(product['sizes']):
+        label = size_label(size)
+        url = product.get('sizeOzonUrls', {}).get(label)
+        market = f' data-ozon-url="{e(external_url(url, "catalog_" + product["slug"] + "_size_" + str(i+1)))}"' if url else ''
+        checked = ' checked' if i == 0 and url else ''
+        sizes += f'<label class="size-option"><input type="radio" name="product-size" value="{label}"{market}{checked}><span>{label}</span></label>'
     picker = variant_picker(product) if product.get('variants') else f'<fieldset class="size-picker"><legend>Размер, см <span>Д × Ш × В</span></legend><div class="size-options">{sizes}</div></fieldset>'
     note = f'<p class="seasonal-note">{e(product["seasonalNote"])}</p>' if product['seasonalNote'] else ''
     size_help = '<a class="size-help" href="#sizes">Как подобрать размер <span aria-hidden="true">↙</span></a>' if 'sizes' in product['sections'] else '<button class="text-link size-help" data-request="Подбор размера">Помогите подобрать размер ↗</button>'
     retail = markets(product)
     has_retail = 'href=' in retail
-    purchase_note = 'Розничная цена и доставка — на Ozon.' if has_retail else 'Нужен один товар? Уточните цену, доступное количество и доставку у менеджера.'
+    purchase_note = 'Розничная цена, наличие и доставка — на Ozon.' if has_retail else 'Нужен один товар? Уточните цену, доступное количество и доставку у менеджера.'
     facts = product.get('facts', [{'label': 'Материал', 'value': product['material']}, {'label': 'Влагозащитная пропитка', 'value': product['coating']}])
     specs = ''.join(f'<div><span>{e(fact["label"])}</span><strong>{e(fact["value"])}</strong></div>' for fact in facts if fact['value'])
     hero_specs = f'<div class="hero-specs">{specs}</div>' if specs else ''

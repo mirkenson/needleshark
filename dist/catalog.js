@@ -65,7 +65,14 @@ activateGallery(galleriesElement?.dataset.defaultGallery);
 
 const sizeInputs = [...document.querySelectorAll('[name="product-size"]')];
 function updateSize() {
-  const selected = sizeInputs.find(input => input.checked)?.value;
+  const selectedInput = sizeInputs.find(input => input.checked);
+  const selected = selectedInput?.value;
+  document.querySelectorAll('[data-size-market="Ozon"]').forEach(link => {
+    if (selectedInput?.dataset.ozonUrl) {
+      link.href = selectedInput.dataset.ozonUrl;
+      link.setAttribute('aria-label', `Перейти на Ozon: ${selected} см`);
+    }
+  });
   document.querySelectorAll('[data-select-size]').forEach(button => {
     const active = button.dataset.selectSize === selected;
     button.closest('tr').classList.toggle('is-selected', active);
@@ -81,6 +88,7 @@ document.querySelectorAll('[data-select-size]').forEach(button => button.addEven
   if (input) input.checked = true;
   updateSize();
 }));
+if (sizeInputs.some(input => input.checked)) updateSize();
 
 // Only combinations listed in product data can be selected. Additional groups
 // (for example colour) use the same controls without inventing combinations.
@@ -105,7 +113,7 @@ function updateVariant(variant) {
     if (variant.ozonUrl) link.href = variant.ozonUrl;
     else link.removeAttribute('href');
     link.setAttribute('aria-disabled', String(!variant.ozonUrl));
-    link.setAttribute('aria-label', `Купить на Ozon: ${variant.label}`);
+    link.setAttribute('aria-label', `Перейти на Ozon: ${variant.label}`);
   });
   activateGallery(variant.galleryId);
   setGalleryText('#kit-configuration', variant.label);

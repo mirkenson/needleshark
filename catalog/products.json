@@ -118,7 +118,7 @@
       "marketplaces": [
         {
           "name": "Ozon",
-          "url": "https://www.ozon.ru/product/2360802204/"
+          "url": "https://www.ozon.ru/product/3363023459/"
         },
         {
           "name": "Wildberries",
@@ -312,7 +312,69 @@
       "searchTerms": [
         "чехол",
         "чехлы"
-      ]
+      ],
+      "sizeOzonUrls": {
+        "130 × 120 × 100": "https://www.ozon.ru/product/3363023459/",
+        "150 × 125 × 120": "https://www.ozon.ru/product/3390794081/",
+        "180 × 115 × 110": "https://www.ozon.ru/product/3390734869/",
+        "220 × 98 × 106": "https://www.ozon.ru/product/2637568946/",
+        "256 × 110 × 120": "https://www.ozon.ru/product/3262783276/",
+        "225 × 120 × 120": "https://www.ozon.ru/product/3390860781/",
+        "255 × 140 × 120": "https://www.ozon.ru/product/2360802204/"
+      },
+      "source": {
+        "ozonSizes": {
+          "130 × 120 × 100": {
+            "offerId": "ATV-130",
+            "productId": 3396651263,
+            "sku": 3363023459,
+            "checkedAt": "2026-09-23T17:38:01+00:00",
+            "method": "Ozon Seller API: list + info + attributes"
+          },
+          "150 × 125 × 120": {
+            "offerId": "ATV-150",
+            "productId": 3432428856,
+            "sku": 3390794081,
+            "checkedAt": "2026-09-23T17:38:01+00:00",
+            "method": "Ozon Seller API: list + info + attributes"
+          },
+          "180 × 115 × 110": {
+            "offerId": "ATV-180",
+            "productId": 3432351851,
+            "sku": 3390734869,
+            "checkedAt": "2026-09-23T17:38:01+00:00",
+            "method": "Ozon Seller API: list + info + attributes"
+          },
+          "220 × 98 × 106": {
+            "offerId": "ATV-98",
+            "productId": 2427294472,
+            "sku": 2637568946,
+            "checkedAt": "2026-09-23T17:38:01+00:00",
+            "method": "Ozon Seller API: list + info + attributes"
+          },
+          "256 × 110 × 120": {
+            "offerId": "ATV-110-2",
+            "productId": 3265901564,
+            "sku": 3262783276,
+            "checkedAt": "2026-09-23T17:38:01+00:00",
+            "method": "Ozon Seller API: list + info + attributes"
+          },
+          "225 × 120 × 120": {
+            "offerId": "ATV-225",
+            "productId": 3432509043,
+            "sku": 3390860781,
+            "checkedAt": "2026-09-23T17:38:01+00:00",
+            "method": "Ozon Seller API: list + info + attributes"
+          },
+          "255 × 140 × 120": {
+            "offerId": "ATV-140",
+            "productId": 2065529852,
+            "sku": 2360802204,
+            "checkedAt": "2026-09-23T17:38:01+00:00",
+            "method": "Ozon Seller API: list + info + attributes"
+          }
+        }
+      }
     },
     {
       "category": "Чехлы для техники",
@@ -582,7 +644,16 @@
             "Мешок для хранения — 1 шт."
           ],
           "unitsPerPack": 1,
-          "galleryId": "standard"
+          "galleryId": "standard",
+          "source": {
+            "ozon": {
+              "offerId": "VSTKY-MOTO-S",
+              "productId": 2210112687,
+              "sku": 2470173155,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
+          }
         },
         {
           "id": "standard-m",
@@ -598,7 +669,16 @@
             "Мешок для хранения — 1 шт."
           ],
           "unitsPerPack": 1,
-          "galleryId": "standard"
+          "galleryId": "standard",
+          "source": {
+            "ozon": {
+              "offerId": "VSTKY-MOTO-M",
+              "productId": 2210112671,
+              "sku": 2470174851,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
+          }
         },
         {
           "id": "standard-l",
@@ -614,7 +694,16 @@
             "Мешок для хранения — 1 шт."
           ],
           "unitsPerPack": 1,
-          "galleryId": "standard"
+          "galleryId": "standard",
+          "source": {
+            "ozon": {
+              "offerId": "VSTKY-MOTO-L",
+              "productId": 2210112706,
+              "sku": 2470175706,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
+          }
         },
         {
           "id": "standard-xl",
@@ -630,7 +719,16 @@
             "Мешок для хранения — 1 шт."
           ],
           "unitsPerPack": 1,
-          "galleryId": "standard"
+          "galleryId": "standard",
+          "source": {
+            "ozon": {
+              "offerId": "VSTKY-MOTO-XL",
+              "productId": 2210112704,
+              "sku": 3114638618,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
+          }
         },
         {
           "id": "heat-m",
@@ -646,7 +744,16 @@
             "Мешок для хранения — 1 шт."
           ],
           "unitsPerPack": 1,
-          "galleryId": "heat"
+          "galleryId": "heat",
+          "source": {
+            "ozon": {
+              "offerId": "MOTO-M-NEW",
+              "productId": 5245676078,
+              "sku": 4862450984,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
+          }
         },
         {
           "id": "heat-l",
@@ -662,7 +769,16 @@
             "Мешок для хранения — 1 шт."
           ],
           "unitsPerPack": 1,
-          "galleryId": "heat"
+          "galleryId": "heat",
+          "source": {
+            "ozon": {
+              "offerId": "MOTO-L-NEW",
+              "productId": 5797469961,
+              "sku": 5330916614,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
+          }
         }
       ],
       "galleries": {
@@ -974,7 +1090,16 @@
             "Чехол для колеса — 4 шт."
           ],
           "unitsPerPack": 4,
-          "galleryId": "four"
+          "galleryId": "four",
+          "source": {
+            "ozon": {
+              "offerId": "NS-WHEEL-4",
+              "productId": 6138379794,
+              "sku": 5622953550,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
+          }
         },
         {
           "id": "one",
@@ -989,7 +1114,16 @@
             "Чехол для колеса — 1 шт."
           ],
           "unitsPerPack": 1,
-          "galleryId": "one"
+          "galleryId": "one",
+          "source": {
+            "ozon": {
+              "offerId": "NS-WHEEL-1",
+              "productId": 6138408777,
+              "sku": 5622982184,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
+          }
         }
       ],
       "galleries": {
@@ -1098,7 +1232,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3441995562/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -1146,7 +1285,7 @@
           },
           "sizeLabel": "74 × 74 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3441995562/",
           "galleryId": "ns-car-bam-s",
           "kit": [],
           "unitsPerPack": 1,
@@ -1160,7 +1299,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-t/9068457341.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-e/9068457326.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-9/9068457357.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-CAR-BAM-S",
+              "productId": 3484625016,
+              "sku": 3441995562,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -1284,7 +1430,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/2869705249/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -1333,7 +1484,7 @@
           },
           "sizeLabel": "150 × 150 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/2869705249/",
           "galleryId": "vstky-car-mat-s",
           "kit": [
             "Накидка — 1 шт."
@@ -1356,7 +1507,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-v/8806247347.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/8806247304.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-k/8365662848.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTKY-CAR-MAT-S",
+              "productId": 2737241891,
+              "sku": 2869705249,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -1489,7 +1647,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/4994360707/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -1540,7 +1703,7 @@
           },
           "sizeLabel": "27 × 24 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/4994360707/",
           "galleryId": "vstk-amc-case-270",
           "kit": [
             "Чехол — 1 шт.",
@@ -1559,7 +1722,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-p/12296371777.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-y/8619600022.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-3/7783576671.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTK-AMC‑CASE-270",
+              "productId": 5400473463,
+              "sku": 4994360707,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -1735,7 +1905,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/5295657918/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -1849,7 +2024,7 @@
           },
           "sizeLabel": "112 × 55 × 35 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5295657918/",
           "galleryId": "ns-pram-brown",
           "kit": [
             "Чехол для перевозки коляски — 1 шт."
@@ -1864,7 +2039,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-4/14077369840.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-a/14077371358.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-a/14077366462.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-PRAM-BROWN",
+              "productId": 5756196556,
+              "sku": 5295657918,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -1874,7 +2056,7 @@
           },
           "sizeLabel": "112 × 55 × 35 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5295658279/",
           "galleryId": "ns-pram-red",
           "kit": [
             "Чехол для перевозки коляски — 1 шт."
@@ -1889,7 +2071,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-a/14077441198.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14077439272.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-7/14077442491.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-PRAM-RED",
+              "productId": 5756196522,
+              "sku": 5295658279,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -1899,7 +2088,7 @@
           },
           "sizeLabel": "112 × 55 × 35 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5295658916/",
           "galleryId": "ns-pram-blue",
           "kit": [
             "Чехол для перевозки коляски — 1 шт."
@@ -1914,7 +2103,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-y/14077246318.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-3/14077253595.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-u/14077253622.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-PRAM-BLUE",
+              "productId": 5756196496,
+              "sku": 5295658916,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -1924,7 +2120,7 @@
           },
           "sizeLabel": "112 × 55 × 35 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5295659283/",
           "galleryId": "ns-pram-darkblue",
           "kit": [
             "Чехол для перевозки коляски — 1 шт."
@@ -1939,7 +2135,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-b/14077397207.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-u/14077394166.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-9/14077394541.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-PRAM-DARKBLUE",
+              "productId": 5756196534,
+              "sku": 5295659283,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -1949,7 +2152,7 @@
           },
           "sizeLabel": "112 × 55 × 35 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5295658602/",
           "galleryId": "ns-pram-green",
           "kit": [
             "Чехол для перевозки коляски — 1 шт."
@@ -1964,7 +2167,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-g/14077420108.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-p/14077422673.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-n/14077418459.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-PRAM-GREEN",
+              "productId": 5756196531,
+              "sku": 5295658602,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -1974,7 +2184,7 @@
           },
           "sizeLabel": "112 × 55 × 35 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5295658649/",
           "galleryId": "ns-pram-orange",
           "kit": [
             "Чехол для перевозки коляски — 1 шт."
@@ -1989,7 +2199,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-b/14077311275.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-k/14077318628.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-t/14077310933.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-PRAM-ORANGE",
+              "productId": 5756196549,
+              "sku": 5295658649,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -2258,7 +2475,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3349665484/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -2308,7 +2530,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3349665484/",
           "galleryId": "ns-hook-2",
           "kit": [
             "Крючки-карабины — 2 шт."
@@ -2325,7 +2547,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-e/8777610230.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-c/8777610336.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-h/8777609297.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-HOOK-2",
+              "productId": 3379640989,
+              "sku": 3349665484,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -2465,7 +2694,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/2554958979/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -2553,7 +2787,7 @@
           },
           "sizeLabel": "111 × 76 × 5 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/2554958979/",
           "galleryId": "vstky-cage-mat-s",
           "kit": [
             "Текстильное дно — 1 шт."
@@ -2572,7 +2806,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-c/8111529192.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-a/7768904806.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/9072259218.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTKY-CAGE-MAT-S",
+              "productId": 2318321973,
+              "sku": 2554958979,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -2582,7 +2823,7 @@
           },
           "sizeLabel": "130 × 68 × 5 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/2731746672/",
           "galleryId": "vstky-cage-mat-m",
           "kit": [
             "Текстильное дно — 1 шт."
@@ -2601,7 +2842,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-p/8162554309.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-2/8162554142.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/9072259218.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTKY-CAGE-MAT-M",
+              "productId": 2549911000,
+              "sku": 2731746672,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -2611,7 +2859,7 @@
           },
           "sizeLabel": "146 × 76 × 5 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/2731782962/",
           "galleryId": "vstky-cage-mat-l",
           "kit": [
             "Текстильное дно — 1 шт."
@@ -2628,7 +2876,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-b/8889423851.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-r/8889423003.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/8889424836.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTKY-CAGE-MAT-L",
+              "productId": 2549956144,
+              "sku": 2731782962,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -2638,7 +2893,7 @@
           },
           "sizeLabel": "111 × 111 × 5 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/2731792699/",
           "galleryId": "vstky-cage-mat-xl",
           "kit": [
             "Текстильное дно — 1 шт."
@@ -2657,7 +2912,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-i/9072259218.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-c/8111202420.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-a/7768904806.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTKY-CAGE-MAT-XL",
+              "productId": 2549969676,
+              "sku": 2731792699,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -2860,7 +3122,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3582507066/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -2921,7 +3188,7 @@
           },
           "sizeLabel": "70 × 55 × 55 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3582507066/",
           "galleryId": "ns-gen-002",
           "kit": [],
           "unitsPerPack": 1,
@@ -2937,7 +3204,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-o/9573327816.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/9573327100.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-x/9573327465.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-GEN-002",
+              "productId": 3682598076,
+              "sku": 3582507066,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -2947,7 +3221,7 @@
           },
           "sizeLabel": "80 × 60 × 60 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3582474633/",
           "galleryId": "ns-gen-001",
           "kit": [],
           "unitsPerPack": 1,
@@ -2963,7 +3237,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-o/9573327816.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/9573327100.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-x/9573327465.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-GEN-001",
+              "productId": 3682570109,
+              "sku": 3582474633,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -3117,7 +3398,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/5530570444/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -3166,7 +3452,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5530570444/",
           "galleryId": "hook-2-long",
           "kit": [
             "Карабины — 2 шт."
@@ -3182,7 +3468,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-d/8881812517.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-n/8881812455.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/8892818880.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "HOOK-2-LONG",
+              "productId": 6014984063,
+              "sku": 5530570444,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -3307,7 +3600,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3078671264/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -3355,7 +3653,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3078671264/",
           "galleryId": "shurup-001",
           "kit": [],
           "unitsPerPack": 1,
@@ -3371,7 +3669,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-l/8815416645.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-3/8815415727.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-9/8815416561.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "Shurup-001",
+              "productId": 3020661868,
+              "sku": 3078671264,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -3514,7 +3819,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/5620485475/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Объём одной сумки",
@@ -3543,7 +3853,7 @@
         }
       ],
       "reviewNotes": [
-        "У NS-BAG-35-4 название содержит 2 шт., описание/артикул/комплект — 4; выбран комплект из 4 по трём согласующимся полям, требуется окончательная сверка. Габариты 35 л совпадают с 108 л; все физические габариты сумок опущены. Для 237 л заголовок содержит 210D, описание 600D — плотность ткани опущена. Для 237 л есть комплекты только по 2–5 шт.; вариант из 1 шт. не создан.",
+        "У NS-BAG-35-4 название содержит 2 шт., описание/артикул/комплект — 4; 23.09.2026 владелец подтвердил комплект из 4, в названии Ozon ошибка. Габариты 35 л совпадают с 108 л; все физические габариты сумок опущены. Для 237 л заголовок содержит 210D, описание 600D — плотность ткани опущена. Для 237 л есть комплекты только по 2–5 шт.; вариант из 1 шт. не создан.",
         "Фото 14604789715 у NS-BAG-35-3 показывает 230 л и заменено общими фото сумки 35 л; фото 14650638282 противоречит остальным фото по нагрузке (50/20 кг) и не используется.",
         "22.09.2026: студийная визуализация по исходным фото, встроенный ImageGen. Исходники сохранены в sourceImages; перед публикацией сверить конструкцию с реальным изделием."
       ],
@@ -3740,7 +4050,7 @@
           },
           "sizeLabel": "35 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620485475/",
           "galleryId": "ns-bag-35-1",
           "kit": [
             "Сумка 35 л — 1 шт."
@@ -3757,7 +4067,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-8/14650611848.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/14084289738.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-35-1",
+              "productId": 6135607077,
+              "sku": 5620485475,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3768,7 +4085,7 @@
           },
           "sizeLabel": "35 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620646851/",
           "galleryId": "ns-bag-35-2",
           "kit": [
             "Сумка 35 л — 2 шт."
@@ -3785,7 +4102,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-8/14650611848.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/14084289738.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-35-2",
+              "productId": 6135784978,
+              "sku": 5620646851,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3796,7 +4120,7 @@
           },
           "sizeLabel": "35 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620710742/",
           "galleryId": "ns-bag-35-3",
           "kit": [
             "Сумка 35 л — 3 шт."
@@ -3813,7 +4137,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-8/14650611848.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/14084289738.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-35-3",
+              "productId": 6135855335,
+              "sku": 5620710742,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3824,7 +4155,7 @@
           },
           "sizeLabel": "35 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620727222/",
           "galleryId": "ns-bag-35-4",
           "kit": [
             "Сумка 35 л — 4 шт."
@@ -3841,7 +4172,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-8/14650611848.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/14084289738.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-35-4",
+              "productId": 6135870955,
+              "sku": 5620727222,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3852,7 +4190,7 @@
           },
           "sizeLabel": "35 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620746936/",
           "galleryId": "ns-bag-35-5",
           "kit": [
             "Сумка 35 л — 5 шт."
@@ -3869,7 +4207,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-8/14650611848.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/14084289738.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-35-5",
+              "productId": 6135893248,
+              "sku": 5620746936,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3880,7 +4225,7 @@
           },
           "sizeLabel": "108 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5330905015/",
           "galleryId": "ns-bag-108-1",
           "kit": [
             "Сумка 108 л — 1 шт."
@@ -3897,7 +4242,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-t/14077194941.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-m/14077186402.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-108-1",
+              "productId": 5797456898,
+              "sku": 5330905015,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3908,7 +4260,7 @@
           },
           "sizeLabel": "108 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5619578702/",
           "galleryId": "ns-bag-108-2",
           "kit": [
             "Сумка 108 л — 2 шт."
@@ -3925,7 +4277,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-n/14604598175.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/14604596160.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-108-2",
+              "productId": 6134597475,
+              "sku": 5619578702,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3936,7 +4295,7 @@
           },
           "sizeLabel": "108 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5295615074/",
           "galleryId": "ns-bag-108-3",
           "kit": [
             "Сумка 108 л — 3 шт."
@@ -3953,7 +4312,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-m/14084285494.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/14084289738.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-108-3",
+              "productId": 5756147383,
+              "sku": 5295615074,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3964,7 +4330,7 @@
           },
           "sizeLabel": "108 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5619758485/",
           "galleryId": "ns-bag-108-4",
           "kit": [
             "Сумка 108 л — 4 шт."
@@ -3981,7 +4347,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-n/14604598175.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/14604596160.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-108-4",
+              "productId": 6134805321,
+              "sku": 5619758485,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -3992,7 +4365,7 @@
           },
           "sizeLabel": "108 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5619928429/",
           "galleryId": "ns-bag-108-5",
           "kit": [
             "Сумка 108 л — 5 шт."
@@ -4009,7 +4382,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-n/14604598175.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/14604596160.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-108-5",
+              "productId": 6134993026,
+              "sku": 5619928429,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4020,7 +4400,7 @@
           },
           "sizeLabel": "237 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620287677/",
           "galleryId": "ns-bag-230-2",
           "kit": [
             "Сумка 237 л — 2 шт."
@@ -4037,7 +4417,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-0/14604771600.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/14604596160.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-230-2",
+              "productId": 6135390813,
+              "sku": 5620287677,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4048,7 +4435,7 @@
           },
           "sizeLabel": "237 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620345129/",
           "galleryId": "ns-bag-230-3",
           "kit": [
             "Сумка 237 л — 3 шт."
@@ -4065,7 +4452,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-0/14604771600.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/14604596160.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-230-3",
+              "productId": 6135449668,
+              "sku": 5620345129,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4076,7 +4470,7 @@
           },
           "sizeLabel": "237 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620368487/",
           "galleryId": "ns-bag-230-4",
           "kit": [
             "Сумка 237 л — 4 шт."
@@ -4093,7 +4487,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-0/14604771600.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/14604596160.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-230-4",
+              "productId": 6135480632,
+              "sku": 5620368487,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4104,7 +4505,7 @@
           },
           "sizeLabel": "237 л",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5620393682/",
           "galleryId": "ns-bag-230-5",
           "kit": [
             "Сумка 237 л — 5 шт."
@@ -4121,7 +4522,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-0/14604771600.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14886577756.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/14604596160.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BAG-230-5",
+              "productId": 6135506727,
+              "sku": 5620393682,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -4435,7 +4843,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3467699490/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -4496,7 +4909,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467699490/",
           "galleryId": "ns-strp-trns-1",
           "kit": [],
           "unitsPerPack": 1,
@@ -4509,7 +4922,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-y/12620122198.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-4/9068352016.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-e/9068352098.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-STRP-TRNS-1",
+              "productId": 3531420621,
+              "sku": 3467699490,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4519,7 +4939,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5516122740/",
           "galleryId": "ns-strp-trns-new",
           "kit": [],
           "unitsPerPack": 1,
@@ -4530,7 +4950,14 @@
             "barcode": "OZN5516122740",
             "photoUrls": [
               "https://cdn1.ozone.ru/s3/multimedia-1-e/14133235154.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-STRP-TRNS-NEW",
+              "productId": 6014657804,
+              "sku": 5516122740,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -4690,7 +5117,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3467440166/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -4790,7 +5222,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467440166/",
           "galleryId": "ns-belt-bag-3",
           "kit": [],
           "unitsPerPack": 1,
@@ -4803,7 +5235,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-a/9149245642.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-m/9149239426.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-5/9149239121.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BELT-BAG-3",
+              "productId": 3531111754,
+              "sku": 3467440166,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4813,7 +5252,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467565995/",
           "galleryId": "ns-belt-bag-4",
           "kit": [],
           "unitsPerPack": 1,
@@ -4826,7 +5265,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-m/9149239102.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-m/9149239426.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-5/9149239121.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BELT-BAG-4",
+              "productId": 3531253579,
+              "sku": 3467565995,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4836,7 +5282,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5516291798/",
           "galleryId": "strap-metall",
           "kit": [],
           "unitsPerPack": 1,
@@ -4847,7 +5293,14 @@
             "barcode": "OZN5516291798",
             "photoUrls": [
               "https://cdn1.ozone.ru/s3/multimedia-1-z/14133390551.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "STRAP-METALL",
+              "productId": 6014843806,
+              "sku": 5516291798,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4857,7 +5310,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5516311322/",
           "galleryId": "belt-bag-metall-4",
           "kit": [],
           "unitsPerPack": 1,
@@ -4868,7 +5321,14 @@
             "barcode": "OZN5516311322",
             "photoUrls": [
               "https://cdn1.ozone.ru/s3/multimedia-1-n/14133560819.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "BELT-BAG-METALL-4",
+              "productId": 6014865199,
+              "sku": 5516311322,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -4878,7 +5338,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3220555055/",
           "galleryId": "vstky-strap",
           "kit": [],
           "unitsPerPack": 1,
@@ -4889,7 +5349,14 @@
             "barcode": "OZN3220555055",
             "photoUrls": [
               "https://cdn1.ozone.ru/s3/multimedia-1-w/12620677388.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTKY-STRAP",
+              "productId": 3210332190,
+              "sku": 3220555055,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -5050,7 +5517,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3467488164/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -5097,7 +5569,7 @@
           },
           "sizeLabel": "",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467488164/",
           "galleryId": "ns-belt-body-1",
           "kit": [],
           "unitsPerPack": 1,
@@ -5110,7 +5582,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-u/9068423790.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/9068423784.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-i/9068423814.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BELT-BODY-1",
+              "productId": 3531173055,
+              "sku": 3467488164,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -5275,7 +5754,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3467782123/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Ширина × длина отреза",
@@ -5391,7 +5875,7 @@
           },
           "sizeLabel": "10 мм × 10 м",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467782123/",
           "galleryId": "ns-strp-10-10",
           "kit": [
             "Отрез стропы — 10 м"
@@ -5406,7 +5890,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-i/9066576078.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-2/9066538874.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-r/9066538107.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-STRP-10-10",
+              "productId": 3531529631,
+              "sku": 3467782123,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -5416,7 +5907,7 @@
           },
           "sizeLabel": "20 мм × 10 м",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467778015/",
           "galleryId": "ns-strp-20-10",
           "kit": [
             "Отрез стропы — 10 м"
@@ -5431,7 +5922,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-q/9066567914.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-2/9066538874.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-r/9066538107.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-STRP-20-10",
+              "productId": 3531523924,
+              "sku": 3467778015,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -5441,7 +5939,7 @@
           },
           "sizeLabel": "25 мм × 10 м",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467774839/",
           "galleryId": "ns-strp-25-10",
           "kit": [
             "Отрез стропы — 10 м"
@@ -5456,7 +5954,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-e/9066559298.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-2/9066538874.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-r/9066538107.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-STRP-25-10",
+              "productId": 3531519622,
+              "sku": 3467774839,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -5466,7 +5971,7 @@
           },
           "sizeLabel": "30 мм × 10 м",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467767105/",
           "galleryId": "ns-strp-30-10",
           "kit": [
             "Отрез стропы — 10 м"
@@ -5481,7 +5986,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-g/9066552856.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-2/9066538874.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-r/9066538107.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-STRP-30-10",
+              "productId": 3531511333,
+              "sku": 3467767105,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -5491,7 +6003,7 @@
           },
           "sizeLabel": "40 мм × 10 м",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467759681/",
           "galleryId": "ns-strp-40-10",
           "kit": [
             "Отрез стропы — 10 м"
@@ -5506,7 +6018,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-o/9066546960.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-2/9066538874.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-r/9066538107.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-STRP-40-10",
+              "productId": 3531501563,
+              "sku": 3467759681,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -5516,7 +6035,7 @@
           },
           "sizeLabel": "50 мм × 10 м",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467721714/",
           "galleryId": "ns-strp-50-10",
           "kit": [
             "Отрез стропы — 10 м"
@@ -5531,7 +6050,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-d/9066538705.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-2/9066538874.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-r/9066538107.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-STRP-50-10",
+              "productId": 3531455653,
+              "sku": 3467721714,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -5725,7 +6251,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3467673597/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -5775,7 +6306,7 @@
           },
           "sizeLabel": "25 мм × 1 м",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467673597/",
           "galleryId": "ns-tape-25-1",
           "kit": [
             "Лента с крючками — 1 м",
@@ -5791,7 +6322,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-7/9068407207.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-o/9068407260.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-9/9068407245.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-TAPE-25-1",
+              "productId": 3531389830,
+              "sku": 3467673597,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -5930,7 +6468,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/2149242167/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -5992,7 +6535,7 @@
           },
           "sizeLabel": "120 × 100 × 116 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/2149242167/",
           "galleryId": "ek-001",
           "kit": [],
           "unitsPerPack": 1,
@@ -6011,7 +6554,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-b/9088291595.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-8/9121714316.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-9/7567038477.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "EK-001",
+              "productId": 1785684161,
+              "sku": 2149242167,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -6021,7 +6571,7 @@
           },
           "sizeLabel": "120 × 100 × 117 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3554673000/",
           "galleryId": "ek-002",
           "kit": [],
           "unitsPerPack": 1,
@@ -6040,7 +6590,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-8/9121714316.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-9/7567038477.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-p/11798428561.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "EK-002",
+              "productId": 3643245297,
+              "sku": 3554673000,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -6194,7 +6751,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3467314120/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Ширина ремня",
@@ -6257,7 +6819,7 @@
           },
           "sizeLabel": "Ширина 20 мм",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467314120/",
           "galleryId": "ns-belt-140-2",
           "kit": [
             "Стяжной ремень — 2 шт."
@@ -6272,7 +6834,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-7/9067969087.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-6/9066239898.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-m/9066240598.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BELT-140-2",
+              "productId": 3530960880,
+              "sku": 3467314120,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -6282,7 +6851,7 @@
           },
           "sizeLabel": "Ширина 20 мм",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3467238783/",
           "galleryId": "ns-belt-140-4",
           "kit": [
             "Стяжной ремень — 4 шт."
@@ -6297,7 +6866,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-0/9066240036.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-6/9066239898.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-m/9066240598.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-BELT-140-4",
+              "productId": 3530865154,
+              "sku": 3467238783,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -6450,7 +7026,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/2470188490/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -6514,7 +7095,7 @@
           },
           "sizeLabel": "200 × 90 × 100 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/2470188490/",
           "galleryId": "vstky-bike",
           "kit": [
             "Чехол — 1 шт.",
@@ -6540,7 +7121,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-o/10086452052.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-x/9517675461.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-1/13075166629.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTKY-BIKE",
+              "productId": 2210169362,
+              "sku": 2470188490,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -6550,7 +7138,7 @@
           },
           "sizeLabel": "255 × 105 × 125 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3644958089/",
           "galleryId": "vstky-bike-02",
           "kit": [
             "Чехол — 1 шт.",
@@ -6573,7 +7161,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-d/9194038609.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-8/9194040296.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-a/9194039110.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "VSTKY-BIKE-02",
+              "productId": 3762256613,
+              "sku": 3644958089,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -6767,7 +7362,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/5733569808/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -6867,7 +7467,7 @@
           },
           "sizeLabel": "100 × 25 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5733569808/",
           "galleryId": "ns-fishcase-100",
           "kit": [],
           "unitsPerPack": 1,
@@ -6885,7 +7485,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-h/14812011017.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-1/14812008013.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-r/14840927595.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-FISHCASE-100",
+              "productId": 6264695398,
+              "sku": 5733569808,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -6895,7 +7502,7 @@
           },
           "sizeLabel": "120 × 25 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5733551879/",
           "galleryId": "ns-fishcase-120",
           "kit": [],
           "unitsPerPack": 1,
@@ -6913,7 +7520,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-h/14812011017.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-1/14812008013.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-k/14841317360.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-FISHCASE-120",
+              "productId": 6264672033,
+              "sku": 5733551879,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -6923,7 +7537,7 @@
           },
           "sizeLabel": "130 × 25 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5733520804/",
           "galleryId": "ns-fishcase-130",
           "kit": [],
           "unitsPerPack": 1,
@@ -6941,7 +7555,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-h/14812011017.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-1/14812008013.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-a/14840896834.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-FISHCASE-130",
+              "productId": 6264638485,
+              "sku": 5733520804,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -6951,7 +7572,7 @@
           },
           "sizeLabel": "140 × 25 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5733045571/",
           "galleryId": "ns-fishcase-140",
           "kit": [],
           "unitsPerPack": 1,
@@ -6969,7 +7590,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-1/14812008013.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-9/14812007589.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-m/14812015486.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-FISHCASE-140",
+              "productId": 6264094507,
+              "sku": 5733045571,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         },
         {
@@ -6979,7 +7607,7 @@
           },
           "sizeLabel": "160 × 25 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5733586752/",
           "galleryId": "ns-fishcase-160",
           "kit": [],
           "unitsPerPack": 1,
@@ -6997,7 +7625,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-h/14812011017.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-1/14812008013.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-e/14840976002.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-FISHCASE-160",
+              "productId": 6264716704,
+              "sku": 5733586752,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -7205,7 +7840,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/5377213546/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -7253,7 +7893,7 @@
           },
           "sizeLabel": "110 × 53 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5377213546/",
           "galleryId": "ns-car-org",
           "kit": [],
           "unitsPerPack": 1,
@@ -7267,7 +7907,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-q/14859624230.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-3/14859623019.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-m/14859624154.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-CAR-ORG",
+              "productId": 5852553279,
+              "sku": 5377213546,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -7399,7 +8046,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/5732186949/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -7448,7 +8100,7 @@
           },
           "sizeLabel": "Размер обуви 33–45",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/5732186949/",
           "galleryId": "ns-shoe-33-45",
           "kit": [
             "Бахилы — 2 шт."
@@ -7466,7 +8118,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-w/14808865064.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-s/14808862108.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-p/14808858073.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-SHOE-33-45",
+              "productId": 6263093587,
+              "sku": 5732186949,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -7599,7 +8258,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3692994104/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -7648,7 +8312,7 @@
           },
           "sizeLabel": "190 × 115 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3692994104/",
           "galleryId": "ns-swing-1",
           "kit": [
             "Чехол для качелей-кокона — 1 шт."
@@ -7665,7 +8329,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-8/9906405308.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-g/11972294152.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-0/9906405372.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-SWING-1",
+              "productId": 3823287824,
+              "sku": 3692994104,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
@@ -7801,7 +8472,12 @@
           "generated": true
         }
       ],
-      "marketplaces": [],
+      "marketplaces": [
+        {
+          "name": "Ozon",
+          "url": "https://www.ozon.ru/product/3220750893/"
+        }
+      ],
       "purchaseNote": "Оставьте заявку — обсудим количество и условия заказа.",
       "unitLabel": "Изделий",
       "measurementLabel": "Размер изделия",
@@ -7849,7 +8525,7 @@
           },
           "sizeLabel": "165 см",
           "legacySize": "",
-          "ozonUrl": null,
+          "ozonUrl": "https://www.ozon.ru/product/3220750893/",
           "galleryId": "ns-snowboard-bag-165",
           "kit": [],
           "unitsPerPack": 1,
@@ -7864,7 +8540,14 @@
               "https://cdn1.ozone.ru/s3/multimedia-1-4/8674467844.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-j/8657085115.jpg",
               "https://cdn1.ozone.ru/s3/multimedia-1-y/8674467694.jpg"
-            ]
+            ],
+            "ozon": {
+              "offerId": "NS-SNOWBOARD-BAG-165",
+              "productId": 3210586910,
+              "sku": 3220750893,
+              "checkedAt": "2026-09-23T17:38:01+00:00",
+              "method": "Ozon Seller API: list + info + attributes"
+            }
           }
         }
       ],
