@@ -56,5 +56,8 @@
     "File-upload behavior unchanged; not retested in browser",
     "Unknown product commercial facts remain for owner confirmation"
   ],
-  "verification_details": "../UX_PROTOTYPE_20260923.md"
+  "verification_details": "../UX_PROTOTYPE_20260923.md",
+  "checked_code_commit": "640fc17267f18ded093eeaf1ff6a3e0c2243f2d7",
+  "build_idempotence": "pass; second generation changed zero files",
+  "responsive_category_disclosure": "pass after viewport resize from 390 to 1440"
 }
