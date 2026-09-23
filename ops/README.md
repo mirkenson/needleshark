@@ -1,5 +1,11 @@
 # Needle Shark VPS
 
+## UX and blog publication — 23 September 2026
+
+Production static release `20260923T181352Z-5967` comes from pushed commit `ea4b9005a9e3711ffc7f6bea436d1f13ab5f1860` on `codex/ux-blog-release`, using `ops/deploy.sh --from-github`. All 1266 files verified before switching current; 54 public files matched SHA-256, 117 resource URLs returned 200, five alias redirects preserved path/query. Five configured services/timers remain active. Backend/configuration/schema unchanged.
+
+Previous static release is `20260922T181556Z-89524`, also retained through `/var/www/needle-shark/rollback-before-ux-blog-20260923`. Do not edit or delete either release. Before any rollback, read current/previous/this safety link again; use the existing atomic rollback procedure below, never restore an old database dump over newer leads. [Release verification](../docs/verification/20260923-ux-blog-publication.json). Sections below describe earlier preparation/releases.
+
 ## Local UX prototype — 23 September 2026
 
 Branch `codex/ux-prototype` is a review build, not a VPS release. Its isolated copy is `outputs/ux-prototype-20260923/` in the main project. Restart with `python3 server/preview.py --directory outputs/ux-prototype-20260923 --port 4183`; do not pass `--live-api`. Preview HTML has noindex and no analytics SDK. Do not deploy this preview directory. See [scope and verification](../docs/UX_PROTOTYPE_20260923.md).

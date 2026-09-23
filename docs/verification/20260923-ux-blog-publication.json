@@ -14,7 +14,7 @@
     "kak-vybrat-chehol-dlya-motocikla",
     "kak-vybrat-sumku-baul"
   ],
-  "status": "preflight passed; deployment pending",
+  "status": "published and post-deployment verified with stated limitations",
   "date": "2026-09-23",
   "branch": "codex/ux-blog-release",
   "sources": {
@@ -84,7 +84,32 @@
       "ui_click": 611921224
     },
     "goals_created_or_changed": false,
-    "real_sdk_after_release": "pending"
+    "real_sdk_after_release": {
+      "sdk": "https://mc.yandex.com/metrika/tag_debug.js?ver=2660&b=",
+      "goals_observed": [
+        "form_start",
+        "form_submit_attempt",
+        "lead_submitted",
+        "request_open",
+        "outbound_click",
+        "blog_cta_click",
+        "ui_click"
+      ],
+      "lead_submitted_count": 3,
+      "lead_submitted_utc": [
+        "2026-09-23T18:16:39.437Z",
+        "2026-09-23T18:19:21.911Z",
+        "2026-09-23T18:20:07.326Z"
+      ],
+      "contact_click_live_exercised": false,
+      "reports": "Goal achievements visible in overall conversions report; these three QA events not isolated by campaign."
+    },
+    "privacy": {
+      "all_forms_existing_ym_hide_content": true,
+      "new_webvisor_recording_reviewed": false,
+      "pii_not_added_to_event_params": true,
+      "utm_storage_in_crm": false
+    }
   },
   "pre_release": {
     "static_current": "20260922T181556Z-89524",
@@ -102,7 +127,217 @@
   "qa_campaign": "ux_blog_release_20260923",
   "secret_scan": "Ozon API key absent from source and dist; private API responses excluded",
   "limitations": [
-    "Local simulated SDK/API checks are not evidence of production goal delivery or database/mail/LOOP processing.",
-    "Not every responsive state was separately judged by screenshot."
-  ]
+    "Public Ozon storefront timed out during prior API mapping; exact 77 SKU addresses verified against Seller API, not all destination pages opened.",
+    "Only sample screenshots were visually reviewed; remaining responsive states were DOM geometry/image checks.",
+    "Email sent confirms provider acceptance, not inbox delivery; LOOP sent does not prove display/read by owner.",
+    "QA goal events observed in real SDK; individual QA campaign attribution in aggregate Metrika report not verified.",
+    "contact_click definition and automated handler test verified; live click not exercised in this release.",
+    "Google new indexing request not confirmed; Yandex queue acceptance is not actual inclusion in search.",
+    "Existing ym-hide-content protection checked; no new Webvisor recording reviewed.",
+    "Google Sheets/Drive integration disabled; no enablement or checks attempted."
+  ],
+  "code_commit": "ea4b9005a9e3711ffc7f6bea436d1f13ab5f1860",
+  "deployment": {
+    "method": "ops/deploy.sh --from-github",
+    "current": "20260923T181352Z-5967",
+    "previous": "20260922T181556Z-89524",
+    "rollback_link": "/var/www/needle-shark/rollback-before-ux-blog-20260923",
+    "rollback_target": "20260922T181556Z-89524",
+    "manifest_files_verified_before_switch": 1266,
+    "files_downloaded": 47,
+    "files_reused": 1219,
+    "backend_changed": false,
+    "nginx_systemd_or_schema_changed": false,
+    "five_services_active": true
+  },
+  "public_http": {
+    "sha256_matched_public_files": 54,
+    "public_html": 39,
+    "resources_http_200": 117,
+    "redirects": [
+      {
+        "from": "http://needle-shark.ru",
+        "to": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=ux_blog_release_20260923",
+        "status": 200
+      },
+      {
+        "from": "https://www.needle-shark.ru",
+        "to": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=ux_blog_release_20260923",
+        "status": 200
+      },
+      {
+        "from": "https://needleshark.ru",
+        "to": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=ux_blog_release_20260923",
+        "status": 200
+      },
+      {
+        "from": "https://www.needleshark.ru",
+        "to": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=ux_blog_release_20260923",
+        "status": 200
+      },
+      {
+        "from": "http://needleshark.ru",
+        "to": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=ux_blog_release_20260923",
+        "status": 200
+      }
+    ],
+    "all_tls_verified": true,
+    "no_blocking_x_robots": true
+  },
+  "public_browser": {
+    "pages": 8,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "measured_states": 40,
+    "actual_widths_verified": true,
+    "geometry_h1_image_failures": 0,
+    "console_errors_or_warnings": 0,
+    "screenshots_reviewed": [
+      "mobile catalog 390px",
+      "desktop home 1440px"
+    ],
+    "navigation_timeout": "One home navigation waited for load beyond timeout; actual DOM was loaded and subsequent navigation checks passed.",
+    "interactions": [
+      "four-bag variant switches kit and exact SKU",
+      "outbound Ozon CTA",
+      "new article 237L tab and checklist",
+      "article product CTA",
+      "three live synthetic submissions"
+    ]
+  },
+  "live_leads": {
+    "orders": [
+      {
+        "id": 17,
+        "source_path": "/",
+        "product_slug": null,
+        "product_size": null,
+        "inquiry_type": null,
+        "quantity": null,
+        "business_intent": null,
+        "company_matches": null,
+        "custom_length_matches": false,
+        "custom_width_matches": false,
+        "payload_matches_order": true,
+        "source_matches": true,
+        "mime_type": null,
+        "file_bytes": null,
+        "file_sha256": null,
+        "loop": [
+          {
+            "status": "sent",
+            "attempts": 1,
+            "has_sent_at": true,
+            "error": null
+          }
+        ],
+        "all_configured_recipients_queued": true,
+        "mail_jobs": 1,
+        "mail_all_sent": true,
+        "mail_max_attempts": 1,
+        "mail_errors": 0
+      },
+      {
+        "id": 18,
+        "source_path": "/business/",
+        "product_slug": null,
+        "product_size": null,
+        "inquiry_type": "wholesale",
+        "quantity": null,
+        "business_intent": "custom",
+        "company_matches": true,
+        "custom_length_matches": false,
+        "custom_width_matches": false,
+        "payload_matches_order": true,
+        "source_matches": true,
+        "mime_type": "application/pdf",
+        "file_bytes": 617,
+        "file_sha256": "8921c23b3a3a7ca54a1efdfa76fbec2695c1afa801250eea9766881e75fb535b",
+        "loop": [
+          {
+            "status": "sent",
+            "attempts": 1,
+            "has_sent_at": true,
+            "error": null
+          }
+        ],
+        "all_configured_recipients_queued": true,
+        "mail_jobs": 1,
+        "mail_all_sent": true,
+        "mail_max_attempts": 1,
+        "mail_errors": 0
+      },
+      {
+        "id": 19,
+        "source_path": "/catalog/stropa-remennaya/",
+        "product_slug": "stropa-remennaya",
+        "product_size": null,
+        "inquiry_type": "direct",
+        "quantity": null,
+        "business_intent": null,
+        "company_matches": null,
+        "custom_length_matches": true,
+        "custom_width_matches": true,
+        "payload_matches_order": true,
+        "source_matches": true,
+        "mime_type": null,
+        "file_bytes": null,
+        "file_sha256": null,
+        "loop": [
+          {
+            "status": "sent",
+            "attempts": 1,
+            "has_sent_at": true,
+            "error": null
+          }
+        ],
+        "all_configured_recipients_queued": true,
+        "mail_jobs": 1,
+        "mail_all_sent": true,
+        "mail_max_attempts": 1,
+        "mail_errors": 0
+      }
+    ],
+    "count": 3,
+    "configured_recipient_count": 1,
+    "loop_enabled": true,
+    "google_runtime_enabled": false,
+    "pdf_verified": {
+      "sha256_matches_original": true,
+      "opens_with_pdfinfo": true,
+      "pages": 1,
+      "encrypted": false,
+      "public_download_endpoint": false
+    },
+    "provider_acceptance_is_not_inbox_or_channel_read_confirmation": true
+  },
+  "indexing": {
+    "sitemap_public_urls": 39,
+    "yandex_reindex_accepted": 39,
+    "yandex_status": "В очереди",
+    "yandex_submitted_moscow": "2026-09-23 21:30",
+    "yandex_remaining_quota": 111,
+    "yandex_sitemap_ui": "older fetch shown; recrawl button disabled",
+    "google_new_verification": "not confirmed; active native Chrome window switched during interaction",
+    "actual_new_article_indexing": "not confirmed"
+  },
+  "publication_checklist": {
+    "1_local_and_tests": "passed:105 tests, isolated forms, stable rebuild",
+    "2_responsive": "195 local +40 public states, five required widths; sample screenshots only",
+    "3_browser_resources_links": "passed:117 public resources, no browser console errors/warnings, exact file hashes",
+    "4_form_states": "passed: required/invalid/file/retry/pending/network/error/success",
+    "5_live_intake": "passed:3 synthetic orders, PostgreSQL, PDF, all configured SMTP and LOOP sent; Google disabled and not enabled",
+    "6_generators_and_site_check": "passed:normal publish build,39 pages,1266 repeatable files",
+    "7_metadata_static_content": "passed:check-site plus public HTML identity",
+    "8_crawl": "technical checks passed;39 URLs queued in Yandex;Google/new actual indexing unconfirmed",
+    "9_metrika": "counter/domains/eight goal definitions verified;7 goal types observed real SDK;QA report attribution unconfirmed",
+    "10_utm": "106 Ozon occurrences/77 product URLs correct campaign;internal UTM0;five redirects preserve incoming query",
+    "11_release": "pushed commit before deploy, atomic switch, prior release and extra safety link retained, public checks passed",
+    "12_documentation": "project context and affected guides updated; final documentation commit/mirror sync recorded in Git and Obsidian manifest"
+  }
 }
