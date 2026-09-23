@@ -1,0 +1,634 @@
+{
+  "date": "2026-09-23",
+  "status": "local_drafts_for_owner_review_not_published",
+  "scope": "Six selection guides explicitly chosen by owner; nine other planned topics deferred.",
+  "branch": "codex/blog-product-guides",
+  "verified_content_commit": "fab7305580f21a71398a1479e231f5d5657fdc0e",
+  "preview_url": "http://127.0.0.1:4178/blog/",
+  "articles": [
+    {
+      "title": "Как выбрать сумку-чехол для перевозки коляски: размеры и посадка",
+      "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+      "status": "draft",
+      "preview_url": "http://127.0.0.1:4178/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+      "production_published": false
+    },
+    {
+      "title": "Как выбрать чехлы для колёс: почему обозначения R17–R22 недостаточно",
+      "slug": "kak-vybrat-chehly-dlya-koles",
+      "status": "draft",
+      "preview_url": "http://127.0.0.1:4178/blog/kak-vybrat-chehly-dlya-koles/",
+      "production_published": false
+    },
+    {
+      "title": "Как выбрать чехол для двух или трёх велосипедов",
+      "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+      "status": "draft",
+      "preview_url": "http://127.0.0.1:4178/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+      "production_published": false
+    },
+    {
+      "title": "Как подобрать чехол на квадроцикл с кофром, зеркалами и багажниками",
+      "slug": "kak-podobrat-chehol-na-kvadrocikl",
+      "status": "draft",
+      "preview_url": "http://127.0.0.1:4178/blog/kak-podobrat-chehol-na-kvadrocikl/",
+      "production_published": false
+    },
+    {
+      "title": "Как выбрать чехол для мотоцикла: размер, вентиляция и жаропрочные вставки",
+      "slug": "kak-vybrat-chehol-dlya-motocikla",
+      "status": "draft",
+      "preview_url": "http://127.0.0.1:4178/blog/kak-vybrat-chehol-dlya-motocikla/",
+      "production_published": false
+    },
+    {
+      "title": "Как выбрать сумку-баул: 35, 108 или 237 литров",
+      "slug": "kak-vybrat-sumku-baul",
+      "status": "draft",
+      "preview_url": "http://127.0.0.1:4178/blog/kak-vybrat-sumku-baul/",
+      "production_published": false
+    }
+  ],
+  "tests": {
+    "blog": 15,
+    "ops_public": 7,
+    "analytics_node": 8,
+    "total": 30,
+    "passed": true
+  },
+  "commands": [
+    "python3 blog/render.py",
+    "python3 ops/prepare-public.py",
+    "python3 ops/check-site.py",
+    "python3 blog/preview.py"
+  ],
+  "static": {
+    "preview_pages": 39,
+    "checked_local_references": 2746,
+    "drafts": 6,
+    "public_files_unchanged": true,
+    "drafts_excluded_from_sitemap": true,
+    "preview_repeatable": true,
+    "noindex": true,
+    "sdk_disabled": true,
+    "final_html_sha256": {
+      "index.html": "980ee91181641cba2065b438d56cc04b7ba35b7e48dd4365ffb6c4c8d407e26a",
+      "user-agreement.html": "e585e14126b0685e7ef4aea089a995d9772354f98a80afe8104fd05fc8db7a94",
+      "privacy-policy.html": "73d4e6ea2a33410897825a30161a1d5855dbe5cf3a9872121e1e1eb00b64c52b",
+      "sitemap.xml": "a78763b02492c37767a7dad05dd1d58c1f7299d4a1f004e9e53f1ca1060403e5",
+      "robots.txt": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1",
+      "catalog/index.html": "14907e08d832018ee3cff412061d0a4cc3ce7bc76abc505972073aadd6665020",
+      "business/index.html": "8bdce69698b4ff79d6bc4bd24d226276a5cd792e2b45782755c8c989ce06fb14",
+      "blog/index.html": "7245a7ed688b091b2ccf146753b78766a656fccfed44ec82b9e99327b4acfdd1",
+      "blog/kak-vybrat-sumku-chehol-dlya-kolyaski/index.html": "fe67e3323aed77b801eecc032af533c3fd1b9e6924ef9bcf140b4bf67a7ff6ae",
+      "blog/kak-vybrat-sumku-baul/index.html": "fcca41946f80c68f51c15b822fbe6a9de68fa57b2b078948e6c5d0d0436513fc",
+      "blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html": "beeef417da3b812113e2969a996250a2b8d15e890df7a3e4e404272ad5e4686c",
+      "blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/index.html": "11c1ebc08527909e7669d38406252af66efde31f9780643661bfb8083dcc96b7",
+      "blog/kak-podobrat-chehol-na-kvadrocikl/index.html": "cde0d471d35e90f525b2a48de8680cb54bdd3d5c8391ef8120d7ef8ec4baca6b",
+      "blog/kak-vybrat-chehol-dlya-motocikla/index.html": "e81e0ec5c6f095534ac3e0f556bcc6d380099eb95c43115c58fc691b604f79ad",
+      "blog/kak-vybrat-chehly-dlya-koles/index.html": "1882d80e0b052d608270ebddef952212d2bc20f2e69bb18723d0025b392a80e1",
+      "catalog/nakidka-na-bamper/index.html": "a375f2a0008928b8eb956fad437d2410bb60fd20d90bcc27f020166af69f939a",
+      "catalog/chehol-dlya-kacheley-kokona/index.html": "3d6f88e54412873e2dbc234092a384915f6ecf31d63f6e5b18cbeb7a037d8b3d",
+      "catalog/remni-styazhnye/index.html": "8514bce669b6cb131e2f59a7649d1cfc4c044fdf75a03f3a77bac48f388d5438",
+      "catalog/karabiny-dlya-vesla/index.html": "8707c31bed2e8b5f42489888a234244c96b060ce60bf1cfd7d0a1c169f9380d4",
+      "catalog/chehol-dlya-motocikla/index.html": "eb2e166bdf1a33d2fb04fb933712d5c61f5131c0cdd1e8ccd59755084a688761",
+      "catalog/chehol-dlya-kolyaski/index.html": "85dac5f337027e3976acd3e7e3b6a4ea06a5cd33ac53a33a558f5f4d0ee8e7b4",
+      "catalog/chehol-dlya-shurupoverta/index.html": "1d8a6d37c94c3bf9dfae9aa224535f4546561db04aabd718d5deb7f2f607effe",
+      "catalog/remen-dlya-perenoski/index.html": "4f3e74dc98630cc4a5aed1041d10dd0c7d91a594f4f77c3cb04721e47bff11d6",
+      "catalog/bahily-mnogorazovye/index.html": "f2eae38d083fadda28c3474d8b10317d8d122d32308463afc94f93beeda0e068",
+      "catalog/dno-dlya-volera/index.html": "67d2b3f8499f8ce2c5d749d60b9d75b0089b62506e7739ed8e9c22ae46c35eab",
+      "catalog/chehly-dlya-koles/index.html": "2b0e0be51a47ae7934b1b646dfe79cb0be5ea2d672bab620cf71e935bd9b7658",
+      "catalog/plechevye-remni-dlya-sumok/index.html": "7965f3a83b7f5bf09f29735d43738f48a7ed2e407c17727c8c2244e2dd50b9c2",
+      "catalog/nakidka-na-sidene-i-bagazhnik/index.html": "5942548e35dc94ecee0352089390663147e2d9e7ae49862f80806a204cf6e0ff",
+      "catalog/chehol-dlya-velosipeda/index.html": "aa0f1ed3319a0fc44a2bbfa6aa594394b40184198f6da08bd126983de43282cd",
+      "catalog/kryuchki-dlya-kolyaski/index.html": "85fd3cff960390107f9d805978799a23afdd91a944424f26787b4fc22f587585",
+      "catalog/chehol-na-evrokub/index.html": "fbe3bf414f8ac266d1d2a4b9d68bf36792662f423061247e40c4c55b26413bf3",
+      "catalog/sumki-bauly/index.html": "f882e6603e0cb05826283592d812ef3c7b1381cacaa16bf456d6c2d654b35f11",
+      "catalog/stropa-remennaya/index.html": "cb9c6d7b2327cbe7494859b295c3d46266829aa6c4397ab0ad91cd5b77c03c8b",
+      "catalog/chehol-na-kvadrocikl/index.html": "9f777b7b75b490d01916d8f0df176c942a4e957f6108bc2781b966976004d711",
+      "catalog/chehol-dlya-amortizatora/index.html": "58cda334e5a237c28e66eba97b31f93aa854d74cd265affe060d99db0e472960",
+      "catalog/chehol-dlya-udochek/index.html": "3b2936d084bf5be9568fe6d2653687d3103be79017cc53e87af8684ac3eadfc6",
+      "catalog/lenta-kontaktnaya/index.html": "855e2e5e1c1d73753c22203e6fac811f6abd15575f6420d2ad18e5b6ae8d5328",
+      "catalog/chehol-dlya-generatora/index.html": "a7681dfe39230e79a9694ec7acadf40dcab20779099895f648641966b27edea5",
+      "catalog/organayzer-v-bagazhnik/index.html": "cbcc49c41b648fc79282690eb929ac00ec12e8a753deecd5d18d5cbdf5c1d682",
+      "catalog/nagrudnaya-styazhka/index.html": "692d32fac39d2a05a91d40dfe55d987485c71c8316c1ac7a85f47d1662c3651e",
+      "catalog/chehol-dlya-snouborda/index.html": "6d2b7f0e85a95f98950bc2153935a148a3c34bff235d55ecdc1f879aa5e48c54"
+    }
+  },
+  "browser": {
+    "layouts": [
+      {
+        "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+        "width": 360,
+        "scrollWidth": 360,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4029
+      },
+      {
+        "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4029
+      },
+      {
+        "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4029
+      },
+      {
+        "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4029
+      },
+      {
+        "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4029
+      },
+      {
+        "slug": "kak-vybrat-chehly-dlya-koles",
+        "width": 360,
+        "scrollWidth": 360,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3684
+      },
+      {
+        "slug": "kak-vybrat-chehly-dlya-koles",
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3684
+      },
+      {
+        "slug": "kak-vybrat-chehly-dlya-koles",
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3684
+      },
+      {
+        "slug": "kak-vybrat-chehly-dlya-koles",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3684
+      },
+      {
+        "slug": "kak-vybrat-chehly-dlya-koles",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3684
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+        "width": 360,
+        "scrollWidth": 360,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3995
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3995
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3995
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3995
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3995
+      },
+      {
+        "slug": "kak-podobrat-chehol-na-kvadrocikl",
+        "width": 360,
+        "scrollWidth": 360,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4224
+      },
+      {
+        "slug": "kak-podobrat-chehol-na-kvadrocikl",
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4224
+      },
+      {
+        "slug": "kak-podobrat-chehol-na-kvadrocikl",
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4224
+      },
+      {
+        "slug": "kak-podobrat-chehol-na-kvadrocikl",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4224
+      },
+      {
+        "slug": "kak-podobrat-chehol-na-kvadrocikl",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4224
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-motocikla",
+        "width": 360,
+        "scrollWidth": 360,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4023
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-motocikla",
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4023
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-motocikla",
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4023
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-motocikla",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4023
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-motocikla",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 4023
+      },
+      {
+        "slug": "kak-vybrat-sumku-baul",
+        "width": 360,
+        "scrollWidth": 360,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3910
+      },
+      {
+        "slug": "kak-vybrat-sumku-baul",
+        "width": 390,
+        "scrollWidth": 390,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3910
+      },
+      {
+        "slug": "kak-vybrat-sumku-baul",
+        "width": 768,
+        "scrollWidth": 768,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3910
+      },
+      {
+        "slug": "kak-vybrat-sumku-baul",
+        "width": 1024,
+        "scrollWidth": 1024,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3910
+      },
+      {
+        "slug": "kak-vybrat-sumku-baul",
+        "width": 1440,
+        "scrollWidth": 1440,
+        "overflow": [],
+        "broken": [],
+        "h1": 1,
+        "bodyChars": 3910
+      }
+    ],
+    "interactions": [
+      {
+        "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+        "checklist": true,
+        "tabsKeyboard": false,
+        "toc": true,
+        "sourceReturn": true,
+        "cta": {
+          "counter": 112428810,
+          "method": "reachGoal",
+          "goal": "blog_cta_click",
+          "params": {
+            "page": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+            "article": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+            "cta": "pram-dimensions"
+          }
+        },
+        "ctaTargets": [
+          {
+            "id": "pram-dimensions",
+            "url": "/catalog/chehol-dlya-kolyaski/"
+          },
+          {
+            "id": "pram-request",
+            "url": "/catalog/chehol-dlya-kolyaski/"
+          }
+        ]
+      },
+      {
+        "slug": "kak-vybrat-chehly-dlya-koles",
+        "checklist": true,
+        "tabsKeyboard": true,
+        "toc": true,
+        "sourceReturn": true,
+        "cta": {
+          "counter": 112428810,
+          "method": "reachGoal",
+          "goal": "blog_cta_click",
+          "params": {
+            "page": "/blog/kak-vybrat-chehly-dlya-koles/",
+            "article": "kak-vybrat-chehly-dlya-koles",
+            "cta": "wheels-fit"
+          }
+        },
+        "ctaTargets": [
+          {
+            "id": "wheels-fit",
+            "url": "/catalog/chehly-dlya-koles/"
+          },
+          {
+            "id": "wheels-pack",
+            "url": "/catalog/chehly-dlya-koles/"
+          }
+        ]
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+        "checklist": true,
+        "tabsKeyboard": false,
+        "toc": true,
+        "sourceReturn": true,
+        "cta": {
+          "counter": 112428810,
+          "method": "reachGoal",
+          "goal": "blog_cta_click",
+          "params": {
+            "page": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+            "article": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+            "cta": "bike-options"
+          }
+        },
+        "ctaTargets": [
+          {
+            "id": "bike-options",
+            "url": "/catalog/chehol-dlya-velosipeda/"
+          },
+          {
+            "id": "bike-fit",
+            "url": "/catalog/chehol-dlya-velosipeda/"
+          }
+        ]
+      },
+      {
+        "slug": "kak-podobrat-chehol-na-kvadrocikl",
+        "checklist": true,
+        "tabsKeyboard": false,
+        "toc": true,
+        "sourceReturn": true,
+        "cta": {
+          "counter": 112428810,
+          "method": "reachGoal",
+          "goal": "blog_cta_click",
+          "params": {
+            "page": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+            "article": "kak-podobrat-chehol-na-kvadrocikl",
+            "cta": "atv-sizes"
+          }
+        },
+        "ctaTargets": [
+          {
+            "id": "atv-sizes",
+            "url": "/catalog/chehol-na-kvadrocikl/"
+          },
+          {
+            "id": "atv-request",
+            "url": "/catalog/chehol-na-kvadrocikl/"
+          },
+          {
+            "id": "winter-storage-guide",
+            "url": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+          }
+        ]
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-motocikla",
+        "checklist": true,
+        "tabsKeyboard": true,
+        "toc": true,
+        "sourceReturn": true,
+        "cta": {
+          "counter": 112428810,
+          "method": "reachGoal",
+          "goal": "blog_cta_click",
+          "params": {
+            "page": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+            "article": "kak-vybrat-chehol-dlya-motocikla",
+            "cta": "moto-dimensions"
+          }
+        },
+        "ctaTargets": [
+          {
+            "id": "moto-dimensions",
+            "url": "/catalog/chehol-dlya-motocikla/"
+          },
+          {
+            "id": "moto-compare",
+            "url": "/catalog/chehol-dlya-motocikla/"
+          },
+          {
+            "id": "winter-storage-guide",
+            "url": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+          }
+        ]
+      },
+      {
+        "slug": "kak-vybrat-sumku-baul",
+        "checklist": true,
+        "tabsKeyboard": true,
+        "toc": true,
+        "sourceReturn": true,
+        "cta": {
+          "counter": 112428810,
+          "method": "reachGoal",
+          "goal": "blog_cta_click",
+          "params": {
+            "page": "/blog/kak-vybrat-sumku-baul/",
+            "article": "kak-vybrat-sumku-baul",
+            "cta": "bag-volumes"
+          }
+        },
+        "ctaTargets": [
+          {
+            "id": "bag-volumes",
+            "url": "/catalog/sumki-bauly/"
+          },
+          {
+            "id": "bag-request",
+            "url": "/catalog/sumki-bauly/"
+          }
+        ]
+      }
+    ],
+    "noJs": [
+      {
+        "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
+        "headings": 6
+      },
+      {
+        "slug": "kak-vybrat-chehly-dlya-koles",
+        "headings": 6
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+        "headings": 6
+      },
+      {
+        "slug": "kak-podobrat-chehol-na-kvadrocikl",
+        "headings": 6
+      },
+      {
+        "slug": "kak-vybrat-chehol-dlya-motocikla",
+        "headings": 6
+      },
+      {
+        "slug": "kak-vybrat-sumku-baul",
+        "headings": 6
+      }
+    ],
+    "console": [],
+    "requestFailures": [],
+    "httpErrors": [],
+    "remoteRequests": []
+  },
+  "screenshots": "outputs/blog-drafts-20260923/{1..6}-{360,390,768,1024,1440}.png (local, not committed)",
+  "visual_review": "Mobile tops, middle sections, footnotes/footer and desktop content reviewed using screenshot contact sheets; original site styling preserved.",
+  "content_sources_note": "docs/blog-drafts-20260923.md",
+  "production": {
+    "dist_unchanged": true,
+    "published_article_unchanged": true,
+    "public_pages_checked_locally": 33,
+    "drafts_in_public_sitemap": false,
+    "deploy_run": false,
+    "server_changes": false,
+    "real_submissions": false,
+    "public_https_new_articles_checked": false
+  },
+  "limitations": [
+    "Owner editorial approval pending.",
+    "Draft date is preparation date; replace with actual publication date on release.",
+    "Three-bike cover size and bag dimensions/load retain original source discrepancies; disputed values omitted from articles.",
+    "No physical fit, strength, waterproofing or thermal tests were performed.",
+    "Analytics checks use a local SDK stub, not real Metrika ingestion or reports.",
+    "Search consoles, indexing and production lead/delivery chain not rechecked.",
+    "Incoming attribution through a real submission not tested; forms unchanged."
+  ],
+  "publication_checklist": {
+    "1_local_preview": "passed",
+    "2_responsive": "30 combinations passed",
+    "3_console_assets_links": "passed locally",
+    "4_form_validation": "not applicable: no form changes",
+    "5_live_integrations": "not applicable: isolated drafts, no integration changes",
+    "6_generation_tests": "passed",
+    "7_metadata_and_no_js": "passed for draft candidates; no publication date claimed",
+    "8_crawl_indexing": "drafts excluded; public search consoles not accessed",
+    "9_analytics": "one inherited handler, SDK stripped in preview; local handlers passed",
+    "10_utm": "internal links untagged; external source helper retained; live attribution not checked",
+    "11_release": "not applicable: publication not requested",
+    "12_documentation": "project/blog/SEO/analytics report prepared; final Git/Obsidian sync required after documentation commit"
+  },
+  "obsidian_preflight": {
+    "stale_files": 61,
+    "manual_conflicts": false
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "pages": 39,
+  "ozon_url_occurrences": 106,
+  "unique_ozon_product_urls": 77,
+  "utm_campaign": "vendor_org_211216",
+  "one_counter_and_handler_per_page": true,
+  "internal_utm_links": 0,
+  "published_articles": 7,
+  "new_articles": [
+    "kak-vybrat-sumku-chehol-dlya-kolyaski",
+    "kak-vybrat-chehly-dlya-koles",
+    "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
+    "kak-podobrat-chehol-na-kvadrocikl",
+    "kak-vybrat-chehol-dlya-motocikla",
+    "kak-vybrat-sumku-baul"
+  ],
+  "status": "preflight passed; deployment pending",
+  "date": "2026-09-23",
+  "branch": "codex/ux-blog-release",
+  "sources": {
+    "ux": "23b152ab824c72a6829291afbca1c6eec048e3c8",
+    "articles": "78c85da0b27b2b3205665c0983c9758288da8445"
+  },
+  "tests": {
+    "catalog": 19,
+    "blog": 15,
+    "business": 2,
+    "ops": 31,
+    "server": 26,
+    "analytics": 8,
+    "search": 4,
+    "total": 105
+  },
+  "build": {
+    "files": 1266,
+    "repeat_unchanged": true
+  },
+  "local_browser": {
+    "pages": 39,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "measured_states": 195,
+    "actual_widths_verified": true,
+    "geometry_image_h1_script_failures": 0,
+    "console_errors_or_warnings": 0,
+    "mobile_menu_escape_focus": true,
+    "article_toc_checklist_cta": true,
+    "six_articles_interactions": true,
+    "form_checks": [
+      "required fields",
+      "invalid contact",
+      "lost response no success",
+      "retry same UUID",
+      "custom width and length preserved",
+      "pending disables submit and emits no success",
+      "success emits one lead_submitted",
+      "oversize PDF rejected",
+      "valid PDF submitted to isolated QA",
+      "long 503 error fits 360px, no success"
+    ]
+  },
+  "metrika": {
+    "counter": 112428810,
+    "domains": [
+      "needle-shark.ru",
+      "needleshark.ru"
+    ],
+    "only_listed_domains": true,
+    "including_subdomains": true,
+    "console_settings_checked_before_release": true,
+    "goals": {
+      "blog_cta_click": 611918849,
+      "outbound_click": 611919368,
+      "contact_click": 611919492,
+      "request_open": 611920007,
+      "form_start": 611920074,
+      "form_submit_attempt": 611920219,
+      "lead_submitted": 611920414,
+      "ui_click": 611921224
+    },
+    "goals_created_or_changed": false,
+    "real_sdk_after_release": "pending"
+  },
+  "pre_release": {
+    "static_current": "20260922T181556Z-89524",
+    "static_previous": "20260922T070621Z-52722",
+    "backend_current": "20260922T094139Z-1e940964f438",
+    "services": [
+      "nginx",
+      "needle-leads",
+      "needle-cleanup.timer",
+      "needle-monitor.timer",
+      "certbot.timer"
+    ],
+    "all_active": true
+  },
+  "qa_campaign": "ux_blog_release_20260923",
+  "secret_scan": "Ozon API key absent from source and dist; private API responses excluded",
+  "limitations": [
+    "Local simulated SDK/API checks are not evidence of production goal delivery or database/mail/LOOP processing.",
+    "Not every responsive state was separately judged by screenshot."
+  ]
+}

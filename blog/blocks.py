@@ -83,6 +83,8 @@ def validate_blocks(blocks):
             if kind == 'checklist':
                 require_text(block, 'title')
         elif kind == 'sources':
+            if 'label' in block:
+                require_text(block, 'label')
             if not block.get('items'):
                 raise ValueError('Empty sources')
             for item in block['items']:
@@ -160,7 +162,7 @@ class ArticleBlocks:
                     note['refs'].append(ref)
                     number = note['number']
                     links.append(f'<a id="{ref}" href="#note-{number}" data-track="blog_note_{number}" role="doc-noteref" aria-label="Источник {number}: {e(source["title"])}" title="{e(source["title"])}">[{number}]</a>')
-                output.append('<p class="article-sources">По руководству производителя ' + ' '.join(links) + '</p>')
+                output.append('<p class="article-sources">' + e(block.get('label', 'По руководству производителя')) + ' ' + ' '.join(links) + '</p>')
             elif kind == 'image':
                 output.append(figure(block))
             elif kind == 'callout':

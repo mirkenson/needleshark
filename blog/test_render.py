@@ -8,6 +8,43 @@ POST = dict(slug='test', status='published', date='2026-09-11', title='<script>T
 
 
 class BlogTests(unittest.TestCase):
+    def test_source_label_is_optional_and_escaped(self):
+        post = {**POST, 'blocks': [dict(type='sources', label='<b>Характеристики</b>', items=[dict(title='Каталог', url='/catalog/')])]}
+        with tempfile.TemporaryDirectory() as tmp:
+            render([post], Path(tmp))
+            html = (Path(tmp) / 'test/index.html').read_text()
+            self.assertIn('&lt;b&gt;Характеристики&lt;/b&gt;', html)
+            post['blocks'][0]['label'] = ''
+            with self.assertRaises(ValueError):
+                render([post], Path(tmp))
+
+    def test_isolated_preview_keeps_drafts_out_of_production(self):
+        import json
+        from unittest.mock import patch
+        import preview
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'dist').mkdir()
+            (root / 'dist/index.html').write_text('PRODUCTION SENTINEL')
+            (root / 'blog').mkdir()
+            draft = {**POST, 'slug': 'draft', 'status': 'draft'}
+            source = json.dumps([POST, draft])
+            (root / 'blog/posts.json').write_text(source)
+            with patch.object(preview, 'ROOT', root):
+                preview.main()
+            self.assertEqual((root / 'blog/posts.json').read_text(), source)
+            self.assertEqual((root / 'dist/index.html').read_text(), 'PRODUCTION SENTINEL')
+            out = root / 'outputs/blog-preview'
+            html = (out / 'blog/draft/index.html').read_text()
+            self.assertIn('noindex,nofollow', html)
+            self.assertIn('Черновик от', html)
+            self.assertNotIn('datePublished', html)
+            self.assertNotIn('/metrika.js', html)
+            self.assertNotIn('mc.yandex.ru/watch', html)
+            self.assertIn('Опубликовано', (out / 'blog/test/index.html').read_text())
+            self.assertIn('Disallow: /', (out / 'robots.txt').read_text())
+            self.assertNotIn('<loc>', (out / 'sitemap.xml').read_text())
+
     def test_draft_and_unpublish(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp)
