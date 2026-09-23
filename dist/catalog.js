@@ -1,41 +1,4 @@
 'use strict';
-// Keep every product in the server-rendered page; filtering is an enhancement.
-const catalogTools = document.querySelector('#catalog-tools');
-if (catalogTools) {
-  const search = document.querySelector('#catalog-search');
-  const cards = [...document.querySelectorAll('.catalog-card')];
-  const categories = [...document.querySelectorAll('[data-category-filter]')];
-  const reset = document.querySelector('#catalog-reset');
-  const normalize = value => value.normalize('NFKC').toLocaleLowerCase('ru-RU').replaceAll('ё', 'е');
-  const index = cards.map(card => normalize(card.dataset.search || ''));
-  let category = '';
-  const filter = () => {
-    const terms = normalize(search.value).trim().split(/\s+/).filter(Boolean);
-    let count = 0;
-    cards.forEach((card, i) => {
-      const matches = (!category || card.dataset.category === category) && terms.every(term => index[i].includes(term));
-      card.hidden = !matches;
-      if (matches) count += 1;
-    });
-    categories.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.categoryFilter === category)));
-    document.querySelector('#catalog-results').textContent = terms.length || category ? `Найдено: ${count} из ${cards.length}` : `Все изделия: ${cards.length}`;
-    document.querySelector('#catalog-empty').hidden = count !== 0;
-    reset.hidden = !category && !search.value;
-  };
-  categories.forEach(button => button.addEventListener('click', () => {
-    category = button.dataset.categoryFilter;
-    filter();
-  }));
-  search.addEventListener('input', filter);
-  reset.addEventListener('click', () => {
-    category = '';
-    search.value = '';
-    filter();
-    search.focus();
-  });
-  catalogTools.hidden = false;
-  filter();
-}
 // Catalogue UI and submissions to the existing durable lead endpoint.
 const galleriesElement = document.querySelector('#product-galleries');
 const galleries = JSON.parse(galleriesElement?.textContent || '{}');
@@ -201,17 +164,26 @@ if (packProduct) {
   const label = requestForm.elements.quantity.closest('label');
   label.firstChild.textContent = 'Количество комплектов';
 }
+const quantityLabel = requestForm?.elements.quantity.closest('label');
+if (quantityLabel && document.body.dataset.productSlug === 'stropa-remennaya') quantityLabel.firstChild.textContent = 'Количество отрезов по 10 м';
+if (quantityLabel && document.body.dataset.productSlug === 'bahily-mnogorazovye') quantityLabel.firstChild.textContent = 'Количество пар';
+let customLength = false;
 let sending = false;
 let submissionId = null;
 let submissionContent = null;
 document.querySelectorAll('[data-request]').forEach(button => button.addEventListener('click', () => {
   if (sending) return;
+  customLength = button.dataset.request === 'Свой метраж';
   const selected = sizeInputs.find(input => input.checked)?.value;
   const product = document.body.dataset.productName;
-  const choice = selectedVariant ? selectedVariant.label : (selected ? `${selected} см` : 'размер пока не выбран');
+  const choice = customLength ? `${selectedVariant.label.replace(' × 10 м', '')} · длина по заявке` : selectedVariant ? selectedVariant.label : (selected ? `${selected} см` : 'размер пока не выбран');
   const context = product ? `${product} · ${choice}` : 'Готовые изделия и пошив партии';
   document.querySelector('#request-context').textContent = context;
   requestForm.elements.intent.value = intentValues[button.dataset.request] || 'direct';
+  quantityLabel.hidden = customLength;
+  document.querySelector('#request-title').textContent = customLength ? 'Стропа нужной длины' : (requestForm.elements.intent.value === 'wholesale' ? 'Получить расчёт партии' : 'Уточнить цену и заказ');
+  document.querySelector('.request-description').textContent = customLength ? 'Укажите ширину и нужную длину в комментарии. Условия отреза и стоимость согласуем с вами.' : 'Оставьте контакт и количество. Менеджер уточнит детали, стоимость и доставку.';
+  requestForm.elements.question.placeholder = customLength ? 'Нужная длина в метрах и количество отрезов' : 'Варианты, количество, город и ваши вопросы';
   requestResult.hidden = true;
   openDialog(requestDialog, button);
 }));
@@ -237,18 +209,18 @@ requestForm?.addEventListener('submit', async event => {
     return;
   }
   if (!requestForm.reportValidity()) return;
-  const quantity = requestForm.elements.quantity.value === '' ? null : Number(requestForm.elements.quantity.value);
+  const quantity = customLength || requestForm.elements.quantity.value === '' ? null : Number(requestForm.elements.quantity.value);
   const question = requestForm.elements.question.value.trim() || 'Обращение по каталогу.';
-  const variantContext = selectedVariant ? `${selectedVariant.context}\n${selectedVariant.sizeLabel ? `Габариты / типоразмер: ${selectedVariant.sizeLabel}\n` : ''}Артикул варианта: ${selectedVariant.id}\n${packProduct ? `${document.body.dataset.unitLabel || 'Чехлов'} в комплекте: ${selectedVariant.unitsPerPack}\nКоличество комплектов: ${quantity ?? 'не указано'}\n` : ''}\nКомментарий: ` : '';
+  const variantContext = customLength ? `Ременная стропа. Ширина: ${selectedVariant.label.replace(' × 10 м', '')}. Длина по заявке.\n` : selectedVariant ? `${selectedVariant.context}\n${selectedVariant.sizeLabel ? `Габариты / типоразмер: ${selectedVariant.sizeLabel}\n` : ''}Артикул варианта: ${selectedVariant.id}\n${packProduct ? `${document.body.dataset.unitLabel || 'Чехлов'} в комплекте: ${selectedVariant.unitsPerPack}\nКоличество комплектов: ${quantity ?? 'не указано'}\n` : ''}\nКомментарий: ` : '';
   const payload = {
     name: requestForm.elements.name.value.trim(),
     contact: value,
-    question: variantContext + question,
+    question: variantContext + (customLength ? 'Запрос своего метража. ' : '') + question,
     consent: requestForm.elements.consent.checked,
     website: requestForm.elements.website.value,
     product_slug: document.body.dataset.productSlug || '',
     product_name: document.body.dataset.productName || '',
-    product_size: selectedVariant ? selectedVariant.legacySize : sizeInputs.find(input => input.checked)?.value || '',
+    product_size: customLength ? '' : selectedVariant ? selectedVariant.legacySize : sizeInputs.find(input => input.checked)?.value || '',
     inquiry_type: requestForm.elements.intent.value,
     quantity: quantity === null ? null : quantity * (selectedVariant?.unitsPerPack || 1),
     source_path: location.pathname

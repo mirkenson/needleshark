@@ -172,15 +172,14 @@ def markets(product, compact=False):
     links = []
     for market in product['marketplaces']:
         name = e(market['name'])
-        content = f'{name}<span aria-hidden="true">↗</span>'
+        content = f'Купить на {name}<span aria-hidden="true">↗</span>'
         url = variant_data(product)[0]['ozonUrl'] if product.get('variants') and market['name'] == 'Ozon' else market['url']
         if url:
             if not url.startswith('https://'):
                 raise ValueError('Marketplace links must use HTTPS')
             marker = ' data-variant-market="Ozon"' if product.get('variants') and not compact and market['name'] == 'Ozon' else ''
             links.append(f'<a class="market-button"{marker} href="{e(url)}" target="_blank" rel="noopener noreferrer">{content}</a>')
-        else:
-            links.append(f'<button class="market-button" type="button" disabled aria-label="{name}: покупка пока недоступна">{name}<small>Пока недоступно</small></button>')
+        # An unavailable marketplace is not an actionable purchase route.
     return f'<div class="marketplaces{" compact" if compact else ""}">{"".join(links)}</div>'
 
 
@@ -212,22 +211,26 @@ def hero(product):
     picker = variant_picker(product) if product.get('variants') else f'<fieldset class="size-picker"><legend>Размер, см <span>Д × Ш × В</span></legend><div class="size-options">{sizes}</div></fieldset>'
     note = f'<p class="seasonal-note">{e(product["seasonalNote"])}</p>' if product['seasonalNote'] else ''
     size_help = '<a class="size-help" href="#sizes">Как подобрать размер <span aria-hidden="true">↙</span></a>' if 'sizes' in product['sections'] else '<button class="text-link size-help" data-request="Подбор размера">Помогите подобрать размер ↗</button>'
-    purchase_note = product.get('purchaseNote') or ("Цена и доставка — на выбранном маркетплейсе." if any(m["url"] for m in product["marketplaces"]) else "Переходы на маркетплейсы временно недоступны. Заказать можно напрямую — оставьте заявку ниже.")
+    retail = markets(product)
+    has_retail = 'href=' in retail
+    purchase_note = 'Розничная цена и доставка — на Ozon.' if has_retail else 'Нужен один товар? Уточните цену, доступное количество и доставку у менеджера.'
     facts = product.get('facts', [{'label': 'Материал', 'value': product['material']}, {'label': 'Влагозащитная пропитка', 'value': product['coating']}])
     specs = ''.join(f'<div><span>{e(fact["label"])}</span><strong>{e(fact["value"])}</strong></div>' for fact in facts if fact['value'])
     hero_specs = f'<div class="hero-specs">{specs}</div>' if specs else ''
     return f'''
     <nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/catalog/">Каталог</a><span aria-hidden="true">/</span><span>{e(product['name'])}</span></nav>
     <section class="wrap detail-hero" aria-labelledby="product-title">
+      <div class="detail-heading"><p class="eyebrow">NEEDLE SHARK / {e(product['category']).upper()}</p><h1 id="product-title">{e(product['name'])}</h1><p class="detail-intro">{e(product['description'])}</p>{note}</div>
       <div class="gallery">{gallery_label}{gallery_config}
         <div class="gallery-stage"><span class="product-badge">{e(product['badge'])}</span>{picture(gallery[0], True, id='gallery-image', fetchpriority='high')}<span class="photo-index" id="photo-index">01 / {len(gallery):02d}</span></div>
         <div class="gallery-bottom"><div class="gallery-thumbs" aria-label="Фотографии товара">{thumbnails}</div><p id="gallery-caption">{e(gallery[0]['label'])}</p></div>
       </div>
-      <div class="detail-copy"><p class="eyebrow">NEEDLE SHARK / {e(product['category']).upper()}</p><h1 id="product-title">{e(product['name'])}<span class="title-dot">.</span></h1><p class="detail-intro">{e(product['description'])}</p>{note}
+      <div class="detail-copy">
         {hero_specs}
         {picker}
         {size_help}
-        <div class="buy-block"><p class="buy-label">Способы заказа</p>{markets(product)}<p class="price-note">{purchase_note}</p><button class="button accent request-primary" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button><p class="direct-note">Заказ напрямую · подбор размера · партии для бизнеса</p></div>
+        {'<button class="text-link custom-length-request" data-request="Свой метраж">Обсудить свой метраж →</button>' if product['slug'] == 'stropa-remennaya' else ''}
+        <div class="buy-block"><p class="buy-label">Заказать у производства</p><button class="button accent request-primary" data-request="Партия для бизнеса">Получить расчёт партии <span aria-hidden="true">↗</span></button><p class="direct-note">Готовые изделия — партиями от 20 штук.<br>Другая конструкция или объём — по согласованию.</p><div class="retail-buy">{retail if has_retail else '<button class="button retail-request" data-request="Заказ напрямую">Узнать цену и заказать <span aria-hidden="true">↗</span></button>'}<p class="price-note">{purchase_note}</p></div><a class="business-terms" href="/business/">Условия работы с бизнесом →</a></div>
       </div>
     </section>'''
 
@@ -254,7 +257,7 @@ def detail_sections(product):
         'sizes': f'''<section class="wrap product-section sizes-section" id="sizes"><div class="section-heading"><div><p class="eyebrow">ПОДБОР РАЗМЕРА</p><h2>{lines(copy['sizesTitle'])}</h2></div><p>{lines(copy['sizesIntro'])}</p></div><div class="sizes-layout"><div><div class="fit-photo">{picture(image_for(product, 'fit'), **{'data-product-photo': 'fit'})}<span>Длина × ширина × высота</span></div><p class="fit-note">{e(product['fitNote'])}</p><button class="text-link size-request" data-request="Подбор размера">Помогите выбрать размер <span aria-hidden="true">↗</span></button></div><div class="size-table-wrap"><table class="size-table"><caption>{e(copy['sizeTableCaption'])}</caption><thead><tr><th scope="col">№</th><th scope="col">Длина</th><th scope="col">Ширина</th><th scope="col">Высота</th><th scope="col"><span class="sr-only">Выбор</span></th></tr></thead><tbody>{size_rows}</tbody></table><p class="selected-size-note" id="selected-size-note" role="status">Выберите размер — он появится в вашей заявке.</p><button class="button accent" data-request="Заказ напрямую">Оставить заявку <span aria-hidden="true">↗</span></button></div></div></section>''',
         'kit': f'''<section class="kit-section" id="kit"><div class="wrap kit-layout"><div class="kit-photo">{picture(image_for(product, 'kit') if active_gallery else image_for(product, 'hero'), **{'data-product-photo': 'kit'})}</div><div class="kit-copy"><p class="eyebrow">КОМПЛЕКТАЦИЯ</p><h2>{lines(copy['kitTitle'])}</h2><p>{e(copy['kitDescription'])}</p><ul>{kit}</ul></div></div></section>''',
         'questions': f'''<section class="wrap product-section faq-section" id="questions"><div><p class="eyebrow">ВОПРОСЫ ОБ ИЗДЕЛИИ</p><h2>{lines(copy['faqTitle'])}</h2><p>{lines(copy['faqIntro'])}</p><button class="text-link" data-request="Подбор размера">Задать вопрос <span aria-hidden="true">↗</span></button></div><div class="faq-list">{faqs}</div></section>''',
-        'wholesale': f'''<section class="wholesale-section" id="wholesale"><div class="wrap wholesale-layout"><div><p class="eyebrow">ДЛЯ БИЗНЕСА</p><h2>{lines(copy['wholesaleTitle'])}</h2></div><div><p>{e(copy['wholesaleDescription'])}</p><button class="button accent" data-request="Партия для бизнеса">Обсудить партию <span aria-hidden="true">↗</span></button><a href="/#about">Узнать о производстве →</a></div></div></section>'''
+        'wholesale': f'''<section class="wholesale-section" id="wholesale"><div class="wrap wholesale-layout"><div><p class="eyebrow">ДЛЯ БИЗНЕСА</p><h2>{lines(copy['wholesaleTitle'])}</h2></div><div><p>{e(copy['wholesaleDescription'])}</p><button class="button accent" data-request="Партия для бизнеса">Получить расчёт партии <span aria-hidden="true">↗</span></button><a href="/business/">Условия для бизнеса →</a></div></div></section>'''
     }
     labels = dict(zip(sections, ['Когда пригодится', 'Материал', 'Размеры', 'Комплектация', 'Вопросы', 'Для бизнеса']))
     if product.get('galleries') and any(gallery['features'] for gallery in product['galleries'].values()):
@@ -288,14 +291,15 @@ def catalogue(products):
         search_parts.extend(v['id'] + ' ' + v.get('sizeLabel', '') for v in product.get('variants', []))
         search_parts.extend(v['label'] for g in product.get('optionGroups', []) for v in g['values'])
         url = f'/catalog/{product["slug"]}/'
-        meta = ' / '.join(value for value in (product['material'], product['coating']) if value) or product['category']
-        buying = f'<div class="card-buy"><span>На маркетплейсах</span>{markets(product, True)}</div>' if product['marketplaces'] else ''
         source_flag = ' data-source-images="true"' if product.get('sourcePhotography') else ''
-        cards.append(f'''<article class="catalog-card" data-category="{e(category['id'])}" data-search="{e(' '.join(search_parts))}"{source_flag}><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) == 0, sizes='(max-width:540px) 90vw, (max-width:1150px) 44vw, 29vw')}<span class="product-badge">{e(product['badge'])}</span><span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(meta)}</span><span>{e(product.get('rangeLabel', str(len(product['sizes'])) + ' размеров'))}</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p>{e(product['shortDescription'])}</p><a class="card-detail-link" href="{url}">Подробнее об изделии <span aria-hidden="true">→</span></a>{buying}</article>''')
-    category_buttons = f'<button type="button" data-category-filter="" aria-pressed="true" aria-controls="catalog-grid" data-track="catalog_category_all">Все изделия <span>{len(cards)}</span></button>'
-    category_buttons += ''.join(f'<button type="button" data-category-filter="{e(key)}" aria-pressed="false" aria-controls="catalog-grid" data-track="catalog_category_{e(key)}">{e(value["label"])} <span>{value["count"]}</span></button>' for key, value in categories.items())
-    controls = f'''<div class="catalog-tools" id="catalog-tools" hidden><div class="catalog-search" role="search" aria-label="Поиск по каталогу"><label for="catalog-search">Найти изделие</label><div class="catalog-search-field"><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="catalog-search" class="ym-disable-keys" type="search" placeholder="Название или артикул" maxlength="150" autocomplete="off" aria-controls="catalog-grid" aria-describedby="catalog-results"></div></div><div class="catalog-categories" role="group" aria-label="Категории товаров">{category_buttons}</div><button type="button" class="catalog-reset text-link" id="catalog-reset" hidden>Сбросить поиск и категорию <span aria-hidden="true">×</span></button></div>'''
-    return f'''<nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav><section class="wrap catalog-intro"><div><p class="eyebrow">NEEDLE SHARK / ГОТОВЫЕ ИЗДЕЛИЯ</p><h1>Защита в каждой<br><span class="accent-word">детали.</span></h1></div><p>Изделия из технических тканей.<br>Выбирайте для себя или заказывайте<br class="desktop-break"> партию напрямую у производства.</p></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading">Каталог изделий</h2><span id="catalog-results" role="status" aria-live="polite" aria-atomic="true">Все изделия: {len(cards)}</span></div>{controls}<div class="catalog-empty" id="catalog-empty" hidden><h3>Ничего не найдено</h3><p>Попробуйте другое слово или выберите другую категорию.</p></div><div class="catalog-grid" id="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПРОИЗВОДСТВО ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна партия<br>или особый размер?</h2></div><div><p>Расскажите, для какой задачи нужны изделия, в каком количестве и какие размеры важны. Обсудим решение с производством.</p><button class="button accent" data-request="Партия для бизнеса">Обсудить задачу <span aria-hidden="true">↗</span></button></div></section>'''
+        summary = product.get('catalogSummary', product.get('rangeLabel', product['material']))
+        has_market = any(m.get('url') for m in product['marketplaces'])
+        route = 'Розница на Ozon · партии у производства' if has_market else 'Цена и условия — по запросу'
+        cards.append(f'''<article class="catalog-card" data-category="{e(category['id'])}" data-search="{e(' '.join(search_parts))}"{source_flag}><a class="catalog-card-image" href="{url}" aria-label="{e(product['name'])} — подробнее">{picture(product['images'][0], len(cards) < 4, sizes='(max-width:540px) 120px, (max-width:1000px) 44vw, (max-width:1279px) 29vw, 22vw')}<span class="card-open" aria-hidden="true">↗</span></a><div class="card-meta"><span>{e(category['label'])}</span></div><h2><a href="{url}">{e(product['name'])}</a></h2><p class="card-spec">{e(summary)}</p><p class="card-route">{route}</p><a class="card-detail-link" href="{url}">Выбрать и заказать <span aria-hidden="true">→</span></a></article>''')
+    category_buttons = f'<button type="button" data-category-filter="" data-category-label="Все категории" aria-pressed="true" aria-controls="catalog-grid" data-track="catalog_category_all">Все изделия <span>{len(cards)}</span></button>'
+    category_buttons += ''.join(f'<button type="button" data-category-filter="{e(key)}" data-category-label="{e(value["label"])}" aria-pressed="false" aria-controls="catalog-grid" data-track="catalog_category_{e(key)}">{e(value["label"])} <span>{value["count"]}</span></button>' for key, value in categories.items())
+    controls = f'''<div class="catalog-tools" id="catalog-tools" hidden><div class="catalog-search" role="search" aria-label="Поиск по каталогу"><label class="sr-only" for="catalog-search">Найти изделие</label><div class="catalog-search-field"><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="catalog-search" class="ym-disable-keys" type="search" placeholder="Название, размер или артикул" maxlength="150" autocomplete="off" aria-controls="catalog-grid" aria-describedby="catalog-results"></div></div><details class="category-picker" id="category-picker" open><summary><span id="category-label">Все категории</span><span aria-hidden="true">⌄</span></summary><div class="catalog-categories" role="group" aria-label="Категории товаров">{category_buttons}</div></details><button type="button" class="catalog-reset text-link" id="catalog-reset" hidden>Сбросить поиск и категорию <span aria-hidden="true">×</span></button></div>'''
+    return f'''<nav class="wrap breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><span>Каталог</span></nav><section class="wrap catalog-intro"><div><h1>Каталог изделий<span class="title-dot">.</span></h1><p>Для себя и для бизнеса. Выберите вариант и способ заказа.</p></div><a class="catalog-b2b-link" href="/business/"><span>Для вашего бизнеса</span><strong>Партии и пошив на заказ ↗</strong><span>Готовые изделия — от 20 штук</span></a></section><section class="wrap catalog-collection" aria-labelledby="catalog-heading"><div class="collection-heading"><h2 id="catalog-heading" class="sr-only">Найдите своё изделие</h2><span id="catalog-results" role="status" aria-live="polite" aria-atomic="true">{len(cards)} из {len(cards)} изделий</span></div>{controls}<div class="catalog-empty" id="catalog-empty" hidden><h3>Ничего не найдено</h3><p>Попробуйте другое название или сбросьте категорию. Нужна помощь? <a href="/business/#contact">Расскажите о задаче</a>.</p></div><div class="catalog-grid" id="catalog-grid">{''.join(cards)}</div></section><section class="wrap catalogue-business"><div><p class="eyebrow">ПОШИВ ПОД ВАШУ ЗАДАЧУ</p><h2>Нужна другая<br>конструкция?</h2></div><div><p>Начнём с фотографии, образца или описания. Разработку, количество и сроки согласуем с вами.</p><a class="button accent" href="/business/#contact">Обсудить своё изделие <span aria-hidden="true">↗</span></a></div></section>'''
 
 
 def product_schema(product):
@@ -349,7 +353,7 @@ def render(preview=False):
                   'mainEntity': {'@type': 'ItemList', 'itemListElement': [
                       {'@type': 'ListItem', 'position': i + 1, 'name': p['name'],
                        'url': ORIGIN + '/catalog/' + p['slug'] + '/'} for i, p in enumerate(visible)]}}
-    description = 'Готовые изделия Needle Shark из технических тканей: чехлы для квадроциклов, мотоциклов и колёс. Размеры и комплектации. Подбор изделия и заказ партии у производства.'
+    description = 'Каталог Needle Shark: чехлы, сумки, ремни, текстильные аксессуары и материалы. Выбор размера и комплектации, розничный заказ и партии для бизнеса.'
     if preview:
         description = 'Каталог Needle Shark: чехлы, сумки, ремни и текстильные аксессуары. Размеры, цвета, комплектации и заказ напрямую.'
     (output / 'catalog/index.html').write_text(shell(catalogue(products), 'Каталог чехлов и изделий из технических тканей | Needle Shark', description, catalog_current='page', structured=collection))

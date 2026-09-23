@@ -1,0 +1,60 @@
+{
+  "date": "2026-09-23",
+  "status": "local prototype; not deployed",
+  "branch": "codex/ux-prototype",
+  "base": "07b6978",
+  "audit_merge": "e73bc67",
+  "preview": "http://127.0.0.1:4183/",
+  "production_changed": false,
+  "live_leads": false,
+  "analytics_sdk_in_preview": false,
+  "html_pages": 33,
+  "browser": {
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "page_width_checks": 165,
+    "horizontal_overflow": 0,
+    "main_text_clipping": 0,
+    "h1_errors": 0,
+    "broken_loaded_images": 0,
+    "note": "DOM geometry for 165 states; screenshots inspected on representative pages, not all states; 69 individual radio selections, not exhaustive Cartesian combinations",
+    "variant_states_checked": 69,
+    "catalog_390": {
+      "first_card_y": 518,
+      "first_action_y": 660
+    },
+    "console_errors_warnings_observed": []
+  },
+  "tests": {
+    "catalog": 17,
+    "business": 2,
+    "blog": 13,
+    "ops": 31,
+    "server": 26,
+    "analytics": 8,
+    "search": 4,
+    "total": 101
+  },
+  "form_checks": {
+    "environment": "isolated QA API with synthetic data; no DB/mail/outbound delivery",
+    "invalid_contact": "pass",
+    "success": "pass after matching response id",
+    "long_error": "pass; no success",
+    "pending": "submit controls disabled; one recorded attempt",
+    "escape_and_focus_return": "pass",
+    "custom_length": "25 mm, 3 cuts of 17 m retained; standard 10 m not sent as requested length",
+    "normal_length_after_custom": "quantity and standard 10 m context restored"
+  },
+  "limitations": [
+    "No production deployment, search-engine reindexing or live analytics check",
+    "No real lead delivery verified for this prototype",
+    "File-upload behavior unchanged; not retested in browser",
+    "Unknown product commercial facts remain for owner confirmation"
+  ],
+  "verification_details": "../UX_PROTOTYPE_20260923.md"
+}

@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## Local UX prototype — 23 September 2026
+
+Branch `codex/ux-prototype` is a review build, not a VPS release. Its isolated copy is `outputs/ux-prototype-20260923/` in the main project. Restart with `python3 server/preview.py --directory outputs/ux-prototype-20260923 --port 4183`; do not pass `--live-api`. Preview HTML has noindex and no analytics SDK. Do not deploy this preview directory. See [scope and verification](../docs/UX_PROTOTYPE_20260923.md).
+
 ## Catalogue publication — 22 September 2026
 
 Published all 26 products / 33 HTML pages from pushed commit `fee19198d352509d9eed44914b205ac07295e2cf` through `ops/deploy.sh --from-github`. Static current: `20260922T181556Z-89524`; previous: `20260922T070621Z-52722`. All 1259 release files verified before atomic switch; 48 public files matched by SHA-256, 270 resources returned 200, services/timers active. Backend `20260922T094139Z-1e940964f438` and configuration unchanged. Two slow, incomplete transfer directories remain from aborted attempts before current switched. See [publication report](../docs/verification/20260922-catalog-publication.json). Earlier draft sections below are historical.

@@ -99,7 +99,7 @@ def render_featured(posts, homepage):
     validate(posts)
     selected = sorted((p for p in posts if p['status'] == 'published' and p.get('featured', False)), key=lambda p: (p['date'], p['slug']), reverse=True)[:3]
     content = '<div class="popular-grid">' + ''.join(f'<article><h3><a href="/blog/{p["slug"]}/">{e(p["title"])}</a></h3><p>{e(p["description"])}</p></article>' for p in selected) + '</div>' if selected else '<p>Здесь появится подборка материалов из нашего блога.</p>'
-    block = '<!-- BLOG_FEATURED_START -->\n<section class="wrap popular-articles" aria-labelledby="popular-heading"><div><h2 id="popular-heading">Популярные статьи</h2><a href="/blog/">Весь блог ↗</a></div>' + content + '</section>\n<!-- BLOG_FEATURED_END -->'
+    block = '<!-- BLOG_FEATURED_START -->\n<section class="wrap popular-articles" aria-labelledby="popular-heading"><div><h2 id="popular-heading">Полезные материалы</h2><a href="/blog/">Весь блог ↗</a></div>' + content + '</section>\n<!-- BLOG_FEATURED_END -->'
     source = homepage.read_text()
     pattern = r'<!-- BLOG_FEATURED_START -->.*?<!-- BLOG_FEATURED_END -->'
     if len(re.findall(pattern, source, flags=re.S)) != 1:

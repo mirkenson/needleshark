@@ -1,6 +1,6 @@
 /* Homepage navigation: the existing shared menu exposes B2B on phones. */
 .home-business-nav .menu-toggle{display:none}
-@media(max-width:700px){
+@media(max-width:1000px){
  .home-business-nav nav[aria-label="Основная навигация"],.home-business-nav .header-cta{display:none}
  .home-business-nav .menu-toggle{display:flex;margin-left:auto;font-size:var(--text-small);min-height:44px;align-items:center}
 }

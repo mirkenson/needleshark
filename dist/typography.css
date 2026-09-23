@@ -312,3 +312,28 @@ header nav[aria-label="Основная навигация"] a{font-size:var(--t
 .type-label{font-size:var(--text-small);font-weight:var(--weight-bold)}
 
 .legal-document .legal-section-title{font-size:var(--text-body);font-weight:var(--weight-regular);line-height:1.8;letter-spacing:normal}
+
+/* Audit prototype: typography by page role, same Manrope family and palette. */
+.home-refresh .hero h1{font-size:clamp(2.75rem,4.8vw,4.375rem);line-height:1.08;letter-spacing:-.055em}
+.home-refresh .hero .intro{font-size:1.125rem;line-height:1.65}
+.home-refresh .hero-retail,.hero-product>span>span,.hero-signature,.home-conditions span,.home-category-links{font-size:.875rem;line-height:1.6}
+.hero-product strong,.home-conditions strong{font-size:1.125rem;line-height:1.4}
+.home-refresh .product-number{font-size:.8125rem}.home-refresh .product h3{font-size:1.5rem}
+.catalog-intro h1{font-size:clamp(2rem,4vw,3rem);line-height:1.12;letter-spacing:-.045em}
+.catalog-intro>div>p:not(.eyebrow){font-size:1rem;line-height:1.6}
+.catalog-b2b-link>span,.catalog-card .card-meta,.catalog-card .card-route{font-size:.875rem;line-height:1.5}
+.catalog-b2b-link>strong{font-size:1rem;line-height:1.5}
+.catalog-card h2{font-size:1.125rem;line-height:1.35;letter-spacing:-.025em}
+.catalog-card .card-spec{font-size:.875rem;line-height:1.55}
+.catalog-card .card-detail-link{font-size:.875rem;font-weight:700;line-height:1.5}
+.category-picker summary{font-size:1rem;font-weight:600}.catalog-categories button{font-size:.875rem}
+.detail-heading h1{font-size:clamp(2rem,3vw,2.75rem);line-height:1.16;letter-spacing:-.04em}
+.detail-heading .detail-intro{font-size:1rem;line-height:1.65}
+.buy-block .button,.buy-block .market-button{font-size:1rem;line-height:1.4}
+.buy-block .direct-note,.buy-block .price-note,.business-terms{font-size:.875rem;line-height:1.6}
+@media(max-width:700px){
+ .home-refresh .hero h1{font-size:clamp(2.55rem,8vw,3.3rem)}
+ .home-refresh .hero .intro{font-size:1rem}.hero-product strong{font-size:.9375rem}
+ .home-conditions strong{font-size:1rem}.detail-heading h1{font-size:2rem}
+ .catalog-card .card-meta{font-size:.75rem}
+}

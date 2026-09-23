@@ -116,7 +116,8 @@ class CatalogueTests(unittest.TestCase):
         self.assertIsNone(render.variant_data(product)[0]['ozonUrl'])
         html = render.markets(product)
         self.assertNotIn('href="None"', html)
-        self.assertIn('Ozon: покупка пока недоступна', html)
+        self.assertNotIn('<a ', html)
+        self.assertIn('Узнать цену и заказать', render.hero(product))
 
     def test_unknown_material_coating_and_sizes_are_omitted(self):
         product = copy.deepcopy(PRODUCT)
@@ -224,7 +225,7 @@ class CatalogueTests(unittest.TestCase):
         html = render.markets(product)
         self.assertIn('href="https://www.ozon.ru/product/example/"', html)
         self.assertNotIn('aria-label="Ozon: покупка пока недоступна"', html)
-        self.assertIn('disabled aria-label="Wildberries: покупка пока недоступна"', html)
+        self.assertNotIn('Wildberries', html)
 
 
 if __name__ == '__main__':
