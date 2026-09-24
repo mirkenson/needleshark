@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## Metrika digests — 24 September 2026
+
+Independent reporter: `bash ops/install-metrika.sh PRIVATE_METRIKA_ENV`, only after commit/push. It verifies the real API and artifact hashes, snapshots current units/config, installs a separate hardened service and timer, and restores prior reporter configuration on failure. No static/lead backend deployment, Nginx change or database access. Schedule and operations: [METRIKA_REPORTS.md](../docs/METRIKA_REPORTS.md). Actual installation evidence belongs to PROJECT_CONTEXT.md and the verification report.
+
 ## Homepage latest articles — 24 September 2026
 
 Published `9d5d6032ad4989a4a32d5e6e0e112277f38c3a30` through `ops/deploy.sh --from-github`: current `20260924T064707Z-11896`, previous `20260923T190839Z-8792`. All 1266 files verified before switching; two changed assets downloaded and 1264 reused. Public homepage and 36 other files match the release. Five services/timers active; backend/configuration unchanged. [Verification](../docs/verification/20260924-home-latest-articles.json).

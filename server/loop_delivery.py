@@ -64,10 +64,15 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def send(lead, url):
+    return send_payload(message(lead), url)
+
+
+def send_payload(payload, url):
+    """Shared verified transport for leads and owner-authorized aggregate reports."""
     url = webhook_url(url)
     if not url:
         raise ValueError('LOOP webhook missing')
-    request = urllib.request.Request(url, data=json.dumps(message(lead), ensure_ascii=False).encode(),
+    request = urllib.request.Request(url, data=json.dumps(payload, ensure_ascii=False).encode(),
         headers={'Content-Type': 'application/json', 'User-Agent': 'NeedleShark-Leads/1.0'}, method='POST')
     opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect(),
         urllib.request.HTTPSHandler(context=ssl.create_default_context()))

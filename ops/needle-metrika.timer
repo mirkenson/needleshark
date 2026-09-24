@@ -1,0 +1,10 @@
+[Unit]
+Description=Check due Metrika digests at 10:00 Moscow; retry unconfirmed reports
+
+[Timer]
+OnCalendar=*-*-* *:00,30:00 Europe/Moscow
+AccuracySec=1s
+Persistent=true
+
+[Install]
+WantedBy=timers.target

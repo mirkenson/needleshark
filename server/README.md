@@ -1,5 +1,9 @@
 # Server-side leads and email
 
+## Independent Metrika reports — 24 September 2026
+
+`metrika_reports.py` prepares daily/weekly/monthly read-only Metrika digests for the existing LOOP lead channel. It runs in its own release/service without database access or changes to lead intake. `loop_delivery.send_payload` extracts the existing verified HTTP transport; `send(lead, url)` retains its prior payload/acknowledgement behavior. See [schedule, semantics, installation and limitations](../docs/METRIKA_REPORTS.md); installation status is recorded in PROJECT_CONTEXT.md.
+
 ## Isolated catalogue preview — 22 September 2026
 
 `python3 server/preview.py --directory outputs/catalog-preview --port 4176` serves the local catalogue drafts on loopback. Custom directories cannot be combined with `--live-api`; submissions return the existing explicit preview error. Production lead handling/database/delivery code is unchanged. New catalogue pack quantities still use the existing contract: number of packs in question text, total items in `quantity`, variant article/options in `question`. Local synthetic checks do not confirm PostgreSQL or SMTP/LOOP delivery. See `docs/verification/20260922-catalog-drafts.json`.

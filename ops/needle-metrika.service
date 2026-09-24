@@ -1,0 +1,27 @@
+[Unit]
+Description=Needle Shark Metrika reports to the existing LOOP lead channel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+DynamicUser=yes
+EnvironmentFile=/etc/needle-shark/metrika.env
+ExecStartPre=/usr/bin/python3 /opt/needle-metrika/current/metrika_reports.py init
+ExecStart=/usr/bin/python3 /opt/needle-metrika/current/metrika_reports.py run
+StateDirectory=needle-metrika
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+MemoryMax=96M
+TasksMax=16
+TimeoutStartSec=900
