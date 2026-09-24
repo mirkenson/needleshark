@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## Homepage latest articles — 24 September 2026
+
+Published `9d5d6032ad4989a4a32d5e6e0e112277f38c3a30` through `ops/deploy.sh --from-github`: current `20260924T064707Z-11896`, previous `20260923T190839Z-8792`. All 1266 files verified before switching; two changed assets downloaded and 1264 reused. Public homepage and 36 other files match the release. Five services/timers active; backend/configuration unchanged. [Verification](../docs/verification/20260924-home-latest-articles.json).
+
 ## B2B heading release — 23 September 2026
 
 Static current `20260923T190839Z-8792`, previous `20260923T181352Z-5967`; pushed code `bd8b972e4b3edebfe0a568160c00bf403c13faa6`. Five whitespace fixes, deployed using the existing GitHub transport with all 1266 files verified before switch. Public HTML matches; 49 resources and five services/timers pass. Backend/configuration unchanged. [Report](../docs/verification/20260923-b2b-heading-preflight.json). Older current/previous entries below are historical.
