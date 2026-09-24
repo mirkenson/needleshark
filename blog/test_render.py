@@ -79,18 +79,28 @@ class BlogTests(unittest.TestCase):
             self.assertLess(html.index('/blog/test/'), html.index('/blog/older/'))
             self.assertEqual((out / 'manual/index.html').read_text(), 'Manual content')
 
-    def test_featured_preserves_homepage_and_excludes_drafts(self):
+    def test_homepage_shows_latest_three_published_posts_regardless_of_featured(self):
         from render import render_featured
         with tempfile.TemporaryDirectory() as tmp:
             home = Path(tmp) / 'index.html'
             home.write_text('BEFORE<!-- BLOG_FEATURED_START -->old<!-- BLOG_FEATURED_END -->AFTER')
-            posts = [{**POST, 'slug': str(i), 'featured': True} for i in range(5)]
-            posts.append({**POST, 'slug': 'draft', 'status': 'draft', 'featured': True})
+            posts = [
+                {**POST, 'slug': 'older-featured', 'featured': True},
+                {**POST, 'slug': 'second-a', 'date': '2026-09-12', 'featured': False},
+                {**POST, 'slug': 'newest', 'date': '2026-09-13'},
+                {**POST, 'slug': 'second-z', 'date': '2026-09-12', 'featured': False},
+                {**POST, 'slug': 'draft', 'date': '2026-09-14', 'status': 'draft', 'featured': True},
+            ]
             render_featured(posts, home)
             result = home.read_text()
             self.assertTrue(result.startswith('BEFORE') and result.endswith('AFTER'))
             self.assertEqual(result.count('<article>'), 3)
             self.assertNotIn('/blog/draft/', result)
+            self.assertNotIn('/blog/older-featured/', result)
+            self.assertLess(result.index('/blog/newest/'), result.index('/blog/second-z/'))
+            self.assertLess(result.index('/blog/second-z/'), result.index('/blog/second-a/'))
+            render_featured(posts, home)
+            self.assertEqual(home.read_text(), result)
 
     def test_article_inherits_counter_and_navigation(self):
         with tempfile.TemporaryDirectory() as tmp:

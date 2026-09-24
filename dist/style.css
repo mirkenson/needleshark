@@ -207,6 +207,9 @@ header .brand img{max-width:32vw}
 .popular-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:24px}
 .popular-grid h3{margin-bottom:10px;overflow-wrap:anywhere}
 .popular-grid p{color:var(--muted);overflow-wrap:anywhere}
+@media(min-width:701px){
+.popular-grid>article{display:grid;grid-template-rows:subgrid;grid-row:span 2;row-gap:0}
+}
 @media(max-width:700px){
 .popular-articles>div:first-child{flex-wrap:wrap;gap:8px}
 .popular-grid{grid-template-columns:1fr}
