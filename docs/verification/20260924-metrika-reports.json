@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-24",
+  "scope": "Owner-authorized read-only Metrika daily, weekly and monthly reports to the existing LOOP lead channel; no Direct integration.",
+  "code_commit": "c856fcef4481e86d4d28731379ea74c309690b1b",
+  "branch": "codex/metrika-loop-reports",
+  "reporter_release": "20260924T071509Z-c856fcef4481",
+  "activation_moscow": "2026-09-24T10:15:52.928012+03:00",
+  "schedule": {
+    "daily": "10:00 Europe/Moscow; yesterday versus same weekday last week",
+    "weekly": "Monday 10:00 Europe/Moscow; complete Monday-Sunday versus preceding week",
+    "monthly": "Day 1 10:00 Europe/Moscow; complete preceding calendar month versus previous complete month",
+    "first_daily": "2026-09-25",
+    "first_weekly": "2026-09-28",
+    "first_monthly": "2026-10-01",
+    "retry": "Every 30 minutes for due unacknowledged periods",
+    "historical_backfill": "Disabled at initial activation"
+  },
+  "authorization": {
+    "counter": 112428810,
+    "scope": "metrika:read",
+    "explicit_owner_approval": true,
+    "direct_enabled": false,
+    "database_access": false
+  },
+  "local": {
+    "server_tests_passed": 36,
+    "new_report_tests": 10,
+    "ops_tests_passed": 32,
+    "bash_syntax": "passed",
+    "prepare_public": "passed without dist changes",
+    "check_site": "39 pages passed",
+    "staged_secret_review": "passed; no tokens, real aggregates or private message links"
+  },
+  "api": {
+    "daily_weekly_monthly": "live read-only calls passed",
+    "timezone": "+03:00",
+    "accuracy": "full; sampled/incomplete replies rejected",
+    "attribution": "last transition, without cross-device",
+    "qa_filters": "current source qa/release_check/metrika_check and medium qa/test excluded",
+    "robots": "isRobot No",
+    "live_previous_day_ui_comparison": "users, visits, source breakdown matched using equivalent UI filters",
+    "monthly_live_range": "historical complete months; upcoming period covered by calendar tests"
+  },
+  "delivery": {
+    "one_labelled_verification_report": "LOOP HTTP 200/ok",
+    "display": "verified visually and via accessibility in the existing lead channel",
+    "regular_repeat_run": "success; durable sent state unchanged, no extra messages",
+    "exactly_once": "not guaranteed after lost webhook acknowledgement"
+  },
+  "vps": {
+    "release_file_hashes_matched": 7,
+    "env_mode": "0600",
+    "state_mode": "0600",
+    "dynamic_user": true,
+    "memory_limit_mib": 96,
+    "timer_enabled": true,
+    "timer_active": true,
+    "service_result": "success",
+    "service_exit_status": 0,
+    "active_services_timers": 6,
+    "configuration_backup": "/opt/needle-metrika/backups/20260924T071509Z-c856fcef4481",
+    "reporter_previous": null,
+    "static_current": "20260924T064707Z-11896",
+    "static_previous": "20260923T190839Z-8792",
+    "backend_current": "20260922T094139Z-1e940964f438",
+    "backend_previous": "20260922T071148Z-6eedb20ef75a",
+    "site_backend_pointers": "unchanged"
+  },
+  "https": {
+    "https://needle-shark.ru/": 200,
+    "https://needle-shark.ru/business/": 200,
+    "https://needle-shark.ru/catalog/": 200
+  },
+  "not_applicable": [
+    "No page/visual change: five-width layout checks, new SEO/robots/sitemap/index submission",
+    "No lead intake change or credentials: synthetic customer submission, database/file/mail-chain tests",
+    "No frontend counter or SDK change: repeat reachGoal/Webvisor validation",
+    "Static ops/deploy.sh: no static release; independent reporter installer used"
+  ],
+  "limitations": [
+    "Future daily, weekly and monthly scheduled dispatches have not yet occurred.",
+    "Periods starting before 2026-09-14 have incomplete tracking history; growth percentages are suppressed.",
+    "Metrika can hide details for small samples. Unlabelled QA visits may remain.",
+    "Goal completions are not verified commercial leads or paid orders; no database reconciliation or Direct costs.",
+    "Late Metrika processing may revise aggregate results.",
+    "Webhook acknowledgement loss can produce duplicate reports bearing the same period key.",
+    "Reporter failures produce neutral journal codes and retries; no separate failure alerts added."
+  ],
+  "privacy": "Actual traffic counts, OAuth credentials, webhook URL, lead content and private message links are omitted."
+}
