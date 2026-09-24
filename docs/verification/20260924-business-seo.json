@@ -1,0 +1,832 @@
+{
+  "date": "2026-09-24",
+  "url": "https://needle-shark.ru/business/",
+  "code_commit": "477a0d43729585b0e283405d705ab7a2018fd89f",
+  "branch": "codex/business-seo",
+  "published": true,
+  "pushed_before_deploy": true,
+  "deployment": {
+    "command": "bash ops/deploy.sh --from-github",
+    "current": "20260924T073408Z-14797",
+    "previous": "20260924T064707Z-11896",
+    "previous_before_release": "20260923T190839Z-8792",
+    "verified_release_files": 1266,
+    "downloaded": 1,
+    "reused": 1265,
+    "backend_changed": false,
+    "nginx_systemd_changed": false
+  },
+  "scope": [
+    "Explicit sewing-production H1 with Saint Petersburg location",
+    "Technical covers, bags and straps plus Russia delivery in hero",
+    "Description and generated Open Graph/JSON-LD descriptions",
+    "Concrete cooperation/product headings",
+    "One new product-scope FAQ and revised remote-order FAQ",
+    "Remaining SEO audit steps added to existing backlog"
+  ],
+  "local": {
+    "tests": {
+      "business": 2,
+      "ops_public": 7,
+      "analytics": 8,
+      "total": 17,
+      "result": "PASS"
+    },
+    "check_site": {
+      "pages": 39,
+      "result": "PASS"
+    },
+    "reproducibility": {
+      "files": 1266,
+      "identical": true
+    },
+    "form_html_unchanged_byte_for_byte": true,
+    "css_js_unchanged": true,
+    "browser": {
+      "widths": [
+        360,
+        390,
+        768,
+        1024,
+        1440
+      ],
+      "horizontal_overflow": false,
+      "aligned_direction_copy_and_actions": true,
+      "aligned_product_headings_and_actions": true,
+      "opened_changed_faq_fits": true,
+      "loaded_broken_images": 0,
+      "console_errors_warnings": 0,
+      "mobile_menu_escape": true,
+      "custom_cta_sets_correct_intent": true,
+      "utm_preserved_to_form": true,
+      "keyboard_material_tabs": true,
+      "input_text_color": "rgb(255, 255, 255)",
+      "focus_outline": "rgb(228, 129, 129) solid 3px"
+    }
+  },
+  "public_http": {
+    "page": {
+      "url": "https://needle-shark.ru/business/",
+      "status": 200,
+      "final_url": "https://needle-shark.ru/business/",
+      "x_robots_tag": null,
+      "sha256_matches": true,
+      "h1_count": 1,
+      "canonical": [
+        "https://needle-shark.ru/business/"
+      ],
+      "robots": "index,follow,max-image-preview:large",
+      "description": "Пошив чехлов, сумок и ремней из технических тканей в СПб. Готовые изделия партиями от 20 штук, разработка на заказ и доставка по России.",
+      "og_description": "Пошив чехлов, сумок и ремней из технических тканей в СПб. Готовые изделия партиями от 20 штук, разработка на заказ и доставка по России.",
+      "metrika_loaders": 1,
+      "analytics_loaders": 1
+    },
+    "assets": [
+      {
+        "url": "https://needle-shark.ru/analytics.js?v=20260922-catalog1",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/analytics.js?v=20260922-catalog1",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/apple-touch-icon.png",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/apple-touch-icon.png",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-bags-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-bags-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-bags-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-bags-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-bags-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-bags-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-covers-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-covers-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-covers-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-covers-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-covers-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-covers-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-straps-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-straps-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-straps-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-straps-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/category-straps-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/category-straps-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-canvas-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-canvas-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-canvas-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-canvas-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-canvas-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-canvas-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-cordura-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-cordura-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-cordura-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-cordura-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-cordura-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-cordura-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-oxford-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-oxford-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-oxford-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-oxford-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-oxford-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-oxford-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-polyester-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-polyester-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-polyester-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-polyester-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-polyester-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-polyester-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-spunbond-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-spunbond-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-spunbond-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-spunbond-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/fabric-spunbond-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/fabric-spunbond-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/hero-jack-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/hero-jack-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/hero-jack-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/hero-jack-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/hero-jack-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/hero-jack-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/workshop-cutting-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/workshop-cutting-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/workshop-cutting-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/workshop-cutting-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/workshop-cutting-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/workshop-cutting-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/workshop-room-1280.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/workshop-room-1280.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/workshop-room-480.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/workshop-room-480.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/assets/workshop-room-800.webp",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/assets/workshop-room-800.webp",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/business.css?v=20260923-ux1",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/business.css?v=20260923-ux1",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/business.js?v=20260918-b2b2",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/business.js?v=20260918-b2b2",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/favicon-96.png",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/favicon-96.png",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/favicon.ico",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/favicon.ico",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/favicon.svg",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/favicon.svg",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/fonts/manrope-cyrillic.woff2",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/fonts/manrope-cyrillic.woff2",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/fonts/manrope-latin.woff2",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/fonts/manrope-latin.woff2",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/logo.svg",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/logo.svg",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/menu.js?v=20260911-opt1",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/menu.js?v=20260911-opt1",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/metrika.js?v=20260911",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/metrika.js?v=20260911",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/navigation.css?v=20260911-opt1",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/navigation.css?v=20260911-opt1",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/script.js?v=20260918-b2b2",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/script.js?v=20260918-b2b2",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/site.webmanifest",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/site.webmanifest",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/style.css?v=20260923-ux1",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/style.css?v=20260923-ux1",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/theme.css?v=20260911-opt1",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/theme.css?v=20260911-opt1",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/typography.css?v=20260923-ux1",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/typography.css?v=20260923-ux1",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      }
+    ],
+    "sitemap": {
+      "status": 200,
+      "count": 39,
+      "unique": 39,
+      "business_occurrences": 1
+    },
+    "public_pages": [
+      {
+        "url": "https://needle-shark.ru/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/blog/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/blog/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/business/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/privacy-policy",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/privacy-policy",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/user-agreement",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/user-agreement",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-motocikla/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-motocikla/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehly-dlya-koles/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehly-dlya-koles/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/nakidka-na-bamper/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/nakidka-na-bamper/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/nakidka-na-sidene-i-bagazhnik/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/nakidka-na-sidene-i-bagazhnik/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-amortizatora/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-amortizatora/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-kolyaski/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-kolyaski/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/kryuchki-dlya-kolyaski/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/kryuchki-dlya-kolyaski/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/dno-dlya-volera/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/dno-dlya-volera/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-generatora/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-generatora/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/karabiny-dlya-vesla/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/karabiny-dlya-vesla/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-shurupoverta/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-shurupoverta/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/sumki-bauly/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/sumki-bauly/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/remen-dlya-perenoski/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/remen-dlya-perenoski/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/plechevye-remni-dlya-sumok/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/plechevye-remni-dlya-sumok/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/nagrudnaya-styazhka/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/nagrudnaya-styazhka/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/stropa-remennaya/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/stropa-remennaya/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/lenta-kontaktnaya/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/lenta-kontaktnaya/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-na-evrokub/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-na-evrokub/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/remni-styazhnye/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/remni-styazhnye/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-velosipeda/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-velosipeda/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-udochek/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-udochek/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/organayzer-v-bagazhnik/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/organayzer-v-bagazhnik/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/bahily-mnogorazovye/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/bahily-mnogorazovye/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-kacheley-kokona/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-kacheley-kokona/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/catalog/chehol-dlya-snouborda/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/catalog/chehol-dlya-snouborda/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/blog/kak-vybrat-chehly-dlya-koles/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/blog/kak-vybrat-chehly-dlya-koles/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      },
+      {
+        "url": "https://needle-shark.ru/blog/kak-vybrat-sumku-baul/",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/blog/kak-vybrat-sumku-baul/",
+        "x_robots_tag": null,
+        "sha256_matches": true
+      }
+    ],
+    "robots": "User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: https://needle-shark.ru/sitemap.xml\n",
+    "redirects": [
+      {
+        "url": "http://needle-shark.ru/business/?utm_source=qa&utm_campaign=business_seo_20260924",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/?utm_source=qa&utm_campaign=business_seo_20260924",
+        "x_robots_tag": null
+      },
+      {
+        "url": "https://needleshark.ru/business/?utm_source=qa&utm_campaign=business_seo_20260924",
+        "status": 200,
+        "final_url": "https://needle-shark.ru/business/?utm_source=qa&utm_campaign=business_seo_20260924",
+        "x_robots_tag": null
+      }
+    ]
+  },
+  "public_browser": {
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "horizontal_overflow": false,
+    "aligned_card_rows": true,
+    "opened_changed_faq_fits": true,
+    "loaded_broken_images": 0,
+    "console_errors_warnings": 0,
+    "mobile_menu_escape": true,
+    "hero_cta_reaches_contact": true,
+    "form_focus_readable": true,
+    "material_tab_switches": true,
+    "utm_preserved_to_form": true
+  },
+  "services": {
+    "nginx": "active",
+    "needle-leads": "active",
+    "postgresql": "active",
+    "needle-cleanup.timer": "active",
+    "needle-monitor.timer": "active",
+    "needle-metrika.timer": "active"
+  },
+  "seo": {
+    "one_h1": true,
+    "canonical": "https://needle-shark.ru/business/",
+    "content_in_static_html": true,
+    "sitemap_occurrences": 1,
+    "robots_allows_crawl": true,
+    "noindex": false,
+    "blocking_x_robots_tag": false,
+    "google": {
+      "existing_url_indexed": true,
+      "recrawl_request": "accepted_priority_queue",
+      "updated_content_in_search": "not_yet_verified"
+    },
+    "yandex": {
+      "recrawl_request": "В очереди",
+      "submitted_display": "24.09.2026 10:38",
+      "updated_content_in_search": "not_yet_verified"
+    }
+  },
+  "analytics": {
+    "counter": 112428810,
+    "single_loader_and_handler": true,
+    "cabinet_domains": [
+      "needle-shark.ru",
+      "needleshark.ru"
+    ],
+    "restrict_to_domains": true,
+    "subdomains_included": true,
+    "existing_eight_goals_verified": true,
+    "qa_campaign": "business_seo_20260924",
+    "real_sdk": "tag_debug.js",
+    "sdk_confirmed": [
+      "PageView",
+      "ui_click: FAQ",
+      "ui_click: material",
+      "request_open",
+      "form_start"
+    ],
+    "goal_log_times_utc": [
+      "2026-09-24T07:36:06.426Z",
+      "2026-09-24T07:36:06.693Z",
+      "2026-09-24T07:36:27.779Z",
+      "2026-09-24T07:36:30.813Z",
+      "2026-09-24T07:36:44.981Z"
+    ],
+    "sdk_mocked": false,
+    "qa_events_processed_in_report": "not_verified",
+    "form_submitted": false,
+    "outbound_vk_helper_verified": true,
+    "internal_utm_links": false,
+    "ozon_links_on_changed_page": 0
+  },
+  "not_applicable": [
+    "New-form/API/PostgreSQL/files/notification/Google integration checks: form HTML, JS and backend unchanged.",
+    "New successful submission and lead_submitted: no application submitted in this release.",
+    "Image generation/optimization: images unchanged.",
+    "Nginx/systemd backup and reload: configuration unchanged."
+  ],
+  "limitations": [
+    "Search engines accepted recrawl, but refreshed snippets/rankings and exact updated content in the index are not confirmed.",
+    "Real SDK confirmation does not prove processing of the specific QA events by a Metrika report.",
+    "Full form error/file/retry/success matrix and downstream delivery were not repeated because their code and markup did not change.",
+    "No real-device field-performance claim."
+  ],
+  "backlog": "docs/BACKLOG.md"
+}

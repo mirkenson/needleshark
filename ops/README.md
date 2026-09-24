@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## B2B search-content release — 24 September 2026
+
+Published pushed commit `477a0d43729585b0e283405d705ab7a2018fd89f` with `ops/deploy.sh --from-github`: current `20260924T073408Z-14797`, previous `20260924T064707Z-11896`. One HTML downloaded, 1265 files reused, all 1266 verified before the switch. Public 39 HTML files and 51 assets match; two aliases preserve query; Nginx, leads, PostgreSQL and cleanup/monitor/Metrika timers are active. No backend, Nginx or systemd change. [Verification](../docs/verification/20260924-business-seo.json).
+
 ## Homepage latest articles — 24 September 2026
 
 Published `9d5d6032ad4989a4a32d5e6e0e112277f38c3a30` through `ops/deploy.sh --from-github`: current `20260924T064707Z-11896`, previous `20260923T190839Z-8792`. All 1266 files verified before switching; two changed assets downloaded and 1264 reused. Public homepage and 36 other files match the release. Five services/timers active; backend/configuration unchanged. [Verification](../docs/verification/20260924-home-latest-articles.json).
