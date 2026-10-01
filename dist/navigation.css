@@ -24,3 +24,27 @@
 @media(max-width:800px){
 .assortment .catalog-header nav{display:none}
 }
+
+/* The email and request action remain visible without opening the mobile menu. */
+header.site-contact-header{height:auto;min-height:106px;padding-block:18px;gap:24px}
+.header-contact-actions{display:flex;align-items:center;gap:24px;flex-shrink:0}
+.header-email{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:5px;white-space:nowrap}
+header.site-contact-header .header-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 16px;border:0;background:var(--accent);color:var(--white);white-space:nowrap}
+header.site-contact-header .header-cta span{margin-left:12px}
+.header-contact-actions a:focus-visible,.header-contact-actions button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.header-email:hover{text-decoration-color:var(--accent)}
+@media(max-width:1150px){
+ header.site-contact-header nav[aria-label="Основная навигация"]{display:none}
+ header.site-contact-header .menu-toggle{display:flex;align-items:center;gap:10px;min-height:44px;margin-left:0;background:transparent;border:0;padding:10px 0}
+ header.site-contact-header .header-contact-actions{margin-left:auto}
+ .mobile-menu:not([hidden]){display:flex;flex-direction:column;border-bottom:var(--rule-width) solid var(--line);gap:8px}
+ .mobile-menu a,.mobile-menu button{padding:10px 0;text-align:left;background:none;border:0}
+}
+@media(max-width:600px){
+ header.site-contact-header{display:grid;grid-template-columns:1fr auto;gap:10px 16px;padding-block:14px}
+ header.site-contact-header .brand img{width:140px;max-width:100%}
+ header.site-contact-header .menu-toggle{grid-column:2;grid-row:1;justify-self:end}
+ header.site-contact-header .header-contact-actions{grid-column:1 / -1;grid-row:2;width:100%;margin:0;justify-content:space-between;gap:10px;border-top:var(--rule-width) solid var(--line);padding-top:10px}
+ header.site-contact-header .header-cta{padding:10px 12px}
+ header.site-contact-header .header-cta span{margin-left:8px}
+}

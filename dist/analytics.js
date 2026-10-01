@@ -53,9 +53,13 @@
       goal('request_open', {...params, context: 'business', element: el.dataset.businessCta, intent: el.dataset.businessIntent || 'unspecified'});
       return;
     }
+    if (el.dataset.headerRequest) {
+      navigationGoal(event, el, 'request_open', {...params, element: el.dataset.headerRequest, context: 'header'});
+      return;
+    }
     if (el.getAttribute('role') === 'tab' && el.closest('.b2b-tabs')) return;
     if (/^(mailto:|tel:)/i.test(href)) {
-      goal('contact_click', {...params, method: href.startsWith('mailto:') ? 'email' : 'phone'});
+      goal('contact_click', {...params, method: href.startsWith('mailto:') ? 'email' : 'phone', element: el.dataset.track || 'contact_link'});
       return;
     }
     if (el.tagName === 'A' && href) {

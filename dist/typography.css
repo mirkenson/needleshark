@@ -337,3 +337,5 @@ header nav[aria-label="Основная навигация"] a{font-size:var(--t
  .home-conditions strong{font-size:1rem}.detail-heading h1{font-size:2rem}
  .catalog-card .card-meta{font-size:.75rem}
 }
+
+.header-email,header.site-contact-header .header-cta,header.site-contact-header .menu-toggle{font-size:var(--text-small);font-weight:var(--weight-bold);line-height:1.4}

@@ -110,3 +110,21 @@ test('home form keeps existing payload and ignores catalog radio handler', () =>
   assert.deepEqual(s.goals.map(g => g.name), ['form_start', 'lead_submitted']);
   assert.deepEqual(s.goals.map(g => g.params), [{}, {}]);
 });
+
+test('header email produces one contact goal with position and no contact data', () => {
+  const s = setup({product: '', catalog: false});
+  const email = s.element([], {tagName: 'A', dataset: {track: 'header_email'}, getAttribute: key => key === 'href' ? 'mailto:info@neesha.ru' : ''});
+  s.click(email);
+  assert.deepEqual(s.goals.map(g => g.name), ['contact_click']);
+  assert.equal(s.goals[0].params.element, 'header_email');
+  assert.equal(s.goals[0].params.method, 'email');
+  assert.ok(!JSON.stringify(s.goals).includes('@'));
+});
+
+test('header request records one opening goal without a submitted lead', () => {
+  const s = setup({product: '', catalog: false});
+  const cta = s.element([], {tagName: 'A', target: '_blank', dataset: {headerRequest: 'header_request'}, getAttribute: key => key === 'href' ? '/#contact' : ''});
+  s.click(cta);
+  assert.deepEqual(s.goals.map(g => g.name), ['request_open']);
+  assert.equal(s.goals[0].params.context, 'header');
+});
