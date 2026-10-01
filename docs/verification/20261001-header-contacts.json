@@ -1,0 +1,1066 @@
+{
+  "date": "2026-10-01",
+  "url": "https://needle-shark.ru/",
+  "commit": "ddfef17397c37082eee94fdb0dd0535ac3688db0",
+  "release": "20261001T151439Z-62875",
+  "previous": "20260924T073408Z-14797",
+  "deployment": "ops/deploy.sh --from-github;1266 files verified;42 downloaded;1224 reused",
+  "tests": {
+    "node": 10,
+    "python_public": 7,
+    "python_business": 2,
+    "python_catalog": 19,
+    "python_blog": 15,
+    "python_deploy": 5,
+    "check_site_pages": 39,
+    "repeatable_files": 1266
+  },
+  "browser": {
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "local_pages": 37,
+    "local_combinations": 185,
+    "local_passed": 185,
+    "public_paths": [
+      "/",
+      "/business/",
+      "/catalog/",
+      "/catalog/chehol-na-kvadrocikl/",
+      "/blog/",
+      "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/"
+    ],
+    "public_combinations": 30,
+    "public_passed": 30,
+    "console_errors": [],
+    "checks": [
+      "overflow",
+      "email and CTA visibility",
+      "overlap",
+      "images",
+      "mobile menu and Escape focus return",
+      "home/business CTA anchors and incoming UTM",
+      "catalogue header opens wholesale dialog with product context"
+    ],
+    "visual_review": "local business at all five widths, public business at 360px",
+    "form_submission": "not performed; form and integration unchanged"
+  },
+  "https": {
+    "pages": 39,
+    "checked_files": 159,
+    "files": [
+      {
+        "path": "/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/analytics.js?v=20261001-contacts",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/apple-touch-icon.png",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog.css?v=20260914-reading1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog.js?v=20260914-blog2",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-chehly-dlya-koles/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-sumku-baul/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/category-bags-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/category-covers-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/category-straps-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/fabric-canvas-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/fabric-cordura-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/fabric-oxford-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/fabric-polyester-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/fabric-spunbond-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/hero-jack-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/workshop-cutting-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/workshop-room-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/business.css?v=20260923-ux1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/business.js?v=20260918-b2b2",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog-search.js?v=20260923-ux1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog.css?v=20260923-ux1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog.js?v=20260923-ozon1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/bahily-mnogorazovye/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehly-dlya-koles/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-amortizatora/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-generatora/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-kacheley-kokona/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-kolyaski/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-motocikla/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-shurupoverta/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-snouborda/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-udochek/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-dlya-velosipeda/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-na-evrokub/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/chehol-na-kvadrocikl/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/dno-dlya-volera/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/karabiny-dlya-vesla/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/kryuchki-dlya-kolyaski/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/lenta-kontaktnaya/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/nagrudnaya-styazhka/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/nakidka-na-bamper/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/nakidka-na-sidene-i-bagazhnik/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/organayzer-v-bagazhnik/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/plechevye-remni-dlya-sumok/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/remen-dlya-perenoski/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/remni-styazhnye/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/stropa-remennaya/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/catalog/sumki-bauly/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/favicon-96.png",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/favicon.ico",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/favicon.svg",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/home-navigation.css?v=20260923-ux1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-elastic-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-elastic-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-seam-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-seam-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-side-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-side-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-strap-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-strap-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-studio-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/atv-studio-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-canvas-insert-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-elastic-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-elastic-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-fabric-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-fabric-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-reflector-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-seam-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-seam-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-standard-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-standard-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-strap-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-strap-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/moto-vent-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/oxford-detail-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/oxford-detail-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-bag-108-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-bag-35-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-bag-35-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ek-001-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ek-001-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-hook-2-long-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-hook-2-long-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-car-org-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-car-org-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-gen-002-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-gen-002-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-hook-2-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-hook-2-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-swing-1-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-swing-1-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-pram-brown-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-pram-brown-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-shurup-001-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-shurup-001-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-vstky-bike-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-vstky-bike-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-drawstring-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-drawstring-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-fabric-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-fabric-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-handle-pocket-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-handle-pocket-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-seam-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-seam-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-set-160.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-set-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/images/wheel-single-800.webp",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/logo.svg",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/menu.js?v=20260911-opt1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/metrika.js?v=20260911",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/navigation.css?v=20261001-contacts",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/privacy-policy",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/script.js?v=20260918-b2b2",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/site.webmanifest",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/style.css?v=20260923-ux1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/style.css?v=20260924-home-blog",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/theme.css?v=20260911-opt1",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/typography.css?v=20261001-contacts",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/user-agreement",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      }
+    ],
+    "redirects": [
+      {
+        "url": "https://needleshark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=header_20261001",
+        "target": "https://needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=header_20261001",
+        "final_status": 200
+      },
+      {
+        "url": "http://www.needle-shark.ru/blog/?utm_source=qa&utm_medium=test&utm_campaign=header_20261001",
+        "target": "https://needle-shark.ru/blog/?utm_source=qa&utm_medium=test&utm_campaign=header_20261001",
+        "final_status": 200
+      }
+    ]
+  },
+  "analytics": {
+    "counter": 112428810,
+    "single_inclusion_pages": 39,
+    "goals_definitions_read": 8,
+    "new_goals": 0,
+    "real_sdk": [
+      "PageView",
+      "contact_click",
+      "request_open"
+    ],
+    "report": {
+      "qa_campaign": "header_20261001",
+      "date": "2026-10-01",
+      "visits": 1,
+      "contact_click_reaches": 1,
+      "request_open_reaches": 3,
+      "lead_submitted_reaches": 0,
+      "sampled": false,
+      "data_lag": 0
+    }
+  },
+  "server": {
+    "active": [
+      "nginx",
+      "needle-leads",
+      "postgresql",
+      "needle-cleanup.timer",
+      "needle-monitor.timer"
+    ],
+    "timer_schedule_verified": [
+      "needle-cleanup.timer",
+      "needle-monitor.timer",
+      "needle-metrika.timer"
+    ],
+    "backend": "20260922T094139Z-1e940964f438"
+  },
+  "limitations": [
+    "mailto client opening blocked by browser security policy; no email sent; preceding real analytics event verified",
+    "No new request submitted or delivery chain retest: forms/backend unchanged",
+    "Search console indexing not rechecked; no new URLs or changed main content",
+    "Google integration not enabled for testing"
+  ]
+}

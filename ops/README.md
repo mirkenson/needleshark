@@ -111,3 +111,7 @@ Independent maintenance release: `bash ops/install-maintenance.sh APPROVED_MONIT
 Send an explicitly labelled test with the same environment as the monitor and `maintenance.py test-email`; SMTP acceptance is not proof of inbox placement. Local monitoring cannot report total VPS/network/SMTP failure, nor its own stopped timer. Independent monitoring and external backup are deferred in `docs/BACKLOG.md`.
 
 Checks: `python3 -m unittest discover -s ops -p 'test_*.py'`, existing server tests, `CRM_TEST_DSN=... python3 ops/check_maintenance_postgres.py` (disposable schema, synthetic data, no email), `systemd-analyze verify`, actual timer/SQL/HTTPS and SMTP verification. Stop automation with `systemctl disable --now needle-cleanup.timer needle-monitor.timer`; this does not restore expired file bytes.
+
+## Header contacts release — 1 October 2026
+
+Public code `ddfef17397c37082eee94fdb0dd0535ac3688db0` was pushed before `ops/deploy.sh --from-github`. Current static release: `20261001T151439Z-62875`; previous: `20260924T073408Z-14797`. Existing backend and infrastructure unchanged. Visible email/request controls are shared by home, business, catalogue and blog; preserve them in source templates and rebuild. Verification: [20261001-header-contacts.json](../docs/verification/20261001-header-contacts.json).
