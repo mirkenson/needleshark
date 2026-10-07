@@ -1,6 +1,6 @@
 {
   "date": "2026-10-08",
-  "status": "preflight_passed_not_yet_deployed",
+  "status": "published_live_submission_verification_blocked",
   "public_branch": "codex/b2b-release-20261008",
   "backup_tag": "backup/site-before-b2b-20261008",
   "backup_commit": "ff101063d13f27249964ef7f39612f827e3f6517",
@@ -54,11 +54,609 @@
     "messages_sent": 0
   },
   "pending": [
-    "production deployment",
-    "HTTPS final checks",
-    "public synthetic leads and recipient acknowledgments",
-    "real SDK and goal definitions",
-    "search console recrawl if accessible",
-    "final documentation and Obsidian synchronization"
+    "Explicit confirmation for the synthetic production form submission and subsequent DB/outbox checks",
+    "Search-console recrawl and index verification",
+    "Confirmation of QA-event processing in the Metrika report"
+  ],
+  "code_commit": "b39667482c089e172dcc752f474874b1a1f3810f",
+  "url": "https://needle-shark.ru/",
+  "static_release": "20261007T224458Z-2496",
+  "backend_release": "20261007T224413Z-b39667482c08",
+  "backup_tag_pushed": true,
+  "previous_source_archive_html_pages": 39,
+  "public": {
+    "http": {
+      "base": "https://needle-shark.ru",
+      "pages": 18,
+      "requests": 238,
+      "failed": [],
+      "sha256_matches": 238
+    },
+    "layout_checks": 90,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "overflow_failures": 0,
+    "broken_loaded_images": 0,
+    "console_errors": 0,
+    "redirects": {
+      "redirect_checks": 84,
+      "retired_product_routes": 78,
+      "alias_checks": 6,
+      "query_preserved": true,
+      "invalid_public_api_status": 400,
+      "new_leads_created": 0,
+      "results": [
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-na-kvadrocikl"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-na-kvadrocikl"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-na-kvadrocikl/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-na-kvadrocikl"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-motocikla?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-motocikla"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-motocikla/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-motocikla"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-motocikla/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-motocikla"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehly-dlya-koles?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehly-dlya-koles"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehly-dlya-koles/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehly-dlya-koles"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehly-dlya-koles/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehly-dlya-koles"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nakidka-na-bamper?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nakidka-na-bamper"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nakidka-na-bamper/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nakidka-na-bamper"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nakidka-na-bamper/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nakidka-na-bamper"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nakidka-na-sidene-i-bagazhnik?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nakidka-na-sidene-i-bagazhnik"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nakidka-na-sidene-i-bagazhnik/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nakidka-na-sidene-i-bagazhnik"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nakidka-na-sidene-i-bagazhnik/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nakidka-na-sidene-i-bagazhnik"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-amortizatora?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-amortizatora"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-amortizatora/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-amortizatora"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-amortizatora/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-amortizatora"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-kolyaski?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-kolyaski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-kolyaski/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-kolyaski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-kolyaski/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-kolyaski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/kryuchki-dlya-kolyaski?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#kryuchki-dlya-kolyaski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/kryuchki-dlya-kolyaski/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#kryuchki-dlya-kolyaski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/kryuchki-dlya-kolyaski/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#kryuchki-dlya-kolyaski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/dno-dlya-volera?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#dno-dlya-volera"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/dno-dlya-volera/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#dno-dlya-volera"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/dno-dlya-volera/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#dno-dlya-volera"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-generatora?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-generatora"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-generatora/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-generatora"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-generatora/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-generatora"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/karabiny-dlya-vesla?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#karabiny-dlya-vesla"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/karabiny-dlya-vesla/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#karabiny-dlya-vesla"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/karabiny-dlya-vesla/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#karabiny-dlya-vesla"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-shurupoverta?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-shurupoverta"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-shurupoverta/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-shurupoverta"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-shurupoverta/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-shurupoverta"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/sumki-bauly?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#sumki-bauly"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/sumki-bauly/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#sumki-bauly"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/sumki-bauly/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#sumki-bauly"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/remen-dlya-perenoski?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#remen-dlya-perenoski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/remen-dlya-perenoski/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#remen-dlya-perenoski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/remen-dlya-perenoski/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#remen-dlya-perenoski"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/plechevye-remni-dlya-sumok?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#plechevye-remni-dlya-sumok"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/plechevye-remni-dlya-sumok/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#plechevye-remni-dlya-sumok"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/plechevye-remni-dlya-sumok/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#plechevye-remni-dlya-sumok"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nagrudnaya-styazhka?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nagrudnaya-styazhka"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nagrudnaya-styazhka/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nagrudnaya-styazhka"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/nagrudnaya-styazhka/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#nagrudnaya-styazhka"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/stropa-remennaya?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#stropa-remennaya"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/stropa-remennaya/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#stropa-remennaya"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/stropa-remennaya/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#stropa-remennaya"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/lenta-kontaktnaya?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#lenta-kontaktnaya"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/lenta-kontaktnaya/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#lenta-kontaktnaya"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/lenta-kontaktnaya/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#lenta-kontaktnaya"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-na-evrokub?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-na-evrokub"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-na-evrokub/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-na-evrokub"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-na-evrokub/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-na-evrokub"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/remni-styazhnye?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#remni-styazhnye"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/remni-styazhnye/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#remni-styazhnye"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/remni-styazhnye/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#remni-styazhnye"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-velosipeda?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-velosipeda"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-velosipeda/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-velosipeda"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-velosipeda/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-velosipeda"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-udochek?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-udochek"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-udochek/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-udochek"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-udochek/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-udochek"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/organayzer-v-bagazhnik?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#organayzer-v-bagazhnik"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/organayzer-v-bagazhnik/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#organayzer-v-bagazhnik"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/organayzer-v-bagazhnik/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#organayzer-v-bagazhnik"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/bahily-mnogorazovye?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#bahily-mnogorazovye"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/bahily-mnogorazovye/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#bahily-mnogorazovye"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/bahily-mnogorazovye/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#bahily-mnogorazovye"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-kacheley-kokona?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-kacheley-kokona"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-kacheley-kokona/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-kacheley-kokona"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-kacheley-kokona/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-kacheley-kokona"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-snouborda?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-snouborda"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-snouborda/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-snouborda"
+        },
+        {
+          "url": "https://needle-shark.ru/catalog/chehol-dlya-snouborda/index.html?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/catalog/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b#chehol-dlya-snouborda"
+        },
+        {
+          "url": "https://needleshark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b"
+        },
+        {
+          "url": "https://www.needleshark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b"
+        },
+        {
+          "url": "https://www.needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b"
+        },
+        {
+          "url": "http://needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b"
+        },
+        {
+          "url": "https://neesha.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b"
+        },
+        {
+          "url": "https://www.neesha.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b",
+          "status": 301,
+          "location": "https://needle-shark.ru/business/?utm_source=qa&utm_medium=test&utm_campaign=b2b_release_20261008&probe=a%20b"
+        }
+      ]
+    },
+    "product_anchor_browser_verified": true,
+    "mobile_menu_escape_and_footer_blog_verified": true,
+    "form_missing_consent_rejected": true,
+    "lead_submitted_on_invalid_form": 0,
+    "robots_sitemap_canonical_indexable": true
+  },
+  "server": {
+    "backend_hashes_match": {
+      "leads.py": true,
+      "crm.py": true,
+      "lead_context.py": true,
+      "delivery_store.py": true,
+      "mail_delivery.py": true,
+      "loop_delivery.py": true
+    },
+    "configuration_unchanged": {
+      "leads.env": true,
+      "needle-leads.service": true
+    },
+    "static_current": "/var/www/needle-shark/releases/20261007T224458Z-2496",
+    "static_previous": "/var/www/needle-shark/releases/20261001T151439Z-62875",
+    "backend_current": "/opt/needle-shark/releases/20261007T224413Z-b39667482c08",
+    "backend_previous": "/opt/needle-shark/releases/20260922T094139Z-1e940964f438",
+    "smtp_recipient_count": 4,
+    "loop_enabled": true,
+    "schema_columns": {
+      "customers": 8,
+      "lead_deliveries": 11,
+      "lead_files": 4,
+      "lead_loop_deliveries": 9,
+      "lead_submissions": 5,
+      "orders": 25
+    },
+    "new_fields": [
+      [
+        "business_direction",
+        "text",
+        "YES"
+      ],
+      [
+        "business_material",
+        "text",
+        "YES"
+      ],
+      [
+        "email",
+        "text",
+        "YES"
+      ],
+      [
+        "phone",
+        "text",
+        "YES"
+      ]
+    ],
+    "production_synthetic_leads": 0,
+    "mail_queue": {
+      "sent": 25
+    },
+    "loop_queue": {
+      "sent": 13
+    },
+    "services": {
+      "nginx": "active",
+      "needle-leads": "active",
+      "postgresql": "active",
+      "needle-monitor.timer": "active",
+      "needle-cleanup.timer": "active",
+      "needle-metrika.timer": "active"
+    },
+    "nginx_backup": "/opt/needle-shark/backups/nginx-20261007T224552Z-b39667482c08",
+    "nginx_change": "Only redirect include added to actual primary server; aliases/TLS preserved; nginx -t passed before reload"
+  },
+  "analytics": {
+    "counter": 112428810,
+    "manual_action_goals_verified": 8,
+    "automatic_goals_present": 3,
+    "counter_and_goals_unchanged": true,
+    "real_sdk_events": [
+      "PageView",
+      "request_open",
+      "form_start",
+      "ui_click",
+      "outbound_click"
+    ],
+    "real_sdk_source": "https://mc.yandex.com/metrika/tag_debug.js",
+    "report": {
+      "campaign": "b2b_release_20261008",
+      "metrics": [
+        "ym:s:visits",
+        "ym:s:goal611918849reaches",
+        "ym:s:goal611919368reaches",
+        "ym:s:goal611919492reaches",
+        "ym:s:goal611920007reaches",
+        "ym:s:goal611920074reaches",
+        "ym:s:goal611920219reaches",
+        "ym:s:goal611920414reaches",
+        "ym:s:goal611921224reaches",
+        "ym:s:goal611992709reaches",
+        "ym:s:goal611992710reaches",
+        "ym:s:goal612006895reaches"
+      ],
+      "totals": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "sampled": false,
+      "data_lag": 0
+    },
+    "report_processing_confirmed": false,
+    "outbound_vk_utm_verified_in_sdk": true,
+    "pii_not_in_custom_events": true,
+    "utm_saved_to_crm": false
+  },
+  "production_submission": {
+    "status": "blocked_by_automatic_approval_review",
+    "checkbox_was_not_checked": true,
+    "synthetic_leads_created": 0,
+    "reason": "Production synthetic form submission includes accepting the user agreement/data-processing checkbox; automatic approval review requires explicit confirmation immediately before this action despite the earlier blanket authorization. No indirect submission was attempted.",
+    "new_delivery_acknowledgments_verified": false,
+    "provider_vs_inbox": "Existing queues were read only; no new mail/LOOP delivery or inbox placement claimed."
+  },
+  "search": {
+    "new_canonical_urls_in_sitemap": 5,
+    "recrawl_requested": false,
+    "index_status_verified": false,
+    "reason": "Chrome automation was interrupted by a change in the user-controlled app; no search-console submission completed."
+  },
+  "limitations": [
+    "Production page → API → DB → all 4 email recipients + LOOP remains unverified until the blocked synthetic submission is explicitly confirmed. Isolated PostgreSQL tests passed; actual schema and services verified separately.",
+    "Real SDK calls verified; QA aggregate report still returns zero, so report processing is not claimed.",
+    "Search-console recrawl and actual index status are not verified.",
+    "The current UI has no file field: upload scenarios are not applicable to it. Legacy attachment validation/private storage tests passed in isolation.",
+    "Google integration stayed disabled; no Sheets/Drive checks or activation.",
+    "Generated fabric images illustrate texture, not actual stock batches."
   ]
 }

@@ -1,8 +1,10 @@
 # Needle Shark VPS
 
-## B2B release preparation — 8 October 2026
+Итог 08.10.2026: код `b39667482c08` опубликован; статика `20261007T224458Z-2496`, backend `20261007T224413Z-b39667482c08`. [Фактические проверки и ограничения](../docs/verification/20261008-b2b-release.json). Публичная отправка тестовой заявки остановлена автоматической проверкой разрешений на юридическом чекбоксе; сохранение/очереди проверены в изолированной PostgreSQL-схеме, новый рабочий lead не создавался. Переобход и обработка QA-событий отчётом не подтверждены.
 
-Approved B2B code is built with `python3 b2b/render.py --publish` (18 indexable HTML pages), then prepare/check-site. Existing blog/catalog/business CLI entry points retain this build; legacy renderer functions and product sources remain available for restoration. Deploy committed/pushed backend first using `bash ops/install-server-mail.sh --upgrade`, preserving existing environment and systemd. Then deploy static through the existing `ops/deploy.sh --from-github` and install the narrowly scoped product redirects with `bash ops/install-b2b-redirects.sh`. The latter backs up actual Nginx config, preserves all aliases including neesha.ru, tests and reloads with rollback on failure. See [B2B instructions](../b2b/README.md) for backup/rollback. Final live evidence will be added after deployment.
+## B2B release — 8 October 2026
+
+Approved B2B code is built with `python3 b2b/render.py --publish` (18 indexable HTML pages), then prepare/check-site. Existing blog/catalog/business CLI entry points retain this build; legacy renderer functions and product sources remain available for restoration. Deploy committed/pushed backend first using `bash ops/install-server-mail.sh --upgrade`, preserving existing environment and systemd. Then deploy static through the existing `ops/deploy.sh --from-github` and install the narrowly scoped product redirects with `bash ops/install-b2b-redirects.sh`. The latter backs up actual Nginx config, preserves all aliases including neesha.ru, tests and reloads with rollback on failure. See [B2B instructions](../b2b/README.md) for backup/rollback. Final live evidence and the blocked submission check are recorded in the release report above.
 
 ## B2B prototype — 8 October 2026, not deployed
 
