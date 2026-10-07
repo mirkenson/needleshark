@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-08",
+  "status": "local_prototype_for_owner_review_not_published",
+  "code_commit": "f2bad16cadf99a265128fa3f46b8e0cbc51939e1",
+  "branch": "codex/b2b-refactor-prototype",
+  "preview_url": "http://127.0.0.1:4190/",
+  "source": "b2b/",
+  "production_dist_changed": false,
+  "server_inspected_or_changed": false,
+  "scope": {
+    "new_pages": ["/", "/napravleniya/chehly/", "/napravleniya/sumki/", "/napravleniya/remni/", "/napravleniya/ukrytiya-i-shtory/", "/napravleniya/po-tz/", "/business/", "/catalog/"],
+    "copied_pages": "Existing blog and legal pages, with common navigation adapted inside preview output only",
+    "form_fields": ["name", "email", "phone", "description", "consent"],
+    "contact_requirement": "At least one email or phone; each supplied contact is validated",
+    "file_input": false,
+    "messengers": "Four disabled placeholders requested by owner",
+    "ozon_trust": "Existing 80000+ sales, 4.9/5 and 24000 reviews retained; no fresh marketplace audit"
+  },
+  "automated_checks": {
+    "python": {"command": "python3 -m unittest b2b.test_render", "passed": 5},
+    "node": {"command": "node --test b2b/test_form.mjs", "passed": 2},
+    "repeat_build": "All output hashes identical on repeated generation",
+    "production_isolation": "All dist file hashes identical before/after prototype generation; production destination guard tested",
+    "internal_links_anchors_assets": "Passed for all 18 HTML pages",
+    "tracking": "No Metrika/analytics script or pixel in preview HTML",
+    "indexing": "All 18 pages noindex,nofollow, robots Disallow /, empty preview sitemap",
+    "form": "Only requested fields and consent; no file input; POST fallback cannot put field values in the URL",
+    "marketplace_utm": "Ozon links contain exactly one utm_campaign=vendor_org_211216; internal links have no UTM",
+    "git_diff_check": "Passed"
+  },
+  "http_checks": {
+    "pages_200": 18,
+    "referenced_resources_200": 207,
+    "legacy_product_paths": 26,
+    "redirect_checks": 52,
+    "redirect_result": "301 to catalogue anchor with query preserved, including legacy /index.html paths",
+    "disabled_local_api": "Synthetic empty POST returned HTTP 503 and ok:false",
+    "robots_header": "X-Robots-Tag: noindex, nofollow",
+    "note": "HTML/assets tested over loopback. Final CSS changes also passed local file/anchor tests and browser checks with content-hashed asset URLs. Production HTTPS was not rechecked."
+  },
+  "browser_checks": {
+    "browser": "Codex in-app browser through CUA",
+    "widths": [360, 390, 768, 1024, 1440],
+    "pages": ["/", "/napravleniya/chehly/", "/napravleniya/sumki/", "/napravleniya/remni/", "/napravleniya/ukrytiya-i-shtory/", "/napravleniya/po-tz/", "/business/", "/catalog/", "/blog/", "/privacy-policy"],
+    "final_layout_checks": 50,
+    "horizontal_overflow": 0,
+    "out_of_bounds_content": 0,
+    "broken_loaded_images": 0,
+    "new_console_errors_or_warnings": 0,
+    "desktop_hero": "At viewport height 768, all five USPs and note fit: bottom 720.78px at width 1024, 675.98px at width 1440",
+    "visual_review": "Desktop/tablet/mobile hero, 360px covers page, mobile menu, material tabs, form/errors, aligned catalogue cards and desktop footer",
+    "navigation": "Mobile open, Escape close/focus return; direction header CTA goes to local form and retains direction context",
+    "materials": "Tab click and ArrowRight switch active panel; only one panel visible with JS",
+    "catalogue": "26 cards, search zero-result state and reset to 26, straps filter to 4; aligned rows in screenshot",
+    "form": "Empty required fields, malformed email, short phone, long description, valid synthetic email-only attempt and repeated submit; preview message explicitly says not sent",
+    "input_contrast": "Computed input text rgb(27,31,33) on rgb(246,247,244), visible focus and wrapping error text",
+    "restored_viewport": true
+  },
+  "not_applicable_to_local_review": [
+    "File size/upload validation: new form has no upload",
+    "Production prepare-public/check-site/deploy: dist unchanged; prototype intentionally has noindex and no analytics",
+    "Public product-page removal: only preview has removed pages and legacy redirects"
+  ],
+  "not_verified_or_not_enabled": [
+    "New form to live /api/leads, PostgreSQL, outbox and delivery to recipients",
+    "True server-save success/network failure UI: prototype does not send requests",
+    "New analytics integration, actual SDK events and Metrika reports",
+    "Production sitemap/robots/redirect changes and search-engine recrawl",
+    "Messenger destinations: owner will provide later",
+    "Real B2B case photography: reused illustrations remain labelled",
+    "Reduced-motion behaviour was implemented and inspected in CSS/JS, not tested under a changed OS setting"
+  ]
+}

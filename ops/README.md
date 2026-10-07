@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## B2B prototype — 8 October 2026, not deployed
+
+`python3 b2b/render.py` builds an isolated review into `outputs/b2b-preview`; serve it with `python3 b2b/preview.py --port 4190`. No changes to production `dist/`, backend or VPS. Never deploy this preview: indexing, analytics and API submission are deliberately disabled. The local 301 product redirects are a review of the future migration, not an installed Nginx change. See [b2b/README.md](../b2b/README.md) and [verification](../docs/verification/20261008-b2b-prototype.json).
+
 ## B2B search-content release — 24 September 2026
 
 Published pushed commit `477a0d43729585b0e283405d705ab7a2018fd89f` with `ops/deploy.sh --from-github`: current `20260924T073408Z-14797`, previous `20260924T064707Z-11896`. One HTML downloaded, 1265 files reused, all 1266 verified before the switch. Public 39 HTML files and 51 assets match; two aliases preserve query; Nginx, leads, PostgreSQL and cleanup/monitor/Metrika timers are active. No backend, Nginx or systemd change. [Verification](../docs/verification/20260924-business-seo.json).
