@@ -1,0 +1,78 @@
+/* Review typography uses the established Manrope family and shared tokens. */
+.ns-site{font-family:var(--font-body);font-size:var(--text-body);line-height:var(--line-body)}
+.ns-site h1{font-size:clamp(2.5rem,4.35vw,4.35rem);line-height:1.1;letter-spacing:-.06em;font-weight:var(--weight-heavy)}
+.ns-site h2{font-size:clamp(2rem,3.5vw,3.5rem);line-height:1.15;letter-spacing:-.05em;font-weight:var(--weight-heavy)}
+.ns-site h3{font-size:var(--text-card);line-height:1.35;letter-spacing:-.025em}
+.ns-site .ns-kicker,.ns-kicker{font-size:var(--text-caption);line-height:1.6;letter-spacing:.12em;font-weight:var(--weight-heavy)}
+.ns-site .ns-lead{font-size:var(--text-lead);line-height:1.75;letter-spacing:-.015em}
+.ns-button{font-size:var(--text-small);font-weight:var(--weight-bold);line-height:1.45}
+.ns-button>span,.ns-arrow{font-size:var(--text-card);font-weight:var(--weight-regular)}
+.ns-header .ns-nav,.ns-header .ns-header-contacts,.ns-header .ns-mobile-menu{font-size:var(--text-small);line-height:1.5;font-weight:var(--weight-semibold)}
+.ns-header-contacts>a:first-child{font-weight:var(--weight-heavy)}
+.ns-header .ns-header-contacts>a:last-child{font-size:var(--text-compact)}
+.ns-menu-toggle{font-size:var(--text-small);font-weight:var(--weight-bold)}
+.ns-quick-heading,.ns-quick-link small,.ns-direction-meta,.ns-hero-foot,.ns-usp-note,.ns-preview-badge{font-size:var(--text-caption);line-height:1.6}
+.ns-quick-heading,.ns-direction-meta{letter-spacing:.08em;font-weight:var(--weight-semibold)}
+.ns-quick-link strong{font-size:var(--text-body);line-height:1.4;font-weight:var(--weight-bold)}
+.ns-quick-link small{font-size:.65rem;letter-spacing:.09em}
+.ns-usps strong{font-size:var(--text-lead);line-height:1.4;letter-spacing:-.025em;font-weight:var(--weight-heavy)}
+.ns-usps p{font-size:var(--text-small);line-height:1.6}
+.ns-usp-index{font-size:var(--text-caption);font-weight:var(--weight-semibold)}
+.ns-site .ns-trust h2{font-size:var(--text-card);letter-spacing:-.025em}
+.ns-trust a,.ns-trust-stat>span{font-size:var(--text-small)}
+.ns-trust-stat>strong{font-size:clamp(1.8rem,2.6vw,2.75rem);line-height:1.2;letter-spacing:-.04em;font-weight:var(--weight-heavy)}
+.ns-trust-stat>strong>span{font-size:var(--text-lead);font-weight:var(--weight-medium)}
+.ns-trust-stat .ns-stars{font-size:var(--text-lead);letter-spacing:.14em}
+.ns-section-intro,.ns-direction-card p,.ns-example p,.ns-production-copy p,.ns-process p,.ns-application-grid p{font-size:var(--text-body);line-height:1.75}
+.ns-site .ns-direction-card h3{font-size:clamp(1.35rem,2vw,1.75rem);line-height:1.35;letter-spacing:-.03em}
+.ns-card-link,.ns-text-link{font-size:var(--text-small);font-weight:var(--weight-heavy)}
+.ns-site figcaption{font-size:var(--text-caption);line-height:1.7}
+.ns-site .ns-material-panel h3{font-size:clamp(1.55rem,2.4vw,2.25rem);line-height:1.3;letter-spacing:-.04em}
+.ns-material-tabs button{font-size:var(--text-body);line-height:1.5;font-weight:var(--weight-semibold)}
+.ns-specs dt{font-size:var(--text-caption);letter-spacing:.04em;font-weight:var(--weight-semibold)}
+.ns-specs dd{font-size:var(--text-small);line-height:1.65}
+.ns-material-note,.ns-source-link{font-size:var(--text-caption);line-height:1.7}
+.ns-site .ns-production-copy h3{font-size:var(--text-lead)}
+.ns-process>li>span{font-size:var(--text-heading);font-weight:var(--weight-medium)}
+.ns-site .ns-process h3{font-size:var(--text-lead)}
+.ns-guarantee strong{font-size:var(--text-lead);line-height:1.4;font-weight:var(--weight-heavy)}
+.ns-guarantee p{font-size:var(--text-small)}
+.ns-faq summary{font-size:var(--text-lead);font-weight:var(--weight-semibold);line-height:1.55}
+.ns-faq summary>span{font-size:var(--text-title-xl);font-weight:var(--weight-regular)}
+.ns-faq details>p{font-size:var(--text-body);line-height:1.8}
+.ns-contact-phone{font-size:var(--text-title-xl);font-weight:var(--weight-heavy);letter-spacing:-.02em}
+.ns-contact-email{font-size:var(--text-card)}
+.ns-form-caption,.ns-form label{font-size:var(--text-small);font-weight:var(--weight-semibold)}
+.ns-form-caption>span,.ns-field-hint,.ns-field-error,.ns-form-status,.ns-messenger-note,.ns-file-note,.ns-form .ns-consent{font-size:var(--text-caption);line-height:1.7;font-weight:var(--weight-regular)}
+.ns-form input,.ns-form textarea,.ns-catalog-tools input{font-size:var(--text-body);line-height:1.5;font-family:var(--font-body)}
+.ns-messengers button{font-size:var(--text-caption);line-height:1.5;font-weight:var(--weight-semibold)}
+.ns-footer{font-size:var(--text-small);line-height:1.8}
+.ns-footer h3{font-size:var(--text-caption);line-height:1.5;text-transform:uppercase;letter-spacing:.08em;font-weight:var(--weight-heavy)}
+.ns-footer p,.ns-footer a{font-size:var(--text-small);line-height:1.8}
+.ns-footer .ns-footer-phone{font-size:var(--text-lead);font-weight:var(--weight-heavy)}
+.ns-footer-stamp,.ns-footer-bottom p,.ns-footer-bottom a,.ns-footer .ns-messenger-note{font-size:var(--text-caption);line-height:1.7}
+.ns-breadcrumbs,.ns-detail-promises{font-size:var(--text-caption);line-height:1.7}
+.ns-construction dt{font-size:var(--text-lead);font-weight:var(--weight-bold)}
+.ns-construction dd{font-size:var(--text-body)}
+.ns-brief li{font-size:var(--text-lead);line-height:1.65}
+.ns-related a{font-size:var(--text-small);font-weight:var(--weight-semibold)}
+.ns-site .ns-product h2{font-size:var(--text-card);line-height:1.4;letter-spacing:-.025em}
+.ns-product-category,.ns-product-copy,.ns-product-market,.ns-catalog-filters button,.ns-catalog-tools label,.ns-catalog-tools>p{font-size:var(--text-small);line-height:1.65}
+@media(min-width:1001px) and (max-height:850px){
+  .ns-site .ns-hero h1{font-size:clamp(2.5rem,4vw,3.9rem)}
+  .ns-hero .ns-lead{line-height:1.6}
+  .ns-usps strong{font-size:var(--text-body)}
+}
+@media(max-width:540px){.ns-menu-toggle{font-size:0}.ns-menu-toggle>span{font-size:22px}}
+.ns-product-market{font-weight:var(--weight-heavy)}
+@media(max-width:700px){
+  .ns-site h1{font-size:clamp(2.35rem,9.5vw,3.5rem)}
+  .ns-site h2{font-size:clamp(1.85rem,8vw,2.75rem)}
+  .ns-site .ns-lead{font-size:var(--text-body)}
+  .ns-usps strong{font-size:var(--text-body)}
+  .ns-usps p{font-size:var(--text-caption)}
+  .ns-quick-link strong{font-size:var(--text-body)}
+  .ns-trust-stat>strong{font-size:var(--text-heading)}
+  .ns-contact-phone{font-size:var(--text-title)}
+  .ns-brief li,.ns-faq summary{font-size:var(--text-body)}
+}
