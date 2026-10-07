@@ -79,6 +79,28 @@ class LeadTests(unittest.TestCase):
                 leads.validate(dict(self.data, **update))
         self.assertNotIn('attachment_url', leads.validate(dict(self.data, attachment_url='https://evil.example/')))
 
+    def test_b2b_contacts_context_and_legacy_compatibility(self):
+        data = leads.validate(dict(self.data, email=self.data['contact'], phone='+7 999 000-00-00',
+                                   business_direction='chehly', business_material='canvas',
+                                   business_intent='materials', source_path='/napravleniya/chehly/'))
+        text = leads.notification_payload(data)['question']
+        for part in ('Почта: test@example.invalid', 'Телефон: +7 999 000-00-00',
+                     'Изделия: Чехлы на технику и оборудование', 'Материал: Брезент'):
+            self.assertIn(part, text)
+        self.assertEqual(data['question'], self.data['question'])
+        for key in ('email', 'phone', 'business_direction', 'business_material'):
+            self.assertNotIn(key, leads.validate(self.data))
+        phone_only = leads.validate(dict(self.data, contact='+79990000000', phone='+79990000000', email=''))
+        self.assertEqual(phone_only['contact'], phone_only['phone'])
+
+    def test_invalid_secondary_contact_and_unknown_context_rejected(self):
+        base = dict(self.data, email=self.data['contact'], phone='+79990000000')
+        for changes in ({'email': 'bad'}, {'phone': 'x'}, {'phone': '+123'}, {'phone': '9' * 16},
+                        {'business_direction': 'unknown'}, {'business_material': 'unknown'},
+                        {'contact': 'other@example.invalid'}):
+            with self.subTest(fields=list(changes)), self.assertRaises(ValueError):
+                leads.validate(dict(base, **changes))
+
     def test_valid_file_and_oversized_file(self):
         import base64
         attachment = {'name': 'test.pdf', 'type': 'application/pdf', 'data': base64.b64encode(b'%PDF-test').decode()}

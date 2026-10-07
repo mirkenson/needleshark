@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## B2B release preparation — 8 October 2026
+
+Approved B2B code is built with `python3 b2b/render.py --publish` (18 indexable HTML pages), then prepare/check-site. Existing blog/catalog/business CLI entry points retain this build; legacy renderer functions and product sources remain available for restoration. Deploy committed/pushed backend first using `bash ops/install-server-mail.sh --upgrade`, preserving existing environment and systemd. Then deploy static through the existing `ops/deploy.sh --from-github` and install the narrowly scoped product redirects with `bash ops/install-b2b-redirects.sh`. The latter backs up actual Nginx config, preserves all aliases including neesha.ru, tests and reloads with rollback on failure. See [B2B instructions](../b2b/README.md) for backup/rollback. Final live evidence will be added after deployment.
+
 ## B2B prototype — 8 October 2026, not deployed
 
 `python3 b2b/render.py` builds an isolated review into `outputs/b2b-preview`; serve it with `python3 b2b/preview.py --port 4190`. No changes to production `dist/`, backend or VPS. Never deploy this preview: indexing, analytics and API submission are deliberately disabled. The local 301 product redirects are a review of the future migration, not an installed Nginx change. See [b2b/README.md](../b2b/README.md) and [verification](../docs/verification/20261008-b2b-prototype.json).

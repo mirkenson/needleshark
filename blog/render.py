@@ -9,7 +9,7 @@ from string import Template
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from site_utils import prepare_html, ORIGIN, json_ld, breadcrumbs
-from blocks import ArticleBlocks, e, validate_blocks, walk
+from blog.blocks import ArticleBlocks, e, validate_blocks, walk
 
 BASE = Template((ROOT / 'blog/base.html').read_text())
 
@@ -108,6 +108,11 @@ def render_featured(posts, homepage):
 
 
 if __name__ == '__main__':
-    posts = json.loads((ROOT / 'blog/posts.json').read_text())
-    render(posts, ROOT / 'dist/blog')
-    render_featured(posts, ROOT / 'dist/index.html')
+    from b2b.config import ENABLED
+    if ENABLED:
+        from b2b.render import publish
+        publish()
+    else:
+        posts = json.loads((ROOT / 'blog/posts.json').read_text())
+        render(posts, ROOT / 'dist/blog')
+        render_featured(posts, ROOT / 'dist/index.html')

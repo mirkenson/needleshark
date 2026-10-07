@@ -20,6 +20,13 @@
   const catalogParams = () => document.body.classList.contains('assortment') ? {
     page: location.pathname, context: 'catalog', product: document.body.dataset.productSlug || 'catalog'
   } : {};
+  const b2bParams = (direction = document.body.dataset.direction, material) => {
+    const directions = ['chehly','sumki','remni','ukrytiya-i-shtory','po-tz'];
+    const materials = ['oxford','canvas','spunbond','cordura','polyester','other'];
+    return {page: location.pathname, context: 'b2b',
+      ...(directions.includes(direction) ? {direction} : {}),
+      ...(materials.includes(material) ? {material, intent: 'materials'} : {intent: 'custom'})};
+  };
   function trackClick(event) {
     if (event.type === 'auxclick' && event.button !== 1) return;
     const el = event.target.closest('a,button,summary,input[type=checkbox],input[type=file]');
@@ -49,6 +56,18 @@
       return;
     }
     const href = el.getAttribute('href') || '';
+    if (el.dataset.b2bCta) {
+      navigationGoal(event, el, 'request_open', {...b2bParams(), element: el.dataset.track,
+        ...(el.dataset.materialInquiry ? {material: el.dataset.materialInquiry} : {})});
+      return;
+    }
+    // Material selection also supports arrow keys; its dedicated event counts once.
+    if (el.dataset.material && el.dataset.track?.startsWith('b2b_material_')) return;
+    if (el.dataset.track === 'b2b_disclosure') {
+      goal('ui_click', {...b2bParams(), element: 'b2b_disclosure',
+        state: el.closest('details').open ? 'closed' : 'open'});
+      return;
+    }
     if (el.dataset.businessCta) {
       goal('request_open', {...params, context: 'business', element: el.dataset.businessCta, intent: el.dataset.businessIntent || 'unspecified'});
       return;
@@ -90,13 +109,14 @@
     goal('ui_click', {page: location.pathname, article, element, block, item, state});
   });
   document.querySelectorAll('form').forEach(form => {
-    const params = () => form.dataset.context === 'business' ? {page: location.pathname, context: 'business', intent: form.elements.business_intent.value || 'unspecified'} : catalogParams();
+    const params = () => form.dataset.context === 'b2b' ? b2bParams(undefined, form.dataset.material) : form.dataset.context === 'business' ? {page: location.pathname, context: 'business', intent: form.elements.business_intent.value || 'unspecified'} : catalogParams();
     form.addEventListener('focusin', () => goal('form_start', params()), {once: true});
     form.addEventListener('submit', () => {
-      if (form.checkValidity()) goal('form_submit_attempt', params());
+      if (form.dataset.context !== 'b2b' && form.checkValidity()) goal('form_submit_attempt', params());
     });
+    if (form.dataset.context === 'b2b') document.addEventListener('b2b-form-attempt', () => goal('form_submit_attempt', params()));
   });
-  document.addEventListener('lead-saved', event => goal('lead_submitted', event.detail?.context === 'business' ? {page: location.pathname, context: 'business', intent: event.detail.intent} : catalogParams()));
+  document.addEventListener('lead-saved', event => goal('lead_submitted', event.detail?.context === 'b2b' ? b2bParams(event.detail.direction, event.detail.material) : event.detail?.context === 'business' ? {page: location.pathname, context: 'business', intent: event.detail.intent} : catalogParams()));
   document.addEventListener('business-interaction', event => {
     const {element, item, state} = event.detail || {};
     if (!['business_material', 'business_intent', 'business_faq'].includes(element)) return;

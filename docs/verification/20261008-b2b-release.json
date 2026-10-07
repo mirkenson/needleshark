@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-08",
+  "status": "preflight_passed_not_yet_deployed",
+  "public_branch": "codex/b2b-release-20261008",
+  "backup_tag": "backup/site-before-b2b-20261008",
+  "backup_commit": "ff101063d13f27249964ef7f39612f827e3f6517",
+  "server_backup_pin": "/var/www/needle-shark/rollback-before-b2b-20261008",
+  "tests": {
+    "server": 28,
+    "ops": 32,
+    "catalog": 19,
+    "business": 2,
+    "blog": 15,
+    "b2b_render": 5,
+    "node": 19,
+    "total": 120
+  },
+  "local": {
+    "pages": 18,
+    "layout_checks": 90,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "overflow_failures": 0,
+    "broken_loaded_images": 0,
+    "http": {
+      "base": "http://127.0.0.1:4191",
+      "pages": 18,
+      "requests": 238,
+      "failed": [],
+      "sha256_matches": 238
+    },
+    "annotated_controls": 1388,
+    "build_files": 1256,
+    "all_generators_repeatable": true,
+    "form_invalid_contact": true,
+    "form_api_503_keeps_data": true,
+    "native_fetch_receiver_regression_fixed": true,
+    "menu_escape": true,
+    "footer_blog_navigation": true,
+    "material_keyboard": true,
+    "catalog_empty_reset": true,
+    "faq_mobile": true
+  },
+  "postgres_isolated": {
+    "migration_twice": true,
+    "separate_contacts_and_context": true,
+    "legacy_nullable_fields": true,
+    "atomicity_retry_and_queues": true,
+    "messages_sent": 0
+  },
+  "pending": [
+    "production deployment",
+    "HTTPS final checks",
+    "public synthetic leads and recipient acknowledgments",
+    "real SDK and goal definitions",
+    "search console recrawl if accessible",
+    "final documentation and Obsidian synchronization"
+  ]
+}

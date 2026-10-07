@@ -82,7 +82,7 @@ def check():
             assert target.exists(), f'{path}: missing {link}'
             if url.fragment and target in pages:
                 assert unquote(url.fragment) in pages[target].ids, f'{path}: missing anchor {link}'
-    css = '\n'.join(p.read_text() for p in DIST.glob('*.css'))
+    css = '\n'.join(p.read_text() for p in DIST.rglob('*.css'))
     definitions = set(re.findall(r'(--[\w-]+)\s*:', css))
     references = set(re.findall(r'var\((--[\w-]+)', css))
     assert references <= definitions, f'Undefined CSS tokens: {references - definitions}'

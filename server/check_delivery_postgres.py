@@ -38,6 +38,9 @@ def main():
             loop_migration = Path(__file__).with_name('migrations').joinpath('20260922_loop_delivery.sql').read_text()
             cur.execute(loop_migration)
             cur.execute(loop_migration)
+            b2b_migration = Path(__file__).with_name('migrations').joinpath('20261008_b2b_contacts.sql').read_text()
+            cur.execute(b2b_migration)
+            cur.execute(b2b_migration)
             # Distinct ranges detect accidentally displaying a customer/outbox id.
             cur.execute('ALTER TABLE orders ALTER COLUMN id RESTART WITH 401')
         os.environ['CRM_DSN'] = make_dsn(dsn, options='-csearch_path=' + schema)
@@ -121,10 +124,18 @@ def main():
             assert query('SELECT count(*) FROM ' + table) == [(1,)], table
         assert store.enqueue(first, 'ip1', (recipient,), secret)[0] == 200
         assert query('SELECT count(*) FROM lead_files') == [(1,)]  # Files survive sent status.
-        second = lead(attachment=None)
+        second = lead(attachment=None, email='test@example.invalid', phone='+79990000000',
+                      business_direction='chehly', business_material='canvas', source_path='/napravleniya/chehly/')
         second.pop('attachment')
         assert store.enqueue(second, 'ip2', (recipient, 'second@example.invalid'), secret)[0] == 202
+        assert query('SELECT email,phone,business_direction,business_material,source_path,description FROM orders WHERE submission_id=%s',
+                     (second['id'],)) == [tuple(second[key] for key in ('email','phone','business_direction','business_material','source_path','question'))]
+        assert query('SELECT email,phone,business_direction,business_material FROM orders WHERE submission_id=%s', (first['id'],)) == [(None, None, None, None)]
+        for key in ('email', 'phone', 'business_direction', 'business_material'):
+            assert store.enqueue(dict(second, **{key: 'changed'}), 'ip2', (recipient,), secret)[0] == 409
         job1, job2 = store.claim(), store.claim()
+        assert all(job['lead']['phone'] == second['phone'] and job['lead']['email'] == second['email'] for job in (job1, job2))
+        print('PASS B2B: four separate fields and unchanged description saved; both contacts in jobs; changed retries rejected; legacy NULL fields; migration repeatable')
         assert job1['recipient'] != job2['recipient']
         assert store.finish(job1, 'smtp_550') and store.finish(job2)
         assert query("SELECT status FROM lead_deliveries WHERE submission_id=%s ORDER BY id", (second['id'],)) == [('pending',), ('sent',)]

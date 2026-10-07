@@ -1,4 +1,4 @@
-"""Build an isolated B2B review site. Production sources and dist stay untouched."""
+"""Render the approved B2B site, or an isolated noindex review."""
 import argparse
 import hashlib
 import json
@@ -11,14 +11,33 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from site_utils import prepare_html, external_url
-from catalog.render import picture, image_for
 
 SOURCE = Path(__file__).resolve().parent
 DATA = json.loads((SOURCE / 'content.json').read_text())
 DIRECTIONS = DATA['directions']
 MANIFEST = json.loads((ROOT / 'business/assets/manifest.json').read_text())
-PHONE = '+7 911 128-51-32'
+PHONE = '+7 981 839-94-74'
 EMAIL = 'info@neesha.ru'
+NEW_MATERIALS = json.loads((SOURCE / 'assets/manifest.json').read_text())
+ASSET_FILES = ('site.css', 'site.js', 'typography.css', 'form-validation.mjs', 'form-client.mjs')
+
+
+def asset_version():
+    return hashlib.sha256(b''.join((SOURCE / name).read_bytes() for name in ASSET_FILES)).hexdigest()[:12]
+
+
+def copy_assets(destination):
+    target = Path(destination) / 'b2b'
+    target.mkdir(parents=True, exist_ok=True)
+    for name in ASSET_FILES:
+        content = (SOURCE / name).read_text()
+        if name.endswith(('.js', '.mjs')):
+            for module in ('form-validation', 'form-client'):
+                content = content.replace(f"'./{module}.mjs'", f"'./{module}.js?v={asset_version()}'")
+        (target / name.replace('.mjs', '.js')).write_text(content)
+    (target / 'assets').mkdir(exist_ok=True)
+    for image in (SOURCE / 'assets').glob('*.webp'):
+        shutil.copy2(image, target / 'assets' / image.name)
 
 
 def e(value):
@@ -41,8 +60,9 @@ def icon(name):
 
 
 def business_picture(key, alt, eager=False):
-    dims = MANIFEST[key]
-    return (f'<img src="/business/assets/{key}-800.webp" srcset="' + ', '.join(f'/business/assets/{key}-{w}.webp {w}w' for w in (480, 800, 1280))
+    dims = NEW_MATERIALS.get(key) or MANIFEST[key]
+    base = '/b2b/assets' if key in NEW_MATERIALS else '/business/assets'
+    return (f'<img src="{base}/{key}-800.webp" srcset="' + ', '.join(f'{base}/{key}-{w}.webp {w}w' for w in (480, 800, 1280))
             + f'" sizes="(max-width:700px) 92vw, 45vw" width="{dims["width"]}" height="{dims["height"]}" alt="{e(alt)}" loading="{"eager" if eager else "lazy"}" decoding="async">')
 
 
@@ -60,14 +80,15 @@ def header(contact_href='/#contact'):
     <header class="ns-header"><div class="ns-container ns-header-inner">
       <a class="ns-brand" href="/" aria-label="Needle Shark — главная"><img src="/logo.svg" width="1026" height="348" alt="Needle Shark"></a>
       <nav class="ns-nav" aria-label="Основная навигация"><details class="ns-directions-menu"><summary>Направления <span aria-hidden="true">⌄</span></summary><div>{links}</div></details><a href="/business/">Производство</a><a href="/#materials">Материалы</a><a href="/#contact">Контакты</a></nav>
-      <div class="ns-header-contacts"><a href="tel:+79111285132">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a></div>
+      <div class="ns-header-contacts"><a href="tel:+79818399474">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a></div>
       {button('Рассчитать заказ', contact_href)}
       <button class="ns-menu-toggle" type="button" aria-controls="ns-mobile-menu" aria-expanded="false" hidden>Меню <span aria-hidden="true">☰</span></button>
     </div><nav id="ns-mobile-menu" class="ns-mobile-menu ns-container" aria-label="Мобильная навигация" hidden><p class="ns-kicker">Направления производства</p>{links}<div class="ns-mobile-secondary"><a href="/business/">Производство</a><a href="/#materials">Материалы</a><a href="/#process">Как заказать</a><a href="/catalog/">Готовые изделия</a><a href="/#contact">Контакты</a></div></nav></header>'''
 
 
 def messengers():
-    return '<div class="ns-messengers" role="group" aria-label="Мессенджеры — ссылки будут добавлены">' + ''.join(f'<button type="button" disabled title="Контакт будет добавлен">{label}<span aria-hidden="true">↗</span></button>' for label in ['Telegram', 'MAX', 'WhatsApp', 'ВКонтакте']) + '</div><p class="ns-messenger-note">Ссылки на мессенджеры будут добавлены. Сейчас можно позвонить или написать на почту.</p>'
+    vk = external_url('https://vk.ru/needleshark', 'b2b_vk')
+    return '<div class="ns-messengers" role="group" aria-label="Написать нам">' + ''.join(f'<button type="button" disabled title="Контакт будет добавлен">{label}<span aria-hidden="true">↗</span></button>' for label in ['Telegram', 'MAX', 'WhatsApp']) + f'<a href="{e(vk)}" target="_blank" rel="noopener noreferrer" data-track="b2b_vk">ВКонтакте<span aria-hidden="true">↗</span></a></div><p class="ns-messenger-note">Напишите во ВКонтакте или на почту. Остальные мессенджеры подключим позже.</p>'
 
 
 def footer(contact_href='/#contact'):
@@ -75,20 +96,20 @@ def footer(contact_href='/#contact'):
     return f'''<footer class="ns-footer"><div class="ns-container"><div class="ns-footer-grid">
       <div class="ns-footer-about"><a class="ns-brand" href="/" aria-label="Needle Shark — главная"><img src="/logo.svg" width="1026" height="348" alt="Needle Shark"></a><p>Швейное производство технических изделий в Санкт-Петербурге. Разработка и пошив под задачи вашего бизнеса.</p><span class="ns-footer-stamp">С точностью до нитки.</span></div>
       <nav aria-label="Направления в подвале"><h3>Направления</h3>{links}</nav>
-      <nav aria-label="Информация о компании"><h3>Производство</h3><a href="/business/">О производстве</a><a href="/#process">Как заказать</a><a href="/#materials">Ткани и материалы</a><a href="/#faq">Вопросы и ответы</a><a href="/catalog/">Готовые изделия</a><a href="/blog/">Полезные материалы</a></nav>
-      <div class="ns-footer-contact"><h3>Обсудим вашу задачу</h3><a class="ns-footer-phone" href="tel:+79111285132">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a>{button('Рассчитать заказ', contact_href)}{messengers()}</div>
+      <nav aria-label="Информация о компании"><h3>Производство</h3><a href="/business/">О производстве</a><a href="/#process">Как заказать</a><a href="/#materials">Ткани и материалы</a><a href="/#faq">Вопросы и ответы</a><a href="/catalog/">Готовые изделия</a><a href="/blog/">Блог</a></nav>
+      <div class="ns-footer-contact"><h3>Обсудим вашу задачу</h3><a class="ns-footer-phone" href="tel:+79818399474">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a>{button('Рассчитать заказ', contact_href)}{messengers()}</div>
     </div><div class="ns-footer-bottom"><p>© Needle Shark, 2026<br><span>ИП Сергеев Даниил Игоревич · ИНН 026610829836 · Санкт-Петербург</span></p><div><a href="/privacy-policy">Политика обработки данных</a><a href="/user-agreement">Пользовательское соглашение</a><a href="#main">Наверх ↑</a></div></div></div></footer>'''
 
 
 def form(topic=''):
-    return f'''<section class="ns-contact" id="contact"><div class="ns-container ns-contact-grid"><div><p class="ns-kicker">НАЧНЁМ С ВАШЕЙ ЗАДАЧИ</p><h2>Расскажите,<br>что нужно <em>сшить.</em></h2><p class="ns-lead">Уточним детали, подберём материал и подготовим расчёт. Можно начать с короткого описания.</p><a class="ns-contact-phone" href="tel:+79111285132">{PHONE}</a><a class="ns-contact-email" href="mailto:{EMAIL}">{EMAIL}</a>{messengers()}</div>
-    <form class="ns-form ym-hide-content" data-topic="{e(topic)}" method="post" action="/api/leads" novalidate><p class="ns-form-caption">Заявка на расчёт <span>От 1 рабочего дня*</span></p>
+    return f'''<section class="ns-contact" id="contact"><div class="ns-container ns-contact-grid"><div><p class="ns-kicker">НАЧНЁМ С ВАШЕЙ ЗАДАЧИ</p><h2>Расскажите,<br>что нужно <em>сшить.</em></h2><p class="ns-lead">Уточним детали, подберём материал и подготовим расчёт. Можно начать с короткого описания.</p><a class="ns-contact-phone" href="tel:+79818399474">{PHONE}</a><a class="ns-contact-email" href="mailto:{EMAIL}">{EMAIL}</a>{messengers()}</div>
+    <form class="ns-form ym-hide-content" data-context="b2b" data-topic="{e(topic)}" method="post" action="/api/leads" novalidate><p class="ns-form-caption">Заявка на расчёт <span>От 1 рабочего дня*</span></p>
       <label for="lead-name">Имя <span aria-hidden="true">*</span></label><input id="lead-name" name="name" autocomplete="name" maxlength="120" placeholder="Как к вам обращаться" required>
       <div class="ns-form-row"><div><label for="lead-email">Почта</label><input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@company.ru" aria-describedby="contact-hint contact-error"></div><div><label for="lead-phone">Телефон</label><input id="lead-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" placeholder="+7 (___) ___-__-__" aria-describedby="contact-hint contact-error"></div></div>
       <p id="contact-hint" class="ns-field-hint">Укажите почту или телефон — достаточно одного контакта.</p><p id="contact-error" class="ns-field-error" role="alert" hidden></p>
       <label for="lead-description">Описание задачи <span aria-hidden="true">*</span></label><textarea id="lead-description" name="description" rows="4" maxlength="5000" placeholder="Какое изделие нужно, примерное количество, размеры и условия использования" required></textarea>
       <div class="ns-file-note"><span aria-hidden="true">↗</span><p>Фото, чертежи, ТЗ и 3D-модели отправьте на <a href="mailto:{EMAIL}">{EMAIL}</a> или в мессенджер. В форме файлы не прикрепляются.</p></div>
-      <label class="ns-consent"><input name="consent" type="checkbox" required><span>Принимаю <a href="/user-agreement" target="_blank" rel="noopener">пользовательское соглашение</a> и даю согласие на обработку персональных данных по <a href="/privacy-policy" target="_blank" rel="noopener">политике</a>.</span></label>
+      <label class="ns-consent"><input name="consent" type="checkbox" required data-track="b2b_consent"><span>Принимаю <a href="/user-agreement" target="_blank" rel="noopener">пользовательское соглашение</a> и даю согласие на обработку персональных данных по <a href="/privacy-policy" target="_blank" rel="noopener">политике</a>.</span></label>
       <button class="ns-button" type="submit">Получить расчёт <span aria-hidden="true">↗</span></button><p class="ns-form-status" role="status" hidden></p><p class="ns-field-hint">* После уточнения исходных данных. Срок производства согласуем отдельно.</p><noscript><p>Для отправки заявки напишите на <a href="mailto:{EMAIL}">{EMAIL}</a> или позвоните.</p></noscript>
     </form></div></section>'''
 
@@ -98,8 +119,8 @@ def materials():
     panels = []
     for m in DATA['materials']:
         specs = ''.join(f'<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k, v in m['specs'])
-        panels.append(f'''<section class="ns-material-panel" id="panel-{m['id']}" data-panel="{m['id']}" aria-label="{e(m['name'])}"><figure>{business_picture('fabric-'+m['id'], 'Фактура материала: '+m['name'])}<figcaption>{e(m['code'])} <span>Образец фактуры</span></figcaption></figure><div><p class="ns-kicker">{e(m['name'])}</p><h3>{e(m['title'])}</h3><p>{e(m['text'])}</p><dl class="ns-specs">{specs}</dl><p class="ns-material-note">{e(m['note'])}</p><div class="ns-material-links"><a class="ns-text-link" href="#contact" data-topic="Материал: {e(m['name'])}">Подобрать материал <span aria-hidden="true">↗</span></a><a class="ns-source-link" href="{e(external_url(m['source'], 'b2b_material_'+m['id']))}" target="_blank" rel="noopener noreferrer">{e(m['sourceLabel'])} ↗</a></div></div></section>''')
-    return '<section class="ns-materials" id="materials"><div class="ns-container">' + section_head('МАТЕРИАЛЫ / ПОД ЗАДАЧУ', 'Начинаем с условий.<br>Подбираем ткань.', 'Хранение или перевозка, помещение или улица, лёгкий чехол или нагруженная сумка — материал зависит от задачи.') + f'<div class="ns-material-tabs" aria-label="Выбрать материал">{tabs}</div>' + ''.join(panels) + '</div></section>'
+        panels.append(f'''<section class="ns-material-panel" id="panel-{m['id']}" data-panel="{m['id']}" aria-label="{e(m['name'])}"><figure>{business_picture('fabric-'+m['id'], 'Фактура материала: '+m['name'])}<figcaption>{e(m['code'])} <span>Визуализация фактуры</span></figcaption></figure><div><p class="ns-kicker">{e(m['name'])}</p><h3>{e(m['title'])}</h3><p>{e(m['text'])}</p><dl class="ns-specs">{specs}</dl><p class="ns-material-note">{e(m['note'])}</p><div class="ns-material-links"><a class="ns-text-link" href="#contact" data-topic="Материал: {e(m['name'])}" data-material-inquiry="{m['id']}">Подобрать материал <span aria-hidden="true">↗</span></a><a class="ns-source-link" href="{e(external_url(m['source'], 'b2b_material_'+m['id']))}" target="_blank" rel="noopener noreferrer">{e(m['sourceLabel'])} ↗</a></div></div></section>''')
+    return '<section class="ns-materials" id="materials"><div class="ns-container">' + section_head('МАТЕРИАЛЫ / ПОД ЗАДАЧУ', 'Начинаем с условий.<br>Подбираем ткань.', 'Хранение или перевозка, помещение или улица, лёгкий чехол или нагруженная сумка — материал зависит от задачи.') + f'<div class="ns-material-tabs" aria-label="Выбрать материал">{tabs}</div>' + ''.join(panels) + '<div class="ns-other-materials"><h3>Нужен другой материал?</h3><p>Работаем и с другими техническими тканями. Уточните задачу — проверим возможность пошива, наличие и условия поставки нужного материала.</p><a class="ns-text-link" href="#contact" data-material-inquiry="other">Уточнить материал <span aria-hidden="true">↗</span></a></div></div></section>'
 
 
 def process():
@@ -146,6 +167,7 @@ def direction_page(d):
 
 
 def catalogue(products):
+    from catalog.render import picture, image_for
     cards, categories = [], {}
     for p in products:
         category = p.get('catalogCategory', {'id':p['category'], 'label':p['category']})
@@ -157,23 +179,71 @@ def catalogue(products):
         img = picture(image_for(p,'hero'), len(cards)<4, '(max-width:600px) 92vw, (max-width:1000px) 44vw, 28vw')
         cards.append(f'''<article class="ns-product" id="{p['slug']}" data-category="{e(category['id'])}" data-search="{e(p['name']+' '+p['description']+' '+category['label'])}"><a class="ns-product-image" href="{e(url)}" target="_blank" rel="noopener noreferrer" aria-label="{e(p['name'])} на {e(market['name'])}">{img}<span aria-hidden="true">↗</span></a><p class="ns-product-category">{e(category['label'])}</p><h2>{e(p['name'])}</h2><p class="ns-product-copy">{e(p.get('catalogSummary',p['shortDescription']))}</p><a class="ns-product-market" href="{e(url)}" target="_blank" rel="noopener noreferrer">Выбрать на {e(market['name'])}<span aria-hidden="true">↗</span></a></article>''')
     filters = '<button type="button" data-filter="" aria-pressed="true">Все изделия</button>' + ''.join(f'<button type="button" data-filter="{e(k)}" aria-pressed="false">{e(v)}</button>' for k,v in categories.items())
-    return f'''<section class="ns-container ns-catalog-intro"><p class="ns-kicker">ГОТОВЫЕ ИЗДЕЛИЯ / NEEDLE SHARK</p><h1>Готовые решения.<br><em>Проверенные детали.</em></h1><p class="ns-lead">Наши серийные изделия можно заказать на маркетплейсах. Размеры, комплектации, актуальные цены и наличие — на странице выбранного товара.</p><a class="ns-text-link" href="/#contact">Нужна партия или другая конструкция? Обсудим пошив ↗</a></section><section class="ns-container ns-catalog"><div class="ns-catalog-tools" hidden><label for="product-search">Найти изделие<input id="product-search" type="search" placeholder="Название или назначение" maxlength="150" autocomplete="off"></label><div class="ns-catalog-filters" role="group" aria-label="Категории">{filters}</div><p id="product-count" role="status">{len(cards)} изделий</p></div><div class="ns-product-grid">{''.join(cards)}</div><div class="ns-empty" hidden><h2>Ничего не нашлось.</h2><p>Попробуйте другое название или сбросьте фильтры.</p><button class="ns-button" id="reset-search" type="button">Показать все изделия <span aria-hidden="true">↗</span></button></div></section>'''
+    return f'''<section class="ns-container ns-catalog-intro"><p class="ns-kicker">ГОТОВЫЕ ИЗДЕЛИЯ / NEEDLE SHARK</p><h1>Готовые решения.<br><em>Проверенные детали.</em></h1><p class="ns-lead">Наши серийные изделия можно заказать на маркетплейсах. Размеры, комплектации, актуальные цены и наличие — на странице выбранного товара.</p><a class="ns-text-link" href="/#contact">Нужна партия или другая конструкция? Обсудим пошив ↗</a></section><section class="ns-container ns-catalog"><div class="ns-catalog-tools" hidden><label for="product-search">Найти изделие<input id="product-search" type="search" placeholder="Название или назначение" maxlength="150" autocomplete="off" class="ym-hide-content"></label><div class="ns-catalog-filters" role="group" aria-label="Категории">{filters}</div><p id="product-count" role="status">{len(cards)} изделий</p></div><div class="ns-product-grid">{''.join(cards)}</div><div class="ns-empty" hidden><h2>Ничего не нашлось.</h2><p>Попробуйте другое название или сбросьте фильтры.</p><button class="ns-button" id="reset-search" type="button">Показать все изделия <span aria-hidden="true">↗</span></button></div></section>'''
 
 
 def preview_assets():
     def asset(name):
-        version = hashlib.sha256((SOURCE / name).read_bytes()).hexdigest()[:12]
-        return f'/b2b/{name}?v={version}'
+        return f'/b2b/{name}?v={asset_version()}'
     return (f'<link rel="stylesheet" href="{asset("typography.css")}">'
             f'<link rel="stylesheet" href="{asset("site.css")}">'
             f'<script type="module" src="{asset("site.js")}"></script>')
 
 
-def page(body, title, description, path):
+def page(body, title, description, path, preview=True):
     body = body.replace('<br>', ' <br>')
     contact_href = '#contact' if 'class="ns-form ' in body else '/#contact'
     source = f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{e(title)}</title><meta name="description" content="{e(description)}"><link rel="stylesheet" href="/theme.css"><link rel="stylesheet" href="/typography.css">{preview_assets()}</head><body class="ns-site" data-preview="true">{header(contact_href)}<main id="main">{body}</main>{footer(contact_href)}<div class="ns-preview-badge" aria-label="Локальный прототип">Прототип · заявки не отправляются</div></body></html>'''
-    return make_preview(prepare_html(source,path))
+    direction = next((d['slug'] for d in DIRECTIONS if route(d).lstrip('/')+'index.html' == path), '')
+    source = source.replace('data-preview="true"', f'data-preview="{str(preview).lower()}" data-direction="{direction}"')
+    if not preview:
+        source = source.replace('<div class="ns-preview-badge" aria-label="Локальный прототип">Прототип · заявки не отправляются</div>', '')
+        source = add_tracking(source)
+    source = annotate_interactions(source)
+    return make_preview(prepare_html(source,path)) if preview else prepare_html(source,path)
+
+
+def add_tracking(html):
+    html = re.sub(r'<script[^>]+src="[^"]*(?:metrika|analytics)\.js[^>]*></script>', '', html)
+    html = re.sub(r'<noscript>\s*<div>\s*<img[^>]+mc\.yandex\.ru[^>]+>\s*</div>\s*</noscript>', '', html)
+    version = hashlib.sha256((ROOT/'dist/analytics.js').read_bytes()).hexdigest()[:12]
+    html = html.replace('</head>', f'<script src="/metrika.js" defer></script><script src="/analytics.js?v={version}" defer></script></head>')
+    return html.replace('</body>', '<noscript><div><img src="https://mc.yandex.ru/watch/112428810" style="position:absolute;left:-9999px" alt=""></div></noscript></body>')
+
+
+def annotate_interactions(html):
+    def annotate(match):
+        tag = match[0]
+        if 'data-track=' in tag:
+            return tag
+        href = re.search(r'\bhref="([^"]*)"', tag)
+        material = re.search(r'\bdata-material="([^"]*)"', tag)
+        category = re.search(r'\bdata-filter="([^"]*)"', tag)
+        value = href[1] if href else ''
+        if value in ('#contact', '/#contact'):
+            extra = ' data-b2b-cta="estimate"'
+            label = 'estimate'
+        else:
+            extra = ''
+            label = 'control'
+        if material:
+            label = 'material_' + material[1]
+        elif category:
+            label = 'catalog_filter_' + (category[1] or 'all')
+        elif value.startswith('mailto:'):
+            label = 'email'
+        elif value.startswith('tel:'):
+            label = 'phone'
+        elif value and not extra:
+            label = 'link_' + hashlib.sha256(value.split('?')[0].encode()).hexdigest()[:8]
+        elif 'ns-menu-toggle' in tag:
+            label = 'menu_toggle'
+        elif 'type="submit"' in tag:
+            label = 'lead_submit'
+        elif tag.startswith('<summary'):
+            label = 'disclosure'
+        return tag[:-1] + f' data-track="b2b_{label}"' + extra + '>'
+    return re.sub(r'<(?:a|button|summary)\b[^>]*>', annotate, html)
 
 
 def make_preview(html):
@@ -183,9 +253,9 @@ def make_preview(html):
     return html
 
 
-def build(destination):
+def build(destination, preview=True):
     destination = Path(destination).resolve()
-    if destination == ROOT or destination.is_relative_to(ROOT / 'dist'):
+    if destination == ROOT or (destination.is_relative_to(ROOT / 'dist') and (preview or destination != ROOT/'dist')):
         raise ValueError('Prototype must not replace production sources')
     destination.mkdir(parents=True, exist_ok=True)
     # Only copy baseline assets and unaffected sections; catalogue detail URLs are
@@ -193,51 +263,74 @@ def build(destination):
     for item in (ROOT/'dist').iterdir():
         if item.name in {'index.html','catalog','business','sitemap.xml','robots.txt'}:
             continue
+        if item.resolve() == (destination/item.name).resolve():
+            continue
         if item.is_dir():
             shutil.copytree(item,destination/item.name,dirs_exist_ok=True)
         else:
             shutil.copy2(item,destination/item.name)
     shutil.copytree(ROOT/'business/assets',destination/'business/assets',dirs_exist_ok=True)
-    (destination/'b2b').mkdir(exist_ok=True)
-    for name in ('site.css','site.js','typography.css','form-validation.mjs'):
-        shutil.copy2(SOURCE/name,destination/'b2b'/name)
+    copy_assets(destination)
     products = sorted((p for p in json.loads((ROOT/'catalog/products.json').read_text())['products'] if p.get('visible') and p.get('status','published')=='published'),key=lambda p:p['order'])
-    pages = {'index.html':page(home(),'Швейное производство в Санкт-Петербурге | Needle Shark','Разработка и пошив чехлов, сумок, ременных изделий, укрытий и штор по ТЗ. Доставка по России, расчёт от 1 рабочего дня, гарантия 12 месяцев.','index.html')}
+    render_page = lambda *args: page(*args, preview=preview)
+    pages = {'index.html':render_page(home(),'Швейное производство в Санкт-Петербурге | Needle Shark','Разработка и пошив чехлов, сумок, ременных изделий, укрытий и штор по ТЗ. Доставка по России, расчёт от 1 рабочего дня, гарантия 12 месяцев.','index.html')}
     for d in DIRECTIONS:
         path = route(d).lstrip('/')+'index.html'
-        pages[path]=page(direction_page(d),d['label']+' на заказ в СПб | Needle Shark',d['intro'],path)
-    pages['catalog/index.html']=page(catalogue(products),'Готовые изделия Needle Shark — каталог','Чехлы, сумки, ремни и другие готовые изделия Needle Shark. Выберите товар и перейдите на маркетплейс.','catalog/index.html')
+        pages[path]=render_page(direction_page(d),d['label']+' на заказ в СПб | Needle Shark',d['intro'],path)
+    pages['catalog/index.html']=render_page(catalogue(products),'Готовые изделия Needle Shark — каталог','Чехлы, сумки, ремни и другие готовые изделия Needle Shark. Выберите товар и перейдите на маркетплейс.','catalog/index.html')
     production_body = '<section class="ns-container ns-catalog-intro"><p class="ns-kicker">NEEDLE SHARK / ПРОИЗВОДСТВО</p><h1>Шьём в Петербурге.<br><em>Работаем по всей России.</em></h1><p class="ns-lead">Технические изделия под задачу бизнеса: от обсуждения конструкции до проверки готовой партии.</p></section>' + production()+materials()+process()+faq()+form()
-    pages['business/index.html']=page(production_body,'Производство и условия заказа | Needle Shark','Швейное производство Needle Shark в Санкт-Петербурге. Разработка, пошив, контроль качества и доставка изделий по России.','business/index.html')
+    pages['business/index.html']=render_page(production_body,'Производство и условия заказа | Needle Shark','Швейное производство Needle Shark в Санкт-Петербурге. Разработка, пошив, контроль качества и доставка изделий по России.','business/index.html')
     for path,html in pages.items():
         target=destination/path
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_text(html)
     redirects={f'/catalog/{p["slug"]}/':f'/catalog/#{p["slug"]}' for p in products}
     (destination/'preview-redirects.json').write_text(json.dumps(redirects,ensure_ascii=False,indent=2)+'\n')
-    # Keep article prose and legal copy unchanged, adapting only navigation and
-    # product destinations inside the isolated review output.
+    if not preview:
+        # Only retired, known product HTML is removed; sources are preserved in Git.
+        for product in products:
+            retired = destination / 'catalog' / product['slug'] / 'index.html'
+            if retired.is_file():
+                retired.unlink()
+        (destination/'preview-redirects.json').unlink(missing_ok=True)
     for target in destination.rglob('*.html'):
         html=target.read_text()
         if target.relative_to(destination).as_posix() not in pages:
-            html=re.sub(r'<header\b.*?</header>',header(),html,flags=re.S)
-            html=re.sub(r'<(?:div|nav)\b[^>]*\bid="mobile-menu"[^>]*>.*?</(?:div|nav)>','',html,flags=re.S)
-            html=re.sub(r'<footer\b.*?</footer>',footer(),html,flags=re.S)
-            html=html.replace('</head>',preview_assets()+'</head>')
-            html=re.sub(r'<script[^>]+src="[^"]*/menu\.js[^>]*></script>','',html)
-            if 'id="main"' not in html:
-                html=re.sub(r'<main\b', '<main id="main"', html, count=1)
-        for old,new in redirects.items():
-            html=html.replace('href="'+old+'"','href="'+new+'"')
-            html=re.sub(r'href="'+re.escape(old)+r'#[^"]*"','href="'+new+'"',html)
-        target.write_text(make_preview(html))
-    (destination/'robots.txt').write_text('User-agent: *\nDisallow: /\n')
-    (destination/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"/>\n')
+            html=adapt_shell(html, redirects)
+        target.write_text(make_preview(html) if preview else prepare_html(add_tracking(html), target.relative_to(destination)))
+    if preview:
+        (destination/'robots.txt').write_text('User-agent: *\nDisallow: /\n')
+        (destination/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"/>\n')
     return destination
+
+
+def adapt_shell(html, redirects=None):
+    if redirects is None:
+        products=json.loads((ROOT/'catalog/products.json').read_text())['products']
+        redirects={f'/catalog/{p["slug"]}/':f'/catalog/#{p["slug"]}' for p in products if p.get('visible')}
+    html=re.sub(r'(?:<a class="ns-skip"[^>]*>.*?</a>\s*)?<header\b.*?</header>',header(),html,flags=re.S)
+    html=re.sub(r'<(?:div|nav)\b[^>]*\bid="mobile-menu"[^>]*>.*?</(?:div|nav)>','',html,flags=re.S)
+    html=re.sub(r'<footer\b.*?</footer>',footer(),html,flags=re.S)
+    html=re.sub(r'<link[^>]+href="/b2b/[^"]+"[^>]*>','',html)
+    html=re.sub(r'<script[^>]+src="[^"]*/(?:menu|b2b/site)\.js[^>]*></script>','',html)
+    html=html.replace('</head>',preview_assets()+'</head>')
+    if 'id="main"' not in html:
+        html=re.sub(r'<main\b', '<main id="main"', html, count=1)
+    for old,new in redirects.items():
+        html=html.replace('href="'+old+'"','href="'+new+'"')
+        html=re.sub(r'href="'+re.escape(old)+r'#[^"]*"','href="'+new+'"',html)
+    return annotate_interactions(html)
+
+
+def publish():
+    from blog.render import render as render_blog
+    render_blog(json.loads((ROOT/'blog/posts.json').read_text()), ROOT/'dist/blog')
+    return build(ROOT/'dist', preview=False)
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',default=str(ROOT/'outputs/b2b-preview'))
+    parser.add_argument('--publish', action='store_true', help='Build the approved public site into dist; does not deploy')
     args=parser.parse_args()
-    print(build(args.output))
+    print(publish() if args.publish else build(args.output))

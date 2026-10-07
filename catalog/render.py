@@ -385,4 +385,10 @@ def render(preview=False):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--preview', action='store_true', help='Include drafts in an isolated, noindex local preview')
-    render(preview=parser.parse_args().preview)
+    args = parser.parse_args()
+    from b2b.config import ENABLED
+    if ENABLED and not args.preview:
+        from b2b.render import publish
+        print(publish())
+    else:
+        render(preview=args.preview)

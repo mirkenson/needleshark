@@ -1,4 +1,5 @@
 import {validateContacts} from './form-validation.mjs';
+import {LeadClient, leadFields} from './form-client.mjs';
 
 // Navigation stays usable with native details when JavaScript is unavailable.
 const toggle = document.querySelector('.ns-menu-toggle');
@@ -28,7 +29,7 @@ const tabs = [...document.querySelectorAll('[data-material]')];
 const panels = [...document.querySelectorAll('[data-panel]')];
 if (tabs.length) {
   document.querySelector('.ns-material-tabs').setAttribute('role', 'tablist');
-  const select = (index, focus = false) => {
+  const select = (index, focus = false, track = false) => {
     tabs.forEach((tab, i) => {
       tab.setAttribute('role', 'tab');
       tab.setAttribute('aria-selected', String(i === index));
@@ -39,13 +40,14 @@ if (tabs.length) {
       panels[i].setAttribute('aria-labelledby', tab.id);
     });
     if (focus) tabs[index].focus();
+    if (track) document.dispatchEvent(new CustomEvent('business-interaction', {detail: {element: 'business_material', item: tabs[index].dataset.material, state: 'selected'}}));
   };
   tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => select(i));
+    tab.addEventListener('click', () => select(i, false, true));
     tab.addEventListener('keydown', event => {
       const next = {'ArrowRight': (i + 1) % tabs.length, 'ArrowLeft': (i + tabs.length - 1) % tabs.length, 'Home': 0, 'End': tabs.length - 1}[event.key];
       if (next === undefined) return;
-      event.preventDefault(); select(next, true);
+      event.preventDefault(); select(next, true, true);
     });
   });
   select(0);
@@ -53,6 +55,7 @@ if (tabs.length) {
 
 const form = document.querySelector('.ns-form');
 if (form) {
+  const client = new LeadClient();
   const error = document.querySelector('#contact-error');
   const status = form.querySelector('.ns-form-status');
   form.addEventListener('input', () => {
@@ -63,8 +66,9 @@ if (form) {
     error.hidden = true;
     status.hidden = true;
   });
-  form.addEventListener('submit', event => {
+  form.addEventListener('submit', async event => {
     event.preventDefault();
+    if (client.busy) return;
     for (const name of ['name', 'description']) {
       if (!form.elements[name].value.trim()) form.elements[name].setCustomValidity(name === 'name' ? 'Укажите имя.' : 'Опишите вашу задачу.');
     }
@@ -77,14 +81,49 @@ if (form) {
       error.hidden = false;
     }
     if (!form.reportValidity()) return;
-    // This review never contacts the live API and never claims a saved lead.
-    status.textContent = 'Это предпросмотр: заявка не отправлена. После согласования подключим форму к приёму заявок. Сейчас можно написать на info@neesha.ru.';
+    if (document.body.dataset.preview === 'true') {
+      status.textContent = 'Это предпросмотр: заявка не отправлена. Сейчас можно написать на info@neesha.ru.';
+      status.hidden = false;
+      return;
+    }
+    const fields = leadFields({
+      name: form.elements.name.value, email: form.elements.email.value,
+      phone: form.elements.phone.value, description: form.elements.description.value,
+      consent: form.elements.consent.checked, direction: document.body.dataset.direction,
+      material: form.dataset.material || '', path: location.pathname
+    });
+    const controls = [...form.querySelectorAll('input,textarea,button')];
+    controls.forEach(control => { control.disabled = true; });
+    form.setAttribute('aria-busy', 'true');
+    status.textContent = 'Сохраняем заявку…';
     status.hidden = false;
+    document.dispatchEvent(new CustomEvent('b2b-form-attempt'));
+    try {
+      const result = await client.submit(fields);
+      if (result.busy) return;
+      status.textContent = 'Заявка сохранена. Свяжемся с вами по указанному контакту, чтобы уточнить задачу и подготовить расчёт.';
+      if (result.firstConfirmation) document.dispatchEvent(new CustomEvent('lead-saved', {detail: {
+        context: 'b2b', intent: fields.business_intent, direction: fields.business_direction,
+        material: fields.business_material
+      }}));
+      form.reset();
+      delete form.dataset.material;
+      client.newInquiry();
+    } catch (error) {
+      status.textContent = error.message || 'Не удалось получить подтверждение. Повторите отправку или напишите на info@neesha.ru.';
+    } finally {
+      controls.forEach(control => { control.disabled = false; });
+      form.removeAttribute('aria-busy');
+      status.hidden = false;
+    }
   });
   document.querySelectorAll('[data-topic]').forEach(link => {
     if (link === form) return;
-    link.addEventListener('click', () => { form.dataset.topic = link.dataset.topic; });
+    link.addEventListener('click', () => { if (!client.busy) form.dataset.topic = link.dataset.topic; });
   });
+  document.querySelectorAll('[data-material-inquiry]').forEach(link => link.addEventListener('click', () => {
+    if (!client.busy) form.dataset.material = link.dataset.materialInquiry;
+  }));
 }
 
 const tools = document.querySelector('.ns-catalog-tools');
@@ -114,7 +153,8 @@ if (tools) {
   search.addEventListener('input', update);
   document.querySelector('#reset-search').addEventListener('click', () => { reset(); search.focus(); });
   const revealTarget = () => {
-    const id = decodeURIComponent(location.hash.slice(1));
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
     const target = cards.find(card => card.id === id);
     if (!target) return;
     if (target.hidden) reset();

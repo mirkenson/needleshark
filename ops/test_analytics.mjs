@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 
 const source = readFileSync(new URL('../dist/analytics.js', import.meta.url), 'utf8');
 
-function setup({product = 'chehol-dlya-kolyaski', catalog = true, business = false} = {}) {
+function setup({product = 'chehol-dlya-kolyaski', catalog = true, business = false, b2b = false} = {}) {
   const goals = [], listeners = new Map(), formListeners = new Map(), nodes = new Map();
   const listen = map => (name, callback, options) => map.set(name, {callback, options});
   const emit = (map, name, event = {}) => {
@@ -15,12 +15,12 @@ function setup({product = 'chehol-dlya-kolyaski', catalog = true, business = fal
     handler.callback(event);
   };
   const form = {
-    dataset: business ? {context: 'business'} : {},
+    dataset: b2b ? {context: 'b2b', material: 'canvas'} : business ? {context: 'business'} : {},
     elements: {business_intent: {value: 'custom'}, contact: {value: 'PRIVATE_CONTACT'}},
     checkValidity: () => true, addEventListener: listen(formListeners)
   };
   const document = {
-    body: {dataset: {productSlug: product}, classList: {contains: value => catalog && value === 'assortment'}},
+    body: {dataset: {productSlug: product, direction: b2b ? 'chehly' : undefined}, classList: {contains: value => catalog && value === 'assortment'}},
     addEventListener: listen(listeners),
     querySelectorAll: selector => selector === 'form' ? [form] : nodes.get(selector) || []
   };
@@ -127,4 +127,22 @@ test('header request records one opening goal without a submitted lead', () => {
   s.click(cta);
   assert.deepEqual(s.goals.map(g => g.name), ['request_open']);
   assert.equal(s.goals[0].params.context, 'header');
+});
+
+
+test('B2B attempt and confirmed success use whitelisted context, never form contents', () => {
+  const s = setup({product: '', catalog: false, b2b: true});
+  s.formEmit('focusin');
+  s.formEmit('submit');
+  assert.equal(s.goals.filter(g => g.name === 'form_submit_attempt').length, 0);
+  s.emit('b2b-form-attempt');
+  assert.equal(s.goals.filter(g => g.name === 'form_submit_attempt').length, 1);
+  assert.equal(s.goals.filter(g => g.name === 'lead_submitted').length, 0);
+  s.emit('lead-saved', {detail: {context: 'b2b', direction: 'chehly', material: 'canvas', name: 'PRIVATE', phone: 'PRIVATE'}});
+  assert.equal(s.goals.at(-1).name, 'lead_submitted');
+  assert.equal(s.goals.at(-1).params.direction, 'chehly');
+  assert.equal(s.goals.at(-1).params.material, 'canvas');
+  assert.ok(!JSON.stringify(s.goals).includes('PRIVATE'));
+  s.emit('lead-saved', {detail: {context: 'b2b', direction: 'PRIVATE', material: 'PRIVATE'}});
+  assert.ok(!JSON.stringify(s.goals).includes('PRIVATE'));
 });

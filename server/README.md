@@ -1,5 +1,9 @@
 # Server-side leads and email
 
+## Four-field B2B form — 8 October 2026
+
+New JSON fields email, phone, business_direction and business_material are optional for backwards compatibility and have separate nullable orders columns. Primary contact is email when supplied, otherwise phone; both supplied contacts are independently validated and preserved in DB and notifications. Description remains the original user text. Directions and materials are enumerated, source_path excludes query. Existing payload fingerprints remain unchanged for old clients, old files/queues stay intact. New frontend has no upload. Install migration 20261008_b2b_contacts.sql before running new backend, with `ops/install-server-mail.sh --upgrade`; this preserves all configured recipients, SMTP, LOOP and systemd. Queue success still means provider acknowledgment, not proof of inbox placement.
+
 ## Isolated catalogue preview — 22 September 2026
 
 `python3 server/preview.py --directory outputs/catalog-preview --port 4176` serves the local catalogue drafts on loopback. Custom directories cannot be combined with `--live-api`; submissions return the existing explicit preview error. Production lead handling/database/delivery code is unchanged. New catalogue pack quantities still use the existing contract: number of packs in question text, total items in `quantity`, variant article/options in `question`. Local synthetic checks do not confirm PostgreSQL or SMTP/LOOP delivery. See `docs/verification/20260922-catalog-drafts.json`.

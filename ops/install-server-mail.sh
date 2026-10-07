@@ -1,9 +1,13 @@
 #!/bin/bash
-# Backend-only deployment. --loop preserves all existing SMTP settings/recipients.
+# Backend-only deployment. --upgrade changes code/schema, preserving configuration.
 set -euo pipefail
 project_dir="$(cd "$(dirname "$0")/.." && pwd)"
 mode=mail
-if [[ "${1:-}" == --loop ]]; then
+if [[ "${1:-}" == --upgrade ]]; then
+  mode=upgrade
+  settings=''
+  approved_recipient='-'
+elif [[ "${1:-}" == --loop ]]; then
   mode=loop
   settings="${2:?Usage: install-server-mail.sh --loop PRIVATE_LOOP_FILE}"
   approved_recipient='-'  # Preserve this positional argument through the SSH command.
@@ -23,9 +27,11 @@ release_dir="/opt/needle-shark/releases/$release"
 ssh_options=(-i "$ssh_key" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15)
 ssh "${ssh_options[@]}" "$remote_host" "install -d -m 0755 '$release_dir'; install -d -m 0700 '/opt/needle-shark/backups/$release'"
 scp "${ssh_options[@]}" "$project_dir"/server/{leads,crm,lead_context,delivery_store,mail_delivery,loop_delivery}.py \
-  "$project_dir/server/migrations/20260918_server_delivery.sql" "$project_dir/server/migrations/20260922_loop_delivery.sql" "$project_dir/ops/configure-server-mail.py" \
+  "$project_dir/server/migrations/20260918_server_delivery.sql" "$project_dir/server/migrations/20260922_loop_delivery.sql" "$project_dir/server/migrations/20261008_b2b_contacts.sql" "$project_dir/ops/configure-server-mail.py" \
   "$remote_host:$release_dir/"
-scp "${ssh_options[@]}" "$settings" "$remote_host:/opt/needle-shark/backups/$release/incoming.env"
+if [[ "$mode" != upgrade ]]; then
+  scp "${ssh_options[@]}" "$settings" "$remote_host:/opt/needle-shark/backups/$release/incoming.env"
+fi
 ssh "${ssh_options[@]}" "$remote_host" bash -s -- "$release" "$revision" "$approved_recipient" "$mode" <<'REMOTE'
 set -euo pipefail
 release_dir="/opt/needle-shark/releases/$1"
@@ -75,13 +81,19 @@ pg_restore --list "$backup_dir/needle_shark.dump" >/dev/null
 if test -f /var/lib/needle-shark/leads.sqlite3; then cp -p /var/lib/needle-shark/leads.sqlite3 "$backup_dir/leads.sqlite3"; fi
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20260918_server_delivery.sql"
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20260922_loop_delivery.sql"
+sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20261008_b2b_contacts.sql"
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON lead_submissions,lead_files,lead_deliveries TO needle_app; GRANT USAGE,SELECT ON SEQUENCE lead_deliveries_id_seq TO needle_app;'
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON lead_loop_deliveries TO needle_app; GRANT USAGE,SELECT ON SEQUENCE lead_loop_deliveries_id_seq TO needle_app;'
-if test "$4" = loop; then
+if test "$4" = loop || test "$4" = upgrade; then
   # This mode upgrades only the existing PostgreSQL/SMTP backend, never an old unit.
   test -s "$backup_dir/backend-current"
   grep -qx 'ExecStart=/usr/bin/python3 /opt/needle-shark/current/leads.py' "$backup_dir/needle-leads.service"
-  python3 "$release_dir/configure-server-mail.py" --loop /etc/needle-shark/leads.env "$backup_dir/incoming.env"
+  if test "$4" = loop; then
+    python3 "$release_dir/configure-server-mail.py" --loop /etc/needle-shark/leads.env "$backup_dir/incoming.env"
+  else
+    cmp "$backup_dir/leads.env" /etc/needle-shark/leads.env
+    cmp "$backup_dir/needle-leads.service" /etc/systemd/system/needle-leads.service
+  fi
 else
   python3 "$release_dir/configure-server-mail.py" /etc/needle-shark/leads.env "$backup_dir/incoming.env" "$3"
 fi

@@ -1,0 +1,14 @@
+{
+  "fabric-canvas": {
+    "width": 1536,
+    "height": 1024,
+    "source_sha256": "091bc35cc19c3b1f9b871cc0e2570529f7de6b8af65895f126210624df9f3f73",
+    "generated": true
+  },
+  "fabric-spunbond": {
+    "width": 1536,
+    "height": 1024,
+    "source_sha256": "39ea7e2eeb6772f25d221b6a028817e10c7fb57cfc9a27d33a356f03fd4d6938",
+    "generated": true
+  }
+}

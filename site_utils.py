@@ -87,7 +87,7 @@ def common_metadata(html, path):
         tags.append(f'<meta {attr}="{key}" content="{escape(value, quote=True)}">')
     organization = {'@type': 'Organization', '@id': ORIGIN + '/#organization',
                     'name': 'Needle Shark', 'url': ORIGIN + '/', 'logo': ORIGIN + '/logo.svg',
-                    'email': 'info@neesha.ru', 'sameAs': ['https://vk.com/needleshark'],
+                    'email': 'info@neesha.ru', 'telephone': '+79818399474', 'sameAs': ['https://vk.ru/needleshark'],
                     'address': {'@type': 'PostalAddress', 'addressLocality': 'Санкт-Петербург', 'addressCountry': 'RU'}}
     website = {'@type': 'WebSite', '@id': ORIGIN + '/#website', 'url': ORIGIN + '/',
                'name': 'Needle Shark', 'inLanguage': 'ru-RU', 'publisher': {'@id': organization['@id']}}

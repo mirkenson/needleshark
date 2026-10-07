@@ -60,4 +60,9 @@ if __name__ == '__main__':
     parser.add_argument('--output', default='/tmp/needle-shark-business-preview')
     parser.add_argument('--publish', action='store_true', help='Render approved page into dist; does not deploy')
     args = parser.parse_args()
-    print(render_page(ROOT / 'dist') if args.publish else build(args.output))
+    from b2b.config import ENABLED
+    if args.publish and ENABLED:
+        from b2b.render import publish
+        print(publish())
+    else:
+        print(render_page(ROOT / 'dist') if args.publish else build(args.output))

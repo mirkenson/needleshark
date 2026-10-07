@@ -6,11 +6,15 @@ from xml.sax.saxutils import escape
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from site_utils import prepare_html, public_path, ORIGIN
+from b2b.config import ENABLED as B2B_ENABLED
 DIST = ROOT / 'dist'
 for page in DIST.rglob('*.html'):
     page.write_text(prepare_html(page.read_text(), page.relative_to(DIST)))
 paths = ['index.html', 'catalog/index.html', 'blog/index.html', 'business/index.html', 'privacy-policy.html', 'user-agreement.html']
-paths += ['catalog/' + p['slug'] + '/index.html' for p in json.loads((ROOT/'catalog/products.json').read_text())['products'] if p.get('status', 'published') == 'published']
+if B2B_ENABLED:
+    paths += ['napravleniya/' + d['slug'] + '/index.html' for d in json.loads((ROOT/'b2b/content.json').read_text())['directions']]
+else:
+    paths += ['catalog/' + p['slug'] + '/index.html' for p in json.loads((ROOT/'catalog/products.json').read_text())['products'] if p.get('status', 'published') == 'published']
 published_posts = [p for p in json.loads((ROOT/'blog/posts.json').read_text()) if p['status']=='published']
 paths += ['blog/' + p['slug'] + '/index.html' for p in published_posts]
 for path in paths:

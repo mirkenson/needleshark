@@ -111,7 +111,7 @@ class ReviewBuildTests(unittest.TestCase):
                 self.assertEqual([a.get('name') for a in doc.find('textarea')], ['description'])
                 self.assertEqual(doc.find('form')[0]['method'], 'post')
                 self.assertFalse(any(a.get('type') == 'file' for a in doc.find('input')))
-                self.assertEqual(len([a for a in doc.find('button') if 'disabled' in a]), 8)
+                self.assertEqual(len([a for a in doc.find('button') if 'disabled' in a]), 6)
 
 
 if __name__ == '__main__':

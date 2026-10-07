@@ -8,7 +8,7 @@ import urllib.error
 import urllib.request
 from zoneinfo import ZoneInfo
 
-from lead_context import BUSINESS_LABELS, INQUIRY_LABELS
+from lead_context import BUSINESS_LABELS, INQUIRY_LABELS, DIRECTION_LABELS, MATERIAL_LABELS
 
 
 def webhook_url(value=None):
@@ -32,7 +32,16 @@ def message(lead):
             '/catalog/': 'Каталог — форма обращения'}.get(path)
     if not form and path and path.startswith('/catalog/'):
         form = 'Карточка товара — форма обращения'
+    if not form and path and path.startswith('/napravleniya/'):
+        form = 'Направление производства — заявка'
     lines = [f'Время: {when}', f'Контакт: {lead["contact"]}', f'Имя: {lead["name"]}']
+    for key, label in [('email', 'Почта'), ('phone', 'Телефон')]:
+        if lead.get(key):
+            lines.append(f'{label}: {lead[key]}')
+    if lead.get('business_direction'):
+        lines.append('Изделия: ' + DIRECTION_LABELS[lead['business_direction']])
+    if lead.get('business_material'):
+        lines.append('Материал: ' + MATERIAL_LABELS[lead['business_material']])
     if lead.get('business_company'):
         lines.append('Компания / сфера: ' + lead['business_company'])
     lines.append('Товар: ' + (lead.get('product_name') or 'Не выбран — см. текст обращения'))

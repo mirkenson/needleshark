@@ -140,7 +140,7 @@ class Handler(BaseHTTPRequestHandler):
             status, response = enqueue(data, self.headers.get('X-Real-IP', self.client_address[0]))
             self.reply(status, response)
         except (ValueError, TypeError):
-            self.reply(400, {'ok': False, 'error': 'Проверьте поля. Допустимы JPG, PNG и PDF до 2 МБ.'})
+            self.reply(400, {'ok': False, 'error': 'Проверьте поля заявки и согласие на обработку данных.'})
         except Exception:
             self.reply(503, {'ok': False, 'error': 'Не удалось сохранить заявку. Попробуйте позже или напишите на info@neesha.ru.'})
 

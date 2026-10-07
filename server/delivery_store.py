@@ -28,6 +28,7 @@ def connection():
 def initialize(loop_enabled=False):
     with connection() as conn, conn.cursor() as cur:
         cur.execute('SELECT submission_id FROM lead_submissions LIMIT 0')
+        cur.execute('SELECT email,phone,business_direction,business_material FROM orders LIMIT 0')
         cur.execute('SELECT content FROM lead_files LIMIT 0')
         cur.execute('SELECT lease_token FROM lead_deliveries LIMIT 0')
         if loop_enabled:

@@ -39,6 +39,13 @@ ALTER TABLE orders
  ADD COLUMN IF NOT EXISTS business_company TEXT,
  ADD COLUMN IF NOT EXISTS attachment_url TEXT;
 
+-- Separate contacts and selected production context; legacy rows remain NULL.
+ALTER TABLE orders
+ ADD COLUMN IF NOT EXISTS email TEXT,
+ ADD COLUMN IF NOT EXISTS phone TEXT,
+ ADD COLUMN IF NOT EXISTS business_direction TEXT CHECK (business_direction IN ('chehly','sumki','remni','ukrytiya-i-shtory','po-tz')),
+ ADD COLUMN IF NOT EXISTS business_material TEXT CHECK (business_material IN ('oxford','canvas','spunbond','cordura','polyester','other'));
+
 -- Additive: historical orders/Drive links are left untouched.
 CREATE TABLE IF NOT EXISTS lead_submissions (
  submission_id UUID PRIMARY KEY REFERENCES orders(submission_id),
