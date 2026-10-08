@@ -1,6 +1,6 @@
 {
   "date": "2026-10-08",
-  "status": "published_live_submission_verification_blocked",
+  "status": "published_owner_confirmed_form",
   "public_branch": "codex/b2b-release-20261008",
   "backup_tag": "backup/site-before-b2b-20261008",
   "backup_commit": "ff101063d13f27249964ef7f39612f827e3f6517",
@@ -54,7 +54,6 @@
     "messages_sent": 0
   },
   "pending": [
-    "Explicit confirmation for the synthetic production form submission and subsequent DB/outbox checks",
     "Search-console recrawl and index verification",
     "Confirmation of QA-event processing in the Metrika report"
   ],
@@ -658,5 +657,11 @@
     "The current UI has no file field: upload scenarios are not applicable to it. Legacy attachment validation/private storage tests passed in isolation.",
     "Google integration stayed disabled; no Sheets/Drive checks or activation.",
     "Generated fabric images illustrate texture, not actual stock batches."
-  ]
+  ],
+  "owner_confirmation": {
+    "date": "2026-10-08",
+    "source": "Owner message in current task",
+    "statement": "Тест я провел, все работает.",
+    "scope": "Owner confirms the form test works; agent did not repeat production submission or independently inspect this test in DB, recipient inboxes, LOOP or Metrika."
+  }
 }
