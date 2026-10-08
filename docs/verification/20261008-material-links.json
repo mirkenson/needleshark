@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-08",
+  "status": "published",
+  "url": "https://needle-shark.ru/",
+  "code_commit": "4288670391c27f1ab52f602e1b709ce467706627",
+  "branch": "codex/materials-internal-links",
+  "scope": {
+    "changed_html_pages": 7,
+    "external_material_links_removed": 35,
+    "remaining_material_links": "Six internal #contact links per page, including the other-material CTA",
+    "exact_diff": "Each affected HTML equals the preceding revision after removal of five ns-source-link anchors; all other public markup and assets unchanged",
+    "editor_source_metadata": "Retained in b2b/content.json, not rendered"
+  },
+  "tests": {
+    "b2b_render": 5,
+    "node_form_and_analytics": 19,
+    "total": 24,
+    "check_site_pages": 18,
+    "repeat_build_files": 1256,
+    "repeat_build_identical": true
+  },
+  "local": {
+    "layout_checks": 35,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "overflow_failures": 0,
+    "external_material_links": 0,
+    "broken_loaded_images": 0,
+    "five_material_tabs": true,
+    "material_cta_sets_context_and_contact_anchor": true,
+    "desktop_and_mobile_screenshots_inspected": true,
+    "console_errors_or_warnings": 0
+  },
+  "public": {
+    "layout_checks": 35,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "overflow_failures": 0,
+    "external_material_links": 0,
+    "broken_loaded_images": 0,
+    "console_errors_or_warnings": 0,
+    "material_tab_and_cta": true,
+    "incoming_qa_query_preserved_to_contact": true,
+    "metrika_loaders": 1,
+    "analytics_handlers": 1,
+    "real_sdk_goals": [
+      "ui_click",
+      "request_open"
+    ],
+    "counter": 112428810,
+    "http": {
+      "base": "https://needle-shark.ru",
+      "pages": 18,
+      "requests": 238,
+      "failed": [],
+      "sha256_matches": 238
+    },
+    "redirects": {
+      "checks": 2,
+      "status": 301,
+      "query_preserved": true,
+      "types": [
+        "HTTP to HTTPS",
+        "retired product to catalogue anchor"
+      ]
+    }
+  },
+  "deployment": {
+    "method": "ops/deploy.sh --from-github",
+    "pushed_before_deploy": true,
+    "current": "20261008T070613Z-7544",
+    "previous": "20261007T224458Z-2496",
+    "pre_b2b_backup_pin": "20261001T151439Z-62875",
+    "backend_unchanged": "20261007T224413Z-b39667482c08",
+    "downloaded_files": 7,
+    "reused_files": 1249,
+    "verified_before_atomic_switch": 1256,
+    "active_services": [
+      "nginx",
+      "needle-leads",
+      "postgresql",
+      "needle-monitor.timer",
+      "needle-cleanup.timer",
+      "needle-metrika.timer"
+    ]
+  },
+  "seo": {
+    "canonical_h1_metadata_jsonld_sitemap_assets_checked": true,
+    "https_matches_local_and_no_blocking_x_robots_tag": true,
+    "url_and_metadata_unchanged": true,
+    "new_recrawl": "Not requested for removal of outbound sources; actual index not rechecked"
+  },
+  "forms": {
+    "changed": false,
+    "new_production_submissions_by_agent": 0,
+    "owner_confirmation": "Owner stated: Тест я провел, все работает. Recorded in the B2B release report.",
+    "new_server_database_mail_or_file_tests": "Not applicable to this static-only removal; no independent claim about the owner test in DB, inboxes or Metrika"
+  },
+  "analytics_limits": {
+    "goals_or_counter_configuration_changed": false,
+    "cabinet_configuration_rechecked": false,
+    "event_report_processing_verified": false,
+    "reason": "Existing configuration unchanged; real SDK event sending checked. Prior cabinet evidence remains in the B2B release report."
+  }
+}
