@@ -41,11 +41,14 @@ def main():
             b2b_migration = Path(__file__).with_name('migrations').joinpath('20261008_b2b_contacts.sql').read_text()
             cur.execute(b2b_migration)
             cur.execute(b2b_migration)
+            utm_migration = Path(__file__).with_name('migrations').joinpath('20261014_lead_utm.sql').read_text()
+            cur.execute(utm_migration)
+            cur.execute(utm_migration)
             # Distinct ranges detect accidentally displaying a customer/outbox id.
             cur.execute('ALTER TABLE orders ALTER COLUMN id RESTART WITH 401')
         os.environ['CRM_DSN'] = make_dsn(dsn, options='-csearch_path=' + schema)
         store.initialize(loop_enabled=True)
-        first = lead()
+        first = lead(utm_source='qa', utm_medium='test', utm_campaign="utm_тест_'", utm_content='one', utm_term='чехлы')
         assert store.enqueue(first, 'ip1', (recipient,), secret, loop_enabled=True)[0] == 202
         with ThreadPoolExecutor(max_workers=4) as pool:
             results = list(pool.map(lambda _: store.enqueue(first, 'ip1', (recipient,), secret, loop_enabled=True)[0], range(4)))
@@ -54,11 +57,13 @@ def main():
         assert query('SELECT count(*) FROM lead_deliveries') == [(1,)]
         assert query('SELECT count(*) FROM lead_loop_deliveries') == [(1,)]
         assert query('SELECT business_company,description FROM orders') == [(first['business_company'], first['question'])]
+        assert query('SELECT utm_source,utm_medium,utm_campaign,utm_content,utm_term FROM orders') == [tuple(first[key] for key in ('utm_source','utm_medium','utm_campaign','utm_content','utm_term'))]
+        assert query('SELECT payload FROM lead_submissions')[0][0]['utm_campaign'] == first['utm_campaign']
         assert bytes(query('SELECT content FROM lead_files')[0][0]) == b'%PDF-test'
         assert 'data' not in query('SELECT payload FROM lead_submissions')[0][0]['attachment']
         assert 'order_id' not in query('SELECT payload FROM lead_submissions')[0][0]
         assert query('SELECT id,customer_id FROM orders') == [(401, 1)]
-        for change in ({'question': 'Changed'}, {'business_company': 'Changed'},
+        for change in ({'utm_source': 'changed'}, {'question': 'Changed'}, {'business_company': 'Changed'},
                        {'attachment': dict(first['attachment'], data=base64.b64encode(b'%PDF-changed').decode())}):
             assert store.enqueue(dict(first, **change), 'ip1', (recipient,), secret)[0] == 409
         broken = lead()
@@ -135,6 +140,7 @@ def main():
             assert store.enqueue(dict(second, **{key: 'changed'}), 'ip2', (recipient,), secret)[0] == 409
         job1, job2 = store.claim(), store.claim()
         assert all(job['lead']['phone'] == second['phone'] and job['lead']['email'] == second['email'] for job in (job1, job2))
+        print('PASS UTM: five campaign fields in orders and delivery payload; changed UTM rejected on retry; repeatable migration')
         print('PASS B2B: four separate fields and unchanged description saved; both contacts in jobs; changed retries rejected; legacy NULL fields; migration repeatable')
         assert job1['recipient'] != job2['recipient']
         assert store.finish(job1, 'smtp_550') and store.finish(job2)

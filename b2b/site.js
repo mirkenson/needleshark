@@ -1,5 +1,9 @@
 import {validateContacts} from './form-validation.mjs';
-import {LeadClient, leadFields} from './form-client.mjs';
+import {LeadClient, leadFields, captureUtm} from './form-client.mjs';
+
+let campaignStorage;
+try { campaignStorage = window.sessionStorage; } catch { /* Private browsers may deny storage. */ }
+const campaign = captureUtm(location.search, campaignStorage);
 
 // Navigation stays usable with native details when JavaScript is unavailable.
 const toggle = document.querySelector('.ns-menu-toggle');
@@ -90,7 +94,7 @@ if (form) {
       name: form.elements.name.value, email: form.elements.email.value,
       phone: form.elements.phone.value, description: form.elements.description.value,
       consent: form.elements.consent.checked, direction: document.body.dataset.direction,
-      material: form.dataset.material || '', path: location.pathname
+      material: form.dataset.material || '', path: location.pathname, utm: campaign
     });
     const controls = [...form.querySelectorAll('input,textarea,button')];
     controls.forEach(control => { control.disabled = true; });

@@ -155,3 +155,13 @@ class LeadTests(unittest.TestCase):
             leads.deliver_once()
         self.assertEqual(finish.call_args_list[0].args, (jobs[0], 'network_error'))
         self.assertEqual(finish.call_args_list[1].args, (jobs[1],))
+class UtmTests(unittest.TestCase):
+    def test_campaign_validation_and_legacy_absence(self):
+        from lead_context import validate_context, UTM_FIELDS
+        self.assertEqual(validate_context({}), {})
+        data = {key: " QA ' чехлы " for key in UTM_FIELDS}
+        self.assertEqual(validate_context(data), {key: "QA ' чехлы" for key in UTM_FIELDS})
+        self.assertEqual(validate_context({'utm_source': '', 'utm_campaign': None}), {})
+        for bad in ([], {}, 42, 'x' * 501, 'bad\nvalue', 'bad\x7fvalue'):
+            with self.assertRaises(ValueError):
+                validate_context({'utm_source': bad})

@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-14",
+  "status": "prepared_not_deployed",
+  "scope": "Five optional UTM fields in form payload and orders; same-tab campaign retention; no daily analytics tables or new SDK",
+  "tests": {
+    "node": 21,
+    "server": 29,
+    "ops": 32,
+    "b2b": 5,
+    "repeat_build_files": 1256,
+    "check_site_pages": 18,
+    "postgres": "Disposable schema on real PostgreSQL: campaign persisted, conflicting retry rejected, atomic queue/file tests passed; no messages"
+  },
+  "limitations": [
+    "Production not installed yet",
+    "MyTracker/Umami researched, not connected"
+  ],
+  "local_browser": {
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "layout_checks": 25,
+    "layout_or_resource_failures": 0,
+    "js_errors": 0,
+    "intentional_api_503": 1,
+    "retained_utm_after_internal_navigation": true,
+    "same_uuid_retry": true,
+    "simulated_success_events": 1,
+    "live_submission": false
+  }
+}

@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {LeadClient, leadFields} from './form-client.mjs';
+import {LeadClient, leadFields, captureUtm} from './form-client.mjs';
 const fields = leadFields({name: ' ТЕСТ ', email: ' qa@example.invalid ', phone: '+7 999 000-00-00', description: ' ТЕСТ релиза ', consent: true, direction: 'chehly', material: 'canvas', path: '/napravleniya/chehly/'});
 const ack = (id, status = 202) => ({status, json: async () => ({ok: true, id})});
-test('both contacts and description preserved without file/campaign fields', () => {
+test('both contacts and description preserved without attachment', () => {
   assert.equal(fields.contact, fields.email);
   assert.equal(fields.phone, '+7 999 000-00-00');
   assert.equal(fields.question, 'ТЕСТ релиза');
@@ -65,4 +65,29 @@ test('default browser fetch is called without the client as its receiver', async
     const client = new LeadClient({uuid: () => 'test-id'});
     assert.equal((await client.submit(fields)).firstConfirmation, true);
   } finally { globalThis.fetch = original; }
+});
+
+test('campaign survives internal navigation and is replaced as a whole', () => {
+  const data = new Map();
+  const storage = {getItem: key => data.get(key), setItem: (key, value) => data.set(key, value)};
+  const first = captureUtm('?utm_source=vk&utm_medium=cpc&utm_campaign=test&utm_content=one&utm_term=чехлы&email=private', storage);
+  assert.deepEqual(first, {utm_source: 'vk', utm_medium: 'cpc', utm_campaign: 'test', utm_content: 'one', utm_term: 'чехлы'});
+  assert.deepEqual(captureUtm('', storage), first);
+  assert.deepEqual(captureUtm('?utm_source=other', storage), {utm_source: 'other'});
+  assert.deepEqual(captureUtm('', storage), {utm_source: 'other'});
+  assert.deepEqual(captureUtm('?utm_source=', storage), {});
+  assert.deepEqual(captureUtm('', storage), {});
+  assert.deepEqual(captureUtm('', {getItem: () => null}), {});
+});
+test('bad campaign values/storage do not prevent submission; no arbitrary URL data', () => {
+  const storage = {getItem() {throw new Error();}, setItem() {throw new Error();}};
+  assert.deepEqual(captureUtm('?utm_source=vk&contact=private', storage), {utm_source: 'vk'});
+  assert.deepEqual(captureUtm('', storage), {});
+  assert.deepEqual(captureUtm('?utm_source=%00bad&utm_campaign=' + 'x'.repeat(501)), {});
+  assert.deepEqual(captureUtm('?utm_source=first&utm_source=second'), {utm_source: 'first'});
+  assert.deepEqual(captureUtm('', {getItem: () => '{broken'}), {});
+  assert.deepEqual(captureUtm('', {getItem: () => '{"utm_source":42,"email":"private"}'}), {});
+  const payload = leadFields({name: 'TEST', email: 'qa@example.invalid', phone: '', description: 'TEST', consent: true, path: '/', utm: {utm_source: 'vk', email: 'private'}});
+  assert.equal(payload.utm_source, 'vk');
+  assert.equal(payload.email, 'qa@example.invalid');
 });
