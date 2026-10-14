@@ -1,6 +1,6 @@
 {
   "date": "2026-10-14",
-  "status": "prepared_not_deployed",
+  "status": "published",
   "scope": "Five optional UTM fields in form payload and orders; same-tab campaign retention; no daily analytics tables or new SDK",
   "tests": {
     "node": 21,
@@ -12,8 +12,12 @@
     "postgres": "Disposable schema on real PostgreSQL: campaign persisted, conflicting retry rejected, atomic queue/file tests passed; no messages"
   },
   "limitations": [
-    "Production not installed yet",
-    "MyTracker/Umami researched, not connected"
+    "MyTracker/Umami researched, not connected; daily analytics tables explicitly deferred",
+    "Metrika SDK event delivery and report processing not verified; handlers covered by tests, no counter/goal changes",
+    "Email sent means SMTP accepted, not inbox receipt",
+    "No file field in public B2B form; attachment persistence/retry checks passed in disposable PostgreSQL schema",
+    "Visual styling unchanged; browser checks cover five representative templates, not every page at every width",
+    "Unavailable sessionStorage prevents retaining campaign across pages; current URL still works"
   ],
   "local_browser": {
     "widths": [
@@ -31,5 +35,50 @@
     "same_uuid_retry": true,
     "simulated_success_events": 1,
     "live_submission": false
+  },
+  "url": "https://needle-shark.ru/",
+  "code_commit": "503911b4435a42cd6b15351e854ae44094ce3487",
+  "branch": "codex/lead-utm",
+  "deployment": {
+    "backend": "20261014T082411Z-503911b4435a",
+    "static": "20261014T082454Z-53317",
+    "backend_previous": "20261007T224413Z-b39667482c08",
+    "static_previous": "20261008T070613Z-7544",
+    "pushed_before_deploy": true,
+    "backend_files_sha256_matches": 7,
+    "env_and_systemd_unit_unchanged": true,
+    "active_services_and_timers": 6,
+    "verified_static_files_before_switch": 1256,
+    "downloaded": 20,
+    "reused": 1236
+  },
+  "public": {
+    "https_files_sha256_matches": 82,
+    "failed_https_files": 0,
+    "layout_checks": 25,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "overflow_broken_loaded_images_js_errors": 0,
+    "redirects_preserve_query": 2,
+    "synthetic_browser_submission": {
+      "status": 202,
+      "utm_persisted_in_orders_and_payload": true,
+      "utm_columns": 5,
+      "email_jobs_sent": 4,
+      "loop_jobs_sent": 1,
+      "inbox_receipt": "not_verified"
+    }
+  },
+  "seo": {
+    "check_site": true,
+    "public_html_matches": true,
+    "metadata_and_urls_unchanged": true,
+    "no_blocking_x_robots_tag": true,
+    "recrawl": "not_applicable_no_content_or_url_change"
   }
 }
