@@ -1,0 +1,409 @@
+{
+  "date": "2026-10-16",
+  "status": "published",
+  "url": "https://needle-shark.ru/",
+  "branch": "codex/contact-phone",
+  "code_commit": "0918b1a7d69f6d6685d49c7be100c98bf9b22883",
+  "scope": {
+    "phone": "+7 931 244-82-45",
+    "tel": "+79312448245",
+    "pages": 18,
+    "telephone_links": 43,
+    "organization_json_ld": 18,
+    "changes": "Only the displayed phone and tel/Organization telephone values; source templates and current README updated. Other release bytes unchanged."
+  },
+  "checks": {
+    "b2b_tests": 5,
+    "ops_tests": 32,
+    "node_tests": 21,
+    "check_site_pages": 18,
+    "repeat_build_files": 1256,
+    "diff_phone_replacement_only": true,
+    "before_release_files_matched_base": 1256
+  },
+  "deployment": {
+    "static_current": "20261016T070519Z-75714",
+    "static_previous": "20261014T082454Z-53317",
+    "backend_unchanged": "20261014T082411Z-503911b4435a",
+    "pushed_before_deploy": true,
+    "method": "ops/deploy.sh --from-github",
+    "verified_files_before_switch": 1256,
+    "downloaded": 18,
+    "reused": 1238,
+    "active_services_and_timers": 6,
+    "configuration_changes": false
+  },
+  "local_browser": {
+    "checks": 90,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "horizontal_overflow": 0,
+    "broken_loaded_images": 0,
+    "javascript_console_errors": [],
+    "http_resource_errors": [],
+    "interactions": {
+      "phoneKeyboard": true,
+      "inputStyle": {
+        "color": "rgb(27, 31, 33)",
+        "background": "rgb(246, 247, 244)"
+      },
+      "ctaAndUtm": true
+    },
+    "phone_goal_with_stub": true,
+    "screenshots_reviewed": [
+      390,
+      1440
+    ]
+  },
+  "public_browser": {
+    "checks": 90,
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "horizontal_overflow": 0,
+    "broken_loaded_images": 0,
+    "javascript_console_errors": [],
+    "http_4xx_5xx": 0,
+    "interactions": {
+      "phoneKeyboard": true,
+      "inputStyle": {
+        "color": "rgb(27, 31, 33)",
+        "background": "rgb(246, 247, 244)"
+      },
+      "ctaAndUtm": true
+    },
+    "https_files_matched": 79,
+    "https_hash_mismatches": [],
+    "screenshots_reviewed": [
+      390,
+      1440
+    ],
+    "resource_body_capture_limitation": {
+      "path": "/images/studio-ns-belt-140-2-480.webp",
+      "initial": "Browser response body unavailable during navigation; browser QA assertion flagged incomplete hash capture",
+      "resolution": "Independent verified HTTPS download returned 200 and cmp matched local file; no site change needed"
+    }
+  },
+  "seo": {
+    "all_18_html_robots_sitemap_https_match": true,
+    "blocking_x_robots_tag": false,
+    "one_h1_and_metadata_check_site": true,
+    "organization_telephone_updated": true,
+    "other_metadata_and_urls_unchanged": true,
+    "sitemap_and_robots_unchanged": true,
+    "canonical_urls_unique_in_sitemap": true,
+    "recrawl": "Not requested for this minor contact update; actual index not rechecked"
+  },
+  "analytics": {
+    "counter": 112428810,
+    "single_sdk_and_handler_per_page": true,
+    "qa_campaigns": [
+      "phone_20261016",
+      "phone_20261016_sdk",
+      "phone_before_20261016"
+    ],
+    "live_sdk": {
+      "ym": "function",
+      "sdk": "function",
+      "pending": 1
+    },
+    "sdk_status": 200,
+    "contact_goal_http_responses": [
+      {
+        "host": "mc.yandex.com",
+        "path": "/watch/112428810/1",
+        "status": 200,
+        "pageUrl": "goal://needle-shark.ru/contact_click"
+      }
+    ],
+    "report_processing": "Not verified",
+    "cabinet_domains_and_goal_definitions": "Not rechecked: native Chrome control interrupted tab switch with user-changed-app state; existing configuration unchanged",
+    "internal_links_without_utm": true,
+    "ozon_campaign": "vendor_org_211216",
+    "cta_keeps_qa_query": true,
+    "alias_redirects_keep_query": 2,
+    "live_phone_call": false,
+    "live_form_submission": false
+  },
+  "preexisting_issues": {
+    "mobile_menu_hidden": {
+      "local_observations": [
+        {
+          "route": "/blog/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehly-dlya-koles/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehly-dlya-koles/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-baul/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-baul/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/privacy-policy",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/privacy-policy",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/user-agreement",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/user-agreement",
+          "width": 390,
+          "expanded": "true"
+        }
+      ],
+      "public_observations": [
+        {
+          "route": "/blog/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehly-dlya-koles/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehly-dlya-koles/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-baul/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-baul/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/privacy-policy",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/privacy-policy",
+          "width": 390,
+          "expanded": "true"
+        },
+        {
+          "route": "/user-agreement",
+          "width": 360,
+          "expanded": "true"
+        },
+        {
+          "route": "/user-agreement",
+          "width": 390,
+          "expanded": "true"
+        }
+      ],
+      "baseline_before_deploy": [
+        {
+          "route": "/blog/",
+          "phone": "+7 981 839-94-74",
+          "expanded": "true",
+          "visible": false,
+          "style": {
+            "display": "none",
+            "headerHeight": 85
+          }
+        },
+        {
+          "route": "/blog/kak-vybrat-sumku-baul/",
+          "phone": "+7 981 839-94-74",
+          "expanded": "true",
+          "visible": false,
+          "style": {
+            "display": "none",
+            "headerHeight": 85
+          }
+        },
+        {
+          "route": "/catalog/",
+          "phone": "+7 981 839-94-74",
+          "expanded": "true",
+          "visible": true,
+          "style": {
+            "display": "block",
+            "headerHeight": 571.1875
+          }
+        },
+        {
+          "route": "/privacy-policy",
+          "phone": "+7 981 839-94-74",
+          "expanded": "true",
+          "visible": false,
+          "style": {
+            "display": "none",
+            "headerHeight": 85
+          }
+        },
+        {
+          "route": "/",
+          "phone": "+7 981 839-94-74",
+          "expanded": "true",
+          "visible": true,
+          "style": {
+            "display": "block",
+            "headerHeight": 571.1875
+          }
+        }
+      ],
+      "conclusion": "On blog and legal pages at 360/390 px the toggle expands but existing CSS leaves nav hidden. Reproduced before publication with the old phone on blog index, an article and privacy policy. CSS/JS unchanged. Outside requested phone replacement; not fixed."
+    }
+  },
+  "not_applicable": [
+    "Backend tests/migration/deployment: no server change",
+    "New or changed form validation and delivery-chain exercise: form behavior unchanged, no submissions or files",
+    "Search-console recrawl: no new URL or significant content rewrite",
+    "Google integration: remains disabled"
+  ],
+  "limitations": [
+    "Known mobile-menu issue on blog/legal pages retained; not a regression from the phone replacement",
+    "Metrika HTTP acceptance is not report processing; cabinet definitions not rechecked",
+    "No actual phone call or test lead was sent"
+  ]
+}
