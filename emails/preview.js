@@ -18,7 +18,7 @@ function update() {
   if (doc?.body) {
     let override = doc.getElementById('preview-font-override');
     if (!override) { override = doc.createElement('style'); override.id = 'preview-font-override'; doc.head.append(override); }
-    override.textContent = font.value === 'Arial' ? 'body,td,p,h1,a,span,strong{font-family:Arial,sans-serif!important}' : '';
+    override.textContent = font.value === 'Arial' ? 'body,td,div,p,h1,a,span,strong{font-family:Arial,sans-serif!important}' : '';
   }
   caption.textContent = `${font.value} · макет для ${mobile ? 'телефона' : 'компьютера'}`;
   requestAnimationFrame(fit);
