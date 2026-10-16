@@ -1,0 +1,588 @@
+{
+  "date": "2026-10-16",
+  "scope": "Local email design and brand documentation; no production deployment or email sends",
+  "browser": "155.0.8059.84",
+  "base_commit": "1ce6537",
+  "checks": [
+    {
+      "kind": "email",
+      "font": "Manrope, Arial, sans-serif",
+      "width": 360,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Manrope, Arial, sans-serif",
+      "width": 390,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Manrope, Arial, sans-serif",
+      "width": 768,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Manrope, Arial, sans-serif",
+      "width": 1024,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Manrope, Arial, sans-serif",
+      "width": 1440,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Arial, sans-serif",
+      "width": 360,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Arial, sans-serif",
+      "width": 390,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Arial, sans-serif",
+      "width": 768,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Arial, sans-serif",
+      "width": 1024,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "email",
+      "font": "Arial, sans-serif",
+      "width": 1440,
+      "overflow": false,
+      "images": [
+        {
+          "loaded": true,
+          "alt": "Needle Shark",
+          "width": 171,
+          "height": 58
+        }
+      ],
+      "h1": 1,
+      "mail": "mailto:info@neesha.ru",
+      "scripts": 0,
+      "bodyFont": "16px",
+      "textMatchesOwner": true,
+      "focus": {
+        "active": true,
+        "outline": "3px"
+      },
+      "errors": [],
+      "failed": [],
+      "externalRequests": [],
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 360,
+      "size": "desktop",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 336,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 360,
+      "size": "desktop",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 336,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 360,
+      "size": "mobile",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 336,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 360,
+      "size": "mobile",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 336,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 390,
+      "size": "desktop",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 366,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 390,
+      "size": "desktop",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 366,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 390,
+      "size": "mobile",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 366,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 390,
+      "size": "mobile",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 366,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 768,
+      "size": "desktop",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 704,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 768,
+      "size": "desktop",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 704,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 768,
+      "size": "mobile",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 390,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 768,
+      "size": "mobile",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 390,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 1024,
+      "size": "desktop",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 960,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 1024,
+      "size": "desktop",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 960,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 1024,
+      "size": "mobile",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 390,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 1024,
+      "size": "mobile",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 390,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 1440,
+      "size": "desktop",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 1016,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 1440,
+      "size": "desktop",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 1016,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для компьютера",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 1440,
+      "size": "mobile",
+      "font": "Manrope, Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 390,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Manrope · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "width": 1440,
+      "size": "mobile",
+      "font": "Arial, sans-serif",
+      "outerOverflow": false,
+      "frameWidth": 390,
+      "innerOverflow": false,
+      "clipped": false,
+      "caption": "Arial · макет для телефона",
+      "pass": true
+    },
+    {
+      "kind": "blocked-image",
+      "width": 171,
+      "height": 58,
+      "alt": "Needle Shark",
+      "pass": true
+    },
+    {
+      "kind": "200-percent-text",
+      "width": 390,
+      "overflow": false,
+      "text": "Здравствуйте!",
+      "pass": true
+    }
+  ],
+  "limitations": [
+    "No Unisender import or real email-client delivery checks",
+    "Dark-mode behavior in email clients not tested",
+    "DNS, CRM, mailbox settings and production website unchanged"
+  ],
+  "not_applicable": [
+    "Website build/deploy, sitemap/robots, public HTTPS, redirects and production services: no website files changed",
+    "Lead API/PostgreSQL/delivery tests and analytics: no intake, sender, form, tracking or automation changed"
+  ],
+  "previewErrors": [],
+  "pass": true,
+  "files_sha256": {
+    "emails/received.html": "9ba5ae7776c47c5848760f862d8cc0e6d61ee9f3aee76a24a1efbb14542ff887",
+    "emails/received.txt": "5b1d2aba39e61ac9355d21ebe95617feb6c0b1d5fb5d8f7216b8c6cb2244d50c",
+    "emails/preview.html": "ca502ee07caacd7d9f1d281dd9ea14b98003ddb04ff208a65edb8124e9a867f6",
+    "emails/preview.css": "e2120331122299200ae42a62c33975732a2d6fdcfa26524863ae4d6e15f2b86c",
+    "emails/preview.js": "dac94de956d5b9742c64f78b74afa86c4bafb0be0504284e7ec83f3d6f424f81",
+    "emails/assets/needle-shark-logo.png": "60c3b7e933d14bb14264cfbf345926366ab4c4c28e89466b4f5a2641d1365e7e",
+    "docs/BRAND_GUIDE.md": "9edb12641404201f0453af36a8740aebb09a7eff727c5e2d03b30e2de3e79ef1",
+    "emails/previews/received-desktop.png": "514c0ec73de0a48fe1d2be53bfeb99f09846e839f6e108143b3da05852ef39fd",
+    "emails/previews/received-mobile.png": "29f35760e15b517b9ae2f5ebab250616d3d410251f32c2fc1d84db42b7ae65cc"
+  },
+  "verified_commit": "e92906a7d252cf85fa23b9a1f337d5150088aa56",
+  "branch": "codex/email-brand-preview",
+  "preview_url": "http://127.0.0.1:4216/emails/preview.html",
+  "status": "Draft awaiting owner approval; Git artifacts only, no production deployment or Unisender configuration",
+  "visual_review": {
+    "screenshots": [
+      "emails/previews/received-desktop.png",
+      "emails/previews/received-mobile.png"
+    ],
+    "reviewed_widths": [
+      720,
+      390
+    ],
+    "notes": "Logo proportions, text hierarchy, complete paragraphs and signature inspected. Layout at all required widths additionally checked in browser by measurements."
+  },
+  "logo_source": {
+    "path": "dist/logo.svg",
+    "sha256": "510043ccae85e0240f88827fadc6b8674be41120fa4b10e893858dfdef1bbc93",
+    "export_size": [
+      513,
+      174
+    ],
+    "display_size": [
+      171,
+      58
+    ],
+    "background": "#f6f7f4"
+  },
+  "email_html_bytes": 6101,
+  "contrast_ratios": {
+    "#1b1f21 on #f6f7f4": 15.44,
+    "#1b1f21 on #eceee9": 14.21,
+    "#BE3E3E on #f6f7f4": 4.95
+  }
+}
