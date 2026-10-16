@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-16",
+  "scope": "Approved acknowledgement email imported and saved as a reusable Unisender HTML template; no sending",
+  "template": {
+    "id": 7854042,
+    "name": "Needle Shark — Получили ваше обращение",
+    "subject": "Получили ваше обращение — Needle Shark",
+    "location": "Рассылки → Мои шаблоны",
+    "visibility": "owner only",
+    "status": "saved"
+  },
+  "approved_design_commit": "93805f06e55918228b399572280080872c2621dd",
+  "branch": "codex/email-brand-preview",
+  "imported_artifact": "emails/received-unisender.html",
+  "imported_artifact_sha256": "7e28991a5fa6a41e42857509480140e7eff7925a0dab9e5144952650f1128dbc",
+  "checks": [
+    "Template name and subject entered in the Unisender form; access left at owner-only",
+    "Archive import uploaded logo and rewrote its src to HTTPS Unisender user-files",
+    "Final HTML has absolute logo and font URLs; no localhost or relative resource paths",
+    "Exact local comparison: only resource URLs and preview favicon differ from approved HTML",
+    "Source view confirmed font-face, responsive media rules, MSO fallback and website href retained",
+    "Unisender desktop preview visually reviewed with Manrope and loaded logo",
+    "Unisender smartphone preview visually reviewed at top and bottom: stacked header, all copy and signature readable",
+    "Website and mailto:info@neesha.ru links observed; no email sent by following mailto",
+    "Automatically generated plain text version reviewed",
+    "Save and exit returned to My templates with exactly one named template; saved preview reopened and visually reviewed"
+  ],
+  "fonts": [
+    {
+      "file": "manrope-cyrillic.woff2",
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSvfedN62Zw.woff2",
+      "http": 200,
+      "cors": "*",
+      "sha256": "95a493061fe0a8d0d027c2892747134ba747141112d3be4d5022e70ab7d3a1a6",
+      "identical_to_site": true
+    },
+    {
+      "file": "manrope-latin.woff2",
+      "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2",
+      "http": 200,
+      "cors": "*",
+      "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f",
+      "identical_to_site": true
+    }
+  ],
+  "limitations": [
+    "No real email-client rendering, dark mode, delivery or reply-chain tests; no test sends authorized in this task",
+    "From, Reply-To and domain authentication unchanged and not configured here",
+    "Native UI used for Unisender; browser console/network error audit not performed",
+    "Five-width local design verification belongs to previous 20261016-email-header.json; not claimed as rerun"
+  ],
+  "not_applicable": [
+    "Website build, deploy, SEO, sitemap, analytics and server-service checks: no website or backend files changed",
+    "Contact import, CRM lead routing and automation: deferred by owner"
+  ],
+  "production_website_changed": false,
+  "campaign_created": false,
+  "emails_sent": 0,
+  "automation_enabled": false,
+  "proof": "Local screenshot of saved template preview; browser chrome/account details omitted from public Git",
+  "pass": true
+}
