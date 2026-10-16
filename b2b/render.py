@@ -16,7 +16,7 @@ SOURCE = Path(__file__).resolve().parent
 DATA = json.loads((SOURCE / 'content.json').read_text())
 DIRECTIONS = DATA['directions']
 MANIFEST = json.loads((ROOT / 'business/assets/manifest.json').read_text())
-PHONE = '+7 981 839-94-74'
+PHONE = '+7 931 244-82-45'
 EMAIL = 'info@neesha.ru'
 NEW_MATERIALS = json.loads((SOURCE / 'assets/manifest.json').read_text())
 ASSET_FILES = ('site.css', 'site.js', 'typography.css', 'form-validation.mjs', 'form-client.mjs')
@@ -80,7 +80,7 @@ def header(contact_href='/#contact'):
     <header class="ns-header"><div class="ns-container ns-header-inner">
       <a class="ns-brand" href="/" aria-label="Needle Shark — главная"><img src="/logo.svg" width="1026" height="348" alt="Needle Shark"></a>
       <nav class="ns-nav" aria-label="Основная навигация"><details class="ns-directions-menu"><summary>Направления <span aria-hidden="true">⌄</span></summary><div>{links}</div></details><a href="/business/">Производство</a><a href="/#materials">Материалы</a><a href="/#contact">Контакты</a></nav>
-      <div class="ns-header-contacts"><a href="tel:+79818399474">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a></div>
+      <div class="ns-header-contacts"><a href="tel:+79312448245">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a></div>
       {button('Рассчитать заказ', contact_href)}
       <button class="ns-menu-toggle" type="button" aria-controls="ns-mobile-menu" aria-expanded="false" hidden>Меню <span aria-hidden="true">☰</span></button>
     </div><nav id="ns-mobile-menu" class="ns-mobile-menu ns-container" aria-label="Мобильная навигация" hidden><p class="ns-kicker">Направления производства</p>{links}<div class="ns-mobile-secondary"><a href="/business/">Производство</a><a href="/#materials">Материалы</a><a href="/#process">Как заказать</a><a href="/catalog/">Готовые изделия</a><a href="/#contact">Контакты</a></div></nav></header>'''
@@ -97,12 +97,12 @@ def footer(contact_href='/#contact'):
       <div class="ns-footer-about"><a class="ns-brand" href="/" aria-label="Needle Shark — главная"><img src="/logo.svg" width="1026" height="348" alt="Needle Shark"></a><p>Швейное производство технических изделий в Санкт-Петербурге. Разработка и пошив под задачи вашего бизнеса.</p><span class="ns-footer-stamp">С точностью до нитки.</span></div>
       <nav aria-label="Направления в подвале"><h3>Направления</h3>{links}</nav>
       <nav aria-label="Информация о компании"><h3>Производство</h3><a href="/business/">О производстве</a><a href="/#process">Как заказать</a><a href="/#materials">Ткани и материалы</a><a href="/#faq">Вопросы и ответы</a><a href="/catalog/">Готовые изделия</a><a href="/blog/">Блог</a></nav>
-      <div class="ns-footer-contact"><h3>Обсудим вашу задачу</h3><a class="ns-footer-phone" href="tel:+79818399474">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a>{button('Рассчитать заказ', contact_href)}{messengers()}</div>
+      <div class="ns-footer-contact"><h3>Обсудим вашу задачу</h3><a class="ns-footer-phone" href="tel:+79312448245">{PHONE}</a><a href="mailto:{EMAIL}">{EMAIL}</a>{button('Рассчитать заказ', contact_href)}{messengers()}</div>
     </div><div class="ns-footer-bottom"><p>© Needle Shark, 2026<br><span>ИП Сергеев Даниил Игоревич · ИНН 026610829836 · Санкт-Петербург</span></p><div><a href="/privacy-policy">Политика обработки данных</a><a href="/user-agreement">Пользовательское соглашение</a><a href="#main">Наверх ↑</a></div></div></div></footer>'''
 
 
 def form(topic=''):
-    return f'''<section class="ns-contact" id="contact"><div class="ns-container ns-contact-grid"><div><p class="ns-kicker">НАЧНЁМ С ВАШЕЙ ЗАДАЧИ</p><h2>Расскажите,<br>что нужно <em>сшить.</em></h2><p class="ns-lead">Уточним детали, подберём материал и подготовим расчёт. Можно начать с короткого описания.</p><a class="ns-contact-phone" href="tel:+79818399474">{PHONE}</a><a class="ns-contact-email" href="mailto:{EMAIL}">{EMAIL}</a>{messengers()}</div>
+    return f'''<section class="ns-contact" id="contact"><div class="ns-container ns-contact-grid"><div><p class="ns-kicker">НАЧНЁМ С ВАШЕЙ ЗАДАЧИ</p><h2>Расскажите,<br>что нужно <em>сшить.</em></h2><p class="ns-lead">Уточним детали, подберём материал и подготовим расчёт. Можно начать с короткого описания.</p><a class="ns-contact-phone" href="tel:+79312448245">{PHONE}</a><a class="ns-contact-email" href="mailto:{EMAIL}">{EMAIL}</a>{messengers()}</div>
     <form class="ns-form ym-hide-content" data-context="b2b" data-topic="{e(topic)}" method="post" action="/api/leads" novalidate><p class="ns-form-caption">Заявка на расчёт <span>От 1 рабочего дня*</span></p>
       <label for="lead-name">Имя <span aria-hidden="true">*</span></label><input id="lead-name" name="name" autocomplete="name" maxlength="120" placeholder="Как к вам обращаться" required>
       <div class="ns-form-row"><div><label for="lead-email">Почта</label><input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@company.ru" aria-describedby="contact-hint contact-error"></div><div><label for="lead-phone">Телефон</label><input id="lead-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" placeholder="+7 (___) ___-__-__" aria-describedby="contact-hint contact-error"></div></div>
