@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-19",
+  "scope": "Portable brand guide and visual agent knowledge kit",
+  "verified_commit": "53a91866b52f6f64fece84737250975a16ba9c7c",
+  "branch": "codex/brand-handoff",
+  "public_site_changed": false,
+  "vps_deployed": false,
+  "messages_sent": false,
+  "artifacts": {
+    "pdf": "output/pdf/Needle-Shark-Brand-Guide.pdf",
+    "zip": "output/Needle-Shark-Visual-Knowledge-v1.zip",
+    "knowledge": "docs/brand-handoff/BRAND_KNOWLEDGE.md"
+  },
+  "checks": {
+    "pdf_pages": 11,
+    "format": "A4",
+    "final_pages_rendered_with": "Poppler pdftoppm",
+    "final_render_warnings": 0,
+    "visual_review": "All 11 pages reviewed; final page 3 reviewed individually after spacing adjustment; no clipping or overlap observed.",
+    "embedded_font_subsets": 6,
+    "font_embedding_verified_with": "pypdf FontDescriptor FontFile2 inspection",
+    "russian_text_extracts_on_all_pages": true,
+    "minimum_content_to_footer_gap_css_px": 39.828125,
+    "horizontal_overflow": false,
+    "browser_errors": [],
+    "external_resource_requests": [],
+    "source_asset_byte_matches": 7,
+    "markdown_image_links_resolve_in_package": 3,
+    "zip_crc_and_byte_checks": "passed for all 11 allowlisted files",
+    "content_scan": "No internal absolute paths, secrets, private advertising history or client records in shared content.",
+    "git_diff_check": "passed"
+  },
+  "package": {
+    "archive_bytes": 433456,
+    "archive_sha256": "b3b02fa7594a474a3790ddba456d636e2b6de90a70059794f8650692b5be6228",
+    "files": {
+      "START_HERE.txt": {
+        "bytes": 2541,
+        "sha256": "d1f4c9af549a454aabc4d8bdad6b3fd961af00e5d01a2125eb70a076d26e6425"
+      },
+      "BRAND_KNOWLEDGE.md": {
+        "bytes": 31235,
+        "sha256": "0b4890a05cd1bbd044f90281da22e643c96d6e1d9247ef7d5ae07bbb06dad565"
+      },
+      "AGENT_INSTRUCTIONS.txt": {
+        "bytes": 3655,
+        "sha256": "2f01f3edad28b02d55ffaaa418e1eac44ef7c916622d513937da29a53a1b2b9b"
+      },
+      "assets/logo.svg": {
+        "bytes": 6261,
+        "sha256": "510043ccae85e0240f88827fadc6b8674be41120fa4b10e893858dfdef1bbc93"
+      },
+      "assets/logo-email.png": {
+        "bytes": 11351,
+        "sha256": "60c3b7e933d14bb14264cfbf345926366ab4c4c28e89466b4f5a2641d1365e7e"
+      },
+      "assets/email-received.png": {
+        "bytes": 68557,
+        "sha256": "9dcb84590179fe61a37f305febc09dbbedf431bf10742037d3c9b2920572995e"
+      },
+      "assets/email-quote.jpg": {
+        "bytes": 58509,
+        "sha256": "882afc2780b3b5c5cf1bfc014c42cd6f86f0fdf8c53b76b9e4822ca4c4802500"
+      },
+      "fonts/manrope-cyrillic.woff2": {
+        "bytes": 14544,
+        "sha256": "95a493061fe0a8d0d027c2892747134ba747141112d3be4d5022e70ab7d3a1a6"
+      },
+      "fonts/manrope-latin.woff2": {
+        "bytes": 24576,
+        "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f"
+      },
+      "fonts/OFL.txt": {
+        "bytes": 4383,
+        "sha256": "f612090fb72b6dca3e807e66fa0d2b5def163cef86f1a3209b5c897cba5ee4b7"
+      },
+      "Needle-Shark-Brand-Guide.pdf": {
+        "bytes": 340612,
+        "sha256": "f4c049aa6069831a06637c677cef163c6b1878d8a9cbe9b3caa8e624def79b4e"
+      }
+    }
+  },
+  "not_applicable": [
+    "Website adaptive widths and interactive scenarios: no web page changed",
+    "Forms/API/database/mail/CRM delivery: no integration change",
+    "SEO/sitemap/robots/Metrika/UTM: no public page or analytics change",
+    "Server/ops tests and deployment: no runtime change"
+  ],
+  "limits": [
+    "Not installed or tested in the recipient's agent yet.",
+    "No product photography included; product-specific references must be supplied with each brief.",
+    "Digital RGB guide, not a CMYK/Pantone print standard.",
+    "Email images are composition examples, not new compatibility or delivery tests."
+  ],
+  "sources": [
+    "docs/BRAND_GUIDE.md",
+    "docs/TYPOGRAPHY.md",
+    "dist/theme.css",
+    "b2b/typography.css",
+    "b2b/site.css",
+    "emails/README.md",
+    "emails/previews/received-desktop.png",
+    "emails/previews/quote-desktop.jpg"
+  ],
+  "reconciliation": "Early Obsidian design concept compared for conflicts only. Current Manrope, palette and mostly square corners retained; business notes not exported."
+}
