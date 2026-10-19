@@ -4,25 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>Макет письма — Needle Shark</title>
+  <title>Письма клиентам — Needle Shark</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="preview.css">
 </head>
 <body>
   <main class="review">
     <header class="review-header">
-      <div><p class="eyebrow">NEEDLE SHARK · ПИСЬМА</p><h1>Подтверждение обращения</h1></div>
-      <span class="review-status">Макет на согласование</span>
+      <div><p class="eyebrow">NEEDLE SHARK · ПИСЬМА</p><h1>Письма клиентам</h1></div>
+      <span class="review-status" id="review-status">Три новых макета на согласование</span>
     </header>
+    <nav class="templates" aria-label="Выбор письма">
+      <a href="#received" data-template="received"><span>01</span>Получили обращение</a>
+      <a href="#details" data-template="details" aria-current="true"><span>02</span>Уточнение данных</a>
+      <a href="#quote" data-template="quote"><span>03</span>Коммерческое предложение</a>
+      <a href="#follow-up" data-template="follow-up"><span>04</span>Напоминание</a>
+    </nav>
+    <p class="template-note" id="template-note">Вместо текста в квадратных скобках впишите необходимые данные и вопросы. Их состав вы определяете сами.</p>
     <div class="controls">
       <div role="group" aria-label="Размер макета"><button type="button" data-size="desktop" aria-pressed="true">Компьютер</button><button type="button" data-size="mobile" aria-pressed="false">Телефон</button></div>
       <label>Шрифт<select id="font"><option value="Manrope">Manrope · как на сайте</option><option value="Arial">Arial · запасной</option></select></label>
     </div>
     <section class="message-meta" aria-label="Параметры письма">
       <p><span>От кого</span><strong>Needle Shark</strong> &lt;info@neesha.ru&gt;</p>
-      <p><span>Тема</span><strong>Получили ваше обращение — Needle Shark</strong></p>
+      <p><span>Тема</span><strong id="subject">Уточним детали вашего запроса — Needle Shark</strong></p>
     </section>
-    <div class="stage" id="stage"><iframe id="email-frame" src="received.html" title="Письмо: получили ваше обращение"></iframe></div>
+    <div class="stage" id="stage"><iframe id="email-frame" src="details.html" title="Письмо: уточнение данных"></iframe></div>
     <p class="review-caption" id="review-caption" aria-live="polite">Manrope · макет для компьютера</p>
   </main>
   <script src="preview.js"></script>

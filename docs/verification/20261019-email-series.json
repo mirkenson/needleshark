@@ -1,0 +1,2280 @@
+{
+  "date": "2026-10-19",
+  "scope": "Three draft email templates and local review UI; no Unisender import or sends",
+  "base_commit": "164993d0b40221d39b426127d5a8077fd39215db",
+  "branch": "codex/email-followups",
+  "checks": [
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 360,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Уточнимдетали",
+        "height": 946,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 336
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 946,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 360
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 360,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Уточнимдетали",
+        "height": 919,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 336
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 919,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 360
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 360,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Расчётстоимости",
+        "height": 1309,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 336
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1309,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 360
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 360,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Расчётстоимости",
+        "height": 1309,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 336
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1309,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 360
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 360,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Ваш запросещё актуален?",
+        "height": 856,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 336
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 856,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 360
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 360,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Ваш запросещё актуален?",
+        "height": 856,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 336
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 856,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 360
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 390,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Уточнимдетали",
+        "height": 892,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 366
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 892,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 390
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 390,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Уточнимдетали",
+        "height": 892,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 366
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 892,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 390
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 390,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Расчётстоимости",
+        "height": 1282,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 366
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1282,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 390
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 390,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Расчётстоимости",
+        "height": 1282,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 366
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1282,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 390
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 390,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Ваш запросещё актуален?",
+        "height": 829,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 366
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 829,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 390
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 390,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Ваш запросещё актуален?",
+        "height": 829,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 366
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 829,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 390
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 768,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Уточнимдетали",
+        "height": 835,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 704
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 835,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 768
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 768,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Уточнимдетали",
+        "height": 835,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 704
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 835,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 768
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 768,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Расчётстоимости",
+        "height": 1175,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 704
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1175,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 768
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 768,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Расчётстоимости",
+        "height": 1175,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 704
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1175,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 768
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 768,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Ваш запросещё актуален?",
+        "height": 772,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 704
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 772,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 768
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 768,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Ваш запросещё актуален?",
+        "height": 772,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 704
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 772,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 768
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 1024,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Уточнимдетали",
+        "height": 835,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 960
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 835,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 1024
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 1024,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Уточнимдетали",
+        "height": 835,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 960
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 835,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 1024
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 1024,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Расчётстоимости",
+        "height": 1175,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 960
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1175,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 1024
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 1024,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Расчётстоимости",
+        "height": 1175,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 960
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1175,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 1024
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 1024,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Ваш запросещё актуален?",
+        "height": 772,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 960
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 772,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 1024
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 1024,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Ваш запросещё актуален?",
+        "height": 772,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 960
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 772,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 1024
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 1440,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Уточнимдетали",
+        "height": 835,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 1016
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 835,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 1440,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Уточнимдетали",
+        "height": 835,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 1016
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 835,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 1440,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Расчётстоимости",
+        "height": 1175,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 1016
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1175,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 1440,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Расчётстоимости",
+        "height": 1175,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 1016
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1175,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 1440,
+      "font": "Manrope",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Ваш запросещё актуален?",
+        "height": 772,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 1016
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 772,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 1440,
+      "font": "Arial",
+      "mode": "desktop",
+      "body": {
+        "fields": [],
+        "font": "Arial, sans-serif",
+        "headerStacked": false,
+        "heading": "Ваш запросещё актуален?",
+        "height": 772,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 1016
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 772,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 1440,
+      "font": "Manrope",
+      "mode": "mobile",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Уточнимдетали",
+        "height": 896,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 390
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 896,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "details",
+      "width": 1440,
+      "font": "Arial",
+      "mode": "mobile",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "questions",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Уточнимдетали",
+        "height": 896,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 390
+      },
+      "shell": {
+        "current": "details",
+        "frameHeight": 896,
+        "overflow": false,
+        "src": "details.html",
+        "subject": "Уточним детали вашего запроса — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 1440,
+      "font": "Manrope",
+      "mode": "mobile",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Расчётстоимости",
+        "height": 1286,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 390
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1286,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "quote",
+      "width": 1440,
+      "font": "Arial",
+      "mode": "mobile",
+      "body": {
+        "fields": [
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "batch",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "product",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "quantity",
+            "overflow": false
+          },
+          {
+            "color": "rgb(255, 255, 255)",
+            "name": "amount",
+            "overflow": false
+          },
+          {
+            "color": "rgb(27, 31, 33)",
+            "name": "comment",
+            "overflow": false
+          }
+        ],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Расчётстоимости",
+        "height": 1286,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 390
+      },
+      "shell": {
+        "current": "quote",
+        "frameHeight": 1286,
+        "overflow": false,
+        "src": "quote.html",
+        "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 1440,
+      "font": "Manrope",
+      "mode": "mobile",
+      "body": {
+        "fields": [],
+        "font": "Manrope, Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Ваш запросещё актуален?",
+        "height": 833,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 390
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 833,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "follow-up",
+      "width": 1440,
+      "font": "Arial",
+      "mode": "mobile",
+      "body": {
+        "fields": [],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Ваш запросещё актуален?",
+        "height": 833,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 390
+      },
+      "shell": {
+        "current": "follow-up",
+        "frameHeight": 833,
+        "overflow": false,
+        "src": "follow-up.html",
+        "subject": "Актуален ли ваш запрос? — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "preview",
+      "key": "received",
+      "width": 1440,
+      "font": "Arial",
+      "mode": "mobile",
+      "body": {
+        "fields": [],
+        "font": "Arial, sans-serif",
+        "headerStacked": true,
+        "heading": "Получили вашеобращение",
+        "height": 916,
+        "images": [
+          {
+            "height": 58,
+            "loaded": true,
+            "width": 171
+          }
+        ],
+        "links": [
+          "https://needle-shark.ru/",
+          "mailto:info@neesha.ru"
+        ],
+        "overflow": false,
+        "scripts": 0,
+        "signature": true,
+        "width": 390
+      },
+      "shell": {
+        "current": "received",
+        "frameHeight": 916,
+        "overflow": false,
+        "src": "received.html",
+        "subject": "Получили ваше обращение — Needle Shark",
+        "width": 1440
+      },
+      "pass": true
+    },
+    {
+      "kind": "standalone",
+      "key": "details",
+      "width": 768,
+      "font": "Manrope, Arial, sans-serif",
+      "height": 835,
+      "images": [
+        true
+      ],
+      "overflow": false,
+      "pass": true
+    },
+    {
+      "kind": "standalone",
+      "key": "quote",
+      "width": 768,
+      "font": "Manrope, Arial, sans-serif",
+      "height": 1175,
+      "images": [
+        true
+      ],
+      "overflow": false,
+      "pass": true
+    },
+    {
+      "kind": "standalone",
+      "key": "follow-up",
+      "width": 768,
+      "font": "Manrope, Arial, sans-serif",
+      "height": 772,
+      "images": [
+        true
+      ],
+      "overflow": false,
+      "pass": true
+    },
+    {
+      "kind": "standalone",
+      "key": "details",
+      "width": 390,
+      "font": "Manrope, Arial, sans-serif",
+      "height": 896,
+      "images": [
+        true
+      ],
+      "overflow": false,
+      "pass": true
+    },
+    {
+      "kind": "standalone",
+      "key": "quote",
+      "width": 390,
+      "font": "Manrope, Arial, sans-serif",
+      "height": 1286,
+      "images": [
+        true
+      ],
+      "overflow": false,
+      "pass": true
+    },
+    {
+      "kind": "standalone",
+      "key": "follow-up",
+      "width": 390,
+      "font": "Manrope, Arial, sans-serif",
+      "height": 833,
+      "images": [
+        true
+      ],
+      "overflow": false,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "details",
+      "width": 360,
+      "fields": [
+        {
+          "height": 1269,
+          "length": 1106,
+          "name": "questions",
+          "overflow": false
+        }
+      ],
+      "height": 2107,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "quote",
+      "width": 360,
+      "fields": [
+        {
+          "height": 324,
+          "length": 267,
+          "name": "batch",
+          "overflow": false
+        },
+        {
+          "height": 324,
+          "length": 270,
+          "name": "product",
+          "overflow": false
+        },
+        {
+          "height": 81,
+          "length": 65,
+          "name": "quantity",
+          "overflow": false
+        },
+        {
+          "height": 39,
+          "length": 15,
+          "name": "amount",
+          "overflow": false
+        },
+        {
+          "height": 648,
+          "length": 660,
+          "name": "comment",
+          "overflow": false
+        }
+      ],
+      "height": 2497,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "details",
+      "width": 390,
+      "fields": [
+        {
+          "height": 1269,
+          "length": 1106,
+          "name": "questions",
+          "overflow": false
+        }
+      ],
+      "height": 2111,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "quote",
+      "width": 390,
+      "fields": [
+        {
+          "height": 297,
+          "length": 267,
+          "name": "batch",
+          "overflow": false
+        },
+        {
+          "height": 270,
+          "length": 270,
+          "name": "product",
+          "overflow": false
+        },
+        {
+          "height": 81,
+          "length": 65,
+          "name": "quantity",
+          "overflow": false
+        },
+        {
+          "height": 39,
+          "length": 15,
+          "name": "amount",
+          "overflow": false
+        },
+        {
+          "height": 648,
+          "length": 660,
+          "name": "comment",
+          "overflow": false
+        }
+      ],
+      "height": 2420,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "details",
+      "width": 768,
+      "fields": [
+        {
+          "height": 594,
+          "length": 1106,
+          "name": "questions",
+          "overflow": false
+        }
+      ],
+      "height": 1402,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "quote",
+      "width": 768,
+      "fields": [
+        {
+          "height": 162,
+          "length": 267,
+          "name": "batch",
+          "overflow": false
+        },
+        {
+          "height": 162,
+          "length": 270,
+          "name": "product",
+          "overflow": false
+        },
+        {
+          "height": 54,
+          "length": 65,
+          "name": "quantity",
+          "overflow": false
+        },
+        {
+          "height": 39,
+          "length": 15,
+          "name": "amount",
+          "overflow": false
+        },
+        {
+          "height": 324,
+          "length": 660,
+          "name": "comment",
+          "overflow": false
+        }
+      ],
+      "height": 1769,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "details",
+      "width": 1024,
+      "fields": [
+        {
+          "height": 594,
+          "length": 1106,
+          "name": "questions",
+          "overflow": false
+        }
+      ],
+      "height": 1402,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "quote",
+      "width": 1024,
+      "fields": [
+        {
+          "height": 162,
+          "length": 267,
+          "name": "batch",
+          "overflow": false
+        },
+        {
+          "height": 162,
+          "length": 270,
+          "name": "product",
+          "overflow": false
+        },
+        {
+          "height": 54,
+          "length": 65,
+          "name": "quantity",
+          "overflow": false
+        },
+        {
+          "height": 39,
+          "length": 15,
+          "name": "amount",
+          "overflow": false
+        },
+        {
+          "height": 324,
+          "length": 660,
+          "name": "comment",
+          "overflow": false
+        }
+      ],
+      "height": 1769,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "details",
+      "width": 1440,
+      "fields": [
+        {
+          "height": 594,
+          "length": 1106,
+          "name": "questions",
+          "overflow": false
+        }
+      ],
+      "height": 1402,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    },
+    {
+      "kind": "synthetic-long-content",
+      "key": "quote",
+      "width": 1440,
+      "fields": [
+        {
+          "height": 162,
+          "length": 267,
+          "name": "batch",
+          "overflow": false
+        },
+        {
+          "height": 162,
+          "length": 270,
+          "name": "product",
+          "overflow": false
+        },
+        {
+          "height": 54,
+          "length": 65,
+          "name": "quantity",
+          "overflow": false
+        },
+        {
+          "height": 39,
+          "length": 15,
+          "name": "amount",
+          "overflow": false
+        },
+        {
+          "height": 324,
+          "length": 660,
+          "name": "comment",
+          "overflow": false
+        }
+      ],
+      "height": 1769,
+      "overflow": false,
+      "signature": true,
+      "pass": true
+    }
+  ],
+  "keyboard": {
+    "template_link": {
+      "enter_selects": true,
+      "focus_outline": "3px"
+    },
+    "signature_link": {
+      "tab_reaches": true,
+      "focus_outline": "3px",
+      "href": "mailto:info@neesha.ru"
+    }
+  },
+  "console": {
+    "standalone_errors": [],
+    "preview_observation": "MutationObserver observe parameter not a Node; also reproduced with the previous preview implementation; origin undetermined, no MutationObserver in project preview.js",
+    "preview_message": "Uncaught TypeError: Failed to execute 'observe' on 'MutationObserver': parameter 1 is not of type 'Node'.",
+    "new_functional_errors_observed": false
+  },
+  "visual_review": {
+    "desktop_width": 768,
+    "mobile_width": 390,
+    "templates": [
+      "details",
+      "quote",
+      "follow-up"
+    ],
+    "all_six_screenshots_reviewed": true
+  },
+  "limitations": [
+    "Drafts awaiting copy/design approval; no new templates imported to Unisender",
+    "Real email-client rendering, delivery, dark mode and Reply-To not tested",
+    "Existing preview diagnostic reproduced on baseline; do not claim an entirely clean console"
+  ],
+  "not_applicable": [
+    "Production website build/deploy, SEO, sitemap, analytics, lead API and server checks: only email drafts and local preview changed"
+  ],
+  "emails_sent": 0,
+  "automation_enabled": false,
+  "layout_checks_pass": true,
+  "plain_text_matches_html": [
+    "details",
+    "quote",
+    "follow-up"
+  ],
+  "files_sha256": {
+    "emails/preview.html": "ae6e422e40305a7f7318517e1d72bc3fe3309869b88cba8d0a5dfe9a8e6348d5",
+    "emails/preview.css": "50dcf7e75d9205fd3fc89bc13c8d9f788d199a0962bb5f4041b8b973f3a9ebb4",
+    "emails/preview.js": "85eb4e19177f05a0d05daf7bbc48a76270f642cb403be023fbd17aaa73ee7751",
+    "emails/details.html": "a85cf3e5560ff519a0f7f504675b5c9e92c08499442a3d4cd4dc17b481248854",
+    "emails/details.txt": "f6b52db8060c4115b9fae0391d86a5340d6246ddb7272e74fe70c59e4cede875",
+    "emails/previews/details-desktop.jpg": "3247e6ad0b11eec697d00bc3fef540ac768d2d6551352b7fd6c073d4ad0b6699",
+    "emails/previews/details-mobile.jpg": "951d169cbfaf72aa10fc06bd2d2678ee044a16340646e7c9e6bd51c2bba027fd",
+    "emails/quote.html": "73998b453ad0129e82defdbb5d4d96e31286851ce625c1ccf4fa536afe53f17c",
+    "emails/quote.txt": "c7333beb7b24e25e165ba167d798f1a176d806d5b69d5c6ae1515edcbcc41b53",
+    "emails/previews/quote-desktop.jpg": "882afc2780b3b5c5cf1bfc014c42cd6f86f0fdf8c53b76b9e4822ca4c4802500",
+    "emails/previews/quote-mobile.jpg": "49cf769a59f83f553d6f5e329d42d5fcce5c8e080d7ec7325ba168530de0e894",
+    "emails/follow-up.html": "faaf3378ac8d78e7435788c8b19cd5c54335dbcf04843acbccedefbed6aedab0",
+    "emails/follow-up.txt": "b9db9406748db608b9a411be1bfbc61c6a921a413e1d63220eb128bf585273e9",
+    "emails/previews/follow-up-desktop.jpg": "af666467e7c7b3e83aa96cecf360e1e7096d0d94d0e9ea24fa45e72e0c557cba",
+    "emails/previews/follow-up-mobile.jpg": "21cde70c21c150a903f3f6a91c5391d04339e9be61dd7ccaca67b9b66efc58d4"
+  },
+  "preserved_files_sha256": {
+    "emails/received.html": "780693793087b01ac72b1c547733d49c8edf16c51331ebb845128331b1788f7e",
+    "emails/received-unisender.html": "7e28991a5fa6a41e42857509480140e7eff7925a0dab9e5144952650f1128dbc"
+  },
+  "preview_url": "http://127.0.0.1:4216/emails/preview.html#details",
+  "resource_checks": [
+    {
+      "path": "dist/fonts/manrope-cyrillic.woff2",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "dist/fonts/manrope-latin.woff2",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "emails/assets/needle-shark-logo.png",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "emails/details.html",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "emails/follow-up.html",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "emails/preview.css",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "emails/preview.html",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "emails/preview.js",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "emails/quote.html",
+      "http": 200,
+      "matches_staged_file": true
+    },
+    {
+      "path": "emails/received.html",
+      "http": 200,
+      "matches_staged_file": true
+    }
+  ],
+  "white_on_brand_red_contrast": 5.32,
+  "javascript_syntax_check": "node --check emails/preview.js: passed",
+  "production_and_approved_email_diff": "Empty diff versus 164993d for dist/, server/, received.html and received-unisender.html"
+}
