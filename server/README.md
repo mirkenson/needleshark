@@ -1,5 +1,11 @@
 # Server-side leads and email
 
+## Current lead recipient: info@neesha.ru — 19 October 2026
+
+The owner replaced direct delivery to the CRM mailbox with **info@neesha.ru only** in private production `MAIL_RECIPIENTS`. Forwarding to the other mailboxes is configured by the owner at the mailbox provider. Preserve this routing during upgrades; do not restore the old CRM-only or four-recipient list. This supersedes the earlier CRM routing entry below. Server-monitor alerts use their independent, unchanged recipient; LOOP remains disabled.
+
+Verified in the running service environment after restart. Only `MAIL_RECIPIENTS` changed; queues were empty before and after, private environment remains root-owned 0600, and SMTP configuration validation passed without sending. Local/public invalid API probes returned 400 without creating a lead; public HTTPS returned 200. Existing backend/static releases, database rows and unit remain unchanged. No test email/submission was sent: inbox receipt, provider forwarding and post-change CRM duplicate prevention are unverified. [Evidence](../docs/verification/20261019-mail-info-only.json).
+
 ## UTM — установлен backend 14 октября 2026
 
 Код `503911b4435a`, релиз `20261014T082411Z-503911b4435a`, установлен через `--upgrade` с миграцией `20261014_lead_utm.sql`. Пять необязательных UTM полей валидируются (строки до 500 символов, без управляющих символов) и сохраняются в orders/lead_submissions в существующей транзакции; отсутствующие значения не добавляются в отпечаток, старые клиенты совместимы. Изменённые метки при повторе UUID дают 409. Письма/LOOP сохраняют прежний формат; поля доступны в БД. Тестовая заявка из браузера подтвердила сохранение и sent четырёх email/одного LOOP. Inbox не проверен. [Отчёт](../docs/verification/20261014-lead-utm.json).
@@ -112,7 +118,7 @@ Installed 18 September 2026 from code `a353fc6`, retaining the existing Google w
 
 Installed release `20260918T085337Z-9fbb60120094`, code `9fbb601`: public browser form → PostgreSQL/file → SMTP acceptance verified with the single approved recipient. Initial authentication failure was resolved with an owner-supplied application password; the pending request was retried, not recreated. The owner confirmed inbox receipt and that the PDF opens.
 
-## Current intake: email to Bitrix24 — 19 October 2026
+## Earlier intake: direct email to Bitrix24 — 19 October 2026
 
 Production keeps the existing website → PostgreSQL/outbox → SMTP pipeline. The approved CRM-connected mailbox is now the **only** `MAIL_RECIPIENTS` address. Addresses and credentials remain in the root-owned private environment, not Git. `LOOP_LEADS_WEBHOOK_URL` was removed: intake creates no LOOP jobs and its worker sends nothing. Historical queue rows remain; server-monitor mail is independent and unchanged. No REST integration or reverse property sync is active.
 

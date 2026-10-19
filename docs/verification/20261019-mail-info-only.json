@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-19",
+  "completed_at_utc": "2026-10-19T07:59:55.068849+00:00",
+  "configuration_only": true,
+  "private_backup": "/opt/needle-shark/backups/info-only-20261019T075954Z",
+  "recipient_count_before": 1,
+  "recipient_before_is_info": false,
+  "recipient_count_after": 1,
+  "recipient_after": "info@neesha.ru",
+  "runtime_configuration_verified": true,
+  "only_mail_recipients_changed": true,
+  "env_mode": "0o600",
+  "env_owner_uid": 0,
+  "loop_disabled": true,
+  "monitor_and_systemd_unit_unchanged": true,
+  "release_pointers_unchanged": true,
+  "release_pointers": {
+    "/opt/needle-shark/current": "/opt/needle-shark/releases/20261014T082411Z-503911b4435a",
+    "/opt/needle-shark/previous": "/opt/needle-shark/releases/20261007T224413Z-b39667482c08",
+    "/var/www/needle-shark/current": "/var/www/needle-shark/releases/20261016T070519Z-75714",
+    "/var/www/needle-shark/previous": "/var/www/needle-shark/releases/20261014T082454Z-53317"
+  },
+  "queue_before_update": {
+    "pending": 0,
+    "pending_external": 0,
+    "sending": 0
+  },
+  "queue_after_update": {
+    "pending": 0,
+    "pending_external": 0,
+    "sending": 0
+  },
+  "services": {
+    "needle-leads": "active",
+    "nginx": "active",
+    "postgresql": "active",
+    "needle-monitor.timer": "active",
+    "needle-cleanup.timer": "active"
+  },
+  "local_invalid_api_status": 400,
+  "public_https_status": 200,
+  "public_invalid_api_status": 400,
+  "test_submissions_created": 0,
+  "test_emails_sent": 0,
+  "database_rows_changed_by_task": false,
+  "redirect_delivery_verified": false,
+  "scope": "Route all website lead notifications only to info@neesha.ru; owner-managed onward mailbox forwarding",
+  "public_url": "https://needle-shark.ru/",
+  "documentation_base_commit": "24de19b",
+  "existing_backend_commit": "503911b4435a42cd6b15351e854ae44094ce3487",
+  "new_code_or_static_release": false,
+  "smtp_configuration_validated_without_send": true,
+  "owner_reports_mailbox_forwarding_configured": true,
+  "checks_not_applicable": [
+    "Static build and ops/deploy.sh: no page/source changes",
+    "Responsive layout, resources, SEO/indexing and analytics: no page changes",
+    "New form fields/files and database migration: unchanged",
+    "Runtime unit tests: no source-code changes"
+  ],
+  "limitations": [
+    "No synthetic submissions or test emails: prior owner restriction on additional sends preserved",
+    "Inbox receipt and owner-managed forwarding were not inspected or tested",
+    "Absence of duplicate CRM copies after this change needs confirmation from a future real inquiry",
+    "Independent server-monitor recipient is unchanged; this change applies to website lead notifications"
+  ]
+}

@@ -1,5 +1,11 @@
 # Needle Shark VPS
 
+## Lead mail routed through info@neesha.ru — 19 October 2026
+
+The only production lead recipient is now `info@neesha.ru`; the owner handles onward forwarding at the mailbox provider. An atomic update changed only private `MAIL_RECIPIENTS`, with the lead service stopped and the empty queue rechecked before the update. The running process was verified after restart. All other environment settings, monitor configuration, unit and backend/static current/previous pointers are unchanged; no deployment script or source release was needed.
+
+Root-only backup: `/opt/needle-shark/backups/info-only-20261019T075954Z/leads.env`. It contains the superseded CRM recipient: do not restore it wholesale or re-enable the older four-recipient fan-out. Preserve the current routing in future upgrades. HTTPS 200, local/public invalid API 400, five active services/timers and zero pending SMTP jobs were checked. No test emails/submissions or historical replay; actual forwarding/inbox delivery remains unverified. [Report](../docs/verification/20261019-mail-info-only.json).
+
 ## Контактный телефон — выпуск 16 октября 2026
 
 Код `0918b1a7d69f6d6685d49c7be100c98bf9b22883` отправлен до `ops/deploy.sh --from-github`. Current `20261016T070519Z-75714`, previous `20261014T082454Z-53317`: 18 HTML скачаны, 1238 файлов использованы повторно, все 1256 проверены до переключения. Backend `20261014T082411Z-503911b4435a` и конфигурация прежние, шесть служб/таймеров active. [Проверки и прежняя проблема мобильного меню](../docs/verification/20261016-contact-phone.json).
@@ -139,7 +145,7 @@ Checks: `python3 -m unittest discover -s ops -p 'test_*.py'`, existing server te
 
 Public code `ddfef17397c37082eee94fdb0dd0535ac3688db0` was pushed before `ops/deploy.sh --from-github`. Current static release: `20261001T151439Z-62875`; previous: `20260924T073408Z-14797`. Existing backend and infrastructure unchanged. Visible email/request controls are shared by home, business, catalogue and blog; preserve them in source templates and rebuild. Verification: [20261001-header-contacts.json](../docs/verification/20261001-header-contacts.json).
 
-## CRM mail routing / LOOP disabled — 19 October 2026
+## Earlier CRM mail routing / LOOP disabled — 19 October 2026
 
 The owner deferred paid REST integration. Production continues to archive website requests in PostgreSQL and deliver email to the existing Bitrix24-connected mailbox. Only that mailbox remains in private `MAIL_RECIPIENTS`; `LOOP_LEADS_WEBHOOK_URL` is absent. Monitor recipient/SMTP settings, database schema, units, Nginx and all code/static release pointers are unchanged.
 
