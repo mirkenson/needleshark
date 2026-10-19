@@ -2276,5 +2276,6 @@
   ],
   "white_on_brand_red_contrast": 5.32,
   "javascript_syntax_check": "node --check emails/preview.js: passed",
-  "production_and_approved_email_diff": "Empty diff versus 164993d for dist/, server/, received.html and received-unisender.html"
+  "production_and_approved_email_diff": "Empty diff versus 164993d for dist/, server/, received.html and received-unisender.html",
+  "verified_commit": "f5a9ef0c6660d04abec3b44e7db61e961aa57c63"
 }
