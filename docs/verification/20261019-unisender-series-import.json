@@ -1,0 +1,261 @@
+{
+  "date": "2026-10-19",
+  "scope": "Three approved emails saved as separate Unisender HTML templates, no sending",
+  "approved_design_commit": "f5a9ef0c6660d04abec3b44e7db61e961aa57c63",
+  "branch": "codex/email-followups",
+  "templates": [
+    {
+      "key": "details",
+      "id": 7856878,
+      "name": "Needle Shark — Уточнение данных",
+      "subject": "Уточним детали вашего запроса — Needle Shark",
+      "url": "https://cp.unisender.com/ru/v5/letter/template/update/7856878",
+      "visibility": "owner only",
+      "status": "saved and reopened from template list",
+      "imported_artifact": "emails/details-unisender.html",
+      "sha256": "2fcecf933ecade59a87d3d8d731c5a1c28d60d21ccc16d6e37a5cbea0fb2a231"
+    },
+    {
+      "key": "quote",
+      "id": 7856882,
+      "name": "Needle Shark — Коммерческое предложение",
+      "subject": "Коммерческое предложение: [Название партии] — Needle Shark",
+      "url": "https://cp.unisender.com/ru/v5/letter/template/update/7856882",
+      "visibility": "owner only",
+      "status": "saved and reopened from template list",
+      "imported_artifact": "emails/quote-unisender.html",
+      "sha256": "5fa22925701fddc44773c078b3f0d6a0266617e0e8141b6ec2924288d95de04f"
+    },
+    {
+      "key": "follow-up",
+      "id": 7856886,
+      "name": "Needle Shark — Напоминание об обращении",
+      "subject": "Актуален ли ваш запрос? — Needle Shark",
+      "url": "https://cp.unisender.com/ru/v5/letter/template/update/7856886",
+      "visibility": "owner only",
+      "status": "saved and reopened from template list",
+      "imported_artifact": "emails/follow-up-unisender.html",
+      "sha256": "4757544fcb24a0eb5fbf7a7dc0063b5d55bdc817ea94b05c0aee85d9260cf90a"
+    }
+  ],
+  "checks": [
+    "Only resource URLs and preview favicon differ from approved local HTML; exact reverse comparison passed",
+    "Names and subjects entered separately; default owner-only access retained",
+    "Complete HTML pasted into Source in visual HTML editor; Save and exit used for each template",
+    "Exactly four templates shown: three new plus unchanged acknowledgement 7854042",
+    "Every new saved template reopened from list with expected content",
+    "Desktop and smartphone previews visually inspected; logo, stacked mobile header, fields, signature readable",
+    "Quote amount and optional comment preserved; no invented price or terms",
+    "All three automatically generated text versions reviewed",
+    "Website and mailto:info@neesha.ru links observed",
+    "No localhost or relative resource URLs in import HTML; no script or form",
+    "First template modification timestamp remained 2026-10-16",
+    "Updated local preview saved-status labels checked at 360/390/768/1024/1440 px for all three templates: 15 passed, no shell or status overflow"
+  ],
+  "resources": [
+    {
+      "resource": "xn7gYHE41ni1AdIRggOxSvfedN62Zw.woff2",
+      "http": 200,
+      "bytes": 14544,
+      "sha256": "95a493061fe0a8d0d027c2892747134ba747141112d3be4d5022e70ab7d3a1a6",
+      "cors": "*"
+    },
+    {
+      "resource": "xn7gYHE41ni1AdIRggexSvfedN4.woff2",
+      "http": 200,
+      "bytes": 24576,
+      "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f",
+      "cors": "*"
+    },
+    {
+      "resource": "logo",
+      "http": 200,
+      "bytes": 11351,
+      "sha256": "60c3b7e933d14bb14264cfbf345926366ab4c4c28e89466b4f5a2641d1365e7e",
+      "cors": "*"
+    }
+  ],
+  "limitations": [
+    "No email-client, dark mode, delivery or reply tests; no test email sent",
+    "Native UI used; service console/network audit not performed",
+    "Local five-width layout tests are in earlier email-series report and not claimed as rerun for service import"
+  ],
+  "not_applicable": [
+    "Website build/deploy/SEO/analytics/backend checks: no website or backend change",
+    "CRM or automation activation: outside this task"
+  ],
+  "production_website_changed": false,
+  "campaign_created": false,
+  "emails_sent": 0,
+  "automation_enabled": false,
+  "proof": "Local saved-templates screenshot; browser/account context excluded from public Git",
+  "pass": true,
+  "local_preview_status_checks": [
+    {
+      "width": 360,
+      "name": "02 Уточнение данных",
+      "pageWidth": 360,
+      "scrollWidth": 360,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 240,
+      "statusScroll": 240,
+      "statusWidth": 240,
+      "pass": true
+    },
+    {
+      "width": 360,
+      "name": "03 Коммерческое предложение",
+      "pageWidth": 360,
+      "scrollWidth": 360,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 240,
+      "statusScroll": 240,
+      "statusWidth": 240,
+      "pass": true
+    },
+    {
+      "width": 360,
+      "name": "04 Напоминание",
+      "pageWidth": 360,
+      "scrollWidth": 360,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 240,
+      "statusScroll": 240,
+      "statusWidth": 240,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "02 Уточнение данных",
+      "pageWidth": 390,
+      "scrollWidth": 390,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 240,
+      "statusScroll": 240,
+      "statusWidth": 240,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "03 Коммерческое предложение",
+      "pageWidth": 390,
+      "scrollWidth": 390,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 240,
+      "statusScroll": 240,
+      "statusWidth": 240,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "04 Напоминание",
+      "pageWidth": 390,
+      "scrollWidth": 390,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 240,
+      "statusScroll": 240,
+      "statusWidth": 240,
+      "pass": true
+    },
+    {
+      "width": 768,
+      "name": "02 Уточнение данных",
+      "pageWidth": 768,
+      "scrollWidth": 768,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    },
+    {
+      "width": 768,
+      "name": "03 Коммерческое предложение",
+      "pageWidth": 768,
+      "scrollWidth": 768,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    },
+    {
+      "width": 768,
+      "name": "04 Напоминание",
+      "pageWidth": 768,
+      "scrollWidth": 768,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    },
+    {
+      "width": 1024,
+      "name": "02 Уточнение данных",
+      "pageWidth": 1024,
+      "scrollWidth": 1024,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    },
+    {
+      "width": 1024,
+      "name": "03 Коммерческое предложение",
+      "pageWidth": 1024,
+      "scrollWidth": 1024,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    },
+    {
+      "width": 1024,
+      "name": "04 Напоминание",
+      "pageWidth": 1024,
+      "scrollWidth": 1024,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "name": "02 Уточнение данных",
+      "pageWidth": 1440,
+      "scrollWidth": 1440,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "name": "03 Коммерческое предложение",
+      "pageWidth": 1440,
+      "scrollWidth": 1440,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    },
+    {
+      "width": 1440,
+      "name": "04 Напоминание",
+      "pageWidth": 1440,
+      "scrollWidth": 1440,
+      "status": "Сохранено в Unisender · 19 октября",
+      "statusClient": 201,
+      "statusScroll": 201,
+      "statusWidth": 200.5234375,
+      "pass": true
+    }
+  ],
+  "verified_commit": "6bfa0cce48d63ccfa50b81ccd029cb3564addb98"
+}
