@@ -138,3 +138,11 @@ Checks: `python3 -m unittest discover -s ops -p 'test_*.py'`, existing server te
 ## Header contacts release — 1 October 2026
 
 Public code `ddfef17397c37082eee94fdb0dd0535ac3688db0` was pushed before `ops/deploy.sh --from-github`. Current static release: `20261001T151439Z-62875`; previous: `20260924T073408Z-14797`. Existing backend and infrastructure unchanged. Visible email/request controls are shared by home, business, catalogue and blog; preserve them in source templates and rebuild. Verification: [20261001-header-contacts.json](../docs/verification/20261001-header-contacts.json).
+
+## CRM mail routing / LOOP disabled — 19 October 2026
+
+The owner deferred paid REST integration. Production continues to archive website requests in PostgreSQL and deliver email to the existing Bitrix24-connected mailbox. Only that mailbox remains in private `MAIL_RECIPIENTS`; `LOOP_LEADS_WEBHOOK_URL` is absent. Monitor recipient/SMTP settings, database schema, units, Nginx and all code/static release pointers are unchanged.
+
+Configuration backups (root-only): `/opt/needle-shark/backups/20261019-loop-off-061236/leads.env` before disabling LOOP, and `/opt/needle-shark/backups/20261019-crm-mail-only-061856/leads.env` before reducing recipients. The service was stopped during each atomic environment update and restarted; old queues were empty. Rollback must account for the owner's current routing decision: the first backup restores LOOP, both backups restore the earlier four recipients. Do not restore either wholesale as routine maintenance.
+
+Exactly one production form submission was made, order 29. SMTP accepted all four originally configured deliveries once; two copies reached the CRM mailbox and became deals 25/27. The complete message and contact email were checked in CRM. The later one-recipient change is verified in configuration only, not by another submission. Zero LOOP jobs were created. No public page or runtime source changed, so static deployment/SEO/adaptive release checks do not apply. [Evidence and remaining limits](../docs/verification/20261019-bitrix-mail.json).

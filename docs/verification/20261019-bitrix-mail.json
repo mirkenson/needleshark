@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-19",
+  "scope": "Private production configuration and Bitrix24 mailbox/client settings; no source-code or static release",
+  "public_url": "https://needle-shark.ru/",
+  "documentation_base_commit": "54280d0",
+  "production": {
+    "backend_current": "20261014T082411Z-503911b4435a",
+    "backend_previous": "20261007T224413Z-b39667482c08",
+    "static_current": "20261016T070519Z-75714",
+    "code_schema_nginx_systemd_unit_changed": false,
+    "services_final": {"needle-leads": "active", "nginx": "active", "postgresql": "active"},
+    "runtime_environment_read_from_service_process": true,
+    "runtime_mail_recipient_count": 1,
+    "runtime_recipient_is_existing_crm_mailbox": true,
+    "runtime_loop_disabled": true,
+    "runtime_bitrix_api_configured": false,
+    "smtp_pending_jobs_final": 0,
+    "loop_historical_jobs_final": {"sent": 17},
+    "other_smtp_and_monitor_settings_preserved": true,
+    "private_environment_backups": [
+      "/opt/needle-shark/backups/20261019-loop-off-061236/leads.env",
+      "/opt/needle-shark/backups/20261019-crm-mail-only-061856/leads.env"
+    ]
+  },
+  "bitrix_mail": {
+    "setting": "Create a separate lead for every incoming message from the website service sender",
+    "saved_and_reopened": true,
+    "other_mail_settings_preserved": true,
+    "crm_mode": "simple: contact plus deal",
+    "expected_stage": "Новые заявки",
+    "portal_demo_until": "2026-10-30",
+    "marketplace_demo_activated": false,
+    "purchase_made": false
+  },
+  "single_production_test": {
+    "submission_count": 1,
+    "order_id": 29,
+    "submission_uuid": "ac9e093a-ba8a-4fc5-a97c-c2e9b73a9dc4",
+    "created_at_utc": "2026-10-19T06:15:10Z",
+    "marker": "NS-BITRIX-MAIL-20261019",
+    "entry": "Public homepage form, synthetic data explicitly marked not an order/do not reply",
+    "consent_checkbox": "Owner explicitly approved at action time",
+    "browser_success_after_save": true,
+    "postgresql_exact_fields_checked": ["name", "email", "full question", "source_path", "consent", "utm_source", "utm_medium", "utm_campaign"],
+    "qa_utm": {"source": "qa", "medium": "test", "campaign": "bitrix_mail_20261019"},
+    "lead_submission_present": true,
+    "duplicate_order_for_uuid_count": 0,
+    "attachment": "Not applicable: current public form has no upload",
+    "smtp_at_test_time": {"configured_recipients": 4, "sent_jobs": 4, "attempts_each": 1},
+    "loop_jobs": 0,
+    "crm_inbox_copies_observed": 2,
+    "crm_deals_observed": [25, 27],
+    "deal_27_verified": ["New inquiries stage", "Email source", "Client email matches Reply-To", "Full message text including name, order number, source page, test quantity and dimensions"],
+    "contact_name_result": "Contact title is the email address; submitted name remains in the email body",
+    "mail_recipient_fix": "After this test, restrict MAIL_RECIPIENTS to the one existing CRM mailbox; old SMTP queue was empty",
+    "second_test_sent": false,
+    "post_fix_end_to_end_verified": false,
+    "synthetic_records_deleted": false
+  },
+  "customer_import": {
+    "selected_real_customers": 4,
+    "csv_encoding": "UTF-8 BOM",
+    "csv_delimiter": ";",
+    "fields": ["name", "available primary phone or email", "source database ID in comment"],
+    "contact_type": "Клиенты",
+    "source": "Веб-сайт",
+    "duplicates_action": "skip",
+    "duplicate_fields": ["email", "phone"],
+    "ui_result": "100%, imported 4",
+    "all_four_cards_opened_and_matched_to_source": true,
+    "existing_contacts_overwritten": false,
+    "historical_deals_recreated": false,
+    "source_database_records_deleted": false,
+    "personal_data_or_private_csv_committed": false
+  },
+  "pricing_checked": {
+    "minimum_direct_rest_plan": "Базовый, up to 5 users, plus BitrixGPT + Marketplace",
+    "basic_monthly_rub": 2490,
+    "marketplace_first_purchase_promo_monthly_rub_excluding_vat": 500,
+    "marketplace_regular_monthly_rub_excluding_vat": 1000,
+    "promo_available_until": "2026-12-31",
+    "mail_only_needs_marketplace": false,
+    "mail_only_needs_commercial_plan_after_demo": true,
+    "checkout_total_with_tax": "Not checked; no purchase initiated",
+    "sources": [
+      "https://www.bitrix24.ru/prices/",
+      "https://www.bitrix24.ru/apps/subscribe.php",
+      "https://helpdesk.bitrix24.ru/open/24577700/",
+      "https://helpdesk.bitrix24.ru/open/22016286/"
+    ]
+  },
+  "backlog_recorded": ["Direct REST integration", "Messengers", "Website chatbot", "Customer property sync from Bitrix24 after database preparation", "Unisender business events", "Structured customer field/UTM mapping"],
+  "not_changed": ["Unisender automations", "Spam stop-list", "Customer database records", "Public site pages", "Google integration"],
+  "checks_not_applicable": ["Static build/deploy", "Responsive layout widths", "SEO/indexing", "New analytics events", "Server unit tests: runtime source unchanged"],
+  "limitations": [
+    "The single test proved DB-to-email-to-CRM delivery but exposed two CRM copies with the old four-recipient routing.",
+    "Final one-recipient routing is confirmed in the running service environment; absence of future duplicates needs a genuine subsequent inquiry, not another production test.",
+    "Phone-only matching and automatic extraction of names, phone numbers and UTM into CRM fields were not tested or enabled.",
+    "Email body content is not equivalent to structured CRM properties.",
+    "On the free plan after the portal demo, Bitrix24 mail synchronization stops. No subscription was purchased.",
+    "No attachments or messenger channels were tested in this change."
+  ]
+}
