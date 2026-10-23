@@ -107,7 +107,10 @@ class ReviewBuildTests(unittest.TestCase):
             if not doc.find('form'):
                 continue
             with self.subTest(page=path):
-                self.assertEqual([a.get('name') for a in doc.find('input')], ['name', 'email', 'phone', 'consent'])
+                self.assertEqual([a.get('name') for a in doc.find('input')], ['website', 'name', 'email', 'phone', 'consent'])
+                trap = next(a for a in doc.find('input') if a.get('name') == 'website')
+                self.assertEqual(trap['tabindex'], '-1')
+                self.assertEqual(trap['autocomplete'], 'off')
                 self.assertEqual([a.get('name') for a in doc.find('textarea')], ['description'])
                 self.assertEqual(doc.find('form')[0]['method'], 'post')
                 self.assertFalse(any(a.get('type') == 'file' for a in doc.find('input')))

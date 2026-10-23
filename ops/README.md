@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## Submission protection rollout — 23 October 2026
+
+The backend installer now includes `antispam.py`; existing Nginx POST-only route/rate limits, systemd unit, SMTP recipients and amoCRM settings stay in place. Deploy pushed backend using `--upgrade`, publish matching static through `ops/deploy.sh`, then atomically enable `LEAD_PROTECTION_REQUIRED=1` in the backed-up private environment and restart the existing service. Before activation, missing/0 keeps old clients compatible; supplied proofs are still checked. Verify the actual running flag, missing/tampered proof rejection without database writes, and one labelled successful synthetic request through PostgreSQL and configured delivery queues. Preserve current/previous and all live data on rollback. See server README and the dated verification report for limitations.
+
 ## Public sales contact — 23 October 2026
 
 Pushed code `eeeb5559fe9a23848832899b57a13853e355dbba` installed with backend `--upgrade`, then `ops/deploy.sh --from-github`. Backend current `20261023T184229Z-eeeb5559fe9a`, previous `20261023T181849Z-412063193728`; static current `20261023T184305Z-41970`, previous `20261016T070519Z-75714`. All 1256 static files verified before switch (20 downloaded, 1236 reused); 13 installed backend files and 80 public files verified afterward. Five services/timers active; SMTP/AMO queues have no pending jobs. The deploy preserved environment and service unit. After the old account hostname returned 401, only `AMO_BASE_URL` changed to `https://needleshark.amocrm.ru`; backup `/opt/needle-shark/backups/amo-domain-20261023T185459Z/leads.env`. API preflight and the running process confirm the new base. Unit and Nginx unchanged. The backend previous now contains the verified amoCRM implementation. Inspect pointers before rollback; never restore the database over newer submissions or restore the obsolete AMO hostname.

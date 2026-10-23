@@ -30,7 +30,7 @@ release="$(date -u +%Y%m%dT%H%M%SZ)-${revision:0:12}"
 release_dir="/opt/needle-shark/releases/$release"
 ssh_options=(-i "$ssh_key" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15)
 ssh "${ssh_options[@]}" "$remote_host" "install -d -m 0755 '$release_dir'; install -d -m 0700 '/opt/needle-shark/backups/$release'"
-scp "${ssh_options[@]}" "$project_dir"/server/{leads,crm,lead_context,delivery_store,mail_delivery,loop_delivery,amo_delivery}.py \
+scp "${ssh_options[@]}" "$project_dir"/server/{leads,crm,lead_context,delivery_store,mail_delivery,loop_delivery,amo_delivery,antispam}.py \
   "$project_dir/server/migrations/20260918_server_delivery.sql" "$project_dir/server/migrations/20260922_loop_delivery.sql" "$project_dir/server/migrations/20261008_b2b_contacts.sql" "$project_dir/server/migrations/20261014_lead_utm.sql" "$project_dir/ops/configure-server-mail.py" \
   "$project_dir/server/migrations/20261023_amo_delivery.sql" "$remote_host:$release_dir/"
 if [[ "$mode" != upgrade ]]; then

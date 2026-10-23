@@ -1,5 +1,15 @@
 # Server-side leads and email
 
+## Automatic submission protection — 23 October 2026
+
+`antispam.py` issues a stateless SHA-256 work challenge through the existing POST `/api/leads` (`action: challenge`, UUID). Its HMAC is domain-separated from the IP-hash use of `IP_HASH_SECRET`, bound to the UUID and Nginx-provided IP, and expires after 600 seconds. The browser finds a nonce with 14 leading zero bits; verification is cheap on the VPS. A proof cannot create a different UUID. Exact retries use the existing transactional fingerprint and do not create duplicate orders or deliveries; refreshed proofs are excluded from stored payloads/fingerprints, notifications and analytics. Invalid/missing proofs return 403 before database access when enforcement is enabled. The existing honeypot and IP/Nginx rate limits remain.
+
+This is frictionless resistance to simple direct API spam, not proof of a human and not a substitute for provider CAPTCHA against adapted browser bots. No external CAPTCHA provider, new dependency, visitor fingerprint, database migration or public file URL is added. WebCrypto is required; failure preserves form values and offers retry/email. Browser work stops after 15 seconds, and network requests have bounded timeouts.
+
+Activation is deliberately separate: install committed/pushed backend with `--upgrade`, publish matching static assets, then set `LEAD_PROTECTION_REQUIRED=1` in root-owned `/etc/needle-shark/leads.env` and restart `needle-leads`. Missing/0 is the rollout compatibility mode; malformed values fail startup. Back up the private environment first, edit atomically, and verify the flag in the running process plus a public valid-shaped request without proof returning 403. Never call the protection enabled based only on deployment. Existing open tabs using the previous client must reload. Roll back client/backend together after checking current/previous; preserve all new leads/queues and never restore a database dump over them.
+
+Local checks include real HTTP rejection before storage, expiry/tampering/IP/UUID binding, database failure, browser SHA-256 interoperability, fresh proofs with stable UUID retries, and existing intake/queue tests. Production activation and verification are recorded in PROJECT_CONTEXT and the release report.
+
 ## Public sales mailbox — 23 October 2026
 
 The website and API error messages now point to sales@neesha.ru. Backend code `eeeb5559fe9a23848832899b57a13853e355dbba` was installed through `--upgrade`, preserving SMTP recipient info@neesha.ru and direct amoCRM delivery. Both pending queues are empty and read-only AMO preflight passes; no new public form submission was sent in this release. Current/previous and validation are recorded in [the report](../docs/verification/20261023-sales-mailbox.json).

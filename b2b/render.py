@@ -19,7 +19,7 @@ MANIFEST = json.loads((ROOT / 'business/assets/manifest.json').read_text())
 PHONE = '+7 931 244-82-45'
 EMAIL = 'sales@neesha.ru'
 NEW_MATERIALS = json.loads((SOURCE / 'assets/manifest.json').read_text())
-ASSET_FILES = ('site.css', 'site.js', 'typography.css', 'form-validation.mjs', 'form-client.mjs')
+ASSET_FILES = ('site.css', 'site.js', 'typography.css', 'form-validation.mjs', 'form-client.mjs', 'form-protection.mjs')
 
 
 def asset_version():
@@ -32,7 +32,7 @@ def copy_assets(destination):
     for name in ASSET_FILES:
         content = (SOURCE / name).read_text()
         if name.endswith(('.js', '.mjs')):
-            for module in ('form-validation', 'form-client'):
+            for module in ('form-validation', 'form-client', 'form-protection'):
                 content = content.replace(f"'./{module}.mjs'", f"'./{module}.js?v={asset_version()}'")
         (target / name.replace('.mjs', '.js')).write_text(content)
     (target / 'assets').mkdir(exist_ok=True)
@@ -104,6 +104,7 @@ def footer(contact_href='/#contact'):
 def form(topic=''):
     return f'''<section class="ns-contact" id="contact"><div class="ns-container ns-contact-grid"><div><p class="ns-kicker">НАЧНЁМ С ВАШЕЙ ЗАДАЧИ</p><h2>Расскажите,<br>что нужно <em>сшить.</em></h2><p class="ns-lead">Уточним детали, подберём материал и подготовим расчёт. Можно начать с короткого описания.</p><a class="ns-contact-phone" href="tel:+79312448245">{PHONE}</a><a class="ns-contact-email" href="mailto:{EMAIL}">{EMAIL}</a>{messengers()}</div>
     <form class="ns-form ym-hide-content" data-context="b2b" data-topic="{e(topic)}" method="post" action="/api/leads" novalidate><p class="ns-form-caption">Заявка на расчёт <span>От 1 рабочего дня*</span></p>
+      <div hidden aria-hidden="true"><label for="lead-website">Оставьте это поле пустым</label><input id="lead-website" name="website" tabindex="-1" autocomplete="off" maxlength="254"></div>
       <label for="lead-name">Имя <span aria-hidden="true">*</span></label><input id="lead-name" name="name" autocomplete="name" maxlength="120" placeholder="Как к вам обращаться" required>
       <div class="ns-form-row"><div><label for="lead-email">Почта</label><input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@company.ru" aria-describedby="contact-hint contact-error"></div><div><label for="lead-phone">Телефон</label><input id="lead-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" placeholder="+7 (___) ___-__-__" aria-describedby="contact-hint contact-error"></div></div>
       <p id="contact-hint" class="ns-field-hint">Укажите почту или телефон — достаточно одного контакта.</p><p id="contact-error" class="ns-field-error" role="alert" hidden></p>

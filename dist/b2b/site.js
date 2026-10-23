@@ -1,5 +1,5 @@
-import {validateContacts} from './form-validation.js?v=99c5c35658c1';
-import {LeadClient, leadFields, captureUtm} from './form-client.js?v=99c5c35658c1';
+import {validateContacts} from './form-validation.js?v=5f8accc6b7fc';
+import {LeadClient, leadFields, captureUtm} from './form-client.js?v=5f8accc6b7fc';
 
 let campaignStorage;
 try { campaignStorage = window.sessionStorage; } catch { /* Private browsers may deny storage. */ }
@@ -94,12 +94,13 @@ if (form) {
       name: form.elements.name.value, email: form.elements.email.value,
       phone: form.elements.phone.value, description: form.elements.description.value,
       consent: form.elements.consent.checked, direction: document.body.dataset.direction,
-      material: form.dataset.material || '', path: location.pathname, utm: campaign
+      material: form.dataset.material || '', path: location.pathname, utm: campaign,
+      website: form.elements.website.value
     });
     const controls = [...form.querySelectorAll('input,textarea,button')];
     controls.forEach(control => { control.disabled = true; });
     form.setAttribute('aria-busy', 'true');
-    status.textContent = 'Сохраняем заявку…';
+    status.textContent = 'Проверяем и сохраняем заявку…';
     status.hidden = false;
     document.dispatchEvent(new CustomEvent('b2b-form-attempt'));
     try {

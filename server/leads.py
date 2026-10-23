@@ -10,6 +10,7 @@ import delivery_store
 import mail_delivery
 import loop_delivery
 import amo_delivery
+import antispam
 from lead_context import validate_context, notification_payload
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
@@ -154,9 +155,17 @@ class Handler(BaseHTTPRequestHandler):
             raw = self.rfile.read(size)
             if len(raw) != size:
                 raise ValueError('Неполная заявка.')
-            data = validate(json.loads(raw))
-            status, response = enqueue(data, self.headers.get('X-Real-IP', self.client_address[0]))
+            request = json.loads(raw)
+            ip = self.headers.get('X-Real-IP', self.client_address[0])
+            if isinstance(request, dict) and request.get('action') == 'challenge':
+                return self.reply(200, antispam.issue(request.get('id'), ip))
+            data = validate(request)
+            if antispam.required() or request.get('protection') is not None:
+                antispam.verify(request.get('protection'), data['id'], ip)
+            status, response = enqueue(data, ip)
             self.reply(status, response)
+        except antispam.Rejected:
+            self.reply(403, {'ok': False, 'error': antispam.ERROR})
         except (ValueError, TypeError):
             self.reply(400, {'ok': False, 'error': 'Проверьте поля заявки и согласие на обработку данных.'})
         except Exception:
@@ -166,6 +175,7 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == '__main__':
     if len(os.environ.get('IP_HASH_SECRET', '')) < 32:
         raise SystemExit('IP_HASH_SECRET must contain at least 32 characters')
+    print('Lead protection required:', antispam.required(), flush=True)
     mail_delivery.recipients()
     if mail_delivery.smtp_config() is None:
         print('SMTP not configured: leads will be saved, email delivery paused', flush=True)

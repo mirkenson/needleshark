@@ -1,3 +1,5 @@
+import {browserProof} from './form-protection.mjs';
+
 // Only campaign labels are retained; never store the full URL or arbitrary query fields.
 export const UTM_FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 export function captureUtm(search, storage) {
@@ -18,9 +20,10 @@ export function captureUtm(search, storage) {
 
 // Retry the same payload with the same UUID after an uncertain response.
 export class LeadClient {
-  constructor({send = (...args) => fetch(...args), uuid = () => crypto.randomUUID()} = {}) {
+  constructor({send = (...args) => fetch(...args), uuid = () => crypto.randomUUID(), protect = browserProof} = {}) {
     this.send = send;
     this.uuid = uuid;
+    this.protect = protect;
     this.pending = null;
     this.busy = false;
     this.saved = new Set();
@@ -31,7 +34,8 @@ export class LeadClient {
     try {
       const signature = JSON.stringify(fields);
       if (this.pending?.signature !== signature) this.pending = {signature, id: this.uuid()};
-      const payload = {...fields, id: this.pending.id};
+      const protection = await this.protect(this.send, this.pending.id);
+      const payload = {...fields, id: this.pending.id, protection};
       const response = await this.send('/api/leads', {
         method: 'POST', headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(payload), signal: AbortSignal.timeout(30000)
@@ -39,7 +43,7 @@ export class LeadClient {
       const result = await response.json().catch(() => null);
       if (![200, 202].includes(response.status) || result?.ok !== true || result?.id !== payload.id) {
         if (response.status === 409) this.pending = null;
-        throw new Error(response.status === 429 ? 'Слишком много попыток. Попробуйте позже или напишите на sales@neesha.ru.' : 'Не удалось сохранить заявку. Проверьте данные и повторите отправку или напишите на sales@neesha.ru.');
+        throw new Error(response.status === 429 ? 'Слишком много попыток. Попробуйте позже или напишите на sales@neesha.ru.' : response.status === 403 ? 'Не удалось пройти проверку отправки. Данные остались в форме. Обновите страницу или повторите попытку.' : 'Не удалось сохранить заявку. Проверьте данные и повторите отправку или напишите на sales@neesha.ru.');
       }
       const firstConfirmation = !this.saved.has(payload.id);
       this.saved.add(payload.id);
@@ -56,10 +60,10 @@ export class LeadClient {
   newInquiry() { this.pending = null; }
 }
 
-export function leadFields({name, email, phone, description, consent, direction, material, path, utm = {}}) {
+export function leadFields({name, email, phone, description, consent, direction, material, path, utm = {}, website = ''}) {
   return {
     name: name.trim(), email: email.trim(), phone: phone.trim(),
-    contact: email.trim() || phone.trim(), question: description.trim(), consent,
+    contact: email.trim() || phone.trim(), question: description.trim(), consent, website,
     ...Object.fromEntries(UTM_FIELDS.filter(key => utm[key]).map(key => [key, utm[key]])),
     source_path: path, business_intent: material ? 'materials' : 'custom',
     ...(direction ? {business_direction: direction} : {}),

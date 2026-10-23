@@ -15,7 +15,7 @@ test('both contacts and description preserved without attachment', () => {
 });
 test('uncertain retry keeps UUID; repeat acknowledgment does not duplicate success', async () => {
   const ids = []; let calls = 0;
-  const client = new LeadClient({uuid: () => 'test-id', send: async (_url, options) => {
+  const client = new LeadClient({protect: async () => ({}), uuid: () => 'test-id', send: async (_url, options) => {
     const {id} = JSON.parse(options.body); ids.push(id);
     if (++calls === 1) throw new TypeError('Network failed');
     return ack(id, 200);
@@ -27,7 +27,7 @@ test('uncertain retry keeps UUID; repeat acknowledgment does not duplicate succe
 });
 test('double click sends one request', async () => {
   let finish; let calls = 0;
-  const client = new LeadClient({uuid: () => 'test-id', send: () => {calls++; return new Promise(resolve => {finish = resolve;});}});
+  const client = new LeadClient({protect: async () => ({}), uuid: () => 'test-id', send: () => {calls++; return new Promise(resolve => {finish = resolve;});}});
   const pending = client.submit(fields);
   assert.deepEqual(await client.submit(fields), {busy: true});
   finish(ack('test-id')); await pending;
@@ -37,14 +37,14 @@ test('errors and missing/mismatched acknowledgments never confirm success', asyn
   for (const response of [ack('wrong'), ack('test-id', 503), ack('test-id', 429),
     {status: 202, json: async () => ({ok: false, id: 'test-id'})},
     {status: 200, json: async () => {throw new SyntaxError();}}]) {
-    const client = new LeadClient({uuid: () => 'test-id', send: async () => response});
+    const client = new LeadClient({protect: async () => ({}), uuid: () => 'test-id', send: async () => response});
     await assert.rejects(client.submit(fields));
     assert.equal(client.saved.size, 0); assert.equal(client.busy, false);
   }
 });
 test('changed payload, new inquiry and conflict receive a fresh UUID', async () => {
   let next = 0; const ids = []; let conflict = true;
-  const client = new LeadClient({uuid: () => String(++next), send: async (_url, options) => {
+  const client = new LeadClient({protect: async () => ({}), uuid: () => String(++next), send: async (_url, options) => {
     const {id} = JSON.parse(options.body); ids.push(id);
     if (conflict) {conflict = false; return ack(id, 409);}
     return ack(id);
@@ -62,7 +62,7 @@ test('default browser fetch is called without the client as its receiver', async
       assert.ok(this === undefined || this === globalThis, 'Native browser fetch rejects an arbitrary receiver');
       return ack(JSON.parse(options.body).id);
     };
-    const client = new LeadClient({uuid: () => 'test-id'});
+    const client = new LeadClient({protect: async () => ({}), uuid: () => 'test-id'});
     assert.equal((await client.submit(fields)).firstConfirmation, true);
   } finally { globalThis.fetch = original; }
 });
