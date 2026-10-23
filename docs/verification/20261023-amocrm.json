@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-23",
+  "scope": "Direct server delivery of new website submissions to amoCRM; mailbox migration deferred",
+  "url": "https://needle-shark.ru/",
+  "branch": "codex/amocrm-intake",
+  "verified_deployed_commit": "4120631937287c02997833e7bc945608a0018cc3",
+  "published": true,
+  "deployment": {
+    "tool": "ops/install-server-mail.sh --amo, followed by --upgrade for verified search compatibility fix",
+    "pushed_before_install": true,
+    "backend_current": "20261023T181849Z-412063193728",
+    "backend_previous": "20261023T181321Z-376d4ec0c75c",
+    "pre_integration_backend_retained": "20261014T082411Z-503911b4435a",
+    "static_current_unchanged": "20261016T070519Z-75714",
+    "static_previous_unchanged": "20261014T082454Z-53317",
+    "backup_directories": [
+      "/opt/needle-shark/backups/20261023T181321Z-376d4ec0c75c",
+      "/opt/needle-shark/backups/20261023T181849Z-412063193728"
+    ],
+    "backend_hashes_match": 13,
+    "public_files_match": 10,
+    "systemd_unit_matches_backup": true,
+    "nginx_changed": false,
+    "environment_change_scope": "AMO settings only; root-owned mode 0600",
+    "mail_recipient_preserved": "info@neesha.ru",
+    "loop_enabled": false,
+    "google_enabled": false,
+    "active_services_and_timers": 5,
+    "rollback_limit": "Immediate previous has the initial unsupported CRM filter. Inspect pointers before any rollback; pre-integration code is SMTP-only. Keep new rows/outboxes and never restore a database dump over new submissions."
+  },
+  "local_and_isolated_checks": {
+    "server_unit_tests": 42,
+    "ops_unit_tests": 33,
+    "shell_syntax": "passed",
+    "staged_secret_scan": "passed; no tokens, environment files or customer data committed",
+    "prepare_public": "passed; dist unchanged",
+    "check_site": "18 pages passed metadata, JSON-LD, sitemap, links, assets, anchors and CSS checks",
+    "postgres_amo_disposable_schema": "passed: repeatable additive migration, no historical replay, transactional rollback, concurrent UUID deduplication/claim, fields preserved, independent SMTP, persistent create fence, restart recovery, stale-worker fencing and backoff",
+    "postgres_existing_delivery_disposable_schema": "passed: B2B contacts/context/UTM, numbering, SMTP/LOOP atomic queues, private attachment integrity and lease/backoff"
+  },
+  "public_test": {
+    "new_synthetic_submissions": 1,
+    "explicit_user_approval_for_agreement_and_send": true,
+    "order_id": 31,
+    "submission_id": "42ba8842-e2db-4187-ba0e-0c41d95bfc93",
+    "qa_campaign": "amo_server_20261023",
+    "browser_result": "Saved confirmation after pending state; inputs reset",
+    "browser_errors_and_warnings": 0,
+    "database": "name, email, phone, complete question, source path, consent/documents and five UTM verified against the synthetic fixture",
+    "amo_deal_id": 4743091,
+    "amo_pipeline_stage": "Воронка / Заявка получена",
+    "amo_fields": "numeric request number, exact submission UUID, complete original question/context, contact name/email/phone and all five native UTM fields verified by CRM API",
+    "amo_queue": "sent",
+    "amo_attempts_including_initial_filter_rejections": 4,
+    "synthetic_deal_title": "ТЕСТ — заявка сайта №31 (не обрабатывать)",
+    "smtp_jobs": 1,
+    "smtp_state": "sent, one attempt; provider acceptance only",
+    "loop_jobs_created": 0,
+    "historical_amo_jobs_created": 0,
+    "public_identical_uuid_retry": "200; one AMO job and one exact-UUID deal",
+    "invalid_public_api": 400,
+    "redirect_query_checks": 2,
+    "attachment": "Not applicable to current public form: no upload. Legacy attachment behavior covered by existing tests and isolated SQL; no file scope/transfer to amoCRM."
+  },
+  "issues_resolved": [
+    "Initial custom-field search returned Invalid filter for current account before any CRM POST. Standard query search with an exact UUID field comparison passed API checks and delivered the existing queued test without a new submission.",
+    "One SSH connection timed out before remote mutations; subsequent installer run completed and file/service checks passed."
+  ],
+  "limits": [
+    "Mailbox inbox receipt and owner-managed forwarding are not verified by SMTP sent status.",
+    "Current token must be replaced before 2027-10-23; automatic token refresh is not implemented.",
+    "Existing server monitoring covers SMTP, not the AMO outbox. Pending/error inspection and ambiguous-create reconciliation are documented in server/README.md.",
+    "Ambiguous POST results remain pending for exact UUID reconciliation/manual review; request_id is not an amoCRM idempotency guarantee.",
+    "No files are uploaded to amoCRM; legacy attachments remain private on server/email.",
+    "No visual or static changes: multi-width redesign checks and SEO reindex requests are not applicable. No fresh search-console/index audit was performed.",
+    "Actual Metrika SDK lead_submitted/report processing and goal definitions were not independently verified in this release; scripts, event payloads and counter are unchanged.",
+    "sales@neesha.ru replacement and mailbox connection are intentionally deferred."
+  ]
+}

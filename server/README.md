@@ -2,6 +2,8 @@
 
 ## Direct amoCRM delivery — 23 October 2026
 
+Live code `4120631937287c02997833e7bc945608a0018cc3`, backend `20261023T181849Z-412063193728`. Public synthetic order 31 reached deal 4743091 with verified contact/full text/five UTM values; same-UUID public retry returned 200 without an additional job. SMTP accepted the one info@neesha.ru message; inbox unverified. The first release's custom-field filter was unavailable on this account; standard search plus exact UUID checking fixed delivery of the same queued request. The immediate previous release contains that initial filter and is not a working AMO rollback; pre-integration SMTP code `20261014T082411Z-503911b4435a` is retained. [Checks and limits](../docs/verification/20261023-amocrm.json).
+
 `AMO_ENABLED=1` adds one `lead_amo_deliveries` job to the same PostgreSQL transaction as each new submission and its SMTP jobs. No historical backfill is performed. A separate worker creates a deal with a linked contact in the configured pipeline/stage; intake success still means a database commit. Mail recipients and LOOP are independent. Website/mailbox replacement with sales@neesha.ru is deferred.
 
 The deal includes the numeric order number, permanent submission UUID, full question and available company/product/direction/material/source context in a textarea, plus the five native UTM fields. Contact email/phone are structured fields; an exact match reuses an existing contact without overwriting it. Multiple matching contacts hold the job for review. Files stay private in PostgreSQL and existing mail delivery; no file bytes, names or public links go to amoCRM. The active website form has no upload.
@@ -35,7 +37,7 @@ New JSON fields email, phone, business_direction and business_material are optio
 
 `python3 server/preview.py --directory outputs/catalog-preview --port 4176` serves the local catalogue drafts on loopback. Custom directories cannot be combined with `--live-api`; submissions return the existing explicit preview error. Production lead handling/database/delivery code is unchanged. New catalogue pack quantities still use the existing contract: number of packs in question text, total items in `quantity`, variant article/options in `question`. Local synthetic checks do not confirm PostgreSQL or SMTP/LOOP delivery. See `docs/verification/20260922-catalog-drafts.json`.
 
-Database reference: [all six tables and every column](../docs/DATABASE.md), including customer/order IDs, UUID retry semantics, constraints, indexes, payload fields and attachment retention. `orders.id` is the numeric request number; `orders.customer_id` references `customers.id`; `submission_id` remains the technical UUID used by the API, database links and email Message-ID.
+Database reference: [tables and columns](../docs/DATABASE.md), including customer/order IDs, UUID retry semantics, constraints, indexes, payload fields and attachment retention. `orders.id` is the numeric request number; `orders.customer_id` references `customers.id`; `submission_id` remains the technical UUID used by the API, database links and email Message-ID.
 
 ## Numeric notification number — 22 September 2026
 

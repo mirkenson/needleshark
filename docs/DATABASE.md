@@ -2,6 +2,8 @@
 
 ## Очередь amoCRM — 23 октября 2026
 
+Установлена с backend `412063193728`; публичная синтетическая заявка №31 подтвердила запись и sent AMO/SMTP, без исторического заполнения очереди. Повтор исходного UUID возвращает 200 и сохраняет одно AMO-задание. [Отчёт](verification/20261023-amocrm.json).
+
 Добавляющая миграция `20261023_amo_delivery.sql` создаёт `lead_amo_deliveries`, без переноса исторических заявок. Одна строка на новый submission UUID при AMO_ENABLED=1, в общей транзакции с заявкой и почтовыми заданиями. Колонки: `id` BIGINT identity PK; `submission_id` UUID unique FK на lead_submissions; `status` pending/sending/sent; `attempts` INTEGER; `retry_at`, `lease_until`, `sent_at` TIMESTAMPTZ; `lease_token` UUID; `last_error` TEXT; `create_started` BOOLEAN; `amo_lead_id` положительный BIGINT. Частичный индекс по retry_at для недоставленных. Секретов и копий файлов в таблице нет.
 
 Перед внешним POST сохраняется create_started с проверкой действующей аренды. После ответа сохраняется amo_lead_id, затем sent. Неопределённый ответ восстанавливается поиском submission UUID в CRM, без слепого повторного создания. Подробности и ограничения — [server/README.md](../server/README.md). Остальные таблицы, отпечатки и срок хранения вложений не меняются.
