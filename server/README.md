@@ -2,6 +2,8 @@
 
 ## Automatic submission protection — 23 October 2026
 
+**Live and required:** pushed code `ab8b6b9b5c4281cfb964f310d5300660aadf97be`, backend `20261023T194915Z-ab8b6b9b5c42`, static `20261023T195007Z-48372`, running `LEAD_PROTECTION_REQUIRED=1`. Public missing/malformed/rebound proofs return 403 without saved records. Synthetic order 32 passed PostgreSQL, SMTP and amoCRM deal 4746995; refreshed-proof retry created no duplicate. SMTP inbox and live Metrika goal processing remain unverified. [Evidence and rollback pointers](../docs/verification/20261023-form-antispam.json).
+
 `antispam.py` issues a stateless SHA-256 work challenge through the existing POST `/api/leads` (`action: challenge`, UUID). Its HMAC is domain-separated from the IP-hash use of `IP_HASH_SECRET`, bound to the UUID and Nginx-provided IP, and expires after 600 seconds. The browser finds a nonce with 14 leading zero bits; verification is cheap on the VPS. A proof cannot create a different UUID. Exact retries use the existing transactional fingerprint and do not create duplicate orders or deliveries; refreshed proofs are excluded from stored payloads/fingerprints, notifications and analytics. Invalid/missing proofs return 403 before database access when enforcement is enabled. The existing honeypot and IP/Nginx rate limits remain.
 
 This is frictionless resistance to simple direct API spam, not proof of a human and not a substitute for provider CAPTCHA against adapted browser bots. No external CAPTCHA provider, new dependency, visitor fingerprint, database migration or public file URL is added. WebCrypto is required; failure preserves form values and offers retry/email. Browser work stops after 15 seconds, and network requests have bounded timeouts.

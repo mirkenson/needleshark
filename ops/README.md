@@ -2,6 +2,8 @@
 
 ## Submission protection rollout — 23 October 2026
 
+Installed code `ab8b6b9b5c4281cfb964f310d5300660aadf97be`: backend current `20261023T194915Z-ab8b6b9b5c42`, previous `20261023T184229Z-eeeb5559fe9a`; static current `20261023T195007Z-48372`, previous `20261023T184305Z-41970`. Required flag verified in the running process after activation; private backup `/opt/needle-shark/backups/protection-20261023T195101Z/leads.env`. 14 installed backend files and 235 public files match the checked release; five services/timers active, SMTP/AMO queues empty. [Full report](../docs/verification/20261023-form-antispam.json).
+
 The backend installer now includes `antispam.py`; existing Nginx POST-only route/rate limits, systemd unit, SMTP recipients and amoCRM settings stay in place. Deploy pushed backend using `--upgrade`, publish matching static through `ops/deploy.sh`, then atomically enable `LEAD_PROTECTION_REQUIRED=1` in the backed-up private environment and restart the existing service. Before activation, missing/0 keeps old clients compatible; supplied proofs are still checked. Verify the actual running flag, missing/tampered proof rejection without database writes, and one labelled successful synthetic request through PostgreSQL and configured delivery queues. Preserve current/previous and all live data on rollback. See server README and the dated verification report for limitations.
 
 ## Public sales contact — 23 October 2026
