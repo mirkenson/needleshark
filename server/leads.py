@@ -9,6 +9,7 @@ import uuid
 import delivery_store
 import mail_delivery
 import loop_delivery
+import amo_delivery
 from lead_context import validate_context, notification_payload
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
@@ -62,7 +63,7 @@ def validate(data):
 
 def enqueue(data, ip):
     return delivery_store.enqueue(data, ip, mail_delivery.recipients(), os.environ.get('IP_HASH_SECRET', ''),
-                                  loop_enabled=bool(loop_delivery.webhook_url()))
+                                  loop_enabled=bool(loop_delivery.webhook_url()), amo_enabled=amo_delivery.enabled())
 
 
 def deliver_once():
@@ -78,6 +79,23 @@ def deliver_once():
         except Exception as error:
             delivery_store.finish(job, mail_delivery.error_code(error))
             print('Email delivery pending:', job['id'], flush=True)
+        else:
+            delivery_store.finish(job)
+
+
+def deliver_amo_once():
+    config = amo_delivery.configuration()
+    if config is None:
+        return
+    for _ in range(5):
+        job = delivery_store.claim('amo')
+        if job is None:
+            break
+        try:
+            amo_delivery.send(job, config, delivery_store.save_amo_state)
+        except Exception as error:
+            delivery_store.finish(job, amo_delivery.error_code(error))
+            print('amoCRM delivery pending:', job['id'], flush=True)
         else:
             delivery_store.finish(job)
 
@@ -151,7 +169,8 @@ if __name__ == '__main__':
     mail_delivery.recipients()
     if mail_delivery.smtp_config() is None:
         print('SMTP not configured: leads will be saved, email delivery paused', flush=True)
-    delivery_store.initialize(loop_enabled=bool(loop_delivery.webhook_url()))
+    delivery_store.initialize(loop_enabled=bool(loop_delivery.webhook_url()), amo_enabled=amo_delivery.enabled())
     threading.Thread(target=worker, daemon=True).start()
     threading.Thread(target=worker, args=(deliver_loop_once,), daemon=True).start()
+    threading.Thread(target=worker, args=(deliver_amo_once,), daemon=True).start()
     ThreadingHTTPServer(('127.0.0.1', 8091), Handler).serve_forever()

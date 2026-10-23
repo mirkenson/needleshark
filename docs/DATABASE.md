@@ -1,5 +1,11 @@
 # База данных Needle Shark
 
+## Очередь amoCRM — 23 октября 2026
+
+Добавляющая миграция `20261023_amo_delivery.sql` создаёт `lead_amo_deliveries`, без переноса исторических заявок. Одна строка на новый submission UUID при AMO_ENABLED=1, в общей транзакции с заявкой и почтовыми заданиями. Колонки: `id` BIGINT identity PK; `submission_id` UUID unique FK на lead_submissions; `status` pending/sending/sent; `attempts` INTEGER; `retry_at`, `lease_until`, `sent_at` TIMESTAMPTZ; `lease_token` UUID; `last_error` TEXT; `create_started` BOOLEAN; `amo_lead_id` положительный BIGINT. Частичный индекс по retry_at для недоставленных. Секретов и копий файлов в таблице нет.
+
+Перед внешним POST сохраняется create_started с проверкой действующей аренды. После ответа сохраняется amo_lead_id, затем sent. Неопределённый ответ восстанавливается поиском submission UUID в CRM, без слепого повторного создания. Подробности и ограничения — [server/README.md](../server/README.md). Остальные таблицы, отпечатки и срок хранения вложений не меняются.
+
 ## UTM в заявках — установлено 14 октября 2026
 
 Добавляющая миграция `20261014_lead_utm.sql` добавляет в orders пять nullable TEXT-колонок: `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`; ограничение длины 500 символов. Исторические строки не переписываются. Снимок меток также хранится в lead_submissions.payload в общей транзакции. Повтор того же UUID с другой меткой получает 409. Публичная синтетическая заявка подтвердила пять значений и delivery jobs. Дневные таблицы не добавлялись. [Отчёт](verification/20261014-lead-utm.json).
@@ -23,6 +29,7 @@
 | `lead_files` | Один закрытый файл заявки; после очистки строки может не быть |
 | `lead_deliveries` | Одно почтовое уведомление одному настроенному получателю |
 | `lead_loop_deliveries` | Одно уведомление о заявке в настроенный канал LOOP |
+| `lead_amo_deliveries` | Одна передача новой заявки в amoCRM и состояние восстановления результата |
 
 ```mermaid
 erDiagram
@@ -31,6 +38,7 @@ erDiagram
     lead_submissions ||--o| lead_files : submission_id
     lead_submissions ||--o{ lead_deliveries : submission_id
     lead_submissions ||--o| lead_loop_deliveries : submission_id
+    lead_submissions ||--o| lead_amo_deliveries : submission_id
 ```
 
 У исторических заявок времён Google может не быть `lead_submissions` и связанных строк. Новая заявка получает реестр, файл при наличии и задания доставки в одной транзакции. LOOP-задание создаётся при включённой интеграции; исторические заявки автоматически в неё не добавляются.

@@ -1,5 +1,19 @@
 # Server-side leads and email
 
+## Direct amoCRM delivery — 23 October 2026
+
+`AMO_ENABLED=1` adds one `lead_amo_deliveries` job to the same PostgreSQL transaction as each new submission and its SMTP jobs. No historical backfill is performed. A separate worker creates a deal with a linked contact in the configured pipeline/stage; intake success still means a database commit. Mail recipients and LOOP are independent. Website/mailbox replacement with sales@neesha.ru is deferred.
+
+The deal includes the numeric order number, permanent submission UUID, full question and available company/product/direction/material/source context in a textarea, plus the five native UTM fields. Contact email/phone are structured fields; an exact match reuses an existing contact without overwriting it. Multiple matching contacts hold the job for review. Files stay private in PostgreSQL and existing mail delivery; no file bytes, names or public links go to amoCRM. The active website form has no upload.
+
+Keep `AMO_BASE_URL`, `AMO_ACCESS_TOKEN`, `AMO_PIPELINE_ID`, `AMO_STATUS_ID`, `AMO_SUBMISSION_FIELD_ID`, `AMO_ORDER_FIELD_ID`, `AMO_DETAILS_FIELD_ID` and optional `AMO_RESPONSIBLE_ID` only in root-owned 0600 `/etc/needle-shark/leads.env`. Only the account's CRM scope is needed. HTTPS certificates are verified; redirects/proxies and secret/error-body logging are disabled. Rotate the current long-lived token before 23 October 2027. No automatic token refresh is implemented.
+
+Create requests are fenced by the queue lease and persisted `create_started` before POST. `request_id` is only an echoed correlation value, not an amoCRM idempotency key. After a lost acknowledgement, retries search the UUID field; a saved remote ID recovers without another POST. If the result remains uncertain, `amo_create_unconfirmed` stays pending and requires operator review; it is never blindly resent. Backoff is 60 seconds to one hour. Existing monitoring watches SMTP, not this new queue: inspect `SELECT status,count(*),max(attempts) FROM lead_amo_deliveries GROUP BY status;` and `last_error` for pending jobs. Never reset `create_started` until the CRM result is conclusively reconciled.
+
+Deploy committed/pushed code using `bash ops/install-server-mail.sh --amo PRIVATE_AMO_ENV`. The private input must contain only complete AMO settings. Read-only API preflight checks account, stage and field types before service stop; the installer backs up environment/unit/database/pointers, applies the additive migration/grants, validates as the application user and switches backend current atomically. SMTP/LOOP/unit/static releases are preserved. `--upgrade` retains the configured integration. To pause, set AMO_ENABLED=0 in an atomic private environment update and restart: pending jobs remain, but new submissions do not queue for amoCRM. Inspect current/previous before rollback; old code leaves AMO jobs unprocessed, and database dumps must never overwrite new submissions.
+
+Checks: server/ops unit suites; `CRM_TEST_DSN=... python3 server/check_amo_postgres.py` in a disposable schema, alongside `check_delivery_postgres.py`; then a labelled public synthetic submission and verification of database, SMTP acknowledgement and CRM deal/contact/UTM fields. Local tests alone do not establish production delivery.
+
 ## Current lead recipient: info@neesha.ru — 19 October 2026
 
 The owner replaced direct delivery to the CRM mailbox with **info@neesha.ru only** in private production `MAIL_RECIPIENTS`. Forwarding to the other mailboxes is configured by the owner at the mailbox provider. Preserve this routing during upgrades; do not restore the old CRM-only or four-recipient list. This supersedes the earlier CRM routing entry below. Server-monitor alerts use their independent, unchanged recipient; LOOP remains disabled.

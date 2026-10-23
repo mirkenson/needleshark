@@ -25,7 +25,7 @@ def connection():
         conn.close()
 
 
-def initialize(loop_enabled=False):
+def initialize(loop_enabled=False, amo_enabled=False):
     with connection() as conn, conn.cursor() as cur:
         cur.execute('SELECT submission_id FROM lead_submissions LIMIT 0')
         cur.execute('SELECT email,phone,business_direction,business_material FROM orders LIMIT 0')
@@ -33,9 +33,11 @@ def initialize(loop_enabled=False):
         cur.execute('SELECT lease_token FROM lead_deliveries LIMIT 0')
         if loop_enabled:
             cur.execute('SELECT lease_token FROM lead_loop_deliveries LIMIT 0')
+        if amo_enabled:
+            cur.execute('SELECT lease_token,create_started,amo_lead_id FROM lead_amo_deliveries LIMIT 0')
 
 
-def enqueue(data, ip, recipients, secret, loop_enabled=False):
+def enqueue(data, ip, recipients, secret, loop_enabled=False, amo_enabled=False):
     if not recipients or len(secret) < 32:
         raise RuntimeError('Intake configuration missing')
     payload = json.dumps(data, ensure_ascii=False, sort_keys=True)
@@ -75,17 +77,19 @@ def enqueue(data, ip, recipients, secret, loop_enabled=False):
             cur.execute("INSERT INTO lead_deliveries(submission_id,channel,recipient) VALUES(%s,'email',%s)", (data['id'], recipient))
         if loop_enabled:
             cur.execute('INSERT INTO lead_loop_deliveries(submission_id) VALUES(%s)', (data['id'],))
+        if amo_enabled:
+            cur.execute('INSERT INTO lead_amo_deliveries(submission_id) VALUES(%s)', (data['id'],))
     return 202, {'ok': True, 'id': data['id']}
 
 
 def delivery_table(channel):
     # SQL identifiers only come from this fixed allowlist, never from a request/config.
-    return {'email': 'lead_deliveries', 'loop': 'lead_loop_deliveries'}[channel]
+    return {'email': 'lead_deliveries', 'loop': 'lead_loop_deliveries', 'amo': 'lead_amo_deliveries'}[channel]
 
 
 def claim(channel='email'):
     table = delivery_table(channel)
-    recipient_sql = 'd.recipient' if channel == 'email' else "'loop-leads'"
+    recipient_sql = 'd.recipient' if channel == 'email' else "'" + channel + "-leads'"
     token = str(uuid.uuid4())
     with connection() as conn, conn.cursor() as cur:
         cur.execute(f"""WITH next_job AS (
@@ -111,7 +115,21 @@ def claim(channel='email'):
             attachment = cur.fetchone()
             if attachment:
                 lead['attachment'] = {'name': attachment[0], 'type': attachment[1], 'content': bytes(attachment[2])}
-        return {'id': job_id, 'token': token, 'lead': lead, 'recipient': recipient, 'attempts': attempts, 'channel': channel}
+        job = {'id': job_id, 'token': token, 'lead': lead, 'recipient': recipient, 'attempts': attempts, 'channel': channel}
+        if channel == 'amo':
+            cur.execute('SELECT create_started,amo_lead_id FROM lead_amo_deliveries WHERE id=%s', (job_id,))
+            job['create_started'], job['amo_lead_id'] = cur.fetchone()
+        return job
+
+
+def save_amo_state(job, *, create_started=None, amo_lead_id=None):
+    """Fence remote creation and persist its result before marking delivery sent."""
+    with connection() as conn, conn.cursor() as cur:
+        cur.execute("""UPDATE lead_amo_deliveries
+            SET create_started=COALESCE(%s,create_started), amo_lead_id=COALESCE(%s,amo_lead_id)
+            WHERE id=%s AND lease_token=%s AND status='sending' AND lease_until>now()""",
+            (create_started, amo_lead_id, job['id'], job['token']))
+        return cur.rowcount == 1
 
 
 def finish(job, error=None):

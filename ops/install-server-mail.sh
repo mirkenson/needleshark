@@ -7,6 +7,10 @@ if [[ "${1:-}" == --upgrade ]]; then
   mode=upgrade
   settings=''
   approved_recipient='-'
+elif [[ "${1:-}" == --amo ]]; then
+  mode=amo
+  settings="${2:?Usage: install-server-mail.sh --amo PRIVATE_AMO_FILE}"
+  approved_recipient='-'
 elif [[ "${1:-}" == --loop ]]; then
   mode=loop
   settings="${2:?Usage: install-server-mail.sh --loop PRIVATE_LOOP_FILE}"
@@ -26,9 +30,9 @@ release="$(date -u +%Y%m%dT%H%M%SZ)-${revision:0:12}"
 release_dir="/opt/needle-shark/releases/$release"
 ssh_options=(-i "$ssh_key" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15)
 ssh "${ssh_options[@]}" "$remote_host" "install -d -m 0755 '$release_dir'; install -d -m 0700 '/opt/needle-shark/backups/$release'"
-scp "${ssh_options[@]}" "$project_dir"/server/{leads,crm,lead_context,delivery_store,mail_delivery,loop_delivery}.py \
+scp "${ssh_options[@]}" "$project_dir"/server/{leads,crm,lead_context,delivery_store,mail_delivery,loop_delivery,amo_delivery}.py \
   "$project_dir/server/migrations/20260918_server_delivery.sql" "$project_dir/server/migrations/20260922_loop_delivery.sql" "$project_dir/server/migrations/20261008_b2b_contacts.sql" "$project_dir/server/migrations/20261014_lead_utm.sql" "$project_dir/ops/configure-server-mail.py" \
-  "$remote_host:$release_dir/"
+  "$project_dir/server/migrations/20261023_amo_delivery.sql" "$remote_host:$release_dir/"
 if [[ "$mode" != upgrade ]]; then
   scp "${ssh_options[@]}" "$settings" "$remote_host:/opt/needle-shark/backups/$release/incoming.env"
 fi
@@ -39,6 +43,20 @@ backup_dir="/opt/needle-shark/backups/$1"
 umask 077
 chmod 0644 "$release_dir"/*.py "$release_dir"/*.sql
 python3 -m py_compile "$release_dir"/*.py
+if test "$4" = amo; then
+  # Check CRM before stopping the existing handler. No lead is sent by this probe.
+  python3 - "$release_dir" "$backup_dir/incoming.env" <<'PY'
+import importlib.util
+import sys
+sys.path.insert(0, sys.argv[1])
+import amo_delivery
+spec = importlib.util.spec_from_file_location('private_config', sys.argv[1] + '/configure-server-mail.py')
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+amo_delivery.preflight(amo_delivery.configuration(module.read_env(sys.argv[2])))
+print('amoCRM account, pipeline and fields verified before service stop')
+PY
+fi
 systemctl is-active --quiet needle-leads
 cp -p /etc/systemd/system/needle-leads.service "$backup_dir/needle-leads.service"
 cp -p /etc/needle-shark/leads.env "$backup_dir/leads.env"
@@ -83,14 +101,18 @@ sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/202
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20260922_loop_delivery.sql"
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20261008_b2b_contacts.sql"
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20261014_lead_utm.sql"
+sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20261023_amo_delivery.sql"
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON lead_submissions,lead_files,lead_deliveries TO needle_app; GRANT USAGE,SELECT ON SEQUENCE lead_deliveries_id_seq TO needle_app;'
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON lead_loop_deliveries TO needle_app; GRANT USAGE,SELECT ON SEQUENCE lead_loop_deliveries_id_seq TO needle_app;'
-if test "$4" = loop || test "$4" = upgrade; then
+sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON lead_amo_deliveries TO needle_app; GRANT USAGE,SELECT ON SEQUENCE lead_amo_deliveries_id_seq TO needle_app;'
+if test "$4" = loop || test "$4" = upgrade || test "$4" = amo; then
   # This mode upgrades only the existing PostgreSQL/SMTP backend, never an old unit.
   test -s "$backup_dir/backend-current"
   grep -qx 'ExecStart=/usr/bin/python3 /opt/needle-shark/current/leads.py' "$backup_dir/needle-leads.service"
   if test "$4" = loop; then
     python3 "$release_dir/configure-server-mail.py" --loop /etc/needle-shark/leads.env "$backup_dir/incoming.env"
+  elif test "$4" = amo; then
+    python3 "$release_dir/configure-server-mail.py" --amo /etc/needle-shark/leads.env "$backup_dir/incoming.env"
   else
     cmp "$backup_dir/leads.env" /etc/needle-shark/leads.env
     cmp "$backup_dir/needle-leads.service" /etc/systemd/system/needle-leads.service
@@ -101,7 +123,7 @@ fi
 # Validate as the application user with the actual systemd environment; no secrets in process args/output.
 systemd-run --quiet --wait --pipe --collect --unit="needle-mail-check-$1" \
   --property=User=needleleads --property=EnvironmentFile=/etc/needle-shark/leads.env \
-  /usr/bin/python3 -c "import sys; sys.path.insert(0, '$release_dir'); import delivery_store,mail_delivery,loop_delivery; delivery_store.initialize(loop_enabled=bool(loop_delivery.webhook_url())); mail_delivery.recipients(); mail_delivery.smtp_config(); print('Application configuration and database privileges OK')"
+  /usr/bin/python3 -c "import sys; sys.path.insert(0, '$release_dir'); import delivery_store,mail_delivery,loop_delivery,amo_delivery; delivery_store.initialize(loop_enabled=bool(loop_delivery.webhook_url()), amo_enabled=amo_delivery.enabled()); mail_delivery.recipients(); mail_delivery.smtp_config(); amo_delivery.configuration(); print('Application configuration and database privileges OK')"
 ln -sfn "$release_dir" /opt/needle-shark/current.next
 mv -Tf /opt/needle-shark/current.next /opt/needle-shark/current
 if test -f "$backup_dir/backend-current"; then

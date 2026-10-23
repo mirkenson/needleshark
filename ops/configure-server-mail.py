@@ -44,7 +44,24 @@ def configure_loop(target, incoming):
     write_env(target, dict(old, **supplied))
 
 
+def configure_amo(target, incoming):
+    from amo_delivery import configuration
+    old, supplied = read_env(target), read_env(incoming)
+    allowed = {'AMO_ENABLED', 'AMO_BASE_URL', 'AMO_ACCESS_TOKEN', 'AMO_PIPELINE_ID',
+               'AMO_STATUS_ID', 'AMO_SUBMISSION_FIELD_ID', 'AMO_DETAILS_FIELD_ID',
+               'AMO_ORDER_FIELD_ID', 'AMO_RESPONSIBLE_ID'}
+    if set(supplied) - allowed or configuration(supplied) is None:
+        raise ValueError('Only complete amoCRM configuration is allowed')
+    if not old.get('CRM_DSN') or not old.get('MAIL_RECIPIENTS'):
+        raise ValueError('Existing mail backend configuration missing')
+    write_env(target, dict(old, **supplied))
+
+
 def main():
+    if sys.argv[1] == '--amo':
+        configure_amo(*sys.argv[2:])
+        print('Private amoCRM configuration updated; existing settings preserved')
+        return
     if sys.argv[1] == '--loop':
         configure_loop(*sys.argv[2:])
         print('Private LOOP configuration updated; existing settings preserved')

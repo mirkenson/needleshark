@@ -11,6 +11,22 @@ spec.loader.exec_module(config)
 
 
 class MailConfigTests(unittest.TestCase):
+    def test_amo_update_preserves_existing_settings_and_rejects_mail_changes(self):
+        from test_amo_delivery import ENV
+        with tempfile.TemporaryDirectory() as directory:
+            target, incoming = (Path(directory) / name for name in ('existing.env', 'incoming.env'))
+            old = {'CRM_DSN': 'dbname=test', 'MAIL_RECIPIENTS': 'test@example.invalid',
+                   'SMTP_PASSWORD': 'private$`#value', 'IP_HASH_SECRET': 'unchanged'}
+            config.write_env(str(target), old)
+            config.write_env(str(incoming), ENV)
+            config.configure_amo(str(target), str(incoming))
+            self.assertEqual(config.read_env(target), dict(old, **ENV))
+            self.assertEqual(target.stat().st_mode & 0o777, 0o600)
+            config.write_env(str(incoming), dict(ENV, MAIL_RECIPIENTS='other@example.invalid'))
+            with self.assertRaises(ValueError):
+                config.configure_amo(str(target), str(incoming))
+            self.assertEqual(config.read_env(target), dict(old, **ENV))
+
     def test_systemd_roundtrip_keeps_literal_password_characters(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'test.env'

@@ -1,5 +1,11 @@
 # Needle Shark VPS
 
+## Direct amoCRM backend — 23 October 2026
+
+Use `bash ops/install-server-mail.sh --amo PRIVATE_AMO_ENV` for the approved direct server integration. It requires committed/pushed code, validates CRM account/stage/fields before stopping the handler, adds `20261023_amo_delivery.sql` and its minimal grants, merges only AMO settings and preserves mail/LOOP configuration, the actual service unit and static current/previous. The existing backup and atomic backend switch/rollback apply; no Nginx change or static `ops/deploy.sh` run is needed. Schema additions are retained on rollback; never restore a database dump over newer requests.
+
+Runtime/configuration, queue reconciliation and token renewal are described in [server/README.md](../server/README.md). Scope is new submissions only, CRM account data without file access. Existing SMTP monitoring does not cover this queue. Inspect its pending count/errors during maintenance; ambiguous creation outcomes require CRM reconciliation before any manual reset. The sales@neesha.ru website/mailbox change is a later task.
+
 ## Lead mail routed through info@neesha.ru — 19 October 2026
 
 The only production lead recipient is now `info@neesha.ru`; the owner handles onward forwarding at the mailbox provider. An atomic update changed only private `MAIL_RECIPIENTS`, with the lead service stopped and the empty queue rechecked before the update. The running process was verified after restart. All other environment settings, monitor configuration, unit and backend/static current/previous pointers are unchanged; no deployment script or source release was needed.
