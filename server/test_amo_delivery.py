@@ -84,6 +84,12 @@ class AmoTests(unittest.TestCase):
         self.client.list.return_value = [{'id': 123, 'custom_fields_values': [amo.field(21, self.lead['id'])]}]
         self.assertEqual(amo.send(dict(self.job, create_started=True), self.config, self.save, self.client), 123)
         self.client.request.assert_not_called()
+        self.client.list.assert_called_with('leads', {'query': self.lead['id']})
+
+    def test_submission_search_ignores_fuzzy_matches(self):
+        self.client.list.return_value = [{'id': 99, 'custom_fields_values': [amo.field(21, 'other-uuid')]}]
+        self.assertIsNone(amo.find_submission(self.client, self.lead['id']))
+        self.client.list.assert_called_once_with('leads', {'query': self.lead['id']})
 
     def test_saved_result_finishes_without_any_remote_write(self):
         self.assertEqual(amo.send(dict(self.job, amo_lead_id=123), self.config, self.save, self.client), 123)

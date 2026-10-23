@@ -162,7 +162,9 @@ def existing_contact(client, lead):
 def find_submission(client, submission_id):
     fid = client.config['submission_field_id']
     matches = set()
-    for row in client.list('leads', {f'filter[custom_fields_values][{fid}][]': submission_id}):
+    # Custom-field filters are unavailable on some account plans. Standard search
+    # covers filled entity fields; verify the exact UUID ourselves before reuse.
+    for row in client.list('leads', {'query': submission_id}):
         if any(entry.get('field_id') == fid and any(item.get('value') == submission_id
                 for item in entry.get('values', [])) for entry in row.get('custom_fields_values') or []):
             matches.add(row['id'])
