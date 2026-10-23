@@ -1,0 +1,255 @@
+{
+  "date": "2026-10-23",
+  "url": "https://needle-shark.ru/",
+  "code_commit": "eeeb5559fe9a23848832899b57a13853e355dbba",
+  "branch": "codex/sales-mailbox",
+  "scope": "Public sales contact deployed; corporate REG.ru mailbox connected to amoCRM, incoming deal and reply verified; legacy Mail.ru routing remains unresolved.",
+  "published": true,
+  "deployment": {
+    "backend_current": "20261023T184229Z-eeeb5559fe9a",
+    "backend_previous": "20261023T181849Z-412063193728",
+    "static_current": "20261023T184305Z-41970",
+    "static_previous": "20261016T070519Z-75714",
+    "code_commit": "eeeb5559fe9a23848832899b57a13853e355dbba",
+    "environment_changed_keys": [
+      "AMO_BASE_URL"
+    ],
+    "running_amo_base_verified": true,
+    "unit_unchanged": true,
+    "env_root_0600": true,
+    "services_active": 5,
+    "amo_enabled_and_preflight_passed": true,
+    "smtp_recipient": "info@neesha.ru",
+    "pending_queues": {
+      "lead_deliveries": 0,
+      "lead_amo_deliveries": 0
+    },
+    "amo_base_url": "https://needleshark.amocrm.ru",
+    "private_environment_backup": "/opt/needle-shark/backups/amo-domain-20261023T185459Z/leads.env"
+  },
+  "static_release_validation": {
+    "total_files": 1256,
+    "downloaded": 20,
+    "reused": 1236,
+    "backend_files_match": 13
+  },
+  "public_checks": {
+    "html_pages": 18,
+    "public_files_match": 80,
+    "redirect_query_checks": 2,
+    "invalid_public_api": 400,
+    "blocking_x_robots": false,
+    "old_email_in_html": false,
+    "single_counter_and_analytics": true
+  },
+  "tests": {
+    "server_unittest": 42,
+    "ops_unittest": 33,
+    "b2b_renderer_unittest": 5,
+    "node_form_and_analytics": 21,
+    "prepare_public": "passed",
+    "check_site": "passed, 18 pages",
+    "diff_scope": "All 28 implementation files equal previous version after only address and generated asset version replacement"
+  },
+  "browser": {
+    "local_url": "http://127.0.0.1:4191/",
+    "qa_campaigns": [
+      "sales_mail_20261023",
+      "sales_mail_20261023_public"
+    ],
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "local_visual_review": "All five screenshots reviewed: new address, invalid email message, long description and field focus fit without horizontal overflow",
+    "local_checks": [
+      "Required contact rejection",
+      "Invalid email rejected, aria-invalid=true",
+      "Mobile menu opened and closed using Escape",
+      "All five mailto links use sales@neesha.ru",
+      "Readable computed input text color rgb(27,31,33)"
+    ],
+    "public_metrics": [
+      {
+        "badImages": 0,
+        "mailLinks": [
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru"
+        ],
+        "scroll": 360,
+        "width": 360
+      },
+      {
+        "badImages": 0,
+        "mailLinks": [
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru"
+        ],
+        "scroll": 390,
+        "width": 390
+      },
+      {
+        "badImages": 0,
+        "mailLinks": [
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru"
+        ],
+        "scroll": 768,
+        "width": 768
+      },
+      {
+        "badImages": 0,
+        "mailLinks": [
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru"
+        ],
+        "scroll": 1024,
+        "width": 1024
+      },
+      {
+        "badImages": 0,
+        "mailLinks": [
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru",
+          "mailto:sales@neesha.ru"
+        ],
+        "scroll": 1440,
+        "width": 1440
+      }
+    ],
+    "local_console_errors_or_warnings": 0,
+    "public_console_errors_or_warnings": 0,
+    "successful_new_form_submission": false,
+    "file_upload": "Not applicable: current form has no file field"
+  },
+  "seo": {
+    "metadata_check": "passed",
+    "url_structure_changed": false,
+    "sitemap_robots_changed": false,
+    "new_crawl_requested": false,
+    "search_index_verified": false
+  },
+  "analytics": {
+    "counter": 112428810,
+    "one_loader_and_handler_per_page": true,
+    "sdk_script_present_in_browser": true,
+    "sdk_new_goal_delivery_verified": false,
+    "report_processing_verified": false,
+    "dashboard_definitions_rechecked": false,
+    "handlers_unchanged": true,
+    "new_lead_submitted_verified": false
+  },
+  "mailbox": {
+    "address": "sales@neesha.ru",
+    "provider": "REG.ru hosting",
+    "type": "corporate",
+    "amo_account_url": "https://needleshark.amocrm.ru",
+    "imap_host": "mail.hosting.reg.ru",
+    "imap_port": 993,
+    "smtp_host": "mail.hosting.reg.ru",
+    "smtp_port": 465,
+    "ssl": true,
+    "saved_connection_confirmed": true,
+    "mail_access_enabled_user_count": 3,
+    "all_current_users_mail_permission_verified": true,
+    "separate_login_as_each_user_tested": false,
+    "permission_changes_made": false,
+    "source": {
+      "create_deal": true,
+      "condition": "every new mail thread",
+      "name": "subject",
+      "pipeline_id": 11431098,
+      "status_id": 89534190
+    },
+    "incoming_mail_lead_verified": true,
+    "synthetic_deal_id": 4744149,
+    "test_deals_matching_prefix_count": 1,
+    "test_message_marker": "QA-SALES-20261023-2",
+    "test_message_received_via": "mxs1.reg.ru STARTTLS, verified certificate",
+    "body_verified_in_crm": true,
+    "attachment_imap_bytes": 64,
+    "attachment_imap_sha256": "9ab5b9f59e2afe85033647f2b57973a9c0c7baeed1ca0924230a9688f4788ed1",
+    "attachment_download_from_crm_verified": false,
+    "attachment_crm_observation": "Visible file link ended in #file_not_exists; not opened/downloaded before browser stop.",
+    "reply_from_amo_recorded_as_outgoing": true,
+    "reply_from": "sales@neesha.ru",
+    "reply_to": "info@neesha.ru",
+    "reply_receipt_at_reg_confirmed_by_owner": true,
+    "reply_receipt_independently_read": false,
+    "smtp_notification_recipient_preserved": "info@neesha.ru",
+    "server_smtp_host_preserved": "smtp.mail.ru",
+    "real_mail_bodies_read": false,
+    "synthetic_records_deleted": false
+  },
+  "remaining": [
+    "Resolve continued legacy Mail.ru routing with provider/admin; current failure must not be reported as fixed",
+    "Verify opening/downloading incoming attachments in amoCRM",
+    "Separate manager sign-ins were not exercised; existing access checkbox is verified for all three",
+    "AMO token renewal/queue monitoring remain manual as documented in the earlier API integration report",
+    "Search index and analytics dashboard/report checks were not repeated for this contact change"
+  ],
+  "privacy": "No credentials, customer submissions, real email bodies, private employee addresses or screenshot files saved in Git. Only synthetic identifiers and public business mailbox settings are recorded.",
+  "dns_and_hosting": {
+    "authoritative_nameservers": [
+      "ns1.reg.ru",
+      "ns2.reg.ru"
+    ],
+    "public_resolvers_checked": [
+      "1.1.1.1",
+      "8.8.8.8"
+    ],
+    "mx": [
+      "10 mxs1.reg.ru",
+      "20 mxs2.reg.ru"
+    ],
+    "mx_spf_dmarc_match_on_all_four": true,
+    "spf": "v=spf1 ip4:31.31.197.100 a mx include:_spf.hosting.reg.ru ~all",
+    "dmarc": "v=DMARC1; p=none; aspf=r; sp=none",
+    "dkim_selector": "dkim",
+    "dkim_key_matches_hosting": true,
+    "enhanced_spam_protection_enabled": true,
+    "protection_transport": [
+      "mx1.hosting.reg.ru",
+      "mx2.hosting.reg.ru"
+    ],
+    "spam_action": "mark",
+    "blacklist_count": 0,
+    "mailboxes_enabled": 8,
+    "ispmanager_zone_authoritative": false,
+    "website_a_preserved": "194.87.99.98",
+    "dns_changes_made": false,
+    "old_mailboxes_deleted": false
+  },
+  "mailru_route": {
+    "first_test": "QA-SALES-20261023-1",
+    "first_test_smtp_accepted": true,
+    "first_test_reg_receipt_verified": false,
+    "owner_reported_first_failure": "Nonexistent mailbox, 21:52 Europe/Moscow",
+    "recheck_test": "QA-SALES-20261023-3",
+    "recheck_smtp_accepted": true,
+    "recheck_in_crm": false,
+    "owner_screenshot_second_failure_time": "22:20 Europe/Moscow, matches recheck time; exact DSN not obtained",
+    "owner_screenshot_fresh_legacy_delivery_time": "22:21 Europe/Moscow; owner reports no matching REG receipt",
+    "conclusion": "Migration is incomplete: legacy delivery from Mail.ru persists despite correct public REG MX. Provider-internal routing is suspected; exact mechanism not verified.",
+    "old_admin_read": false,
+    "browser_block": "Computer Use denied on current VK WorkSpace/Mail.ru URL; not retried or bypassed.",
+    "next_step": "Ask Mail.ru/VK WorkSpace support to inspect internal routing and honor current MX while preserving historical mailbox data; no domain deletion without migration plan and explicit confirmation."
+  }
+}

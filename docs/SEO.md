@@ -1,5 +1,9 @@
 # SEO и доступность содержания для поисковых/AI-систем
 
+## Почта sales — 23 октября 2026
+
+На 18 страницах публичный контакт и `Organization.email` заменены на sales@neesha.ru. URL, H1/title/description/canonical/OG, sitemap и robots сохранены. prepare-public/check-site и публичная HTTPS-сверка всех 18 HTML/robots/sitemap пройдены; блокирующего X-Robots-Tag нет. Для небольшой замены контакта переобход не запрашивался, фактический индекс не перепроверен. [Отчёт](verification/20261023-sales-mailbox.json).
+
 ## Контактный телефон — 16 октября 2026
 
 На 18 страницах видимый телефон и `Organization.telephone` заменены на `+79312448245`. Остальные метаданные, содержание, URL, sitemap и robots побайтово прежние. check-site и публичная HTTPS-сверка всех HTML/robots/sitemap пройдены; блокирующего X-Robots-Tag нет. Для небольшой замены контакта переобход не запрашивался, фактический индекс не перепроверен. [Отчёт](verification/20261016-contact-phone.json).
