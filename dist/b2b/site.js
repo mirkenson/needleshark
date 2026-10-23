@@ -1,5 +1,5 @@
-import {validateContacts} from './form-validation.js?v=86614953ba3b';
-import {LeadClient, leadFields, captureUtm} from './form-client.js?v=86614953ba3b';
+import {validateContacts} from './form-validation.js?v=99c5c35658c1';
+import {LeadClient, leadFields, captureUtm} from './form-client.js?v=99c5c35658c1';
 
 let campaignStorage;
 try { campaignStorage = window.sessionStorage; } catch { /* Private browsers may deny storage. */ }
@@ -86,7 +86,7 @@ if (form) {
     }
     if (!form.reportValidity()) return;
     if (document.body.dataset.preview === 'true') {
-      status.textContent = 'Это предпросмотр: заявка не отправлена. Сейчас можно написать на info@neesha.ru.';
+      status.textContent = 'Это предпросмотр: заявка не отправлена. Сейчас можно написать на sales@neesha.ru.';
       status.hidden = false;
       return;
     }
@@ -114,7 +114,7 @@ if (form) {
       delete form.dataset.material;
       client.newInquiry();
     } catch (error) {
-      status.textContent = error.message || 'Не удалось получить подтверждение. Повторите отправку или напишите на info@neesha.ru.';
+      status.textContent = error.message || 'Не удалось получить подтверждение. Повторите отправку или напишите на sales@neesha.ru.';
     } finally {
       controls.forEach(control => { control.disabled = false; });
       form.removeAttribute('aria-busy');

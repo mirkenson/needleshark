@@ -66,7 +66,7 @@ def enqueue(data, ip, recipients, secret, loop_enabled=False, amo_enabled=False)
         cur.execute("SELECT count(DISTINCT submission_id) FROM lead_deliveries WHERE status <> 'sent'")
         pending = cur.fetchone()[0]
         if recent >= 10 or pending >= 500:
-            return 429, {'ok': False, 'error': 'Слишком много заявок. Попробуйте позже или напишите на info@neesha.ru.'}
+            return 429, {'ok': False, 'error': 'Слишком много заявок. Попробуйте позже или напишите на sales@neesha.ru.'}
         archive_cursor(cur, lead)
         cur.execute('INSERT INTO lead_submissions(submission_id,fingerprint,payload,ip_hash) VALUES(%s,%s,%s::jsonb,%s)',
                     (data['id'], fingerprint, json.dumps(lead, ensure_ascii=False), ip_hash))

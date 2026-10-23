@@ -17,7 +17,7 @@ DATA = json.loads((SOURCE / 'content.json').read_text())
 DIRECTIONS = DATA['directions']
 MANIFEST = json.loads((ROOT / 'business/assets/manifest.json').read_text())
 PHONE = '+7 931 244-82-45'
-EMAIL = 'info@neesha.ru'
+EMAIL = 'sales@neesha.ru'
 NEW_MATERIALS = json.loads((SOURCE / 'assets/manifest.json').read_text())
 ASSET_FILES = ('site.css', 'site.js', 'typography.css', 'form-validation.mjs', 'form-client.mjs')
 

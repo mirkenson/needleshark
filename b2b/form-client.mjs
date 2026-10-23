@@ -39,14 +39,14 @@ export class LeadClient {
       const result = await response.json().catch(() => null);
       if (![200, 202].includes(response.status) || result?.ok !== true || result?.id !== payload.id) {
         if (response.status === 409) this.pending = null;
-        throw new Error(response.status === 429 ? 'Слишком много попыток. Попробуйте позже или напишите на info@neesha.ru.' : 'Не удалось сохранить заявку. Проверьте данные и повторите отправку или напишите на info@neesha.ru.');
+        throw new Error(response.status === 429 ? 'Слишком много попыток. Попробуйте позже или напишите на sales@neesha.ru.' : 'Не удалось сохранить заявку. Проверьте данные и повторите отправку или напишите на sales@neesha.ru.');
       }
       const firstConfirmation = !this.saved.has(payload.id);
       this.saved.add(payload.id);
       return {id: payload.id, firstConfirmation};
     } catch (error) {
       if (error instanceof TypeError || ['TimeoutError', 'AbortError'].includes(error.name)) {
-        throw new Error('Не удалось получить подтверждение от сервера. Данные остались в форме. Повторите отправку или напишите на info@neesha.ru.');
+        throw new Error('Не удалось получить подтверждение от сервера. Данные остались в форме. Повторите отправку или напишите на sales@neesha.ru.');
       }
       throw error;
     } finally {

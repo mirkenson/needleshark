@@ -160,7 +160,7 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError, TypeError):
             self.reply(400, {'ok': False, 'error': 'Проверьте поля заявки и согласие на обработку данных.'})
         except Exception:
-            self.reply(503, {'ok': False, 'error': 'Не удалось сохранить заявку. Попробуйте позже или напишите на info@neesha.ru.'})
+            self.reply(503, {'ok': False, 'error': 'Не удалось сохранить заявку. Попробуйте позже или напишите на sales@neesha.ru.'})
 
 
 if __name__ == '__main__':

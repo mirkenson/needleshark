@@ -27,7 +27,7 @@ class PublicTests(unittest.TestCase):
         graph = json.loads(re.search(r'<script type="application/ld\+json" id="site-schema">(.*?)</script>', result)[1])['@graph']
         self.assertEqual(graph[-1]['name'], 'Чехол & ткань')
         self.assertEqual(graph[-1]['description'], 'Размеры "XL"')
-        self.assertEqual(graph[0]['email'], 'info@neesha.ru')
+        self.assertEqual(graph[0]['email'], 'sales@neesha.ru')
         self.assertNotIn('aggregateRating', result)
 
     def test_internal_documents_normalized_without_changing_query(self):
@@ -66,5 +66,5 @@ class PublicTests(unittest.TestCase):
         self.assertEqual(parse_qs(parsed.query)['utm_source'],['needle-shark.ru'])
 
     def test_internal_special_and_resource_urls_untouched(self):
-        source='<head></head><a href="/catalog/">A</a><a href="https://www.needle-shark.ru/blog/">B</a><a href="mailto:info@neesha.ru">C</a><script src="https://mc.yandex.ru/tag.js"></script><img src="https://example.com/a.png">'
+        source='<head></head><a href="/catalog/">A</a><a href="https://www.needle-shark.ru/blog/">B</a><a href="mailto:sales@neesha.ru">C</a><script src="https://mc.yandex.ru/tag.js"></script><img src="https://example.com/a.png">'
         self.assertNotIn('utm_',prepare_html(source,'index.html'))
