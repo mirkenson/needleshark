@@ -126,6 +126,9 @@ def preflight(config):
     codes = {f.get('code') for f in fields}
     if not {key.upper() for key in UTM_FIELDS} <= codes:
         raise DeliveryError('amo_utm_fields_missing')
+    tracking = {f.get('code') for f in fields if f.get('type') == 'tracking_data'}
+    if not {'_YM_UID', '_YM_COUNTER'} <= tracking:
+        raise DeliveryError('amo_metrika_fields_missing')
 
 
 def field(field_id, value):
@@ -184,6 +187,9 @@ def payload(lead, config, contact_id=None):
               field(config['details_field_id'], text)]
     fields.extend({'field_code': key.upper(), 'values': [{'value': lead[key]}]}
                   for key in UTM_FIELDS if lead.get(key))
+    if lead.get('ym_client_id'):
+        fields.extend({'field_code': code, 'values': [{'value': value}]}
+                      for code, value in [('_YM_UID', lead['ym_client_id']), ('_YM_COUNTER', '112428810')])
     contact = {'id': contact_id} if contact_id else {'name': lead['name'],
         'custom_fields_values': [{'field_code': code, 'values': [{'value': value, 'enum_code': 'WORK'}]}
                                 for code, value in contacts(lead).items()]}

@@ -84,3 +84,7 @@ ALTER TABLE orders
  ADD COLUMN IF NOT EXISTS utm_campaign TEXT CHECK (length(utm_campaign) <= 500),
  ADD COLUMN IF NOT EXISTS utm_content TEXT CHECK (length(utm_content) <= 500),
  ADD COLUMN IF NOT EXISTS utm_term TEXT CHECK (length(utm_term) <= 500);
+
+-- Optional Metrika identifier, kept as text without numeric conversion.
+ALTER TABLE orders ADD COLUMN IF NOT EXISTS ym_client_id TEXT
+ CHECK (ym_client_id ~ '^[0-9]{1,32}$');
