@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-24",
+  "status": "saved_in_active_amocrm_bot",
+  "site": "https://needle-shark.ru/",
+  "crm_settings": "https://needleshark.amocrm.ru/agents-and-bots/",
+  "salesbot": {
+    "id": 9323,
+    "name": "Сайт Needle Shark — приветствие",
+    "greeting": "Здравствуйте! Это Needle Shark — швейное производство.\n\nЧтобы менеджер быстрее оценил задачу, напишите:\n1. Какое изделие вам нужно и для чего.\n2. Пришлите фото, эскиз или ТЗ. Если их нет — подробно опишите изделие: размеры, материал и важные детали.\n3. Сколько штук нужно. Если знаете, укажите желаемый срок.\n\nЕсли уйдёте с сайта, оставьте телефон или почту для ответа."
+  },
+  "scope": "Only the first message text; no new bot, triggers, permissions, routing or automated prioritization.",
+  "verification": {
+    "saved_in_crm": true,
+    "persisted_after_full_reload": true,
+    "built_in_other_channels_preview": true,
+    "mobile_preview_text_complete": true,
+    "new_public_conversation_created": false,
+    "new_public_delivery_tested": false
+  },
+  "website": {
+    "code_commit": "9fa0093f398648981fdb27986430b076de6d215e",
+    "code_changed": false,
+    "vps_redeployed": false
+  },
+  "not_applicable": [
+    "Code tests/build/deployment: CRM text-only edit.",
+    "Five website breakpoints, form/API/database/mail delivery, SEO/indexing and analytics: website code and integrations unchanged."
+  ],
+  "limitations": [
+    "Built-in bot preview confirms the saved message, not a new end-to-end delivery to a website visitor.",
+    "The message asks for details; it does not automatically assign priorities or require each answer.",
+    "Attachment delivery was not retested."
+  ]
+}
