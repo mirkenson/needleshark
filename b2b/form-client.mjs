@@ -18,12 +18,31 @@ export function captureUtm(search, storage) {
   try { return clean(JSON.parse(storage?.getItem(key) || '{}')); } catch { return {}; }
 }
 
-// Retry the same payload with the same UUID after an uncertain response.
+// Read only the existing counter. A blocked/late SDK must never prevent a lead.
+export function metrikaClientId(ym = globalThis.ym, timeoutMs = 600) {
+  return new Promise(resolve => {
+    let done = false;
+    const finish = value => {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      resolve(typeof value === 'string' && /^[0-9]{1,32}$/.test(value) ? value : undefined);
+    };
+    const timer = setTimeout(() => finish(), timeoutMs);
+    try {
+      if (typeof ym === 'function') ym(112428810, 'getClientID', finish);
+      else finish();
+    } catch { finish(); }
+  });
+}
+
+// Retry the same payload, including the attribution snapshot, with the same UUID.
 export class LeadClient {
-  constructor({send = (...args) => fetch(...args), uuid = () => crypto.randomUUID(), protect = browserProof} = {}) {
+  constructor({send = (...args) => fetch(...args), uuid = () => crypto.randomUUID(), protect = browserProof, getClientId = metrikaClientId} = {}) {
     this.send = send;
     this.uuid = uuid;
     this.protect = protect;
+    this.getClientId = getClientId;
     this.pending = null;
     this.busy = false;
     this.saved = new Set();
@@ -33,9 +52,13 @@ export class LeadClient {
     this.busy = true;
     try {
       const signature = JSON.stringify(fields);
-      if (this.pending?.signature !== signature) this.pending = {signature, id: this.uuid()};
+      if (this.pending?.signature !== signature) this.pending = {
+        signature, id: this.uuid(),
+        clientId: Promise.resolve().then(() => this.getClientId()).catch(() => undefined)
+      };
       const protection = await this.protect(this.send, this.pending.id);
-      const payload = {...fields, id: this.pending.id, protection};
+      const clientId = await this.pending.clientId;
+      const payload = {...fields, ...(clientId ? {ym_client_id: clientId} : {}), id: this.pending.id, protection};
       const response = await this.send('/api/leads', {
         method: 'POST', headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(payload), signal: AbortSignal.timeout(30000)

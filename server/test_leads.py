@@ -156,6 +156,17 @@ class LeadTests(unittest.TestCase):
         self.assertEqual(finish.call_args_list[0].args, (jobs[0], 'network_error'))
         self.assertEqual(finish.call_args_list[1].args, (jobs[1],))
 class UtmTests(unittest.TestCase):
+    def test_client_id_optional_text_and_not_notification_content(self):
+        from lead_context import validate_context, notification_payload
+        value = '17613200001234567890'
+        self.assertEqual(validate_context({'ym_client_id': value}), {'ym_client_id': value})
+        for value in (None, ''):
+            self.assertEqual(validate_context({'ym_client_id': value}), {})
+        for bad in ([], {}, 42, True, 'x', '1' * 33, '1\n', ' 123', '１２３'):
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                validate_context({'ym_client_id': bad})
+        self.assertEqual(notification_payload({'question': 'ТЕСТ', 'ym_client_id': '123'})['question'], 'ТЕСТ')
+
     def test_campaign_validation_and_legacy_absence(self):
         from lead_context import validate_context, UTM_FIELDS
         self.assertEqual(validate_context({}), {})

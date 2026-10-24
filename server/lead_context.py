@@ -4,7 +4,7 @@ import re
 UTM_FIELDS = ('utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term')
 
 CONTEXT_FIELDS = ('product_slug', 'product_name', 'product_size', 'inquiry_type', 'quantity', 'source_path',
-                  'business_intent', 'business_company', 'email', 'phone', 'business_direction', 'business_material') + UTM_FIELDS
+                  'business_intent', 'business_company', 'email', 'phone', 'business_direction', 'business_material') + UTM_FIELDS + ('ym_client_id',)
 INQUIRY_LABELS = {'direct': 'Заказ напрямую', 'sizing': 'Подбор размера', 'wholesale': 'Партия для бизнеса'}
 BUSINESS_LABELS = {'ready': 'Партия готовых изделий', 'custom': 'Изделие на заказ', 'materials': 'Ткани и стропы'}
 DIRECTION_LABELS = {'chehly': 'Чехлы на технику и оборудование', 'sumki': 'Специализированные сумки и баулы',
@@ -18,6 +18,12 @@ def validate_context(data):
               'business_intent': 20, 'business_company': 160, 'email': 254, 'phone': 32,
               'business_direction': 40, 'business_material': 40}
     limits.update({key: 500 for key in UTM_FIELDS})
+    # Do not coerce to a number: ClientID can exceed JavaScript's safe integer range.
+    client_id = data.get('ym_client_id')
+    if client_id is not None and client_id != '':
+        if not isinstance(client_id, str) or not re.fullmatch(r'[0-9]{1,32}', client_id):
+            raise ValueError('Некорректный идентификатор визита.')
+        result['ym_client_id'] = client_id
     for key, limit in limits.items():
         value = data.get(key)
         if value is None or value == '':

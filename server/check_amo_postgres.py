@@ -39,18 +39,27 @@ def main():
         assert store.enqueue(old, 'old', recipients, secret, amo_enabled=True)[0] == 200
         assert query('SELECT count(*) FROM lead_amo_deliveries') == [(0,)]
         new = lead()
+        new['ym_client_id'] = '17613200001234567890'
+        # Re-running an additive migration preserves old/new records and absence.
+        migration = Path(__file__).with_name('migrations').joinpath('20261024_lead_clientid.sql').read_text()
+        query(migration)
+        query(migration)
         with ThreadPoolExecutor(max_workers=4) as pool:
             results = list(pool.map(lambda _: store.enqueue(new, 'new', recipients, secret, amo_enabled=True)[0], range(4)))
         assert sorted(results) == [200, 200, 200, 202]
         assert query('SELECT count(*) FROM lead_amo_deliveries') == [(1,)]
         assert query('SELECT count(*) FROM orders') == [(2,)]
         assert store.enqueue(dict(new, utm_source='changed'), 'new', recipients, secret, amo_enabled=True)[0] == 409
+        assert store.enqueue(dict(new, ym_client_id='123'), 'new', recipients, secret, amo_enabled=True)[0] == 409
+        assert query('SELECT ym_client_id FROM orders ORDER BY id') == [(None,), (new['ym_client_id'],)]
+        assert query('SELECT payload FROM lead_submissions WHERE submission_id=%s', (new['id'],))[0][0]['ym_client_id'] == new['ym_client_id']
         with ThreadPoolExecutor(max_workers=4) as pool:
             jobs = [job for job in pool.map(lambda _: store.claim('amo'), range(4)) if job]
         assert len(jobs) == 1
         job = jobs[0]
         assert job['lead']['email'] == new['email'] and job['lead']['phone'] == new['phone']
         assert job['lead']['utm_source'] == 'qa'
+        assert job['lead']['ym_client_id'] == new['ym_client_id']
         assert store.save_amo_state(job, create_started=True)
         assert store.finish(job, 'amo_network_error')
         assert store.claim('amo') is None

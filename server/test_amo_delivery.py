@@ -66,6 +66,19 @@ class AmoTests(unittest.TestCase):
             amo.existing_contact(self.client, self.lead)
         self.assertEqual(amo.contacts(dict(id='x', contact='+7 999 123-45-67')), {'PHONE': '+7 999 123-45-67'})
 
+    def test_client_id_native_tracking_fields_and_legacy_absence(self):
+        for client_id in (None, '17613200001234567890'):
+            result = amo.payload(dict(self.lead, ym_client_id=client_id), self.config)
+            tracking = {f['field_code']: f['values'][0]['value'] for f in result['custom_fields_values'] if 'field_code' in f}
+            if client_id:
+                self.assertEqual(tracking['_YM_UID'], client_id)
+                self.assertEqual(tracking['_YM_COUNTER'], '112428810')
+                details = next(f['values'][0]['value'] for f in result['custom_fields_values'] if f.get('field_id') == 22)
+                self.assertNotIn(client_id, details)
+            else:
+                self.assertNotIn('_YM_UID', tracking)
+                self.assertNotIn('_YM_COUNTER', tracking)
+
     def test_create_is_fenced_and_remote_id_persisted(self):
         self.assertEqual(amo.send(self.job, self.config, self.save, self.client), 123)
         self.assertEqual(self.save.call_args_list[0].kwargs, {'create_started': True})
@@ -156,12 +169,14 @@ class AmoTests(unittest.TestCase):
     def test_preflight_rejects_wrong_account_stage_and_fields_without_writes(self):
         fields = [{'id': 21, 'type': 'text'}, {'id': 22, 'type': 'textarea'}, {'id': 23, 'type': 'text'}]
         fields += [{'id': 100 + i, 'type': 'tracking_data', 'code': k.upper()} for i, k in enumerate(amo.UTM_FIELDS)]
+        fields += [{'id': 200 + i, 'type': 'tracking_data', 'code': k} for i, k in enumerate(('_YM_UID', '_YM_COUNTER'))]
         for account, stage, rows, expected in [
                 ('example', 12, fields, None),
                 ('wrong', 12, fields, 'amo_account_mismatch'),
                 ('example', 13, fields, 'amo_status_missing'),
                 ('example', 12, fields[1:], 'amo_field_mismatch'),
-                ('example', 12, fields[:-1], 'amo_utm_fields_missing')]:
+                ('example', 12, [f for f in fields if f.get('code') != 'UTM_TERM'], 'amo_utm_fields_missing'),
+                ('example', 12, fields[:-1], 'amo_metrika_fields_missing')]:
             client = MagicMock()
             client.request.side_effect = [{'subdomain': account}, {'_embedded': {'statuses': [{'id': stage}]}}]
             client.list.return_value = rows
