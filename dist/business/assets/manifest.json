@@ -9,11 +9,45 @@
   },
   "category-bags": {
     "width": 1536,
-    "height": 1024
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/business/assets/category-bags-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/business/assets/category-bags-800.webp",
+        "width": 799,
+        "height": 533
+      },
+      {
+        "src": "/business/assets/category-bags-1280.webp",
+        "width": 1279,
+        "height": 853
+      }
+    ]
   },
   "category-straps": {
     "width": 1536,
-    "height": 1024
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/business/assets/category-straps-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/business/assets/category-straps-800.webp",
+        "width": 799,
+        "height": 533
+      },
+      {
+        "src": "/business/assets/category-straps-1280.webp",
+        "width": 1279,
+        "height": 853
+      }
+    ]
   },
   "fabric-oxford": {
     "width": 1536,
@@ -37,10 +71,44 @@
   },
   "workshop-room": {
     "width": 1536,
-    "height": 1024
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/business/assets/workshop-room-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/business/assets/workshop-room-800.webp",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/business/assets/workshop-room-1280.webp",
+        "width": 1280,
+        "height": 853
+      }
+    ]
   },
   "workshop-cutting": {
     "width": 1536,
-    "height": 1024
+    "height": 1024,
+    "variants": [
+      {
+        "src": "/business/assets/workshop-cutting-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/business/assets/workshop-cutting-800.webp",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/business/assets/workshop-cutting-1280.webp",
+        "width": 1280,
+        "height": 853
+      }
+    ]
   }
 }

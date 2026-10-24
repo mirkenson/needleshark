@@ -43,8 +43,25 @@ def image_attributes(source, sizes='100vw', thumbnail=False):
 
 def breadcrumbs(items):
     return {'@context': 'https://schema.org', '@type': 'BreadcrumbList',
+            '@id': ORIGIN + items[-1][1] + '#breadcrumb',
             'itemListElement': [{'@type': 'ListItem', 'position': index + 1, 'name': name,
                                  'item': ORIGIN + path} for index, (name, path) in enumerate(items)]}
+
+
+def schema_nodes(value):
+    """Walk JSON-LD objects, including nested lists and graph nodes."""
+    if isinstance(value, dict):
+        yield value
+        for child in value.values():
+            yield from schema_nodes(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from schema_nodes(child)
+
+
+def image_object(url, alt, width, height, identifier):
+    return {'@type': 'ImageObject', '@id': identifier, 'url': url, 'contentUrl': url,
+            'caption': alt, 'width': width, 'height': height, 'encodingFormat': 'image/webp'}
 
 
 def common_metadata(html, path):
@@ -63,7 +80,9 @@ def common_metadata(html, path):
     article = public_path(path).startswith('/blog/') and public_path(path) != '/blog/'
     image_url, image_alt = ORIGIN + '/brand-preview.png', 'Needle Shark'
     image_width, image_height, image_type = 1200, 630, 'image/png'
-    # Use this page's product data so new products never inherit another item's photo.
+    nodes = [node for raw in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', html, re.S) for node in schema_nodes(json.loads(raw))]
+    primary = next((n for n in nodes if n.get('@type') == 'ImageObject' and n.get('@id') == url + '#primaryimage'), None)
+    # Legacy product pages keep their own product image; current pages supply an explicit image.
     for payload in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', html, re.S):
         data = json.loads(payload)
         if data.get('@type') == 'Product' and data.get('image'):
@@ -71,6 +90,9 @@ def common_metadata(html, path):
             variant = next(v for entry in image_manifest().values() for v in entry['variants'] if ORIGIN + v['src'] == image_url)
             image_width, image_height, image_type = variant['width'], variant['height'], 'image/webp'
             break
+    if primary:
+        image_url, image_alt = primary['url'], primary['caption']
+        image_width, image_height, image_type = primary['width'], primary['height'], primary['encodingFormat']
     tags = [
         '<meta name="robots" content="index,follow,max-image-preview:large">',
         '<meta name="theme-color" content="#BE3E3E">',
@@ -90,7 +112,7 @@ def common_metadata(html, path):
               'og:image:alt': image_alt, 'og:image:width': str(image_width), 'og:image:height': str(image_height),
               'og:image:type': image_type,
               'twitter:card': 'summary_large_image', 'twitter:title': title, 'twitter:description': description,
-              'twitter:image': image_url}
+              'twitter:image': image_url, 'twitter:image:alt': image_alt}
     for key, value in social.items():
         attr = 'property' if key.startswith('og:') else 'name'
         tags.append(f'<meta {attr}="{key}" content="{escape(value, quote=True)}">')
@@ -103,6 +125,14 @@ def common_metadata(html, path):
     webpage = {'@type': 'WebPage', '@id': url + '#webpage', 'url': url, 'name': title,
                'description': description, 'inLanguage': 'ru-RU', 'isPartOf': {'@id': website['@id']},
                'publisher': {'@id': organization['@id']}}
+    if primary:
+        webpage['primaryImageOfPage'] = {'@id': primary['@id']}
+    trail = next((n for n in nodes if n.get('@type') == 'BreadcrumbList'), None)
+    if trail and trail.get('@id'):
+        webpage['breadcrumb'] = {'@id': trail['@id']}
+    main = next((n for n in nodes if n.get('@type') in ('Service', 'BlogPosting') and n.get('url') == url), None)
+    if main:
+        webpage['mainEntity'] = {'@id': main['@id']}
     tags.append(json_ld({'@context': 'https://schema.org', '@graph': [organization, website, webpage]}, 'site-schema'))
     block = '<!-- SITE_METADATA_START -->' + '\n'.join(tags) + '<!-- SITE_METADATA_END -->'
     return '\n'.join(line.rstrip() for line in html.replace('</head>', block + '</head>').split('\n'))
@@ -140,10 +170,11 @@ def external_url(url, content):
 def prepare_html(html, path):
     canonical = ORIGIN + public_path(path)
     canonical_tag = f'<link rel="canonical" href="{canonical}">'
-    if re.search(r'<link\b[^>]*rel="canonical"[^>]*>', html):
-        html = re.sub(r'<link\b[^>]*rel="canonical"[^>]*>', lambda _: canonical_tag, html)
-    else:
-        html = html.replace('</head>', canonical_tag + '</head>')
+    def remove_canonical(match):
+        rel = re.search(r"""\brel\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))""", match[0], re.I)
+        return '' if rel and 'canonical' in next(v for v in rel.groups() if v is not None).lower().split() else match[0]
+    html = re.sub(r'<link\b[^>]*>', remove_canonical, html, flags=re.I)
+    html = html.replace('</head>', canonical_tag + '</head>')
     def anchor(match):
         tag = match.group()
         href = re.search(r'\bhref="([^"]*)"', tag)

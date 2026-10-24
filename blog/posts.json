@@ -418,7 +418,11 @@
         ]
       }
     ],
-    "updated": "2026-10-24"
+    "updated": "2026-10-24",
+    "seoImage": {
+      "product": "chehol-na-kvadrocikl",
+      "image": "oxford-detail"
+    }
   },
   {
     "slug": "kak-vybrat-sumku-chehol-dlya-kolyaski",
@@ -560,7 +564,11 @@
         "url": "/napravleniya/chehly/#contact"
       }
     ],
-    "updated": "2026-10-24"
+    "updated": "2026-10-24",
+    "seoImage": {
+      "product": "chehol-dlya-kolyaski",
+      "image": "studio-ns-pram-darkblue"
+    }
   },
   {
     "slug": "kak-vybrat-chehly-dlya-koles",
@@ -727,7 +735,11 @@
         "url": "https://www.ozon.ru/product/5622953550/"
       }
     ],
-    "updated": "2026-10-24"
+    "updated": "2026-10-24",
+    "seoImage": {
+      "product": "chehly-dlya-koles",
+      "image": "wheel-single"
+    }
   },
   {
     "slug": "kak-vybrat-chehol-dlya-dvuh-treh-velosipedov",
@@ -891,7 +903,11 @@
         "url": "/napravleniya/chehly/#contact"
       }
     ],
-    "updated": "2026-10-24"
+    "updated": "2026-10-24",
+    "seoImage": {
+      "product": "chehol-dlya-velosipeda",
+      "image": "studio-vstky-bike"
+    }
   },
   {
     "slug": "kak-podobrat-chehol-na-kvadrocikl",
@@ -1064,7 +1080,11 @@
         ]
       }
     ],
-    "updated": "2026-10-24"
+    "updated": "2026-10-24",
+    "seoImage": {
+      "product": "chehol-na-kvadrocikl",
+      "image": "atv-side"
+    }
   },
   {
     "slug": "kak-vybrat-chehol-dlya-motocikla",
@@ -1258,7 +1278,11 @@
         ]
       }
     ],
-    "updated": "2026-10-24"
+    "updated": "2026-10-24",
+    "seoImage": {
+      "product": "chehol-dlya-motocikla",
+      "image": "moto-standard"
+    }
   },
   {
     "slug": "kak-vybrat-sumku-baul",
@@ -1429,6 +1453,10 @@
         "url": "/napravleniya/sumki/#contact"
       }
     ],
-    "updated": "2026-10-24"
+    "updated": "2026-10-24",
+    "seoImage": {
+      "product": "sumki-bauly",
+      "image": "studio-bag-108"
+    }
   }
 ]

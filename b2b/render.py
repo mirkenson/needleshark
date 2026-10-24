@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from site_utils import prepare_html, external_url
+from site_utils import prepare_html, external_url, ORIGIN, json_ld, breadcrumbs, image_object
 
 SOURCE = Path(__file__).resolve().parent
 DATA = json.loads((SOURCE / 'content.json').read_text())
@@ -191,10 +191,41 @@ def preview_assets():
             f'<script type="module" src="{asset("site.js")}"></script>')
 
 
-def page(body, title, description, path, preview=True):
+def page_image(key, alt, path):
+    dims = NEW_MATERIALS.get(key) or MANIFEST[key]
+    photo = dims['variants'][-1]  # Measured derivative dimensions, not the width in its filename.
+    return image_object(ORIGIN + photo['src'], alt, photo['width'], photo['height'],
+                        ORIGIN + path + '#primaryimage')
+
+
+def direction_schema(d):
+    url = ORIGIN + route(d)
+    photo = page_image(d.get('heroImage', d['image']), d.get('heroAlt', 'Иллюстрация: ' + d['label']), route(d))
+    service = {'@type': 'Service', '@id': url + '#service', 'url': url,
+               'name': d['label'], 'serviceType': d['label'], 'description': d['intro'],
+               'provider': {'@id': ORIGIN + '/#organization'},
+               'areaServed': {'@type': 'Country', 'name': 'Россия'},
+               'image': {'@id': photo['@id']}, 'mainEntityOfPage': {'@id': url + '#webpage'}}
+    trail = breadcrumbs([('Главная', '/'), ('Направления', '/#directions'), (d['short'], route(d))])
+    return {'@context': 'https://schema.org', '@graph': [service, trail, photo]}
+
+
+def catalogue_schema(products):
+    visible = [p for p in products if any(m.get('url') for m in p['marketplaces'])]
+    return {'@context': 'https://schema.org', '@type': 'CollectionPage',
+            '@id': ORIGIN + '/catalog/#webpage', 'url': ORIGIN + '/catalog/',
+            'mainEntity': {'@type': 'ItemList', '@id': ORIGIN + '/catalog/#items',
+                           'numberOfItems': len(visible), 'itemListElement': [
+                {'@type': 'ListItem', 'position': i + 1, 'name': p['name'],
+                 'url': ORIGIN + '/catalog/#' + p['slug']} for i, p in enumerate(visible)]}}
+
+
+def page(body, title, description, path, preview=True, structured=None):
     body = body.replace('<br>', ' <br>')
     contact_href = '#contact' if 'class="ns-form ' in body else '/#contact'
     source = f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{e(title)}</title><meta name="description" content="{e(description)}"><link rel="stylesheet" href="/theme.css"><link rel="stylesheet" href="/typography.css">{preview_assets()}</head><body class="ns-site" data-preview="true">{header(contact_href)}<main id="main">{body}</main>{footer(contact_href)}<div class="ns-preview-badge" aria-label="Локальный прототип">Прототип · заявки не отправляются</div></body></html>'''
+    if structured:
+        source = source.replace('</head>', json_ld(structured, 'page-schema') + '</head>')
     direction = next((d['slug'] for d in DIRECTIONS if route(d).lstrip('/')+'index.html' == path), '')
     source = source.replace('data-preview="true"', f'data-preview="{str(preview).lower()}" data-direction="{direction}"')
     if not preview:
@@ -275,14 +306,14 @@ def build(destination, preview=True):
     shutil.copytree(ROOT/'business/assets',destination/'business/assets',dirs_exist_ok=True)
     copy_assets(destination)
     products = sorted((p for p in json.loads((ROOT/'catalog/products.json').read_text())['products'] if p.get('visible') and p.get('status','published')=='published'),key=lambda p:p['order'])
-    render_page = lambda *args: page(*args, preview=preview)
-    pages = {'index.html':render_page(home(),'Швейное производство в Санкт-Петербурге | Needle Shark','Разработка и пошив чехлов, сумок, ременных изделий, укрытий и штор по ТЗ. Доставка по России, расчёт от 1 рабочего дня, гарантия 12 месяцев.','index.html')}
+    render_page = lambda *args, **kwargs: page(*args, preview=preview, **kwargs)
+    pages = {'index.html':render_page(home(),'Швейное производство в Санкт-Петербурге | Needle Shark','Разработка и пошив чехлов, сумок, ременных изделий, укрытий и штор по ТЗ. Доставка по России, расчёт от 1 рабочего дня, гарантия 12 месяцев.','index.html', structured={'@context':'https://schema.org', '@graph':[page_image('workshop-room','Швейный цех — визуализация по фотографиям производства','/')]})}
     for d in DIRECTIONS:
         path = route(d).lstrip('/')+'index.html'
-        pages[path]=render_page(direction_page(d),d['label']+' на заказ в СПб | Needle Shark',d['intro'],path)
-    pages['catalog/index.html']=render_page(catalogue(products),'Готовые изделия Needle Shark — каталог','Чехлы, сумки, ремни и другие готовые изделия Needle Shark. Выберите товар и перейдите на маркетплейс.','catalog/index.html')
+        pages[path]=render_page(direction_page(d),d['label']+' на заказ в СПб | Needle Shark',d['intro'],path, structured=direction_schema(d))
+    pages['catalog/index.html']=render_page(catalogue(products),'Готовые изделия Needle Shark — каталог','Чехлы, сумки, ремни и другие готовые изделия Needle Shark. Выберите товар и перейдите на маркетплейс.','catalog/index.html', structured=catalogue_schema(products))
     production_body = '<section class="ns-container ns-catalog-intro"><p class="ns-kicker">NEEDLE SHARK / ПРОИЗВОДСТВО</p><h1>Шьём в Петербурге.<br><em>Работаем по всей России.</em></h1><p class="ns-lead">Технические изделия под задачу бизнеса: от обсуждения конструкции до проверки готовой партии.</p></section>' + production()+materials()+process()+faq()+form()
-    pages['business/index.html']=render_page(production_body,'Производство и условия заказа | Needle Shark','Швейное производство Needle Shark в Санкт-Петербурге. Разработка, пошив, контроль качества и доставка изделий по России.','business/index.html')
+    pages['business/index.html']=render_page(production_body,'Производство и условия заказа | Needle Shark','Швейное производство Needle Shark в Санкт-Петербурге. Разработка, пошив, контроль качества и доставка изделий по России.','business/index.html', structured={'@context':'https://schema.org', '@graph':[page_image('workshop-room','Швейный цех — визуализация по фотографиям производства','/business/')]})
     for path,html in pages.items():
         target=destination/path
         target.parent.mkdir(parents=True,exist_ok=True)
@@ -328,7 +359,10 @@ def adapt_shell(html, redirects=None):
 def publish():
     from blog.render import render as render_blog
     render_blog(json.loads((ROOT/'blog/posts.json').read_text()), ROOT/'dist/blog')
-    return build(ROOT/'dist', preview=False)
+    destination = build(ROOT/'dist', preview=False)
+    from ops.seo_checks import check_inventory
+    check_inventory(destination)
+    return destination
 
 
 if __name__=='__main__':

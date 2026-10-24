@@ -3,7 +3,24 @@
     "width": 1536,
     "height": 1024,
     "source_sha256": "091bc35cc19c3b1f9b871cc0e2570529f7de6b8af65895f126210624df9f3f73",
-    "generated": true
+    "generated": true,
+    "variants": [
+      {
+        "src": "/b2b/assets/fabric-canvas-480.webp",
+        "width": 480,
+        "height": 320
+      },
+      {
+        "src": "/b2b/assets/fabric-canvas-800.webp",
+        "width": 800,
+        "height": 533
+      },
+      {
+        "src": "/b2b/assets/fabric-canvas-1280.webp",
+        "width": 1280,
+        "height": 853
+      }
+    ]
   },
   "fabric-spunbond": {
     "width": 1536,
@@ -18,25 +35,19 @@
     "generated": true,
     "variants": [
       {
-        "file": "covers-industrial-composite-480.webp",
+        "src": "/b2b/assets/covers-industrial-composite-480.webp",
         "width": 480,
-        "height": 320,
-        "bytes": 28062,
-        "sha256": "6a773f6d08e4dce511bbd4648030b89e610b58b8c23fdfa43238163572dfe475"
+        "height": 320
       },
       {
-        "file": "covers-industrial-composite-800.webp",
+        "src": "/b2b/assets/covers-industrial-composite-800.webp",
         "width": 800,
-        "height": 533,
-        "bytes": 56254,
-        "sha256": "71dd081f863e33c0e5bf1b53db0ea0a8541d585dd64365e8ec7cfe878c2487c1"
+        "height": 533
       },
       {
-        "file": "covers-industrial-composite-1280.webp",
+        "src": "/b2b/assets/covers-industrial-composite-1280.webp",
         "width": 1280,
-        "height": 853,
-        "bytes": 110042,
-        "sha256": "bfbae1ba672384453d38038001ed2929954bfc9dcc71367f110804061f04524a"
+        "height": 853
       }
     ]
   }

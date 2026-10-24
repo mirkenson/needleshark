@@ -1,0 +1,356 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-24",
+  "url_changes": [],
+  "pages": [
+    {
+      "file": "blog/index.html",
+      "url": "https://needle-shark.ru/blog/",
+      "canonical": "https://needle-shark.ru/blog/",
+      "indexable": true,
+      "purpose": "Список опубликованных статей",
+      "action": "https://needle-shark.ru/blog/",
+      "title": "Блог о чехлах, материалах и хранении техники | Needle Shark",
+      "h1": "Блог .",
+      "description": "Статьи Needle Shark о защитных чехлах, технических тканях и уходе за техникой. Подготовка мотоцикла и квадроцикла к зимнему хранению.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "CollectionPage",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "image": "https://needle-shark.ru/brand-preview.png"
+    },
+    {
+      "file": "blog/kak-podobrat-chehol-na-kvadrocikl/index.html",
+      "url": "https://needle-shark.ru/blog/kak-podobrat-chehol-na-kvadrocikl/",
+      "canonical": "https://needle-shark.ru/blog/kak-podobrat-chehol-na-kvadrocikl/",
+      "indexable": true,
+      "purpose": "Практическая статья",
+      "action": "CTA по теме статьи",
+      "title": "Как подобрать чехол на квадроцикл | Needle Shark",
+      "h1": "Как подобрать чехол на квадроцикл с кофром, зеркалами и багажниками",
+      "description": "Измерьте квадроцикл вместе с установленным оборудованием и сравните все три габарита. Объясняем размерную сетку и проверку посадки чехла.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/images/atv-side-1536.webp"
+    },
+    {
+      "file": "blog/kak-vybrat-chehly-dlya-koles/index.html",
+      "url": "https://needle-shark.ru/blog/kak-vybrat-chehly-dlya-koles/",
+      "canonical": "https://needle-shark.ru/blog/kak-vybrat-chehly-dlya-koles/",
+      "indexable": true,
+      "purpose": "Практическая статья",
+      "action": "CTA по теме статьи",
+      "title": "Как выбрать чехлы для колёс R17–R22 | Needle Shark",
+      "h1": "Как выбрать чехлы для колёс: почему обозначения R17–R22 недостаточно",
+      "description": "Для подбора чехла нужны внешний диаметр колеса с шиной и её ширина. Объясняем маркировку, замер и выбор комплекта из одного или четырёх чехлов.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/images/wheel-single-1536.webp"
+    },
+    {
+      "file": "blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/index.html",
+      "url": "https://needle-shark.ru/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+      "canonical": "https://needle-shark.ru/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+      "indexable": true,
+      "purpose": "Практическая статья",
+      "action": "CTA по теме статьи",
+      "title": "Чехол для 2–3 велосипедов: как выбрать | Needle Shark",
+      "h1": "Как выбрать чехол для двух или трёх велосипедов",
+      "description": "Измеряйте велосипеды в том положении, в котором они будут стоять вместе. Разбираем общие габариты, выступающие детали и выбор исполнения чехла.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/images/studio-vstky-bike-1536.webp"
+    },
+    {
+      "file": "blog/kak-vybrat-chehol-dlya-motocikla/index.html",
+      "url": "https://needle-shark.ru/blog/kak-vybrat-chehol-dlya-motocikla/",
+      "canonical": "https://needle-shark.ru/blog/kak-vybrat-chehol-dlya-motocikla/",
+      "indexable": true,
+      "purpose": "Практическая статья",
+      "action": "CTA по теме статьи",
+      "title": "Как выбрать моточехол: размер и комплектация | Needle Shark",
+      "h1": "Как выбрать чехол для мотоцикла: размер, вентиляция и жаропрочные вставки",
+      "description": "Сравниваем обычный моточехол и модель с жаропрочными вставками. Разбираем размеры, замеры с кофром и ограничения использования.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/images/moto-standard-1536.webp"
+    },
+    {
+      "file": "blog/kak-vybrat-sumku-baul/index.html",
+      "url": "https://needle-shark.ru/blog/kak-vybrat-sumku-baul/",
+      "canonical": "https://needle-shark.ru/blog/kak-vybrat-sumku-baul/",
+      "indexable": true,
+      "purpose": "Практическая статья",
+      "action": "CTA по теме статьи",
+      "title": "Как выбрать баул: 35, 108 или 237 л | Needle Shark",
+      "h1": "Как выбрать сумку-баул: 35, 108 или 237 литров",
+      "description": "Выбирайте объём баула по вещам, месту хранения и удобству переноски. Разбираем три объёма Needle Shark и случаи, когда лучше несколько сумок.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/images/studio-bag-108-1536.webp"
+    },
+    {
+      "file": "blog/kak-vybrat-sumku-chehol-dlya-kolyaski/index.html",
+      "url": "https://needle-shark.ru/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+      "canonical": "https://needle-shark.ru/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+      "indexable": true,
+      "purpose": "Практическая статья",
+      "action": "CTA по теме статьи",
+      "title": "Как выбрать сумку-чехол для коляски | Needle Shark",
+      "h1": "Как выбрать сумку-чехол для перевозки коляски: размеры и посадка",
+      "description": "Сложите коляску так, как будете перевозить, измерьте три габарита и проверьте выступающие детали. Разбираем выбор сумки-чехла по шагам.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/images/studio-ns-pram-darkblue-1536.webp"
+    },
+    {
+      "file": "blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html",
+      "url": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "canonical": "https://needle-shark.ru/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+      "indexable": true,
+      "purpose": "Практическая статья",
+      "action": "CTA по теме статьи",
+      "title": "Зимнее хранение мотоцикла и квадроцикла: подготовка и консервация — Needle Shark",
+      "h1": "Как подготовить мотоцикл и квадроцикл к зимнему хранению",
+      "description": "Как подготовить мотоцикл и квадроцикл к зиме: место хранения, мойка, топливо, аккумулятор, шины и чехол. Практические советы по руководствам Honda и Polaris.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/images/oxford-detail-1536.webp"
+    },
+    {
+      "file": "business/index.html",
+      "url": "https://needle-shark.ru/business/",
+      "canonical": "https://needle-shark.ru/business/",
+      "indexable": true,
+      "purpose": "Производство и условия заказа",
+      "action": "https://needle-shark.ru/business/#contact",
+      "title": "Производство и условия заказа | Needle Shark",
+      "h1": "Шьём в Петербурге. Работаем по всей России.",
+      "description": "Швейное производство Needle Shark в Санкт-Петербурге. Разработка, пошив, контроль качества и доставка изделий по России.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/business/assets/workshop-room-1280.webp"
+    },
+    {
+      "file": "catalog/index.html",
+      "url": "https://needle-shark.ru/catalog/",
+      "canonical": "https://needle-shark.ru/catalog/",
+      "indexable": true,
+      "purpose": "Витрина готовых изделий",
+      "action": "Выбрать изделие на Ozon",
+      "title": "Готовые изделия Needle Shark — каталог",
+      "h1": "Готовые решения. Проверенные детали.",
+      "description": "Чехлы, сумки, ремни и другие готовые изделия Needle Shark. Выберите товар и перейдите на маркетплейс.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "CollectionPage",
+        "ItemList"
+      ],
+      "image": "https://needle-shark.ru/brand-preview.png"
+    },
+    {
+      "file": "index.html",
+      "url": "https://needle-shark.ru/",
+      "canonical": "https://needle-shark.ru/",
+      "indexable": true,
+      "purpose": "Главная производства",
+      "action": "https://needle-shark.ru/#contact",
+      "title": "Швейное производство в Санкт-Петербурге | Needle Shark",
+      "h1": "Швейное производство под вашу задачу.",
+      "description": "Разработка и пошив чехлов, сумок, ременных изделий, укрытий и штор по ТЗ. Доставка по России, расчёт от 1 рабочего дня, гарантия 12 месяцев.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/business/assets/workshop-room-1280.webp"
+    },
+    {
+      "file": "napravleniya/chehly/index.html",
+      "url": "https://needle-shark.ru/napravleniya/chehly/",
+      "canonical": "https://needle-shark.ru/napravleniya/chehly/",
+      "indexable": true,
+      "purpose": "Расчёт пошива по направлению",
+      "action": "https://needle-shark.ru/napravleniya/chehly/#contact",
+      "title": "Чехлы на технику и оборудование на заказ в СПб | Needle Shark",
+      "h1": "Чехлы под ваше оборудование.",
+      "description": "Шьём защитные чехлы по размерам, фотографиям, образцу или техническому заданию. Продумываем посадку, крепления и доступ к нужным узлам.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/b2b/assets/covers-industrial-composite-1280.webp"
+    },
+    {
+      "file": "napravleniya/po-tz/index.html",
+      "url": "https://needle-shark.ru/napravleniya/po-tz/",
+      "canonical": "https://needle-shark.ru/napravleniya/po-tz/",
+      "indexable": true,
+      "purpose": "Расчёт пошива по направлению",
+      "action": "https://needle-shark.ru/napravleniya/po-tz/#contact",
+      "title": "Изделия по ТЗ и чертежам на заказ в СПб | Needle Shark",
+      "h1": "Ваше ТЗ. Наша работа с деталями.",
+      "description": "Разрабатываем изделия из технических тканей по документации, образцу или описанию задачи. Уточняем требования, согласуем конструкцию и готовим производство партии.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/business/assets/workshop-cutting-1280.webp"
+    },
+    {
+      "file": "napravleniya/remni/index.html",
+      "url": "https://needle-shark.ru/napravleniya/remni/",
+      "canonical": "https://needle-shark.ru/napravleniya/remni/",
+      "indexable": true,
+      "purpose": "Расчёт пошива по направлению",
+      "action": "https://needle-shark.ru/napravleniya/remni/#contact",
+      "title": "Ременные изделия на заказ в СПб | Needle Shark",
+      "h1": "Ременные изделия под задачу.",
+      "description": "Изготавливаем ремни, переноски и крепления из стропы. Согласуем схему изделия, регулировку, фурнитуру и требования к нагрузке до начала производства.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/business/assets/category-straps-1280.webp"
+    },
+    {
+      "file": "napravleniya/sumki/index.html",
+      "url": "https://needle-shark.ru/napravleniya/sumki/",
+      "canonical": "https://needle-shark.ru/napravleniya/sumki/",
+      "indexable": true,
+      "purpose": "Расчёт пошива по направлению",
+      "action": "https://needle-shark.ru/napravleniya/sumki/#contact",
+      "title": "Специализированные сумки и баулы на заказ в СПб | Needle Shark",
+      "h1": "Сумки для вашего комплекта.",
+      "description": "Разрабатываем и шьём специализированные сумки и баулы для хранения и переноски. Подбираем размеры, расположение отделений, материал и фурнитуру под содержимое.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/business/assets/category-bags-1280.webp"
+    },
+    {
+      "file": "napravleniya/ukrytiya-i-shtory/index.html",
+      "url": "https://needle-shark.ru/napravleniya/ukrytiya-i-shtory/",
+      "canonical": "https://needle-shark.ru/napravleniya/ukrytiya-i-shtory/",
+      "indexable": true,
+      "purpose": "Расчёт пошива по направлению",
+      "action": "https://needle-shark.ru/napravleniya/ukrytiya-i-shtory/#contact",
+      "title": "Укрытия и технические шторы на заказ в СПб | Needle Shark",
+      "h1": "Укрытия и шторы по вашим размерам.",
+      "description": "Шьём технические шторы и укрывные полотна под конкретный проём или объект. Подбираем ткань, обработку краёв и расположение креплений.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Service",
+        "BreadcrumbList",
+        "ImageObject"
+      ],
+      "image": "https://needle-shark.ru/b2b/assets/fabric-canvas-1280.webp"
+    },
+    {
+      "file": "privacy-policy.html",
+      "url": "https://needle-shark.ru/privacy-policy",
+      "canonical": "https://needle-shark.ru/privacy-policy",
+      "indexable": true,
+      "purpose": "Юридический документ",
+      "action": "Прочитать условия",
+      "title": "Политика обработки персональных данных — Needle Shark",
+      "h1": "Политика обработки персональных данных",
+      "description": "Политика обработки персональных данных на сайте Needle Shark: цели обработки, права пользователей и контакт для обращений.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "image": "https://needle-shark.ru/brand-preview.png"
+    },
+    {
+      "file": "user-agreement.html",
+      "url": "https://needle-shark.ru/user-agreement",
+      "canonical": "https://needle-shark.ru/user-agreement",
+      "indexable": true,
+      "purpose": "Юридический документ",
+      "action": "Прочитать условия",
+      "title": "Пользовательское соглашение — Needle Shark",
+      "h1": "Пользовательское соглашение",
+      "description": "Пользовательское соглашение сайта Needle Shark: условия использования сайта, права и обязанности сторон.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage"
+      ],
+      "image": "https://needle-shark.ru/brand-preview.png"
+    }
+  ]
+}

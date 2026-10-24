@@ -8,6 +8,9 @@ sys.path.insert(0, str(ROOT))
 from site_utils import prepare_html, public_path, ORIGIN
 from b2b.config import ENABLED as B2B_ENABLED
 DIST = ROOT / 'dist'
+if B2B_ENABLED:
+    from ops.seo_checks import check_inventory
+    check_inventory(DIST)  # Fail before rewriting files on an unregistered or missing route.
 for page in DIST.rglob('*.html'):
     page.write_text(prepare_html(page.read_text(), page.relative_to(DIST)))
 paths = ['index.html', 'catalog/index.html', 'blog/index.html', 'business/index.html', 'privacy-policy.html', 'user-agreement.html']

@@ -80,6 +80,8 @@ def resolve(base, url):
 
 
 def check():
+    from ops.seo_checks import check_metadata
+    records = check_metadata(DIST)
     pages = {}
     for path in DIST.rglob('*.html'):
         source = path.read_text()
@@ -124,7 +126,7 @@ def check():
         assert resolve(DIST / 'style.css', url).exists(), f'Missing CSS resource: {url}'
     tree = ElementTree.parse(DIST / 'sitemap.xml')
     urls = [node.text for node in tree.findall('.//{*}loc')]
-    assert set(urls) == {ORIGIN + public_path(p.relative_to(DIST)) for p in pages}, 'Sitemap must match generated public pages'
+    assert set(urls) == {r['canonical'] for r in records}, 'Sitemap must match generated public pages'
     assert len(urls) == len(set(urls)), 'Duplicate sitemap URL'
     for icon in json.loads((DIST / 'site.webmanifest').read_text())['icons']:
         assert (DIST / icon['src'].lstrip('/')).is_file()

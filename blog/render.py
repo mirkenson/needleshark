@@ -8,8 +8,8 @@ from string import Template
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from site_utils import prepare_html, ORIGIN, json_ld, breadcrumbs
-from blog.blocks import ArticleBlocks, e, validate_blocks, walk
+from site_utils import prepare_html, ORIGIN, json_ld, breadcrumbs, image_manifest, image_object
+from blog.blocks import ArticleBlocks, e, validate_blocks, walk, catalog_image
 
 BASE = Template((ROOT / 'blog/base.html').read_text())
 
@@ -37,6 +37,21 @@ def validate(posts):
         if not post['blocks']:
             raise ValueError('Article body is empty')
         validate_blocks(post['blocks'])
+        article_image(post)  # An explicit social image must already be visible in the article.
+
+
+def article_image(post):
+    selection = post.get('seoImage')
+    if selection is None:
+        return None
+    block = next((b for b in walk(post['blocks']) if b['type'] == 'image' and
+                  b['product'] == selection.get('product') and b['image'] == selection.get('image')), None) if isinstance(selection, dict) else None
+    if block is None:
+        raise ValueError('seoImage must select an image already used in this article')
+    source = catalog_image(block)
+    photo = image_manifest()['/' + source['src'].lstrip('/')]['variants'][-1]
+    return image_object(ORIGIN + photo['src'], source['alt'], photo['width'], photo['height'],
+                        ORIGIN + '/blog/' + post['slug'] + '/#primaryimage')
 
 
 def shell(content, title, description, current='false', slug=None, structured=None):
@@ -61,7 +76,7 @@ def render(posts, output):
     cards = ''.join(f'<article class="blog-card"><time datetime="{e(p["date"])}">{date_label(p["date"])}</time><div><h2><a href="/blog/{p["slug"]}/">{e(p["title"])} <span aria-hidden="true">↗</span></a></h2><p>{e(p["description"])}</p></div></article>' for p in published)
     collection = f'<section class="wrap blog-list" aria-label="Статьи">{cards}</section>' if cards else '<section class="wrap blog-empty" aria-labelledby="empty-title"><h2 id="empty-title">Здесь появятся<br>первые статьи.</h2><div><p>Публикаций пока нет. А познакомиться с нашими изделиями можно уже сейчас.</p><a href="/catalog/">Перейти в каталог <span aria-hidden="true">↗</span></a></div></section>'
     blog_schema = {'@context': 'https://schema.org', '@type': 'CollectionPage', '@id': ORIGIN + '/blog/#webpage',
-                   'name': 'Блог Needle Shark', 'mainEntity': {'@type': 'ItemList', 'itemListElement': [
+                   'url': ORIGIN + '/blog/', 'mainEntity': {'@type': 'ItemList', '@id': ORIGIN + '/blog/#items', 'numberOfItems': len(published), 'itemListElement': [
                        {'@type': 'ListItem', 'position': i + 1, 'name': post['title'],
                         'url': ORIGIN + '/blog/' + post['slug'] + '/'} for i, post in enumerate(published)]}}
     pages = {'index.html': shell(intro + collection, 'Блог о чехлах, материалах и хранении техники | Needle Shark', 'Статьи Needle Shark о защитных чехлах, технических тканях и уходе за техникой. Подготовка мотоцикла и квадроцикла к зимнему хранению.', 'page', structured=blog_schema)}
@@ -78,6 +93,9 @@ def render(posts, output):
         structured['publisher']['@id'] = ORIGIN + '/#organization'
         structured['publisher']['logo'] = ORIGIN + '/logo.svg'
         structured['citation'] = list(dict.fromkeys(item['url'] for block in walk(post['blocks']) if block['type'] == 'sources' for item in block['items']))
+        photo = article_image(post)
+        if photo:
+            structured['image'] = photo
         if post.get('author'):
             structured['author'] = {'@type': 'Person', 'name': post['author']}
         if post.get('updated'):
