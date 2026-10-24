@@ -1,0 +1,1467 @@
+{
+  "date": "2026-10-24",
+  "url": "https://needle-shark.ru/napravleniya/chehly/",
+  "checked_commit": "e1865f7f2096fb33e2efea4c49b9f0ae03d1d27e",
+  "branch": "codex/covers-composite",
+  "scope": "Only the covers direction hero image and its alt text; other 17 HTML pages, CSS, JS, forms, chat, backend and infrastructure unchanged.",
+  "image": {
+    "tool": "built-in ImageGen",
+    "type": "generative composite from two owner-provided images",
+    "source": "b2b/assets/sources/covers-industrial-composite.png",
+    "prompt": "b2b/assets/covers-industrial-composite-prompt.txt",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "webp_bytes": {
+      "480": 28062,
+      "800": 56254,
+      "1280": 110042
+    },
+    "provenance": "IPTC trainedAlgorithmicMedia in WebP; existing public illustration caption retained"
+  },
+  "checks": {
+    "build": {
+      "optimize_images": "passed; existing assets reused",
+      "b2b_publish": "passed",
+      "prepare_public": "passed",
+      "check_site": "18 pages passed",
+      "repeat_build": "1261 files byte-identical"
+    },
+    "tests": {
+      "b2b_generator": 6,
+      "ops": 33,
+      "javascript": 26,
+      "all_passed": true,
+      "new_tests": "not applicable: low-impact image replacement; existing generator and release checks used",
+      "server_tests": "not rerun; backend unchanged"
+    },
+    "local_browser": {
+      "widths": [
+        360,
+        390,
+        768,
+        1024,
+        1440
+      ],
+      "screenshots_reviewed": true,
+      "horizontal_overflow": false,
+      "image_cropped_or_distorted": false,
+      "mobile_menu_and_escape": true,
+      "brief_anchor": true,
+      "material_tab": true,
+      "faq": true,
+      "contact_cta": true,
+      "long_form_text": "fits; no submit",
+      "field_color": "rgb(27, 31, 33)",
+      "field_background": "rgb(246, 247, 244)",
+      "focus_outline": "solid",
+      "console_errors_or_warnings": []
+    },
+    "public_browser": [
+      {
+        "broken": [],
+        "hero": [
+          {
+            "fit": "contain",
+            "height": 526,
+            "loaded": true,
+            "src": "https://needle-shark.ru/b2b/assets/covers-industrial-composite-800.webp",
+            "width": 579
+          }
+        ],
+        "outside": [],
+        "scrollWidth": 1440,
+        "width": 1440
+      },
+      {
+        "broken": [],
+        "hero": [
+          {
+            "fit": "contain",
+            "height": 374,
+            "loaded": true,
+            "src": "https://needle-shark.ru/b2b/assets/covers-industrial-composite-800.webp",
+            "width": 411
+          }
+        ],
+        "outside": [],
+        "scrollWidth": 1024,
+        "width": 1024
+      },
+      {
+        "broken": [],
+        "hero": [
+          {
+            "fit": "contain",
+            "height": 295,
+            "loaded": true,
+            "src": "https://needle-shark.ru/b2b/assets/covers-industrial-composite-800.webp",
+            "width": 325
+          }
+        ],
+        "outside": [],
+        "scrollWidth": 768,
+        "width": 768
+      },
+      {
+        "broken": [],
+        "hero": [
+          {
+            "fit": "contain",
+            "height": 236,
+            "loaded": true,
+            "src": "https://needle-shark.ru/b2b/assets/covers-industrial-composite-800.webp",
+            "width": 354
+          }
+        ],
+        "outside": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "broken": [],
+        "hero": [
+          {
+            "fit": "contain",
+            "height": 216,
+            "loaded": true,
+            "src": "https://needle-shark.ru/b2b/assets/covers-industrial-composite-800.webp",
+            "width": 324
+          }
+        ],
+        "outside": [],
+        "scrollWidth": 360,
+        "width": 360
+      }
+    ],
+    "public_interactions": {
+      "mobile_menu_and_escape": true,
+      "brief_anchor": true,
+      "material_tab": "canvas selected",
+      "faq": "opened",
+      "contact_cta": "opened contact section",
+      "form_start": "focused name field; no lead submitted",
+      "field_focus_outline": "solid",
+      "console_errors_or_warnings": []
+    },
+    "seo": {
+      "h1_title_description_canonical_og_jsonld": "passed check-site and public HTML hash equality",
+      "no_js_content": "present in static HTML",
+      "canonical_in_sitemap": "once; unchanged",
+      "robots": "public crawl allowed and sitemap referenced; unchanged",
+      "x_robots_tag": "no blocking header on fetched public HTML",
+      "internal_navigation": "existing desktop/mobile navigation retained",
+      "recrawl": "not requested for image-only replacement",
+      "index_status": "not checked in this release"
+    },
+    "analytics": {
+      "counter": 112428810,
+      "metrika_loader_count": 1,
+      "analytics_handler_count": 1,
+      "real_sdk_goal_logs": [
+        {
+          "level": "log",
+          "message": "Reach goal. Counter: 112428810. Goal id: ui_click. Params:  Object",
+          "timestamp": "2026-10-24T16:48:26.350Z",
+          "url": "https://mc.yandex.com/metrika/tag_debug.js?ver=2672&b="
+        },
+        {
+          "level": "log",
+          "message": "Reach goal. Counter: 112428810. Goal id: ui_click. Params:  Object",
+          "timestamp": "2026-10-24T16:48:26.897Z",
+          "url": "https://mc.yandex.com/metrika/tag_debug.js?ver=2672&b="
+        },
+        {
+          "level": "log",
+          "message": "Reach goal. Counter: 112428810. Goal id: ui_click. Params:  Object",
+          "timestamp": "2026-10-24T16:48:27.080Z",
+          "url": "https://mc.yandex.com/metrika/tag_debug.js?ver=2672&b="
+        },
+        {
+          "level": "log",
+          "message": "Reach goal. Counter: 112428810. Goal id: ui_click. Params:  Object",
+          "timestamp": "2026-10-24T16:48:27.497Z",
+          "url": "https://mc.yandex.com/metrika/tag_debug.js?ver=2672&b="
+        },
+        {
+          "level": "log",
+          "message": "Reach goal. Counter: 112428810. Goal id: request_open. Params:  Object",
+          "timestamp": "2026-10-24T16:48:27.915Z",
+          "url": "https://mc.yandex.com/metrika/tag_debug.js?ver=2672&b="
+        },
+        {
+          "level": "log",
+          "message": "Reach goal. Counter: 112428810. Goal id: form_start. Params:  Object",
+          "timestamp": "2026-10-24T16:48:28.112Z",
+          "url": "https://mc.yandex.com/metrika/tag_debug.js?ver=2672&b="
+        }
+      ],
+      "lead_submitted": "not triggered; no lead submitted",
+      "qa_campaign": "qa_covers_20261024",
+      "utm": "QA query retained through CTA; existing session preservation covered by JS test; internal links and outbound helper/Ozon rules passed checks",
+      "admin_and_reports": "not checked: no authenticated analytics cabinet used in this browser session",
+      "transport": "no network-event capture API in browser tool; SDK goal log alone does not prove server receipt/report processing"
+    },
+    "form_integration": "not applicable: no form/backend/integration changes; no synthetic lead, file or notification sent; existing JS tests for validation, errors, double click and saved-only success passed"
+  },
+  "deployment": {
+    "command": "bash ops/deploy.sh --from-github",
+    "github_push_before_deploy": true,
+    "files_verified_before_switch": 1261,
+    "downloaded": 4,
+    "reused": 1257,
+    "current": "20261024T164617Z-69228",
+    "previous": "20261024T163118Z-66091",
+    "services": {
+      "nginx": "active",
+      "needle-leads": "active",
+      "postgresql": "active",
+      "needle-cleanup.timer": "active",
+      "needle-monitor.timer": "active"
+    }
+  },
+  "public_http": {
+    "checked_commit": "e1865f7f2096fb33e2efea4c49b9f0ae03d1d27e",
+    "files_verified": 240,
+    "mixed_content_in_html": [],
+    "files": [
+      {
+        "path": "/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/analytics.js",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/apple-touch-icon.png",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/covers-industrial-composite-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/covers-industrial-composite-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/covers-industrial-composite-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/fabric-canvas-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/fabric-canvas-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/fabric-canvas-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/fabric-spunbond-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/fabric-spunbond-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/assets/fabric-spunbond-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/chat.js",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/site.css",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/site.js",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/b2b/typography.css",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/blog.css",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/blog.js",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/blog/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-chehly-dlya-koles/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-sumku-baul/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/business/assets/category-bags-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/category-bags-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/category-bags-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/category-covers-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/category-covers-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/category-covers-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/category-straps-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/category-straps-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/category-straps-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-cordura-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-cordura-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-cordura-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-oxford-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-oxford-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-oxford-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-polyester-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-polyester-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/fabric-polyester-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/workshop-cutting-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/workshop-cutting-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/workshop-cutting-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/workshop-room-1280.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/workshop-room-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/business/assets/workshop-room-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/catalog/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/favicon-96.png",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/favicon.ico",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/favicon.svg",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/fonts/manrope-cyrillic.woff2",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/fonts/manrope-latin.woff2",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-side-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-side-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-side-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-side-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-side-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-strap-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-strap-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-strap-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-strap-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-strap-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-studio-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-studio-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-studio-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-studio-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/atv-studio-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-standard-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-standard-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-standard-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-standard-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-standard-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-vent-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-vent-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-vent-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-vent-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/moto-vent-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/oxford-detail-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/oxford-detail-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/oxford-detail-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/oxford-detail-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/oxford-detail-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-108-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-108-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-108-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-108-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-108-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-35-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-35-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-35-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-35-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-bag-35-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ek-001-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ek-001-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ek-001-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ek-001-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ek-001-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-hook-2-long-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-hook-2-long-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-hook-2-long-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-hook-2-long-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-hook-2-long-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-org-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-org-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-org-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-org-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-car-org-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-gen-002-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-gen-002-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-gen-002-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-gen-002-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-gen-002-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-hook-2-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-hook-2-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-hook-2-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-hook-2-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-hook-2-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-swing-1-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-swing-1-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-swing-1-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-swing-1-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-swing-1-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-pram-brown-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-pram-brown-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-pram-brown-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-pram-brown-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-pram-brown-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-shurup-001-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-shurup-001-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-shurup-001-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-shurup-001-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-shurup-001-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-bike-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-bike-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-bike-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-bike-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-bike-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-set-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-set-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-set-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-set-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-set-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-single-1200.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-single-1536.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-single-160.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-single-480.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/images/wheel-single-800.webp",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/logo.svg",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/metrika.js",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/napravleniya/po-tz/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/napravleniya/remni/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/napravleniya/sumki/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/napravleniya/ukrytiya-i-shtory/",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/navigation.css",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/privacy-policy",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/privacy-policy.html",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      },
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/site.webmanifest",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/style.css",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/theme.css",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/typography.css",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/user-agreement",
+        "status": 200,
+        "sha256_match": true
+      },
+      {
+        "path": "/user-agreement.html",
+        "status": 200,
+        "sha256_match": true,
+        "x_robots_tag": null
+      }
+    ],
+    "redirects": [
+      {
+        "url": "https://needleshark.ru/napravleniya/chehly/?utm_source=qa&utm_campaign=qa_covers_20261024",
+        "final_url": "https://needle-shark.ru/napravleniya/chehly/?utm_source=qa&utm_campaign=qa_covers_20261024",
+        "status": 200
+      },
+      {
+        "url": "http://needle-shark.ru/napravleniya/chehly/?utm_source=qa&utm_campaign=qa_covers_20261024",
+        "final_url": "https://needle-shark.ru/napravleniya/chehly/?utm_source=qa&utm_campaign=qa_covers_20261024",
+        "status": 200
+      }
+    ]
+  },
+  "limits": [
+    "Search index and Metrika cabinet/report processing not rechecked.",
+    "Existing floating amoCRM greeting may overlay page content on narrow screens; it was present before this image change and remains unchanged.",
+    "The composition is an illustration, not evidence of a delivered customer order."
+  ],
+  "obsidian": "Sync after final documentation commit from the combined local project branch, preserving private advertising context; do not push that private branch."
+}

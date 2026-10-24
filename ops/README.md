@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## Covers hero image — 24 October 2026
+
+Pushed commit e1865f7f2096fb33e2efea4c49b9f0ae03d1d27e deployed through ops/deploy.sh --from-github. Current 20261024T164617Z-69228, previous 20261024T163118Z-66091. All 1261 files verified before switching; 4 downloaded, 1257 reused. Public HTTPS: 240 files match, two redirects preserve query, five services/timers active. Backend, Nginx, systemd and lead data unchanged. Inspect pointers again before rollback. [Verification](../docs/verification/20261024-covers-composite.json).
+
 ## amoCRM site chat — 24 October 2026
 
 Pushed code `9fa0093f398648981fdb27986430b076de6d215e` deployed through `ops/deploy.sh --from-github`. Static current `20261024T163118Z-66091`, previous `20261024T162433Z-65339` (first working chat release). The retained pre-chat release is `20261023T195007Z-48372`. All 1258 files verified before switching; 22 downloaded, 1236 reused. Public HTTPS: 231 files including 18 HTML/robots/sitemap match dist, two redirects preserve query, five services/timers active. Inspect pointers again before rollback. Backend, environment, Nginx, systemd and database were not changed.
