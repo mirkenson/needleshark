@@ -25,6 +25,10 @@ for path in paths:
         raise ValueError('Missing public page: ' + path)
 # Only real editorial dates, never a new lastmod on every build.
 dates = {'blog/' + p['slug'] + '/index.html': p.get('updated', p['date']) for p in published_posts}
+if B2B_ENABLED:
+    directions = json.loads((ROOT/'b2b/content.json').read_text())['directions']
+    dates.update({'napravleniya/' + d['slug'] + '/index.html': d['updated']
+                  for d in directions if d.get('updated')})
 entries = []
 for path in paths:
     lastmod = f'<lastmod>{escape(dates[path])}</lastmod>' if path in dates else ''
