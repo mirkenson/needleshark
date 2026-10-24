@@ -1,4 +1,4 @@
-import {browserProof} from './form-protection.js?v=1165482a7bcd';
+import {browserProof} from './form-protection.js?v=4643018108d0';
 
 // Only campaign labels are retained; never store the full URL or arbitrary query fields.
 export const UTM_FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];

@@ -30,7 +30,36 @@ window.amoSocialButtonConfig = {
 
 // Only the fact of opening the chat reaches the common analytics handler.
 // A chat opening/message is never a confirmed /api/leads submission.
+window.amoSocialButton('onChatReady', () => {
+  const button = document.getElementById('amobutton');
+  const chat = document.getElementById('amo-livechat');
+  // The vendor injects a clickable div. Make that same control keyboard-accessible.
+  if (button && !button.dataset.needleAccessible) {
+    button.dataset.needleAccessible = 'true';
+    button.setAttribute('role', 'button');
+    button.tabIndex = 0;
+    button.setAttribute('aria-label', 'Открыть чат с менеджером');
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', 'amo-livechat');
+    button.classList.add('ym-hide-content');
+    button.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        button.click();
+      }
+    });
+  }
+  chat?.classList.add('ym-hide-content');
+});
 window.amoSocialButton('onChatShow', () => {
+  const button = document.getElementById('amobutton');
+  button?.setAttribute('aria-expanded', 'true');
+  button?.setAttribute('aria-label', 'Закрыть чат с менеджером');
   document.dispatchEvent(new Event('site-chat-open'));
+});
+window.amoSocialButton('onChatHide', () => {
+  const button = document.getElementById('amobutton');
+  button?.setAttribute('aria-expanded', 'false');
+  button?.setAttribute('aria-label', 'Открыть чат с менеджером');
 });
 })();

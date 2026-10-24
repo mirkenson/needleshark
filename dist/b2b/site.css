@@ -8,6 +8,7 @@
 .ns-site img{max-width:100%;display:block;height:auto}
 .ns-site [hidden],.ns-header [hidden]{display:none!important}
 .ns-site :focus-visible,.ns-header :focus-visible,.ns-footer :focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+#amobutton:focus-visible{outline:3px solid #202020;outline-offset:4px}
 .ns-site section[id],.ns-site article[id],.ns-site main[id]{scroll-margin-top:120px}
 .ns-container{width:min(1280px,calc(100% - 96px));margin-inline:auto}
 .ns-section{padding-block:96px}
