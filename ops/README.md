@@ -1,5 +1,11 @@
 # Needle Shark VPS
 
+## Direction content release — 24 October 2026
+
+Pushed **3d952cbc91595ce0dc8048c245e1abda2ee8e6d0** deployed with `ops/deploy.sh --from-github`: static current **20261024T190051Z-94510**, previous **20261024T180418Z-87524**. All 1261 files verified before atomic switch; seven downloaded/1254 reused. Only five direction HTML files, one word in the homepage and sitemap changed. CSS/JS/assets/forms and the live ClientID implementation are preserved; no backend, Nginx or systemd edits. Recheck actual pointers before any rollback.
+
+Fresh public checks: 18 HTML + 223 resources + robots/sitemap match, eight GET 301 redirects preserve query, unknown URL returns 404, six services/timers active. 41 Python and 17 JS tests passed; build repeated byte-identically. Five directions × five widths passed locally and publicly; the changed homepage card also checked at five widths. Explicit direction `updated` supplies sitemap lastmod, never build time. [Verification](../docs/verification/20261024-directions-content.json).
+
 ## Structured metadata release — 24 October 2026
 
 Pushed code **4405fb59a3b0cf4126d66d5182f92dba78cd3094** deployed with `ops/deploy.sh --from-github`: static current **20261024T180418Z-87524**, previous **20261024T175952Z-85550**. The already live ClientID code 5d8ba9b was merged before deployment; all 18 body regions and JS/CSS are byte-identical to that release. No backend install or server configuration changes. All 1261 files verified before switch, 19 downloaded/1242 reused. Recheck actual pointers before rollback.
