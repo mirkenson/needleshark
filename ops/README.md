@@ -1,5 +1,11 @@
 # Needle Shark VPS
 
+## SEO first fixes — 24 October 2026
+
+Pushed **946b54a081d34034bbc0b96196e46fddfca9ba97** deployed through ops/deploy.sh --from-github: current **20261024T173415Z-77623**, previous **20261024T164617Z-69228**. All 1261 files verified before switch; 22 downloaded and 1239 reused. Public HTTPS: 18 HTML, 223 resources and robots/sitemap match; eight redirects preserve query, unknown URL returns 404; nginx, needle-leads, postgresql and needle-cleanup/monitor/metrika timers are active. Backend, Nginx, systemd and lead data unchanged. Inspect current/previous again before rollback. [Verification](../docs/verification/20261024-seo-first-fixes.json).
+
+check-site now rejects missing/duplicate/misplaced homepage ownership markers and local BlogPosting citations to retired pages or missing anchors. Relevant tests: 40 Python + 26 JavaScript pass; final repeated build is byte-identical. Browser regression covers every public page at five widths. Ozon availability and analytics report processing are not confirmed.
+
 ## Covers hero image — 24 October 2026
 
 Pushed commit e1865f7f2096fb33e2efea4c49b9f0ae03d1d27e deployed through ops/deploy.sh --from-github. Current 20261024T164617Z-69228, previous 20261024T163118Z-66091. All 1261 files verified before switching; 4 downloaded, 1257 reused. Public HTTPS: 240 files match, two redirects preserve query, five services/timers active. Backend, Nginx, systemd and lead data unchanged. Inspect pointers again before rollback. [Verification](../docs/verification/20261024-covers-composite.json).
