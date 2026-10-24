@@ -1,5 +1,11 @@
 # Needle Shark VPS
 
+## ClientID form release — 24 October 2026
+
+Pushed code 5d8ba9baa12271d9235580b3fec5cc7dd0df2bc0 installed with --upgrade, then ops/deploy.sh --from-github. Backend current 20261024T175828Z-5d8ba9baa122 / previous 20261023T194915Z-ab8b6b9b5c42; static current 20261024T175952Z-85550 / previous 20261024T173415Z-77623. Backup /opt/needle-shark/backups/20261024T175828Z-5d8ba9baa122 includes database/environment/unit and old pointers. The installer adds nullable orders.ym_client_id before switching; environment and unit remain byte-identical, Nginx untouched. All 1261 static files verified before switch; 241 public files and installed backend files match, five services/timers active.
+
+Synthetic order 33 / amoCRM 4787837 verified real SDK identity, persistent snapshot, UTM and a lost-ack retry with one remote deal. Both queues have no pending jobs, SMTP and AMO accepted the test once; inbox/CRM report processing unverified. Inspect pointers again before rollback; keep the column and newer leads, never restore a dump over them. Old clients remain accepted. [Verification](../docs/verification/20261024-form-clientid.json).
+
 ## SEO first fixes — 24 October 2026
 
 Pushed **946b54a081d34034bbc0b96196e46fddfca9ba97** deployed through ops/deploy.sh --from-github: current **20261024T173415Z-77623**, previous **20261024T164617Z-69228**. All 1261 files verified before switch; 22 downloaded and 1239 reused. Public HTTPS: 18 HTML, 223 resources and robots/sitemap match; eight redirects preserve query, unknown URL returns 404; nginx, needle-leads, postgresql and needle-cleanup/monitor/metrika timers are active. Backend, Nginx, systemd and lead data unchanged. Inspect current/previous again before rollback. [Verification](../docs/verification/20261024-seo-first-fixes.json).

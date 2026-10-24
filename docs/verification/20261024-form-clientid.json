@@ -1,0 +1,1407 @@
+{
+  "date": "2026-10-24",
+  "timezone": "Europe/Moscow",
+  "commit": "5d8ba9baa12271d9235580b3fec5cc7dd0df2bc0",
+  "published": true,
+  "url": "https://needle-shark.ru/",
+  "scope": "ClientID form to amoCRM; no campaign operations",
+  "tests": {
+    "server": 47,
+    "ops": 36,
+    "render": 6,
+    "javascript": 29,
+    "postgres_disposable_suites": 2,
+    "repeatable_files": 1261,
+    "prepare_public": "pass",
+    "check_site": "18 pages passed"
+  },
+  "local_browser": {
+    "passed": true,
+    "widths": [
+      {
+        "width": 360,
+        "scroll": 360,
+        "color": "rgb(27, 31, 33)",
+        "background": "rgb(246, 247, 244)",
+        "focus": true
+      },
+      {
+        "width": 390,
+        "scroll": 390,
+        "color": "rgb(27, 31, 33)",
+        "background": "rgb(246, 247, 244)",
+        "focus": true
+      },
+      {
+        "width": 768,
+        "scroll": 768,
+        "color": "rgb(27, 31, 33)",
+        "background": "rgb(246, 247, 244)",
+        "focus": true
+      },
+      {
+        "width": 1024,
+        "scroll": 1024,
+        "color": "rgb(27, 31, 33)",
+        "background": "rgb(246, 247, 244)",
+        "focus": true
+      },
+      {
+        "width": 1440,
+        "scroll": 1440,
+        "color": "rgb(27, 31, 33)",
+        "background": "rgb(246, 247, 244)",
+        "focus": true
+      }
+    ],
+    "scenarios": [
+      "required fields",
+      "invalid email",
+      "long text",
+      "network failure preserves fields",
+      "no false success",
+      "stable UUID and ClientID on retry",
+      "single success goal",
+      "no ClientID or contact in events",
+      "SDK timeout still saves",
+      "new inquiry UUID"
+    ],
+    "pageErrors": [],
+    "brokenResources": [],
+    "synthetic_api": true,
+    "synthetic_sdk": true
+  },
+  "public_browser": {
+    "passed": true,
+    "request": {
+      "id": "5280000c-afb1-4529-bf6a-71140995e8e3",
+      "utm_source": "qa",
+      "utm_medium": "test",
+      "utm_campaign": "clientid_20261024",
+      "utm_content": "form_retry",
+      "utm_term": "equipment",
+      "source_path": "/napravleniya/chehly/"
+    },
+    "responses": [
+      {
+        "status": 202,
+        "ok": true,
+        "id": "5280000c-afb1-4529-bf6a-71140995e8e3"
+      },
+      {
+        "status": 200,
+        "ok": true,
+        "id": "5280000c-afb1-4529-bf6a-71140995e8e3"
+      }
+    ],
+    "widths": [
+      {
+        "width": 360,
+        "scroll": 360
+      },
+      {
+        "width": 390,
+        "scroll": 390
+      },
+      {
+        "width": 768,
+        "scroll": 768
+      },
+      {
+        "width": 1024,
+        "scroll": 1024
+      },
+      {
+        "width": 1440,
+        "scroll": 1440
+      }
+    ],
+    "pageErrors": [],
+    "goals": [],
+    "sdk": "real Metrika 112428810",
+    "sdk_clientid_sha256": "1ee563289cdcfd83947ae23bcc5fa10f7cf8117f78839d71cb10142fe2ba6541"
+  },
+  "https": {
+    "matched_files": 241,
+    "files": [
+      {
+        "path": "/",
+        "status": 200,
+        "sha256": "fa09966f2b51af6a48b5db8e268f6d9d9c496a9e688f35122cd484df71eb4686"
+      },
+      {
+        "path": "/analytics.js",
+        "status": 200,
+        "sha256": "e753b7cb97f2d733f6649f26226af6e734826b43e53a5daf6596340a15bb4a0f"
+      },
+      {
+        "path": "/apple-touch-icon.png",
+        "status": 200,
+        "sha256": "f773819d11d5c28d7bbbcdf1e37a6790b9ef8b7de1f0c58d7341453b98a0e94c"
+      },
+      {
+        "path": "/b2b/assets/covers-industrial-composite-1280.webp",
+        "status": 200,
+        "sha256": "bfbae1ba672384453d38038001ed2929954bfc9dcc71367f110804061f04524a"
+      },
+      {
+        "path": "/b2b/assets/covers-industrial-composite-480.webp",
+        "status": 200,
+        "sha256": "6a773f6d08e4dce511bbd4648030b89e610b58b8c23fdfa43238163572dfe475"
+      },
+      {
+        "path": "/b2b/assets/covers-industrial-composite-800.webp",
+        "status": 200,
+        "sha256": "71dd081f863e33c0e5bf1b53db0ea0a8541d585dd64365e8ec7cfe878c2487c1"
+      },
+      {
+        "path": "/b2b/assets/fabric-canvas-1280.webp",
+        "status": 200,
+        "sha256": "060acebadc514c5eacd6e79960c4363d66cc5c187f845ac2bc85269bf71c9066"
+      },
+      {
+        "path": "/b2b/assets/fabric-canvas-480.webp",
+        "status": 200,
+        "sha256": "02d6185b076369825883ddc99778676bf5ac2383d3c626f96ecb75ff192ac630"
+      },
+      {
+        "path": "/b2b/assets/fabric-canvas-800.webp",
+        "status": 200,
+        "sha256": "76b26b8ab22e5acb4936e195562e17bb6ba2687edfd420bade037e0ae52223a4"
+      },
+      {
+        "path": "/b2b/assets/fabric-spunbond-1280.webp",
+        "status": 200,
+        "sha256": "903a9568f7486b39b0532d25d34d007578221d68aa31daa73f8fa08a2d25c036"
+      },
+      {
+        "path": "/b2b/assets/fabric-spunbond-480.webp",
+        "status": 200,
+        "sha256": "747e9125438a3c47aceb6ef66ea28fb958cc4d16c8e93aedb4aec21c2ed95d47"
+      },
+      {
+        "path": "/b2b/assets/fabric-spunbond-800.webp",
+        "status": 200,
+        "sha256": "ccd7bc37a1a742a88611deaac4303e49d5e5f320c6a917aa7014d8c30555b3a3"
+      },
+      {
+        "path": "/b2b/chat.js",
+        "status": 200,
+        "sha256": "eebcea810e39aea8b7d8b604cbf5c3d2c8499eed4dee0c6b3caca5d4ef455bb1"
+      },
+      {
+        "path": "/b2b/form-client.js",
+        "status": 200,
+        "sha256": "9661947d088d9d7864f9b4b86ab7620c92db0b3f30b91457e0bd6a3ee0ba3745"
+      },
+      {
+        "path": "/b2b/form-protection.js",
+        "status": 200,
+        "sha256": "cbfb71253bfb891ef1074450eb96ac9143ea117604260a38e4961fa8f5274362"
+      },
+      {
+        "path": "/b2b/form-validation.js",
+        "status": 200,
+        "sha256": "c6b39252ed42317d67f45775a8d3805269bb66d56ed6751bfa14d935bb3c5660"
+      },
+      {
+        "path": "/b2b/site.css",
+        "status": 200,
+        "sha256": "a6f08931cdd072230ffa03571e31a6209b84a4f7ecf7b9e8c4534e58a95e2a7d"
+      },
+      {
+        "path": "/b2b/site.js",
+        "status": 200,
+        "sha256": "5c74d16051950b03fcd99787d6cef94b570eb9e8833814323ccfc59003d3ed35"
+      },
+      {
+        "path": "/b2b/typography.css",
+        "status": 200,
+        "sha256": "287053a2082549afdc934b0def3ce3895b33620eb95142be19164fff2bc8ae70"
+      },
+      {
+        "path": "/blog.css",
+        "status": 200,
+        "sha256": "59ce2a74be192e8889652b6d9b1dc760299dbe7a76443de45fbbe2c6103ddbc3"
+      },
+      {
+        "path": "/blog.js",
+        "status": 200,
+        "sha256": "5dfcc7b0fbdc3ce10ff27740ccb0d5933a9e5f8360cdc48b5c3313a711483e8d"
+      },
+      {
+        "path": "/blog/",
+        "status": 200,
+        "sha256": "da552936a7b81aed329d734d94ffc98fce63d78925399197f4a2024176b77386"
+      },
+      {
+        "path": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "status": 200,
+        "sha256": "45eaeae270d2a0d1e033b2dc787c9810250e0c7827a917deb4df9924b870dc0f"
+      },
+      {
+        "path": "/blog/kak-vybrat-chehly-dlya-koles/",
+        "status": 200,
+        "sha256": "58cb6ce68fb2497b776456f81e252d87c545b52e7e1a663f0b57f877d26cc709"
+      },
+      {
+        "path": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "status": 200,
+        "sha256": "2b97e4f2a4dfbf2c5372bf202e7bedd9b7d2c2309150a297a352835e2f2d96f5"
+      },
+      {
+        "path": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "status": 200,
+        "sha256": "9f46ccc659956c5d9fdd4d5918b9e9ffd61838f1dc002b8464282a08a8cfa869"
+      },
+      {
+        "path": "/blog/kak-vybrat-sumku-baul/",
+        "status": 200,
+        "sha256": "d83d8f7a498540f62f16884e5b4f92bc1ea52c3afc5477ffcde36d4274261523"
+      },
+      {
+        "path": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "status": 200,
+        "sha256": "f0a210d8c36d66fbaadb162796664d35febd45920c8a46cf3fd66fd5753b81e1"
+      },
+      {
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "status": 200,
+        "sha256": "d3e321034d29329d11d67a0bd05cc7341760bcca32c00bc6229da540c7bbe19b"
+      },
+      {
+        "path": "/business/",
+        "status": 200,
+        "sha256": "9a7c195598bd77071647781f440c63f0922760358dc1f26112a8a8293e5330b7"
+      },
+      {
+        "path": "/business/assets/category-bags-1280.webp",
+        "status": 200,
+        "sha256": "a5810dab7281c910d8b1597db42f099127215136cc1e32dbe3fad1d506c4764b"
+      },
+      {
+        "path": "/business/assets/category-bags-480.webp",
+        "status": 200,
+        "sha256": "acbb49dbe45045cef2c8f66362f1b116ed95a9bea578a61bcc43db8f37d43211"
+      },
+      {
+        "path": "/business/assets/category-bags-800.webp",
+        "status": 200,
+        "sha256": "8723525cfb9841ac92827451a500f55b09229bf661558b59304de5a8e72256eb"
+      },
+      {
+        "path": "/business/assets/category-covers-1280.webp",
+        "status": 200,
+        "sha256": "86e94eae2a76b6f58ca699bd31ce94a17710f3c0a457f3562727689b7de8ed7b"
+      },
+      {
+        "path": "/business/assets/category-covers-480.webp",
+        "status": 200,
+        "sha256": "274f615fdeaa24e74730ff8feaa5e83e5a86c2a76251d06a8d841db47d1cd1f5"
+      },
+      {
+        "path": "/business/assets/category-covers-800.webp",
+        "status": 200,
+        "sha256": "372500f720da57ca8b603953b924f3891305fbe06baee980d83f0b29bb5d15fd"
+      },
+      {
+        "path": "/business/assets/category-straps-1280.webp",
+        "status": 200,
+        "sha256": "d2e1b887618ec6240aa9e7b137b41cf385b13bf37599b24a77553e56a5e9941f"
+      },
+      {
+        "path": "/business/assets/category-straps-480.webp",
+        "status": 200,
+        "sha256": "711562d290b6e769a40b44a50f9161558530d310f511c7142b84d3f41e531e06"
+      },
+      {
+        "path": "/business/assets/category-straps-800.webp",
+        "status": 200,
+        "sha256": "5ea7e21ef5fdc5a6df2b63a4794327e32f266983ab7af7ecc1ec202c6a6ab20c"
+      },
+      {
+        "path": "/business/assets/fabric-cordura-1280.webp",
+        "status": 200,
+        "sha256": "a6268cbbee47391c3706473903c1213d2e7956fbe11cc57e28e1436241f6645a"
+      },
+      {
+        "path": "/business/assets/fabric-cordura-480.webp",
+        "status": 200,
+        "sha256": "d842437d5a271bc8db4e7d1984ad28ff0a1df952f20d6489247ca728050c4bbd"
+      },
+      {
+        "path": "/business/assets/fabric-cordura-800.webp",
+        "status": 200,
+        "sha256": "c06ea76c3974d28383681ba393c562abbaed735e7e183bf2b48a7d9f4eff83d5"
+      },
+      {
+        "path": "/business/assets/fabric-oxford-1280.webp",
+        "status": 200,
+        "sha256": "4615e638eec172844a3bdb43187c6fcfbbad8c7cbf73da54ddae33781c124cd9"
+      },
+      {
+        "path": "/business/assets/fabric-oxford-480.webp",
+        "status": 200,
+        "sha256": "b6345012f0125e7727f5e6426d3150cc72a53271657c16b7ab16868b331e0409"
+      },
+      {
+        "path": "/business/assets/fabric-oxford-800.webp",
+        "status": 200,
+        "sha256": "ad9d80e60d7e31eab372aba236eb07d8f89887f697aa5dff32cea9e6dffeb61f"
+      },
+      {
+        "path": "/business/assets/fabric-polyester-1280.webp",
+        "status": 200,
+        "sha256": "856cf0434f80e4dd55ea7802ec0afde4dd22a92484528f98c670d881fdd205a2"
+      },
+      {
+        "path": "/business/assets/fabric-polyester-480.webp",
+        "status": 200,
+        "sha256": "80188848894e734aae608e0d65fb0cbabf1f65a300cb9e729c6eccc3f51632da"
+      },
+      {
+        "path": "/business/assets/fabric-polyester-800.webp",
+        "status": 200,
+        "sha256": "2dc675284d0e80598ca74642a4cd7c9816f32d82fa0f66e5b98601413f9c84c2"
+      },
+      {
+        "path": "/business/assets/workshop-cutting-1280.webp",
+        "status": 200,
+        "sha256": "d83eb6799944656678e68ba72e5984fd79cd806df18c679f4d5695d986d4f792"
+      },
+      {
+        "path": "/business/assets/workshop-cutting-480.webp",
+        "status": 200,
+        "sha256": "92556eb31e9080c288ca06e826f85489940691ba388264241dc57509fcde1781"
+      },
+      {
+        "path": "/business/assets/workshop-cutting-800.webp",
+        "status": 200,
+        "sha256": "857345a3c9b10850ad93ee41cc46c34be86ec718becf388be9ff9727ef96db9d"
+      },
+      {
+        "path": "/business/assets/workshop-room-1280.webp",
+        "status": 200,
+        "sha256": "d30fd2237dd4e61270be6f08786b5f8bdb32c3a746af94b88f39fe8ae880846c"
+      },
+      {
+        "path": "/business/assets/workshop-room-480.webp",
+        "status": 200,
+        "sha256": "451f77c76d79ebee694c6e5845f36f3c3e8a36b6082395c2f9b5979bf4fd384d"
+      },
+      {
+        "path": "/business/assets/workshop-room-800.webp",
+        "status": 200,
+        "sha256": "43c49cb1dcb34ec278450017d7c0b9ae1161e8741b7d1024ed7490704819f12b"
+      },
+      {
+        "path": "/catalog/",
+        "status": 200,
+        "sha256": "956700902629d7ac53cf117c3e499f7210ad203299d1a9c98a5bf2240767b033"
+      },
+      {
+        "path": "/favicon-96.png",
+        "status": 200,
+        "sha256": "86c9ae938c63eeaafd32b43fef15496607a9e7219580f6e0a36b91cdcd48cbf5"
+      },
+      {
+        "path": "/favicon.ico",
+        "status": 200,
+        "sha256": "815f5dd90f1182fcdac8cee7ba710239a68737177f7e0375366e6a2638c7ba78"
+      },
+      {
+        "path": "/favicon.svg",
+        "status": 200,
+        "sha256": "3c2a51065e750d3b9008c5de3210e3981b9bc2869cb734bdbd4fee8f30379843"
+      },
+      {
+        "path": "/fonts/manrope-cyrillic.woff2",
+        "status": 200,
+        "sha256": "95a493061fe0a8d0d027c2892747134ba747141112d3be4d5022e70ab7d3a1a6"
+      },
+      {
+        "path": "/fonts/manrope-latin.woff2",
+        "status": 200,
+        "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f"
+      },
+      {
+        "path": "/images/atv-side-1200.webp",
+        "status": 200,
+        "sha256": "7b43c650d190cb1898fcaf2e293ad239a7277f97b5f22972858a4f37b5a6b597"
+      },
+      {
+        "path": "/images/atv-side-1536.webp",
+        "status": 200,
+        "sha256": "b287ce9232111e6fe48e4d4ffcd16ce332bef7f0163392fe5da93a7b1069531a"
+      },
+      {
+        "path": "/images/atv-side-160.webp",
+        "status": 200,
+        "sha256": "1ff4f9dd85e0bb9e7660daacf6e9dead7c7042b0ebe3e3aba4232b7621e4f988"
+      },
+      {
+        "path": "/images/atv-side-480.webp",
+        "status": 200,
+        "sha256": "325ad29fcff8133289f72333f742a620f8302ba63d24c1e9bf25625890af0f5e"
+      },
+      {
+        "path": "/images/atv-side-800.webp",
+        "status": 200,
+        "sha256": "3315e2830cf71a0246977425ccb2dd57117e6532cdd20ead5d4aa593dc4d67dc"
+      },
+      {
+        "path": "/images/atv-strap-1200.webp",
+        "status": 200,
+        "sha256": "abcf5e0f03a67c5ec20baa7506f239c546dbcb7f8ff711d8095cdd6b2206b493"
+      },
+      {
+        "path": "/images/atv-strap-1536.webp",
+        "status": 200,
+        "sha256": "1af310aa1183ab81ca30690d4c83decba2441d6016968fb2e6e86b23fc053169"
+      },
+      {
+        "path": "/images/atv-strap-160.webp",
+        "status": 200,
+        "sha256": "71abe0f1d8162c62bc12bb732532e9ac6700d0d3cc6a148108619f162723fbd0"
+      },
+      {
+        "path": "/images/atv-strap-480.webp",
+        "status": 200,
+        "sha256": "a2b8bd7927ed448f5ece87e2b3ff99c7051489f0a6badbbca05fb93a79390eca"
+      },
+      {
+        "path": "/images/atv-strap-800.webp",
+        "status": 200,
+        "sha256": "66d4af313089c38f4e076467491d8f950de40bfd157326849f9ed984d7a289df"
+      },
+      {
+        "path": "/images/atv-studio-1200.webp",
+        "status": 200,
+        "sha256": "488821c5d82f937e5846c8312aef9a8eb38dff6edd805beb50a594b5b9a51f3f"
+      },
+      {
+        "path": "/images/atv-studio-1536.webp",
+        "status": 200,
+        "sha256": "72bd711e30d8c002171094911b900682af3b256e784fc98b2589e57fd6bfdc64"
+      },
+      {
+        "path": "/images/atv-studio-160.webp",
+        "status": 200,
+        "sha256": "917e3acb091e284e1e7c45b61ab95160a10d3969838a75b8a17c4991b571d70a"
+      },
+      {
+        "path": "/images/atv-studio-480.webp",
+        "status": 200,
+        "sha256": "cc58d504d497ae84a9205fb34ca423df5a9e5d18c00b257cdf1ee8f7e215fe28"
+      },
+      {
+        "path": "/images/atv-studio-800.webp",
+        "status": 200,
+        "sha256": "57098c595ff6de1a2aff7ea7b6a97bdc6083a19ff0860f90a7be32cddc1d9536"
+      },
+      {
+        "path": "/images/moto-standard-1200.webp",
+        "status": 200,
+        "sha256": "46e5c785fa41d6f365180d18e44734911763fd54fd592961ac5617498c0dd4f3"
+      },
+      {
+        "path": "/images/moto-standard-1536.webp",
+        "status": 200,
+        "sha256": "ada8e353fe0083081f89c636b2eb211050f4e7726f74021c67ac7391307954d1"
+      },
+      {
+        "path": "/images/moto-standard-160.webp",
+        "status": 200,
+        "sha256": "8efe9ac0b7425da3d612070e0cabc95e06ba2cc986a47e19c0adc4d376504800"
+      },
+      {
+        "path": "/images/moto-standard-480.webp",
+        "status": 200,
+        "sha256": "afcec9a8f6b8e152ca0827a7653dbfb553a664b734dcf8f5c6bba516d6e87ae7"
+      },
+      {
+        "path": "/images/moto-standard-800.webp",
+        "status": 200,
+        "sha256": "ecc0b76b7bab19bfbc8a1b24d3fc190f99ad1b5d4dcea86b8765666568ed85ce"
+      },
+      {
+        "path": "/images/moto-vent-1200.webp",
+        "status": 200,
+        "sha256": "cdd60b4812f6442e6f3ad941e3647f6ae6c440c45b7b6df2a57b0f7b448781e5"
+      },
+      {
+        "path": "/images/moto-vent-1536.webp",
+        "status": 200,
+        "sha256": "fc374ad04d79c5da149254f01ed9b8a2dda1080216516cb0bd087f297334e475"
+      },
+      {
+        "path": "/images/moto-vent-160.webp",
+        "status": 200,
+        "sha256": "7ea9d0589c801eda7e0d21919597ef564a953f000f244bdbf791b00ae78c2ea0"
+      },
+      {
+        "path": "/images/moto-vent-480.webp",
+        "status": 200,
+        "sha256": "7920a8741abb19170021d746b12f1abbcc472743d586682bf3238492410dd92a"
+      },
+      {
+        "path": "/images/moto-vent-800.webp",
+        "status": 200,
+        "sha256": "0f3c475566fbf2ba1ef15e8b6c7b7dcc5abc05ae0275078a647de13869116bd6"
+      },
+      {
+        "path": "/images/oxford-detail-1200.webp",
+        "status": 200,
+        "sha256": "6dbc30d4f1a3ed59dbea7417c838131cdb5d9bc63d7444c7ce301373a679bdf8"
+      },
+      {
+        "path": "/images/oxford-detail-1536.webp",
+        "status": 200,
+        "sha256": "be7849d79982a798b56bf4920edc0dde6fa067c204af8116944d469b1c0c1a61"
+      },
+      {
+        "path": "/images/oxford-detail-160.webp",
+        "status": 200,
+        "sha256": "bb3d7ee99fdb816e921118f38a803770c6c77a4ec70a9f44fbd0993778980d5c"
+      },
+      {
+        "path": "/images/oxford-detail-480.webp",
+        "status": 200,
+        "sha256": "0f770062b7f900d4861337c9de433a4bc9608a33a5d7df7895330e994b72dfd0"
+      },
+      {
+        "path": "/images/oxford-detail-800.webp",
+        "status": 200,
+        "sha256": "1a145e4e1d8f0a74991e282126eabb4c37bcda48dbcf5ec54e457db96033d367"
+      },
+      {
+        "path": "/images/studio-bag-108-1200.webp",
+        "status": 200,
+        "sha256": "775405294905123cfef6b969d1120af5aa365c4cadf503582e00436c0d55d7fc"
+      },
+      {
+        "path": "/images/studio-bag-108-1536.webp",
+        "status": 200,
+        "sha256": "e1a35b4f616ff3c0c9d2ddb2045bfc7c3186710875eee8a20ed8e4747f502ae3"
+      },
+      {
+        "path": "/images/studio-bag-108-160.webp",
+        "status": 200,
+        "sha256": "3e0e7d212d28b49d3664b55f64b594e75ff93d3cb31e03b1da5f8fc1dface674"
+      },
+      {
+        "path": "/images/studio-bag-108-480.webp",
+        "status": 200,
+        "sha256": "ef4c3bf78bf0bb68188dd26a60edfae19056d209b39b45704574711323e29b20"
+      },
+      {
+        "path": "/images/studio-bag-108-800.webp",
+        "status": 200,
+        "sha256": "1ce5007a18fdc3ca1902f24439442d81921da902a27ee4ed3c408da69631c3d5"
+      },
+      {
+        "path": "/images/studio-bag-35-1200.webp",
+        "status": 200,
+        "sha256": "6a765b2151b0b993e135c4af1880c6954d28845214735ac2e3b7815fa47f955d"
+      },
+      {
+        "path": "/images/studio-bag-35-1536.webp",
+        "status": 200,
+        "sha256": "0f1b02f12d82bdba5e44b3e19c38947ba0821abca40938c217a882165f5ab00d"
+      },
+      {
+        "path": "/images/studio-bag-35-160.webp",
+        "status": 200,
+        "sha256": "a6244179cf2f250038de14e15d87d656f409504b51d0d4bb20eba95f14072f72"
+      },
+      {
+        "path": "/images/studio-bag-35-480.webp",
+        "status": 200,
+        "sha256": "18dcae886ed6b291b4164a8e629730d5b5bdfb60eb9d9a92041e7f1f164b7e49"
+      },
+      {
+        "path": "/images/studio-bag-35-800.webp",
+        "status": 200,
+        "sha256": "fb43865ba00999fb86c4b18afc2d36b36fdfec3d6d2dc6f1f1eb3957ac9175fe"
+      },
+      {
+        "path": "/images/studio-ek-001-1200.webp",
+        "status": 200,
+        "sha256": "e081f88f287b4c524bdfbf15102b2c6b7cb5bef9de18e08d000c72f199e302d2"
+      },
+      {
+        "path": "/images/studio-ek-001-1536.webp",
+        "status": 200,
+        "sha256": "1e0cfa32c28ab74c71263ccb74663e3b59ac0c6b643d87efdebdd0ffc25daa28"
+      },
+      {
+        "path": "/images/studio-ek-001-160.webp",
+        "status": 200,
+        "sha256": "c52121be3cb52c562c14cb4b09935c0a4f3c78a9a38bdbef256d046391612899"
+      },
+      {
+        "path": "/images/studio-ek-001-480.webp",
+        "status": 200,
+        "sha256": "48e9724913c991eaf83ffef96912b9bd14bcf3efe12809a08069596c7ff22e58"
+      },
+      {
+        "path": "/images/studio-ek-001-800.webp",
+        "status": 200,
+        "sha256": "f217643dcd209318019cdc1c8ae64b174e481c66a32436f344929da737687ee3"
+      },
+      {
+        "path": "/images/studio-hook-2-long-1200.webp",
+        "status": 200,
+        "sha256": "b7d1fb24ea00350aae5d0e524cf063bf811249fa3a05af61022d7fec4e11cc12"
+      },
+      {
+        "path": "/images/studio-hook-2-long-1536.webp",
+        "status": 200,
+        "sha256": "45a425607b3877994c6f6925f5d805be4682b331fd0452143881c88c03ccd6ed"
+      },
+      {
+        "path": "/images/studio-hook-2-long-160.webp",
+        "status": 200,
+        "sha256": "21b6d510eb22bf13f25e62a7f85b40c26a1a0a97ca9cf8fc048fbad40eeac5e6"
+      },
+      {
+        "path": "/images/studio-hook-2-long-480.webp",
+        "status": 200,
+        "sha256": "3470d59597a1d30eaf6937a86e38df1b46e08f9f2782c32275e9e33bbbc409fc"
+      },
+      {
+        "path": "/images/studio-hook-2-long-800.webp",
+        "status": 200,
+        "sha256": "0be95388153bbfb7ce542783dbf9d0736c63ae14ffaca0d2438981e34dcff32d"
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-1200.webp",
+        "status": 200,
+        "sha256": "5ceba32eb87217a56afb266cb49f18031e77d028711de8f3d2cb6fb1ac03d434"
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-1536.webp",
+        "status": 200,
+        "sha256": "8425f0e4fdc1c7adf811ea4d11041aee6aaaa25078be0e90c7d43a7dd51ac97f"
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-160.webp",
+        "status": 200,
+        "sha256": "21e2acdf8c7a4edf3694416b19a7e43086ee693c7b431635097ec82deeccc29c"
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-480.webp",
+        "status": 200,
+        "sha256": "00c856f63de4f4d8d4f1a28790bd0b51190f52c60f452be782cd47c52a369423"
+      },
+      {
+        "path": "/images/studio-ns-belt-140-2-800.webp",
+        "status": 200,
+        "sha256": "78a9d1ef3fc3f2f78233d94607e124c3b7bc6bc1c21ce6df937d570581f4d504"
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-1200.webp",
+        "status": 200,
+        "sha256": "07c07c7ca45db10d789a1916a08ad1c406d11cfeb22928b8334af6d76f126dc2"
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-1536.webp",
+        "status": 200,
+        "sha256": "7240ca8d3511ff2102acb7b55f24814f6228b17c9860136bcac10facfcf2cf71"
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-160.webp",
+        "status": 200,
+        "sha256": "ed4eca1141cdf37ee080d50878696d09901a4bb21267c0e3367d2de13595566f"
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-480.webp",
+        "status": 200,
+        "sha256": "e9195bccae30d94c06df0588837397753b09c05b3073f16f51453e20104c583d"
+      },
+      {
+        "path": "/images/studio-ns-belt-bag-3-800.webp",
+        "status": 200,
+        "sha256": "9d6755c1a7cd6e7b92aa87a824efce42012ec11bae67cb0c98059135a793a0d6"
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-1200.webp",
+        "status": 200,
+        "sha256": "b4726fa3bd295a05a1b6aca2cd66826e7e6f98b0a0742c2947f954747e8eba51"
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-1536.webp",
+        "status": 200,
+        "sha256": "ad3603294159d2289348100157313dc4f8e74525bde337a07f0e32369a790584"
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-160.webp",
+        "status": 200,
+        "sha256": "7abe77c87e076816e8f4f8d5f249bcb9a5e3d69724cd0a2bcdbde0757f538990"
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-480.webp",
+        "status": 200,
+        "sha256": "29e55c6a19ce59bfc7207dda30ca09f2192bf9a0ec2c49ae98af45667df849f8"
+      },
+      {
+        "path": "/images/studio-ns-belt-body-1-800.webp",
+        "status": 200,
+        "sha256": "5b4067873fc52cfcba66dd078a658ef1fce161355925bd8f0f831ff46c09a3b3"
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-1200.webp",
+        "status": 200,
+        "sha256": "be6938bb6e7fd7849ec314950b23ef1bfe9888e23c521ae49ad067ec269969b1"
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-1536.webp",
+        "status": 200,
+        "sha256": "c35aed168ca532ba9f5db75a9d3404c7d24c2fa765ae90308180935a58317953"
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-160.webp",
+        "status": 200,
+        "sha256": "6b179a1e5e7bff71e22c1a390344e51f87d0cc00708889a18703269cd152b8a3"
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-480.webp",
+        "status": 200,
+        "sha256": "9983b30a98e2e66e6c4e7be78bdabda6b2a8fad34034d7ffc6cc7ee2776651f5"
+      },
+      {
+        "path": "/images/studio-ns-car-bam-s-800.webp",
+        "status": 200,
+        "sha256": "2b751a94ff0e7aecf1dfe6a722be15bf82f59483367a1a9cdc8c1223b9fe8684"
+      },
+      {
+        "path": "/images/studio-ns-car-org-1200.webp",
+        "status": 200,
+        "sha256": "38190ebe645d85df7fb9889f0cc8506382ca48c5d44b4486763889828a1fe873"
+      },
+      {
+        "path": "/images/studio-ns-car-org-1536.webp",
+        "status": 200,
+        "sha256": "34e1ce73c44fde0ee1bdea13c690fc6aa956c72f6bb0118b98c0e0319749da54"
+      },
+      {
+        "path": "/images/studio-ns-car-org-160.webp",
+        "status": 200,
+        "sha256": "a5c58c7ac9dae294ff92830782b3607b969c24687828d2ac63ad26ba9225914e"
+      },
+      {
+        "path": "/images/studio-ns-car-org-480.webp",
+        "status": 200,
+        "sha256": "846e3ecfe30443375535473b3b81240169ab4d686e17ce13eb70f4dcfc900a6e"
+      },
+      {
+        "path": "/images/studio-ns-car-org-800.webp",
+        "status": 200,
+        "sha256": "f5c7d7efe61aaa8cb1e519896c92142322d4367f7635c07d8e652f3e9834c92f"
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-1200.webp",
+        "status": 200,
+        "sha256": "1c18b21b1a3bddd85126bb04ecc056676b09ac3162319e50999ed773b7ada2e5"
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-1536.webp",
+        "status": 200,
+        "sha256": "f9d382dde3894bfe58896c80f2d2aaa0d14d228d71d9bc6ab60b5d2e710feb44"
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-160.webp",
+        "status": 200,
+        "sha256": "e397a9f30e2468b7860f347370dc30107886f8c353d94d46bc613437c74026e4"
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-480.webp",
+        "status": 200,
+        "sha256": "6e04c06df1614a441f060a9ca2d26f19ace09120f3f1ee5ce7c8061b4a705aa3"
+      },
+      {
+        "path": "/images/studio-ns-fishcase-100-800.webp",
+        "status": 200,
+        "sha256": "10d459c920f055f084e9fcb97dfb33642442977d1387a780d376979ad1d4ca15"
+      },
+      {
+        "path": "/images/studio-ns-gen-002-1200.webp",
+        "status": 200,
+        "sha256": "13a7c5a0cbbdeb597be76712a4471623a45ccebbc9831f0e5e67d2097c671471"
+      },
+      {
+        "path": "/images/studio-ns-gen-002-1536.webp",
+        "status": 200,
+        "sha256": "cc67681d32efa823592d191a0e33d07fdb7b478a0dfe722ffd5cd35b1baea585"
+      },
+      {
+        "path": "/images/studio-ns-gen-002-160.webp",
+        "status": 200,
+        "sha256": "97fd26d84f85ac5645b69234f463806751d45c4626d0cd9e0cba622997db54cc"
+      },
+      {
+        "path": "/images/studio-ns-gen-002-480.webp",
+        "status": 200,
+        "sha256": "fb8eaaa526c327fd7f8e0cfec424131fa95f12b33115683fa8c96e62574c61c3"
+      },
+      {
+        "path": "/images/studio-ns-gen-002-800.webp",
+        "status": 200,
+        "sha256": "2658ccdc53fee10d09a212e6a0870530b8b0b49d3d52c88035971f9953df832b"
+      },
+      {
+        "path": "/images/studio-ns-hook-2-1200.webp",
+        "status": 200,
+        "sha256": "d53fc4ae40038a8f7c4702655af7b2035ebc491a46e22e5c8f707cf69db2691b"
+      },
+      {
+        "path": "/images/studio-ns-hook-2-1536.webp",
+        "status": 200,
+        "sha256": "0312997757a35c59c959db3bdd757e981faa3e9d056fbe2d9ffa5353adc74f0c"
+      },
+      {
+        "path": "/images/studio-ns-hook-2-160.webp",
+        "status": 200,
+        "sha256": "32884282f36aa23326ecbc01d3692bcaf291024e00f8603b91999e06a8780ed0"
+      },
+      {
+        "path": "/images/studio-ns-hook-2-480.webp",
+        "status": 200,
+        "sha256": "a8401cdc21c2d19793cf084db16687f2c7f59c10b364fa3622c3c311167e3f61"
+      },
+      {
+        "path": "/images/studio-ns-hook-2-800.webp",
+        "status": 200,
+        "sha256": "c7f2899d1da018687618c38eedda402b3c20746c26a35852e66902c14bc1da23"
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-1200.webp",
+        "status": 200,
+        "sha256": "3d16466397f4ec411fef4ece02a59d1441d5779e9991941b5916360f63f7220e"
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-1536.webp",
+        "status": 200,
+        "sha256": "3bb1e9a0a8dac19c58179bf68b85be5fa5d675388b4a5bcd0175607f78e963ff"
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-160.webp",
+        "status": 200,
+        "sha256": "09e097a8fa7a1ba5b16b7644864ed7c8f371304443ee1aa0f78bc9f7c5a0f5e0"
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-480.webp",
+        "status": 200,
+        "sha256": "3ae8b37927bbeeb888c16cb34974510bfa9867847f35b6e1a30272d33cbe7c42"
+      },
+      {
+        "path": "/images/studio-ns-pram-darkblue-800.webp",
+        "status": 200,
+        "sha256": "0a1cc7943feb8756c8b2014a5025d024e81f12e58a42ad86d6cb28190d0ed527"
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-1200.webp",
+        "status": 200,
+        "sha256": "3d4b0270d9194a85d9252be0f0856b6292617262fce5cde01c3114625a22f38d"
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-1536.webp",
+        "status": 200,
+        "sha256": "98db200106fbc170049b6a61bf0b64c13201efb84f9a6cfadb0035c1103ba88a"
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-160.webp",
+        "status": 200,
+        "sha256": "0b4b9c5fd5517bc48fa0790bffc9e3fc0338142a7db1299aa5889a72fa5738f6"
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-480.webp",
+        "status": 200,
+        "sha256": "f18274a2d1816e8f26399e3011b23bca5a5f092ba80cf6e5d3c818850c2a43b3"
+      },
+      {
+        "path": "/images/studio-ns-shoe-33-45-800.webp",
+        "status": 200,
+        "sha256": "f56998e6a077903b2587a6bb334a3a04648be22d07397b2ac7daefa7f5d3241b"
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-1200.webp",
+        "status": 200,
+        "sha256": "5b96f807b71d42f6488c98945babedbb02d339df1d16cf3368cda062b8395802"
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-1536.webp",
+        "status": 200,
+        "sha256": "a7ad574887a60c8b08167650a8d4de625ecf1cda1a21b1c4ff2b560634d211b4"
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-160.webp",
+        "status": 200,
+        "sha256": "7664b9384a7af480ee8a9d4e83cd5aeda82024d5d650b4d7ac4434f26c4f734c"
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-480.webp",
+        "status": 200,
+        "sha256": "16e2b9805e50e3e6a91b973b2930fdc9872079bc58dbeed4780d22d2a6c5ed78"
+      },
+      {
+        "path": "/images/studio-ns-snowboard-bag-165-800.webp",
+        "status": 200,
+        "sha256": "eb670dfc78bfd388c9b868c5aed218c0c1c6e43d2af9fc42ad5d8bc68e892998"
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-1200.webp",
+        "status": 200,
+        "sha256": "2fe60c3f3f27a74c92efe6e8128415a41808b815b759c75d8c445f077eab3929"
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-1536.webp",
+        "status": 200,
+        "sha256": "b4be24fcc1c6334ce0310e7522e5d8cdfb00fbf7c6a73928cb1965070afa6b44"
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-160.webp",
+        "status": 200,
+        "sha256": "60c95395926b0b372b16afd829d3e7d2941acf7d386cac11bf1802267bd8dc8b"
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-480.webp",
+        "status": 200,
+        "sha256": "ee9c6ac85d4f440af233c92e7176664f1c752f9b001081b1b0699eb1c6c44766"
+      },
+      {
+        "path": "/images/studio-ns-strp-10-10-800.webp",
+        "status": 200,
+        "sha256": "f9d1a8cda84566247c717efd301fa39f0128792bba3827efe55b3f2965180de5"
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-1200.webp",
+        "status": 200,
+        "sha256": "682cdcfd333e5846cc22ee0706f8d0529a74b9cd55e315ed6aaace005538affd"
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-1536.webp",
+        "status": 200,
+        "sha256": "29c078cb8cda1039b8ef6cc9f99b870413390d98758748662ec881a870d2274f"
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-160.webp",
+        "status": 200,
+        "sha256": "1e04ed646390e30de448361904a8c099fb83438b89c1c4f9989c4dacae07342d"
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-480.webp",
+        "status": 200,
+        "sha256": "1195235a0a63659cd704582ca191f7148fd13c131f3bd81f5caf05a1407eec4f"
+      },
+      {
+        "path": "/images/studio-ns-strp-trns-1-800.webp",
+        "status": 200,
+        "sha256": "2ebc955d83e7d45e8aa4954a38027374ad256a61f279f68d70280854a4ab09b0"
+      },
+      {
+        "path": "/images/studio-ns-swing-1-1200.webp",
+        "status": 200,
+        "sha256": "6b49718c6a6b643b6b4303d199b6193642089c223e76aca6baef355373a7f0a2"
+      },
+      {
+        "path": "/images/studio-ns-swing-1-1536.webp",
+        "status": 200,
+        "sha256": "3b0089d51394d49720f3e01512632313267faae46bfcc7398e8944758c621c08"
+      },
+      {
+        "path": "/images/studio-ns-swing-1-160.webp",
+        "status": 200,
+        "sha256": "2881c23e5057abc61b334c599a780ab3cc7d13e765d042c6379c3a643c7deec0"
+      },
+      {
+        "path": "/images/studio-ns-swing-1-480.webp",
+        "status": 200,
+        "sha256": "948bca093664d70c3feee947cb7ad2a2add1322e014afcd377081901a0f90705"
+      },
+      {
+        "path": "/images/studio-ns-swing-1-800.webp",
+        "status": 200,
+        "sha256": "169c4b1c4d2126e6e87140567147a5c02b5c8debc5934d291c4ea451ca478623"
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-1200.webp",
+        "status": 200,
+        "sha256": "c173764cdda323f479b1c93dbcb036df6b60aaee95eb7e5fc98360a6cffd58a5"
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-1536.webp",
+        "status": 200,
+        "sha256": "1985ce9b107a3df4eceb4d65cf361ca07151a8273f793c0c0f1db217b221bad7"
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-160.webp",
+        "status": 200,
+        "sha256": "9ba018eabe798eb3e62bccb2059f4fd53000b16db9bd78073d34b7b10db1bf44"
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-480.webp",
+        "status": 200,
+        "sha256": "9a3a5d3c6bbaee1d89cd6e064cdcc874e61798be48de6a2356f5b1fe7ec9f634"
+      },
+      {
+        "path": "/images/studio-ns-tape-25-1-800.webp",
+        "status": 200,
+        "sha256": "7dc3cab22ff4b095fbb32a9f79970ad3c2513043b41e84a362c400725bba6449"
+      },
+      {
+        "path": "/images/studio-pram-brown-1200.webp",
+        "status": 200,
+        "sha256": "585478f73a5fe4d1834d6848576eb65e27b4c185d81954e1131f0e78b311078c"
+      },
+      {
+        "path": "/images/studio-pram-brown-1536.webp",
+        "status": 200,
+        "sha256": "db6804ab87492f0703de8ba8095ce9ee3dc9625059927904aab42448852aee14"
+      },
+      {
+        "path": "/images/studio-pram-brown-160.webp",
+        "status": 200,
+        "sha256": "48aece75f201f35477336936996d7c55d2c8d4c30a88e412b86afa1b90e3c92d"
+      },
+      {
+        "path": "/images/studio-pram-brown-480.webp",
+        "status": 200,
+        "sha256": "0143917819e8791b579eb6d6a1de8bf1e7d52aa11f212862357c5c325ffc99ab"
+      },
+      {
+        "path": "/images/studio-pram-brown-800.webp",
+        "status": 200,
+        "sha256": "b6272727a07cdc6243fe6277841af6aac5f15ea7b78e43520636b6403dc39fef"
+      },
+      {
+        "path": "/images/studio-shurup-001-1200.webp",
+        "status": 200,
+        "sha256": "649a8aa17074f237159721393a8aa7f495015711a8e588ebf36c4017803a19f1"
+      },
+      {
+        "path": "/images/studio-shurup-001-1536.webp",
+        "status": 200,
+        "sha256": "72ae4cec471dfed69f60b2556bb480ad9ce52c77b8702fbba96024c70eec1be7"
+      },
+      {
+        "path": "/images/studio-shurup-001-160.webp",
+        "status": 200,
+        "sha256": "494c0c66416d8cfbc298bbb14767923535b2bfc40ceb07927a9b088b4bffa7ad"
+      },
+      {
+        "path": "/images/studio-shurup-001-480.webp",
+        "status": 200,
+        "sha256": "e9c99d441eb767512a181c4867fdccc536df48c9f0c02cc961f6d59b01a0c2a8"
+      },
+      {
+        "path": "/images/studio-shurup-001-800.webp",
+        "status": 200,
+        "sha256": "aebcd3e17e629ed3757a2f60ce221e6a4e88f3442f0135c14068b98f89485155"
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-1200.webp",
+        "status": 200,
+        "sha256": "3526cb73b361535bda225e23535f5bc9af222c42d926f8146f87e907e9785643"
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-1536.webp",
+        "status": 200,
+        "sha256": "f52078529975b4c3873a9900d7a44f01a3b31c5486689b7a83d64635d86fed30"
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-160.webp",
+        "status": 200,
+        "sha256": "1c126fb3432fced3aedd420659e9db30593ab2b9c3c159ae193beb34cbd841f0"
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-480.webp",
+        "status": 200,
+        "sha256": "5ab1de37dd35436c1278304eef614dd3fca7e65f7e9084afb6bd9d77ddcd4e77"
+      },
+      {
+        "path": "/images/studio-vstk-amc-case-270-800.webp",
+        "status": 200,
+        "sha256": "2c4e43976581d3b5ce5f982d31be29c38b02abd40148945fbd6b988fe1a9af50"
+      },
+      {
+        "path": "/images/studio-vstky-bike-1200.webp",
+        "status": 200,
+        "sha256": "b4a43b4a67790c3df53a47e14c2581fc29afb8c46ecd4fa94b4a7cb7195ba57a"
+      },
+      {
+        "path": "/images/studio-vstky-bike-1536.webp",
+        "status": 200,
+        "sha256": "1baa92857f6e3119f6f0f95f0a2c9704c368b9f3c7cd1327e0f755aab4ed916c"
+      },
+      {
+        "path": "/images/studio-vstky-bike-160.webp",
+        "status": 200,
+        "sha256": "075008a432e765be595413bf977a76d53d3312d6c782ce90f03c3db7ee32fa83"
+      },
+      {
+        "path": "/images/studio-vstky-bike-480.webp",
+        "status": 200,
+        "sha256": "15ba4d1a8a57c5a478967590039806d9db6057e7ca6a55c8bdcff8f196584d74"
+      },
+      {
+        "path": "/images/studio-vstky-bike-800.webp",
+        "status": 200,
+        "sha256": "58b676be2c56759fa279cb4ac131562ab57682748dead41cacb8f7d3d2bfd58b"
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-1200.webp",
+        "status": 200,
+        "sha256": "56be76d965bbdf4a68bb46d26e711b9e76a0fac13fde2aeec1073ad14da75df1"
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-1536.webp",
+        "status": 200,
+        "sha256": "74d3fa4a6eeef1e951bffb2dc1e0c086c4727daedbd35247eba52d106a174f40"
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-160.webp",
+        "status": 200,
+        "sha256": "f357126ce7f186f1a2a7258ac282f68ce316afed64d156d4955ce51dcc8cded0"
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-480.webp",
+        "status": 200,
+        "sha256": "16ca5908abb5ab1b68bc21125b5e52da1b7c24b1963d8e84626c6c396585ef8a"
+      },
+      {
+        "path": "/images/studio-vstky-cage-mat-s-800.webp",
+        "status": 200,
+        "sha256": "271778f69b8b8b2b3bf755fd8d59119adb3ec934f87a8229d150a542232d7fc4"
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-1200.webp",
+        "status": 200,
+        "sha256": "90700cbcbd6a801cd3421c1a280c2799f207540084efb7ac7576bbf78eeacc41"
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-1536.webp",
+        "status": 200,
+        "sha256": "243c7017c4044a135b548672f57456b771ea29f354048791077f9d21739bbafd"
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-160.webp",
+        "status": 200,
+        "sha256": "6661193261faf8b06a60fad34f35e1a9a6edb1eb30d8fc1e630c95eb2af73932"
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-480.webp",
+        "status": 200,
+        "sha256": "b795af687ecc0837647cedb31c72649a083b6b03021121ebbb46d7a494046ae1"
+      },
+      {
+        "path": "/images/studio-vstky-car-mat-s-800.webp",
+        "status": 200,
+        "sha256": "4ccabf778df03dc57fb1fe67aa7834f4fddbb241555356034d0eba7929c3914a"
+      },
+      {
+        "path": "/images/wheel-set-1200.webp",
+        "status": 200,
+        "sha256": "df051a73bb28bc8165d01920b06d00e8d2d001ce726d8d3289183fef646e4db0"
+      },
+      {
+        "path": "/images/wheel-set-1536.webp",
+        "status": 200,
+        "sha256": "24e36d419f54479bbd504e67466d86b0fa207bbc2112378da80680193a4d0cd8"
+      },
+      {
+        "path": "/images/wheel-set-160.webp",
+        "status": 200,
+        "sha256": "7311d61f1285a6b6d6d73cc356dcbf477b4e0f14f4dc6bb82cb057418676b349"
+      },
+      {
+        "path": "/images/wheel-set-480.webp",
+        "status": 200,
+        "sha256": "41c0e24d89e06340f02cdc35663c78d48ce20c2c750a42866e09c116819959f9"
+      },
+      {
+        "path": "/images/wheel-set-800.webp",
+        "status": 200,
+        "sha256": "8451de3e3d9143e272ed8716c833b714062222723f3e92a179f3d84f7fba3fba"
+      },
+      {
+        "path": "/images/wheel-single-1200.webp",
+        "status": 200,
+        "sha256": "6f5b3a7707b938643c4881955a571dc8a71d1ca7fc921e053082b533d6f531a1"
+      },
+      {
+        "path": "/images/wheel-single-1536.webp",
+        "status": 200,
+        "sha256": "d7949276df9a42f8a6ec6067524ad1f375596202d8ac1e8481df0eed99bfe256"
+      },
+      {
+        "path": "/images/wheel-single-160.webp",
+        "status": 200,
+        "sha256": "eb95460266477de2de8e226c6d26a5c6378f9b7397db4a34d01994d6e8e49f84"
+      },
+      {
+        "path": "/images/wheel-single-480.webp",
+        "status": 200,
+        "sha256": "4aa744f87700c851169a3d236951087007539a71fd0be876f1cbdae94cae2933"
+      },
+      {
+        "path": "/images/wheel-single-800.webp",
+        "status": 200,
+        "sha256": "bcb858ac0bb734c4538f4bedf282ed86457ba84e8c846b7f50c9517c535db133"
+      },
+      {
+        "path": "/logo.svg",
+        "status": 200,
+        "sha256": "510043ccae85e0240f88827fadc6b8674be41120fa4b10e893858dfdef1bbc93"
+      },
+      {
+        "path": "/metrika.js",
+        "status": 200,
+        "sha256": "922a6dbb67485561d41dc61acb6ce884cb0792932977c906adde10dce6574aff"
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "status": 200,
+        "sha256": "2df5bc458b2d4e17abdcbc285c4dba7fa840bd436777c245474f7c29d4521a78"
+      },
+      {
+        "path": "/napravleniya/po-tz/",
+        "status": 200,
+        "sha256": "cd9de2ff0578f1802194f0e7c62b0072b72a3d88cac4eb04b35e17f57037c3ac"
+      },
+      {
+        "path": "/napravleniya/remni/",
+        "status": 200,
+        "sha256": "4d1286e440b34e7687bbeb15e5d47c16b1a5efb556262f100ae47d9231ae16c8"
+      },
+      {
+        "path": "/napravleniya/sumki/",
+        "status": 200,
+        "sha256": "4a7d63d1e24e4c96b7d1827f19e5e8087ff54330ed8d1c4745b40ccd721b9842"
+      },
+      {
+        "path": "/napravleniya/ukrytiya-i-shtory/",
+        "status": 200,
+        "sha256": "669fc095b28ef580074acb141a6aeb82d70abcd4027ad62386c8ec179f71f709"
+      },
+      {
+        "path": "/navigation.css",
+        "status": 200,
+        "sha256": "cdf214e4fba690bca16a849678a82b68078286d8d2f2ea0dded71417ea4ebdca"
+      },
+      {
+        "path": "/privacy-policy",
+        "status": 200,
+        "sha256": "fe61277eafd43b366bdc2e574b0793a11df06982f157c865d206dc703ead8148"
+      },
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "sha256": "1b654eb5770f21019b5aa2c8293773abf3a0177082a5370b84b8dcabca597311"
+      },
+      {
+        "path": "/site.webmanifest",
+        "status": 200,
+        "sha256": "c324969d366d920e408fe5327ae6a01b2b70eedd17d42418a58da674f6c4338d"
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200,
+        "sha256": "90a39e6f8d10ab3c766d4a4e66039d9d4fbef1922efcee122792880c8dcf8da8"
+      },
+      {
+        "path": "/style.css",
+        "status": 200,
+        "sha256": "2df64cdc17abd7d3ba4831cbeba0ae7ccb26644314996f5b00aede9c85174786"
+      },
+      {
+        "path": "/theme.css",
+        "status": 200,
+        "sha256": "567d42990937d176d4ac7dcd5773a7ce2b69ed505bacbf316f3b632b22e33766"
+      },
+      {
+        "path": "/typography.css",
+        "status": 200,
+        "sha256": "9cae64e30bbe272ef5b764d70b17b76879d78ca5f0b9b6c1bf297e8ede679c54"
+      },
+      {
+        "path": "/user-agreement",
+        "status": 200,
+        "sha256": "5e6312b89a017616ea7bb058c6534e11ccc02d9b346a81b2ecd53babdbbe091f"
+      }
+    ],
+    "redirects": [
+      {
+        "from": "http://needle-shark.ru/?utm_source=qa&utm_campaign=clientid_redirect",
+        "to": "https://needle-shark.ru/?utm_source=qa&utm_campaign=clientid_redirect",
+        "status": 200
+      },
+      {
+        "from": "https://www.needle-shark.ru/?utm_source=qa&utm_campaign=clientid_redirect",
+        "to": "https://needle-shark.ru/?utm_source=qa&utm_campaign=clientid_redirect",
+        "status": 200
+      }
+    ],
+    "one_counter_and_handler": 18
+  },
+  "delivery": {
+    "passed": true,
+    "order_id": 33,
+    "amo_deal_id": 4787837,
+    "amo_pipeline_id": 11431098,
+    "amo_status_id": 89534190,
+    "clientid_equal_sdk_database_payload_amo": true,
+    "utm_and_fields_equal": true,
+    "single_order_payload_and_amo_job": true,
+    "uuid_exact_match_one_deal": true,
+    "contact_matches": true,
+    "amo_attempts": 1,
+    "mail_deliveries": 1,
+    "mail_statuses": [
+      [
+        "sent",
+        1,
+        null
+      ]
+    ],
+    "services": {
+      "nginx": "active",
+      "needle-leads": "active",
+      "postgresql": "active",
+      "needle-cleanup.timer": "active",
+      "needle-monitor.timer": "active"
+    },
+    "environment_unchanged": true,
+    "unit_unchanged": true,
+    "backend_current": "/opt/needle-shark/releases/20261024T175828Z-5d8ba9baa122",
+    "backend_previous": "/opt/needle-shark/releases/20261023T194915Z-ab8b6b9b5c42",
+    "static_current": "/var/www/needle-shark/releases/20261024T175952Z-85550",
+    "static_previous": "/var/www/needle-shark/releases/20261024T173415Z-77623",
+    "backend_files_match_git": true
+  },
+  "real_sdk_events": {
+    "goals": [
+      {
+        "goal": "request_open",
+        "status": 200
+      },
+      {
+        "goal": "form_start",
+        "status": 200
+      }
+    ],
+    "hosts": [
+      "mc.yandex.ru",
+      "mc.yandex.com"
+    ],
+    "submission_sent": false
+  },
+  "limitations": [
+    "SMTP acceptance verified, inbox placement not verified",
+    "lead_submitted HTTP receipt and Metrika CRM report processing not verified",
+    "Connector settings confirmed by owner, no new cabinet inspection",
+    "No test of cross-channel business-request merging or email attribution in this release",
+    "No upload in current form; legacy attachment API covered by existing automated tests",
+    "No SEO content change or new URL; recrawl not applicable, index not rechecked"
+  ]
+}
