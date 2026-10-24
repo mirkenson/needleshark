@@ -1,5 +1,13 @@
 # Server-side leads and email
 
+## Form ClientID — live 24 October 2026
+
+Published code 5d8ba9baa122 stores optional ym_client_id as text (1–32 ASCII digits) in nullable orders.ym_client_id and the durable lead_submissions JSON snapshot. The additive migration 20261024_lead_clientid.sql is installed by --upgrade before the new client. Existing payloads without the field keep their fingerprints and remain valid; historical leads are not backfilled. A changed ClientID under the same UUID returns 409, so the browser freezes its first result, including absence, across retries.
+
+amo_delivery sends the saved value through native _YM_UID and counter 112428810 through _YM_COUNTER. Read-only preflight validates their tracking_data types. No credentials enter the frontend, no new CRM fields or integrations are created, and notification text does not include ClientID. ClientID syntax is validated; it is visitor-supplied attribution, not proof of a human or an authenticated identity.
+
+Synthetic order 33 / amoCRM 4787837 confirmed real SDK → public form → PostgreSQL → AMO identity equality and all UTM fields. A lost 202 acknowledgment followed by a UI retry returned 200 with one order/job/deal. SMTP and AMO each accepted one job on the first attempt; inbox and Metrika report processing remain unverified. Environment/unit were preserved. Inspect current/previous before rollback and retain the additive column and new submissions. [Full evidence](../docs/verification/20261024-form-clientid.json).
+
 ## Automatic submission protection — 23 October 2026
 
 **Live and required:** pushed code `ab8b6b9b5c4281cfb964f310d5300660aadf97be`, backend `20261023T194915Z-ab8b6b9b5c42`, static `20261023T195007Z-48372`, running `LEAD_PROTECTION_REQUIRED=1`. Public missing/malformed/rebound proofs return 403 without saved records. Synthetic order 32 passed PostgreSQL, SMTP and amoCRM deal 4746995; refreshed-proof retry created no duplicate. SMTP inbox and live Metrika goal processing remain unverified. [Evidence and rollback pointers](../docs/verification/20261023-form-antispam.json).
