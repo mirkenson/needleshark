@@ -48,6 +48,13 @@ test('loading analytics sends no artificial interaction or success goals', () =>
   assert.deepEqual(setup().goals, []);
 });
 
+test('opening the site chat counts contact intent without message data or lead success', () => {
+  const s = setup();
+  s.emit('site-chat-open', {detail: {message: 'PRIVATE_MESSAGE', contact: 'PRIVATE_CONTACT'}});
+  assert.deepEqual(s.goals, [{counter: 112428810, method: 'reachGoal', name: 'contact_click',
+    params: {page: '/catalog/example/', method: 'chat', element: 'amo_site_chat'}}]);
+});
+
 test('radio choice is counted once and free-form search text is excluded', () => {
   const s = setup();
   const radio = s.element(['.size-picker input[type=radio]'], {dataset: {option: 'color'}, value: 'PRIVATE_VALUE'});

@@ -19,7 +19,7 @@ MANIFEST = json.loads((ROOT / 'business/assets/manifest.json').read_text())
 PHONE = '+7 931 244-82-45'
 EMAIL = 'sales@neesha.ru'
 NEW_MATERIALS = json.loads((SOURCE / 'assets/manifest.json').read_text())
-ASSET_FILES = ('site.css', 'site.js', 'typography.css', 'form-validation.mjs', 'form-client.mjs', 'form-protection.mjs')
+ASSET_FILES = ('site.css', 'site.js', 'typography.css', 'form-validation.mjs', 'form-client.mjs', 'form-protection.mjs', 'chat.js')
 
 
 def asset_version():
@@ -209,7 +209,8 @@ def add_tracking(html):
     html = re.sub(r'<noscript>\s*<div>\s*<img[^>]+mc\.yandex\.ru[^>]+>\s*</div>\s*</noscript>', '', html)
     version = hashlib.sha256((ROOT/'dist/analytics.js').read_bytes()).hexdigest()[:12]
     html = html.replace('</head>', f'<script src="/metrika.js" defer></script><script src="/analytics.js?v={version}" defer></script></head>')
-    return html.replace('</body>', '<noscript><div><img src="https://mc.yandex.ru/watch/112428810" style="position:absolute;left:-9999px" alt=""></div></noscript></body>')
+    html = re.sub(r'<script[^>]+src="/b2b/chat\.js[^"]*"[^>]*></script>', '', html)
+    return html.replace('</body>', f'<script src="/b2b/chat.js?v={asset_version()}" defer></script><noscript><div><img src="https://mc.yandex.ru/watch/112428810" style="position:absolute;left:-9999px" alt=""></div></noscript></body>')
 
 
 def annotate_interactions(html):
@@ -250,6 +251,7 @@ def annotate_interactions(html):
 def make_preview(html):
     html = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="noindex,nofollow">', html)
     html = re.sub(r'<script[^>]+src="[^"]*(?:metrika|analytics)\.js[^>]*></script>', '', html)
+    html = re.sub(r'<script[^>]+src="/b2b/chat\.js[^"]*"[^>]*></script>', '', html)
     html = re.sub(r'<noscript>\s*<div>\s*<img[^>]+mc\.yandex\.ru[^>]+>\s*</div>\s*</noscript>', '', html)
     return html
 

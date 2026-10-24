@@ -57,9 +57,19 @@ class ReviewBuildTests(unittest.TestCase):
                 robots = [a.get('content') for a in doc.find('meta') if a.get('name') == 'robots']
                 self.assertEqual(robots, ['noindex,nofollow'])
                 self.assertFalse(any('metrika.js' in a.get('src', '') or 'analytics.js' in a.get('src', '') for a in doc.find('script')))
+                self.assertFalse(any('/b2b/chat.js' in a.get('src', '') for a in doc.find('script')))
                 self.assertFalse(any('mc.yandex.ru' in a.get('src', '') for a in doc.find('img')))
                 self.assertEqual(len([a for a in doc.find('link') if a.get('rel') == 'canonical']), 1)
         self.assertIn('Disallow: /', (self.output / 'robots.txt').read_text())
+
+    def test_production_shell_has_one_chat_after_repeated_rendering(self):
+        html = '<html><head></head><body><main>Content</main></body></html>'
+        once = render.add_tracking(html)
+        twice = render.add_tracking(once)
+        self.assertEqual(once, twice)
+        sources = [a.get('src', '') for a in Document(twice).find('script')]
+        self.assertEqual(sum(src.startswith('/b2b/chat.js?') for src in sources), 1)
+        self.assertNotIn('/b2b/chat.js', render.make_preview(twice))
 
     def test_local_links_fragments_and_assets_resolve(self):
         for path, doc in self.pages.items():

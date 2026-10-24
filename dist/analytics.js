@@ -96,6 +96,9 @@
   }
   document.addEventListener('click', trackClick);
   document.addEventListener('auxclick', trackClick);
+  document.addEventListener('site-chat-open', () => {
+    goal('contact_click', {page: location.pathname, method: 'chat', element: 'amo_site_chat'});
+  });
   document.addEventListener('change', event => {
     const input = event.target;
     if (!document.body.dataset.productSlug || !input.matches('.size-picker input[type=radio]')) return;
