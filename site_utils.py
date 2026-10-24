@@ -10,6 +10,11 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 ORIGIN = 'https://needle-shark.ru'
 HOSTS = {'needle-shark.ru', 'www.needle-shark.ru', 'needleshark.ru', 'www.needleshark.ru'}
 ROOT = Path(__file__).resolve().parent
+# Existing public ownership markers, restored from the approved pre-B2B homepage.
+SEARCH_VERIFICATION = {
+    'google-site-verification': 'z903IhTA3omVwH9fuJwzmF7enNlPvS2F6CxpqPID5U8',
+    'yandex-verification': '02dc02f9a91882a9',
+}
 
 
 def json_ld(data, element_id=None):
@@ -75,6 +80,10 @@ def common_metadata(html, path):
         '<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">',
         '<link rel="manifest" href="/site.webmanifest">',
     ]
+    if public_path(path) == '/':
+        # Own these tags on the homepage, including old tags outside our block.
+        html = re.sub(r'<meta\b[^>]*name=[\"\'](?:google-site-verification|yandex-verification)[\"\'][^>]*>', '', html, flags=re.I)
+        tags.extend(f'<meta name="{name}" content="{value}">' for name, value in SEARCH_VERIFICATION.items())
     social = {'og:title': title, 'og:description': description, 'og:url': url,
               'og:type': 'article' if article else 'website', 'og:locale': 'ru_RU',
               'og:site_name': 'Needle Shark', 'og:image': image_url,

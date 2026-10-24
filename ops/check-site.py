@@ -10,7 +10,7 @@ from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from site_utils import ORIGIN, public_path, prepare_html
+from site_utils import ORIGIN, HOSTS, SEARCH_VERIFICATION, public_path, prepare_html
 DIST = ROOT / 'dist'
 
 
@@ -18,10 +18,17 @@ class Page(HTMLParser):
     def __init__(self, source):
         super().__init__()
         self.ids, self.links, self.headings, self.metadata = [], [], [], []
+        self.in_head = False
+        self.verification = []
+        self.citations = []
         self.feed(source)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == 'head':
+            self.in_head = True
+        if tag == 'meta' and attrs.get('name') in SEARCH_VERIFICATION:
+            self.verification.append((self.in_head, attrs['name'], attrs.get('content')))
         if 'id' in attrs:
             self.ids.append(attrs['id'])
         if re.fullmatch(r'h[1-6]', tag):
@@ -38,6 +45,27 @@ class Page(HTMLParser):
             if attrs.get('src', '').startswith(('https:', 'http:')):
                 return  # Existing analytics noscript pixel.
             assert 'width' in attrs and 'height' in attrs, 'Image without intrinsic dimensions'
+
+    def handle_endtag(self, tag):
+        if tag == 'head':
+            self.in_head = False
+
+
+def check_home_verification(page):
+    for name, token in SEARCH_VERIFICATION.items():
+        found = [(in_head, value) for in_head, key, value in page.verification if key == name]
+        assert found == [(True, token)], f'Homepage: expected one current {name} in head'
+
+
+def check_citations(path, page, pages):
+    for citation in page.citations:
+        url = urlsplit(citation)
+        if url.netloc and url.hostname not in HOSTS:
+            continue
+        target = resolve(path, unquote(url.path)) if url.path else path
+        assert target in pages, f'{path}: citation points to missing page {citation}'
+        if url.fragment:
+            assert unquote(url.fragment) in pages[target].ids, f'{path}: missing citation anchor {citation}'
 
 
 def resolve(base, url):
@@ -57,6 +85,8 @@ def check():
         source = path.read_text()
         page = Page(source)
         pages[path.resolve()] = page
+        if path == DIST / 'index.html':
+            check_home_verification(page)
         assert page.headings.count('h1') == 1, f'{path}: expected one H1'
         assert len(page.ids) == len(set(page.ids)), f'{path}: duplicate id'
         assert 'noindex' not in source.lower(), f'{path}: noindex'
@@ -72,8 +102,11 @@ def check():
             assert sum(m.get('rel') == field for m in page.metadata) == 1, f'{path}: {field}'
         assert any(m.get('href') == ORIGIN + public_path(path.relative_to(DIST)) for m in page.metadata)
         for raw in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', source, re.S):
-            json.loads(raw)
+            data = json.loads(raw)
+            if data.get('@type') == 'BlogPosting':
+                page.citations.extend(data.get('citation', []))
     for path, page in pages.items():
+        check_citations(path, page, pages)
         for link in page.links:
             url = urlsplit(link)
             if url.scheme or url.netloc:

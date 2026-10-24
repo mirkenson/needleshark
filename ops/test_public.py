@@ -4,6 +4,44 @@ from urllib.parse import parse_qs, urlsplit
 from site_utils import prepare_html
 
 class PublicTests(unittest.TestCase):
+    def test_home_verification_survives_rebuild_without_duplicates(self):
+        from site_utils import SEARCH_VERIFICATION
+        source = '<head><title>Home</title><meta name="google-site-verification" content="obsolete"></head>'
+        result = prepare_html(source, 'index.html')
+        self.assertEqual(result, prepare_html(result, 'index.html'))
+        for name, value in SEARCH_VERIFICATION.items():
+            self.assertEqual(result.count(f'name="{name}"'), 1)
+            self.assertIn(f'name="{name}" content="{value}"', result.split('</head>')[0])
+        internal = prepare_html('<head><title>Blog</title></head>', 'blog/index.html')
+        self.assertNotIn('verification', internal)
+
+    def test_public_check_rejects_lost_moved_or_duplicate_verification(self):
+        import runpy
+        from pathlib import Path
+        from site_utils import SEARCH_VERIFICATION
+        check = runpy.run_path(str(Path(__file__).with_name('check-site.py')))
+        tags = ''.join(f'<meta name="{name}" content="{value}">' for name, value in SEARCH_VERIFICATION.items())
+        check['check_home_verification'](check['Page']('<head>' + tags + '</head>'))
+        for source in ('<head></head>', '<head></head><body>' + tags + '</body>', '<head>' + tags * 2 + '</head>'):
+            with self.assertRaises(AssertionError):
+                check['check_home_verification'](check['Page'](source))
+
+    def test_public_check_rejects_retired_citation_and_missing_anchor(self):
+        import runpy
+        from pathlib import Path
+        from site_utils import ORIGIN
+        check = runpy.run_path(str(Path(__file__).with_name('check-site.py')))
+        catalog = (check['DIST'] / 'catalog/index.html').resolve()
+        article = (check['DIST'] / 'blog/example/index.html').resolve()
+        page = check['Page']('<head></head>')
+        pages = {catalog: check['Page']('<article id="current"></article>')}
+        page.citations = ['/catalog/#current', ORIGIN + '/catalog/#current', 'https://example.com/manual']
+        check['check_citations'](article, page, pages)
+        for citation in ('/catalog/retired/', ORIGIN + '/catalog/retired/', '/catalog/#missing'):
+            page.citations = [citation]
+            with self.assertRaises(AssertionError):
+                check['check_citations'](article, page, pages)
+
     def test_ozon_campaign_replaces_existing_duplicates_and_preserves_other_data(self):
         from site_utils import external_url
         for host in ('ozon.ru', 'www.ozon.ru', 'm.ozon.ru'):
