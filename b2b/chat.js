@@ -30,10 +30,11 @@ window.amoSocialButtonConfig = {
 
 // Only the fact of opening the chat reaches the common analytics handler.
 // A chat opening/message is never a confirmed /api/leads submission.
-window.amoSocialButton('onChatReady', () => {
-  const button = document.getElementById('amobutton');
+function makeChatAccessible() {
+  const host = document.getElementById('amobutton');
+  const button = host?.querySelector('.amo-button--main-icon');
   const chat = document.getElementById('amo-livechat');
-  // The vendor injects a clickable div. Make that same control keyboard-accessible.
+  // Keep the iframe outside the button's accessibility role.
   if (button && !button.dataset.needleAccessible) {
     button.dataset.needleAccessible = 'true';
     button.setAttribute('role', 'button');
@@ -41,7 +42,6 @@ window.amoSocialButton('onChatReady', () => {
     button.setAttribute('aria-label', 'Открыть чат с менеджером');
     button.setAttribute('aria-expanded', 'false');
     button.setAttribute('aria-controls', 'amo-livechat');
-    button.classList.add('ym-hide-content');
     button.addEventListener('keydown', event => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
@@ -49,16 +49,24 @@ window.amoSocialButton('onChatReady', () => {
       }
     });
   }
+  host?.classList.add('ym-hide-content');
   chat?.classList.add('ym-hide-content');
+  return Boolean(button && chat);
+}
+// The launcher must be focusable before the visitor opens the chat for the first time.
+const chatObserver = new MutationObserver(() => {
+  if (makeChatAccessible()) chatObserver.disconnect();
 });
+if (!makeChatAccessible()) chatObserver.observe(document.body, {childList: true, subtree: true});
+window.amoSocialButton('onChatReady', makeChatAccessible);
 window.amoSocialButton('onChatShow', () => {
-  const button = document.getElementById('amobutton');
+  const button = document.querySelector('#amobutton > .amo-button--main-icon');
   button?.setAttribute('aria-expanded', 'true');
   button?.setAttribute('aria-label', 'Закрыть чат с менеджером');
   document.dispatchEvent(new Event('site-chat-open'));
 });
 window.amoSocialButton('onChatHide', () => {
-  const button = document.getElementById('amobutton');
+  const button = document.querySelector('#amobutton > .amo-button--main-icon');
   button?.setAttribute('aria-expanded', 'false');
   button?.setAttribute('aria-label', 'Открыть чат с менеджером');
 });
