@@ -1,5 +1,13 @@
 # Needle Shark VPS
 
+## Structured metadata release — 24 October 2026
+
+Pushed code **4405fb59a3b0cf4126d66d5182f92dba78cd3094** deployed with `ops/deploy.sh --from-github`: static current **20261024T180418Z-87524**, previous **20261024T175952Z-85550**. The already live ClientID code 5d8ba9b was merged before deployment; all 18 body regions and JS/CSS are byte-identical to that release. No backend install or server configuration changes. All 1261 files verified before switch, 19 downloaded/1242 reused. Recheck actual pointers before rollback.
+
+Public HTTPS: 18 HTML, 223 resources, robots/sitemap match the release; eight GET 301s preserve query, an unknown URL returns 404. Six services/timers active. 126 tests passed, rebuild is byte-identical; 18 pages × five widths passed both locally and publicly. Service/catalog/article schema passed schema.org. Search console reads and new recrawl requests were unavailable because Computer Use stopped on the current Chrome URL; no workaround was attempted. [Verification](../docs/verification/20261024-seo-structured-metadata.json).
+
+`ops/page-registry.json` is the reviewed independent expected contract. Update it deliberately when approving a new route or changing its metadata; do not regenerate it automatically from rendered HTML. `prepare-public.py` and the B2B publish renderer reject missing/extra HTML. `check-site.py` invokes `seo_checks.py` for head-aware canonical, OG/Twitter, entity URLs, visible images/dates/item order and required schema checks; sitemap is compared with the registry. New regressions: `python3 -m unittest discover -s ops -p 'test_seo.py'`. Run the existing build/prepare/check sequence as usual.
+
 ## ClientID form release — 24 October 2026
 
 Pushed code 5d8ba9baa12271d9235580b3fec5cc7dd0df2bc0 installed with --upgrade, then ops/deploy.sh --from-github. Backend current 20261024T175828Z-5d8ba9baa122 / previous 20261023T194915Z-ab8b6b9b5c42; static current 20261024T175952Z-85550 / previous 20261024T173415Z-77623. Backup /opt/needle-shark/backups/20261024T175828Z-5d8ba9baa122 includes database/environment/unit and old pointers. The installer adds nullable orders.ym_client_id before switching; environment and unit remain byte-identical, Nginx untouched. All 1261 static files verified before switch; 241 public files and installed backend files match, five services/timers active.
