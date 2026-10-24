@@ -1,5 +1,11 @@
 # Needle Shark VPS
 
+## amoCRM site chat — 24 October 2026
+
+Pushed code `9fa0093f398648981fdb27986430b076de6d215e` deployed through `ops/deploy.sh --from-github`. Static current `20261024T163118Z-66091`, previous `20261024T162433Z-65339` (first working chat release). The retained pre-chat release is `20261023T195007Z-48372`. All 1258 files verified before switching; 22 downloaded, 1236 reused. Public HTTPS: 231 files including 18 HTML/robots/sitemap match dist, two redirects preserve query, five services/timers active. Inspect pointers again before rollback. Backend, environment, Nginx, systemd and database were not changed.
+
+The official widget connects visitors directly to amoCRM, independently of the existing lead API/database/mail queues. Widget 451441, source «Чат сайта Needle Shark», trusted domain only `https://needle-shark.ru`. Repeated build is byte-identical; isolated preview excludes the widget. One synthetic conversation A100 / lead 4780059 proves website-to-CRM and CRM-to-website delivery; the final version sent another message into the same conversation. Manager device notifications and attachments were not tested. [Verification and limitations](../docs/verification/20261024-amocrm-site-chat.json).
+
 ## Submission protection rollout — 23 October 2026
 
 Installed code `ab8b6b9b5c4281cfb964f310d5300660aadf97be`: backend current `20261023T194915Z-ab8b6b9b5c42`, previous `20261023T184229Z-eeeb5559fe9a`; static current `20261023T195007Z-48372`, previous `20261023T184305Z-41970`. Required flag verified in the running process after activation; private backup `/opt/needle-shark/backups/protection-20261023T195101Z/leads.env`. 14 installed backend files and 235 public files match the checked release; five services/timers active, SMTP/AMO queues empty. [Full report](../docs/verification/20261023-form-antispam.json).
