@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from site_utils import prepare_html, public_path, ORIGIN
 from b2b.config import ENABLED as B2B_ENABLED
+from blog.routes import post_file
 DIST = ROOT / 'dist'
 if B2B_ENABLED:
     from ops.seo_checks import check_inventory
@@ -19,14 +20,14 @@ if B2B_ENABLED:
 else:
     paths += ['catalog/' + p['slug'] + '/index.html' for p in json.loads((ROOT/'catalog/products.json').read_text())['products'] if p.get('status', 'published') == 'published']
 published_posts = [p for p in json.loads((ROOT/'blog/posts.json').read_text()) if p['status']=='published']
-paths += ['blog/' + p['slug'] + '/index.html' for p in published_posts]
+paths += [post_file(p) for p in published_posts]
 if any(p.get('kind') == 'case' for p in published_posts):
     paths.append('cases/index.html')
 for path in paths:
     if not (DIST/path).is_file():
         raise ValueError('Missing public page: ' + path)
 # Only real editorial dates, never a new lastmod on every build.
-dates = {'blog/' + p['slug'] + '/index.html': p.get('updated', p['date']) for p in published_posts}
+dates = {post_file(p): p.get('updated', p['date']) for p in published_posts}
 if B2B_ENABLED:
     directions = json.loads((ROOT/'b2b/content.json').read_text())['directions']
     dates.update({'napravleniya/' + d['slug'] + '/index.html': d['updated']

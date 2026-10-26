@@ -77,7 +77,7 @@ def common_metadata(html, path):
     # These tags are owned by this function, including older generator output.
     html = re.sub(r'<meta\b[^>]*(?:property="og:[^"]+"|name="(?:twitter:[^"]+|robots|theme-color)")[^>]*>', '', html)
     html = re.sub(r'<link\b[^>]*rel="(?:icon|shortcut icon|apple-touch-icon|manifest)"[^>]*>', '', html)
-    article = public_path(path).startswith('/blog/') and public_path(path) != '/blog/'
+    article = any(public_path(path).startswith(section) and public_path(path) != section for section in ('/blog/', '/cases/'))
     image_url, image_alt = ORIGIN + '/brand-preview.png', 'Needle Shark'
     image_width, image_height, image_type = 1200, 630, 'image/png'
     nodes = [node for raw in re.findall(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', html, re.S) for node in schema_nodes(json.loads(raw))]
@@ -130,7 +130,7 @@ def common_metadata(html, path):
     trail = next((n for n in nodes if n.get('@type') == 'BreadcrumbList'), None)
     if trail and trail.get('@id'):
         webpage['breadcrumb'] = {'@id': trail['@id']}
-    main = next((n for n in nodes if n.get('@type') in ('Service', 'BlogPosting') and n.get('url') == url), None)
+    main = next((n for n in nodes if n.get('@type') in ('Service', 'BlogPosting', 'Article') and n.get('url') == url), None)
     if main:
         webpage['mainEntity'] = {'@id': main['@id']}
     tags.append(json_ld({'@context': 'https://schema.org', '@graph': [organization, website, webpage]}, 'site-schema'))

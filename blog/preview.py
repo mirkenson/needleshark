@@ -21,13 +21,13 @@ def main():
         html = re.sub(r'<meta name="robots"[^>]*>', '<meta name="robots" content="noindex,nofollow">', page.read_text())
         html = re.sub(r'<script src="/metrika\.js[^\"]*"[^>]*></script>', '', html)
         html = re.sub(r'<noscript>.*?</noscript>', '', html, flags=re.S)
-        if page.parent.name in drafts and page.parent.parent.name == 'blog':
+        if page.parent.name in drafts and page.parent.parent.name in ('blog', 'cases'):
             html = html.replace('<span>Опубликовано <time', '<span>Черновик от <time')
             html = html.replace('NEEDLE SHARK / ПРАКТИКА', 'NEEDLE SHARK / ЧЕРНОВИК ДЛЯ СОГЛАСОВАНИЯ')
             # A draft date is a preparation date, not an actual publication date.
             def without_publication_date(match):
                 data = json.loads(match[1])
-                if data.get('@type') == 'BlogPosting':
+                if data.get('@type') in ('BlogPosting', 'Article'):
                     data.pop('datePublished', None)
                     data.pop('dateModified', None)
                 return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>'

@@ -24,12 +24,12 @@
       "image": "https://needle-shark.ru/brand-preview.png"
     },
     {
-      "file": "blog/chehol-dlya-robota-manipulyatora/index.html",
-      "url": "https://needle-shark.ru/blog/chehol-dlya-robota-manipulyatora/",
-      "canonical": "https://needle-shark.ru/blog/chehol-dlya-robota-manipulyatora/",
+      "file": "cases/chehol-dlya-robota-manipulyatora/index.html",
+      "url": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/",
+      "canonical": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/",
       "indexable": false,
       "purpose": "Реальный кейс чехла для робота с предложением пошива",
-      "action": "https://needle-shark.ru/napravleniya/chehly/#contact",
+      "action": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/#contact",
       "title": "Чехол для робота-манипулятора на заказ — кейс Needle Shark",
       "h1": "Защитный чехол для робота-манипулятора",
       "description": "Кейс Needle Shark: чехол для робота от пыли и грязи. Выезд, замеры, образец, примерка и партия. Пошив на заказ, обычные, жаропрочные и водостойкие ткани.",
@@ -37,11 +37,20 @@
         "Organization",
         "WebSite",
         "WebPage",
-        "BlogPosting",
+        "Article",
         "ImageObject",
         "BreadcrumbList"
       ],
       "image": "https://needle-shark.ru/blog/assets/robot-overall-1448.webp"
+    }
+  ],
+  "migrations": [
+    {
+      "old": "https://needle-shark.ru/blog/chehol-dlya-robota-manipulyatora/",
+      "new": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/",
+      "reason": "По правке владельца кейс находится в разделе cases. Старый адрес был только в прототипе и не публиковался.",
+      "publicRedirectRequired": false,
+      "previewRedirect": 301
     }
   ]
 }

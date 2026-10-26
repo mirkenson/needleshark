@@ -1,6 +1,7 @@
 """Checks for the isolated review build, not a production release."""
 import hashlib
 import json
+import re
 import tempfile
 import unittest
 from html.parser import HTMLParser
@@ -13,6 +14,7 @@ from b2b import render
 class Document(HTMLParser):
     def __init__(self, text):
         super().__init__()
+        self.source = text
         self.tags = []
         self.feed(text)
 
@@ -101,9 +103,9 @@ class ReviewBuildTests(unittest.TestCase):
 
     def test_catalogue_links_directly_to_market_and_legacy_pages_are_absent(self):
         redirects = json.loads((self.output / 'preview-redirects.json').read_text())
-        self.assertEqual(len(redirects), 26)
+        self.assertEqual(len([path for path in redirects if path.startswith('/catalog/')]), 26)
         self.assertEqual(list((self.output / 'catalog').glob('**/*.html')), [self.output / 'catalog/index.html'])
-        for old, new in redirects.items():
+        for old, new in ((old, new) for old, new in redirects.items() if old.startswith("/catalog/")):
             self.assertTrue(new.startswith('/catalog/#'))
             self.assertFalse((self.output / old.lstrip('/') / 'index.html').exists())
         for doc in self.pages.values():
@@ -117,7 +119,7 @@ class ReviewBuildTests(unittest.TestCase):
             if not doc.find('form'):
                 continue
             with self.subTest(page=path):
-                self.assertEqual([a.get('name') for a in doc.find('input')], ['website', 'name', 'email', 'phone', 'consent'])
+                self.assertEqual([a.get('name') for a in Document(re.search(r'<form\b.*?</form>', doc.source, re.S)[0]).find('input')], ['website', 'name', 'email', 'phone', 'consent'])
                 trap = next(a for a in doc.find('input') if a.get('name') == 'website')
                 self.assertEqual(trap['tabindex'], '-1')
                 self.assertEqual(trap['autocomplete'], 'off')

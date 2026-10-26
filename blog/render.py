@@ -11,6 +11,8 @@ sys.path.insert(0, str(ROOT))
 from site_utils import prepare_html, ORIGIN, json_ld, breadcrumbs, image_manifest, image_object
 from blog.blocks import ArticleBlocks, e, validate_blocks, walk, catalog_image, editorial_images, figure
 
+from blog.routes import post_path
+
 BASE = Template((ROOT / 'blog/base.html').read_text())
 
 
@@ -58,7 +60,7 @@ def article_image(post):
     source = catalog_image(block)
     photo = (editorial_images()[block['asset']] if 'asset' in block else image_manifest()['/' + source['src'].lstrip('/')])['variants'][-1]
     return image_object(ORIGIN + photo['src'], source['alt'], photo['width'], photo['height'],
-                        ORIGIN + '/blog/' + post['slug'] + '/#primaryimage')
+                        ORIGIN + post_path(post) + '#primaryimage')
 
 
 def shell(content, title, description, current='false', slug=None, structured=None, case=False):
@@ -67,7 +69,7 @@ def shell(content, title, description, current='false', slug=None, structured=No
         metadata += json_ld(structured)
     trail = [('Главная', '/'), ('Кейсы', '/cases/') if case else ('Блог', '/blog/')]
     if slug:
-        trail.append((structured['headline'], '/blog/' + slug + '/'))
+        trail.append((structured['headline'], ('/cases/' if case else '/blog/') + slug + '/'))
     metadata += json_ld(breadcrumbs(trail))
     return BASE.substitute(content=content, title=e(title), description=e(description), blog_current=current, metadata=metadata)
 
@@ -85,14 +87,16 @@ def date_markup(post):
 def render(posts, output, include_drafts=False):
     validate(posts)  # Validate everything before modifying generated files.
     published = sorted((p for p in posts if p['status'] == 'published' or (include_drafts and p.get('kind') == 'case')), key=lambda p: (p['date'], p['slug']), reverse=True)
+    articles = [p for p in published if p.get('kind') != 'case']
     intro = '<section class="wrap blog-intro"><p class="eyebrow">NEEDLE SHARK / БЛОГ</p><h1>Блог<span class="title-dot">.</span></h1><p>О материалах, изделиях и работе производства.</p></section>'
-    cards = ''.join(f'<article class="blog-card">{date_markup(p)}<div><h2><a href="/blog/{p["slug"]}/">{e(p["title"])} <span aria-hidden="true">↗</span></a></h2><p>{e(p["description"])}</p></div></article>' for p in published)
+    cards = ''.join(f'<article class="blog-card">{date_markup(p)}<div><h2><a href="/blog/{p["slug"]}/">{e(p["title"])} <span aria-hidden="true">↗</span></a></h2><p>{e(p["description"])}</p></div></article>' for p in articles)
     collection = f'<section class="wrap blog-list" aria-label="Статьи">{cards}</section>' if cards else '<section class="wrap blog-empty" aria-labelledby="empty-title"><h2 id="empty-title">Здесь появятся<br>первые статьи.</h2><div><p>Публикаций пока нет. А познакомиться с нашими изделиями можно уже сейчас.</p><a href="/catalog/">Перейти в каталог <span aria-hidden="true">↗</span></a></div></section>'
     blog_schema = {'@context': 'https://schema.org', '@type': 'CollectionPage', '@id': ORIGIN + '/blog/#webpage',
-                   'url': ORIGIN + '/blog/', 'mainEntity': {'@type': 'ItemList', '@id': ORIGIN + '/blog/#items', 'numberOfItems': len(published), 'itemListElement': [
+                   'url': ORIGIN + '/blog/', 'mainEntity': {'@type': 'ItemList', '@id': ORIGIN + '/blog/#items', 'numberOfItems': len(articles), 'itemListElement': [
                        {'@type': 'ListItem', 'position': i + 1, 'name': post['title'],
-                        'url': ORIGIN + '/blog/' + post['slug'] + '/'} for i, post in enumerate(published)]}}
+                        'url': ORIGIN + post_path(post)} for i, post in enumerate(articles)]}}
     pages = {'index.html': shell(intro + collection, 'Блог о чехлах, материалах и хранении техники | Needle Shark', 'Статьи Needle Shark о защитных чехлах, технических тканях и уходе за техникой. Подготовка мотоцикла и квадроцикла к зимнему хранению.', 'page', structured=blog_schema)}
+    case_pages = {}
     for post in published:
         article = ArticleBlocks(post)
         is_case = post.get('kind') == 'case'
@@ -107,9 +111,9 @@ def render(posts, output, include_drafts=False):
             case = post['case']
             hero_cta = f'<div class="case-hero-actions"><a class="ns-button" href="{e(case["ctaUrl"])}" data-blog-cta="case-hero" data-article="{e(post["slug"])}">{e(case["cta"])} <span aria-hidden="true">↗</span></a><p>{e(case["note"])}</p></div>'
             body = f'<article class="wrap blog-article case-article" data-article="{e(post["slug"])}"><a class="blog-back" href="/cases/">← Все кейсы</a><div class="case-hero"><div class="article-header"><p class="eyebrow">NEEDLE SHARK / КЕЙС</p><h1>{e(post["title"])}</h1><p class="article-lead">{e(post["description"])}</p>{hero_cta}{meta}</div>{figure(post["blocks"][0], eager=True)}</div><div class="article-layout">{article.contents().replace("В этой статье", "В этом кейсе")}<div class="article-body">{content}{article.footnotes()}<a class="blog-back" href="/cases/">← Все кейсы Needle Shark</a></div></div></article>'
-        structured = {'@context': 'https://schema.org', '@type': 'BlogPosting' , 'headline': post['title'], 'description': post['description'], 'datePublished': post['date'], 'inLanguage': 'ru-RU', 'mainEntityOfPage': ORIGIN + '/blog/' + post['slug'] + '/', 'publisher': {'@type': 'Organization', 'name': 'Needle Shark', 'url': ORIGIN + '/'}}
-        structured['@id'] = ORIGIN + '/blog/' + post['slug'] + '/#article'
-        structured['url'] = ORIGIN + '/blog/' + post['slug'] + '/'
+        structured = {'@context': 'https://schema.org', '@type': 'Article' if is_case else 'BlogPosting', 'headline': post['title'], 'description': post['description'], 'datePublished': post['date'], 'inLanguage': 'ru-RU', 'mainEntityOfPage': ORIGIN + post_path(post), 'publisher': {'@type': 'Organization', 'name': 'Needle Shark', 'url': ORIGIN + '/'}}
+        structured['@id'] = ORIGIN + post_path(post) + '#article'
+        structured['url'] = ORIGIN + post_path(post)
         structured['publisher']['@id'] = ORIGIN + '/#organization'
         structured['publisher']['logo'] = ORIGIN + '/logo.svg'
         structured['citation'] = list(dict.fromkeys(item['url'] for block in walk(post['blocks']) if block['type'] == 'sources' for item in block['items']))
@@ -123,22 +127,23 @@ def render(posts, output, include_drafts=False):
         if post['status'] == 'draft':
             structured.pop('datePublished', None)
             structured.pop('dateModified', None)
-        pages[f'{post["slug"]}/index.html'] = shell(body, post.get('seoTitle', post['title'] + ' — Needle Shark'), post.get('seoDescription', post['description']), slug=post['slug'], structured=structured, case=is_case)
-    output.mkdir(parents=True, exist_ok=True)
+        (case_pages if is_case else pages)[f'{post["slug"]}/index.html'] = shell(body, post.get('seoTitle', post['title'] + ' — Needle Shark'), post.get('seoDescription', post['description']), slug=post['slug'], structured=structured, case=is_case)
     # Remove only obsolete HTML carrying this generator's ownership marker.
     marker = '<!-- Generated by blog/render.py -->'
-    for old in output.glob('*/index.html'):
-        if old.relative_to(output).as_posix() not in pages and old.read_text().startswith(marker):
-            old.unlink()
-    for name, html in pages.items():
-        path = output / name
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(prepare_html(marker + '\n' + html, 'blog/' + name))
+    for directory, section, generated in ((output, 'blog', pages), (output.parent/'cases', 'cases', case_pages)):
+        directory.mkdir(parents=True, exist_ok=True)
+        for old in directory.glob('*/index.html'):
+            if old.relative_to(directory).as_posix() not in generated and old.read_text().startswith(marker):
+                old.unlink()
+        for name, html in generated.items():
+            target = directory / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(prepare_html(marker + '\n' + html, section + '/' + name))
 
 
 def render_featured(posts, homepage):
     validate(posts)
-    selected = sorted((p for p in posts if p['status'] == 'published'), key=lambda p: (p['date'], p['slug']), reverse=True)[:3]
+    selected = sorted((p for p in posts if p['status'] == 'published' and p.get('kind') != 'case'), key=lambda p: (p['date'], p['slug']), reverse=True)[:3]
     content = '<div class="popular-grid">' + ''.join(f'<article><h3><a href="/blog/{p["slug"]}/">{e(p["title"])}</a></h3><p>{e(p["description"])}</p></article>' for p in selected) + '</div>' if selected else '<p>Здесь появится подборка материалов из нашего блога.</p>'
     block = '<!-- BLOG_FEATURED_START -->\n<section class="wrap popular-articles" aria-labelledby="popular-heading"><div><h2 id="popular-heading">Полезные материалы</h2><a href="/blog/">Весь блог ↗</a></div>' + content + '</section>\n<!-- BLOG_FEATURED_END -->'
     source = homepage.read_text()

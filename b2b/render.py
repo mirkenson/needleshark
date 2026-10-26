@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from site_utils import prepare_html, external_url, ORIGIN, json_ld, breadcrumbs, image_object
 
+from blog.routes import post_path, post_file
+
 SOURCE = Path(__file__).resolve().parent
 DATA = json.loads((SOURCE / 'content.json').read_text())
 DIRECTIONS = DATA['directions']
@@ -106,7 +108,8 @@ def footer(contact_href='/#contact', cases=False):
     </div><div class="ns-footer-bottom"><p>© Needle Shark, 2026<br><span>ИП Сергеев Даниил Игоревич · ИНН 026610829836 · Санкт-Петербург</span></p><div><a href="/privacy-policy">Политика обработки данных</a><a href="/user-agreement">Пользовательское соглашение</a><a href="#main">Наверх ↑</a></div></div></div></footer>'''
 
 
-def form(topic=''):
+def form(topic='', contact_note=None):
+    note = e(contact_note) if contact_note else f'Фото, чертежи, ТЗ и 3D-модели отправьте на <a href="mailto:{EMAIL}">{EMAIL}</a> или в мессенджер. В форме файлы не прикрепляются.'
     return f'''<section class="ns-contact" id="contact"><div class="ns-container ns-contact-grid"><div><p class="ns-kicker">НАЧНЁМ С ВАШЕЙ ЗАДАЧИ</p><h2>Расскажите,<br>что нужно <em>сшить.</em></h2><p class="ns-lead">Уточним детали, подберём материал и подготовим расчёт. Можно начать с короткого описания.</p><a class="ns-contact-phone" href="tel:+79312448245">{PHONE}</a><a class="ns-contact-email" href="mailto:{EMAIL}">{EMAIL}</a>{messengers()}</div>
     <form class="ns-form ym-hide-content" data-context="b2b" data-topic="{e(topic)}" method="post" action="/api/leads" novalidate><p class="ns-form-caption">Заявка на расчёт <span>От 1 рабочего дня*</span></p>
       <div hidden aria-hidden="true"><label for="lead-website">Оставьте это поле пустым</label><input id="lead-website" name="website" tabindex="-1" autocomplete="off" maxlength="254"></div>
@@ -114,7 +117,7 @@ def form(topic=''):
       <div class="ns-form-row"><div><label for="lead-email">Почта</label><input id="lead-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@company.ru" aria-describedby="contact-hint contact-error"></div><div><label for="lead-phone">Телефон</label><input id="lead-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" placeholder="+7 (___) ___-__-__" aria-describedby="contact-hint contact-error"></div></div>
       <p id="contact-hint" class="ns-field-hint">Укажите почту или телефон — достаточно одного контакта.</p><p id="contact-error" class="ns-field-error" role="alert" hidden></p>
       <label for="lead-description">Описание задачи <span aria-hidden="true">*</span></label><textarea id="lead-description" name="description" rows="4" maxlength="5000" placeholder="Какое изделие нужно, примерное количество, размеры и условия использования" required></textarea>
-      <div class="ns-file-note"><span aria-hidden="true">↗</span><p>Фото, чертежи, ТЗ и 3D-модели отправьте на <a href="mailto:{EMAIL}">{EMAIL}</a> или в мессенджер. В форме файлы не прикрепляются.</p></div>
+      <div class="ns-file-note"><span aria-hidden="true">↗</span><p>{note}</p></div>
       <label class="ns-consent"><input name="consent" type="checkbox" required data-track="b2b_consent"><span>Принимаю <a href="/user-agreement" target="_blank" rel="noopener">пользовательское соглашение</a> и даю согласие на обработку персональных данных по <a href="/privacy-policy" target="_blank" rel="noopener">политике</a>.</span></label>
       <button class="ns-button" type="submit">Получить расчёт <span aria-hidden="true">↗</span></button><p class="ns-form-status" role="status" hidden></p><p class="ns-field-hint">* После уточнения исходных данных. Срок производства согласуем отдельно.</p><noscript><p>Для отправки заявки напишите на <a href="mailto:{EMAIL}">{EMAIL}</a> или позвоните.</p></noscript>
     </form></div></section>'''
@@ -193,7 +196,7 @@ def case_cards(cases):
     cards = []
     for post in cases:
         item = post['case']
-        url = '/blog/' + post['slug'] + '/'
+        url = post_path(post)
         cards.append(f'<article class="ns-case-card">{figure(post["blocks"][0])}<div class="ns-case-copy"><p class="ns-kicker">{e(item["category"])}</p><h2><a href="{url}">{e(item["label"])}</a></h2><p>{e(item["summary"])}</p><a class="ns-text-link" data-track="case_open_{e(post["slug"])}" href="{url}">Смотреть кейс <span aria-hidden="true">↗</span></a></div></article>')
     return '<div class="ns-case-list">' + ''.join(cards) + '</div>'
 
@@ -209,7 +212,7 @@ def case_index(cases):
     body += '<section class="ns-container ns-custom-cta"><div><p class="ns-kicker">ЕСТЬ ПОХОЖАЯ ЗАДАЧА?</p><h2>Начнём с вашего оборудования.</h2><p>Пришлите фотографии, размеры и описание условий работы.</p></div><div>' + button('Обсудить изготовление', '/napravleniya/chehly/#contact') + '</div></section>'
     schema = {'@context':'https://schema.org','@graph': [
         {'@type':'CollectionPage','@id':ORIGIN+'/cases/#webpage','url':ORIGIN+'/cases/', 'mainEntity':{'@type':'ItemList','@id':ORIGIN+'/cases/#items','numberOfItems':len(cases),'itemListElement':[
-            {'@type':'ListItem','position':i+1,'name':p['case']['label'],'url':ORIGIN+'/blog/'+p['slug']+'/'} for i,p in enumerate(cases)]}},
+            {'@type':'ListItem','position':i+1,'name':p['case']['label'],'url':ORIGIN+post_path(p)} for i,p in enumerate(cases)]}},
         breadcrumbs([('Главная','/'),('Кейсы','/cases/')])]}
     return body, schema
 
@@ -267,13 +270,17 @@ def page(body, title, description, path, preview=True, structured=None, cases=Fa
     return make_preview(prepare_html(source,path)) if preview else prepare_html(source,path)
 
 
+def add_chat(html):
+    html = re.sub(r'<script[^>]+src="/b2b/chat\.js[^"]*"[^>]*></script>', '', html)
+    return html.replace('</body>', f'<script src="/b2b/chat.js?v={asset_version()}" defer></script></body>')
+
+
 def add_tracking(html):
     html = re.sub(r'<script[^>]+src="[^"]*(?:metrika|analytics)\.js[^>]*></script>', '', html)
     html = re.sub(r'<noscript>\s*<div>\s*<img[^>]+mc\.yandex\.ru[^>]+>\s*</div>\s*</noscript>', '', html)
     version = hashlib.sha256((ROOT/'dist/analytics.js').read_bytes()).hexdigest()[:12]
     html = html.replace('</head>', f'<script src="/metrika.js" defer></script><script src="/analytics.js?v={version}" defer></script></head>')
-    html = re.sub(r'<script[^>]+src="/b2b/chat\.js[^"]*"[^>]*></script>', '', html)
-    return html.replace('</body>', f'<script src="/b2b/chat.js?v={asset_version()}" defer></script><noscript><div><img src="https://mc.yandex.ru/watch/112428810" style="position:absolute;left:-9999px" alt=""></div></noscript></body>')
+    return add_chat(html).replace('</body>', '<noscript><div><img src="https://mc.yandex.ru/watch/112428810" style="position:absolute;left:-9999px" alt=""></div></noscript></body>')
 
 
 def annotate_interactions(html):
@@ -311,15 +318,18 @@ def annotate_interactions(html):
     return re.sub(r'<(?:a|button|summary)\b[^>]*>', annotate, html)
 
 
-def make_preview(html):
+def make_preview(html, chat=False):
+    # Editorial pages also use the shared form: every preview must block its submission.
+    html = re.sub(r' data-preview="[^"]*"', '', html)
+    html = re.sub(r'<body\b', '<body data-preview="true"', html, count=1)
     html = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="noindex,nofollow">', html)
     html = re.sub(r'<script[^>]+src="[^"]*(?:metrika|analytics)\.js[^>]*></script>', '', html)
     html = re.sub(r'<script[^>]+src="/b2b/chat\.js[^"]*"[^>]*></script>', '', html)
     html = re.sub(r'<noscript>\s*<div>\s*<img[^>]+mc\.yandex\.ru[^>]+>\s*</div>\s*</noscript>', '', html)
-    return html
+    return add_chat(html) if chat else html
 
 
-def build(destination, preview=True):
+def build(destination, preview=True, preview_chat=False):
     destination = Path(destination).resolve()
     if destination == ROOT or (destination.is_relative_to(ROOT / 'dist') and (preview or destination != ROOT/'dist')):
         raise ValueError('Prototype must not replace production sources')
@@ -352,12 +362,20 @@ def build(destination, preview=True):
     pages['business/index.html']=render_page(production_body,'Производство и условия заказа | Needle Shark','Швейное производство Needle Shark в Санкт-Петербурге. Разработка, пошив, контроль качества и доставка изделий по России.','business/index.html', structured={'@context':'https://schema.org', '@graph':[page_image('workshop-room','Швейный цех — визуализация по фотографиям производства','/business/')]})
     if cases:
         case_body, case_schema = case_index(cases)
-        pages['cases/index.html'] = render_page(case_body, 'Кейсы пошива технических изделий | Needle Shark', 'Выполненные работы Needle Shark: задача заказчика, этапы пошива и детали изделия. Чехлы и другие технические изделия под конкретное оборудование.', 'cases/index.html', structured=case_schema)
+        pages['cases/index.html'] = '<!-- Generated case index by b2b/render.py -->' + render_page(case_body, 'Кейсы пошива технических изделий | Needle Shark', 'Выполненные работы Needle Shark: задача заказчика, этапы пошива и детали изделия. Чехлы и другие технические изделия под конкретное оборудование.', 'cases/index.html', structured=case_schema)
+    case_index_file = destination/'cases/index.html'
+    if not cases and case_index_file.is_file() and case_index_file.read_text().startswith('<!-- Generated case index by b2b/render.py -->'):
+        case_index_file.unlink()
+    for post in cases:
+        target = destination/post_file(post)
+        contact = '<div class="ns-site">' + form(post['case']['label'], contact_note='Свяжитесь с нами удобным способом — обсудим задачу, уточним детали и подготовим расчёт.') + '</div>'
+        target.write_text(target.read_text().replace('</main>', contact + '</main>'))
     for path,html in pages.items():
         target=destination/path
         target.parent.mkdir(parents=True,exist_ok=True)
         target.write_text(html)
     redirects={f'/catalog/{p["slug"]}/':f'/catalog/#{p["slug"]}' for p in products}
+    redirects.update({'/blog/' + p['slug'] + '/': post_path(p) for p in cases})
     (destination/'preview-redirects.json').write_text(json.dumps(redirects,ensure_ascii=False,indent=2)+'\n')
     if not preview:
         # Only retired, known product HTML is removed; sources are preserved in Git.
@@ -370,7 +388,7 @@ def build(destination, preview=True):
         html=target.read_text()
         if target.relative_to(destination).as_posix() not in pages:
             html=adapt_shell(html, redirects, cases=bool(cases))
-        target.write_text(make_preview(html) if preview else prepare_html(add_tracking(html), target.relative_to(destination)))
+        target.write_text(make_preview(html, chat=preview_chat) if preview else prepare_html(add_tracking(html), target.relative_to(destination)))
     if preview:
         (destination/'robots.txt').write_text('User-agent: *\nDisallow: /\n')
         (destination/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"/>\n')
@@ -381,9 +399,10 @@ def adapt_shell(html, redirects=None, cases=False):
     if redirects is None:
         products=json.loads((ROOT/'catalog/products.json').read_text())['products']
         redirects={f'/catalog/{p["slug"]}/':f'/catalog/#{p["slug"]}' for p in products if p.get('visible')}
-    html=re.sub(r'(?:<a class="ns-skip"[^>]*>.*?</a>\s*)?<header\b.*?</header>',header(cases=cases),html,flags=re.S)
+    contact_href = '#contact' if 'class="ns-form ' in html else '/#contact'
+    html=re.sub(r'(?:<a class="ns-skip"[^>]*>.*?</a>\s*)?<header\b.*?</header>',header(contact_href, cases=cases),html,flags=re.S)
     html=re.sub(r'<(?:div|nav)\b[^>]*\bid="mobile-menu"[^>]*>.*?</(?:div|nav)>','',html,flags=re.S)
-    html=re.sub(r'<footer\b.*?</footer>',footer(cases=cases),html,flags=re.S)
+    html=re.sub(r'<footer\b.*?</footer>',footer(contact_href, cases=cases),html,flags=re.S)
     html=re.sub(r'<link[^>]+href="/(?:b2b/[^"]+|blog/cases\.css[^"]*)"[^>]*>','',html)
     html=re.sub(r'<script[^>]+src="[^"]*/(?:menu|b2b/site)\.js[^>]*></script>','',html)
     html=html.replace('</head>',preview_assets()+'</head>')
@@ -406,5 +425,6 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',default=str(ROOT/'outputs/b2b-preview'))
     parser.add_argument('--publish', action='store_true', help='Build the approved public site into dist; does not deploy')
+    parser.add_argument('--with-chat', action='store_true', help='Enable the existing public amo widget for an explicitly requested local review')
     args=parser.parse_args()
-    print(publish() if args.publish else build(args.output))
+    print(publish() if args.publish else build(args.output, preview_chat=args.with_chat))

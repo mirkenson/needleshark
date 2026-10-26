@@ -161,7 +161,7 @@ def check_page(record, page, all_pages, dist):
         items = listing['itemListElement']
         assert [(i['url'],i['name']) for i in items] == visible and visible, f'{url}: ItemList differs from visible cards'
         assert listing['numberOfItems'] == len(visible) and [i['position'] for i in items] == list(range(1,len(items)+1))
-    for article in (n for n in graph if n.get('@type') == 'BlogPosting'):
+    for article in (n for n in graph if n.get('@type') in ('BlogPosting', 'Article')):
         assert article['url'] == article['mainEntityOfPage'] == url
         assert article['headline'] == record['h1'] and article['image'] == primary[0]
         dates = re.findall(r'<time datetime="([^"]+)"', page.source)
