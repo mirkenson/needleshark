@@ -1,5 +1,11 @@
 # Needle Shark VPS
 
+## Robot case release — 26 October 2026
+
+Pushed public code 74c9c85 deployed with ops/deploy.sh --from-github: current 20261026T084240Z-67601, previous 20261026T082308Z-64470. 1273 files verified, 21 downloaded/1252 reused. Backend, Nginx and systemd unchanged. Fresh pointers and six active services/timers confirmed; inspect pointers again before rollback.
+
+254 public files match, six GET redirects preserve query, three expected 404s. The cycle passed 147 tests (47 unchanged backend tests before the final analytics fix), build/prepare/check and repeatability. Local responsive/menu checks cover 20 pages at five widths; public desktop checks cover 15 pages, the full public sweep remains incomplete. Synthetic order 34 persisted once; SMTP and amoCRM accepted it, UTM/ClientID read-back matches. Google accepted the case; Yandex accepted case/listing/homepage. Report processing explicitly deferred by the owner. [Evidence](../docs/verification/20261026-robot-case-publication.json). Prototype sections below are historical.
+
 ## Правки кейса — только прототип, 26 октября 2026
 
 Код `9cd49e6` переносит черновик из `/blog/.../` в `/cases/.../`, добавляет общую форму главной и повторно использует amo. Публичный dist, сервер, Nginx и backend не менялись. Таблица адресов — `blog/case-page-registry.json`; 301 старого адреса действует только в локальном preview. Перед выпуском согласовать материал, заполнить дату и основной реестр, выполнить штатные сборку/проверки/деплой и проверить новую позицию формы с сохранением/доставкой. [Проверки прототипа](../docs/verification/20261026-robot-case-revision.json).
