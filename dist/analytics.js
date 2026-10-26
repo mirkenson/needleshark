@@ -31,6 +31,8 @@
     if (event.type === 'auxclick' && event.button !== 1) return;
     const el = event.target.closest('a,button,summary,input[type=checkbox],input[type=file]');
     if (!el || el.disabled) return;
+    // Article widgets already emit detailed blog-interaction events.
+    if (el.matches('[data-article-tabs] [data-tab-target], .article-accordion summary')) return;
     const article = el.closest('[data-article]')?.dataset.article;
     const params = {page: location.pathname, ...(article ? {article} : {})};
     if (document.body.dataset.productSlug) {

@@ -153,3 +153,34 @@ test('B2B attempt and confirmed success use whitelisted context, never form cont
   s.emit('lead-saved', {detail: {context: 'b2b', direction: 'PRIVATE', material: 'PRIVATE'}});
   assert.ok(!JSON.stringify(s.goals).includes('PRIVATE'));
 });
+
+
+test('article tabs and FAQ count once despite shared B2B tracking decoration', () => {
+  for (const element of ['blog_tab', 'blog_accordion']) {
+    const s = setup({product: '', catalog: false});
+    const isTab = element === 'blog_tab';
+    const node = s.element(['[data-article-tabs] [data-tab-target], .article-accordion summary'], {
+      tagName: isTab ? 'BUTTON' : 'SUMMARY',
+      dataset: {track: isTab ? 'b2b_control' : 'b2b_disclosure'},
+      getAttribute: key => key === 'role' && isTab ? 'tab' : ''
+    });
+    node.closest = selector => selector === '.b2b-tabs' ? null : selector === 'details' ? {open: false} : selector === '[data-article]' ? {dataset: {article: 'robot-case'}} : node;
+    s.click(node);
+    s.emit('blog-interaction', {detail: {article: 'robot-case', element, block: 'conditions', item: 2, state: isTab ? 'selected' : 'open'}});
+    assert.equal(s.goals.length, 1);
+    assert.equal(s.goals[0].params.element, element);
+    assert.equal(s.goals[0].params.article, 'robot-case');
+    // Re-clicking an already selected tab emits no component change.
+    if (isTab) { s.click(node); assert.equal(s.goals.length, 1); }
+  }
+});
+
+test('header disclosure keeps its own event outside article widgets', () => {
+  const s = setup({product: '', catalog: false});
+  const node = s.element([], {tagName: 'SUMMARY', dataset: {track: 'b2b_disclosure'}});
+  node.closest = selector => selector === 'details' ? {open: false} : selector === '[data-article]' ? null : node;
+  s.click(node);
+  assert.equal(s.goals.length, 1);
+  assert.equal(s.goals[0].params.element, 'b2b_disclosure');
+  assert.equal(s.goals[0].params.state, 'open');
+});
