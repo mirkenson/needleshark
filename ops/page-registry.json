@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "reviewed": "2026-10-24",
+  "reviewed": "2026-10-26",
   "url_changes": [],
   "pages": [
     {
@@ -351,6 +351,46 @@
         "WebPage"
       ],
       "image": "https://needle-shark.ru/brand-preview.png"
+    },
+    {
+      "file": "cases/index.html",
+      "url": "https://needle-shark.ru/cases/",
+      "canonical": "https://needle-shark.ru/cases/",
+      "indexable": true,
+      "purpose": "Раздел выполненных работ",
+      "action": "https://needle-shark.ru/napravleniya/chehly/#contact",
+      "title": "Кейсы пошива технических изделий | Needle Shark",
+      "h1": "Кейсы Needle Shark",
+      "description": "Выполненные работы Needle Shark: задача заказчика, этапы пошива и детали изделия. Чехлы и другие технические изделия под конкретное оборудование.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "CollectionPage",
+        "ItemList",
+        "BreadcrumbList"
+      ],
+      "image": "https://needle-shark.ru/brand-preview.png"
+    },
+    {
+      "file": "cases/chehol-dlya-robota-manipulyatora/index.html",
+      "url": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/",
+      "canonical": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/",
+      "indexable": true,
+      "purpose": "Реальный кейс чехла для робота с предложением пошива",
+      "action": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/#contact",
+      "title": "Чехол для робота-манипулятора на заказ — кейс Needle Shark",
+      "h1": "Защитный чехол для робота-манипулятора",
+      "description": "Кейс Needle Shark: чехол для робота от пыли и грязи. Выезд, замеры, образец, примерка и партия. Пошив на заказ, обычные, жаропрочные и водостойкие ткани.",
+      "schema_types": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "Article",
+        "ImageObject",
+        "BreadcrumbList"
+      ],
+      "image": "https://needle-shark.ru/blog/assets/robot-overall-1448.webp"
     }
   ]
 }

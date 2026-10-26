@@ -1,13 +1,13 @@
 {
-  "status": "prototype",
+  "status": "approved",
   "reviewed": "2026-10-26",
-  "note": "Добавить согласованные страницы в основной реестр перед публикацией. Preview закрыт от индексации.",
+  "note": "Владелец согласовал публикацию 26.10.2026. Обе страницы добавлены в основной индексируемый реестр.",
   "pages": [
     {
       "file": "cases/index.html",
       "url": "https://needle-shark.ru/cases/",
       "canonical": "https://needle-shark.ru/cases/",
-      "indexable": false,
+      "indexable": true,
       "purpose": "Раздел выполненных работ",
       "action": "https://needle-shark.ru/napravleniya/chehly/#contact",
       "title": "Кейсы пошива технических изделий | Needle Shark",
@@ -27,7 +27,7 @@
       "file": "cases/chehol-dlya-robota-manipulyatora/index.html",
       "url": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/",
       "canonical": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/",
-      "indexable": false,
+      "indexable": true,
       "purpose": "Реальный кейс чехла для робота с предложением пошива",
       "action": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/#contact",
       "title": "Чехол для робота-манипулятора на заказ — кейс Needle Shark",
