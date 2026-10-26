@@ -1,0 +1,1106 @@
+{
+  "date": "2026-10-26",
+  "status": "local_prototype_revision_awaiting_review",
+  "deployed": false,
+  "checkedSourceCommit": "9cd49e60bb67156c012c92706404332b4678a5c1",
+  "branch": "codex/robot-case-prototype",
+  "url": "http://127.0.0.1:4194/cases/chehol-dlya-robota-manipulyatora/",
+  "changes": [
+    "CTA без моего",
+    "Убраны пояснения об обработке изображений/визуализации и вложениях",
+    "Связь удобным способом",
+    "Общая форма главной под кейсом, CTA к локальному #contact",
+    "Тот же amo-скрипт, одно подключение",
+    "Маршрут /cases/, согласованные metadata/schema/sitemap, исключение из списка блога"
+  ],
+  "tests": {
+    "python": {
+      "blog": 17,
+      "b2b": 6,
+      "seo": 10,
+      "server_leads": 15
+    },
+    "javascript": 29
+  },
+  "browser": {
+    "widths": [
+      360,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "menus": [
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehly-dlya-koles/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-baul/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/business/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/catalog/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/chehly/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/po-tz/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/remni/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/sumki/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/ukrytiya-i-shtory/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/privacy-policy",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/user-agreement",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/chehol-dlya-robota-manipulyatora/",
+        "width": 360
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehly-dlya-koles/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-baul/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/business/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/catalog/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/chehly/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/po-tz/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/remni/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/sumki/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/ukrytiya-i-shtory/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/privacy-policy",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/user-agreement",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/chehol-dlya-robota-manipulyatora/",
+        "width": 390
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehly-dlya-koles/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-baul/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/business/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/catalog/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/chehly/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/po-tz/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/remni/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/sumki/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/ukrytiya-i-shtory/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/privacy-policy",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/user-agreement",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/chehol-dlya-robota-manipulyatora/",
+        "width": 768
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehly-dlya-koles/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-baul/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/business/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/catalog/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/chehly/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/po-tz/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/remni/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/sumki/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/ukrytiya-i-shtory/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/privacy-policy",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/user-agreement",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/chehol-dlya-robota-manipulyatora/",
+        "width": 1024
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-podobrat-chehol-na-kvadrocikl/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehly-dlya-koles/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-chehol-dlya-motocikla/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-baul/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/kak-vybrat-sumku-chehol-dlya-kolyaski/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/blog/zimnee-hranenie-motocikla-i-kvadrocikla/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/business/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/catalog/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/chehly/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/po-tz/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/remni/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/sumki/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/napravleniya/ukrytiya-i-shtory/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/privacy-policy",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/user-agreement",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/",
+        "width": 1440
+      },
+      {
+        "brokenImages": 0,
+        "caseVisible": true,
+        "h1": 1,
+        "menuVisible": true,
+        "overflow": false,
+        "path": "/cases/chehol-dlya-robota-manipulyatora/",
+        "width": 1440
+      }
+    ],
+    "form": [
+      {
+        "clipped": [],
+        "errorVisible": true,
+        "overflow": false,
+        "width": 360
+      },
+      {
+        "clipped": [],
+        "errorVisible": true,
+        "overflow": false,
+        "width": 390
+      },
+      {
+        "clipped": [],
+        "errorVisible": true,
+        "overflow": false,
+        "width": 768
+      },
+      {
+        "clipped": [],
+        "errorVisible": true,
+        "overflow": false,
+        "width": 1024
+      },
+      {
+        "clipped": [],
+        "errorVisible": true,
+        "overflow": false,
+        "width": 1440
+      }
+    ],
+    "dom": {
+      "canonical": [
+        "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/"
+      ],
+      "chatScripts": 1,
+      "forms": 1,
+      "ogType": "article",
+      "ogUrl": "https://needle-shark.ru/cases/chehol-dlya-robota-manipulyatora/",
+      "preview": "true",
+      "removedPhrasesAbsent": true,
+      "url": "/cases/chehol-dlya-robota-manipulyatora/"
+    },
+    "console": [
+      {
+        "level": "log",
+        "message": "Domain 127.0.0.1 not found in the list of allowed domains",
+        "timestamp": "2026-10-26T07:35:15.031Z",
+        "url": "https://gso.amo-forms.ru/js/button.js"
+      },
+      {
+        "level": "log",
+        "message": "Domain 127.0.0.1 not found in the list of allowed domains",
+        "timestamp": "2026-10-26T07:44:04.184Z",
+        "url": "https://gso.amo-forms.ru/js/button.js"
+      },
+      {
+        "level": "log",
+        "message": "Domain 127.0.0.1 not found in the list of allowed domains",
+        "timestamp": "2026-10-26T07:44:04.539Z",
+        "url": "https://gso.amo-forms.ru/js/button.js"
+      },
+      {
+        "level": "log",
+        "message": "Domain 127.0.0.1 not found in the list of allowed domains",
+        "timestamp": "2026-10-26T07:44:04.886Z",
+        "url": "https://gso.amo-forms.ru/js/button.js"
+      },
+      {
+        "level": "log",
+        "message": "Domain 127.0.0.1 not found in the list of allowed domains",
+        "timestamp": "2026-10-26T07:44:06.794Z",
+        "url": "https://gso.amo-forms.ru/js/button.js"
+      },
+      {
+        "level": "log",
+        "message": "Domain 127.0.0.1 not found in the list of allowed domains",
+        "timestamp": "2026-10-26T07:44:07.489Z",
+        "url": "https://gso.amo-forms.ru/js/button.js"
+      },
+      {
+        "level": "log",
+        "message": "Domain 127.0.0.1 not found in the list of allowed domains",
+        "timestamp": "2026-10-26T07:44:15.422Z",
+        "url": "https://gso.amo-forms.ru/js/button.js"
+      },
+      {
+        "level": "log",
+        "message": "Domain 127.0.0.1 not found in the list of allowed domains",
+        "timestamp": "2026-10-26T07:44:29.987Z",
+        "url": "https://gso.amo-forms.ru/js/button.js"
+      }
+    ],
+    "actions": [
+      "Карточка главной ведёт в /cases/slug/",
+      "CTA и шапка ведут к форме внутри кейса",
+      "Неверный email показывает ошибку, фокус видим",
+      "Длинное описание 3300 знаков помещается, тестовый ввод удалён",
+      "Вкладка Нагрев показывает соответствующее содержание"
+    ],
+    "formInputStyle": {
+      "color": "rgb(27,31,33)",
+      "background": "rgb(246,247,244)",
+      "focus": "rgb(190,62,62) solid 2px"
+    },
+    "consentChecked": false,
+    "submissions": 0,
+    "screenshots": [
+      "20261026-robot-case-revision/case-1440.png",
+      "20261026-robot-case-revision/form-768.png",
+      "20261026-robot-case-revision/form-390.png",
+      "20261026-robot-case-revision/form-1440.png",
+      "20261026-robot-case-revision/form-error-360.png",
+      "20261026-robot-case-revision/form-1024.png"
+    ]
+  },
+  "http": {
+    "resources200": 246,
+    "redirects": [
+      {
+        "old": "/blog/chehol-dlya-robota-manipulyatora?utm_source=qa&utm_campaign=case_revision",
+        "status": 301,
+        "location": "/cases/chehol-dlya-robota-manipulyatora/?utm_source=qa&utm_campaign=case_revision"
+      },
+      {
+        "old": "/blog/chehol-dlya-robota-manipulyatora/?utm_source=qa&utm_campaign=case_revision",
+        "status": 301,
+        "location": "/cases/chehol-dlya-robota-manipulyatora/?utm_source=qa&utm_campaign=case_revision"
+      },
+      {
+        "old": "/blog/chehol-dlya-robota-manipulyatora/index.html?utm_source=qa&utm_campaign=case_revision",
+        "status": 301,
+        "location": "/cases/chehol-dlya-robota-manipulyatora/?utm_source=qa&utm_campaign=case_revision"
+      }
+    ],
+    "unknown404": true,
+    "previewHeader": "noindex, nofollow"
+  },
+  "amo": {
+    "sameFileAsHomepage": true,
+    "scriptCount": 1,
+    "bootstrapHTTP": 200,
+    "bootstrapBytes": 130155,
+    "browserMessage": "Domain 127.0.0.1 not found in the list of allowed domains",
+    "launcherNotShownOnLocalhost": true,
+    "domainsModified": false,
+    "messagesSent": false,
+    "limitation": "Открытие/доставку amo на новой публичной странице проверить после релиза."
+  },
+  "build": {
+    "futureReleaseCopy": "/private/tmp/needle-case-release-v2",
+    "pages": 20,
+    "preparePublic": "passed twice",
+    "checkSite": "passed twice",
+    "stableRebuild": true,
+    "actualDistUntouched": true,
+    "preview": "noindex/nofollow, data-preview=true, no analytics; real amo loader enabled only by --with-chat",
+    "publicScriptCounts": {
+      "metrika": 1,
+      "analytics": 1,
+      "amo": 1
+    }
+  },
+  "limitations": [
+    "Публикация не согласована и не выполнялась",
+    "Успех формы, PostgreSQL/очередь/все получатели и реальная доставка в этой итерации не проверены; покрыты только существующие локальные тесты клиента и серверной валидации",
+    "Файлового поля нет: проверки размера/типа файла неприменимы",
+    "Настоящий SDK Метрики, кабинет/отчёты, публичный HTTPS, переобход/индекс не проверялись",
+    "Временная публикационная копия не является опубликованным релизом"
+  ]
+}

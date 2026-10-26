@@ -1,5 +1,13 @@
 # SEO и доступность содержания для поисковых/AI-систем
 
+## Адрес кейса уточнён владельцем — 26 октября 2026
+
+| Старый предложенный URL | Новый предложенный URL | Причина |
+|---|---|---|
+| `/blog/chehol-dlya-robota-manipulyatora/` | `/cases/chehol-dlya-robota-manipulyatora/` | Кейс относится к разделу выполненных работ по прямому указанию владельца. |
+
+Оба адреса ещё не публиковались; серверный редирект не требуется. В локальном preview старый адрес даёт 301 с сохранением query. Общий helper формирует новые canonical/OG/WebPage/Article/ImageObject/BreadcrumbList, список /cases/ ссылается на новый адрес, блог не дублирует кейс. Будущий sitemap использует post_file. Новый реестр остаётся отдельным до согласования релиза; публичный ops/page-registry.json и dist не менялись. В изолированной публикационной копии проверены все 20 HTML, schema, ссылки и sitemap, повторная сборка стабильна. [Протокол](verification/20261026-robot-case-revision.json).
+
 ## Прототип кейса робота — 26 октября 2026
 
 Новые предлагаемые адреса: `/cases/` и `/blog/chehol-dlya-robota-manipulyatora/`; опубликованные URL не мигрируют. Реестр для согласования с назначением, CTA, title/H1/description, canonical и schema — `blog/case-page-registry.json`. До релиза не добавлен в индексируемый контракт. Общие метаданные формирует `site_utils`, отдельной AI-schema нет. Кейс использует BlogPosting/ImageObject/BreadcrumbList, список — CollectionPage/ItemList. Даты публикации в preview нет; подготовка — 26.10.2026.

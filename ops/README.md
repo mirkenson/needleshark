@@ -1,5 +1,9 @@
 # Needle Shark VPS
 
+## Правки кейса — только прототип, 26 октября 2026
+
+Код `9cd49e6` переносит черновик из `/blog/.../` в `/cases/.../`, добавляет общую форму главной и повторно использует amo. Публичный dist, сервер, Nginx и backend не менялись. Таблица адресов — `blog/case-page-registry.json`; 301 старого адреса действует только в локальном preview. Перед выпуском согласовать материал, заполнить дату и основной реестр, выполнить штатные сборку/проверки/деплой и проверить новую позицию формы с сохранением/доставкой. [Проверки прототипа](../docs/verification/20261026-robot-case-revision.json).
+
 ## Direction content release — 24 October 2026
 
 Pushed **3d952cbc91595ce0dc8048c245e1abda2ee8e6d0** deployed with `ops/deploy.sh --from-github`: static current **20261024T190051Z-94510**, previous **20261024T180418Z-87524**. All 1261 files verified before atomic switch; seven downloaded/1254 reused. Only five direction HTML files, one word in the homepage and sitemap changed. CSS/JS/assets/forms and the live ClientID implementation are preserved; no backend, Nginx or systemd edits. Recheck actual pointers before any rollback.
