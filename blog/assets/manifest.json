@@ -1,0 +1,86 @@
+{
+  "robot-overall": {
+    "width": 1448,
+    "height": 1086,
+    "alt": "Чёрный защитный чехол на роботе-манипуляторе",
+    "original": "robot-overall.png",
+    "sha256": "f934d90947ed9afe546d4d3247c9a901275d7024a11330de37b86e635c161389",
+    "variants": [
+      {
+        "src": "/blog/assets/robot-overall-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 11842
+      },
+      {
+        "src": "/blog/assets/robot-overall-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 24364
+      },
+      {
+        "src": "/blog/assets/robot-overall-1448.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 66052
+      }
+    ],
+    "provenance": "Визуализация по фотографиям изделия, предоставленным владельцем; ткань обработана с помощью ImageGen. Не подтверждает материал или испытания."
+  },
+  "robot-joint": {
+    "width": 1448,
+    "height": 1086,
+    "alt": "Деталь чехла в области сочленения робота",
+    "original": "robot-joint.png",
+    "sha256": "5acb98929a9bc467aa7e256aae79fa4f4295d5d9f740c4693a847d346a473ffa",
+    "variants": [
+      {
+        "src": "/blog/assets/robot-joint-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 11586
+      },
+      {
+        "src": "/blog/assets/robot-joint-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 24624
+      },
+      {
+        "src": "/blog/assets/robot-joint-1448.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 78112
+      }
+    ],
+    "provenance": "Визуализация по фотографиям изделия, предоставленным владельцем; ткань обработана с помощью ImageGen. Не подтверждает материал или испытания."
+  },
+  "robot-tool": {
+    "width": 1448,
+    "height": 1086,
+    "alt": "Чехол на запястье манипулятора рядом с рабочим инструментом",
+    "original": "robot-tool.png",
+    "sha256": "ecf766a5f3991448d44a1bf57ff61264d79d21dc867ae0912e533f994d84f4aa",
+    "variants": [
+      {
+        "src": "/blog/assets/robot-tool-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 10740
+      },
+      {
+        "src": "/blog/assets/robot-tool-800.webp",
+        "width": 800,
+        "height": 600,
+        "bytes": 23558
+      },
+      {
+        "src": "/blog/assets/robot-tool-1448.webp",
+        "width": 1448,
+        "height": 1086,
+        "bytes": 89684
+      }
+    ],
+    "provenance": "Визуализация по фотографиям изделия, предоставленным владельцем; ткань обработана с помощью ImageGen. Не подтверждает материал или испытания."
+  }
+}

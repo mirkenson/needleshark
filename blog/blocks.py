@@ -6,7 +6,7 @@ from html import escape
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from site_utils import image_attributes
+from site_utils import image_attributes, external_url
 
 ROOT = Path(__file__).resolve().parent.parent
 SEGMENT = r'[a-z0-9]+(?:-[a-z0-9]+)*'
@@ -40,7 +40,31 @@ def products():
     return {product['slug']: product for product in data['products']}
 
 
+@lru_cache(maxsize=1)
+def editorial_images():
+    return json.loads((ROOT / 'blog/assets/manifest.json').read_text())
+
+
+def photo_attributes(data, sizes='(max-width: 800px) 90vw, 740px'):
+    if 'asset' not in data:
+        return image_attributes(catalog_image(data)['src'], sizes=sizes)
+    item = editorial_images()[data['asset']]
+    variants = item['variants']
+    default = next((v for v in variants if v['width'] >= 800), variants[-1])
+    return dict(src=default['src'], width=item['width'], height=item['height'], sizes=sizes,
+                srcset=', '.join(f'{v["src"]} {v["width"]}w' for v in variants))
+
+
 def catalog_image(data):
+    if 'asset' in data:
+        item = editorial_images().get(data['asset'])
+        if not item or 'product' in data or 'image' in data:
+            raise ValueError('Use a registered editorial asset or a catalogue image')
+        require_text(data, 'caption')
+        for variant in item['variants']:
+            if not (ROOT / 'blog/assets' / Path(variant['src']).name).is_file():
+                raise ValueError('Missing editorial image variant')
+        return dict(src=item['variants'][-1]['src'], alt=item['alt'])
     product = products().get(data.get('product'))
     item = next((item for item in product['images'] if item['id'] == data.get('image')), None) if product else None
     if not item:
@@ -104,6 +128,18 @@ def validate_blocks(blocks):
                 catalog_image(block['image'])
         elif kind == 'image':
             catalog_image(block)
+        elif kind == 'gallery':
+            if not block.get('items'):
+                raise ValueError('Empty gallery')
+            for item in block['items']:
+                catalog_image(item)
+        elif kind in ('facts', 'steps'):
+            if not block.get('items'):
+                raise ValueError('Empty facts or steps')
+            for item in block['items']:
+                require_text(item, 'label', 'text')
+        elif kind == 'contacts':
+            require_text(block, 'title')
         elif kind == 'callout':
             require_text(block, 'title', 'text')
             if block.get('tone', 'note') not in ('note', 'important'):
@@ -125,11 +161,11 @@ def validate_blocks(blocks):
             raise ValueError('Unknown content block')
 
 
-def figure(data):
+def figure(data, eager=False):
     item = catalog_image(data)
-    attributes = image_attributes(item['src'], sizes='(max-width: 800px) 90vw, 740px')
+    attributes = photo_attributes(data)
     attrs = ' '.join(f'{key}="{e(value)}"' for key, value in attributes.items())
-    return f'<figure class="article-photo"><img {attrs} alt="{e(item["alt"])}" loading="lazy" decoding="async"><figcaption>{rich(data["caption"])}</figcaption></figure>'
+    return f'<figure class="article-photo"><img {attrs} alt="{e(item["alt"])}" loading="{'eager' if eager else 'lazy'}" decoding="async"><figcaption>{rich(data["caption"])}</figcaption></figure>'
 
 
 class ArticleBlocks:
@@ -165,6 +201,15 @@ class ArticleBlocks:
                 output.append('<p class="article-sources">' + e(block.get('label', 'По руководству производителя')) + ' ' + ' '.join(links) + '</p>')
             elif kind == 'image':
                 output.append(figure(block))
+            elif kind == 'gallery':
+                output.append('<div class="article-gallery">' + ''.join(figure(item) for item in block['items']) + '</div>')
+            elif kind == 'facts':
+                output.append('<dl class="article-facts">' + ''.join(f'<div><dt>{e(i["label"])}</dt><dd>{rich(i["text"])}</dd></div>' for i in block['items']) + '</dl>')
+            elif kind == 'steps':
+                output.append('<ol class="article-steps">' + ''.join(f'<li><h3>{e(i["label"])}</h3><p>{rich(i["text"])}</p></li>' for i in block['items']) + '</ol>')
+            elif kind == 'contacts':
+                vk = external_url('https://vk.ru/needleshark', self.post['slug'] + '_vk')
+                output.append(f'<aside class="article-contact-links" aria-label="{e(block["title"])}"><a href="mailto:sales@neesha.ru" data-track="case_email">sales@neesha.ru</a><a href="tel:+79312448245" data-track="case_phone">Телефон: +7 931 244-82-45</a><a href="{e(vk)}" data-track="case_vk" rel="noopener noreferrer">ВКонтакте Needle Shark ↗</a></aside>')
             elif kind == 'callout':
                 output.append(f'<aside class="article-callout {block.get("tone", "note")}" aria-label="{e(block["title"])}"><p class="callout-title">{e(block["title"])}</p><p>{rich(block["text"])}</p></aside>')
             elif kind == 'cta':

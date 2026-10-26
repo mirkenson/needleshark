@@ -20,6 +20,8 @@ else:
     paths += ['catalog/' + p['slug'] + '/index.html' for p in json.loads((ROOT/'catalog/products.json').read_text())['products'] if p.get('status', 'published') == 'published']
 published_posts = [p for p in json.loads((ROOT/'blog/posts.json').read_text()) if p['status']=='published']
 paths += ['blog/' + p['slug'] + '/index.html' for p in published_posts]
+if any(p.get('kind') == 'case' for p in published_posts):
+    paths.append('cases/index.html')
 for path in paths:
     if not (DIST/path).is_file():
         raise ValueError('Missing public page: ' + path)

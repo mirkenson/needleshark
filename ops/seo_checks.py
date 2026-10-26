@@ -154,6 +154,8 @@ def check_page(record, page, all_pages, dist):
         listing = collections[0]['mainEntity']
         if url.endswith('/catalog/'):
             visible = [(ORIGIN + '/catalog/#' + slug, text(name)) for slug, name in re.findall(r'<article class="ns-product" id="([^"]+)".*?<h2>(.*?)</h2>', page.source, re.S)]
+        elif url.endswith('/cases/'):
+            visible = [(ORIGIN + href, text(name)) for href, name in re.findall(r'<article class="ns-case-card".*?<h2><a href="([^"]+)"[^>]*>(.*?)</a>', page.source, re.S)]
         else:
             visible = [(ORIGIN + href, text(name).removesuffix(' ↗')) for href, name in re.findall(r'<article class="blog-card".*?<h2><a href="([^"]+)"[^>]*>(.*?)</a>', page.source, re.S)]
         items = listing['itemListElement']
