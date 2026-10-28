@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-28",
+  "code_commit": "e470c754a5643fe671543655a822c2f6f34c9c17",
+  "release": "20261028T191902Z-e470c754a564",
+  "previous": "20260924T071509Z-c856fcef4481",
+  "scope": "Daily/weekly formatting and aggregate conversion source breakdowns; no new alerts",
+  "owner_instruction": "No tests, report executions or messenger test sends; observe scheduled delivery later",
+  "checks": {
+    "source_diff_review": "performed",
+    "live_metrika_and_two_crm_records": "read-only; no contact data or private results stored here",
+    "uploaded_file_hashes": "matched commit",
+    "protected_env_units_sent_state": "unchanged",
+    "static_backend_pointers": "unchanged"
+  },
+  "not_run": [
+    "unit/integration tests",
+    "report check/preview/run",
+    "service start/restart",
+    "Loop test sends",
+    "browser message rendering"
+  ],
+  "limitations": [
+    "Future formatting and scheduled delivery are unverified.",
+    "Aggregated report rows do not prove a specific CRM deal/search-query association.",
+    "Provider privacy restrictions are retained.",
+    "CRM imported goals may be assigned to earlier visit periods; not a same-day deal register.",
+    "No real ad statistics or client identifiers are included in this public record."
+  ],
+  "not_applicable": [
+    "static deployment",
+    "SEO/indexing/SDK changes",
+    "form/CRM delivery changes"
+  ]
+}
