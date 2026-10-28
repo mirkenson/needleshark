@@ -1,5 +1,19 @@
 # Needle Shark VPS
 
+## Обновление отчётов Метрики — 28 октября 2026, подготовлено
+
+Дневной и недельный шаблоны получили заголовки с эмоджи, списки и приоритет
+конверсий. Добавлены независимые агрегированные разрезы источников формы и CRM:
+кампании, объявления, площадка и доступные поисковые запросы. Индивидуальные
+скрытые данные не восстанавливаются, числа формы/CRM не складываются.
+Месячный шаблон и расписание прежние; алерты отложены владельцем.
+
+Владелец прямо исключил тесты и пробные отправки: они не выполнялись. Подготовлен
+`ops/upgrade-metrika.sh` для атомарной установки без запуска отчётчика/изменения
+таймера. Установка и будущая доставка на этом этапе ещё не подтверждены.
+Подробности: [регламент отчётов](../server/METRIKA_REPORTS.md). Реальные рекламные данные остаются приватными.
+
+
 ## Metrika digests — 24 September 2026
 
 Independent reporter: `bash ops/install-metrika.sh PRIVATE_METRIKA_ENV`, only after commit/push. It verifies the real API and artifact hashes, snapshots current units/config, installs a separate hardened service and timer, and restores prior reporter configuration on failure. No static/lead backend deployment, Nginx change or database access. Schedule and operations: [METRIKA_REPORTS.md](../docs/METRIKA_REPORTS.md). Actual installation evidence belongs to PROJECT_CONTEXT.md and the verification report.

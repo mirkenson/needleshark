@@ -6,6 +6,7 @@ import fcntl
 import json
 import math
 import os
+import re
 from pathlib import Path
 import ssl
 import sys
@@ -19,6 +20,17 @@ from loop_delivery import NoRedirect, send_payload
 MSK = ZoneInfo('Europe/Moscow')
 COUNTER = 112428810
 GOAL = 611920414
+QUALIFIED_GOAL = 674189833
+CONVERSION_METRICS = ['ym:s:visits', f'ym:s:goal{GOAL}reaches',
+                      f'ym:s:goal{QUALIFIED_GOAL}reaches']
+DETAILS = [('Каналы', 'ym:s:lastTrafficSource'),
+           ('UTM-кампании', 'ym:s:lastUTMCampaign'),
+           ('Кампании Директа', 'ym:s:lastDirectClickOrder'),
+           ('Объявления Директа', 'ym:s:lastDirectClickBanner'),
+           ('Размещение Директа', 'ym:s:lastDirectPlatformType'),
+           ('Объявления / креативы (UTM)', 'ym:s:lastUTMContent'),
+           ('Поисковые запросы Директа', 'ym:s:lastDirectSearchPhrase'),
+           ('Поисковые запросы из поиска', 'ym:s:lastSearchPhrase')]
 API = 'https://api-metrika.yandex.net/stat/v1/data'
 # Current-visit attribution excludes explicitly marked QA without inheriting an older source.
 FILTERS = ("ym:s:isRobot=='No' AND NOT(ym:s:lastUTMSource=.('qa','release_check','metrika_check'))"
@@ -161,10 +173,39 @@ def collect(client, period):
     previous = client.query(period.previous_start, period.previous_end, METRICS)
     sources = client.query(period.start, period.end, ['ym:s:visits'], 'ym:s:lastTrafficSource')
     pages = client.query(period.start, period.end, ['ym:s:visits'], 'ym:s:startURLPath')
-    return {'current': dict(zip(KEYS, current['totals'])),
+    result = {'current': dict(zip(KEYS, current['totals'])),
             'previous': dict(zip(KEYS, previous['totals'])), 'sources': sources['data'],
             'pages': pages['data'], 'details_limited': bool(pages.get('contains_sensitive_data')),
             'lag': max(x['data_lag'] for x in (current, previous, sources, pages))}
+    if period.kind in ('daily', 'weekly'):
+        result['conversions'] = collect_conversions(client, period)
+    return result
+
+
+def collect_conversions(client, period):
+    # Independent aggregated slices, never join their rows into invented visitor stories.
+    result = {'details': [], 'errors': []}
+    try:
+        summary = client.query(period.start, period.end, CONVERSION_METRICS)
+        result['totals'] = summary['totals']
+        result['lag'] = summary['data_lag']
+    except ReportError:
+        result['errors'].append('summary')
+        return result
+    if not any(summary['totals'][1:]):
+        return result
+    for label, dimension in DETAILS:
+        try:
+            response = client.query(period.start, period.end, CONVERSION_METRICS, dimension)
+            rows = [row for row in response['data'] if any(row['metrics'][1:])]
+            rows.sort(key=lambda row: (row['metrics'][2], row['metrics'][1]), reverse=True)
+            result['details'].append({'label': label, 'dimension': dimension, 'rows': rows,
+                                      'limited': bool(response.get('contains_sensitive_data'))})
+            result['lag'] = max(result['lag'], response['data_lag'])
+        except ReportError:
+            result['errors'].append(label)
+    return result
+
 
 
 def fmt_dates(start, end):
@@ -172,6 +213,8 @@ def fmt_dates(start, end):
 
 
 def render(period, data, known_pages, *, preview=False):
+    if period.kind in ('daily', 'weekly'):
+        return render_digest(period, data, known_pages, preview=preview)
     current, previous = data['current'], data['previous']
     title = {'daily': 'за день', 'weekly': 'за неделю', 'monthly': 'за месяц'}[period.kind]
     prefix = 'ПРОВЕРКА ФОРМАТА · ' if preview else ''
@@ -237,6 +280,113 @@ def render(period, data, known_pages, *, preview=False):
               f'Задержка API на момент выгрузки: {number(data["lag"] / 60)} мин.',
               f'[Открыть Метрику](https://metrika.yandex.ru/dashboard?id={COUNTER})',
               f'Отчёт: `{period.key}`']
+    return '\n'.join(lines)
+
+
+def safe_label(value):
+    if value is None or value == '':
+        return 'не определено'
+    text = ' '.join(str(value).split())
+    # Report labels may be visitor-controlled; no mentions, links or contact details.
+    text = re.sub(r'[^\s@]+@[^\s@]+', '[контакт скрыт]', text)
+    text = re.sub(r'(?<!\w)\+?\d[\d ()-]{8,}\d(?!\w)', '[номер скрыт]', text)
+    text = text.replace('@', '＠').replace('<', '‹').replace('>', '›')
+    text = re.sub(r'https?://\S+', '[ссылка скрыта]', text)
+    text = re.sub(r'([\\`*_{}\[\]()!|~])', r'\\\1', text)
+    return text[:180]
+
+
+def render_digest(period, data, known_pages, *, preview=False):
+    current, previous = data['current'], data['previous']
+    comparable = period.previous_start >= RELIABLE_FROM
+    title = 'день' if period.kind == 'daily' else 'неделю'
+    prefix = 'ПРОВЕРКА ФОРМАТА · ' if preview else ''
+    def comparison(key):
+        if not comparable:
+            return 'сравнение неполное'
+        # Small bases are clearer as absolute counts, not four-digit percentages.
+        suffix = f'; {change(current[key], previous[key])}' if previous[key] >= 30 else ''
+        return f'было {number(previous[key])}{suffix}'
+    rate = (number(current['lead_visits'] / current['visits'] * 100, 2) + '%'
+            if current['visits'] else '—, нет визитов')
+    conv = data.get('conversions', {})
+    totals = conv.get('totals')
+    qualified = number(totals[2]) if totals is not None else 'данные недоступны'
+    lines = [f'📊 **{prefix}Needle Shark · итоги за {title}**',
+             fmt_dates(period.start, period.end) + ' · МСК',
+             f'Сравнение: {fmt_dates(period.previous_start, period.previous_end)}', '',
+             '🎯 **Заявки и конверсии**',
+             f'- Сохранения формы в Метрике: **{number(current["leads"])}** ({comparison("leads")})',
+             f'- CRM: целевая заявка — **{qualified}** достижений',
+             f'- Визиты с сохранением формы: **{number(current["lead_visits"])}** · конверсия: **{rate}**',
+             f'- Начали форму: {number(current["starts"])} · попытались отправить: {number(current["attempts"])} · кликнули по контактам: {number(current["contacts"])} (визиты)',
+             'Форма и CRM могут учитывать одну заявку; эти числа не складываем.', '',
+             '👥 **Посещаемость**',
+             f'- Визиты: **{number(current["visits"])}** ({comparison("visits")})',
+             f'- Посетители: **{number(current["users"])}** ({comparison("users")}) · просмотры: **{number(current["views"])}**']
+    if period.kind == 'weekly':
+        bounce = number(current['bounce'], 1) + '%' if current['visits'] else '—'
+        duration = number(current['duration']) + ' с' if current['visits'] else '—'
+        lines += [f'- Отказы: {bounce} · среднее время: {duration}',
+                  f'- Переходы из CTA блога: {number(current["blog_cta"])} (визиты)']
+    lines += ['', '📣 **Источники визитов**']
+    grouped = {}
+    for row in data['sources']:
+        label = SOURCES.get((row['dimensions'][0] or {}).get('id'), 'Прочие / не определено')
+        grouped[label] = grouped.get(label, 0) + row['metrics'][0]
+    lines += [f'- {label}: **{number(value)}**' for label, value in sorted(grouped.items(), key=lambda x: -x[1])]
+    if not grouped:
+        lines += ['- Нет визитов в выбранном сегменте.']
+    lines += ['', '🧭 **Источники конверсий**']
+    if totals is None:
+        lines += ['Подробности сейчас недоступны; это не означает отсутствие конверсий.']
+    elif not any(totals[1:]):
+        lines += ['Метрика пока не зафиксировала конверсий формы и целевой CRM-заявки за период.']
+    else:
+        lines += ['Отдельные разрезы: «форма / CRM» — достижения целей, не число разных клиентов.']
+        for detail in conv.get('details', []):
+            lines += [f'**{detail["label"]}**']
+            rows = detail['rows']
+            for row in rows[:3 if period.kind == 'daily' else 5]:
+                dim = row['dimensions'][0] or {}
+                label = (SOURCES.get(dim.get('id'), 'Прочие / не определено')
+                         if detail['dimension'] == 'ym:s:lastTrafficSource' else safe_label(dim.get('name')))
+                identifier = dim.get('direct_id', '')
+                if re.fullmatch(r'[NM]-[0-9]{1,24}', identifier):
+                    label += f' ({identifier})'
+                lines += [f'- {label} — форма: **{number(row["metrics"][1])}**, CRM: **{number(row["metrics"][2])}**']
+            cap = 3 if period.kind == 'daily' else 5
+            if len(rows) > cap:
+                lines += [f'- Ещё строк: {len(rows) - cap}; полный разрез — в Метрике.']
+            if not rows:
+                lines += ['- Детализация недоступна для этой выборки.']
+            elif detail['limited']:
+                lines += ['Часть детализации ограничена Метрикой.']
+        lines += ['Разрезы не связываются между собой или с конкретной сделкой. Поисковый запрос не подменяется UTM-ключом или автотаргетингом.']
+    if conv.get('errors'):
+        lines += ['⚠️ Часть данных о конверсиях не получена; основной отчёт сохранён.']
+    top = [(row['dimensions'][0].get('name'), row['metrics'][0]) for row in data['pages']
+           if row['dimensions'][0] and row['dimensions'][0].get('name') in known_pages]
+    if top:
+        lines += ['', '📄 **Страницы входа**']
+        lines += [f'- [{path}](https://needle-shark.ru{path}) — {number(value)}' for path, value in top[:3]]
+    elif current['visits']:
+        lines += ['', '📄 Страницы входа: подробности недоступны.']
+    if current['visits'] >= 30 and not current['starts'] and not current['leads']:
+        note = 'Начала формы не зафиксированы. Стоит сопоставить кампании, страницы входа и клики по контактам; это не доказательство неисправности формы.'
+    elif current['leads']:
+        note = 'Есть сохранения формы. Источники выше помогут оценить привлечение; качество и результат обращения нужно смотреть в CRM.'
+    else:
+        note = observation(current, previous, comparable)
+    lines += ['', '💡 **На что обратить внимание**', note, '',
+              'Метрика 112428810 · последний переход · без роботов и помеченных QA-визитов.',
+              'Цели не заменяют сверку с БД/CRM и не означают оплату. CRM-данные могут дополнять прошлые периоды; это не реестр сделок, созданных за день.']
+    lag = max(data['lag'], conv.get('lag', 0))
+    if lag:
+        lines += [f'⏳ Задержка API: {number(lag / 60)} мин. Данные могут уточняться.']
+    if not comparable:
+        lines += ['⚠️ Предыдущий период содержит неполные данные нового домена; проценты не оцениваем.']
+    lines += [f'[Открыть Метрику](https://metrika.yandex.ru/dashboard?id={COUNTER}) · `{period.key}`']
     return '\n'.join(lines)
 
 
