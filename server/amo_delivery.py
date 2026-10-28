@@ -11,7 +11,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from lead_context import UTM_FIELDS, notification_payload
+from lead_context import UTM_FIELDS, notification_payload, BUSINESS_LABELS, DIRECTION_LABELS
 
 
 class DeliveryError(Exception):
@@ -50,6 +50,12 @@ def configuration(env=None):
         if not re.fullmatch(r'[1-9][0-9]{0,18}', value):
             raise DeliveryError('amo_config_ids')
         result['responsible_id'] = int(value)
+    result['structured'] = env.get('AMO_STRUCTURED_FIELDS') == '1'
+    if result['structured']:
+        value = env.get('AMO_SOURCE_FIELD_ID', '')
+        if not re.fullmatch(r'[1-9][0-9]{0,18}', value):
+            raise DeliveryError('amo_config_ids')
+        result['source_field_id'] = int(value)
     return result
 
 
@@ -123,6 +129,12 @@ def preflight(config):
     for setting, expected in [('submission_field_id', 'text'), ('details_field_id', 'textarea'), ('order_field_id', 'text')]:
         if types.get(config[setting]) != expected:
             raise DeliveryError('amo_field_mismatch')
+    if config.get('structured'):
+        if types.get(config['source_field_id']) != 'text':
+            raise DeliveryError('amo_field_mismatch')
+        actual = {f.get('code'): f['type'] for f in fields}
+        if any(actual.get(code) != kind for code, kind in STRUCTURED_TYPES.items()):
+            raise DeliveryError('amo_field_mismatch')
     codes = {f.get('code') for f in fields}
     if not {key.upper() for key in UTM_FIELDS} <= codes:
         raise DeliveryError('amo_utm_fields_missing')
@@ -176,6 +188,55 @@ def find_submission(client, submission_id):
     return next(iter(matches), None)
 
 
+STRUCTURED_TYPES = {'NS_PAGE': 'url', 'NS_DIRECTION': 'text', 'NS_PRODUCT': 'text', 'NS_YM_CLIENT_ID': 'text'}
+
+
+def structured_fields(lead, config):
+    source, medium = lead.get('utm_source'), lead.get('utm_medium')
+    traffic = ('Яндекс Директ (UTM)' if source == 'yandex' and medium == 'cpc' else
+               (' / '.join(x for x in (source, medium) if x) + ' (UTM)' if source else 'Источник перехода неизвестен'))
+    values = {'NS_PAGE': 'https://needle-shark.ru' + lead['source_path'] if lead.get('source_path') else None,
+              'NS_DIRECTION': BUSINESS_LABELS.get(lead.get('business_intent')),
+              'NS_PRODUCT': lead.get('product_name') or DIRECTION_LABELS.get(lead.get('business_direction')),
+              'NS_YM_CLIENT_ID': lead.get('ym_client_id')}
+    return [field(config['source_field_id'], traffic + ' → сайт → форма → amoCRM')] + [
+        {'field_code': code, 'values': [{'value': value}]} for code, value in values.items() if value]
+
+
+def note_text(lead):
+    attachment = '\n\nВложение сохранено на сервере и отправляется по почте.' if lead.get('attachment') else ''
+    return 'Заявка сайта №' + str(lead['order_id']) + '\n\n' + notification_payload(lead)['question'] + attachment + '\n\nID заявки сайта: ' + lead['id']
+
+
+def ensure_note(job, remote_id, config, save_state, client):
+    if not config.get('structured') or job.get('amo_note_id'):
+        return remote_id
+    expected = note_text(job['lead'])
+    notes = list(client.list('leads/' + str(remote_id) + '/notes', {'filter[note_type]': 'common'}))
+    matches = [n['id'] for n in notes if n.get('note_type') == 'common' and n.get('params', {}).get('text') == expected]
+    if matches:
+        if not save_state(job, amo_note_id=matches[0]):
+            raise DeliveryError('amo_lease_lost')
+        return remote_id
+    if job.get('note_started'):
+        raise DeliveryError('amo_note_unconfirmed')
+    if not save_state(job, note_started=True):
+        raise DeliveryError('amo_lease_lost')
+    try:
+        data = client.request('POST', '/api/v4/leads/' + str(remote_id) + '/notes',
+                              [{'note_type': 'common', 'params': {'text': expected}}])
+    except DeliveryError as error:
+        if error.code in {'amo_http_400', 'amo_http_401', 'amo_http_403', 'amo_http_404', 'amo_http_422', 'amo_http_429'}:
+            save_state(job, note_started=False)
+        raise
+    rows = data.get('_embedded', {}).get('notes', []) if isinstance(data, dict) else []
+    if len(rows) != 1 or type(rows[0].get('id')) is not int or rows[0]['id'] <= 0:
+        raise DeliveryError('amo_invalid_note_response')
+    if not save_state(job, amo_note_id=rows[0]['id']):
+        raise DeliveryError('amo_lease_lost')
+    return remote_id
+
+
 def payload(lead, config, contact_id=None):
     text = ('Заявка сайта №' + str(lead['order_id']) + '\nДата UTC: ' + lead['created_at'] +
             '\nИмя: ' + lead['name'] + '\nКонтакт: ' + lead['contact'] + '\n\n' +
@@ -184,7 +245,9 @@ def payload(lead, config, contact_id=None):
         text += '\n\nВложение сохранено на сервере и отправляется в почтовом уведомлении. В amoCRM файл не загружен.'
     fields = [field(config['submission_field_id'], lead['id']),
               field(config['order_field_id'], str(lead['order_id'])),
-              field(config['details_field_id'], text)]
+              *([] if config.get('structured') else [field(config['details_field_id'], text)])]
+    if config.get('structured'):
+        fields.extend(structured_fields(lead, config))
     fields.extend({'field_code': key.upper(), 'values': [{'value': lead[key]}]}
                   for key in UTM_FIELDS if lead.get(key))
     if lead.get('ym_client_id'):
@@ -209,12 +272,12 @@ def send(job, config, save_state, client=None):
     lead = job['lead']
     if job.get('amo_lead_id'):
         # A durable remote id is sufficient to finish a job after a local crash.
-        return job['amo_lead_id']
+        return ensure_note(job, job['amo_lead_id'], config, save_state, client)
     found = find_submission(client, lead['id'])
     if found:
         if not save_state(job, amo_lead_id=found):
             raise DeliveryError('amo_lease_lost')
-        return found
+        return ensure_note(job, found, config, save_state, client)
     if job.get('create_started'):
         # request_id is echoed by amoCRM, NOT an idempotency key. Do not retry a
         # possibly accepted POST. Keep reconciling and surface the pending job.
@@ -236,7 +299,7 @@ def send(job, config, save_state, client=None):
     remote_id = result[0]['id']
     if not save_state(job, amo_lead_id=remote_id):
         raise DeliveryError('amo_lease_lost')
-    return remote_id
+    return ensure_note(job, remote_id, config, save_state, client)
 
 
 def error_code(error):

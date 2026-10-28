@@ -1,5 +1,49 @@
 # Server-side leads and email
 
+## Structured amoCRM fields and unified LOOP — 28 October 2026
+
+Prepared in this revision; publication evidence is recorded separately in PROJECT_CONTEXT.
+`AMO_STRUCTURED_FIELDS=1` and `AMO_SOURCE_FIELD_ID` enable `NS_PAGE`, `NS_DIRECTION`,
+`NS_PRODUCT`, `NS_YM_CLIENT_ID` in the main deal tab. Create/verify the corresponding
+url/text/text/text fields before activation; `amo_delivery.preflight` validates them.
+The native `_YM_UID`, `_YM_COUNTER` and UTM fields remain unchanged. The source path
+is an attribution summary from saved UTM, not a reconstructed browsing history.
+Without UTM the preceding traffic source stays unknown. Ordinary email carries no
+browser ClientID; do not invent attribution for it.
+
+New structured submissions put the full context/comment in a common timeline note,
+not the legacy textarea. Additive note_started/amo_note_id columns fence note creation.
+A lost response is reconciled by exact saved note text; an unresolved outcome remains
+pending with amo_note_unconfirmed, never blindly creating another note or deal.
+Do not bulk replay historical jobs. The old textarea remains available for history.
+
+`AMO_LOOP_WEBHOOK_URL` (private, same approved neesha.loop.ru channel) and immutable
+`AMO_LOOP_STARTED_AT` enable CRM polling in the existing backend worker. The previous
+`LOOP_LEADS_WEBHOOK_URL` must remain absent. A scan runs about once a minute with a
+five-minute overlap, reading new deals and the unsorted feed (chat). A PostgreSQL
+primary key deduplicates both by deal ID, including subsequent chat acceptance.
+Only deals created at/after activation are queued; failed scans retain the cursor.
+Mail source 21223 and unsorted chat/mail fill only a blank source field; native
+ClientID is mirrored only when present. Owner-entered values are not overwritten.
+
+Approved LOOP content: @daniil, three sirens, НОВАЯ ЗАЯВКА, three sirens, then the
+CRM deal URL and name. Names are escaped to prevent visitor-controlled mentions or
+links. No contact, comment or file is sent. HTTP 200/ok records acceptance, not proof
+of push delivery. A lost/ambiguous response or process interruption is held as
+`uncertain`; review the channel before any manual retry. Explicit rejections retry
+after five minutes. Monitor `amo_loop_notifications` status/last_error and
+`amo_loop_cursor.scanned_until`; the older email monitor does not cover this queue.
+
+Deploy with the existing `ops/install-server-mail.sh --upgrade` after pushing tested
+code; it installs the additive 20261028 migration and keeps env/unit unchanged.
+Activate the new private keys only after preflight and a root-only env backup.
+Rollback keeps new database rows, restores the prior backend pointer and removes
+only the new activation keys. No Nginx, systemd or public static change is required.
+Tests: server/ops suites and check_amo_postgres.py/check_amo_loop_postgres.py in
+isolated PostgreSQL schemas. One approved public form test is reserved for the final
+configured chain; email/chat live creation is not implied by that test.
+
+
 ## Form ClientID — live 24 October 2026
 
 Published code 5d8ba9baa122 stores optional ym_client_id as text (1–32 ASCII digits) in nullable orders.ym_client_id and the durable lead_submissions JSON snapshot. The additive migration 20261024_lead_clientid.sql is installed by --upgrade before the new client. Existing payloads without the field keep their fingerprints and remain valid; historical leads are not backfilled. A changed ClientID under the same UUID returns 409, so the browser freezes its first result, including absence, across retries.
