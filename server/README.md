@@ -2,7 +2,7 @@
 
 ## Structured amoCRM fields and unified LOOP — 28 October 2026
 
-Prepared in this revision; publication evidence is recorded separately in PROJECT_CONTEXT.
+Live backend e915cac49137 / 20261028T141053Z-e915cac49137. One approved public form test (order 36, deal 5062923) verified structured/native tracking and one note. LOOP accepted once and the owner confirmed delivery and active @daniil. SMTP returned 535; owner explicitly deferred mail work. Preserve mailboxes and their CRM integration. See [verification](../docs/verification/20261028-amo-fields-loop.json).
 `AMO_STRUCTURED_FIELDS=1` and `AMO_SOURCE_FIELD_ID` enable `NS_PAGE`, `NS_DIRECTION`,
 `NS_PRODUCT`, `NS_YM_CLIENT_ID` in the main deal tab. Create/verify the corresponding
 url/text/text/text fields before activation; `amo_delivery.preflight` validates them.

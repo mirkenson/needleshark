@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-28",
+  "scope": "structured amoCRM intake fields, one timeline note, unified CRM-to-LOOP notifications",
+  "code_commit": "e915cac491376cf85426789ad3cbd070e8b5aa38",
+  "backend_current": "20261028T141053Z-e915cac49137",
+  "backend_previous": "20261024T175828Z-5d8ba9baa122",
+  "static_unchanged": "20261026T084240Z-67601",
+  "configuration": "four new private activation keys; original env values and systemd unit preserved",
+  "crm": {
+    "new_fields": [
+      "NS_PAGE",
+      "NS_DIRECTION",
+      "NS_PRODUCT",
+      "NS_YM_CLIENT_ID"
+    ],
+    "native_tracking": "preserved",
+    "existing_deals": "two owner-specified deals patched and reread; form comment already present, not duplicated; old textarea cleared only after exact comment verification",
+    "email_attribution": "email channel confirmed; no browser ClientID or prior traffic inferred"
+  },
+  "tests": {
+    "server_unit": 56,
+    "ops_unit": 47,
+    "postgresql": [
+      "existing AMO queue, note fence, concurrency, retry, rollback in disposable schema",
+      "new notification queue: deduplication, crash fencing, cursor recovery, rejection retry in disposable schema"
+    ],
+    "static_checks": "prepare-public/check-site passed for 20 pages; no static diff",
+    "hashes": "nine backend modules and config helper match release source",
+    "services": "needle-leads, nginx, postgresql, cleanup.timer, monitor.timer active"
+  },
+  "single_live_test": {
+    "order": 36,
+    "amo_deal": 5062923,
+    "amo_note": 4509423,
+    "public_form": "success shown after save; browser console no errors/warnings",
+    "db_and_crm": "one order, one deal, all structured fields, five UTM, native/mirrored ClientID equality, one exact timeline note",
+    "loop": "HTTP 200/ok; sent, one attempt; owner confirmed one message and active @daniil",
+    "smtp": "pending smtp_535; original mail settings and code preserved. Owner explicitly deferred mail changes; do not modify mailbox or mail integration.",
+    "new_live_submissions": 1
+  },
+  "deployment_recovery": {
+    "first_attempt": "fea77dd installer omitted executing transferred migration; app-user validation failed before switch; automatic rollback restored previous service/pointers",
+    "fix": "e915cac invokes migration and grants before validation; regression test verifies every uploaded SQL executes before application check"
+  },
+  "limitations": [
+    "Only one public form test; no extra live email/chat submissions. Read-only CRM feeds and isolated tests cover those discovery paths.",
+    "Poll approximately once per minute; only deals created after activation; ordinary email cannot provide a browser ClientID.",
+    "Ambiguous LOOP response held uncertain for manual reconciliation, not blindly resent.",
+    "SMTP duplicate not delivered; owner says email is unnecessary for this task and must remain untouched.",
+    "Metrika report processing/goal receipt not reverified; analytics/frontend unchanged.",
+    "No new visual/static changes: five-width site QA, indexing/recrawl, redirects and static deployment not applicable; CRM UI checked directly.",
+    "Unified LOOP template contains only authorized mention, heading, deal URL and escaped title; no contact/comment/file."
+  ]
+}

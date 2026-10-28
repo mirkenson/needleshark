@@ -1,5 +1,20 @@
 # Needle Shark VPS
 
+
+## CRM fields and unified LOOP — 28 October 2026
+
+Backend e915cac49137 installed with --upgrade; current 20261028T141053Z-e915cac49137,
+previous 20261024T175828Z-5d8ba9baa122. Static pointers and systemd/Nginx are unchanged.
+The installer must execute 20261028_amo_fields_loop.sql and grant its queue/cursor
+privileges before app-user validation. The first attempt omitted execution and was
+automatically rolled back; test_amo_migration_install.py now covers the complete
+uploaded/applied migration set and ordering. Private activation backup:
+/opt/needle-shark/backups/amo-fields-loop-activation-20261028/leads.env.
+Preserve the four activation keys on ordinary upgrades; legacy LOOP_LEADS_WEBHOOK_URL
+remains absent. One form test reached CRM and LOOP; owner confirmed @daniil. SMTP
+535 is deferred by the owner: do not change mail or its amoCRM integration.
+[Verification and limits](../docs/verification/20261028-amo-fields-loop.json).
+
 ## Robot case release — 26 October 2026
 
 Pushed public code 74c9c85 deployed with ops/deploy.sh --from-github: current 20261026T084240Z-67601, previous 20261026T082308Z-64470. 1273 files verified, 21 downloaded/1252 reused. Backend, Nginx and systemd unchanged. Fresh pointers and six active services/timers confirmed; inspect pointers again before rollback.

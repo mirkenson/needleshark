@@ -1,5 +1,16 @@
 # Яндекс Метрика
 
+
+## CRM ClientID display — 28 October 2026
+
+The saved/native _YM_UID now also appears as NS_YM_CLIENT_ID in the main deal tab.
+No new counter, goal, browser identifier or event was introduced. One public form
+test with qa_amo_loop_20261028 confirmed database/native/mirror equality and all
+five saved UTM fields. This verifies data delivery, not processing in Metrika
+reports. The inspected email deal has no ClientID/UTM; its previous advertising
+path is unknown. Do not infer an email-to-visit identity from timing or assumptions.
+[Verification](verification/20261028-amo-fields-loop.json).
+
 ## Кейс робота и тест формы — 26 октября 2026
 
 Релиз 74c9c85: на всех 20 HTML по одному счётчику 112428810 и общему обработчику. В кабинете проверены needle-shark.ru/needleshark.ru, ограничение разрешёнными доменами с поддоменами и восемь используемых целей; новые счётчики/цели не создавали. amo-чат публичного кейса загрузился и открылся, сообщений не отправляли.
