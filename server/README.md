@@ -1,5 +1,10 @@
 # Server-side leads and email
 
+## Customer registry design and test cleanup — 30 October 2026
+
+Owner confirmed: preserve website → amoCRM behavior. [Customer sync design](../docs/CUSTOMER_SYNC.md) specifies future inbound CRM companies/contacts, identity matching, first known inquiry attribution and deal-event triggers. No new integration, schema migration or runtime release installed. Production cleanup removed 28 verified synthetic orders and 20 test customers after a successful isolated restore rehearsal; 66 non-target rows remained identical. Eleven orders/customers remain; four real SMTP jobs are still pending and untouched. Import the private test exclusions before any future CRM backfill. [Evidence](../docs/verification/20261030-customer-sync-design.json).
+
+
 ## Form ClientID — live 24 October 2026
 
 Published code 5d8ba9baa122 stores optional ym_client_id as text (1–32 ASCII digits) in nullable orders.ym_client_id and the durable lead_submissions JSON snapshot. The additive migration 20261024_lead_clientid.sql is installed by --upgrade before the new client. Existing payloads without the field keep their fingerprints and remain valid; historical leads are not backfilled. A changed ClientID under the same UUID returns 409, so the browser freezes its first result, including absence, across retries.

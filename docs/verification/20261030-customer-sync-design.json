@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-30",
+  "scope": "Owner-approved design documentation and confirmed synthetic database cleanup only; preserve website-to-amoCRM behavior",
+  "base_commit": "0540537",
+  "cleanup_sql": "ops/maintenance/20261030-remove-confirmed-test-leads.sql",
+  "production_before": {
+    "customers": 31,
+    "orders": 39,
+    "public_tables": 9
+  },
+  "deleted": {
+    "orders": 28,
+    "customers": 20,
+    "lead_submissions": 20,
+    "lead_deliveries": 32,
+    "lead_loop_deliveries": 11,
+    "lead_amo_deliveries": 5,
+    "lead_files": 0
+  },
+  "reviewed_synthetic_order_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    22,
+    25,
+    28,
+    29,
+    31,
+    32,
+    33,
+    34,
+    36
+  ],
+  "evidence": "Explicit QA/test names and technical descriptions; order 11 body exactly Тест. Explicit ID allowlist plus count/content guards; no generic regex deletion.",
+  "production_after": {
+    "customers": 11,
+    "orders": 11,
+    "public_tables": 9,
+    "non_target_rows_compared_equal": 66,
+    "orphan_orders": 0,
+    "smtp_pending": 4,
+    "smtp_sent": 19,
+    "amo_sent": 4,
+    "legacy_loop_sent": 6
+  },
+  "backup": {
+    "private_directory": "/opt/needle-shark/backups/customer-cleanup-20261030",
+    "dump_bytes": 74407,
+    "dump_permissions": "0600",
+    "directory_permissions": "0700",
+    "restore_to_isolated_database": "passed",
+    "cleanup_on_restored_database": "passed",
+    "rerun": "rejected with Reviewed target count changed; transaction rolled back",
+    "isolated_database_removed": true,
+    "private_exclusions_saved": true,
+    "restore_over_production": false
+  },
+  "checks": {
+    "transactional_exact_comparison": "All non-target rows, including JSON payloads and queue states, compared before/after under table locks; equal.",
+    "foreign_keys": "normal constraints enforced throughout",
+    "sequences": "not reset",
+    "services": {
+      "needle-leads": "active",
+      "nginx": "active",
+      "postgresql": "active"
+    },
+    "public_https": "https://needle-shark.ru/ HTTP 200",
+    "release_pointers": "all four equal to pre-cleanup snapshots"
+  },
+  "releases_unchanged": {
+    "backend_current": "20261028T141053Z-e915cac49137",
+    "backend_previous": "20261024T175828Z-5d8ba9baa122",
+    "static_current": "20261030T073637Z-46716",
+    "static_previous": "20261026T084240Z-67601"
+  },
+  "not_changed": [
+    "amoCRM records",
+    "website/form",
+    "backend runtime",
+    "database schema",
+    "company table (not created)",
+    "first-touch fields (not migrated)",
+    "Unisender settings/contacts/scenarios",
+    "SMTP settings",
+    "Nginx/systemd"
+  ],
+  "limitations": [
+    "Future synchronization and trigger behavior specified, not implemented or tested.",
+    "CRM test entities remain: exclusions and related-contact review required before backfill.",
+    "Four real SMTP delivery jobs remain pending; no retry, cancellation or configuration fix performed.",
+    "Backup is on same VPS; no offsite recovery claim.",
+    "No form submission or outbound message sent during verification.",
+    "No UI/SEO/build checks: no public pages, runtime or assets changed.",
+    "Removing database test records does not remove their visits from analytics reports."
+  ],
+  "documentation": "docs/CUSTOMER_SYNC.md",
+  "commit_note": "The commit containing this report identifies the reviewed SQL/documentation; no backend/static release created."
+}
