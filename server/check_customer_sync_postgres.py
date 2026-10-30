@@ -92,6 +92,11 @@ def main():
         tied=copy.deepcopy(reverse);tied['events']=[event('e4',2800,10,12)]
         apply(tied)
         assert query('SELECT ready_for_trigger FROM deal_latest_stage')==[(False,)]
+        # A late real event must supersede same-time technical reconciliation.
+        lagged=copy.deepcopy(reverse);lagged['leads'][0].update(status_id=30,updated_at=2900);lagged['events']=[]
+        apply(lagged)
+        lagged['events']=[event('a-delayed',2900,10,30)];apply(lagged)
+        assert query('SELECT new_stage_id,event_kind,historical,ready_for_trigger FROM deal_latest_stage')==[(30,'transition',False,True)]
         # Guard against accidental CRM mutations even if code later calls the client incorrectly.
         try:sync.ReadClient.__new__(sync.ReadClient).request('POST','/api/v4/contacts',{});raise AssertionError('write allowed')
         except ValueError:pass

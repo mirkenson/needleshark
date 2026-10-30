@@ -31,6 +31,12 @@ class SyncTests(unittest.TestCase):
     def test_messaging_api_forbidden(self):
         c=uni.Client('test-key-with-no-real-credential')
         with self.assertRaises(uni.ApiError):c.call('sendEmail',{})
+    def test_readback_public_labels_are_mapped_to_api_names(self):
+        c=uni.Client('test-key-with-no-real-credential')
+        responses=[{'fields':{'Имя':'Synthetic','ID клиента Needle Shark':'123'}},
+                   [{'name':'Name','public_name':'Имя'},{'name':'NS_CUSTOMER_ID','public_name':'ID клиента Needle Shark'}]]
+        with patch.object(c,'call',side_effect=responses):
+            self.assertEqual(c.contact('x@example.com')['fields'],{'Name':'Synthetic','NS_CUSTOMER_ID':'123'})
     def test_readback_required(self):
         p={'NS_CUSTOMER_ID':'123','email':'x@example.com','Name':'x','email_list_ids':'42'}
         remote={'fields':{'NS_CUSTOMER_ID':'123','Name':'x'},'lists':[]}

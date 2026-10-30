@@ -25,6 +25,7 @@ class ApiError(Exception):
 
 class Client:
     def __init__(self,key=None):
+        self.field_names=None
         self.key=key or Path(os.environ.get('UNISENDER_KEY_FILE','/etc/needle-shark/unisender.key')).read_text().strip()
         if not re.fullmatch('[A-Za-z0-9_-]{20,200}',self.key):raise ApiError('key_format')
         self.opener=urllib.request.build_opener(urllib.request.ProxyHandler({}),amo_delivery.NoRedirect(),
@@ -50,7 +51,17 @@ class Client:
         if obj.get('warnings'):raise ApiError('provider_warning')
         return obj['result']
     def contact(self,email):
-        try:return self.call('getContact',{'email':email,'include_fields':1,'include_lists':1,'include_details':1})
+        try:
+            result=self.call('getContact',{'email':email,'include_fields':1,'include_lists':1,'include_details':1})
+            # getContact keys fields by public_name; importContacts uses name.
+            if self.field_names is None:
+                self.field_names={}
+                for field in self.call('getFields'):
+                    label=field.get('public_name') or field['name']
+                    if label in self.field_names:raise ApiError('ambiguous_field_labels')
+                    self.field_names[label]=field['name']
+            result['fields']={self.field_names.get(k,k):v for k,v in (result.get('fields') or {}).items()}
+            return result
         except ApiError as e:
             if e.code=='object_not_found':return None
             raise

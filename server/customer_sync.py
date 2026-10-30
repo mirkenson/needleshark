@@ -211,7 +211,7 @@ def apply(cur,account,snapshot,until,activated):
         stage_event(cur,event,did,main_map[did],event['created_at']<activated)
         cur.execute('DELETE FROM crm_unresolved_events WHERE source_event_id=%s',(event['id'],))
     for did,row in snapshots.items():
-        cur.execute('SELECT new_pipeline_id,new_stage_id FROM deal_stage_log WHERE deal_id=%s ORDER BY occurred_at DESC,source_event_id DESC LIMIT 1',(did,))
+        cur.execute("SELECT new_pipeline_id,new_stage_id FROM deal_stage_log WHERE deal_id=%s ORDER BY occurred_at DESC,(event_kind='transition') DESC,source_event_id DESC LIMIT 1",(did,))
         previous=cur.fetchone()
         current=(row['pipeline_id'],row['status_id'])
         if previous!=current:

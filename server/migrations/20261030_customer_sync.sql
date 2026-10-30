@@ -89,7 +89,7 @@ CREATE OR REPLACE VIEW deal_latest_stage AS
  d.archived,d.amo_account_id
  FROM crm_deals d LEFT JOIN LATERAL
  (SELECT * FROM deal_stage_log WHERE deal_id=d.id
-  ORDER BY occurred_at DESC,source_event_id DESC LIMIT 1) l ON true;
+  ORDER BY occurred_at DESC,(event_kind='transition') DESC,source_event_id DESC LIMIT 1) l ON true;
 CREATE TABLE IF NOT EXISTS customer_sync_state (
  id INTEGER PRIMARY KEY CHECK(id=1), amo_account_id BIGINT NOT NULL,
  events_until BIGINT NOT NULL DEFAULT 0, activated_at BIGINT NOT NULL,
