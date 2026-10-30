@@ -1,10 +1,10 @@
 {
   "date": "2026-10-30",
-  "status": "code_checked_before_install",
+  "status": "installed_and_enabled",
   "scope": "server customer registry, read-only inbound amoCRM, Unisender directory, deal-stage log",
   "outbound_amo_runtime_hash_unchanged": true,
   "checks": {
-    "server_unittests": 63,
+    "server_unittests": 64,
     "ops_unittests": 47,
     "postgres_customer_sync": "passed, disposable schema; zero external sends",
     "postgres_amo_regression": "passed, disposable schema; zero external sends",
@@ -17,11 +17,83 @@
     "unisender_list_id": 3,
     "unisender_custom_fields": 13
   },
-  "activation": "not yet installed",
+  "activation": {
+    "CUSTOMER_SYNC_ENABLED": true,
+    "UNISENDER_SYNC_ENABLED": true,
+    "UNISENDER_LIST_ID": 3
+  },
   "limits": [
-    "No email campaigns or stage triggers enabled",
-    "Historical events depend on amoCRM availability; baselines are explicitly marked",
-    "Existing real SMTP pending jobs remain outside scope",
-    "No frontend change: visual/SEO recrawl checks not applicable"
-  ]
+    "No email campaigns, permission activation or stage-trigger sender implemented",
+    "Two events for unavailable CRM deals retained; direct reads returned empty; no historical completeness claim",
+    "Five real SMTP jobs pending; previous transport issue outside this task",
+    "Browser end-to-end submission awaits confirmation of user agreement; no new live QA order created",
+    "No frontend changes: adaptive/SEO recrawl checks not applicable",
+    "No conflict-review UI or new sync-alert delivery configured"
+  ],
+  "code_commit": "7f62c877ec7f1e60dd450db2ced13bb96a9a9d89",
+  "verified_at": "2026-10-30T12:11:18Z",
+  "production": {
+    "customers": 27,
+    "companies": 39,
+    "customers_with_company": 8,
+    "crm_contacts_linked": 20,
+    "crm_deals": 25,
+    "stage_log_records": 46,
+    "unresolved_historical_events": 2,
+    "identity_conflicts": 0,
+    "orders": 12,
+    "first_touch_channels": {
+      "website": 12,
+      "email": 5,
+      "crm": 7,
+      "unknown": 3
+    },
+    "unisender": {
+      "accepted": 18,
+      "all_fields_verified_by_getContact": 18,
+      "total_import_attempts": 18,
+      "global_email_status": {
+        "new": 18
+      },
+      "send_or_trigger_calls": 0
+    },
+    "preexisting_orders_and_payloads_identical": true,
+    "preexisting_env_values_identical": true,
+    "amo_queue": {
+      "sent": 5
+    },
+    "smtp_queue": {
+      "pending": 5,
+      "sent": 19
+    },
+    "legacy_loop_queue": {
+      "sent": 6
+    }
+  },
+  "release": {
+    "backend_current": "20261030T120555Z-7f62c877ec7f",
+    "backend_previous": "20261030T115458Z-0b480dbac61a",
+    "pre_task_backend": "20261028T141053Z-e915cac49137",
+    "static_current_unchanged": "20261030T073637Z-46716",
+    "static_previous_unchanged": "20261026T084240Z-67601",
+    "matched_runtime_files": 13,
+    "unit_unchanged": true,
+    "nginx_unchanged": true
+  },
+  "live_checks": {
+    "services": "needle-leads/nginx/postgresql/cleanup timer/monitor timer active",
+    "public_https": 200,
+    "invalid_public_api_request": 400,
+    "valid_browser_submission": "not sent: awaiting action-time confirmation for user agreement",
+    "stage_reverse_transitions": "verified in isolated PostgreSQL; real deals not moved",
+    "attachment_check": "no attachment path changed; current public form has no upload"
+  },
+  "regressions": {
+    "unisender_field_labels": "getContact public_name mapped to technical name using getFields; real readback confirmed",
+    "late_stage_event": "real transition takes precedence over same-time reconciliation",
+    "unknown_import_result": "verified readback recovery without a second import",
+    "crm_aliases": "current identifiers union retained; stale identifiers and missing entities archived"
+  },
+  "preview_database_dropped": true,
+  "private_backup_retained": true
 }

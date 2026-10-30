@@ -2,7 +2,7 @@
 
 ## Customer registry, inbound CRM and Unisender — 30 October 2026
 
-Implemented in this revision; production activation/evidence is recorded in PROJECT_CONTEXT.
+Installed and enabled as 7f62c877ec7f on 30 October 2026; production evidence is in PROJECT_CONTEXT.
 `CUSTOMER_SYNC_ENABLED=1` enables identity matching for intake and the separate read-only
 CRM importer. `UNISENDER_SYNC_ENABLED=1` plus `UNISENDER_LIST_ID=3` enables the directory
 export after the first CRM scan. Defaults remain off. Install the additive migration
