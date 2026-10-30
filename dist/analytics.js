@@ -133,7 +133,7 @@
   const notice = document.createElement('aside');
   notice.className = 'cookie-notice';
   notice.setAttribute('aria-label', 'Использование cookie');
-  notice.innerHTML = '<p>Мы используем cookie и Яндекс Метрику для анализа посещений и улучшения сайта. <a href="/privacy-policy" data-track="cookie_policy">Подробнее в политике</a>.</p><button type="button" data-track="cookie_close">Понятно</button>';
+  notice.innerHTML = '<p>Мы используем cookie, Яндекс Метрику и пиксель VK для анализа посещений и формирования рекламных аудиторий. <a href="/privacy-policy" data-track="cookie_policy">Подробнее в политике</a>.</p><button type="button" data-track="cookie_close">Понятно</button>';
   document.body.append(notice);
   notice.querySelector('button').addEventListener('click', () => {
     try { localStorage.setItem('needle_cookie_notice', '1'); } catch (_) {}

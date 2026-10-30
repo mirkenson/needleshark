@@ -168,6 +168,10 @@ def external_url(url, content):
     return urlunsplit((parsed.scheme, parsed.netloc, parsed.path, urlencode(query), parsed.fragment))
 
 def prepare_html(html, path):
+    # One shared pixel, versioned and idempotent across all renderers.
+    html = re.sub(r'<script\b[^>]*\bsrc="/vk-pixel\.js(?:\?[^"<>]*)?"[^>]*>\s*</script>', '', html)
+    pixel_version = hashlib.sha256((ROOT / 'dist/vk-pixel.js').read_bytes()).hexdigest()[:12]
+    html = html.replace('</head>', f'<script src="/vk-pixel.js?v={pixel_version}" defer></script></head>')
     canonical = ORIGIN + public_path(path)
     canonical_tag = f'<link rel="canonical" href="{canonical}">'
     def remove_canonical(match):

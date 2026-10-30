@@ -276,7 +276,7 @@ def add_chat(html):
 
 
 def add_tracking(html):
-    html = re.sub(r'<script[^>]+src="[^"]*(?:metrika|analytics)\.js[^>]*></script>', '', html)
+    html = re.sub(r'<script[^>]+src="[^"]*(?:metrika|analytics|vk-pixel)\.js[^>]*></script>', '', html)
     html = re.sub(r'<noscript>\s*<div>\s*<img[^>]+mc\.yandex\.ru[^>]+>\s*</div>\s*</noscript>', '', html)
     version = hashlib.sha256((ROOT/'dist/analytics.js').read_bytes()).hexdigest()[:12]
     html = html.replace('</head>', f'<script src="/metrika.js" defer></script><script src="/analytics.js?v={version}" defer></script></head>')
@@ -323,7 +323,7 @@ def make_preview(html, chat=False):
     html = re.sub(r' data-preview="[^"]*"', '', html)
     html = re.sub(r'<body\b', '<body data-preview="true"', html, count=1)
     html = re.sub(r'<meta name="robots" content="[^"]*">', '<meta name="robots" content="noindex,nofollow">', html)
-    html = re.sub(r'<script[^>]+src="[^"]*(?:metrika|analytics)\.js[^>]*></script>', '', html)
+    html = re.sub(r'<script[^>]+src="[^"]*(?:metrika|analytics|vk-pixel)\.js[^>]*></script>', '', html)
     html = re.sub(r'<script[^>]+src="/b2b/chat\.js[^"]*"[^>]*></script>', '', html)
     html = re.sub(r'<noscript>\s*<div>\s*<img[^>]+mc\.yandex\.ru[^>]+>\s*</div>\s*</noscript>', '', html)
     return add_chat(html) if chat else html

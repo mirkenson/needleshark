@@ -93,7 +93,7 @@ def check():
         assert len(page.ids) == len(set(page.ids)), f'{path}: duplicate id'
         assert 'noindex' not in source.lower(), f'{path}: noindex'
         scripts = re.findall(r'<script\b[^>]*\bsrc="([^"]+)"', source)
-        for script in ('metrika.js', 'analytics.js'):
+        for script in ('metrika.js', 'analytics.js', 'vk-pixel.js'):
             assert sum(urlsplit(src).path.lstrip('/') == script for src in scripts) == 1, f'{path}: expected one {script}'
         assert source.count('mc.yandex.ru/watch/112428810') == 1, f'{path}: expected current noscript counter'
         assert source == prepare_html(source, path.relative_to(DIST)), f'{path}: publication preparation is stale'
