@@ -10,6 +10,7 @@ import delivery_store
 import mail_delivery
 import loop_delivery
 import amo_delivery
+import amo_loop
 import antispam
 from lead_context import validate_context, notification_payload
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -180,7 +181,9 @@ if __name__ == '__main__':
     if mail_delivery.smtp_config() is None:
         print('SMTP not configured: leads will be saved, email delivery paused', flush=True)
     delivery_store.initialize(loop_enabled=bool(loop_delivery.webhook_url()), amo_enabled=amo_delivery.enabled())
+    amo_loop.configuration()
     threading.Thread(target=worker, daemon=True).start()
     threading.Thread(target=worker, args=(deliver_loop_once,), daemon=True).start()
     threading.Thread(target=worker, args=(deliver_amo_once,), daemon=True).start()
+    threading.Thread(target=worker, args=(amo_loop.run_once,), daemon=True).start()
     ThreadingHTTPServer(('127.0.0.1', 8091), Handler).serve_forever()

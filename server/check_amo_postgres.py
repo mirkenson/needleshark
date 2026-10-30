@@ -32,6 +32,7 @@ def main():
             migration = Path(__file__).with_name('migrations').joinpath('20261023_amo_delivery.sql').read_text()
             cur.execute(migration)
             cur.execute(migration)
+            cur.execute(Path(__file__).with_name('migrations').joinpath('20261028_amo_fields_loop.sql').read_text())
         os.environ['CRM_DSN'] = make_dsn(dsn, options='-csearch_path=' + schema)
         store.initialize(amo_enabled=True)
         old = lead()
@@ -71,11 +72,14 @@ def main():
         resumed = store.claim('amo')
         assert not store.save_amo_state(stale, amo_lead_id=456)
         assert not store.finish(stale)
-        assert store.save_amo_state(resumed, amo_lead_id=123)
+        assert store.save_amo_state(resumed, amo_lead_id=123, note_started=True)
+        assert not store.save_amo_state(stale, amo_note_id=999)
         # Simulate restart after the remote id has been committed.
         query("UPDATE lead_amo_deliveries SET lease_until=now()-interval '1 second'")
         resumed = store.claim('amo')
         assert resumed['amo_lead_id'] == 123 and resumed['create_started']
+        assert resumed['note_started'] and resumed['amo_note_id'] is None
+        assert store.save_amo_state(resumed, amo_note_id=456)
         assert store.finish(resumed)
         assert query('SELECT status,amo_lead_id FROM lead_amo_deliveries') == [('sent', 123)]
         assert query('SELECT DISTINCT status FROM lead_deliveries') == [('pending',)]

@@ -34,7 +34,7 @@ def initialize(loop_enabled=False, amo_enabled=False):
         if loop_enabled:
             cur.execute('SELECT lease_token FROM lead_loop_deliveries LIMIT 0')
         if amo_enabled:
-            cur.execute('SELECT lease_token,create_started,amo_lead_id FROM lead_amo_deliveries LIMIT 0')
+            cur.execute('SELECT lease_token,create_started,amo_lead_id,note_started,amo_note_id FROM lead_amo_deliveries LIMIT 0')
 
 
 def enqueue(data, ip, recipients, secret, loop_enabled=False, amo_enabled=False):
@@ -117,18 +117,19 @@ def claim(channel='email'):
                 lead['attachment'] = {'name': attachment[0], 'type': attachment[1], 'content': bytes(attachment[2])}
         job = {'id': job_id, 'token': token, 'lead': lead, 'recipient': recipient, 'attempts': attempts, 'channel': channel}
         if channel == 'amo':
-            cur.execute('SELECT create_started,amo_lead_id FROM lead_amo_deliveries WHERE id=%s', (job_id,))
-            job['create_started'], job['amo_lead_id'] = cur.fetchone()
+            cur.execute('SELECT create_started,amo_lead_id,note_started,amo_note_id FROM lead_amo_deliveries WHERE id=%s', (job_id,))
+            job['create_started'], job['amo_lead_id'], job['note_started'], job['amo_note_id'] = cur.fetchone()
         return job
 
 
-def save_amo_state(job, *, create_started=None, amo_lead_id=None):
+def save_amo_state(job, *, create_started=None, amo_lead_id=None, note_started=None, amo_note_id=None):
     """Fence remote creation and persist its result before marking delivery sent."""
     with connection() as conn, conn.cursor() as cur:
         cur.execute("""UPDATE lead_amo_deliveries
-            SET create_started=COALESCE(%s,create_started), amo_lead_id=COALESCE(%s,amo_lead_id)
+            SET create_started=COALESCE(%s,create_started), amo_lead_id=COALESCE(%s,amo_lead_id),
+                note_started=COALESCE(%s,note_started),amo_note_id=COALESCE(%s,amo_note_id)
             WHERE id=%s AND lease_token=%s AND status='sending' AND lease_until>now()""",
-            (create_started, amo_lead_id, job['id'], job['token']))
+            (create_started, amo_lead_id, note_started, amo_note_id, job['id'], job['token']))
         return cur.rowcount == 1
 
 

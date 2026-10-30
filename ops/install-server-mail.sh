@@ -30,9 +30,9 @@ release="$(date -u +%Y%m%dT%H%M%SZ)-${revision:0:12}"
 release_dir="/opt/needle-shark/releases/$release"
 ssh_options=(-i "$ssh_key" -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=15)
 ssh "${ssh_options[@]}" "$remote_host" "install -d -m 0755 '$release_dir'; install -d -m 0700 '/opt/needle-shark/backups/$release'"
-scp "${ssh_options[@]}" "$project_dir"/server/{leads,crm,lead_context,delivery_store,mail_delivery,loop_delivery,amo_delivery,antispam}.py \
+scp "${ssh_options[@]}" "$project_dir"/server/{leads,crm,lead_context,delivery_store,mail_delivery,loop_delivery,amo_delivery,amo_loop,antispam}.py \
   "$project_dir/server/migrations/20260918_server_delivery.sql" "$project_dir/server/migrations/20260922_loop_delivery.sql" "$project_dir/server/migrations/20261008_b2b_contacts.sql" "$project_dir/server/migrations/20261014_lead_utm.sql" "$project_dir/ops/configure-server-mail.py" \
-  "$project_dir/server/migrations/20261023_amo_delivery.sql" "$project_dir/server/migrations/20261024_lead_clientid.sql" "$remote_host:$release_dir/"
+  "$project_dir/server/migrations/20261023_amo_delivery.sql" "$project_dir/server/migrations/20261024_lead_clientid.sql" "$project_dir/server/migrations/20261028_amo_fields_loop.sql" "$remote_host:$release_dir/"
 if [[ "$mode" != upgrade ]]; then
   scp "${ssh_options[@]}" "$settings" "$remote_host:/opt/needle-shark/backups/$release/incoming.env"
 fi
@@ -103,6 +103,8 @@ sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/202
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20261014_lead_utm.sql"
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20261023_amo_delivery.sql"
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20261024_lead_clientid.sql"
+sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -1 -f "$release_dir/20261028_amo_fields_loop.sql"
+sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON amo_loop_cursor,amo_loop_notifications TO needle_app;'
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON lead_submissions,lead_files,lead_deliveries TO needle_app; GRANT USAGE,SELECT ON SEQUENCE lead_deliveries_id_seq TO needle_app;'
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON lead_loop_deliveries TO needle_app; GRANT USAGE,SELECT ON SEQUENCE lead_loop_deliveries_id_seq TO needle_app;'
 sudo -u postgres psql -d needle_shark -v ON_ERROR_STOP=1 -c 'GRANT SELECT,INSERT,UPDATE ON lead_amo_deliveries TO needle_app; GRANT USAGE,SELECT ON SEQUENCE lead_amo_deliveries_id_seq TO needle_app;'
