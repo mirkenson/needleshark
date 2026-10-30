@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 import amo_delivery
 import customer_registry as registry
 import delivery_store
+import company_profile
 
 class ReadClient(amo_delivery.Client):
     def request(self,method,path,payload=None):
@@ -139,6 +140,7 @@ def apply(cur,account,snapshot,until,activated):
         if not result:
             cur.execute('SELECT id FROM companies WHERE amo_account_id=%s AND amo_company_id=%s',(account,row['id']));result=cur.fetchone()
         company_map[row['id']]=result[0]
+        company_profile.save_projection(cur,result[0],row)
     contact_map={}
     for row in contacts:
         if row['id'] in excluded['contact']:continue

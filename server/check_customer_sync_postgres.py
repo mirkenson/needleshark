@@ -57,6 +57,20 @@ def main():
         assert query('SELECT payload FROM lead_submissions')[0][0]==before
         assert query('SELECT count(*) FROM lead_amo_deliveries')==[(1,)]
         assert query('SELECT count(*) FROM lead_deliveries')==[(1,)]
+        # Company research and offers are independent of live CRM projections.
+        query("UPDATE companies SET offer_hints='[{\"text\":\"Synthetic offer\"}]',research_data='{\"source\":\"Synthetic\"}'")
+        enriched=copy.deepcopy(snapshot)
+        enriched['companies'][0]['custom_fields_values']=[
+          {'field_code':'NS_COMPANY_DIRECTIONS','values':[{'value':'Robotics'},{'value':'Laboratory'}]},
+          {'field_code':'NS_OUTREACH_STATUS','values':[{'value':'Контакт был'}]},
+          {'field_code':'NS_PRIORITY_CHANNEL','values':[{'value':'desk@example.invalid'}]}]
+        apply(enriched);apply(enriched)
+        assert query('SELECT directions,outreach_status,priority_channel FROM companies')==[(['Robotics','Laboratory'],'Контакт был','desk@example.invalid')]
+        assert query('SELECT offer_hints,research_data FROM companies')==[([{'text':'Synthetic offer'}],{'source':'Synthetic'})]
+        stale=copy.deepcopy(snapshot);stale['companies'][0]['updated_at']=1999
+        apply(stale)
+        assert query('SELECT outreach_status FROM companies')==[('Контакт был',)]
+        assert query('SELECT count(*) FROM customers')==[(1,)]
         # Reverse transition, delivered twice and out of order.
         reverse=copy.deepcopy(snapshot);reverse['leads'][0].update(status_id=10,updated_at=2800)
         reverse['events']=[event('e3',2800,20,10),event('e2',2200,15,20)]

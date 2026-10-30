@@ -1,5 +1,15 @@
 # Server-side leads and email
 
+## Company research properties — 30 October 2026
+
+`company_profile.py` projects company fields from inbound CRM into typed PostgreSQL
+columns. Install `20261030_customer_sync_profiles.sql` through the existing backend
+upgrade before running the importer. Directions and outreach status are indexed;
+selected source research and offer hints remain independent of the CRM snapshot.
+The one-time company importer cannot create contacts, deals or relationships.
+See [company import and ownership rules](../docs/CUSTOMER_SYNC.md#база-компаний-для-исходящей-связи--30-октября-2026).
+Production activation and read-back are documented separately in PROJECT_CONTEXT.
+
 ## Customer registry, inbound CRM and Unisender — 30 October 2026
 
 Installed and enabled as 7f62c877ec7f on 30 October 2026; production evidence is in PROJECT_CONTEXT.

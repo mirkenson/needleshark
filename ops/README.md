@@ -1,5 +1,19 @@
 # Needle Shark VPS
 
+## Company research import — 30 October 2026
+
+`install-server-mail.sh --upgrade` installs `company_profile.py` and the additive
+`20261030_customer_sync_profiles.sql` migration, preserving environment, units and
+static releases. Commit/push checked code first. `import-companies.py` is an explicit
+one-time maintenance command, not a background outbound CRM synchronizer.
+
+Use a private input and durable state journal, an existing server environment and
+`--server-dir /opt/needle-shark/current`; only `--apply` writes. Back up CRM and DB
+before applying. Keep source rows and the journal out of Git. Read back all target
+companies/notes and verify untouched records/relationships and DB projections.
+An unresolved POST remains fenced until reconciliation; never remove a fence to
+force retry. [Data model and restart rules](../docs/CUSTOMER_SYNC.md).
+
 ## Обратный CRM-обмен и Unisender — 30 октября 2026
 
 Установлен и включён backend 7f62c877ec7f; 13 файлов сверены, прежние env/unit сохранены. Код и аддитивная миграция выпускаются через `install-server-mail.sh --upgrade`, после коммита/push и проверки действующих current/previous. Установщик сохраняет env/unit и прежний backend; флаги нового обмена по умолчанию выключены. Перед включением нужны закрытый backup БД/env, проверенные исключения тестов и доступ группы needleleads к отдельному файлу API-ключа. Затем атомарно добавить CUSTOMER_SYNC_ENABLED, UNISENDER_SYNC_ENABLED и UNISENDER_LIST_ID=3 в существующий env и перезапустить службу. Остальные получатели/CRM-параметры не менять. Nginx, systemd и статический релиз не требуют изменения.
