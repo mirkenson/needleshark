@@ -1,5 +1,14 @@
 # Needle Shark VPS
 
+## Пиксель VK подключён — 30 октября 2026
+
+Опубликован публичный коммит **e2e9ccb5b70bcb22d287f0fb29e5cd1af99a4c6e**: current `20261030T073637Z-46716`, previous `20261026T084240Z-67601`. На20 страницах одно подключение `/vk-pixel.js` к существующему счётчику3766157, домен API подтверждён needle-shark.ru. Только pageView, явные URL/referrer без query/fragment; поля заявок, файлы, userid и цели не добавлены. Дубли SDK/запуска исключены, на локальных/изолированных preview сбор выключен. Уведомление и политика дополнены сведениями о VK, прежнее поведение закрытия уведомления сохранено.
+
+37 тестов прошли, повторная сборка идентична. Локально и после публикации по30 сочетаний страницы/ширины без переполнения, ошибок JS/ресурсов; внешние скрипты в визуальном тесте заглушены. Отдельно настоящий SDK: один GET `/counter` со счётчиком3766157, HTTP200; конфигурационный запрос SDK не является вторым просмотром. Отчёт VK за30.10 изменился с0 до1 посетителя после QA-визита; working пока false.25 публичных файлов совпали, неизвестный URL404, HTTP→HTTPS сохраняет query. Это подтверждает сбор тестового просмотра, но не достаточный объём аудитории. Формы/CRM/сервер/бюджеты не менялись.
+
+[Проверки](../docs/verification/20261030-vk-pixel.json). Официальный JS API: https://top.mail.ru/help/ru/api/jsapi. Перед откатом заново проверить current/previous. Публичная ветка не содержит приватной рекламной истории.
+
+
 ## Robot case release — 26 October 2026
 
 Pushed public code 74c9c85 deployed with ops/deploy.sh --from-github: current 20261026T084240Z-67601, previous 20261026T082308Z-64470. 1273 files verified, 21 downloaded/1252 reused. Backend, Nginx and systemd unchanged. Fresh pointers and six active services/timers confirmed; inspect pointers again before rollback.

@@ -1,0 +1,725 @@
+{
+  "date": "2026-10-30",
+  "commit": "e2e9ccb5b70bcb22d287f0fb29e5cd1af99a4c6e",
+  "release": "20261030T073637Z-46716",
+  "previous": "20261026T084240Z-67601",
+  "counter": "3766157",
+  "counterDomain": "needle-shark.ru",
+  "scope": "Page views only; no form fields, files, CRM identifiers, custom goals or lead integration changes. Explicit URL/referrer omit query and fragment. Existing notice dismissal behavior preserved; VK mentioned in notice and privacy policy.",
+  "build": "20 pages checked; repeat build byte-identical",
+  "tests": {
+    "python_public_and_seo": 20,
+    "javascript_analytics_and_pixel": 17
+  },
+  "local_browser": {
+    "checks": [
+      {
+        "path": "/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": false,
+        "h1": 1
+      }
+    ],
+    "errors": [],
+    "bad": []
+  },
+  "live_sdk": {
+    "status": 200,
+    "tracker": [
+      {
+        "host": "top-fwz1.mail.ru",
+        "path": "/counter",
+        "method": "GET",
+        "status": 200,
+        "counter": "3766157",
+        "event": "pageView",
+        "containsQAQuery": false,
+        "hasPagePath": true
+      },
+      {
+        "host": "top-fwz1.mail.ru",
+        "path": "/js/dyn-goal-config.js",
+        "method": "GET",
+        "status": 200,
+        "counter": "3766157",
+        "event": "SDK configuration, not pageView",
+        "containsQAQuery": false,
+        "hasPagePath": false
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "state": {
+      "pixelScripts": 1,
+      "sdkScripts": 1,
+      "metrikaScripts": 1,
+      "analyticsScripts": 1,
+      "tmrPush": "function",
+      "notice": "Мы используем cookie, Яндекс Метрику и пиксель VK для анализа посещений и формирования рекламных аудиторий. Подробнее в политике.Понятно"
+    }
+  },
+  "public_files": [
+    {
+      "path": "index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "user-agreement.html",
+      "bytes_match": true
+    },
+    {
+      "path": "privacy-policy.html",
+      "bytes_match": true
+    },
+    {
+      "path": "catalog/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "business/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "cases/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "blog/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "blog/kak-vybrat-sumku-chehol-dlya-kolyaski/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "blog/kak-vybrat-sumku-baul/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "blog/zimnee-hranenie-motocikla-i-kvadrocikla/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "blog/kak-vybrat-chehol-dlya-dvuh-treh-velosipedov/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "blog/kak-podobrat-chehol-na-kvadrocikl/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "blog/kak-vybrat-chehol-dlya-motocikla/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "blog/kak-vybrat-chehly-dlya-koles/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "cases/chehol-dlya-robota-manipulyatora/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "napravleniya/po-tz/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "napravleniya/remni/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "napravleniya/sumki/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "napravleniya/chehly/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "napravleniya/ukrytiya-i-shtory/index.html",
+      "bytes_match": true
+    },
+    {
+      "path": "vk-pixel.js",
+      "bytes_match": true
+    },
+    {
+      "path": "analytics.js",
+      "bytes_match": true
+    },
+    {
+      "path": "metrika.js",
+      "bytes_match": true
+    },
+    {
+      "path": "robots.txt",
+      "bytes_match": true
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes_match": true
+    }
+  ],
+  "vk_processing": {
+    "before_visitors_today": 0,
+    "after_visitors_today": 1,
+    "working": false,
+    "note": "Report processing confirmed for a QA visit; working flag has not changed."
+  },
+  "server": "1274 files verified before atomic switch; 22 downloaded,1252 reused. Existing nginx/leads/postgresql/cleanup/monitor active; correct Metrika timer checked separately. No backend or configuration writes.",
+  "limitations": [
+    "Browser layout sweeps stubbed external scripts to avoid artificial visits; separate real SDK verification used QA-tagged visit.",
+    "No customer form submission: form/backend and conversion hooks unchanged.",
+    "Search console rerequest not performed: no new URLs or metadata changes; public SEO checked by byte equality and site validator.",
+    "Audience volume and advertising expansion readiness not established; this release only enables pageview collection.",
+    "System Python CA bundle was incomplete; public byte check used curl with normal TLS verification instead."
+  ],
+  "public_browser": {
+    "checks": [
+      {
+        "path": "/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/privacy-policy.html",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/napravleniya/chehly/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/catalog/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/blog/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 360,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 390,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 768,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 1024,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      },
+      {
+        "path": "/cases/",
+        "width": 1440,
+        "overflow": false,
+        "notice": true,
+        "noticeInView": true,
+        "pixel": true,
+        "h1": 1
+      }
+    ],
+    "errors": [],
+    "bad": []
+  },
+  "services": {
+    "nginx": "active",
+    "needle-leads": "active",
+    "postgresql": "active",
+    "needle-cleanup.timer": "active",
+    "needle-monitor.timer": "active",
+    "needle-metrika.timer": "active"
+  }
+}
