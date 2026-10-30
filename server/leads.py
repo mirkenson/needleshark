@@ -11,6 +11,8 @@ import mail_delivery
 import loop_delivery
 import amo_delivery
 import amo_loop
+import customer_sync
+import unisender_sync
 import antispam
 from lead_context import validate_context, notification_payload
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -186,4 +188,6 @@ if __name__ == '__main__':
     threading.Thread(target=worker, args=(deliver_loop_once,), daemon=True).start()
     threading.Thread(target=worker, args=(deliver_amo_once,), daemon=True).start()
     threading.Thread(target=worker, args=(amo_loop.run_once,), daemon=True).start()
+    threading.Thread(target=worker, args=(customer_sync.run_once,), daemon=True).start()
+    threading.Thread(target=worker, args=(unisender_sync.run_once,), daemon=True).start()
     ThreadingHTTPServer(('127.0.0.1', 8091), Handler).serve_forever()

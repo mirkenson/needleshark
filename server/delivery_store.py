@@ -27,6 +27,10 @@ def connection():
 
 def initialize(loop_enabled=False, amo_enabled=False):
     with connection() as conn, conn.cursor() as cur:
+        if os.environ.get('CUSTOMER_SYNC_ENABLED') == '1':
+            cur.execute('SELECT company_id,first_touch_at FROM customers LIMIT 0')
+            cur.execute('SELECT new_stage_id FROM deal_latest_stage LIMIT 0')
+            cur.execute('SELECT source_event_id FROM crm_unresolved_events LIMIT 0')
         cur.execute('SELECT submission_id FROM lead_submissions LIMIT 0')
         cur.execute('SELECT email,phone,business_direction,business_material,ym_client_id FROM orders LIMIT 0')
         cur.execute('SELECT content FROM lead_files LIMIT 0')

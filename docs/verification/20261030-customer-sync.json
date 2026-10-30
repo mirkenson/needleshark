@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-30",
+  "status": "code_checked_before_install",
+  "scope": "server customer registry, read-only inbound amoCRM, Unisender directory, deal-stage log",
+  "outbound_amo_runtime_hash_unchanged": true,
+  "checks": {
+    "server_unittests": 63,
+    "ops_unittests": 47,
+    "postgres_customer_sync": "passed, disposable schema; zero external sends",
+    "postgres_amo_regression": "passed, disposable schema; zero external sends",
+    "public_build_check": "20 pages passed; no static changes",
+    "restored_database_import": "passed; original orders/payloads/outbound queues identical",
+    "test_exclusions": {
+      "leads": 5,
+      "contacts": 3
+    },
+    "unisender_list_id": 3,
+    "unisender_custom_fields": 13
+  },
+  "activation": "not yet installed",
+  "limits": [
+    "No email campaigns or stage triggers enabled",
+    "Historical events depend on amoCRM availability; baselines are explicitly marked",
+    "Existing real SMTP pending jobs remain outside scope",
+    "No frontend change: visual/SEO recrawl checks not applicable"
+  ]
+}

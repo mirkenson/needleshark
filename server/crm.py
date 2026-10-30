@@ -28,11 +28,15 @@ def archive_cursor(cur, lead):
         if old != (lead['name'],contact,lead['question'], *(lead.get(key) for key in CONTEXT_FIELDS)):
             raise ValueError('Submission ID already belongs to another request')
         return
-    cur.execute('''INSERT INTO customers(name,contact,contact_key,first_inquiry_at,last_inquiry_at)
-        VALUES(%s,%s,%s,%s,%s) ON CONFLICT(contact_key) DO UPDATE
-        SET last_inquiry_at=GREATEST(customers.last_inquiry_at,EXCLUDED.last_inquiry_at)
-        RETURNING id''', (lead['name'],contact,key,lead['created_at'],lead['created_at']))
-    customer_id = cur.fetchone()[0]
+    import customer_registry
+    if customer_registry.enabled():
+        customer_id = customer_registry.form_customer(cur, lead)
+    else:
+        cur.execute('''INSERT INTO customers(name,contact,contact_key,first_inquiry_at,last_inquiry_at)
+            VALUES(%s,%s,%s,%s,%s) ON CONFLICT(contact_key) DO UPDATE
+            SET last_inquiry_at=GREATEST(customers.last_inquiry_at,EXCLUDED.last_inquiry_at)
+            RETURNING id''', (lead['name'],contact,key,lead['created_at'],lead['created_at']))
+        customer_id = cur.fetchone()[0]
     cur.execute('''INSERT INTO orders(submission_id,customer_id,created_at,customer_name,contact,description,
         attachment_name,consent,consent_documents,product_slug,product_name,product_size,
         inquiry_type,quantity,source_path,business_intent,business_company,email,phone,business_direction,business_material,utm_source,utm_medium,utm_campaign,utm_content,utm_term,ym_client_id)

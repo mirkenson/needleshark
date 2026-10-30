@@ -1,8 +1,30 @@
 # Server-side leads and email
 
-## Customer registry design and test cleanup — 30 October 2026
+## Customer registry, inbound CRM and Unisender — 30 October 2026
 
-Owner confirmed: preserve website → amoCRM behavior. [Customer sync design](../docs/CUSTOMER_SYNC.md) specifies future inbound CRM companies/contacts, identity matching, first known inquiry attribution and deal-event triggers. No new integration, schema migration or runtime release installed. Production cleanup removed 28 verified synthetic orders and 20 test customers after a successful isolated restore rehearsal; 66 non-target rows remained identical. Eleven orders/customers remain; four real SMTP jobs are still pending and untouched. Import the private test exclusions before any future CRM backfill. [Evidence](../docs/verification/20261030-customer-sync-design.json).
+Implemented in this revision; production activation/evidence is recorded in PROJECT_CONTEXT.
+`CUSTOMER_SYNC_ENABLED=1` enables identity matching for intake and the separate read-only
+CRM importer. `UNISENDER_SYNC_ENABLED=1` plus `UNISENDER_LIST_ID=3` enables the directory
+export after the first CRM scan. Defaults remain off. Install the additive migration
+before activation and seed the private reviewed test exclusions. The API key lives in
+`/etc/needle-shark/unisender.key`, readable by the existing service group, never in Git.
+
+Website → amoCRM creation, fields, notes and queue semantics are preserved. Inbound CRM
+never calls an outbound queue. `deal_stage_log` records old/new stages per deal, including
+reverse transitions; `deal_latest_stage` checks the current snapshot and flags ambiguous
+same-second events. Unknown-deal events are retained for retry. New Unisender contacts
+are disabled; this code cannot send a campaign or invoke a trigger. Consent, subscriptions
+and delivery automation are separate from directory membership.
+
+See [data flow, schema, operations and future stage rules](../docs/CUSTOMER_SYNC.md).
+Tests: `python3 -m unittest discover -s server -p 'test_*.py'`; disposable PostgreSQL:
+`CRM_TEST_DSN=... python3 server/check_customer_sync_postgres.py` and existing
+`server/check_amo_postgres.py`. These DB tests send nothing externally. Disable both
+new flags to stop the new exchange while keeping the previous website delivery path.
+
+The earlier cleanup removed only 28 reviewed synthetic orders and 20 test customers;
+66 non-target rows were unchanged. Subsequent genuine orders continue to arrive.
+[Cleanup evidence](../docs/verification/20261030-customer-sync-design.json).
 
 ## Structured amoCRM fields and unified LOOP — 28 October 2026
 
